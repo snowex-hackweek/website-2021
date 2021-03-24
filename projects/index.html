@@ -1,0 +1,525 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects &#8212; Snowex Hackweek</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Project Initialization" href="project_initialization.html" />
+    <link rel="prev" title="Learning Community" href="../norms/community.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Snowex Hackweek</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to snowex-hackweek!
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../application.html">
+   Application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../schedule.html">
+   Hackweek Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../team.html">
+   Our Team
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../norms/index.html">
+   Hackweek Norms
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../norms/CoC.html">
+     Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../norms/community.html">
+     Learning Community
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="current reference internal" href="#">
+   Projects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project_roles.html">
+     Project Roles and Responsibilities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="example_workflow.html">
+     Basic git workflow for a project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="example_workflow.html#project-data-download-storage-and-access">
+     Project Data - download, storage, and access
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../preliminary/index.html">
+   Preliminary Work
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../preliminary/conda.html">
+     Python Installation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../preliminary/github.html">
+     GitHub Account
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../preliminary/jupyterhub.html">
+     JupyterHub Connection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../preliminary/jupyterhub_fork_clone.html">
+     JupyterHub Connection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../preliminary/earthdata.html">
+     Earthdata Login
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../tutorials/index.html">
+   Tutorials
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/raster/intro-ipyleaflet.html">
+     An introduction to rasters
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/projects/index.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/uwhackweek/jupyterbook-template"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/uwhackweek/jupyterbook-template/issues/new?title=Issue%20on%20page%20%2Fprojects/index.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#purpose-of-the-projects">
+   Purpose of the projects:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-hacking">
+   What is hacking?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-is-this-important">
+   Why is this important?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-will-the-projects-be-conducted">
+   How will the projects be conducted?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-can-i-do-to-prepare-in-advance">
+   What can I do to prepare in advance?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#project-guidelines">
+   Project guidelines
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#project-title">
+     Project Title
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#collaborators-on-this-project">
+     Collaborators on this project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-problem">
+     The problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#application-example">
+     Application Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sample-data">
+     Sample data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#specific-questions">
+     Specific Questions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#existing-methods">
+     Existing methods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proposed-methods-tools">
+     Proposed methods/tools
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#background-reading">
+     Background reading
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="projects">
+<h1>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h1>
+<p>This section contains everything you need to know about hackweek projects:</p>
+<ul class="simple">
+<li><p>What are the <a class="reference internal" href="project_roles.html"><span class="doc std std-doc">roles and responsibilities</span></a> of hackweek project participants?</p></li>
+<li><p>How to <a class="reference internal" href="project_initialization.html"><span class="doc std std-doc">initialize a project</span></a> within the hackweek Github Organization?</p></li>
+<li><p>What are the <a class="reference internal" href="example_workflow.html"><span class="doc std std-doc">recommended GitHub workflows</span></a> for managing projects?</p></li>
+<li><p>What are some <span class="xref myst">examples of past projects</span>?</p></li>
+</ul>
+<div class="section" id="purpose-of-the-projects">
+<h2>Purpose of the projects:<a class="headerlink" href="#purpose-of-the-projects" title="Permalink to this headline">¶</a></h2>
+<p>During the hackweek we will be facilitating open hacking sessions most of the afternoons. The purpose of these sessions is for you to gain hands-on experience in working together on a well-defined problem.</p>
+</div>
+<div class="section" id="what-is-hacking">
+<h2>What is hacking?<a class="headerlink" href="#what-is-hacking" title="Permalink to this headline">¶</a></h2>
+<p>Hacking is a session of focused, highly collaborative computer programming, in which we create conditions for rapid absorption of new ideas and methods. The word “hack” or “hackathon” has many different interpretations, both positive and negative. Here our intention is to foster the idea of hacking as a fun, interactive and welcoming environment to explore and experiment with computer code.</p>
+</div>
+<div class="section" id="why-is-this-important">
+<h2>Why is this important?<a class="headerlink" href="#why-is-this-important" title="Permalink to this headline">¶</a></h2>
+<p>Increasingly, research and software development is being conducted across groups of people with diverse skills and backgrounds. We believe this collaborative work leads to more innovative solutions to complex problems. At CSI-2020 Hackweek, our goal is to explore with you some of the skills needed to navigate technical and social challenges of working in these kinds of collaborative settings.</p>
+</div>
+<div class="section" id="how-will-the-projects-be-conducted">
+<h2>How will the projects be conducted?<a class="headerlink" href="#how-will-the-projects-be-conducted" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Participants have already posted initial ideas for projects in the #project_ideas channel. On Friday, June 12 we will begin the formation of preliminary teams of  (3-7 people) around project ideas. We will finalize the teams and project roles during our session on Monday, June 15th. Group “Hacking” begins immediately afterwards.</p></li>
+<li><p>each team will identify:</p>
+<ul>
+<li><p>a project lead, likely the person who pitched the idea, who has knowledge of the datasets and the specific problem to be explored. But roles can be assigned as the group decides to best fit skills and needs.</p></li>
+<li><p>a data science lead from the pool of CSI-2020 instructors who has expertise in the data tools and methods</p></li>
+</ul>
+</li>
+<li><p>once formed, each team will be guided through exercises to help narrow in on a set of tasks that are doable within the 5 days. A brief project outline will be posted to GitHub, following the “Project Guidelines” below.</p></li>
+<li><p>On the mornings of June 16th, and 17th we will have a daily stand-up meeting to check-in on progress and challenges</p></li>
+<li><p>On Thursday June 18th each team will present their work in a series of lightning talks.</p></li>
+</ul>
+</div>
+<div class="section" id="what-can-i-do-to-prepare-in-advance">
+<h2>What can I do to prepare in advance?<a class="headerlink" href="#what-can-i-do-to-prepare-in-advance" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>if you have a project idea already brewing, we encourage you to share that with participants on our #project_ideas channel.</p></li>
+<li><p>feel free to explore various projects and initiate conversations. The goal is to gather as much information as you can to inform your decision about which team to join when we meet in person.</p></li>
+<li><p>contact a CSI-2020 organizer if you would like assistance in assessing whether a project is well-scoped, or if you need help with a particular dataset.</p></li>
+</ul>
+</div>
+<div class="section" id="project-guidelines">
+<h2>Project guidelines<a class="headerlink" href="#project-guidelines" title="Permalink to this headline">¶</a></h2>
+<p>Each project requires a brief project summary in the <a class="reference external" href="http://readme.md">readme.md</a> of each GitHub project folder. Below is a template for the project summary. You can visit the <a class="reference external" href="https://github.com/ICESAT-2HackWeek/projects_2020">project folder</a> on GitHub to see existing examples.</p>
+<div class="section" id="project-title">
+<h3>Project Title<a class="headerlink" href="#project-title" title="Permalink to this headline">¶</a></h3>
+<p>Brief title describing the proposed work.</p>
+</div>
+<div class="section" id="collaborators-on-this-project">
+<h3>Collaborators on this project<a class="headerlink" href="#collaborators-on-this-project" title="Permalink to this headline">¶</a></h3>
+<p><em>List all participants on the project. Choose one team member to act as project lead, and identify one waterhack organizer as the data science lead.</em></p>
+</div>
+<div class="section" id="the-problem">
+<h3>The problem<a class="headerlink" href="#the-problem" title="Permalink to this headline">¶</a></h3>
+<p>What problem are you going to explore? Provide a few sentences. If this is a technical exploration of software or data science methods, explain why this work is important in a broader context.</p>
+</div>
+<div class="section" id="application-example">
+<h3>Application Example<a class="headerlink" href="#application-example" title="Permalink to this headline">¶</a></h3>
+<p>List one specific application of this work.</p>
+</div>
+<div class="section" id="sample-data">
+<h3>Sample data<a class="headerlink" href="#sample-data" title="Permalink to this headline">¶</a></h3>
+<p>If you already have some data to explore, briefly describe it here (size, format, how to access).</p>
+</div>
+<div class="section" id="specific-questions">
+<h3>Specific Questions<a class="headerlink" href="#specific-questions" title="Permalink to this headline">¶</a></h3>
+<p>List the specific tasks you want to accomplish or research questions you want to answer.</p>
+</div>
+<div class="section" id="existing-methods">
+<h3>Existing methods<a class="headerlink" href="#existing-methods" title="Permalink to this headline">¶</a></h3>
+<p>How would you or others traditionally try to address this problem?</p>
+</div>
+<div class="section" id="proposed-methods-tools">
+<h3>Proposed methods/tools<a class="headerlink" href="#proposed-methods-tools" title="Permalink to this headline">¶</a></h3>
+<p>Building from what you learn at this hackweek, what new approaches would you like to try to implement?</p>
+</div>
+<div class="section" id="background-reading">
+<h3>Background reading<a class="headerlink" href="#background-reading" title="Permalink to this headline">¶</a></h3>
+<p>Optional: links to manuscripts or technical documents for more in-depth analysis.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./projects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../norms/community.html" title="previous page">Learning Community</a>
+    <a class='right-next' id="next-link" href="project_initialization.html" title="next page">Project Initialization</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By eScience Institute, University of Washington<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
