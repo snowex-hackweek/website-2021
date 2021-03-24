@@ -1,0 +1,43 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: Snowex Hackweek
+author: eScience Institute, University of Washington
+logo: logo.png
+
+parse:
+  myst_substitutions:
+    hackweek: snowex-hackweek
+    dates: July ? to ?, 2021
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: force
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Configure your Binder links, such as the URL of the BinderHub.
+launch_buttons:
+  notebook_interface: jupyterlab
+  #binderhub_url: https://gke.mybinder.org
+  # NOTE: Want to use nbgitpuller with binderhub, not sure this will work currently...
+  #binderhub_url: https://aws-uswest2-binder.pangeo.io/v2/gh/pangeo-data/notebook-binder/2021.02.02?git-pull?repo=https://github.com/uwhackweek/jupyterbook-template
+  binderhub_url: https://aws-uswest2-binder.pangeo.io
+  jupyterhub_url: https://aws-uswest2.pangeo.io
+  colab_url: "" #empty string disables button
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/uwhackweek/jupyterbook-template # Online location of your book
+  path_to_book: book  # Optional path to your book, relative to the repository root
+  branch: main  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: true
+  use_repository_button: true

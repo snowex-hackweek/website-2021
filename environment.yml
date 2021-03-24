@@ -1,0 +1,12 @@
+name: hackweek
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - geopandas
+  - ipyleaflet
+  - jupyterlab>=3
+  - rioxarray
+  - pip
+  - pip:
+      - jupyter-book==0.10.0
