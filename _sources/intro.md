@@ -1,6 +1,6 @@
-# Welcome to {{hackweek}}!
+# Welcome to SnowEx Hackweek!
 
-We will be hosting {{hackweek}} as a virtual event during {{dates}}.
+We will be hosting SnowEx Hackweek as a virtual event during July 12 to 16, 2021.
 
 ![snow from iss](img/snow_from_iss.jpg)
 
@@ -12,4 +12,4 @@ In this website you will:
 
 {fa}`check,text-success mr-1`: review the hackweek [schedule](schedule)
 
-{fa}`check,text-success mr-1`: find out how you can submit an [application form](application) 
+## [Apply Here!](application) 
