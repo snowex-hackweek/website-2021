@@ -6,6 +6,6 @@ dependencies:
   - geopandas
   - ipyleaflet
   - jupyterlab>=3
-  - jupyter-book==0.10
+  - jupyter-book=0.10
   - rioxarray
   - pip
