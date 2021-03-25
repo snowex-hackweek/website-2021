@@ -5,7 +5,7 @@ This section contains everything you need to know about hackweek projects:
 * What are the [roles and responsibilities](project_roles.md) of hackweek project participants?
 * How to [initialize a project](project_initialization.md) within the hackweek Github Organization?
 * What are the [recommended GitHub workflows](example_workflow.md) for managing projects?
-* What are some [examples of past projects](2019_projects.md)?
+<!-- * What are some [examples of past projects](2019_projects.md)? -->
 
 ## Purpose of the projects:
 
@@ -21,9 +21,9 @@ Increasingly, research and software development is being conducted across groups
 
 ## How will the projects be conducted?
 
-* Participants have already posted initial ideas for projects in the #project_ideas channel. On Friday, June 12 we will begin the formation of preliminary teams of  (3-7 people) around project ideas. We will finalize the teams and project roles during our session on Monday, June 15th. Group "Hacking" begins immediately afterwards. 
+* Participants have already posted initial ideas for projects in the #project_ideas channel. On Friday, June 12 we will begin the formation of preliminary teams of  (3-7 people) around project ideas. We will finalize the teams and project roles during our session on Monday, June 15th. Group "Hacking" begins immediately afterwards.
 * each team will identify:
-  * a project lead, likely the person who pitched the idea, who has knowledge of the datasets and the specific problem to be explored. But roles can be assigned as the group decides to best fit skills and needs. 
+  * a project lead, likely the person who pitched the idea, who has knowledge of the datasets and the specific problem to be explored. But roles can be assigned as the group decides to best fit skills and needs.
   * a data science lead from the pool of CSI-2020 instructors who has expertise in the data tools and methods
 * once formed, each team will be guided through exercises to help narrow in on a set of tasks that are doable within the 5 days. A brief project outline will be posted to GitHub, following the "Project Guidelines" below.
 * On the mornings of June 16th, and 17th we will have a daily stand-up meeting to check-in on progress and challenges
@@ -31,7 +31,7 @@ Increasingly, research and software development is being conducted across groups
 
 ## What can I do to prepare in advance?
 
-* if you have a project idea already brewing, we encourage you to share that with participants on our #project_ideas channel. 
+* if you have a project idea already brewing, we encourage you to share that with participants on our #project_ideas channel.
 * feel free to explore various projects and initiate conversations. The goal is to gather as much information as you can to inform your decision about which team to join when we meet in person.
 * contact a CSI-2020 organizer if you would like assistance in assessing whether a project is well-scoped, or if you need help with a particular dataset.
 

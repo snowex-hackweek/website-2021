@@ -1,0 +1,1 @@
+FROM uwhackweek/snowex:latest

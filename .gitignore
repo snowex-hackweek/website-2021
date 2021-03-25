@@ -1,5 +1,6 @@
 # Jupyter Book things
 *_build
+.jupyter-server-log.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
