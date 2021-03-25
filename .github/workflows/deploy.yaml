@@ -19,7 +19,9 @@ jobs:
 
     - name: Build JupyterBook
       run: |
-        docker run -v $PWD:/home/jovyan uwhackweek/snowex:latest jb build book
+        pwd
+        ls
+        docker run -v ${{ github.workspace }}:/home/jovyan:rw uwhackweek/snowex:latest jb build book
 
     - name: Publish to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
