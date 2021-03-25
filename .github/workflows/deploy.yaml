@@ -18,9 +18,8 @@ jobs:
         docker images
 
     - name: Build JupyterBook
-      shell: bash -l {0}
       run: |
-        docker run -u 1000 -w /home/jovyan -v $PWD:/home/jovyan uwhackweek/snowex:latest jb build book
+        docker run -v $PWD:/home/jovyan uwhackweek/snowex:latest jb build book
 
     - name: Publish to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
