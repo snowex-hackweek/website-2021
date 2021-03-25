@@ -20,6 +20,9 @@ latex:
   latex_documents:
     targetname: book.tex
 
+launch_buttons:
+  binderhub_url: ''
+
 # Information about where the book exists on the web
 repository:
   url: https://github.com/snowex-hackweek/website
