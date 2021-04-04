@@ -77,7 +77,3 @@ _When you are ready to do more work, checkout another branch and repeat._
 Transferring and storing large amounts of data is expensive. Rather than each project team member downloading their own copy of the data, we encourage teams to have one member download the data to a shared project directory (and make sure the code to get the data is shared on the group's project repo) that everyone can access from the Hackweek's Pangeo JupyterHub.
 
 The file system can be accessed in the same manner as any other drive with a directory/file structure. The name of the file system is `/srv/shared/projects/`, and you should create a directory for your team's data (which may then also have subdirectories).
-
-
-----
-Adapted from https://github.com/ICESAT-2HackWeek/topohack/wiki/Git-workflow-for-team
