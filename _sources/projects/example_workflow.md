@@ -18,11 +18,11 @@ Navigate to your project directory:
 $ cd <project-repo-name> 
 ```
 
-Now, check in with your team: has there been any new work pushed to GitHub? If so, you will need to pull remote changes to your master branch:
+Now, check in with your team: has there been any new work pushed to GitHub? If so, you will need to pull remote changes to your main branch:
 
 ```
 $ git fetch
-$ git pull origin master:master
+$ git pull origin main:main
 ```
 
 Next, checkout your working branch. Use the ```-b``` option if you are beginning work and need to create a new branch:
@@ -41,16 +41,16 @@ $ git status #to see which files have been added or modified and are ready (stag
 $ git commit -am "brief description of your changes (commit message)"  
 $ git push origin branch_name  
 ```
-Complete pull request and merge with master via GitHub UI. 
+Complete pull request and merge with main via GitHub UI. 
 
 
 ## Clean up your local repository (after successful merge of pull request)
-Switch back to the master branch. 
+Switch back to the main branch. 
 ```
-$ git checkout master
+$ git checkout main
 ```
 
-Confirm that you are on the master branch. 
+Confirm that you are on the main branch. 
 ```
 $ git branch
 ```
@@ -65,7 +65,7 @@ You need to also delete the local version of your branch.
 $ git branch -d branch_name
 ```
 
-Finally, git pull all the latest changes (yours and others) to your local master branch. 
+Finally, git pull all the latest changes (yours and others) to your local main branch. 
 ```
 $ git pull
 ```

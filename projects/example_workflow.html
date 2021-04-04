@@ -349,9 +349,9 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd &lt;project-repo-name&gt; 
 </pre></div>
 </div>
-<p>Now, check in with your team: has there been any new work pushed to GitHub? If so, you will need to pull remote changes to your master branch:</p>
+<p>Now, check in with your team: has there been any new work pushed to GitHub? If so, you will need to pull remote changes to your main branch:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git fetch
-$ git pull origin master:master
+$ git pull origin main:main
 </pre></div>
 </div>
 <p>Next, checkout your working branch. Use the <code class="docutils literal notranslate"><span class="pre">-b</span></code> option if you are beginning work and need to create a new branch:</p>
@@ -368,15 +368,15 @@ $ git commit -am &quot;brief description of your changes (commit message)&quot;
 $ git push origin branch_name  
 </pre></div>
 </div>
-<p>Complete pull request and merge with master via GitHub UI.</p>
+<p>Complete pull request and merge with main via GitHub UI.</p>
 </div>
 <div class="section" id="clean-up-your-local-repository-after-successful-merge-of-pull-request">
 <h2>Clean up your local repository (after successful merge of pull request)<a class="headerlink" href="#clean-up-your-local-repository-after-successful-merge-of-pull-request" title="Permalink to this headline">¶</a></h2>
-<p>Switch back to the master branch.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout master
+<p>Switch back to the main branch.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout main
 </pre></div>
 </div>
-<p>Confirm that you are on the master branch.</p>
+<p>Confirm that you are on the main branch.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git branch
 </pre></div>
 </div>
@@ -388,7 +388,7 @@ $ git push origin branch_name
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git branch -d branch_name
 </pre></div>
 </div>
-<p>Finally, git pull all the latest changes (yours and others) to your local master branch.</p>
+<p>Finally, git pull all the latest changes (yours and others) to your local main branch.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git pull
 </pre></div>
 </div>
