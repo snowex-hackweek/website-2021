@@ -1,15 +1,16 @@
 # Basic git workflow for a project
 Here we suggest a basic git workflow for working on your group project. Combined with our example project template and good communication, this workflow should help minimize conflicts on your GitHub project repo.
 
-### First time only - clone your project into your local working environment 
+## First time only - clone your project into your local working environment 
  
 ```
-$ git clone https://github.com/ICESAT-2HackWeek/<project-repo-name>.git 
+$ git clone https://github.com/<hackweek-organization-name>/<project-repo-name>.git 
 ```
 
-Where the ```<project-repo-name>``` is the unique name of your project repository.
 
-### Each time you begin working
+Where the ```<hackweek-organization-name>``` is the name of our hackweek organization (in our case **{{ hackweek }}**), and the ```<project-repo-name>``` is the unique name of your project repository.
+
+## Each time you begin working
 
 Navigate to your project directory:
 
@@ -32,7 +33,7 @@ $ git checkout [-b] <branch-name>
 
 Here ```<branch-name>``` is an arbitrary name identifying this branch of work. 
 
-### Make changes or add new files locally and put them on GitHub
+## Make changes or add new files locally and put them on GitHub
 
 ```
 $ git add new_file #if adding a new file 
@@ -43,7 +44,7 @@ $ git push origin branch_name
 Complete pull request and merge with master via GitHub UI. 
 
 
-### Clean up your local repository (after successful merge of pull request)
+## Clean up your local repository (after successful merge of pull request)
 Switch back to the master branch. 
 ```
 $ git checkout master
