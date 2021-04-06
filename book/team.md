@@ -6,7 +6,7 @@
 :alt: picture of HP Marshall
 :class: bg-primary mb-1
 :width: 200px
-:align: left
+:align: center
 ```
 
 ## Jessica Lundquist
@@ -15,7 +15,7 @@
 :alt: picture of Jessica Lundquist
 :class: bg-primary mb-1
 :width: 200px
-:align: left
+:align: center
 ```
 
 ## Jane Koh
@@ -24,7 +24,7 @@
 :alt: picture of Jane Koh
 :class: bg-primary mb-1
 :width: 200px
-:align: left
+:align: center
 ```
 * *Affiliation*: eScience Institute
 * *Ask me about*: Zoom technical support
@@ -35,7 +35,7 @@
 :alt: picture of David Shean
 :class: bg-primary mb-1
 :width: 200px
-:align: left
+:align: center
 ```
 * *Affiliation*: UW Civil and Environmental Engineering
 * *Ask me about*:
@@ -52,7 +52,7 @@
 :alt: picture of Anthony Arendt
 :class: bg-primary mb-1
 :width: 200px
-:align: left
+:align: center
 ```
 * *Affiliation*: eScience & APL
 * *Ask me about*: team building, community software, administrative support
@@ -64,7 +64,7 @@
 :alt: picture of Scott Henderson
 :class: bg-primary mb-1
 :width: 200px
-:align: left
+:align: center
 ```
 * *Affiliation*: eScience & ESS
 * *Ask me about*:
