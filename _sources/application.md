@@ -11,4 +11,5 @@ Participant selection will be made with the goal of enhancing the diversity of o
 Our events are often over-subscribed so we ask that you ensure you can attend the majority of our sessions during July 12 to 16, 2021 before applying.
 
 
-## [**CLICK HERE**](https://docs.google.com/forms/d/e/1FAIpQLSfwxfLW9CYLZ1e5i9PSfroD_rM7O4ernI9SWOGHsLLyS52wYQ/viewform?usp=sf_link) to submit your application.
+## Application window has closed
+Thank you to all people that have applied for this year's event.
