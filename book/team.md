@@ -83,3 +83,13 @@
 	* Conda
 	* Git
 	* Oceanography
+
+## Micah Johnson
+
+<img src="https://m3works.io/images/micahjohnson.jpeg" alt="picture of Micah Johnson" width="300" height="300">
+
+* *Affiliation*: M3Works
+* *Ask me about*:
+	* Python
+	* PostGIS
+	* Git
