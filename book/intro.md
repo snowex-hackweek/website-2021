@@ -13,5 +13,3 @@ In this website you will:
 {fa}`check,text-success mr-1`: learn more about the amazing [organizing team](team) who have designed this event
 
 {fa}`check,text-success mr-1`: review the hackweek [schedule](schedule)
-
-## [Apply Here!](application) 
