@@ -9,9 +9,9 @@ https://snowex-hackweek.github.io/website
   3. Navigate to tutorial notebook you want to run: `cd website/book/tutorials/raster`
 
 ## Run tutorials on BinderHub
-[![badge](https://img.shields.io/static/v1.svg?logo=Jupyter&label=PangeoBinderAWS&message=us-west-2&color=orange)](https://aws-uswest2-binder.pangeo.io/v2/gh/snowex-hackweek/docker-image/main?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fsnowex-hackweek%252Fwebsite%26urlpath%3Dlab%252Ftree%252Fwebsite/book/tutorials%252F%26branch%3Dmain)
+[![badge](https://img.shields.io/static/v1.svg?logo=Jupyter&label=PangeoBinderAWS&message=us-west-2&color=orange)](https://aws-uswest2-binder.pangeo.io/v2/gh/snowex-hackweek/website/main?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fsnowex-hackweek%252Fwebsite%26urlpath%3Dlab%252Ftree%252Fwebsite/book/tutorials%252F%26branch%3Dmain)
 
-[![badge](https://img.shields.io/static/v1.svg?logo=Jupyter&label=MyBinder.org&message=gcp-central&color=blue)](https://gke.mybinder.org/v2/gh/snowex-hackweek/docker-image/main?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fsnowex-hackweek%252Fwebsite%26urlpath%3Dlab%252Ftree%252Fwebsite/book/tutorials%252F%26branch%3Dmain)
+[![badge](https://img.shields.io/static/v1.svg?logo=Jupyter&label=MyBinder.org&message=gcp-central&color=blue)](https://gke.mybinder.org/v2/gh/snowex-hackweek/website/main?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fsnowex-hackweek%252Fwebsite%26urlpath%3Dlab%252Ftree%252Fwebsite/book/tutorials%252F%26branch%3Dmain)
 
 ## Run tutorials locally
 If you have Docker installed on any machine you can also run tutorials:
