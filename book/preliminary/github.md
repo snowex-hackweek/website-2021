@@ -2,13 +2,13 @@
 
 ### What is Git/GitHub?
 
-[Git](https://git-scm.com/) is a popular version control system that is the foundation of most open source software development. You are not required to know Git in advance of this event, but come prepared to learn a lot about it! [GitHub](https:/github.com) is a hosting service for Git repositories, enabling us to share code across teams in a web environment.  
+[Git](https://git-scm.com/) is a popular version control system that is the foundation of most open source software development. You are not required to know Git in advance of this event, but come prepared to learn a lot about it! [GitHub](https://github.com) is a hosting service for Git repositories, enabling us to share code across teams in a web environment.  
 
 ### What if I do not have the `git` command on my local machine?
 
 If you don't have Git installed on you local machine, you can download the latest installer on [Git-SCM](https://git-scm.com). More help for the install process can be found in the [official Git documentation](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-### Why do I need a GitHub account? 
+### Why do I need a GitHub account?
 
 There are three reasons you are required to have a GitHub account for the hackweek:
 
@@ -44,7 +44,7 @@ Now, if you see "Private" to the right of your account, you will need to switch 
 
 ![private-setting](../img/public-github.png)
 
-The steps for doing this are also well documented on [this](https://help.github.com/en/articles/publicizing-or-hiding-organization-membership) GitHub help page. 
+The steps for doing this are also well documented on [this](https://help.github.com/en/articles/publicizing-or-hiding-organization-membership) GitHub help page.
 
 ### How will GitHub repositories be structured?
 
@@ -53,6 +53,3 @@ When you click on the "Repositories" tab in the [{{ hackweek.name }}]({{ hackwee
 ![repos-tab](../img/repos.png)
 
 Each repository is a container for a specific subset of material for this event. For example, we have a separate repository for each tutorial. There is a repository for the public-facing website you used to register for this event, and a repository for the wiki page. We'll also create new repositories for each project when we meet in person.
-
-
-

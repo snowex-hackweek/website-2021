@@ -1,0 +1,26 @@
+name: Test
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy-example-book:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Pull SnowEX Docker Image
+      run: |
+        docker pull uwhackweek/snowex:latest
+        docker images
+
+    - name: Build JupyterBook
+      run: |
+        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw uwhackweek/snowex:latest jb build book
+
+    - name: Check External Links
+      run: |
+        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw uwhackweek/snowex:latest jb build book --builder linkcheck
