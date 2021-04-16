@@ -1,0 +1,25 @@
+name: AddBinderBadge
+on:
+  pull_request:
+    types: [opened, reopened]
+jobs:
+  build-image-without-pushing:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout PR
+      uses: actions/checkout@v2
+
+    - name: Comment on PR with Binder link
+      uses: actions/github-script@v3
+      env:
+        BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          var BRANCH_NAME = process.env.BRANCH_NAME;
+          github.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `[![Binder](https://img.shields.io/static/v1.svg?logo=Jupyter&label=PangeoBinderAWS&message=us-west-2&color=orange)](https://aws-uswest2-binder.pangeo.io/v2/gh/snowex-hackweek/docker-image/main?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252F${context.repo.owner}%252F${context.repo.repo}%26urlpath%3Dlab%252Ftree%252Fwebsite/book/tutorials%252F%26branch%3D${BRANCH_NAME}) :point_left: Launch a binder notebook on this branch`
+          })
