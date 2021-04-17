@@ -2,11 +2,14 @@ name: Deploy
 
 on:
   push:
+    paths:
+      - 'book/**'
+      - '.github/workflows/deploy.yaml'
     branches:
       - main
 
 jobs:
-  deploy-example-book:
+  build-and-deploy:
     runs-on: ubuntu-20.04
 
     steps:

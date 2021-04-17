@@ -2,11 +2,14 @@ name: Test
 
 on:
   pull_request:
+    paths:
+      - 'book/**'
+      - '.github/workflows/test.yaml'
     branches:
       - main
 
 jobs:
-  deploy-example-book:
+  build-and-test:
     runs-on: ubuntu-20.04
 
     steps:
