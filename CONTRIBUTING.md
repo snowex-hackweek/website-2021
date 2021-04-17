@@ -3,44 +3,31 @@
 Contributions are welcome, and they are greatly appreciated! Every little bit
 helps, and credit will always be given.
 
-You can contribute in many ways:
+- Report bugs, request features or submit feedback as a [GitHub Issue](https://github.com/snowexhackweek/website/issues).
+- Make fixes, add content or improvements using [GitHub Pull Requests](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests)
 
-## Types of Contributions
+Ready to contribute? Here's a quick guide
 
-### Report Bugs, Request Features or Submit Feedback
-
-Report bugs as a [GitHub issue](https://github.com/uwhackweek/jupyterbook-template/issues).
-
-Look through the (https://github.com/executablebooks/cookiecutter-jupyter-book/issues) for bugs, feature requests, etc and feel free to contribute!
-
-## Get Started
-
-Ready to contribute? Here's how to set up `jupyterbook-template` for local development.
-
-1. Fork the `jupyterbook-template` repo on GitHub.
+1. Fork the `snowex-hackweek/website` repo on GitHub.
 2. Clone your fork locally and install requirements:
 
 ```sh
-git clone git@github.com:your_name_here/jupyterbook-template.git
-conda create -n jupyterbook-template python=3.7
-conda activate jupyterbook-template
-pip install -r requirements.txt
+git clone https://github.com/snowex-hackweek/website.git
+cd website
 ```
 
-3. Create a branch for local development:
+3. Create a branch to add your changes:
 
 ```sh
 git checkout -b name-of-your-bugfix-or-feature
 ```
 
-4. Make your desired changes, run tests, and push your branch to GitHub when you're ready:
+4. Make your desired changes, and push your branch to GitHub when you're ready:
 
 ```sh
-pytest
-black ./ --check
 git add .
 git commit -m "Your detailed description of your changes."
 git push origin name-of-your-bugfix-or-feature
 ```
 
-5. Open a pull request through the GitHub website.
+5. Open a pull request through the GitHub website: https://github.com/snowex-hackweek/website

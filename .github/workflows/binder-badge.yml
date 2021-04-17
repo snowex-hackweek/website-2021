@@ -3,7 +3,7 @@ on:
   pull_request_target:
     types: [opened, reopened]
 jobs:
-  build-image-without-pushing:
+  add-badge:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout PR

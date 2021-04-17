@@ -37,3 +37,4 @@ https://jupyterbook.org
 
 ## Contact
 * [Anthony Arendt](mailto:arendta@uw.edu)
+* [Scott Henderson](mailto:scottyh@uw.edu)
