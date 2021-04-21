@@ -1,0 +1,34 @@
+name: NetlifyPreview
+on: workflow_dispatch
+
+jobs:
+  add-preview:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout PR
+      uses: actions/checkout@v2
+
+    - name: Pull SnowEX Docker Image
+      run: |
+        docker pull uwhackweek/snowex:latest
+        docker images
+
+    - name: Build JupyterBook
+      run: |
+        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw uwhackweek/snowex:latest jb build book
+
+    - name: Deploy Website Preview
+      uses: nwtgck/actions-netlify@v1.1
+      with:
+        publish-dir: './book/_build/html'
+        production-branch: main
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        deploy-message: "Deploy from GitHub Actions"
+        enable-commit-comment: false
+        enable-pull-request-comment: true
+        overwrites-pull-request-comment: true
+        alias: deploy-preview-${{ github.event.number }}
+      env:
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      timeout-minutes: 1
