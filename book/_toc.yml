@@ -24,3 +24,4 @@
 - file: tutorials/index
   sections:
     - file: tutorials/raster/intro-ipyleaflet
+    - file: tutorials/sar/sar-tutorial
