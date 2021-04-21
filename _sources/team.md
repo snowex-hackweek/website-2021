@@ -2,41 +2,22 @@
 
 ## HP Marshall
 
-```{image} https://d25vtythmttl3o.cloudfront.net/uploads/sites/153/2010/07/hpmarshall.jpg
-:alt: picture of HP Marshall
-:class: bg-primary mb-1
-:width: 200px
-:align: center
-```
+<img src="https://d25vtythmttl3o.cloudfront.net/uploads/sites/153/2010/07/hpmarshall.jpg" alt="picture of HP Marshall" width="300" height="300">
 
 ## Jessica Lundquist
-
-```{image} img/JessicaLundquist.png
-:alt: picture of Jessica Lundquist
-:class: bg-primary mb-1
-:width: 200px
-:align: center
-```
+<img src= 'img/JessicaLundquist.png' alt="picture of Jessica Lundquist" width="300" height="300">
 
 ## Jane Koh
 
-```{image} https://icesat-2hackweek.github.io/assets/images/JaneKoh.jpg
-:alt: picture of Jane Koh
-:class: bg-primary mb-1
-:width: 200px
-:align: center
-```
+<img src="https://icesat-2hackweek.github.io/assets/images/JaneKoh.jpg" alt="picture of Jane Koh" width="250" height="300">
+
 * *Affiliation*: eScience Institute
 * *Ask me about*: Zoom technical support
 
 ## David Shean
 
-```{image} https://geohackweek.github.io/ghw2017/images/1103530.jpg
-:alt: picture of David Shean
-:class: bg-primary mb-1
-:width: 200px
-:align: center
-```
+<img src="https://geohackweek.github.io/ghw2017/images/1103530.jpg" alt="picture of David Shean" width="300" height="300">
+
 * *Affiliation*: UW Civil and Environmental Engineering
 * *Ask me about*:
 	* Geospatial data analysis
@@ -48,24 +29,16 @@
 
 ## Anthony Arendt
 
-```{image} https://geohackweek.github.io/ghw2017/images/4993098.jpeg
-:alt: picture of Anthony Arendt
-:class: bg-primary mb-1
-:width: 200px
-:align: center
-```
+<img src="https://geohackweek.github.io/ghw2017/images/4993098.jpeg" alt="picture of Anthony Arendt" width="300" height="300">
+
 * *Affiliation*: eScience & APL
-* *Ask me about*: team building, community software, administrative support
+* *Ask me about*: databases, team building, community software, administrative support
 
 
 ## Scott Henderson
 
-```{image} https://avatars2.githubusercontent.com/u/3924836?s=460&v=4
-:alt: picture of Scott Henderson
-:class: bg-primary mb-1
-:width: 200px
-:align: center
-```
+<img src="https://avatars2.githubusercontent.com/u/3924836?s=460&v=4" alt="picture of Scott Henderson" width="300" height="300">
+
 * *Affiliation*: eScience & ESS
 * *Ask me about*:
 	* Python
