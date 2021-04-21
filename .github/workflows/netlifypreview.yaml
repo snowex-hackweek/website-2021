@@ -1,8 +1,9 @@
 name: NetlifyPreview
-on: workflow_dispatch
+on: pull_request
 
 jobs:
   add-preview:
+    environment: production
     runs-on: ubuntu-latest
     steps:
     - name: Checkout PR
