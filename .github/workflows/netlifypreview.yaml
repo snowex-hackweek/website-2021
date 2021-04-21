@@ -1,6 +1,5 @@
 name: NetlifyPreview
-on:
-  pull_request_target:
+on: workflow_dispatch
 
 jobs:
   add-preview:
