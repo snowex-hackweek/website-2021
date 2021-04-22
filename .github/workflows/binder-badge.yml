@@ -1,7 +1,8 @@
 name: AddBinderBadge
 on:
   pull_request_target:
-    types: [opened, reopened]
+    # since we're using nbgitpuller, only create the badge when PR opened
+    types: [opened]
     paths:
       - 'book/**'
       - '.github/workflows/binder-badge.yml'
