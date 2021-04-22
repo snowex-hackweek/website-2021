@@ -2,6 +2,10 @@ name: AddBinderBadge
 on:
   pull_request_target:
     types: [opened, reopened]
+    paths:
+      - 'book/**'
+      - '.github/workflows/binder-badge.yml'
+      - '.binder'
 jobs:
   add-badge:
     runs-on: ubuntu-latest
