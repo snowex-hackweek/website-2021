@@ -22,6 +22,7 @@ jobs:
         github-token: ${{secrets.GITHUB_TOKEN}}
         script: |
           var BRANCH_NAME = process.env.BRANCH_NAME;
+          var CONTENT_REPO = process.env.CONTENT_REPO;
           github.issues.createComment({
             issue_number: context.issue.number,
             owner: context.repo.owner,
