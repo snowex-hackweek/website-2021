@@ -22,8 +22,15 @@ jobs:
 
     - name: Build JupyterBook
       run: |
-        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw uwhackweek/snowex:latest jb build book
+        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw uwhackweek/snowex:latest jb build book --warningiserror --keep-going
 
     - name: Check External Links
       run: |
         docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw uwhackweek/snowex:latest jb build book --builder linkcheck
+
+    - name: Save Build
+      uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: book/_build/
+

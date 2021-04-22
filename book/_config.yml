@@ -9,11 +9,17 @@ parse:
   myst_substitutions:
     hackweek: snowex-hackweek
     dates: July 12 to 16, 2021
+    github_org_url: https://github.com/snowex-hackweek
+    jupyterhub_url: https://snowex.hackweek.io
+    contact_email: uwhackweek@github.com
+    
+    
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
+  allow_errors: false
 
 # Define the name of the latex output file for PDF builds
 latex:

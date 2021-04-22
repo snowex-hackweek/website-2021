@@ -20,6 +20,7 @@ jobs:
         docker pull uwhackweek/snowex:latest
         docker images
 
+    # NOTE: --warningiserror not used here, so that whatever does work is rendered
     - name: Build JupyterBook
       run: |
         docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw uwhackweek/snowex:latest jb build book

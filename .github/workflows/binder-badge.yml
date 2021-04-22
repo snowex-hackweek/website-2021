@@ -4,7 +4,7 @@ on:
     # since we're using nbgitpuller, only create the badge when PR opened
     types: [opened]
     paths:
-      - 'book/**'
+      - 'book/tutorials/**'
       - '.github/workflows/binder-badge.yml'
       - '.binder'
 jobs:
