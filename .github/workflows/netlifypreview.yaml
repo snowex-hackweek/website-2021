@@ -1,13 +1,19 @@
 name: NetlifyPreview
-on: pull_request
+
+on: pull_request_target
 
 jobs:
   add-preview:
-    environment: production
     runs-on: ubuntu-latest
+    # This workflow accesses secrets and checks out a PR, so only run if labelled
+    # https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
+    if: contains(github.event.pull_request.labels.*.name, 'preview')
+
     steps:
     - name: Checkout PR
       uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
 
     - name: Pull SnowEX Docker Image
       run: |
