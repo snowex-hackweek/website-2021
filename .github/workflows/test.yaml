@@ -22,7 +22,7 @@ jobs:
 
     - name: Build JupyterBook
       run: |
-        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw uwhackweek/snowex:latest jb build book --warningiserror 
+        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw uwhackweek/snowex:latest jb build book --warningiserror --keep-going
 
     - name: Check External Links
       run: |

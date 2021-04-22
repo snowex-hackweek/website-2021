@@ -1,15 +1,15 @@
 # JupyterHub Connection
 
-### Why are we using a shared cloud environment?
+## Why are we using a shared cloud environment?
 
 Teaching software to a diverse group of participants, each with different computers and operating systems, can be challenging. As you'll learn in the next lesson, there are specific ways to configure our software for the tutorials to be successful, so it takes time to get everyone set up consistently. Our solution to this is to give everyone access to a cloud computing environment that is pre-configured for the specific software we will deploy. This cloud computing instance can be accessed from any web browser, which eliminates the need for configuring each person's individual computer. 
 
 We will encourage you to use our shared resources for all the tutorials, and you can optionally use this for your projects as well. We also hope you will practice installing Python libraries locally on your laptop so that you can continue working after leaving our event (see our next lesson for details).
 
 
-### How do I access the shared cloud environment?
+## How do I access the shared cloud environment?
 
-Access to our shared cloud environment is easy. Just click on [{{ hackweek.pangeo_url }}]({{ hackweek.pangeo_url }}).
+Access to our shared cloud environment is easy. Just click on [{{ jupyterhub_url }}]({{ jupyterhub_url }}).
 
 ![pangeo-opening](../img/pangeo-opening.png)
 
@@ -26,7 +26,7 @@ It will take a little bit of time for this to load - be patient! Once things are
 ![jupyterlab](../img/jupyterlab.png)
 
 
-### What is Pangeo and how is this system configured?
+## What is Pangeo and how is this system configured?
 
 [Pangeo](https://pangeo.io) is a community of researchers building open, reproducible and scalable scientific software tools. Several of us are involved in projects with NASA and NSF to build prototype systems to enable data discovery in the era of expanding data volume and complexity.
 
@@ -34,7 +34,7 @@ It will take a little bit of time for this to load - be patient! Once things are
 
 For this hackweek, we have created virtual computing instances on Amazon Web Services that can be deployed on demand in a parallel computing environment. We use JupyterHub as a way to give a Jupyter Notebook server to each person in a group. [These slides](https://www.slideshare.net/willingc/jupyterhub-a-thing-explainer-overview?from_action=save) give a nice overview of what JupyterHub is all about. We use JupyterHub in an educational setting because it enables us to quickly begin working with code without spending time to get the necessary libraries and dependencies set up on everyone's individual computers.
 
-### How do I get my code in and out of Pangeo?
+## How do I get my code in and out of Pangeo?
 
 When you start your own instance of Pangeo you will have access to your own virtual drive space. No other Pangeo users will be able to see or access your data files. You can easily upload files to your virtual drive space and save files from Pangeo back to another location, such as GitHub or your own local laptop drive.
 
@@ -72,7 +72,7 @@ Simple, example GitHub/git/local-workspace workflows for getting a tutorial star
 <br>
 <br>
 
-### How do I end my Pangeo session? Will I lose all of my work?
+## How do I end my Pangeo session? Will I lose all of my work?
 
 When you are finished working for the day it is important to explicitly log out of your Pangeo session. The reason for this is it will save us a bit of money! When you keep a session active it uses up AWS resources and keeps a series of virtual machines deployed. 
 
