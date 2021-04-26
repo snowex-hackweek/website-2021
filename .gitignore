@@ -1,6 +1,10 @@
 # Jupyter Book things
+.bash_history
 *_build
 .jupyter-server-log.txt
+.config/
+.jupyter/
+.local/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
