@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+env:
+  DOCKER_IMAGE: uwhackweek/snowex:latest
+
 jobs:
   build-and-test:
     runs-on: ubuntu-20.04
@@ -15,22 +18,21 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Pull SnowEX Docker Image
+    - name: Pull Docker Image
       run: |
-        docker pull uwhackweek/snowex:latest
+        docker pull $DOCKER_IMAGE
         docker images
 
     - name: Build JupyterBook
       run: |
-        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw uwhackweek/snowex:latest jb build book --warningiserror --keep-going
+        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw $DOCKER_IMAGE jb build book --warningiserror --keep-going
 
     - name: Check External Links
       run: |
-        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw uwhackweek/snowex:latest jb build book --builder linkcheck
+        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw $DOCKER_IMAGE jb build book --builder linkcheck
 
     - name: Save Build
       uses: actions/upload-artifact@v2
       with:
         name: build
         path: book/_build/
-
