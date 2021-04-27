@@ -1,5 +1,13 @@
 # Quickstart for tutorial development
 
+1. [Set up your GitHub Fork](#Set-up-your-GitHub-Fork)
+1. [Create a new tutorial notebook](#Create-a-new-tutorial-notebook)
+1. [Test your tutorial](#Test-your-tutorial)
+1. [Add your tutorial to the hackweek book](#Add-your-tutorial-to-the-hackweek-book)
+1. [Tutorial design suggestions](#Tutorial-design-suggestions)
+1. [Troubleshooting](#Troubleshooting)
+1. [Local development](#Local-development)
+
 This document contains brief step-by-step instructions for creating tutorial content.
 
 The goal is to collaboratively create consistent and reproducible content for the hackweek including code examples to accelerate participant learning and serve as a foundation for projects. In the end we will create a public resource with a citable DOI so that all tutorial authors receive credit for the effort!
@@ -47,8 +55,20 @@ git checkout -b example-tutorial
 
 <img width="1237" alt="Screen Shot 2021-04-21 at 7 19 36 PM" src="https://user-images.githubusercontent.com/3924836/115539871-d67fb600-a2e0-11eb-94d5-bee7242438e4.png">
 
+## Test your tutorial
+
+Before creating pull requests and commiting code to GitHub it is helpful to test that things are working correctly.
+
+1. To ensure your notebook renders correctly in the JupyterBook you can run the following command from a terminal:
+`jb build book --warningiserror --keep-going`
+
+1. To check all that all your external links resolve to a valid URL:
+`jb build book --builder linkcheck`
+
 
 ## Add your tutorial to the hackweek book
+
+Once you are satisfied with your tutorial, open up a pull request to add it to the website! Don't worry if it's not perfect, you can also make changes later on.
 
 1. Commit your notebook and push to your fork
 ```
@@ -75,7 +95,6 @@ git config --global credential.helper 'cache --timeout 7200'
 <img width="1326" alt="Screen Shot 2021-04-21 at 8 58 30 PM" src="https://user-images.githubusercontent.com/3924836/115543543-d1bd0100-a2e4-11eb-8931-5546e5cfe6c8.png">
 
 
-
 ## Tutorial design suggestions
 
 For general guidelines on developing tutorial content refer to our [general eScience Hackweek Support Website](https://uwhackweek.github.io/hackweeks-as-a-service/tutorials.html).
@@ -89,3 +108,22 @@ Increasingly there are ways to access data remotely in a streaming fashion so th
 
 *I want to use a Python package that isn't installed on the JupyterHub*
 The first cell in your notebook can include a command like `!conda install mypackage` or `!pip install mypackage`. Alternatively, the default environment is defined here https://github.com/snowex-hackweek/docker-image, you'll have to open an issue or create a pull request there to add the package you need.
+
+## Local development
+
+We *highly* recommend developing the tutorial on the hackweek JupyterHub because this 1. Tests out our computational infrastructure before the event and 2. Guarantees that your tutorial notebook runs as expected for other hackweek participants. Nevertheless some people prefer to work on a personal laptop. For this, we *highly* recommend running the same docker container that is used on the JupyterHub, which prevents software environment discrepancies that can arise from running on different operating systems or installing slightly different Python packages with conda. 
+
+1. If you don't have it installed already you need to [install Docker](https://docs.docker.com/get-docker/)
+
+1. From the root of the website repository in a terminal run `docker compose up`. This will start a JupyterLab session and print a URL  (paste the one that starts with `http://127.0.0.1:8888/lab?token=`) into your web browser:
+```
+pangeo-notebook_1  | [C 2021-04-26 07:58:28.637 ServerApp] 
+pangeo-notebook_1  |     
+pangeo-notebook_1  |     To access the server, open this file in a browser:
+pangeo-notebook_1  |         file:///home/jovyan/.local/share/jupyter/runtime/jpserver-19-open.html
+pangeo-notebook_1  |     Or copy and paste one of these URLs:
+pangeo-notebook_1  |         http://536c5cf02ae4:8888/lab?token=52d632a110041633d97b7a8ecd751bafcd7cab54e5940628
+pangeo-notebook_1  |      or http://127.0.0.1:8888/lab?token=52d632a110041633d97b7a8ecd751bafcd7cab54e5940628
+```
+
+1. Once you've started JupyterLab you can create new notebooks and run all the commands as described earlier in this document. After you run `jb build book` Simply open the `index.html` file to preview the rendered HTML version of your tutorial (e.g. `/Users/scott/GitHub/uwhackweek/snowexhackweek/website/book/_build/html`)
