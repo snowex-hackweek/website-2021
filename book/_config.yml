@@ -12,8 +12,6 @@ parse:
     github_org_url: https://github.com/snowex-hackweek
     jupyterhub_url: https://snowex.hackweek.io
     contact_email: uwhackweek@github.com
-    
-    
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
