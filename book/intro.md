@@ -13,3 +13,5 @@ In this website you will:
 {fa}`check,text-success mr-1`: learn more about the amazing [organizing team](team) who have designed this event
 
 {fa}`check,text-success mr-1`: review the hackweek [schedule](schedule)
+
+Learn more about hackweeks hosted by the [University of Washington eScience Institute](https://uwhackweek.github.io/hackweeks-as-a-service/intro.html), or check out our publication describing the hackweek educational model {cite:p}`Huppenkothen2018`.

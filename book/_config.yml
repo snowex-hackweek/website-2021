@@ -34,10 +34,18 @@ repository:
   url: https://github.com/snowex-hackweek/website
   path_to_book: book
   branch: main
+  
+# Bibliography
+bibtex_bibfiles:
+  - references.bib
+sphinx:
+  config:
+    bibtex_reference_style: author_year  # or label, super, \supercite
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
+  use_edit_page_button: true
   use_issues_button: true
   use_repository_button: true
   google_analytics_id: G-QM84T4SB76

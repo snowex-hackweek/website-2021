@@ -24,3 +24,5 @@
 - file: tutorials/index
   sections:
     - file: tutorials/raster/intro-ipyleaflet
+- file: glossary
+- file: bibliography
