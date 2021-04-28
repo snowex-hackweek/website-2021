@@ -17,6 +17,10 @@
 
 GRD
   "Ground range detected". Common real-valued georeferenced SAR amplitude product.
+  
+[Hackweek](https://uwhackweek.github.io/hackweeks-as-a-service/intro.html)
+  Participant-driven events that strive to create welcoming spaces to learn new things, 
+  build community and gain hands-on experience with collaboration and team science.
 
 InSAR 
   "Interferometric Synthetic Aperture Radar". Method to create relative phase change
