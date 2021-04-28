@@ -179,11 +179,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="jupyterhub_fork_clone.html">
-     JupyterHub Connection
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="earthdata.html">
      Earthdata Login
     </a>
@@ -205,6 +200,16 @@
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../bibliography.html">
+   Bibliography
+  </a>
  </li>
 </ul>
 
@@ -269,7 +274,9 @@
             href="https://github.com/snowex-hackweek/website/issues/new?title=Issue%20on%20page%20%2Fpreliminary/conda.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
+        <a class="edit-button" href="https://github.com/snowex-hackweek/website/edit/main/book/preliminary/conda.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
 </div>
 
@@ -355,20 +362,23 @@
 </div>
 <div class="section" id="python-software">
 <h2>Python Software<a class="headerlink" href="#python-software" title="Permalink to this headline">¶</a></h2>
-<p>Python software is distributed as a series of <em>libraries</em> that are called within your code to perform certain tasks. There are many different collections, or <em>distributions</em> of Python software. Generally you install a specific distribution of Python and then add additional libraries as you need them. There are also several different <em>versions</em> of Python. The two main versions right now are 2.7 and 3.7, although Python 2.7 will not be supported past 2020. Some libraries only work with specific versions of Python.</p>
-<p>So even though Python is one of the most adaptable, easy-to-use software systems, you can see there are still complexities to work out and potential challenges when delivering content to a large group. Therefore we have a number of different ways that we are trying to simplify this process to maximize your learning during the hackweek.</p>
-<p>We also provide instructions for using <a class="reference external" href="https://www.continuum.io">Anaconda</a>, which is our recommended Python distribution, for installing and working with Python on your local computer. We can assist in setting up “conda” environments that will simplify the gathering of Python libraries and version specific to the tutorial you are working on.</p>
+<p>Python software is distributed as a series of <em>libraries</em> that are called within your code to perform certain tasks. There are many different collections, or <em>distributions</em> of Python software. Generally you install a specific distribution of Python and then add additional libraries as you need them. There are also several different <em>versions</em> of Python. Support for Python 2 ended in 2020, so you should use Python&gt;=3.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you open a terminal on your computer, chances are if you type ‘python’ you will find it is already installed! But it is best-practice to create separate environments or ‘virtual environments’ to not interfere with existing installations. You can use <a class="reference internal" href="../glossary.html#term-Conda"><span class="xref std std-term">conda</span></a> for this.</p>
+</div>
 </div>
 <div class="section" id="what-is-conda">
 <h2>What is Conda?<a class="headerlink" href="#what-is-conda" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://conda.pydata.org/docs/"><strong>Conda</strong></a> is an <strong>open source <code class="docutils literal notranslate"><span class="pre">package</span></code> and <code class="docutils literal notranslate"><span class="pre">environment</span></code> management system</strong> for installing multiple versions of software packages, their dependencies and switching easily between them. Conda works with many programming languages but is very popular in the python community. It works on Linux, OS X and Windows.</p>
+<p><a class="reference external" href="http://conda.pydata.org/docs/"><strong>Conda</strong></a> is an <strong>open source <code class="docutils literal notranslate"><span class="pre">package</span></code> and <code class="docutils literal notranslate"><span class="pre">environment</span></code> management system</strong> for installing multiple versions of software packages, their dependencies and switching easily between them. Conda works with many programming languages but is very popular in the Python community. It works on Linux, OS X and Windows.</p>
 </div>
 <div class="section" id="installing-miniconda">
 <h2>Installing Miniconda<a class="headerlink" href="#installing-miniconda" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://conda.pydata.org/miniconda.html">Miniconda</a> is a command line tool which contains only Python and essential packages. We recommend installing it because it is the easiest way to use conda for Python environment management without taking up too much space.</p>
 <div class="section" id="windows">
 <h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 <p>Click <a class="reference external" href="http://conda.pydata.org/miniconda.html">here</a> to download the proper installer for your Windows platform (64 bits).
-We recommend to download the Python 3 version of Miniconda. You can still create Python 2 environments using the Python 3 version of Miniconda.</p>
+We recommend to download the Python 3 version of Miniconda.</p>
 <p>When installing, you will be asked if you wish to make the Anaconda Python your default Python for Windows.
 If you do not have any other installation that is a good option. If you want to keep multiple versions of python on your machine (e.g. ESRI-supplied python, or 64 bit versions of Anaconda), then don’t select the option to modify your path or modify your windows registry settings.</p>
 </div>
@@ -388,10 +398,7 @@ conda update conda --yes
 </div>
 <div class="section" id="installing-anaconda-optional">
 <h3>Installing Anaconda (Optional)<a class="headerlink" href="#installing-anaconda-optional" title="Permalink to this headline">¶</a></h3>
-<p>!!! note “If you don’t want all of Anaconda”
-If you don’t have time or disk space for the entire distribution do not install Anaconda. Install only <a class="reference external" href="http://conda.pydata.org/miniconda.html">Miniconda</a>, a bootstrap version of Anaconda, which contains only Python, essential packages, and conda. We will provide an environment file to install all the packages necessary for the hackweek.*</p>
-<p><a class="reference external" href="https://www.anaconda.com/distribution/">Anaconda</a> is a data science platform that comes with a lot of packages. At its core, Anaconda uses the conda package management system.</p>
-<p>The list of packages included can be found <a class="reference external" href="https://docs.anaconda.com/anaconda/packages/pkg-docs"><em>here</em></a>.</p>
+<p><a class="reference external" href="https://www.anaconda.com/distribution/">Anaconda</a> is a data science platform that comes with a lot of packages. At its core, Anaconda uses the conda package management system. The list of packages included can be found <a class="reference external" href="https://docs.anaconda.com/anaconda/packages/pkg-docs"><em>here</em></a>.</p>
 <ol class="simple">
 <li><p>To install Anaconda, please click on the link below for your operating system, and follow the instructions on the <a class="reference external" href="https://www.anaconda.com/download/">site</a>.</p></li>
 <li><p>Once Anaconda installation step is finished run <code class="docutils literal notranslate"><span class="pre">python</span></code> in the command line to test if Anaconda is installed correctly. <strong>Note: For windows, please use the Anaconda prompt as the command line. It should be installed with your installation of Anaconda</strong>.
@@ -405,11 +412,7 @@ Python <span class="m">3</span>.7.3<span class="p">|</span>Anaconda custom <span
 </div>
 <div class="section" id="installing-python">
 <h3>Installing Python<a class="headerlink" href="#installing-python" title="Permalink to this headline">¶</a></h3>
-<p>We will be using Python 3 during the week (either will work). Since Anaconda (on Linux) expects you to work in the <code class="docutils literal notranslate"><span class="pre">bash</span></code> shell, if this is not already your default shell, you need to set it to be so (use the <code class="docutils literal notranslate"><span class="pre">chsh</span> <span class="pre">-s</span> <span class="pre">/bin/bash</span></code> command to change your default shell to bash) or just run an instance of bash from the command line before issuing “Conda” commands (<code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code> or where it is located on your system).</p>
-<p>If you are already familiar with Python 2, you can take a look at the syntax differences <a class="reference external" href="http://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html">here</a>, but the main point to remember is to put the print statements in parentheses:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
+<p>We will be using Python 3 during the week. Since Anaconda (on Linux) expects you to work in the <code class="docutils literal notranslate"><span class="pre">bash</span></code> shell, if this is not already your default shell, you need to set it to be so (use the <code class="docutils literal notranslate"><span class="pre">chsh</span> <span class="pre">-s</span> <span class="pre">/bin/bash</span></code> command to change your default shell to bash), then you can create an isolated Python environment with the following commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda create -n py37 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7
 </pre></div>
 </div>
