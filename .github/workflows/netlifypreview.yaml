@@ -2,9 +2,12 @@ name: NetlifyPreview
 
 on: pull_request_target
 
+env:
+  DOCKER_IMAGE: uwhackweek/snowex:latest
+
 jobs:
   add-preview:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     # This workflow accesses secrets and checks out a PR, so only run if labelled
     # https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
     if: contains(github.event.pull_request.labels.*.name, 'preview')
@@ -17,13 +20,13 @@ jobs:
 
     - name: Pull SnowEX Docker Image
       run: |
-        docker pull uwhackweek/snowex:latest
+        docker pull $DOCKER_IMAGE:latest
         docker images
 
     # NOTE: --warningiserror not used here, so that whatever does work is rendered
     - name: Build JupyterBook
       run: |
-        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw uwhackweek/snowex:latest jb build book
+        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw $DOCKER_IMAGE:latest jb build book
 
     - name: Deploy Website Preview
       uses: nwtgck/actions-netlify@v1.1

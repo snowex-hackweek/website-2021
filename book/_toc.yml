@@ -19,8 +19,9 @@
     - file: preliminary/conda
     - file: preliminary/github
     - file: preliminary/jupyterhub
-    - file: preliminary/jupyterhub_fork_clone
     - file: preliminary/earthdata
 - file: tutorials/index
   sections:
     - file: tutorials/raster/intro-ipyleaflet
+- file: glossary
+- file: bibliography
