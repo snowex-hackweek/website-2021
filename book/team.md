@@ -81,4 +81,11 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Ask me about:* SnowEx Database, PostGIS
 ---
 
-````
+**Joachim Meyer**
+^^^
+<img src="https://avatars.githubusercontent.com/u/178649?v=4" alt="picture of Micah Johnson" width="200" height="200">
++++
+*Affiliations:* University of Utah
+
+*Ask me about:* Python, Git, GDAL, PDAL
+---
