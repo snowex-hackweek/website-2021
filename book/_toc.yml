@@ -27,6 +27,7 @@
     - file: tutorials/index
       sections:
         - file: tutorials/jupyter
+        - file: tutorials/core-datasets/core-datasets-tutorial
         # Tutorial can be a single notebook
         - file: tutorials/raster/intro-ipyleaflet
         # Or folder with multiple notebooks
