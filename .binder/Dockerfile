@@ -1,1 +1,1 @@
-FROM uwhackweek/snowex:2021.04.28
+FROM uwhackweek/snowex:2021.05.03
