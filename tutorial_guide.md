@@ -7,6 +7,7 @@
 1. [Tutorial design suggestions](#Tutorial-design-suggestions)
 1. [Troubleshooting](#Troubleshooting)
 1. [Local development](#Local-development)
+1. [Pull Request collaboration](#Pull-request-collaboration)
 
 This document contains brief step-by-step instructions for creating tutorial content.
 
@@ -109,6 +110,18 @@ Increasingly there are ways to access data remotely in a streaming fashion so th
 *I want to use a Python package that isn't installed on the JupyterHub*
 The first cell in your notebook can include a command like `!conda install mypackage` or `!pip install mypackage`. Alternatively, the default environment is defined here https://github.com/snowex-hackweek/docker-image, you'll have to open an issue or create a pull request there to add the package you need.
 
+*I'd like to update my forked website to be up-to-date with the snowex website*
+After you fork the snowex-hackweek/website repository your work will become dated as new changes are integrated into the website. If you want these new changes locally while working on adding new tutorials for example, you'll have to follow [GitHub's documentation on 'syncing your fork with the upstream repository'](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork). In brief, the sequence of commands is:
+```
+git remote add upstream https://github.com/snowex-hackweek/website.git
+git fetch upstream
+git checkout main
+git merge upstream/main
+# push local changes *to your fork*:
+git push 
+```
+
+
 ## Local development
 
 We *highly* recommend developing the tutorial on the hackweek JupyterHub because this 1. Tests out our computational infrastructure before the event and 2. Guarantees that your tutorial notebook runs as expected for other hackweek participants. Nevertheless some people prefer to work on a personal laptop. For this, we *highly* recommend running the same docker container that is used on the JupyterHub, which prevents software environment discrepancies that can arise from running on different operating systems or installing slightly different Python packages with conda. 
@@ -127,3 +140,31 @@ pangeo-notebook_1  |      or http://127.0.0.1:8888/lab?token=52d632a110041633d97
 ```
 
 1. Once you've started JupyterLab you can create new notebooks and run all the commands as described earlier in this document. After you run `jb build book` Simply open the `index.html` file to preview the rendered HTML version of your tutorial (e.g. `/Users/scott/GitHub/uwhackweek/snowexhackweek/website/book/_build/html`)
+
+
+## Pull Request collaboration
+
+You might want to iterate on a Pull Request (PR) or have multiple people working on different aspects of a tutorial (for example two separate notebooks). Once you open a Pull Request, it exists as a publically-accessible "branch" of the project so that it is easy to collaborate with others and even switch back and forth between different branches of a project. The easiest way to accomplish this switching it to use GitHub's command line interface (CLI) tool [GitHub CLI](https://cli.github.com). This is a command line interface to accomplish common workflows on GitHub (like checking out pull request code locally). 
+
+1. Open a terminal on JupyterHub and configure the GitHub CLI:
+```
+gh auth login
+# NOTE: use all the defaults except for entering your 'personal access token' instead of web login
+```
+<img width="1330" alt="Screen Shot 2021-05-04 at 2 50 04 PM" src="https://user-images.githubusercontent.com/3924836/116962422-403c8e80-ace9-11eb-9beb-252848e08030.png">
+
+2. Go to the repository Pull Requests tab and find the one you want to work with
+<img width="1091" alt="Screen Shot 2021-05-04 at 2 47 40 PM" src="https://user-images.githubusercontent.com/3924836/116962552-9a3d5400-ace9-11eb-8838-7cc78e5dcbb0.png">
+
+3. Back in the terminal check out the pull request:
+```
+gh pr checkout 22
+git status
+# On branch core-datasets-tutorial
+# nothing to commit, working tree clean
+```
+Now if you make changes and commit code, it will be pushed to the PR branch you've checkout out. If you want to go back to the 'main' branch (which is what is rendered on the public website), you can go back to that branch with `git checkout main`. Whenever in doubt of which branch you're currently working on `git status` will report the current branch.
+
+
+
+
