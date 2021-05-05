@@ -1,6 +1,8 @@
 name: NetlifyPreview
 
-on: workflow_dispatch
+on:
+  label:
+    types: [created]
 
 env:
   DOCKER_IMAGE: uwhackweek/snowex:latest
@@ -9,9 +11,8 @@ jobs:
   add-preview:
     runs-on: ubuntu-20.04
     # This workflow accesses secrets and checks out a PR, so only run if labelled
-    # Uncomment if using 'on: pull_request_target'
     # https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
-    # if: contains(github.event.pull_request.labels.*.name, 'preview')
+    if: contains(github.event.pull_request.labels.*.name, 'preview')
 
     steps:
     - name: Checkout PR
