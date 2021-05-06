@@ -12,6 +12,21 @@ env:
   DOCKER_IMAGE: uwhackweek/snowex:latest
 
 jobs:
+  quality-control:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    # NOTE: this isn't a comprehensive spellcheck, just common typos
+    - name: Spellcheck
+      uses: codespell-project/actions-codespell@master
+      with:
+        check_filenames: true
+        check_hidden: true
+        only_warn: true
+
+        
   build-and-test:
     runs-on: ubuntu-20.04
 
