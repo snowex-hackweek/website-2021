@@ -24,7 +24,7 @@ Then, click on the big green button and then answer a few required questions. Be
 
 ## Why are we joining a GitHub Organization?
 
-GitHub organizations are a convenient way for teams to get all content relevant to a specific project our workshop into one place. By having everything in one central location you will spend less time searching for hackweek content. GitHub organizations have 'teams' that offer simple ways to provide respository access to groups of people, rather than individuals.
+GitHub organizations are a convenient way for teams to get all content relevant to a specific project our workshop into one place. By having everything in one central location you will spend less time searching for hackweek content. GitHub organizations have 'teams' that offer simple ways to provide repository access to groups of people, rather than individuals.
 
 We have created a GitHub organization called [{{ hackweek }}]({{ github_org_url}}). For security purposes you can only join the organization by invitation. Here are the steps:
 
