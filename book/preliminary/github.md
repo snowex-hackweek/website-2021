@@ -28,9 +28,8 @@ GitHub organizations are a convenient way for teams to get all content relevant 
 
 We have created a {{ hackweek }} GitHub organization ({{ github_org_url}}). For security purposes you can only join the organization by invitation. Here are the steps:
 
-1. Once you have a GitHub ID, send it via an email to {{ contact_email }}.
-2. We will then find your ID on GitHub and send you an invitation to our organization, which should generate an email notification to the email you provided when you signed up for GitHub.
-3. Follow the links in the email to accept the invitation.
+1. We will then find your ID on GitHub and send you an invitation to our organization, which should generate an email notification to the email you provided when you signed up for GitHub.
+1. Follow the links in the email to accept the invitation.
 
 (configure-github)=
 ## How should I configure my GitHub account?
