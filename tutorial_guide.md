@@ -8,6 +8,7 @@
 1. [Troubleshooting](#Troubleshooting)
 1. [Local development](#Local-development)
 1. [Pull Request collaboration](#Pull-request-collaboration)
+1. [Add your profile to our team page](#Add-your-profile-to-our-team-page!)
 
 This document contains brief step-by-step instructions for creating tutorial content.
 
@@ -164,3 +165,34 @@ git status
 # nothing to commit, working tree clean
 ```
 Now if you make changes and commit code, it will be pushed to the PR branch you've checkout out. If you want to go back to the 'main' branch (which is what is rendered on the public website), you can go back to that branch with `git checkout main`. Whenever in doubt of which branch you're currently working on `git status` will report the current branch.
+
+
+## Add your profile to our team page!
+
+We have a [team page](https://snowex-hackweek.github.io/website/team.html) that lists hackweek organizers. This is helpful for participants to know who to approach with specific questions. This section describes how to add a profile tag on that page. Because the website is hosted by GitHub, making edits to *any* page (not just the 'team' page can be done following this procedure.
+
+1. From the page you want to edit, click on the 'suggest edit' button in the upper right corner under the GitHub icon:
+
+<img width="1250" alt="Screen Shot 2021-05-07 at 8 44 07 AM" src="https://user-images.githubusercontent.com/3924836/117375196-deab3880-af11-11eb-9655-43de11a0647a.png">
+
+
+2. If you have not yet forked the repository GitHub will prompt you to do so:
+
+<img width="1250" alt="Screen Shot 2021-05-07 at 8 44 54 AM" src="https://user-images.githubusercontent.com/3924836/117375209-e4088300-af11-11eb-9aad-25fdb29101a6.png">
+
+
+3. Add your information! Note that an easy way to add a correctly-sized profile image is to get a link to your github user image, you can find your 'avatar_url' by going to the page https://api.github.com/users/scottyhq (replacing 'scottyhq' with your github username). Once you've added your block of formatted info, click on 'propose changes' to create a pull request!
+
+```
+**My Name**
+^^^
+<img src="https://avatars.githubusercontent.com/u/650301?v=4?s=100" alt="picture of Me" width="200" height="200">
++++
+*Affiliations:* My Affiliations
+
+*Ask me about:* My areas of expertise
+---
+
+```
+
+<img width="1250" alt="Screen Shot 2021-05-07 at 8 51 37 AM" src="https://user-images.githubusercontent.com/3924836/117375330-187c3f00-af12-11eb-9333-f60bf1bbf71e.png">
