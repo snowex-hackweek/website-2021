@@ -2,7 +2,7 @@
 
 ## Overview
 
-NASA data are stored at one of several Distributed Active Archive Centers (DAACs). If you're intersted in available data for a given area and time of interest, the [Earthdata Search](https://earthdata.nasa.gov/) portal provides a convenient web interface. 
+NASA data are stored at one of several Distributed Active Archive Centers (DAACs). If you're interested in available data for a given area and time of interest, the [Earthdata Search](https://earthdata.nasa.gov/) portal provides a convenient web interface. 
 
 ## Why do I need an Earthdata login?
 
