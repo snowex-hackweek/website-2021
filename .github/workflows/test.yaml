@@ -26,6 +26,11 @@ jobs:
         check_hidden: true
         only_warn: true
 
+    - name: Ensure clean notebooks
+      run: |
+        pip install nb-clean
+        find book -name "*ipynb" | xargs nb-clean check
+
         
   build-and-test:
     runs-on: ubuntu-20.04
