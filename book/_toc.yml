@@ -1,7 +1,7 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
 - file: intro
-- part: Hackweek Details
+- part: Details
   chapters:
   - file: application
   - file: schedule
@@ -11,16 +11,16 @@
     - file: norms/CoC
     - file: norms/community
 
-- part: Hackweek Preparation
+- part: Preparation
   chapters:
     - file: preliminary/index
       sections:
-        - file: preliminary/conda
         - file: preliminary/github
         - file: preliminary/jupyterhub
         - file: preliminary/earthdata
+        - file: preliminary/python
 
-- part: Hackweek Tutorials
+- part: Tutorials
   chapters:
     - file: tutorials/index
       sections:
@@ -32,7 +32,7 @@
             - file: tutorials/sar/sentinel1
             - file: tutorials/sar/uavsar
 
-- part: Hackweek Projects
+- part: Projects
   chapters:
     - file: projects/index
       sections:
@@ -44,4 +44,3 @@
   chapters:
     - file: glossary
     - file: bibliography
-

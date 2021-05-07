@@ -29,15 +29,16 @@
   using the "git" command line tool.
 
 GRD
-  "Ground range detected". Common real-valued georeferenced SAR amplitude product.
+  Abbreviation for "Ground range detected". Common real-valued georeferenced SAR amplitude 
+  product.
 
 [Hackweek](https://uwhackweek.github.io/hackweeks-as-a-service/intro.html)
   Participant-driven events that strive to create welcoming spaces to learn new things, 
   build community and gain hands-on experience with collaboration and team science.
 
 InSAR 
-  "Interferometric Synthetic Aperture Radar". Method to create relative phase change
-  maps or "interferograms" from two synthetic aperture radar acquisitions.
+  Abbreviation for "Interferometric Synthetic Aperture Radar". Method to create relative 
+  phase change maps or "interferograms" from two synthetic aperture radar acquisitions.
 
 [Project Jupyter](https://jupyter.org)
     Project Jupyter (name derived from "JUlia PYThon and R") exists to develop open-source 
@@ -62,7 +63,7 @@ InSAR
     live code, equations, visualizations and narrative text.
 
 RPI
-  "Repeat pass interferometry". When two SAR acquistions of the same location are 
+  Abbreviation for "Repeat pass interferometry". When two SAR acquistions of the same location are 
   acquired at different times.
 
 [SnowEX](https://snow.nasa.gov/campaigns/snowex)
@@ -70,7 +71,7 @@ RPI
   knowledge, and thus lay the groundwork for a future snow satellite mission.
 
 SLC 
-  "Single look complex". Common complex-valued SAR amplitude and phase product.
+  Abbreviation for "Single look complex". Common complex-valued SAR amplitude and phase product.
 
 [UAVSAR](https://uavsar.jpl.nasa.gov)
   "Uninhabited Aerial Vehicle Synthetic Aperture Radar". Airborn L-band InSAR platform.
