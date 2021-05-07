@@ -1,12 +1,14 @@
 # Python Installation
 
-## Overview 
+## Overview
 
-What happens after the event when you want to go home and work with all the libraries ? You will likely also want to have a functioning version of Python on your local laptop if that is not already in place. So this lesson takes you through our recommended procedure for doing that. We suggest you get this set up in advance so that we can help you troubleshoot when you arrive.
+While we will be using a cloud-hosted computing environment during the hackweek ({ref}`event-jupyterhub`), it is often desirable to run Python code on your laptop. We also want to ensure tutorials and other scientific code is reproducible and *useful* such that it can easily be run on different computers.
+
+This lesson takes you through our recommended procedure for managing software Python software on your personal computer. We suggest you follow these instructions in advance so that we can help you troubleshoot during the hackweek.
 
 ## Python Software
 
-Python software is distributed as a series of *libraries* that are called within your code to perform certain tasks. There are many different collections, or *distributions* of Python software. Generally you install a specific distribution of Python and then add additional libraries as you need them. There are also several different *versions* of Python. Support for Python 2 ended in 2020, so you should use Python>=3.
+Python software is distributed as a series of *libraries* that are called within your code to perform certain tasks. There are many different collections, or *distributions* of Python software. Generally you install a specific distribution of Python and then add additional libraries as you need them. There are also several different *versions* of Python. Support for Python 2 ended in 2020, so you should use Python>=3!
 
 ```{note}
 If you open a terminal on your computer, chances are if you type 'python' you will find it is already installed! But it is best-practice to create separate environments or 'virtual environments' to not interfere with existing installations. You can use {term}`conda` for this.
@@ -36,8 +38,6 @@ url=https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 url=https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 wget $url -O miniconda.sh
 bash miniconda.sh -b -p $HOME/miniconda
-export PATH="$HOME/miniconda/bin:$PATH"
-conda update conda --yes
 ```
 
 ### Installing Anaconda (Optional)
@@ -54,24 +54,23 @@ Python 3.7.3|Anaconda custom (x86_64)| (default, Mar 27 2019, 22:11:17)
 ...
 ```
 
-### Installing Python
+### Installing a specific python version
 
 We will be using Python 3 during the week. Since Anaconda (on Linux) expects you to work in the `bash` shell, if this is not already your default shell, you need to set it to be so (use the `chsh -s /bin/bash` command to change your default shell to bash), then you can create an isolated Python environment with the following commands:
 
 ``` bash
-$ conda create -n py37 python=3.7
+conda create -n py37 python=3.7
 ```
 
-To use Python 3.7: 
+To use Python 3.7:
 
 ``` bash
-$ conda activate py37
+conda activate py37
 ```
 
-To check if you have the correct version: 
+To check if you have the correct version activated
 
-``` bash
-$ python --version
+```bash
+which python
+python --version
 ```
-
-

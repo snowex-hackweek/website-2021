@@ -24,19 +24,23 @@ Then, click on the big green button and then answer a few required questions. Be
 
 ## Why are we joining a GitHub Organization?
 
-GitHub organizations are a convenient way for teams to get all content relevant to a specific project our workshop into one place. By having everything in one central location you will spend less time searching for hackweek content. GitHub organizations have 'teams' that offer simple ways to provide respository access to groups of people, rather than individuals.
+GitHub organizations are a convenient way for teams to get all content relevant to a specific project our workshop into one place. By having everything in one central location you will spend less time searching for hackweek content. GitHub organizations have 'teams' that offer simple ways to provide repository access to groups of people, rather than individuals.
 
-We have created a GitHub organization called [{{ hackweek }}]({{ github_org_url}}). For security purposes you can only join the organization by invitation. Here are the steps:
+We have created a {{ hackweek }} GitHub organization ({{ github_org_url}}). For security purposes you can only join the organization by invitation. Here are the steps:
 
-1. Once you have a GitHub ID, send it via an email to [{{ contact_email }}](mailto:{{ contact_email }}).
-2. We will then find your ID on GitHub and send you an invitation to our organization, which should generate an email notification to the email you provided when you signed up for GitHub.
-3. Follow the links in the email to accept the invitation.
+1. We will then find your ID on GitHub and send you an invitation to our organization, which should generate an email notification to the email you provided when you signed up for GitHub.
+1. Follow the links in the email to accept the invitation.
 
+(configure-github)=
 ## How should I configure my GitHub account?
 
-As you'll learn in the next lesson, we will use the [{{ hackweek }}]({{ github_org_url}}) GitHub organization as a way to manage access to our cloud computing resources. In order for this to work each person must have public, rather than private membership in the ICESat-2hackweek organization.
+As you'll learn in the next lesson, we will use the {{ hackweek }} GitHub organization as a way to manage access to our cloud computing resources.
 
-First, navigate to the "People" tab on the [{{ hackweek }}]({{ github_org_url}}) GitHub organization and find yourself:
+```{note}
+You must have *public*, rather than *private* organization membership (GitHub's default), in order for our JupyterHub authentication to work. For events like hackweeks, public membership also helps so that others can recognize your participation in the event!
+```
+
+First, navigate to the "People" tab on the {{ hackweek }} GitHub organization ({{ github_org_url }}) and find yourself:
 
 ![people-tab](../img/private-github.png)
 
@@ -48,7 +52,7 @@ The steps for doing this are also well documented on [this](https://help.github.
 
 ## How will GitHub repositories be structured?
 
-When you click on the "Repositories" tab in the [{{ hackweek }}]({{ github_org_url}}) GitHub Organization you will see a list of names, each of which links to a separate GitHub repository:
+When you click on the "Repositories" tab in the {{ '[GitHub Organization]({url})'.format(url=github_org_url) }}  you will see a list of names, each of which links to a separate GitHub repository:
 
 ![repos-tab](../img/repos.png)
 
