@@ -99,5 +99,10 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Ask me about:* Thermal IR, Python
 ---
 
+**Jack Tarricone**
+^^^
+<img src="https://avatars.githubusercontent.com/u/54866783?v=4" alt="picture of Jack Tarricone" width="200" height="200">
++++
+*Affiliations:* University of Nevada, Reno
 
-````
+*Ask me about:* UAVSAR, SnowEx, R
