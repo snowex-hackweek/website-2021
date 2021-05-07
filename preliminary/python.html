@@ -56,8 +56,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="GitHub Account" href="github.html" />
-    <link rel="prev" title="Preliminary Work" href="index.html" />
+    <link rel="next" title="Tutorials" href="../tutorials/index.html" />
+    <link rel="prev" title="Earthdata Login" href="earthdata.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -163,11 +163,6 @@
    Preliminary Work
   </a>
   <ul class="current collapse-ul">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Python Installation
-    </a>
-   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="github.html">
      GitHub Account
@@ -181,6 +176,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="earthdata.html">
      Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Python Installation
     </a>
    </li>
   </ul>
@@ -251,7 +251,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/preliminary/conda.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/preliminary/python.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -271,10 +271,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/snowex-hackweek/website/issues/new?title=Issue%20on%20page%20%2Fpreliminary/conda.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/snowex-hackweek/website/issues/new?title=Issue%20on%20page%20%2Fpreliminary/python.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/snowex-hackweek/website/edit/main/book/preliminary/conda.md"><button
+        <a class="edit-button" href="https://github.com/snowex-hackweek/website/edit/main/book/preliminary/python.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -336,8 +336,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#installing-python">
-     Installing Python
+    <a class="reference internal nav-link" href="#installing-a-specific-python-version">
+     Installing a specific python version
     </a>
    </li>
   </ul>
@@ -358,11 +358,12 @@
 <h1>Python Installation<a class="headerlink" href="#python-installation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>What happens after the event when you want to go home and work with all the libraries ? You will likely also want to have a functioning version of Python on your local laptop if that is not already in place. So this lesson takes you through our recommended procedure for doing that. We suggest you get this set up in advance so that we can help you troubleshoot when you arrive.</p>
+<p>While we will be using a cloud-hosted computing environment during the hackweek (<a class="reference internal" href="jupyterhub.html#event-jupyterhub"><span class="std std-ref">Why are we using a shared cloud environment?</span></a>), it is often desirable to run Python code on your laptop. We also want to ensure tutorials and other scientific code is reproducible and <em>useful</em> such that it can easily be run on different computers.</p>
+<p>This lesson takes you through our recommended procedure for managing software Python software on your personal computer. We suggest you follow these instructions in advance so that we can help you troubleshoot during the hackweek.</p>
 </div>
 <div class="section" id="python-software">
 <h2>Python Software<a class="headerlink" href="#python-software" title="Permalink to this headline">¶</a></h2>
-<p>Python software is distributed as a series of <em>libraries</em> that are called within your code to perform certain tasks. There are many different collections, or <em>distributions</em> of Python software. Generally you install a specific distribution of Python and then add additional libraries as you need them. There are also several different <em>versions</em> of Python. Support for Python 2 ended in 2020, so you should use Python&gt;=3.</p>
+<p>Python software is distributed as a series of <em>libraries</em> that are called within your code to perform certain tasks. There are many different collections, or <em>distributions</em> of Python software. Generally you install a specific distribution of Python and then add additional libraries as you need them. There are also several different <em>versions</em> of Python. Support for Python 2 ended in 2020, so you should use Python&gt;=3!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you open a terminal on your computer, chances are if you type ‘python’ you will find it is already installed! But it is best-practice to create separate environments or ‘virtual environments’ to not interfere with existing installations. You can use <a class="reference internal" href="../glossary.html#term-Conda"><span class="xref std std-term">conda</span></a> for this.</p>
@@ -391,8 +392,6 @@ If you do not have any other installation that is a good option. If you want to 
 <span class="nv">url</span><span class="o">=</span>https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 wget <span class="nv">$url</span> -O miniconda.sh
 bash miniconda.sh -b -p <span class="nv">$HOME</span>/miniconda
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/miniconda/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
-conda update conda --yes
 </pre></div>
 </div>
 </div>
@@ -410,18 +409,19 @@ Python <span class="m">3</span>.7.3<span class="p">|</span>Anaconda custom <span
 </pre></div>
 </div>
 </div>
-<div class="section" id="installing-python">
-<h3>Installing Python<a class="headerlink" href="#installing-python" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="installing-a-specific-python-version">
+<h3>Installing a specific python version<a class="headerlink" href="#installing-a-specific-python-version" title="Permalink to this headline">¶</a></h3>
 <p>We will be using Python 3 during the week. Since Anaconda (on Linux) expects you to work in the <code class="docutils literal notranslate"><span class="pre">bash</span></code> shell, if this is not already your default shell, you need to set it to be so (use the <code class="docutils literal notranslate"><span class="pre">chsh</span> <span class="pre">-s</span> <span class="pre">/bin/bash</span></code> command to change your default shell to bash), then you can create an isolated Python environment with the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda create -n py37 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n py37 <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7
 </pre></div>
 </div>
 <p>To use Python 3.7:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda activate py37
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate py37
 </pre></div>
 </div>
-<p>To check if you have the correct version:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python --version
+<p>To check if you have the correct version activated</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which python
+python --version
 </pre></div>
 </div>
 </div>
@@ -453,8 +453,8 @@ Python <span class="m">3</span>.7.3<span class="p">|</span>Anaconda custom <span
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Preliminary Work</a>
-    <a class='right-next' id="next-link" href="github.html" title="next page">GitHub Account</a>
+    <a class='left-prev' id="prev-link" href="earthdata.html" title="previous page">Earthdata Login</a>
+    <a class='right-next' id="next-link" href="../tutorials/index.html" title="next page">Tutorials</a>
 
         </div>
         

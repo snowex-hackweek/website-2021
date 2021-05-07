@@ -164,11 +164,6 @@
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="conda.html">
-     Python Installation
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="github.html">
      GitHub Account
     </a>
@@ -181,6 +176,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="earthdata.html">
      Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python.html">
+     Python Installation
     </a>
    </li>
   </ul>
@@ -340,30 +340,27 @@
   <div class="section" id="jupyterhub-connection">
 <h1>JupyterHub Connection<a class="headerlink" href="#jupyterhub-connection" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="why-are-we-using-a-shared-cloud-environment">
-<h2>Why are we using a shared cloud environment?<a class="headerlink" href="#why-are-we-using-a-shared-cloud-environment" title="Permalink to this headline">¶</a></h2>
+<span id="event-jupyterhub"></span><h2>Why are we using a shared cloud environment?<a class="headerlink" href="#why-are-we-using-a-shared-cloud-environment" title="Permalink to this headline">¶</a></h2>
 <p>Teaching software to a diverse group of participants, each with different computers and operating systems, can be challenging. As you’ll learn in the next lesson, there are specific ways to configure our software for the tutorials to be successful, so it takes time to get everyone set up consistently. Our solution to this is to give everyone access to a cloud computing environment that is pre-configured for the specific software we will deploy. This cloud computing instance can be accessed from any web browser, which eliminates the need for configuring each person’s individual computer.</p>
 <p>We will encourage you to use our shared resources for all the tutorials, and you can optionally use this for your projects as well. We also hope you will practice installing Python libraries locally on your laptop so that you can continue working after leaving our event (see our next lesson for details).</p>
 </div>
 <div class="section" id="how-do-i-access-the-shared-cloud-environment">
 <h2>How do I access the shared cloud environment?<a class="headerlink" href="#how-do-i-access-the-shared-cloud-environment" title="Permalink to this headline">¶</a></h2>
-<p>Access to our shared cloud environment is easy. Just click on [<a class="reference external" href="https://snowex.hackweek.io">https://snowex.hackweek.io</a>](<a class="reference external" href="https://snowex.hackweek.io">https://snowex.hackweek.io</a>)!</p>
+<p>Access to our shared cloud environment is easy. Just click go to <a class="reference external" href="https://snowex.hackweek.io">https://snowex.hackweek.io</a>!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The screenshots below might not be exactly what you see as they are from past hackweek events</p>
 </div>
-<p><img alt="pangeo-opening" src="../_images/pangeo-opening.png" /></p>
-<p>Assuming you set up your <a class="reference internal" href="../glossary.html#term-GitHub"><span class="xref std std-term">GitHub</span></a> credentials correctly (see the previous lesson), you can now click on the “Sign in with GitHub” button. Then, authorize the OAuth app to connect to your GitHub account.</p>
-<p><img alt="pangeo-img-select" src="../_images/pangeo-image-select.png" /></p>
-<p>You will be put back to a page that shows a single image choice for your server. Click “Start” to launch your <a class="reference internal" href="../glossary.html#term-JupyterHub"><span class="xref std std-term">JupyterHub</span></a> server!</p>
-<p><img alt="pangeo-loading" src="../_images/pangeo-server-starting.png" /></p>
-<p>It will take a little bit of time for this to load - be patient! Once things are spun up you will see your very own instance of a <a class="reference internal" href="../glossary.html#term-JupyterLab"><span class="xref std std-term">JupyterLab</span></a> environment:</p>
+<p>If this is your first time signing in, you need to ensure you’ve setup your <a class="reference internal" href="../glossary.html#term-GitHub"><span class="xref std std-term">GitHub</span></a> organization membership correctly (see <a class="reference internal" href="github.html#configure-github"><span class="std std-ref">How should I configure my GitHub account?</span></a>), you can now click on the “Sign in with GitHub” button. Then, authorize the OAuth app (Access to the JupyterHub is restricted to GitHub Organization members, so when you log in, you membership must be checked).</p>
+<p><img alt="jupyterhub-authentication" src="../_images/jupyterhub-authentication.png" /></p>
+<p>It can take several minutes for new servers to launch on the cloud - be patient! Once things are spun up you will see your very own instance of a <a class="reference internal" href="../glossary.html#term-JupyterLab"><span class="xref std std-term">JupyterLab</span></a> environment:</p>
 <p><img alt="jupyterlab" src="../_images/jupyterlab.png" /></p>
 </div>
 <div class="section" id="what-is-pangeo-and-how-is-this-system-configured">
 <h2>What is Pangeo and how is this system configured?<a class="headerlink" href="#what-is-pangeo-and-how-is-this-system-configured" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://pangeo.io">Pangeo</a> is a community of researchers building open, reproducible and scalable scientific software tools. Several of the UW eScience Hackweek organizers are involved in <a class="reference external" href="https://earthdata.nasa.gov/esds/competitive-programs/access/eos-data-cloud">projects with NASA and NSF</a> to build prototype systems to enable data discovery in the era of expanding data volume and complexity.</p>
 <p><img alt="jupyterhub-connectivity" src="../_images/jupyterhub-connectivity.png" /></p>
-<p>For this hackweek, we have created virtual computing instances on Amazon Web Services that can be deployed on demand in a parallel computing environment. We use JupyterHub as a way to give a Jupyter Notebook server to each person in a group. <a class="reference external" href="https://www.slideshare.net/willingc/jupyterhub-a-thing-explainer-overview?from_action=save">These slides</a> give a nice overview of what JupyterHub is all about. We use JupyterHub in an educational setting because it enables us to quickly begin working with code without spending time to get the necessary libraries and dependencies set up on everyone’s individual computers.</p>
+<p>For this hackweek, we have created virtual computing instances on <a class="reference external" href="https://aws.amazon.com/">Amazon Web Services</a> that can be deployed on demand in a parallel computing environment. We use JupyterHub as a way to give a Jupyter Notebook server to each person in a group. <a class="reference external" href="https://www.slideshare.net/willingc/jupyterhub-a-thing-explainer-overview?from_action=save">These slides</a> give a nice overview of what JupyterHub is all about. We use JupyterHub in an educational setting because it enables us to quickly begin working with code without spending time to get the necessary libraries and dependencies set up on everyone’s individual computers.</p>
 </div>
 <div class="section" id="how-do-i-get-my-code-in-and-out-of-jupyterhub">
 <h2>How do I get my code in and out of JupyterHub?<a class="headerlink" href="#how-do-i-get-my-code-in-and-out-of-jupyterhub" title="Permalink to this headline">¶</a></h2>
