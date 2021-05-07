@@ -1,5 +1,6 @@
 # JupyterHub Connection
 
+(event-jupyterhub)=
 ## Why are we using a shared cloud environment?
 
 Teaching software to a diverse group of participants, each with different computers and operating systems, can be challenging. As you'll learn in the next lesson, there are specific ways to configure our software for the tutorials to be successful, so it takes time to get everyone set up consistently. Our solution to this is to give everyone access to a cloud computing environment that is pre-configured for the specific software we will deploy. This cloud computing instance can be accessed from any web browser, which eliminates the need for configuring each person's individual computer.
@@ -15,17 +16,11 @@ Access to our shared cloud environment is easy. Just click go to {{ jupyterhub_u
 The screenshots below might not be exactly what you see as they are from past hackweek events
 ```
 
-![pangeo-opening](../img/pangeo-opening.png)
+If this is your first time signing in, you need to ensure you've setup your {term}`GitHub` organization membership correctly (see {ref}`configure-github`), you can now click on the "Sign in with GitHub" button. Then, authorize the OAuth app (Access to the JupyterHub is restricted to GitHub Organization members, so when you log in, you membership must be checked).
 
-Assuming you set up your {term}`GitHub` credentials correctly (see {ref}`configure-github`), you can now click on the "Sign in with GitHub" button. Then, authorize the OAuth app to connect to your GitHub account.
+![jupyterhub-authentication](../img/jupyterhub-authentication.png)
 
-![pangeo-img-select](../img/pangeo-image-select.png)
-
-You will be put back to a page that shows a single image choice for your server. Click "Start" to launch your {term}`JupyterHub` server!
-
-![pangeo-loading](../img/pangeo-server-starting.png)
-
-It will take a little bit of time for this to load - be patient! Once things are spun up you will see your very own instance of a {term}`JupyterLab` environment:
+It can take several minutes for new servers to launch on the cloud - be patient! Once things are spun up you will see your very own instance of a {term}`JupyterLab` environment:
 
 ![jupyterlab](../img/jupyterlab.png)
 
@@ -36,7 +31,7 @@ It will take a little bit of time for this to load - be patient! Once things are
 
 ![jupyterhub-connectivity](../img/jupyterhub-connectivity.png)
 
-For this hackweek, we have created virtual computing instances on Amazon Web Services that can be deployed on demand in a parallel computing environment. We use JupyterHub as a way to give a Jupyter Notebook server to each person in a group. [These slides](https://www.slideshare.net/willingc/jupyterhub-a-thing-explainer-overview?from_action=save) give a nice overview of what JupyterHub is all about. We use JupyterHub in an educational setting because it enables us to quickly begin working with code without spending time to get the necessary libraries and dependencies set up on everyone's individual computers.
+For this hackweek, we have created virtual computing instances on [Amazon Web Services](https://aws.amazon.com/) that can be deployed on demand in a parallel computing environment. We use JupyterHub as a way to give a Jupyter Notebook server to each person in a group. [These slides](https://www.slideshare.net/willingc/jupyterhub-a-thing-explainer-overview?from_action=save) give a nice overview of what JupyterHub is all about. We use JupyterHub in an educational setting because it enables us to quickly begin working with code without spending time to get the necessary libraries and dependencies set up on everyone's individual computers.
 
 ## How do I get my code in and out of JupyterHub?
 

@@ -16,10 +16,10 @@
     - file: projects/example_workflow
 - file: preliminary/index
   sections:
-    - file: preliminary/conda
     - file: preliminary/github
     - file: preliminary/jupyterhub
     - file: preliminary/earthdata
+    - file: preliminary/python
 - file: tutorials/index
   sections:
     - file: tutorials/raster/intro-ipyleaflet

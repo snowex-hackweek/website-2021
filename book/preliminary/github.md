@@ -34,7 +34,11 @@ We have created a {{ hackweek }} GitHub organization ({{ github_org_url}}). For 
 (configure-github)=
 ## How should I configure my GitHub account?
 
-As you'll learn in the next lesson, we will use the {{ hackweek }} GitHub organization as a way to manage access to our cloud computing resources. In order for this to work each person must have public, rather than private membership in the ICESat-2hackweek organization.
+As you'll learn in the next lesson, we will use the {{ hackweek }} GitHub organization as a way to manage access to our cloud computing resources.
+
+```{note}
+You must have *public*, rather than *private* organization membership (GitHub's default), in order for our JupyterHub authentication to work. For events like hackweeks, public membership also helps so that others can recognize your participation in the event!
+```
 
 First, navigate to the "People" tab on the {{ hackweek }} GitHub organization ({{ github_org_url }}) and find yourself:
 
