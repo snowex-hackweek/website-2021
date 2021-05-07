@@ -1,28 +1,46 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
-#
 - file: intro
-- file: application
-- file: schedule
-- file: team
-- file: norms/index
-  sections:
+- part: Hackweek Details
+  chapters:
+  - file: application
+  - file: schedule
+  - file: team
+  - file: norms/index
+    sections:
     - file: norms/CoC
     - file: norms/community
-- file: projects/index
-  sections:
-    - file: projects/project_initialization
-    - file: projects/project_roles
-    - file: projects/example_workflow
-- file: preliminary/index
-  sections:
-    - file: preliminary/conda
-    - file: preliminary/github
-    - file: preliminary/jupyterhub
-    - file: preliminary/earthdata
-- file: tutorials/index
-  sections:
-    - file: tutorials/raster/intro-ipyleaflet
-    - file: tutorials/sar/intro-sar
-- file: glossary
-- file: bibliography
+
+- part: Hackweek Preparation
+  chapters:
+    - file: preliminary/index
+      sections:
+        - file: preliminary/conda
+        - file: preliminary/github
+        - file: preliminary/jupyterhub
+        - file: preliminary/earthdata
+
+- part: Hackweek Tutorials
+  chapters:
+    - file: tutorials/index
+      sections:
+        # Tutorial can be a single notebook
+        - file: tutorials/raster/intro-ipyleaflet
+        # Or folder with multiple notebooks
+        - file: tutorials/sar/index
+          sections:
+            - file: tutorials/sar/sentinel1
+            - file: tutorials/sar/uavsar
+
+- part: Hackweek Projects
+  chapters:
+    - file: projects/index
+      sections:
+        - file: projects/project_initialization
+        - file: projects/project_roles
+        - file: projects/example_workflow
+
+- part: Reference
+  chapters:
+    - file: glossary
+    - file: bibliography
