@@ -1,3 +1,5 @@
 # Preliminary Work
 
-In order for everyone to arrive at the hackweek ready to go, we encourage you to work through the following content.
+```{note}
+In order for everyone to arrive at the hackweek ready to go, please work through the pages in this section in advance of the event.
+```
