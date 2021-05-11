@@ -106,3 +106,12 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Affiliations:* University of Nevada, Reno
 
 *Ask me about:* UAVSAR, SnowEx, R
+---
+
+**Melissa Wrzesien**
+^^^
+<img src="https://gestar.usra.edu/sites/gestar/cache/file/EB9AFF5C-BE08-54EB-E132BDBC07ACA48F_medium.jpg" alt="picture of Melissa Wrzesien" width="180" height="180">
++++
+*Affiliations:* NASA Goddard Space Flight Center/USRA
+
+*Ask me about:* Land surface modeling, LIS, NoahMP
