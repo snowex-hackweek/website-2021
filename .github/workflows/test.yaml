@@ -29,9 +29,9 @@ jobs:
     - name: Ensure clean notebooks
       run: |
         pip install nb-clean
-        find book -name "*ipynb" | xargs nb-clean check
+        find book -name "*ipynb" | xargs nb-clean check --preserve-cell-metadata
 
-        
+
   build-and-test:
     runs-on: ubuntu-20.04
 
@@ -52,6 +52,7 @@ jobs:
         docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw $DOCKER_IMAGE jb build book --builder linkcheck
 
     - name: Save Build
+      if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: build

@@ -1,9 +1,10 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Snowex Hackweek
+title: SnowEx Hackweek
 author: eScience Institute, University of Washington
 logo: logo.png
+only_build_toc_files: true
 
 parse:
   myst_substitutions:
@@ -18,6 +19,8 @@ parse:
 execute:
   execute_notebooks: force
   allow_errors: false
+  # Per-cell notebook execution limit (seconds)
+  timeout: 300
 
 # Define the name of the latex output file for PDF builds
 latex:
