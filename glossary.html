@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Glossary &#8212; Snowex Hackweek</title>
+    <title>Glossary &#8212; SnowEx Hackweek</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -57,7 +57,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Bibliography" href="bibliography.html" />
-    <link rel="prev" title="An introduction to rasters" href="tutorials/raster/intro-ipyleaflet.html" />
+    <link rel="prev" title="Basic git workflow for a project" href="projects/example_workflow.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -79,7 +79,7 @@
   <img src="_static/logo.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">Snowex Hackweek</h1>
+  <h1 class="site-logo" id="site-title">SnowEx Hackweek</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -94,7 +94,12 @@
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="application.html">
    Application
@@ -129,35 +134,13 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="projects/index.html">
-   Projects
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="projects/project_initialization.html">
-     Project Initialization
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="projects/project_roles.html">
-     Project Roles and Responsibilities
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="projects/example_workflow.html">
-     Basic git workflow for a project
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="projects/example_workflow.html#project-data-download-storage-and-access">
-     Project Data - download, storage, and access
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="preliminary/index.html">
    Preliminary Work
@@ -187,6 +170,13 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="tutorials/index.html">
    Tutorials
@@ -197,10 +187,72 @@
      An introduction to rasters
     </a>
    </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="tutorials/sar/index.html">
+     Synthetic Aperture Radar
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="tutorials/sar/sentinel1.html">
+       Sentinel-1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="tutorials/sar/uavsar.html">
+       UAVSAR
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
  </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="projects/index.html">
+   Projects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="projects/project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="projects/project_roles.html">
+     Project Roles and Responsibilities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="projects/example_workflow.html">
+     Basic git workflow for a project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="projects/example_workflow.html#project-data-download-storage-and-access">
+     Project Data - download, storage, and access
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Glossary
@@ -305,61 +357,68 @@
   <div class="section" id="glossary">
 <h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
 <dl class="glossary simple">
-<dt id="term-ASF"><a class="reference external" href="https://asf.alaska.edu">ASF</a><a class="headerlink" href="#term-ASF" title="Permalink to this term">¶</a></dt><dd><p>Alaska satellite facility. NASA distributed active archive center (DAAC) specializing
-in radar products.</p>
+<dt id="term-ASF"><a class="reference external" href="https://asf.alaska.edu">ASF</a><a class="headerlink" href="#term-ASF" title="Permalink to this term">¶</a></dt><dd><p>Alaska satellite facility. NASA distributed active archive center (DAAC)
+specializing  in radar products.</p>
 </dd>
-<dt id="term-Binder"><a class="reference external" href="https://mybinder.org">Binder</a><a class="headerlink" href="#term-Binder" title="Permalink to this term">¶</a></dt><dd><p>A free, public service for running reproducible interactive computing environments.
-Binder is a 100% open source infrastructure that is run by members of the Jupyter
-community. The underlying technology behind the Binder project is BinderHub.</p>
+<dt id="term-Binder"><a class="reference external" href="https://mybinder.org">Binder</a><a class="headerlink" href="#term-Binder" title="Permalink to this term">¶</a></dt><dd><p>A free, public service for running reproducible interactive computing
+environments. Binder is a 100% open source infrastructure that is run by
+members of the Jupyter community. The underlying technology behind the Binder
+project is BinderHub.</p>
 </dd>
-<dt id="term-BinderHub"><a class="reference external" href="https://binderhub.readthedocs.io/en/latest/">BinderHub</a><a class="headerlink" href="#term-BinderHub" title="Permalink to this term">¶</a></dt><dd><p>The underlying technology of <a class="reference external" href="http://mybinder.org">mybinder.org</a>, BinderHub is an open source tool that
-utilizes a JupyterHub`= in order to provide live, reproducible interactive computing
-environments that users define on GitHub.</p>
+<dt id="term-BinderHub"><a class="reference external" href="https://binderhub.readthedocs.io/en/latest/">BinderHub</a><a class="headerlink" href="#term-BinderHub" title="Permalink to this term">¶</a></dt><dd><p>The underlying technology of <a class="reference external" href="http://mybinder.org">mybinder.org</a>, BinderHub is an open source tool
+that utilizes a JupyterHub`= in order to provide live, reproducible
+interactive computing environments that users define on GitHub.</p>
 </dd>
-<dt id="term-Conda"><a class="reference external" href="https://docs.conda.io/en/latest/">Conda</a><a class="headerlink" href="#term-Conda" title="Permalink to this term">¶</a></dt><dd><p>Package, dependency and environment management for any language—Python, R, Ruby, Lua,
-Scala, Java, JavaScript, C/ C++, FORTRAN, and more.</p>
+<dt id="term-Conda"><a class="reference external" href="https://docs.conda.io/en/latest/">Conda</a><a class="headerlink" href="#term-Conda" title="Permalink to this term">¶</a></dt><dd><p>Package, dependency and environment management for any language—Python, R,
+Ruby, Lua, Scala, Java, JavaScript, C/ C++, FORTRAN, and more.</p>
 </dd>
-<dt id="term-Docker"><a class="reference external" href="https://www.docker.com">Docker</a><a class="headerlink" href="#term-Docker" title="Permalink to this term">¶</a></dt><dd><p>Docker provides the ability to package and run an application in a loosely isolated
-environment called a container. It is widely used for creating reproducible software
-environments to run code on different computers.</p>
+<dt id="term-Docker"><a class="reference external" href="https://www.docker.com">Docker</a><a class="headerlink" href="#term-Docker" title="Permalink to this term">¶</a></dt><dd><p>Docker provides the ability to package and run an application in a loosely
+isolated environment called a container. It is widely used for creating
+reproducible software environments to run code on different computers.</p>
 </dd>
-<dt id="term-GitHub"><a class="reference external" href="https://github.com">GitHub</a><a class="headerlink" href="#term-GitHub" title="Permalink to this term">¶</a></dt><dd><p>Provider of Internet hosting for software development and distributed version control
-using the “git” command line tool.</p>
+<dt id="term-GitHub"><a class="reference external" href="https://github.com">GitHub</a><a class="headerlink" href="#term-GitHub" title="Permalink to this term">¶</a></dt><dd><p>Provider of Internet hosting for software development and distributed version
+control using the “git” command line tool.</p>
 </dd>
-<dt id="term-GRD">GRD<a class="headerlink" href="#term-GRD" title="Permalink to this term">¶</a></dt><dd><p>“Ground range detected”. Common real-valued georeferenced SAR amplitude product.</p>
+<dt id="term-GRD">GRD<a class="headerlink" href="#term-GRD" title="Permalink to this term">¶</a></dt><dd><p>Common real-valued SAR amplitude product (“Ground Range Detected”)</p>
 </dd>
-<dt id="term-Hackweek"><a class="reference external" href="https://uwhackweek.github.io/hackweeks-as-a-service/intro.html">Hackweek</a><a class="headerlink" href="#term-Hackweek" title="Permalink to this term">¶</a></dt><dd><p>Participant-driven events that strive to create welcoming spaces to learn new things,
-build community and gain hands-on experience with collaboration and team science.</p>
+<dt id="term-Hackweek"><a class="reference external" href="https://uwhackweek.github.io/hackweeks-as-a-service/intro.html">Hackweek</a><a class="headerlink" href="#term-Hackweek" title="Permalink to this term">¶</a></dt><dd><p>Participant-driven events that strive to create welcoming spaces to learn new
+things, build community and gain hands-on experience with collaboration and
+team science.</p>
 </dd>
-<dt id="term-InSAR">InSAR <a class="headerlink" href="#term-InSAR" title="Permalink to this term">¶</a></dt><dd><p>“Interferometric Synthetic Aperture Radar”. Method to create relative phase change
-maps or “interferograms” from two synthetic aperture radar acquisitions.</p>
+<dt id="term-InSAR">InSAR<a class="headerlink" href="#term-InSAR" title="Permalink to this term">¶</a></dt><dd><p>Method to create relative phase change maps or “interferograms” from two
+synthetic aperture radar acquisitions. (“Interferometric Synthetic Aperture
+Radar”)</p>
 </dd>
-<dt id="term-Project-Jupyter"><a class="reference external" href="https://jupyter.org">Project Jupyter</a><a class="headerlink" href="#term-Project-Jupyter" title="Permalink to this term">¶</a></dt><dd><p>Project Jupyter (name derived from “JUlia PYThon and R”) exists to develop open-source
-software, open-standards, and services for interactive computing across dozens of
-programming languages.</p>
+<dt id="term-Project-Jupyter"><a class="reference external" href="https://jupyter.org">Project Jupyter</a><a class="headerlink" href="#term-Project-Jupyter" title="Permalink to this term">¶</a></dt><dd><p>Project Jupyter (name derived from “JUlia PYThon and R”) exists to develop
+open-source software, open-standards, and services for interactive computing
+across dozens of programming languages.</p>
 </dd>
-<dt id="term-JupyterBook"><a class="reference external" href="https://jupyterbook.org/intro.html">JupyterBook</a><a class="headerlink" href="#term-JupyterBook" title="Permalink to this term">¶</a></dt><dd><p>Jupyter Book is an open source project for building beautiful, publication-quality
-books and documents from computational material.</p>
+<dt id="term-JupyterBook"><a class="reference external" href="https://jupyterbook.org/intro.html">JupyterBook</a><a class="headerlink" href="#term-JupyterBook" title="Permalink to this term">¶</a></dt><dd><p>Jupyter Book is an open source project for building beautiful,
+publication-quality books and documents from computational material.</p>
 </dd>
 <dt id="term-JupyterHub"><a class="reference external" href="https://jupyterhub.readthedocs.io/en/stable/">JupyterHub</a><a class="headerlink" href="#term-JupyterHub" title="Permalink to this term">¶</a></dt><dd><p>A core open source tool from the Jupyter community, JupyterHub allows you to
-deploy an application that provides remote data science environments to multiple
-users. It can be deployed in the cloud, or on your own hardware.</p>
+deploy an application that provides remote data science environments to
+multiple users. It can be deployed in the cloud, or on your own hardware.</p>
 </dd>
 <dt id="term-JupyterLab"><a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/">JupyterLab</a><a class="headerlink" href="#term-JupyterLab" title="Permalink to this term">¶</a></dt><dd><p>JupyterLab is the next-generation web-based user interface for Project Jupyter
 intended to replace the JupyterNotebook interface.</p>
 </dd>
-<dt id="term-JupyterNotebook"><a class="reference external" href="https://jupyterbook.org/intro.html">JupyterNotebook</a><a class="headerlink" href="#term-JupyterNotebook" title="Permalink to this term">¶</a></dt><dd><p>open-source web application that allows you to create and share documents that contain
-live code, equations, visualizations and narrative text.</p>
+<dt id="term-JupyterNotebook"><a class="reference external" href="https://jupyterbook.org/intro.html">JupyterNotebook</a><a class="headerlink" href="#term-JupyterNotebook" title="Permalink to this term">¶</a></dt><dd><p>open-source web application that allows you to create and share documents that
+contain live code, equations, visualizations and narrative text.</p>
 </dd>
-<dt id="term-RPI">RPI<a class="headerlink" href="#term-RPI" title="Permalink to this term">¶</a></dt><dd><p>“Repeat pass interferometry”. When two SAR acquistions of the same location are
-acquired at different times.</p>
+<dt id="term-RPI">RPI<a class="headerlink" href="#term-RPI" title="Permalink to this term">¶</a></dt><dd><p>When two SAR acquisitions of the same location are acquired at different
+times. (“Repeat Pass Interferometry”)</p>
 </dd>
-<dt id="term-SnowEX"><a class="reference external" href="https://snow.nasa.gov/campaigns/snowex">SnowEX</a><a class="headerlink" href="#term-SnowEX" title="Permalink to this term">¶</a></dt><dd><p>5-year NASA funded effort to address the most important gaps in our snow remote sensing
-knowledge, and thus lay the groundwork for a future snow satellite mission.</p>
+<dt id="term-SnowEX"><a class="reference external" href="https://snow.nasa.gov/campaigns/snowex">SnowEX</a><a class="headerlink" href="#term-SnowEX" title="Permalink to this term">¶</a></dt><dd><p>5-year NASA funded effort to address the most important gaps in our snow
+remote sensing knowledge, and thus lay the groundwork for a future snow
+satellite mission.</p>
 </dd>
-<dt id="term-SLC">SLC <a class="headerlink" href="#term-SLC" title="Permalink to this term">¶</a></dt><dd><p>“Single look complex”. Common complex-valued SAR amplitude and phase product.</p>
+<dt id="term-SLC">SLC<a class="headerlink" href="#term-SLC" title="Permalink to this term">¶</a></dt><dd><p>Common complex-valued SAR amplitude and phase product (“Single Look Complex”)</p>
 </dd>
-<dt id="term-UAVSAR"><a class="reference external" href="https://uavsar.jpl.nasa.gov">UAVSAR</a><a class="headerlink" href="#term-UAVSAR" title="Permalink to this term">¶</a></dt><dd><p>“Uninhabited Aerial Vehicle Synthetic Aperture Radar”. Airborn L-band InSAR platform.</p>
+<dt id="term-SWE">SWE<a class="headerlink" href="#term-SWE" title="Permalink to this term">¶</a></dt><dd><p>Liquid water content of snow pack (“Snow Water Equivalent”)</p>
+</dd>
+<dt id="term-UAVSAR"><a class="reference external" href="https://uavsar.jpl.nasa.gov">UAVSAR</a><a class="headerlink" href="#term-UAVSAR" title="Permalink to this term">¶</a></dt><dd><p>Airborn L-band InSAR platform (“Uninhabited Aerial Vehicle Synthetic Aperture
+Radar”)</p>
 </dd>
 </dl>
 </div>
@@ -389,7 +448,7 @@ knowledge, and thus lay the groundwork for a future snow satellite mission.</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="tutorials/raster/intro-ipyleaflet.html" title="previous page">An introduction to rasters</a>
+    <a class='left-prev' id="prev-link" href="projects/example_workflow.html" title="previous page">Basic git workflow for a project</a>
     <a class='right-next' id="next-link" href="bibliography.html" title="next page">Bibliography</a>
 
         </div>
