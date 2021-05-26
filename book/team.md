@@ -1,95 +1,117 @@
 # Our Team
 
-## HP Marshall
+The people on this page have helped organize the hackweek. You'll find a few specializations listed per person if you're wondering who to reach out to during the event!
 
-```{image} https://d25vtythmttl3o.cloudfront.net/uploads/sites/153/2010/07/hpmarshall.jpg
-:alt: picture of HP Marshall
-:class: bg-primary mb-1
-:width: 200px
-:align: center
-```
+````{panels}
+:container: full-width
+:column: text-center col-6 col-lg-4
+:footer: text-left
+:card: +my-2
 
-## Jessica Lundquist
+**Scott Henderson**
+^^^
+<img src="https://avatars.githubusercontent.com/u/3924836?v=4?s=100" alt="picture of Scott Henderson" width="200" height="200">
++++
+*Affiliations:* UW eScience
 
-```{image} img/JessicaLundquist.png
-:alt: picture of Jessica Lundquist
-:class: bg-primary mb-1
-:width: 200px
-:align: center
-```
+*Ask me about:* InSAR, Jupyter, Python
+---
 
-## Jane Koh
+**Anthony Arendt**
+^^^
+<img src="https://avatars.githubusercontent.com/u/4993098?v=4?s=100" alt="picture of Anthony Arendt" width="200" height="200">
++++
+*Affiliations:*  UW eScience & APL
 
-```{image} https://icesat-2hackweek.github.io/assets/images/JaneKoh.jpg
-:alt: picture of Jane Koh
-:class: bg-primary mb-1
-:width: 200px
-:align: center
-```
-* *Affiliation*: eScience Institute
-* *Ask me about*: Zoom technical support
+*Ask me about:* Hackweeks, Glaciers, Python
+---
 
-## David Shean
+**Landung "Don" Setiawan**
 
-```{image} https://geohackweek.github.io/ghw2017/images/1103530.jpg
-:alt: picture of David Shean
-:class: bg-primary mb-1
-:width: 200px
-:align: center
-```
-* *Affiliation*: UW Civil and Environmental Engineering
-* *Ask me about*:
-	* Geospatial data analysis
-	* Digital Elevation Models (DEMs)
-	* Python
-	* Jupyter
-	* Git and Github
+^^^
+<img src="https://avatars.githubusercontent.com/u/17802172?v=4?s=100" alt="picture of Landung Setiawan" width="200" height="200">
++++
+*Affiliations:* UW eScience
 
+*Ask me about:* Oceanography, Python
+---
 
-## Anthony Arendt
+**Jane Koh**
+^^^
+<img src="https://icesat-2hackweek.github.io/assets/images/JaneKoh.jpg" alt="picture of Jane Koh" width="175" height="200">
++++
+*Affiliations:* UW eScience
 
-```{image} https://geohackweek.github.io/ghw2017/images/4993098.jpeg
-:alt: picture of Anthony Arendt
-:class: bg-primary mb-1
-:width: 200px
-:align: center
-```
-* *Affiliation*: eScience & APL
-* *Ask me about*: team building, community software, administrative support
+*Ask me about:* Zoom
+---
 
+**HP Marshall**
+^^^
+<img src="https://d25vtythmttl3o.cloudfront.net/uploads/sites/153/2010/07/hpmarshall.jpg" alt="picture of HP Marshall" width="200" height="200">
++++
+*Affiliations:* Boise State
 
-## Scott Henderson
+*Ask me about:* SnowEX, Radar
+---
 
-```{image} https://avatars2.githubusercontent.com/u/3924836?s=460&v=4
-:alt: picture of Scott Henderson
-:class: bg-primary mb-1
-:width: 200px
-:align: center
-```
-* *Affiliation*: eScience & ESS
-* *Ask me about*:
-	* Python
-	* Conda
-	* Jupyter
-	* Pangeo / Cloud Computing
+**Jessica Lundquist**
+^^^
+<img src="https://www.engr.washington.edu/facdb/api/profile-photo/jessica-d-lundquist" alt="picture of Jessica Lundquist" width="150" height="200">
++++
+*Affiliations:* UW CEE
 
-## Landung (Don) Setiawan
+*Ask me about:* SnowEX
+---
 
-<img src="https://avatars.githubusercontent.com/u/17802172?v=4" alt="picture of Scott Henderson" width="300" height="300">
+**David Shean**
+^^^
+<img src="https://geohackweek.github.io/ghw2017/images/1103530.jpg" alt="picture of David Shean" width="200" height="200">
++++
+*Affiliations:* UW CEE
 
-* *Affiliation*: eScience
-* *Ask me about*:
-	* Python
-	* Conda
-	* Git
-	* Oceanography
+*Ask me about:* Stereo2SWE, Python
+---
 
-## Micah Johnson
+**Micah Johnson**
+^^^
+<img src="https://m3works.io/images/micahjohnson.jpeg" alt="picture of Micah Johnson" width="200" height="200">
++++
+*Affiliations:* M3Works
 
-<img src="https://m3works.io/images/micahjohnson.jpeg" alt="picture of Micah Johnson" width="300" height="300">
+*Ask me about:* SnowEx Database, PostGIS
+---
 
-* *Affiliation*: M3Works
-* *Ask me about*:
-	* Python
-	* PostGIS
-	* Git
+**Joachim Meyer**
+^^^
+<img src="https://avatars.githubusercontent.com/u/178649?v=4" alt="picture of Micah Johnson" width="200" height="200">
++++
+*Affiliations:* University of Utah
+
+*Ask me about:* Python, Git, GDAL, PDAL
+---
+
+**Steven Pestana**
+^^^
+<img src="https://avatars.githubusercontent.com/u/650301?v=4?s=100" alt="picture of Steven Pestana" width="200" height="200">
++++
+*Affiliations:* UW CEE
+
+*Ask me about:* Thermal IR, Python
+---
+
+**Jack Tarricone**
+^^^
+<img src="https://avatars.githubusercontent.com/u/54866783?v=4" alt="picture of Jack Tarricone" width="200" height="200">
++++
+*Affiliations:* University of Nevada, Reno
+
+*Ask me about:* UAVSAR, SnowEx, R
+---
+
+**Melissa Wrzesien**
+^^^
+<img src="https://gestar.usra.edu/sites/gestar/cache/file/EB9AFF5C-BE08-54EB-E132BDBC07ACA48F_medium.jpg" alt="picture of Melissa Wrzesien" width="180" height="180">
++++
+*Affiliations:* NASA Goddard Space Flight Center/USRA
+
+*Ask me about:* Land surface modeling, LIS, NoahMP

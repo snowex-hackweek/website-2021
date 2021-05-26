@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+env:
+  DOCKER_IMAGE: uwhackweek/snowex:latest
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-20.04
@@ -15,14 +18,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Pull SnowEX Docker Image
+    - name: Pull Docker Image
       run: |
-        docker pull uwhackweek/snowex:latest
+        docker pull $DOCKER_IMAGE
         docker images
 
     - name: Build JupyterBook
       run: |
-        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw uwhackweek/snowex:latest jb build book
+        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw $DOCKER_IMAGE jb build book
 
     - name: Publish to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
