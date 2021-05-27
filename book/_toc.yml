@@ -31,6 +31,7 @@
           sections:
             - file: tutorials/sar/sentinel1
             - file: tutorials/sar/uavsar
+            - file: tutorials/microstructure/microstructure-tutorial
 
 - part: Projects
   chapters:
