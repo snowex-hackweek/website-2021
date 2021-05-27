@@ -18,6 +18,7 @@
         - file: preliminary/github
         - file: preliminary/jupyterhub
         - file: preliminary/earthdata
+        - file: preliminary/pangeo
         - file: preliminary/python
 
 - part: Tutorials
