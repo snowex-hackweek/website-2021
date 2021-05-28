@@ -60,7 +60,7 @@ Here are the steps:
 As you'll learn in the next lesson, we will use the {{ hackweek }} GitHub 
 organization as a way to manage access to our cloud computing resources.
 
-```{note}
+```{attention}
 You must have *Public*, rather than *Private* organization membership (GitHub's default), 
 in order for our JupyterHub authentication to work. For events like hackweeks, 
 public membership also helps so that others can recognize your participation in the event!

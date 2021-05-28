@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JupyterHub Connection &#8212; SnowEx Hackweek</title>
+    <title>JupyterHub &#8212; SnowEx Hackweek</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -158,12 +158,17 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     JupyterHub Connection
+     JupyterHub
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="earthdata.html">
      Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pangeo.html">
+     Pangeo
     </a>
    </li>
    <li class="toctree-l2">
@@ -187,6 +192,11 @@
    Tutorials
   </a>
   <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tutorials/jupyter.html">
+     JupyterHub
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../tutorials/raster/intro-ipyleaflet.html">
      An introduction to rasters
@@ -366,21 +376,28 @@
   <a class="reference internal nav-link" href="#how-do-i-access-the-shared-cloud-environment">
    How do I access the shared cloud environment?
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-pangeo-and-how-is-this-system-configured">
-   What is Pangeo and how is this system configured?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-do-i-get-my-code-in-and-out-of-jupyterhub">
-   How do I get my code in and out of JupyterHub?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-do-i-end-my-jupyterhub-session-will-i-lose-all-of-my-work">
-   How do I end my JupyterHub session? Will I lose all of my work?
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#first-time-login">
+     First time login
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#after-each-login">
+     After each login
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-i-end-my-jupyterhub-session">
+     How do I end my JupyterHub session?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#will-i-lose-all-of-my-work">
+     Will I lose all of my work?
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -394,67 +411,73 @@
         
               <div>
                 
-  <div class="section" id="jupyterhub-connection">
-<h1>JupyterHub Connection<a class="headerlink" href="#jupyterhub-connection" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="jupyterhub">
+<h1>JupyterHub<a class="headerlink" href="#jupyterhub" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="why-are-we-using-a-shared-cloud-environment">
 <span id="event-jupyterhub"></span><h2>Why are we using a shared cloud environment?<a class="headerlink" href="#why-are-we-using-a-shared-cloud-environment" title="Permalink to this headline">¶</a></h2>
-<p>Teaching software to a diverse group of participants, each with different computers and operating systems, can be challenging. As you’ll learn in the next lesson, there are specific ways to configure our software for the tutorials to be successful, so it takes time to get everyone set up consistently. Our solution to this is to give everyone access to a cloud computing environment that is pre-configured for the specific software we will deploy. This cloud computing instance can be accessed from any web browser, which eliminates the need for configuring each person’s individual computer.</p>
-<p>We will encourage you to use our shared resources for all the tutorials, and you can optionally use this for your projects as well. We also hope you will practice installing Python libraries locally on your laptop so that you can continue working after leaving our event (see our next lesson for details).</p>
+<p>Teaching software to a diverse group of participants, each with different computers
+and operating systems, can be challenging. As you’ll learn in the next lesson, there
+are specific ways to configure our software for the tutorials to be successful, so
+it takes time to get everyone set up consistently. Our solution to this is to give
+everyone access to a cloud computing environment that is pre-configured for the
+specific software we will deploy. This cloud computing instance can be accessed
+from any web browser, which eliminates the need for configuring each person’s
+individual computer.</p>
+<p>We will encourage you to use our shared resources for all the tutorials, and you
+can optionally use this for your projects as well. We also hope you will practice
+installing Python libraries locally on your laptop so that you can continue working
+after leaving our event.</p>
 </div>
 <div class="section" id="how-do-i-access-the-shared-cloud-environment">
 <h2>How do I access the shared cloud environment?<a class="headerlink" href="#how-do-i-access-the-shared-cloud-environment" title="Permalink to this headline">¶</a></h2>
-<p>Access to our shared cloud environment is easy. Just click go to <a class="reference external" href="https://snowex.hackweek.io">https://snowex.hackweek.io</a>!</p>
+<p>Access to our shared cloud environment (JupyterHub) is under this URL: <a class="reference external" href="https://snowex.hackweek.io">https://snowex.hackweek.io</a>!</p>
+<div class="section" id="first-time-login">
+<h3>First time login<a class="headerlink" href="#first-time-login" title="Permalink to this headline">¶</a></h3>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Before going to <a class="reference external" href="https://snowex.hackweek.io">https://snowex.hackweek.io</a> you need to setup your snowex-hackweek
+organization membership correctly. See: <a class="reference internal" href="github.html#configure-github"><span class="std std-ref">How should I configure my GitHub account?</span></a></p>
+</div>
+<p>The first time you sign in, you will be asked to authorize the OAuth app as access
+to the JupyterHub is restricted to snowex-hackweek GitHub Organization members.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The screenshots below might not be exactly what you see as they are from past hackweek events</p>
+<p>The screenshots below will not exactly match what you see and you should see your
+user information for instance.</p>
 </div>
-<p>If this is your first time signing in, you need to ensure you’ve setup your <a class="reference internal" href="../glossary.html#term-GitHub"><span class="xref std std-term">GitHub</span></a> organization membership correctly (see <a class="reference internal" href="github.html#configure-github"><span class="std std-ref">How should I configure my GitHub account?</span></a>), you can now click on the “Sign in with GitHub” button. Then, authorize the OAuth app (Access to the JupyterHub is restricted to GitHub Organization members, so when you log in, you membership must be checked).</p>
 <p><img alt="jupyterhub-authentication" src="../_images/jupyterhub-authentication.png" /></p>
-<p>It can take several minutes for new servers to launch on the cloud - be patient! Once things are spun up you will see your very own instance of a <a class="reference internal" href="../glossary.html#term-JupyterLab"><span class="xref std std-term">JupyterLab</span></a> environment:</p>
+</div>
+<div class="section" id="after-each-login">
+<h3>After each login<a class="headerlink" href="#after-each-login" title="Permalink to this headline">¶</a></h3>
+<p>It can take several minutes for new servers to launch on the cloud - be patient!
+Once things are spun up you will see your very own instance of a <a class="reference internal" href="../glossary.html#term-JupyterLab"><span class="xref std std-term">JupyterLab</span></a> environment:</p>
 <p><img alt="jupyterlab" src="../_images/jupyterlab.png" /></p>
+<p>When you log into JupyterHub you have access to your own virtual drive space
+under the <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code> directory. No other users will be able to see or access
+your data files. You can add/remove/edit files in your virtual drive space.</p>
 </div>
-<div class="section" id="what-is-pangeo-and-how-is-this-system-configured">
-<h2>What is Pangeo and how is this system configured?<a class="headerlink" href="#what-is-pangeo-and-how-is-this-system-configured" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://pangeo.io">Pangeo</a> is a community of researchers building open, reproducible and scalable scientific software tools. Several of the UW eScience Hackweek organizers are involved in <a class="reference external" href="https://earthdata.nasa.gov/esds/competitive-programs/access/eos-data-cloud">projects with NASA and NSF</a> to build prototype systems to enable data discovery in the era of expanding data volume and complexity.</p>
-<p><img alt="jupyterhub-connectivity" src="../_images/jupyterhub-connectivity.png" /></p>
-<p>For this hackweek, we have created virtual computing instances on <a class="reference external" href="https://aws.amazon.com/">Amazon Web Services</a> that can be deployed on demand in a parallel computing environment. We use JupyterHub as a way to give a Jupyter Notebook server to each person in a group. <a class="reference external" href="https://www.slideshare.net/willingc/jupyterhub-a-thing-explainer-overview?from_action=save">These slides</a> give a nice overview of what JupyterHub is all about. We use JupyterHub in an educational setting because it enables us to quickly begin working with code without spending time to get the necessary libraries and dependencies set up on everyone’s individual computers.</p>
-</div>
-<div class="section" id="how-do-i-get-my-code-in-and-out-of-jupyterhub">
-<h2>How do I get my code in and out of JupyterHub?<a class="headerlink" href="#how-do-i-get-my-code-in-and-out-of-jupyterhub" title="Permalink to this headline">¶</a></h2>
-<p>When you log into JupyterHub you have access to your own virtual drive space under the <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code> directory. No other users will be able to see or access your data files. You can easily upload files to your virtual drive space.</p>
-<p>Here we’ll show you how to pull (copy) some files from GitHub into your virtual drive space using git. This will be a common task during the hackweek: at the start of each tutorial we’ll ask you to “clone” (make a copy of a code repository) into your drive space on JupyterHub or local computer.</p>
-<p>Start by opening a linux terminal. There are two ways to do this in JupyterLab: (1) Navigate to the “File” menu, choose “New” and then “Terminal” or (2) click on the “terminal” button in JupyterLab:</p>
-<p><img alt="terminal-button" src="../_images/terminal-button.png" /></p>
-<p>This will open a new terminal tab in your JupyterLab interface:</p>
-<p><img alt="terminal-tab" src="../_images/terminal.png" /></p>
-<p>Now you can issue any Linux commands to manage your local file system.</p>
-<p>Now let’s clone a repository. First, navigate in a browser on your own computer to the repository link <a class="reference external" href="https://github.com/snowex-hackweek/website">here</a>. Next, click on the green “clone or download” button and then copy the url into your clipboard by clicking the copy button:</p>
-<p><img alt="clone" src="../_images/clone.png" /></p>
-<p>Now navigate back to your command line in JupyterLab. Type “git clone” and then paste in the url:</p>
-<p><img alt="terminal-clone" src="../_images/terminal-clone.png" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A note about cutting and pasting
-Pasting something from your clipboard into the JupyterLab terminal requires holding down the “shift” key and right-clicking.  This is different from the usual Linux method that only requires a right click.</p>
-</div>
-<p>After issuing the Git clone command you should see something like this:</p>
-<p><img alt="clone-result" src="../_images/clone-result.png" /></p>
-<p>You may also upload files from your local system using the upload button (up-pointing arrow) on the top left of the JupyterHub navigation panel. Similarly, you may download files to your local system by right-clicking the file and selecting download (down-pointing arrow).</p>
-<p>Simple, example GitHub/git/local-workspace workflows for getting a tutorial started in your JupyterHub instance and working on a group project are provided. The <a class="reference external" href="https://icesat-2hackweek.github.io/learning-resources/tutorials/getting_started">getting started on a tutorial</a> workflow briefly reviews much of the information in this preliminary exercise along with steps for keeping the tutorial updated with the original, master copy. The <a class="reference external" href="https://icesat-2hackweek.github.io/learning-resources/projects/example_workflow">basic git workflow for a project</a> serves as a reminder of the git workflow for working on a group project while minimizing code conflicts that could result from multiple people making changes to the same files simultaneously.</p>
-</div>
-<div class="section" id="how-do-i-end-my-jupyterhub-session-will-i-lose-all-of-my-work">
-<h2>How do I end my JupyterHub session? Will I lose all of my work?<a class="headerlink" href="#how-do-i-end-my-jupyterhub-session-will-i-lose-all-of-my-work" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When you are finished working for the day it is important to explicitly log out of your JupyterHub session.</p>
-</div>
-<p>The reason for this is it will save us a bit of money! When you keep a session active it uses up AWS resources and keeps a series of virtual machines deployed.</p>
-<p>Stopping the server happens automatically when you log out, so navigate to “File -&gt; Log Out” and just click “Log Out”!</p>
+<div class="section" id="how-do-i-end-my-jupyterhub-session">
+<h3>How do I end my JupyterHub session?<a class="headerlink" href="#how-do-i-end-my-jupyterhub-session" title="Permalink to this headline">¶</a></h3>
+<p>Stopping the server happens automatically when you navigate
+to “File -&gt; Log Out” and click “Log Out”! to end a session.</p>
 <p><img alt="hub-control-panel-button" src="../_images/hub-logout-button.png" /></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>logging out
-Logging out will <strong>NOT</strong> cause any of your work to be lost or deleted. It simply shuts down some resources. It would be equivalent to turning off your desktop computer at the end of the day.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>When you are finished working for the day it is important to explicitly log
+out of your JupyterHub session.</p>
+</div>
+<p>The reason for this is it will save us a bit of money! When you keep a session
+active it uses up AWS resources and keeps a series of virtual machines deployed.</p>
+</div>
+<div class="section" id="will-i-lose-all-of-my-work">
+<h3>Will I lose all of my work?<a class="headerlink" href="#will-i-lose-all-of-my-work" title="Permalink to this headline">¶</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Logging out
+Logging out will <strong>NOT</strong> cause any of your work to be lost or deleted. It simply
+shuts down some resources. It would be equivalent to turning off your desktop
+computer at the end of the day.</p>
+</div>
 </div>
 </div>
 </div>
