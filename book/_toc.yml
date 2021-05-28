@@ -15,6 +15,7 @@
   chapters:
     - file: preliminary/index
       sections:
+        - file: preliminary/swc
         - file: preliminary/github
         - file: preliminary/jupyterhub
         - file: preliminary/earthdata
