@@ -1,9 +1,10 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Snowex Hackweek
+title: SnowEx Hackweek
 author: eScience Institute, University of Washington
 logo: logo.png
+only_build_toc_files: true
 
 parse:
   myst_substitutions:
@@ -12,14 +13,14 @@ parse:
     github_org_url: https://github.com/snowex-hackweek
     jupyterhub_url: https://snowex.hackweek.io
     contact_email: uwhackweek@github.com
-    
-    
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
   allow_errors: false
+  # Per-cell notebook execution limit (seconds)
+  timeout: 300
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -35,9 +36,17 @@ repository:
   path_to_book: book
   branch: main
 
+# Bibliography
+bibtex_bibfiles:
+  - references.bib
+sphinx:
+  config:
+    bibtex_reference_style: author_year  # or label, super, \supercite
+
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
+  use_edit_page_button: true
   use_issues_button: true
   use_repository_button: true
   google_analytics_id: G-QM84T4SB76

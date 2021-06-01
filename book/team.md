@@ -38,7 +38,7 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 **Jane Koh**
 ^^^
-<img src="https://icesat-2hackweek.github.io/assets/images/JaneKoh.jpg" alt="picture of Jane Koh" width="200" height="200">
+<img src="https://icesat-2hackweek.github.io/assets/images/JaneKoh.jpg" alt="picture of Jane Koh" width="175" height="200">
 +++
 *Affiliations:* UW eScience
 
@@ -56,7 +56,7 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 **Jessica Lundquist**
 ^^^
-<img src="https://www.engr.washington.edu/facdb/api/profile-photo/jessica-d-lundquist" alt="picture of Jessica Lundquist" width="200" height="200">
+<img src="https://www.engr.washington.edu/facdb/api/profile-photo/jessica-d-lundquist" alt="picture of Jessica Lundquist" width="150" height="200">
 +++
 *Affiliations:* UW CEE
 
@@ -81,4 +81,37 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Ask me about:* SnowEx Database, PostGIS
 ---
 
-````
+**Joachim Meyer**
+^^^
+<img src="https://avatars.githubusercontent.com/u/178649?v=4" alt="picture of Micah Johnson" width="200" height="200">
++++
+*Affiliations:* University of Utah
+
+*Ask me about:* Python, Git, GDAL, PDAL
+---
+
+**Steven Pestana**
+^^^
+<img src="https://avatars.githubusercontent.com/u/650301?v=4?s=100" alt="picture of Steven Pestana" width="200" height="200">
++++
+*Affiliations:* UW CEE
+
+*Ask me about:* Thermal IR, Python
+---
+
+**Jack Tarricone**
+^^^
+<img src="https://avatars.githubusercontent.com/u/54866783?v=4" alt="picture of Jack Tarricone" width="200" height="200">
++++
+*Affiliations:* University of Nevada, Reno
+
+*Ask me about:* UAVSAR, SnowEx, R
+---
+
+**Melissa Wrzesien**
+^^^
+<img src="https://gestar.usra.edu/sites/gestar/cache/file/EB9AFF5C-BE08-54EB-E132BDBC07ACA48F_medium.jpg" alt="picture of Melissa Wrzesien" width="180" height="180">
++++
+*Affiliations:* NASA Goddard Space Flight Center/USRA
+
+*Ask me about:* Land surface modeling, LIS, NoahMP
