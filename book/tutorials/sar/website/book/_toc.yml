@@ -1,0 +1,49 @@
+# Table of content
+# Learn more at https://jupyterbook.org/customize/toc.html
+- file: intro
+- part: Details
+  chapters:
+  - file: application
+  - file: schedule
+  - file: team
+  - file: norms/index
+    sections:
+    - file: norms/CoC
+    - file: norms/community
+
+- part: Preparation
+  chapters:
+    - file: preliminary/index
+      sections:
+        - file: preliminary/swc
+        - file: preliminary/github
+        - file: preliminary/jupyterhub
+        - file: preliminary/earthdata
+        - file: preliminary/pangeo
+        - file: preliminary/python
+
+- part: Tutorials
+  chapters:
+    - file: tutorials/index
+      sections:
+        - file: tutorials/jupyter
+        # Tutorial can be a single notebook
+        - file: tutorials/raster/intro-ipyleaflet
+        # Or folder with multiple notebooks
+        - file: tutorials/sar/index
+          sections:
+            - file: tutorials/sar/sentinel1
+            - file: tutorials/sar/uavsar
+
+- part: Projects
+  chapters:
+    - file: projects/index
+      sections:
+        - file: projects/project_initialization
+        - file: projects/project_roles
+        - file: projects/example_workflow
+
+- part: Reference
+  chapters:
+    - file: glossary
+    - file: bibliography
