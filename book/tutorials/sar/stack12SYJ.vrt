@@ -1,0 +1,1203 @@
+<VRTDataset rasterXSize="5490" rasterYSize="5490">
+  <SRS dataAxisToSRSAxisMapping="1,2">PROJCS["WGS 84 / UTM zone 12N",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-111],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","32612"]]</SRS>
+  <GeoTransform>  6.9996000000000000e+05,  2.0000000000000000e+01,  0.0000000000000000e+00,  4.4000400000000000e+06,  0.0000000000000000e+00, -2.0000000000000000e+01</GeoTransform>
+  <VRTRasterBand dataType="Float32" band="1">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20200831_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="2">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20200907_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="3">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20200912_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="4">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20200919_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="5">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20200924_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="6">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20201001_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="7">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20201006_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="8">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20201013_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="9">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20201018_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="10">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20201025_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="11">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20201030_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="12">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20201106_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="13">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20201111_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="14">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20201118_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="15">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20201123_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="16">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20201130_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="17">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20201205_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="18">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20201212_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="19">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20201217_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="20">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20201224_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="21">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1A_20201229_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="22">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200105_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="23">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200112_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="24">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200117_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="25">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200124_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="26">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200129_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="27">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200210_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="28">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200222_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="29">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200229_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="30">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200305_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="31">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200312_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="32">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200317_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="33">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200329_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="34">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200405_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="35">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200410_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="36">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200417_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="37">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200422_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="38">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200429_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="39">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200504_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="40">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200511_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="41">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200516_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="42">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200523_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="43">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200528_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="44">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200609_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="45">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200616_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="46">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200621_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="47">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200628_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="48">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200710_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="49">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200715_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="50">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200722_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="51">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200727_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="52">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200803_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="53">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200808_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="54">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200815_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="55">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200820_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="56">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200827_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="57">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200901_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="58">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200908_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="59">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200913_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="60">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200920_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="61">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20200925_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="62">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20201002_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="63">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20201007_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="64">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20201014_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="65">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20201019_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="66">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20201026_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="67">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20201031_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="68">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20201107_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="69">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20201112_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="70">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20201119_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="71">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20201124_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="72">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20201201_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="73">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20201206_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="74">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20201213_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="75">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20201218_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="76">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20201225_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="77">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2020/S1B_20201230_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="78">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1A_20210105_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="79">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1A_20210110_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="80">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1A_20210117_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="81">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1A_20210122_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="82">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1A_20210129_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="83">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1A_20210227_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="84">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1A_20210306_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="85">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1A_20210311_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="86">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1A_20210318_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="87">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1A_20210323_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="88">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1A_20210330_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="89">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1A_20210404_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="90">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1A_20210411_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="91">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1A_20210416_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="92">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1A_20210423_12SYJ_DSC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="93">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210106_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="94">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210111_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="95">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210118_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="96">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210123_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="97">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210130_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="98">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210204_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="99">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210211_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="100">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210223_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="101">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210228_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="102">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210307_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="103">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210319_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="104">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210324_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="105">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210331_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="106">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210405_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="107">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210412_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="108">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210417_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="109">
+    <NoDataValue>0</NoDataValue>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="0">/vsis3/sentinel-s1-rtc-indigo/tiles/RTC/1/IW/12/S/YJ/2021/S1B_20210424_12SYJ_ASC/Gamma0_VV.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="5490" RasterYSize="5490" DataType="Float32" BlockXSize="512" BlockYSize="512" />
+      <SrcRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <DstRect xOff="0" yOff="0" xSize="5490" ySize="5490" />
+      <NODATA>0</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+</VRTDataset>

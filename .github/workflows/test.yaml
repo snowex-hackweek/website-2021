@@ -18,6 +18,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Ensure Clean Notebooks
+      run: |
+        pip install nb-clean
+        find book -name "*ipynb" | xargs nb-clean check --preserve-cell-metadata
+
     - name: Pull Docker Image
       run: |
         docker pull $DOCKER_IMAGE
@@ -27,11 +32,8 @@ jobs:
       run: |
         docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw $DOCKER_IMAGE jb build book --warningiserror --keep-going
 
-    - name: Check External Links
-      run: |
-        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw $DOCKER_IMAGE jb build book --builder linkcheck
-
     - name: Save Build
+      if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: build
