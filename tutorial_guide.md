@@ -75,13 +75,16 @@ Once you are satisfied with your tutorial, open up a pull request to add it to t
 1. Commit your notebook and push to your fork
 ```
 # Ensure you have a terminal open and are at root path of the repository (./website)
-git add book/tutorials/example/ book/_toc.yml
+# Add the modified table of contents
+git add book/_toc.yml
+# Add files you created within your subdirectory
+git add book/tutorials/example/example.ipynb
 git commit -m "added example tutorial"
 git push
 # NOTE: you may be prompted to set the remote branch name
 # git push --set-upstream origin example-tutorial
 ```
-When running a `git push` command if this is your first time using `git` on the JupyterHub you might need to run some configuration commands. You will also be prompted for your username and password for authentication. When prompted for password, you should use a "personal access token"  and *not* your main github password (https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
+When running a `git commit` command if this is your first time using `git` on the JupyterHub you might need to run some configuration commands. You will also be prompted for your username and password for authentication when you `git push`. When prompted for password, you should use a "personal access token" and *not* your main github password (https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token).
 ```
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
