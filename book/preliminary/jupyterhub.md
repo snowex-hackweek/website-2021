@@ -18,6 +18,7 @@ installing Python libraries locally on your laptop so that you can continue work
 after leaving our event.
 
 
+(accessing-jupyterhub)=
 ## How do I access the shared cloud environment?
 
 Access to our shared cloud environment (JupyterHub) is under this URL: {{ jupyterhub_url }}!
