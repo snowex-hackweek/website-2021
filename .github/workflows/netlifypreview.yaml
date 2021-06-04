@@ -1,6 +1,8 @@
 name: NetlifyPreview
 
-on: pull_request_target
+on:
+  pull_request_target:
+    types: [labeled, synchronize]
 
 env:
   DOCKER_IMAGE: uwhackweek/snowex:latest
@@ -20,13 +22,13 @@ jobs:
 
     - name: Pull SnowEX Docker Image
       run: |
-        docker pull $DOCKER_IMAGE:latest
+        docker pull $DOCKER_IMAGE
         docker images
 
     # NOTE: --warningiserror not used here, so that whatever does work is rendered
     - name: Build JupyterBook
       run: |
-        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw $DOCKER_IMAGE:latest jb build book
+        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw $DOCKER_IMAGE jb build book
 
     - name: Deploy Website Preview
       uses: nwtgck/actions-netlify@v1.1
