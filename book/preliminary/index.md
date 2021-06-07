@@ -17,20 +17,41 @@ We will be offering a preliminary training session for anyone wishing to brush u
 
 You can view our [Software Carpentry Schedule](swc) for more information.
 
-## GitHub Account
+## Required setup
 
-Everyone attending {{ hackweek }} will require obtaining a GitHub account. Visit our [GitHub instruction page](github) to learn how!
+```{attention}
+Please make sure to find some time to go through the below material before
+the hackweek.
+```
 
-## JupyterHub
+### GitHub Account
 
-We will offer all tutorials within the Jupyter Hub computing environment. Visit our [Introduction to Jupyter Hub](jupyterhub) page to learn more!
+Everyone attending {{ hackweek }} will require obtaining a GitHub account. 
+Visit our [GitHub instruction page](github) to learn how!
 
-## Git
+### JupyterHub
+
+We will offer all tutorials within the Jupyter Hub computing environment. 
+Visit our [Introduction to Jupyter Hub](jupyterhub) page to learn more!
+
+### Git
 
 All content of the hackweek will be shared via GitHub and interacting with the
 website will be done via the `git` command. Visit [Setting up the `git` command](git)
 to learn how to configure that!
 
-## EarthData Login
+### EarthData Login
 
-We'll have you download some data from NSIDC for your tutorials and projects. Visit our [Earthdata](earthdata) page to learn how to access and Earthdata login account if you don't already have one!
+We'll have you download some data from NSIDC for your tutorials and projects. 
+Visit our [Earthdata](earthdata) page to learn how to access and Earthdata login account if you don't already have one!
+
+## Optional setup
+
+### Python
+Dive deeper into how [Python is managed and installed](python) on the JupyterHub
+and how you can install that on your personal machine.
+
+## Additional information
+
+### Pangeo
+Learn more about the [technical cloud environment](pangeo) the hackweek is using.
