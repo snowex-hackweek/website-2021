@@ -48,7 +48,7 @@ In order to pull and push changes to GitHub, you need to setup an authentication
 method. For machines and environments that are not your personal, it is a good
 practice to use a [GitHub personal access tokens](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 +++
-For the hackweek, all you need is to check the 'repo' and 'read:org' scope.
+For the hackweek, you need to check the **repo**, **admin:org**, and **workflow** scope.
 
 ![github-token](../img/github-token.png)
 
