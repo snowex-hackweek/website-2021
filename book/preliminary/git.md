@@ -1,5 +1,14 @@
 # Git
 
+## What is Git?
+
+[Git](https://git-scm.com/) is a popular version control system that is used in
+many open source software projects to manage their software code base.
+
+You are not required to know Git in advance of this event, but come prepared to learn a lot about it!
+
+[Here a quick introduction video from the official website](https://git-scm.com/video/what-is-git)
+
 ## Setting up on JupyterHub
 
 Below are instructions to get you setup with `git` on the SnowEx hackweek 
@@ -134,3 +143,11 @@ The minimum required scopes are 'repo', 'read:org', 'workflow'.
 ✓ Configured git protocol
 ✓ Logged in as SnowExHackweek
 ```
+
+## Installing `git` on your local computer
+
+If you want to use and setup `git` on your local computer and don't have the
+command available in your local terminal, you can download the latest installer 
+on [Git-SCM](https://git-scm.com). 
+More help for the install process can be found in the 
+[official Git documentation](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)

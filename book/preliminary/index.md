@@ -25,6 +25,11 @@ Everyone attending {{ hackweek }} will require obtaining a GitHub account. Visit
 
 We will offer all tutorials within the Jupyter Hub computing environment. Visit our [Introduction to Jupyter Hub](jupyterhub) page to learn more!
 
+## Git
+
+All content of the hackweek will be shared via GitHub and interacting with the
+website will be done via the `git` command. Visit [Setting up the `git` command](git)
+to learn how to configure that!
 
 ## EarthData Login
 

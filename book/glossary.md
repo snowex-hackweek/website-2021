@@ -25,6 +25,10 @@
   isolated environment called a container. It is widely used for creating
   reproducible software environments to run code on different computers.
 
+Git
+  A popular version control system that is used in many open source software 
+  projects to manage their software code base.
+
 [GitHub](https://github.com)
   Provider of Internet hosting for software development and distributed version
   control using the "git" command line tool.
