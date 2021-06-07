@@ -19,17 +19,24 @@ Choose the 'Terminal' from the 'Other' options in the 'Launcher' tab.
 Set your username and email address. The email address should be the same
 as you used to register your GitHub account.
 
+```{attention}
+Use your personal name instead of the placeholder `SnowEx Attendee` 
+in the below commands. For the email, it should be the address you used to create
+your GitHub account instead of `attendee@hackweek.com`. Both values need to be
+surrounded by quotes `"`.
+```
+
 ```shell
 git config --global user.name "SnowEx Attendee"
 git config --global user.email "attendee@hackweek.com"
-git config --global credential.helper 'cache --timeout 2678400'
+git config --global credential.helper store
 ```
 
-The last line of the config will cache your GitHub credentials for one month
-and will save you from re-entering your username and password from the command
-line with each push and pull to GitHub.
+The last line of the config will store your GitHub credentials and will save 
+you from re-entering your username and password from the command line with each 
+push, pull, or interactions with GitHub.
 
-To verify successful setting use the
+To verify that you successfully executed the above commands, use the
 ```shell
 git config -l
 ```
@@ -40,36 +47,40 @@ The output should look similar to this:
 jovyan@jupyter:~$ git config -l
 user.name=SnowEx Attendee
 user.email=attendee@hackweek.com
-credential.helper=cache --timeout 2678400
+credential.helper=store
 ```
 
 ### 4. Authenticating with GitHub
-In order to pull and push changes to GitHub, you need to setup an authentication
-method. For machines and environments that are not your personal, it is a good
-practice to use a [GitHub personal access tokens](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+In order to interact from the JupyterHub with GitHub via the `git' command, 
+you need to setup an authentication method. For machines and environments that
+are not your personal, it is a good practice to use a 
+[GitHub personal access tokens](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 +++
 For the hackweek, you need to check the **repo**, **admin:org**, and **workflow** scope.
 
 ![github-token](../img/github-token.png)
 
-Make sure that you save the token on your local computer as a backup
-in case you need to re-authenticate again. You will need the token to access
-your personal account as well as pushing to your project repository.
+Make sure that you save the token on your local computer as a backup in case 
+you need to re-authenticate again. The token will give you access to your 
+personal GitHub account as well as pushing to your project repository with
+the SnowEx hackweek organization via the command line.
 
-To cache your credentials via the token, we will be using a test repository from
+To test your setup on the JupyterHub, we will be using a test repository from
 the SnowEx Hackweek organization. Paste the following command into your open
-terminal on the JupyterHub, where you will be prompted for your GitHub username
-and the token. The output in your console should look similar to the below.
+terminal on the JupyterHub. where you will be prompted for your GitHub username
+and the token.
 
 ```shell
 git clone https://github.com/snowex-hackweek/github_setup_check.git
 ```
 
-You will be then prompted for your personal inputs.
+Since this is the first time you are interacting from the JupyterHub with GitHub,
+you will be then prompted for your personal inputs. The output in your Terminal
+will be similar to the below:
 
 ```{attention}
 Use your personal GitHub username instead of the placeholder `<GitHub Username>` 
-in the below sample output. For the password, paste your crated token.
+in the below sample output. For the password, paste your created token.
 ```
 
 ```shell
@@ -83,23 +94,32 @@ remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (3/3), done.
 ```
 
-To test the caching, go inside the repository and issue a `git pull`:
+Now that you have entered your credentials once, you should no longer be prompted
+for your username and token again. To test the successful storage of your
+credentials, go inside the repository and issue a `git pull` command. If
+successful, you should have an output similar to this:
+
 ```shell
-cd github_setup_check/
+# Go inside the directory
+(notebook) jovyan@jupyter:~$ cd github_setup_check/
+# Issue the pull command
 (notebook) jovyan@jupyter:~/github_setup_check$ git pull
 Already up to date.
 ```
 
-You should not be prompted for a password again. After this, you can delete 
-the sample repository again via the UI or the command line.
+With the `git` command successfully setup, you can now remove the test
+repository via the JupyterHub user interface. Use a right click on the folder
+in the left panel and choose **Delete**.
 
-#### Alternative GitHub interaction
+![jupyterhub-delete-repo](../img/jupyterhub-delete-repo.png)
+
+#### (Optional) Advanced GitHub setup
 In addition to interacting with GitHub via the `git` command, you can also use
 the `gh` command, which is a set of [command line tools developed by GitHub to
 interact with their website from the command line](https://cli.github.com/). 
 
 Below output will set you up, using the `gh` command and your access token.
-The answers to each question are shown in the output.
+The answers to each question are shown in the output below.
 
 ```shell
 (notebook) jovyan@jupyter-jomey:~$ gh auth login
