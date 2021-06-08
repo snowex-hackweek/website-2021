@@ -24,3 +24,14 @@ The exact timing of the training is still to be determined. Below is a draft out
 | 00:30 - 01:50 | Python Programming ([Topics 1 to 4](http://swcarpentry.github.io/python-novice-gapminder/)) | 
 | 01:50 - 02:10 | Break |
 | 02:10 - 03:10 | Python Programming ([Topics 6 to 9](http://swcarpentry.github.io/python-novice-gapminder/)) | 
+
+## Getting ready
+
+We will open the workshop with getting connected to the hackweek JupyterHub.
+{{ jupyterhub_url }}.
+
+Please take a minute before the workshop to go over the [GitHub instructions](github)
+, create an account, and sent your user name to {{ contact_email }} so
+we can add you to the SnowEx hackweek GitHub organization.
+
+We will be using the JupyterHub ({{ jupyterhub_url }}) throughout this workshop.
