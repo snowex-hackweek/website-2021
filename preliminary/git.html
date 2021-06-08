@@ -498,15 +498,13 @@ credential.helper<span class="o">=</span>store
 </div>
 <div class="section" id="authenticating-with-github">
 <h3>4. Authenticating with GitHub<a class="headerlink" href="#authenticating-with-github" title="Permalink to this headline">¶</a></h3>
-<p>In order to interact from the JupyterHub with GitHub via the `git’ command,
-you need to setup an authentication method. For machines and environments that
-are not your personal, it is a good practice to use a
-<a class="reference external" href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token">GitHub personal access tokens</a></p>
-<p>For the hackweek, you need to check the <strong>repo</strong>, <strong>admin:org</strong>, and <strong>workflow</strong> scope.</p>
+<p>In order to interact with GitHub via the `git’ command inside the JupyterHub environment,
+you need to set up an authentication method. One way to do this is to use your GitHub password. However, it is a better, more secure practice to use a GitHub personal access token.</p>
+<p>Take a moment to work through the instructions on the <a class="reference external" href="https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token">GitHub personal access tokens</a> page. For this hackweek, you need to check the <strong>repo</strong>, <strong>admin:org</strong>, and <strong>workflow</strong> scope.</p>
 <p><img alt="github-token" src="../_images/github-token.png" /></p>
-<p>Make sure that you save the token on your local computer as a backup in case
+<p>Once you have created your token, be sure to save it on your computer in case
 you need to re-authenticate again. The token will give you access to your
-personal GitHub account as well as pushing to your project repository with
+personal GitHub account. It will also give you permission to push changes to your project repository within
 the SnowEx hackweek organization via the command line.</p>
 <p>To test your setup on the JupyterHub, we will be using a test repository from
 the SnowEx Hackweek organization. Paste the following command into your open
@@ -544,7 +542,7 @@ successful, you should have an output similar to this:</p>
 Already up to date.
 </pre></div>
 </div>
-<p>With the <code class="docutils literal notranslate"><span class="pre">git</span></code> command successfully setup, you can now remove the test
+<p>With the <code class="docutils literal notranslate"><span class="pre">git</span></code> command successfully set up, you can now remove the test
 repository via the JupyterHub user interface. Use a right click on the folder
 in the left panel and choose <strong>Delete</strong>.</p>
 <p><img alt="jupyterhub-delete-repo" src="../_images/jupyterhub-delete-repo.png" /></p>
