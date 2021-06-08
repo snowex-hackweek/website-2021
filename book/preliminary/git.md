@@ -60,18 +60,16 @@ credential.helper=store
 ```
 
 ### 4. Authenticating with GitHub
-In order to interact from the JupyterHub with GitHub via the `git' command, 
-you need to setup an authentication method. For machines and environments that
-are not your personal, it is a good practice to use a 
-[GitHub personal access tokens](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+In order to interact with GitHub via the `git' command inside the JupyterHub environment, 
+you need to set up an authentication method. One way to do this is to use your GitHub password. However, it is a better, more secure practice to use a GitHub personal access token.
 +++
-For the hackweek, you need to check the **repo**, **admin:org**, and **workflow** scope.
+Take a moment to work through the instructions on the [GitHub personal access tokens](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) page. For this hackweek, you need to check the **repo**, **admin:org**, and **workflow** scope.
 
 ![github-token](../img/github-token.png)
 
-Make sure that you save the token on your local computer as a backup in case 
+Once you have created your token, be sure to save it on your computer in case 
 you need to re-authenticate again. The token will give you access to your 
-personal GitHub account as well as pushing to your project repository with
+personal GitHub account. It will also give you permission to push changes to your project repository within
 the SnowEx hackweek organization via the command line.
 
 To test your setup on the JupyterHub, we will be using a test repository from
@@ -116,7 +114,7 @@ successful, you should have an output similar to this:
 Already up to date.
 ```
 
-With the `git` command successfully setup, you can now remove the test
+With the `git` command successfully set up, you can now remove the test
 repository via the JupyterHub user interface. Use a right click on the folder
 in the left panel and choose **Delete**.
 
