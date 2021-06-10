@@ -27,17 +27,14 @@
   chapters:
     - file: tutorials/index
       sections:
-        - file: tutorials/jupyter
+        - file: tutorials/jupyter   
         - file: tutorials/core-datasets/core-datasets-tutorial
-        # Tutorial can be a single notebook
+        - file: tutorials/geospatial/geospatial_vector
         - file: tutorials/raster/intro-ipyleaflet
-        # Or folder with multiple notebooks
         - file: tutorials/sar/index
           sections:
             - file: tutorials/sar/sentinel1
             - file: tutorials/sar/uavsar
-        # Not sure if microstructure should be in a folder with e.g. the snow measurements?     
-        #    doing that for now to just get it pushed
         - file: tutorials/microstructure/microstructure-tutorial
 
 - part: Projects
