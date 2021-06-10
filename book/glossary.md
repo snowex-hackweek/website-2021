@@ -78,8 +78,11 @@ RPI
   satellite mission.
 
 [Slack](https://slack.com)
-  A communication platform that we use to share information. We use separate channels for each project and also rely on the video features. If possible we recommend [downloading the Slack app](https://slack.com/downloads). If your agency does not allow you to use the app, you can still interface with Slack in a web browser.
-  
+A communication platform that we use to share information. We use separate channels 
+for each project and also rely on the video features. If possible we recommend 
+[downloading the Slack app](https://slack.com/downloads). If your agency does not allow 
+you to use the app, you can still interface with Slack in a web browser.
+
 SLC
   Common complex-valued SAR amplitude and phase product ("Single Look Complex")
 
