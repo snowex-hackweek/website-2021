@@ -5,11 +5,11 @@ Schedule for {{ hackweek }} during {{ dates }}:
 ```{note}
 Although the schedule is fairly set, we will still be making occasional updates to it, so please check back regularly!
 ```
-# Time Zones
+## Time Zones
 
 All times listed below are UTC -7 (Pacific Daylight Time). You might want to consult this [Time Zone Map](https://www.timeanddate.com/time/map/) to figure out times in your location.
 
-# DAY 1
+## DAY 1
 
 ## Monday July 12 
 
@@ -56,7 +56,7 @@ All times listed below are UTC -7 (Pacific Daylight Time). You might want to con
 
 ________________________________________________________
 
-# DAY 2
+## DAY 2
 
 ## Tuesday July 13
 
@@ -91,7 +91,7 @@ ________________________________________________________
 *Helpers available for consultation as needed*
 ________________________________________________________
 
-# DAY 3
+## DAY 3
 
 ## Wednesday July 14
 
@@ -101,11 +101,11 @@ ________________________________________________________
 
 ### 11:00 to 11:45 AM: LiDAR (Parallel Session 1A)
 
-*Lead Instructors: Clare Webster*
+*Lead Instructors: Clare Webster and Ben Smith*
 
 ### 11:00 to 11:45 AM: Microwave Radar (Parallel Session 1B)
 
-*Lead Instructors: Dylan Boyd, Batu Osmanoglu, Scott Henderson*
+*Lead Instructors: Dylan Boyd, Batu Osmanoglu and Scott Henderson*
 
 ### 12:45 - 1:30 PM: Snow Microstructure (Parallel Session 2A)
 
@@ -120,7 +120,7 @@ ________________________________________________________
 *Helpers available for consultation as needed*
 ________________________________________________________
 
-# DAY 4
+## DAY 4
 
 ## Thursday July 15
 
@@ -145,7 +145,7 @@ ________________________________________________________
 *Helpers available for consultation as needed*
 ________________________________________________________
 
-# DAY 5
+## DAY 5
 
 ## Friday July 16
 
