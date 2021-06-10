@@ -133,3 +133,11 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Ask me about:* Geospatial analysis, TIR, LiDAR
 ---
 
+**Tate Meehan**
+^^^
+<img src="https://avatars.githubusercontent.com/u/14915785?v=4" alt="Tate Meehan" width="200" height="200">
++++
+*Affiliations:* Boise State University & Cold Regions Research and Engineering Laboratory
+
+*Ask me about:* Ground-penetrating Radar
+---
