@@ -35,6 +35,7 @@
           sections:
             - file: tutorials/sar/sentinel1
             - file: tutorials/sar/uavsar
+            - file: tutorials/gpr/gpr
 
 - part: Projects
   chapters:
