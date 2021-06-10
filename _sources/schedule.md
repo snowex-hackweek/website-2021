@@ -9,6 +9,8 @@ Although the schedule is fairly set, we will still be making occasional updates 
 
 All times listed below are UTC -7 (Pacific Daylight Time). You might want to consult this [Time Zone Map](https://www.timeanddate.com/time/map/) to figure out times in your location.
 
+# DAY 1
+
 ## Monday July 12 
 
 ### 9:00 to 10:30 AM: Introductory Session 
@@ -54,6 +56,8 @@ All times listed below are UTC -7 (Pacific Daylight Time). You might want to con
 
 ________________________________________________________
 
+# DAY 2
+
 ## Tuesday July 13
 
 ### 9:00 to 9:30 AM: Project Team Building
@@ -86,3 +90,76 @@ ________________________________________________________
 
 *Helpers available for consultation as needed*
 ________________________________________________________
+
+# DAY 3
+
+## Wednesday July 14
+
+### 9:00 to 10:30 AM: Vector and Raster Data Analysis, Part 2
+
+*Lead Instructors: Scott Henderson and David Shean*
+
+### 11:00 to 11:45 AM: LiDAR (Parallel Session 1A)
+
+*Lead Instructors: Clare Webster*
+
+### 11:00 to 11:45 AM: Microwave Radar (Parallel Session 1B)
+
+*Lead Instructors: Scott Henderson*
+
+### 12:45 - 1:30 PM: Snow Microstructure (Parallel Session 2A)
+
+*Lead Instructors: Mike Durrand*
+
+### 12:45 - 1:30 PM: GPR (Parallel Session 2B)
+
+*Lead Instructors: Ryan Webb*
+
+### 1:30 PM and later: project work
+
+*Helpers available for consultation as needed*
+________________________________________________________
+
+# DAY 4
+
+## Thursday July 15
+
+### 9:00 to 10:30 AM: Machine Learning
+
+*Lead Instructors: Ibrahim Olalekan Alabi and Evi Ofekeze*
+
+### 11:00 to 11:45 AM: Thermal IR (Parallel Session 1A)
+
+*Lead Instructors: Jessica, Steven*
+
+### 11:00 to 11:45 AM: Modeling (Parallel Session 1B)
+
+*Lead Instructors: Melissa Wrzesien*
+
+### 12:30 to 1:00 PM: Camera Data 
+
+*Lead Instructors: Cassie Lumbrazo and Katie Breen*
+
+### 1:30 PM and later: project work
+
+*Helpers available for consultation as needed*
+________________________________________________________
+
+# DAY 5
+
+## Friday July 16
+
+### 9:00 to 10:00 AM: Data Integration
+
+### 10:30 to 11:15 AM: Open Source Software
+
+### 11:30 AM to 12:00 PM: Evaluation Form
+
+### 12:30 - 3:00 PM Project Presentations
+
+### 3:00 - 3:10 PM Closing
+
+
+
+
+
