@@ -72,7 +72,7 @@ RPI
   When two SAR acquisitions of the same location are acquired at different
   times. ("Repeat Pass Interferometry")
 
-[SnowEX](https://snow.nasa.gov/campaigns/snowex)
+[SnowEx](https://snow.nasa.gov/campaigns/snowex)
   5-year NASA funded effort to address the most important gaps in our snow
   remote sensing knowledge, and thus lay the groundwork for a future snow
   satellite mission.
