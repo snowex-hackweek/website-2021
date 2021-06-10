@@ -105,7 +105,7 @@ ________________________________________________________
 
 ### 11:00 to 11:45 AM: Microwave Radar (Parallel Session 1B)
 
-*Lead Instructors: Scott Henderson*
+*Lead Instructors: Dylan Boyd, Batu Osmanoglu, Scott Henderson*
 
 ### 12:45 - 1:30 PM: Snow Microstructure (Parallel Session 2A)
 
