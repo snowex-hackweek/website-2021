@@ -140,3 +140,11 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 *Ask me about:* Ground-penetrating Radar
 ---
+
+**Ryan Webb**
+^^^
+<img src="https://avatars.githubusercontent.com/u/58004721?v=4" alt="Tate Meehan" width="200" height="200">
++++
+*Affiliations:* University of New Mexico
+*Ask me about:* Ground-Penetrating Radar, Liquid Water in Snow, Vadose Zone Hydrology
+---
