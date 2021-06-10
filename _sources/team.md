@@ -124,7 +124,6 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Ask me about:* SnowEx Datasets, Field Observations
 ---
 
-
 **Nicoleta Cristea**
 ^^^
 <img src="https://avatars.githubusercontent.com/u/16614760?s=60&v=4" alt="picture of Nicoleta Cristea" width="200" height="200">
@@ -132,4 +131,3 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Affiliations:* University of Washington eScience & CEE
 *Ask me about:* Geospatial analysis, TIR, LiDAR
 ---
-
