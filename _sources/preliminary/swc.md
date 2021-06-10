@@ -6,12 +6,8 @@ We will host a SnowEx hackweek Software Carpentry training on June 21 - 22. This
 
 All times listed below are UTC -7 (Pacific Daylight Time). You might want to consult this [Time Zone Map](https://www.timeanddate.com/time/map/) to figure out times in your location.
 
-## Preparation
 
 ## Getting ready
-
-We will open the workshop with getting connected to the hackweek JupyterHub.
-{{ jupyterhub_url }}.
 
 Please take a minute before the workshop to go over the [GitHub instructions](github)
 , create an account, and enter your username in [this form](https://docs.google.com/forms/d/e/1FAIpQLSc6T_TZ8cfwRSvYJClAmsun38SM5IPH6EzyZJFZGgeXqIuL_g/viewform) so
