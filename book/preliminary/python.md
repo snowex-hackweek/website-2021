@@ -2,9 +2,15 @@
 
 ## Overview
 
-While we will be using a cloud-hosted computing environment during the hackweek ({ref}`event-jupyterhub`), it is often desirable to run Python code on your laptop. We also want to ensure tutorials and other scientific code is reproducible and *useful* such that it can easily be run on different computers.
+While we will be using a cloud-hosted computing environment during the hackweek 
+({ref}`event-jupyterhub`), it is often desirable to run Python code on your laptop. 
+We also want to ensure that hackweek tutorials or other scientific code is 
+reproducible and can be run on different computers and operating systems.
 
-This lesson takes you through our recommended procedure for managing software Python software on your personal computer. We suggest you follow these instructions in advance so that we can help you troubleshoot during the hackweek.
+This lesson takes you through our recommended procedure for managing Python 
+environments and software on your personal computer. We suggest you follow these 
+instructions in advance so that we can help you troubleshoot during the hackweek 
+and have a fully functioning environment after.
 
 ## Python Software
 

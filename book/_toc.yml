@@ -18,6 +18,7 @@
         - file: preliminary/swc
         - file: preliminary/github
         - file: preliminary/jupyterhub
+        - file: preliminary/git
         - file: preliminary/earthdata
         - file: preliminary/pangeo
         - file: preliminary/python
@@ -26,15 +27,15 @@
   chapters:
     - file: tutorials/index
       sections:
-        - file: tutorials/jupyter
+        - file: tutorials/jupyter   
+        - file: tutorials/core-datasets/core-datasets-tutorial
         - file: tutorials/geospatial/geospatial_vector
-        # Tutorial can be a single notebook
         - file: tutorials/raster/intro-ipyleaflet
-        # Or folder with multiple notebooks
         - file: tutorials/sar/index
           sections:
             - file: tutorials/sar/sentinel1
             - file: tutorials/sar/uavsar
+        - file: tutorials/microstructure/microstructure-tutorial
 
 - part: Projects
   chapters:

@@ -25,6 +25,10 @@
   isolated environment called a container. It is widely used for creating
   reproducible software environments to run code on different computers.
 
+Git
+  A popular version control system that is used in many open source software 
+  projects to manage their software code base.
+
 [GitHub](https://github.com)
   Provider of Internet hosting for software development and distributed version
   control using the "git" command line tool.
@@ -73,6 +77,9 @@ RPI
   remote sensing knowledge, and thus lay the groundwork for a future snow
   satellite mission.
 
+[Slack](https://slack.com)
+  A communication platform that we use to share information. We use separate channels for each project and also rely on the video features. If possible we recommend [downloading the Slack app](https://slack.com/downloads). If your agency does not allow you to use the app, you can still interface with Slack in a web browser.
+  
 SLC
   Common complex-valued SAR amplitude and phase product ("Single Look Complex")
 

@@ -1,23 +1,8 @@
-# Git and GitHub
-
-## What is Git?
-
-[Git](https://git-scm.com/) is a popular version control system that is used in 
-many open source software projects to manage their software code base. 
-
-You are not required to know Git in advance of this event, but come prepared to learn a lot about it! 
-
-[Here a quick introduction video from the official website](https://git-scm.com/video/what-is-git)
+# GitHub
 
 ## What is GitHub?
-[GitHub](https://github.com) is a hosting service for Git repositories, enabling 
-us to share code across teams in a web environment.  
-
-## What if I do not have the `git` command on my local machine?
-
-If you don't have Git installed on you local machine, you can download the latest 
-installer on [Git-SCM](https://git-scm.com). More help for the install process can 
-be found in the [official Git documentation](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+[GitHub](https://github.com) is a hosting service for {term}`Git` repositories, 
+enabling us to share code across teams in a web environment. 
 
 ## Why do I need a GitHub account?
 
