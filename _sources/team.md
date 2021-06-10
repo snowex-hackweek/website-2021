@@ -118,7 +118,7 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 **Megan Mason**
 ^^^
-<img src=	"https://avatars.githubusercontent.com/u/35740962?v=4" alt="picture of Megan Mason" width="200" height="200">
+<img src="https://avatars.githubusercontent.com/u/35740962?v=4" alt="picture of Megan Mason" width="200" height="200">
 +++
 *Affiliations:* ATA Aerospace, Boise State
 *Ask me about:* SnowEx Datasets, Field Observations
@@ -127,7 +127,7 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 **Nicoleta Cristea**
 ^^^
-<img src=	""https://avatars.githubusercontent.com/u/16614760?s=60&v=4 alt="picture of Nicoleta Cristea" width="200" height="200">
+<img src="https://avatars.githubusercontent.com/u/16614760?s=60&v=4" alt="picture of Nicoleta Cristea" width="200" height="200">
 +++
 *Affiliations:* University of Washington eScience & CEE
 *Ask me about:* Geospatial analysis, TIR, LiDAR
