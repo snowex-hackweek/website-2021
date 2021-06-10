@@ -76,7 +76,12 @@ ________________________________________________________
 * comparing with in situ data
 * projections, regridding, sampling and spatial queries
 
-### 10:45 AM to 12:15 PM: Databases
+
+### 10:30 to 11:00 AM: NSIDC Data Access
+
+*Lead Instructor: Amy Steiker*
+
+### 11:15 AM to 12:45 PM: Databases
 
 *Lead Instructor: Micah Johnson*
 
@@ -86,7 +91,7 @@ ________________________________________________________
 * creating map visualizations of available datasets
 * extract data to a flat file
 
-### 1:00 PM and later: project work
+### 1:30 PM and later: project work
 
 *Helpers available for consultation as needed*
 ________________________________________________________
@@ -103,9 +108,9 @@ ________________________________________________________
 
 *Lead Instructors: Clare Webster and Ben Smith*
 
-### 11:00 to 11:45 AM: Microwave Radar (Parallel Session 1B)
+### 11:00 to 11:45 AM: Thermal IR (Parallel Session 1B)
 
-*Lead Instructors: Dylan Boyd, Batu Osmanoglu and Scott Henderson*
+*Lead Instructors: Jessica, Steven*
 
 ### 12:45 - 1:30 PM: Snow Microstructure (Parallel Session 2A)
 
@@ -128,15 +133,15 @@ ________________________________________________________
 
 *Lead Instructors: Ibrahim Olalekan Alabi and Evi Ofekeze*
 
-### 11:00 to 11:45 AM: Thermal IR (Parallel Session 1A)
+### 11:00 to 12:30 AM: Microwave Radar (Parallel Session 1A)
 
-*Lead Instructors: Jessica, Steven*
+*Lead Instructors: Dylan Boyd, Batu Osmanoglu, HP Marshall, Jack Terricone and Scott Henderson*
 
 ### 11:00 to 11:45 AM: Modeling (Parallel Session 1B)
 
-*Lead Instructors: Melissa Wrzesien*
+*Lead Instructors: Melissa Wrzesien and Brendan McAndrew*
 
-### 12:30 to 1:00 PM: Camera Data 
+### 12:00 to 12:30 PM: Camera Data (Parallel Session 1B)
 
 *Lead Instructors: Cassie Lumbrazo and Katie Breen*
 
