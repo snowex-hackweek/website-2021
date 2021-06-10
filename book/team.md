@@ -124,7 +124,6 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Ask me about:* SnowEx Datasets, Field Observations
 ---
 
-
 **Nicoleta Cristea**
 ^^^
 <img src="https://avatars.githubusercontent.com/u/16614760?s=60&v=4" alt="picture of Nicoleta Cristea" width="200" height="200">
@@ -133,3 +132,19 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Ask me about:* Geospatial analysis, TIR, LiDAR
 ---
 
+**Tate Meehan**
+^^^
+<img src="https://avatars.githubusercontent.com/u/14915785?v=4" alt="Tate Meehan" width="200" height="200">
++++
+*Affiliations:* Boise State University & Cold Regions Research and Engineering Laboratory
+
+*Ask me about:* Ground-penetrating Radar
+---
+
+**Ryan Webb**
+^^^
+<img src="https://avatars.githubusercontent.com/u/58004721?v=4" alt="Tate Meehan" width="200" height="200">
++++
+*Affiliations:* University of New Mexico
+*Ask me about:* Ground-Penetrating Radar, Liquid Water in Snow, Vadose Zone Hydrology
+---
