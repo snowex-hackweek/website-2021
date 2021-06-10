@@ -5,19 +5,20 @@
 [Git](https://git-scm.com/) is a popular version control system that is used in
 many open source software projects to manage their software code base.
 
+```{note}
 You are not required to know Git in advance of this event, but come prepared to learn a lot about it!
-
 [Here a quick introduction video from the official website](https://git-scm.com/video/what-is-git)
+```
 
 ## Setting up on JupyterHub
 
-Below are instructions to get you setup with `git` on the SnowEx hackweek 
+Below are instructions to get you setup with `git` on the SnowEx hackweek
 JupyterHub. These are only basic instructions to get started. See the
 [Software Carpentry Git](http://swcarpentry.github.io/git-novice/02-setup/index.html)
 instructions for a more thorough explanation and background information.
 
 ### 1. Login to JupyterHub
-See {ref}`accessing-jupyterhub` for instructions on setup and how to.
+Go to {{ jupyterhub_url }}. See also our JupyterHub documentation: {ref}`accessing-jupyterhub`
 
 ### 2. Open a Terminal
 Choose the 'Terminal' from the 'Other' options in the 'Launcher' tab.
@@ -29,7 +30,7 @@ Set your username and email address. The email address should be the same
 as you used to register your GitHub account.
 
 ```{attention}
-Use your personal name instead of the placeholder `SnowEx Attendee` 
+Use your personal name instead of the placeholder `SnowEx Attendee`
 in the below commands. For the email, it should be the address you used to create
 your GitHub account instead of `attendee@hackweek.com`. Both values need to be
 surrounded by quotes `"`.
@@ -41,8 +42,8 @@ git config --global user.email "attendee@hackweek.com"
 git config --global credential.helper store
 ```
 
-The last line of the config will store your GitHub credentials and will save 
-you from re-entering your username and password from the command line with each 
+The last line of the config will store your GitHub credentials and will save
+you from re-entering your username and password from the command line with each
 push, pull, or interactions with GitHub.
 
 To verify that you successfully executed the above commands, use the
@@ -60,15 +61,17 @@ credential.helper=store
 ```
 
 ### 4. Authenticating with GitHub
-In order to interact with GitHub via the `git' command inside the JupyterHub environment, 
-you need to set up an authentication method. One way to do this is to use your GitHub password. However, it is a better, more secure practice to use a GitHub personal access token.
-+++
+In order to interact with GitHub via the `git` command inside the JupyterHub environment,
+you need to set up an authentication method. One way to do this is to use your GitHub password.
+However, it is a better, more secure practice to use a GitHub personal access token because they
+have more limited permissions and can be easily revoked.
+
 Take a moment to work through the instructions on the [GitHub personal access tokens](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) page. For this hackweek, you need to check the **repo**, **admin:org**, and **workflow** scope.
 
 ![github-token](../img/github-token.png)
 
-Once you have created your token, be sure to save it on your computer in case 
-you need to re-authenticate again. The token will give you access to your 
+Once you have created your token, be sure to save it on your computer in case
+you need to re-authenticate again. The token will give you access to your
 personal GitHub account. It will also give you permission to push changes to your project repository within
 the SnowEx hackweek organization via the command line.
 
@@ -86,14 +89,14 @@ you will be then prompted for your personal inputs. The output in your Terminal
 will be similar to the below:
 
 ```{attention}
-Use your personal GitHub username instead of the placeholder `<GitHub Username>` 
+Use your personal GitHub username instead of the placeholder `<GitHub Username>`
 in the below sample output. For the password, paste your created token.
 ```
 
 ```shell
 Cloning into 'github_setup_check'...
 Username for 'https://github.com': <GitHub Username>
-Password for 'https://snowex-attendee@github.com': 
+Password for 'https://snowex-attendee@github.com':
 remote: Enumerating objects: 3, done.
 remote: Counting objects: 100% (3/3), done.
 remote: Compressing objects: 100% (2/2), done.
@@ -123,7 +126,7 @@ in the left panel and choose **Delete**.
 #### (Optional) Advanced GitHub setup
 In addition to interacting with GitHub via the `git` command, you can also use
 the `gh` command, which is a set of [command line tools developed by GitHub to
-interact with their website from the command line](https://cli.github.com/). 
+interact with their website from the command line](https://cli.github.com/).
 
 Below output will set you up, using the `gh` command and your access token.
 The answers to each question are shown in the output below.
@@ -145,7 +148,7 @@ The minimum required scopes are 'repo', 'read:org', 'workflow'.
 ## Installing `git` on your local computer
 
 If you want to use and setup `git` on your local computer and don't have the
-command available in your local terminal, you can download the latest installer 
-on [Git-SCM](https://git-scm.com). 
-More help for the install process can be found in the 
+command available in your local terminal, you can download the latest installer
+on [Git-SCM](https://git-scm.com).
+More help for the install process can be found in the
 [official Git documentation](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
