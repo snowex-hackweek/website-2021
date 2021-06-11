@@ -39,7 +39,7 @@ All times listed below are UTC -7 (Pacific Daylight Time). You might want to con
 
 ### 12:15 to 1:00 PM: GitHub, Git, JupyterHub
 
-*Lead Instructors: Joe Meyer*
+*Lead Instructors: Joachim Meyer*
 
 * connecting to our shared JupyterHub environment
 * Git/GitHub review
