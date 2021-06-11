@@ -35,6 +35,12 @@
           sections:
             - file: tutorials/sar/sentinel1
             - file: tutorials/sar/uavsar
+        - file: tutorials/database/index
+          sections:
+            - file: tutorials/database/1_getting_started_example
+            - file: tutorials/database/2_database_structure
+            - file: tutorials/database/3_get_spiral_example
+            - file: tutorials/database/4_plot_raster_example
         - file: tutorials/microstructure/microstructure-tutorial
 
 - part: Projects
