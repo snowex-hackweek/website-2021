@@ -72,10 +72,16 @@ RPI
   When two SAR acquisitions of the same location are acquired at different
   times. ("Repeat Pass Interferometry")
 
-[SnowEX](https://snow.nasa.gov/campaigns/snowex)
+[SnowEx](https://snow.nasa.gov/campaigns/snowex)
   5-year NASA funded effort to address the most important gaps in our snow
   remote sensing knowledge, and thus lay the groundwork for a future snow
   satellite mission.
+
+[Slack](https://slack.com)
+A communication platform that we use to share information. We use separate channels 
+for each project and also rely on the video features. If possible we recommend 
+[downloading the Slack app](https://slack.com/downloads). If your agency does not allow 
+you to use the app, you can still interface with Slack in a web browser.
 
 SLC
   Common complex-valued SAR amplitude and phase product ("Single Look Complex")
