@@ -148,3 +148,30 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Affiliations:* University of New Mexico
 *Ask me about:* Ground-Penetrating Radar, Liquid Water in Snow, Vadose Zone Hydrology
 ---
+
+**Batuhan Osmanoglu**
+^^^
+<img src="https://avatars.githubusercontent.com/u/829307?v=4" alt="picture of Batuhan Osmanoglu" width="200" height="200">
++++
+*Affiliations:* NASA Goddard Space Flight Center
+
+*Ask me about:* SAR, SWESARR, Python
+---
+
+**Derek Hudson**
+^^^
+<img src="https://raw.githubusercontent.com/db1950/misc/master/img/dhud.png" alt="picture of Derek Hudson" width="200" height="200">
++++
+*Affiliations:* NASA Goddard Space Flight Center
+
+*Ask me about:* Radiometry, SWESARR
+---
+
+**Dylan Boyd**
+^^^
+<img src="https://avatars.githubusercontent.com/u/28358098?v=4" alt="picture of Dylan Boyd" width="200" height="200">
++++
+*Affiliations:* Mississippi State University
+
+*Ask me about:* Microwave Modeling, SWESARR, Python
+---
