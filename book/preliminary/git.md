@@ -128,7 +128,7 @@ In addition to interacting with GitHub via the `git` command, you can also use
 the `gh` command, which is a set of [command line tools developed by GitHub to
 interact with their website from the command line](https://cli.github.com/).
 
-Below output will set you up, using the `gh` command and your access token.
+To set this up, use the `gh auth login` command and your access token.
 The answers to each question are shown in the output below.
 
 ```shell
