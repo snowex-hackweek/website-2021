@@ -33,9 +33,9 @@ We encourage you to test your [connection to JupyterHub](jupyterhub) at any time
 | 9:00 to 9:15 AM | Introductions and getting connected |
 | 9:15 to 9:25 AM | Getting connected to JupyterHub environment via GitHub |
 | 9:25 to 9:35 AM | Orientation to the JupyterHub environment |
-| 9:35 t0 10:25 AM | Unix Shell ([Topics 1 to 4](http://swcarpentry.github.io/shell-novice/)) |
+| 9:35 t0 10:25 AM | Unix Shell ([Topics 1 to 3](http://swcarpentry.github.io/shell-novice/)) |
 | 10:25 to 10:45 AM | Break |
-| 10:45 AM to 12:45 PM | Git/GitHub ([Topics 1 to 8](http://swcarpentry.github.io/git-novice/)) | 
+| 10:45 AM to 12:45 PM | Git/GitHub ([Topics 1 to 5](http://swcarpentry.github.io/git-novice/)) | 
 
 ### Day 2: Tuesday June 22, 2021
 
