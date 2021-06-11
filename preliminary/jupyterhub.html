@@ -435,18 +435,14 @@
 <h1>JupyterHub<a class="headerlink" href="#jupyterhub" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="why-are-we-using-a-shared-cloud-environment">
 <span id="event-jupyterhub"></span><h2>Why are we using a shared cloud environment?<a class="headerlink" href="#why-are-we-using-a-shared-cloud-environment" title="Permalink to this headline">¶</a></h2>
-<p>Teaching software to a diverse group of participants, each with different computers
-and operating systems, can be challenging. As you’ll learn in the next lesson, there
-are specific ways to configure our software for the tutorials to be successful, so
-it takes time to get everyone set up consistently. Our solution to this is to give
-everyone access to a cloud computing environment that is pre-configured for the
-specific software we will deploy. This cloud computing instance can be accessed
-from any web browser, which eliminates the need for configuring each person’s
-individual computer.</p>
+<p>Our hackweek tutorials are designed with executable code examples, which require
+certain combinations of Python software packages to run. Configuring reproducible
+software environments for all participants, each with different computers and
+operating systems, can be challenging. Our solution to this is to give
+everyone access to a cloud computing environment that can be accessed from any
+web browser, which eliminates the need for configuring each person’s computer.</p>
 <p>We will encourage you to use our shared resources for all the tutorials, and you
-can optionally use this for your projects as well. We also hope you will practice
-installing Python libraries locally on your laptop so that you can continue working
-after leaving our event.</p>
+can optionally use this for your projects as well.</p>
 </div>
 <div class="section" id="how-do-i-access-the-shared-cloud-environment">
 <span id="accessing-jupyterhub"></span><h2>How do I access the shared cloud environment?<a class="headerlink" href="#how-do-i-access-the-shared-cloud-environment" title="Permalink to this headline">¶</a></h2>
@@ -469,8 +465,11 @@ user information for instance.</p>
 </div>
 <div class="section" id="after-each-login">
 <h3>After each login<a class="headerlink" href="#after-each-login" title="Permalink to this headline">¶</a></h3>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
 <p>It can take several minutes for new servers to launch on the cloud - be patient!
-Once things are spun up you will see your very own instance of a <a class="reference internal" href="../glossary.html#term-JupyterLab"><span class="xref std std-term">JupyterLab</span></a> environment:</p>
+Once things are spun up you will see your very own instance of a <a class="reference internal" href="../glossary.html#term-JupyterLab"><span class="xref std std-term">JupyterLab</span></a> environment</p>
+</div>
 <p><img alt="jupyterlab" src="../_images/jupyterlab.png" /></p>
 <p>When you log into JupyterHub you have access to your own virtual drive space
 under the <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code> directory. No other users will be able to see or access
@@ -478,8 +477,9 @@ your data files. You can add/remove/edit files in your virtual drive space.</p>
 </div>
 <div class="section" id="how-do-i-end-my-jupyterhub-session">
 <h3>How do I end my JupyterHub session?<a class="headerlink" href="#how-do-i-end-my-jupyterhub-session" title="Permalink to this headline">¶</a></h3>
-<p>Stopping the server happens automatically when you navigate
-to “File -&gt; Log Out” and click “Log Out”! to end a session.</p>
+<p>Stopping the server happens automatically when you navigate to “File -&gt; Log Out”
+and click “Log Out”! to end a session. You can also select “File -&gt; Hub Control
+Panel -&gt; Stop my Server”.</p>
 <p><img alt="hub-control-panel-button" src="../_images/hub-logout-button.png" /></p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
@@ -491,13 +491,8 @@ active it uses up AWS resources and keeps a series of virtual machines deployed.
 </div>
 <div class="section" id="will-i-lose-all-of-my-work">
 <h3>Will I lose all of my work?<a class="headerlink" href="#will-i-lose-all-of-my-work" title="Permalink to this headline">¶</a></h3>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Logging out
-Logging out will <strong>NOT</strong> cause any of your work to be lost or deleted. It simply
-shuts down some resources. It would be equivalent to turning off your desktop
-computer at the end of the day.</p>
-</div>
+<p>Logging out will <strong>NOT</strong> cause any files under <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code> to be deleted. It
+is equivalent to turning off your desktop computer at the end of the day.</p>
 </div>
 </div>
 </div>

@@ -393,8 +393,13 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#how-we-are-using-it-for-this-snowex-hackweek">
-     How we are using it for this snowex-hackweek?
+    <a class="reference internal nav-link" href="#what-is-jupyterhub">
+     What is JupyterHub?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-use-aws">
+     Why use AWS?
     </a>
    </li>
   </ul>
@@ -420,18 +425,26 @@ and scalable scientific software tools. Several of the UW eScience Hackweek orga
 are involved in <a class="reference external" href="https://earthdata.nasa.gov/esds/competitive-programs/access/eos-data-cloud">projects with NASA and NSF</a>
 to build prototype systems to enable data discovery in the era of expanding data
 volume and complexity.</p>
-<p><img alt="jupyterhub-connectivity" src="../_images/jupyterhub-connectivity.png" /></p>
-<div class="section" id="how-we-are-using-it-for-this-snowex-hackweek">
-<h3>How we are using it for this snowex-hackweek?<a class="headerlink" href="#how-we-are-using-it-for-this-snowex-hackweek" title="Permalink to this headline">¶</a></h3>
-<p>For this hackweek, we have created virtual computing instances on
-<a class="reference external" href="https://aws.amazon.com/">Amazon Web Services</a> that can be deployed on demand in
-a parallel computing environment. We use JupyterHub as a way to give a Jupyter
-Notebook server to each person of the snowex-hackweek.
-<a class="reference external" href="https://www.slideshare.net/willingc/jupyterhub-a-thing-explainer-overview">These slides</a>
-give a nice overview of what JupyterHub is all about. We use JupyterHub in an
-educational setting because it enables us to quickly begin working with code
+<div class="section" id="what-is-jupyterhub">
+<h3>What is JupyterHub?<a class="headerlink" href="#what-is-jupyterhub" title="Permalink to this headline">¶</a></h3>
+<p>We use <a class="reference internal" href="../glossary.html#term-JupyterHub"><span class="xref std std-term">JupyterHub</span></a> in an educational setting because it enables us to quickly begin working with code
 without spending time to get the necessary libraries and dependencies set up on
-everyone’s individual computers.</p>
+everyone’s individual computers. <a class="reference external" href="https://www.slideshare.net/willingc/jupyterhub-a-thing-explainer-overview">These slides</a>
+give a nice overview of what JupyterHub is all about.</p>
+<p><img alt="jupyterhub-connectivity" src="../_images/jupyterhub-connectivity.png" /></p>
+</div>
+<div class="section" id="why-use-aws">
+<h3>Why use AWS?<a class="headerlink" href="#why-use-aws" title="Permalink to this headline">¶</a></h3>
+<p>JupyterHub can run on a laptop, supercomputers, or any Cloud provider! For this
+snowex-hackweek, we have created virtual computing instances on
+<a class="reference external" href="https://aws.amazon.com/">Amazon Web Services</a> that can be deployed on demand in
+a parallel computing environment. We’re running in the AWS us-west-2 datacenter
+because <a class="reference external" href="https://earthdata.nasa.gov/eosdis/cloud-evolution">NASA is starting to store data there</a>!
+There are huge advantages to be gained in moving algorithms to data, rather than
+downloading.</p>
+<p>If you’re new to the Cloud see these <a class="reference external" href="https://earthdata.nasa.gov/learn/user-resources/webinars-and-tutorials/cloud-primer">NASA resources</a>. Also note that Cloud computing is effectively renting hardware and
+software, so there is a cost involved. Fortunately for scientists there are straightforward
+<a class="reference external" href="https://aws.amazon.com/earth/research-credits/">research credit programs</a> to help get started without worrying about costs.</p>
 </div>
 </div>
 </div>
