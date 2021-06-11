@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to the SnowEx Database &#8212; SnowEx Hackweek</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How is the Database Structured?" href="2_database_structure.html" />
+    <link rel="prev" title="SnowEx Database" href="index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">SnowEx Hackweek</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to SnowEx Hackweek!
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../application.html">
+   Application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Hackweek Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../team.html">
+   Our Team
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../norms/index.html">
+   Hackweek Norms
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/CoC.html">
+     Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/community.html">
+     Learning Community
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../preliminary/index.html">
+   Preliminary Work
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/swc.html">
+     Software Carpentry Training
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/github.html">
+     GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/git.html">
+     Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/earthdata.html">
+     Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/pangeo.html">
+     Pangeo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/python.html">
+     Python Installation
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../index.html">
+   Tutorials
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-datasets/core-datasets-tutorial.html">
+     SnowEx Mission and Core Data Sets Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../geospatial/geospatial_vector.html">
+     Geospatial Data Analysis: Vector data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../raster/intro-ipyleaflet.html">
+     An introduction to rasters
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../sar/index.html">
+     Synthetic Aperture Radar
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/sentinel1.html">
+       Sentinel-1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/uavsar.html">
+       UAVSAR
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 current active collapsible-parent">
+    <a class="reference internal" href="index.html">
+     SnowEx Database
+    </a>
+    <ul class="current collapse-ul">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Introduction to the SnowEx Database
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="2_database_structure.html">
+       How is the Database Structured?
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="3_get_spiral_example.html">
+       Retrieve a Snow Depth Spiral
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="4_plot_raster_example.html">
+       Find A Raster Tile
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
+     Microstructure Tutorial
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../projects/index.html">
+   Projects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roles.html">
+     Project Roles and Responsibilities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/example_workflow.html">
+     Basic git workflow for a project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/example_workflow.html#project-data-download-storage-and-access">
+     Project Data - download, storage, and access
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/database/1_getting_started_example.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/snowex-hackweek/website"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/snowex-hackweek/website/issues/new?title=Issue%20on%20page%20%2Ftutorials/database/1_getting_started_example.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/snowex-hackweek/website/edit/main/book/tutorials/database/1_getting_started_example.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-a-database">
+   Why a database?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tl-dr-do-less-wrangling-do-more-crunching">
+     TL;DR Do less wrangling, do more crunching.
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-it-exactly">
+   What is it exactly?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-s-in-it">
+   What’s in it?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-do-i-get-at-this-magical-box-of-data">
+   How do I get at this magical box of data?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-engine-object">
+     1. Using the Engine Object
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-session-object">
+     2. Using the Session Object
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction-to-the-snowex-database">
+<h1>Introduction to the SnowEx Database<a class="headerlink" href="#introduction-to-the-snowex-database" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="why-a-database">
+<h2>Why a database?<a class="headerlink" href="#why-a-database" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><em><span style="font-size:12pt;">”Dude, I am into pits not bits. What gives?!”</span></em></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Standardizing diverse datasets</p></li>
+<li><p>Cross referencing data</p></li>
+<li><p>Enables GIS functionality</p></li>
+<li><p>Ready for use in your code</p></li>
+<li><p>Provenance!</p></li>
+<li><p>Ready for use in a GIS software like ArcGIS or QGIS!</p></li>
+</ul>
+<div class="section" id="tl-dr-do-less-wrangling-do-more-crunching">
+<h3>TL;DR Do less wrangling, do more crunching.<a class="headerlink" href="#tl-dr-do-less-wrangling-do-more-crunching" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="what-is-it-exactly">
+<h2>What is it exactly?<a class="headerlink" href="#what-is-it-exactly" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>PostgreSQL database</p></li>
+<li><p>PostGIS extension</p></li>
+<li><p>Supports vector and raster data</p></li>
+<li><p>And a host of GIS operations</p></li>
+</ul>
+</div>
+<div class="section" id="what-s-in-it">
+<h2>What’s in it?<a class="headerlink" href="#what-s-in-it" title="Permalink to this headline">¶</a></h2>
+<p>Limited to Grand Mesa for Hackweek!</p>
+<ul class="simple">
+<li><p>Snow pits - Density, hardness profiles, grain types + sizes</p></li>
+<li><p>Manual snow depths - TONS of depths, Can you say spirals?</p></li>
+<li><p>Snow Micropenetrometer profiles - (Subsampled to every 100th)</p></li>
+<li><p>Snow depth + SWE rasters from ASO inc</p></li>
+<li><p>GPR</p></li>
+<li><p>Pit site notes</p></li>
+<li><p>Snow off DEM from USGS 3DEP</p></li>
+</ul>
+<p><strong>All this and more is easily indexed, cross referencable, and put into GIS ready formats!</strong></p>
+<p><img alt="" src="https://snowexsql.readthedocs.io/en/latest/_images/gallery_overview_example_11_1.png" /></p>
+</div>
+<div class="section" id="how-do-i-get-at-this-magical-box-of-data">
+<h2>How do I get at this magical box of data?<a class="headerlink" href="#how-do-i-get-at-this-magical-box-of-data" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.postgresql.org/docs/13/tutorial-sql.html">SQL</a></p></li>
+<li><p><a class="reference external" href="https://github.com/SnowEx/snowexsql/">snowexsql</a> <span style="font-size:20pt;"> <strong>←</strong></span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the connection function from the snowexsql library</span>
+<span class="kn">from</span> <span class="nn">snowexsql.db</span> <span class="kn">import</span> <span class="n">get_db</span>
+
+<span class="c1"># This is what you will use for all of hackweek to access the db</span>
+<span class="n">db_name</span> <span class="o">=</span> <span class="s1">&#39;snow:hackweek@52.32.183.144/snowex&#39;</span>
+
+<span class="c1"># Using the function get_db, we receive 2 ways to interact with the database</span>
+<span class="n">engine</span><span class="p">,</span> <span class="n">session</span> <span class="o">=</span> <span class="n">get_db</span><span class="p">(</span><span class="n">db_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="using-the-engine-object">
+<h3>1. Using the Engine Object<a class="headerlink" href="#using-the-engine-object" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">engine</span></code> object returned from the <code class="docutils literal notranslate"><span class="pre">get_db</span></code> function is not used much in the snowexsql library. It does allow you to use typical SQL
+strings to interact with the database.</p>
+<p><strong>Note</strong>: Users who have used python + SQL before will likely be more familiar with this approach. Additionally those who don’t know python but know SQL will also be more comfortable here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Form a typical SQL query and use python to populate the table name</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="s2">&quot;SELECT DISTINCT site_id FROM sites&quot;</span>
+
+<span class="c1"># Then we execute the sql command and collect the results</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">qry</span><span class="p">)</span>
+
+<span class="c1"># Create a nice readable string to print the site names using python </span>
+<span class="n">out</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">results</span><span class="p">))</span>
+
+<span class="c1"># Print it with a line return for readability</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">out</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6N36, 2S7, 2S4, 6S22, 2S6, 9N30, 9S40, 1N1, 9N47, 1N3, 9N29, 8N45, 9N39, 8C35, 1C5, 6N31, 5N24, 3S33, 3N53, 1C7, 7N40, 8N55, 6N18, 5C20, 8N52, 5N10, 2N21, 1N5, 6S32, GML, 2C3, 1S1, 8S41, 6S53, 8C11, 2C13, 8N54, 7S23, 6N16, 8C31, 5S42, 8N34, 6C37, 5S49, 9S39, 2S35, 1S17, 1C8, 8N9, FL2A, 5S31, 8N38, 6S26, 2S46, 8S28, 8C36, 5N15, 2C33, 6N46, 6S15, 8N35, 3S14, TLSFL2A, 2N13, 3N26, 1S8, 3S47, 3S52, 4N2, 2S9, 9S51, 6C24, 5C27, 2S25, FL1B, 9N42, 1N6, 2S11, 2N8, 9N59, 1N7, 8C25, 3S5, 8N58, 9C28, 2S10, 2S45, 5C21, 7S50, 5S24, 8C22, 2N49, 2N14, 9C17, 5N19, 2C9, 5N50, 2N4, 1C14, 2C2, 8S18, 7C15, 2S20, 1S12, 6S44, 2S48, 9C19, 9N43, 9N56, 9N44, 8S30, 8C26, 7N57, 9C16, 3S38, 6S34, 5N11, 4N27, 5S21, 2C12, 2N12, 1S2, 3N22, 9C23, 5S29, 2S3, 2N48, 8N25, 2C4, 2C6, 2S37, 2S16, 1S13, 4C30, 8N37, 6S19, 2S36, 9N28, 1N23, 6N17, 8N51, 1N20, 5N41, 8C32, 5N32, 8N33, 5S43, 6C10, 2S27, 6C34, 8C29, 8C18, 1C1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="using-the-session-object">
+<h3>2. Using the Session Object<a class="headerlink" href="#using-the-session-object" title="Permalink to this headline">¶</a></h3>
+<p>The session object allows a user to interact with the database in a pure python form. This approach is called Object Relational Mapping (ORM). Remember this abbreviation when searching for help.</p>
+<p>ORM <em>maps</em> the database tables and their columns to a python class and attributes. Here is how it works:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the table classes from our data module which is where our ORM classes are defined </span>
+<span class="kn">from</span>  <span class="nn">snowexsql.data</span> <span class="kn">import</span> <span class="n">SiteData</span>
+
+<span class="c1"># Form the query to receive all the site_id from the sites table</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">SiteData</span><span class="o">.</span><span class="n">site_id</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+
+<span class="c1"># Execute the query and collect the results</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+<span class="c1"># Print it with a line return for readability</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="p">)]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6N36, 2S7, 2S4, 6S22, 2S6, 9N30, 9S40, 1N1, 9N47, 1N3, 9N29, 8N45, 9N39, 8C35, 1C5, 6N31, 5N24, 3S33, 3N53, 1C7, 7N40, 8N55, 6N18, 5C20, 8N52, 5N10, 2N21, 1N5, 6S32, GML, 2C3, 1S1, 8S41, 6S53, 8C11, 2C13, 8N54, 7S23, 6N16, 8C31, 5S42, 8N34, 6C37, 5S49, 9S39, 2S35, 1S17, 1C8, 8N9, FL2A, 5S31, 8N38, 6S26, 2S46, 8S28, 8C36, 5N15, 2C33, 6N46, 6S15, 8N35, 3S14, TLSFL2A, 2N13, 3N26, 1S8, 3S47, 3S52, 4N2, 2S9, 9S51, 6C24, 5C27, 2S25, FL1B, 9N42, 1N6, 2S11, 2N8, 9N59, 1N7, 8C25, 3S5, 8N58, 9C28, 2S10, 2S45, 5C21, 7S50, 5S24, 8C22, 2N49, 2N14, 9C17, 5N19, 2C9, 5N50, 2N4, 1C14, 2C2, 8S18, 7C15, 2S20, 1S12, 6S44, 2S48, 9C19, 9N43, 9N56, 9N44, 8S30, 8C26, 7N57, 9C16, 3S38, 6S34, 5N11, 4N27, 5S21, 2C12, 2N12, 1S2, 3N22, 9C23, 5S29, 2S3, 2N48, 8N25, 2C4, 2C6, 2S37, 2S16, 1S13, 4C30, 8N37, 6S19, 2S36, 9N28, 1N23, 6N17, 8N51, 1N20, 5N41, 8C32, 5N32, 8N33, 5S43, 6C10, 2S27, 6C34, 8C29, 8C18, 1C1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Close your session to avoid hanging transactions</span>
+<span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="recap">
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
+<p>You just:</p>
+<ul class="simple">
+<li><p>Accessed a geodatabase using python</p></li>
+<li><p>Saw two methods for interacting with the db using the snowexsql library</p></li>
+<li><p>Pulled all the unique pit site id numbers from the db</p></li>
+</ul>
+<p><strong>Checkout the tutorial called database_structure to get a better understanding of what’s available!</strong></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/database"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">SnowEx Database</a>
+    <a class='right-next' id="next-link" href="2_database_structure.html" title="next page">How is the Database Structured?</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By eScience Institute, University of Washington<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'G-QM84T4SB76', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
