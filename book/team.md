@@ -63,6 +63,24 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Ask me about:* SnowEX
 ---
 
+**Evi Ofekeze**
+^^^
+<img src="https://d25vtythmttl3o.cloudfront.net/uploads/sites/154/2020/09/Evi-Ofekeze.jpg" alt="picture of Evi Ofekeze" width="200" height="200">
++++
+*Affiliations:* Boise State University
+
+*Ask me about:* Python, Machine Learning
+---
+
+**Charley Haley**
+^^^
+<img src="https://media-exp1.licdn.com/dms/image/C5603AQHRrrm4VJcfBA/profile-displayphoto-shrink_200_200/0/1596141577546?e=1628121600&v=beta&t=pikLnEHvgNKjJ6OaRPQsmsfWbPRzBqDp_xmiILJFTaE" alt="picture of Charley Haley" width="200" height="200">
++++
+*Affiliations:* Social Strategist & Collaboration Architect
+
+*Ask me about:* Facilitation, Team Building
+---
+
 **David Shean**
 ^^^
 <img src="https://geohackweek.github.io/ghw2017/images/1103530.jpg" alt="picture of David Shean" width="200" height="200">
@@ -79,6 +97,15 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Affiliations:* M3Works
 
 *Ask me about:* SnowEx Database, PostGIS
+---
+
+**Ibrahim Olalekan Alabi**
+^^^
+<img src="https://d25vtythmttl3o.cloudfront.net/uploads/sites/154/2020/10/Ibrahim-Olalekan-Alabi.jpg" alt="picture of Ibrahim Olalekan Alabi" width="200" height="200">
++++
+*Affiliations:* Boise State University
+
+*Ask me about:* Python, Machine Learning
 ---
 
 **Joachim Meyer**
