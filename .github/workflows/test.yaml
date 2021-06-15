@@ -5,6 +5,7 @@ on:
     paths:
       - 'book/**'
       - '.github/workflows/test.yaml'
+      - '.binder/**'
     branches:
       - main
 
