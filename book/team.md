@@ -74,7 +74,7 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 **Charley Haley**
 ^^^
-<img src="https://media-exp1.licdn.com/dms/image/C5603AQHRrrm4VJcfBA/profile-displayphoto-shrink_200_200/0/1596141577546?e=1628121600&v=beta&t=pikLnEHvgNKjJ6OaRPQsmsfWbPRzBqDp_xmiILJFTaE" alt="picture of Charley Haley" width="200" height="200">
+<img src="https://highmountainasia.github.io/team-collaboration/images/CharleyHaley.jpg" alt="picture of Charley Haley" width="200" height="200">
 +++
 *Affiliations:* Social Strategist & Collaboration Architect
 
