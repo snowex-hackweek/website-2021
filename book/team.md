@@ -38,7 +38,7 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 **Jane Koh**
 ^^^
-<img src="https://icesat-2hackweek.github.io/assets/images/JaneKoh.jpg" alt="picture of Jane Koh" width="175" height="200">
+<img src="https://icesat-2hackweek.github.io/assets/images/JaneKoh.jpg" alt="picture of Jane Koh" width="165" height="200">
 +++
 *Affiliations:* UW eScience
 
@@ -47,7 +47,7 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 **HP Marshall**
 ^^^
-<img src="https://d25vtythmttl3o.cloudfront.net/uploads/sites/153/2010/07/hpmarshall.jpg" alt="picture of HP Marshall" width="200" height="200">
+<img src="https://d25vtythmttl3o.cloudfront.net/uploads/sites/153/2010/07/hpmarshall.jpg" alt="picture of HP Marshall" width="165" height="200">
 +++
 *Affiliations:* Boise State
 
@@ -65,7 +65,7 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 **Evi Ofekeze**
 ^^^
-<img src="https://d25vtythmttl3o.cloudfront.net/uploads/sites/154/2020/09/Evi-Ofekeze.jpg" alt="picture of Evi Ofekeze" width="200" height="200">
+<img src="https://d25vtythmttl3o.cloudfront.net/uploads/sites/154/2020/09/Evi-Ofekeze.jpg" alt="picture of Evi Ofekeze" width="165" height="200">
 +++
 *Affiliations:* Boise State University
 
@@ -101,7 +101,7 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 **Ibrahim Olalekan Alabi**
 ^^^
-<img src="https://d25vtythmttl3o.cloudfront.net/uploads/sites/154/2020/10/Ibrahim-Olalekan-Alabi.jpg" alt="picture of Ibrahim Olalekan Alabi" width="200" height="200">
+<img src="https://d25vtythmttl3o.cloudfront.net/uploads/sites/154/2020/10/Ibrahim-Olalekan-Alabi.jpg" alt="picture of Ibrahim Olalekan Alabi" width="150" height="200">
 +++
 *Affiliations:* Boise State University
 
@@ -110,7 +110,7 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 **Joachim Meyer**
 ^^^
-<img src="https://avatars.githubusercontent.com/u/178649?v=4" alt="picture of Micah Johnson" width="200" height="200">
+<img src="https://avatars.githubusercontent.com/u/178649?v=4" alt="picture of Joachim Meyer" width="200" height="200">
 +++
 *Affiliations:* University of Utah
 
@@ -153,7 +153,7 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 **Nicoleta Cristea**
 ^^^
-<img src="https://avatars.githubusercontent.com/u/16614760?s=60&v=4" alt="picture of Nicoleta Cristea" width="200" height="200">
+<img src="https://escience.washington.edu/wp-content/uploads/2018/09/NicoletaCristea-2-300x300.jpeg" alt="picture of Nicoleta Cristea" width="200" height="200">
 +++
 *Affiliations:* University of Washington eScience & CEE
 *Ask me about:* Geospatial analysis, TIR, LiDAR
