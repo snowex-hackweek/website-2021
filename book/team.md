@@ -202,3 +202,12 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 *Ask me about:* Microwave Modeling, SWESARR, Python
 ---
+
+**Katie Breen**
+^^^
+<img src="https://avatars.githubusercontent.com/u/56138926?v=4" alt="picture of Katie Breen" width="200" height="200">
++++
+*Affiliations:* University of Washington
+
+*Ask me about:* camera traps, Python
+---
