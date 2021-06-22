@@ -27,6 +27,8 @@ We encourage you to test your [connection to JupyterHub](jupyterhub) before the 
 
 ### Day 1: Monday June 21, 2021
 
+#### [Link to video of Day 1 tutorial](https://www.youtube.com/watch?v=F8VhkKwCx0k)
+
 **Jupyter, Git, and Unix Shell**
 We'll be using these lessons:
 * http://swcarpentry.github.io/shell-novice/
