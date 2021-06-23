@@ -45,6 +45,8 @@ We'll be using these lessons:
 
 ### Day 2: Tuesday June 22, 2021
 
+#### [Link to video of Day 2 tutorial](https://www.youtube.com/watch?v=OhzHoGe9ZeI)
+
 **Python Programming Language**
 We'll be using this lesson:
 * http://swcarpentry.github.io/python-novice-gapminder/
