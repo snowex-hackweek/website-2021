@@ -12,6 +12,7 @@ parse:
     dates: July 12 to 16, 2021
     github_org_url: https://github.com/snowex-hackweek
     jupyterhub_url: https://snowex.hackweek.io
+    slack_workspace_url: https://app.slack.com/client/T01S7M0BSNN/C01S7T6RQG3
     contact_email: snowex@uw.edu
 
 # Force re-execution of notebooks on each build.
