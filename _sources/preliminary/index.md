@@ -29,6 +29,17 @@ the hackweek.
 Everyone attending {{ hackweek }} will require obtaining a GitHub account. 
 Visit our [GitHub instruction page](github) to learn how!
 
+### Slack Account
+
+All of our communication throughout the hackweek will be done using the
+{{ '[SnowEx Slack workspace]({url})'.format(url=slack_workspace_url) }}.
+With your invite to the hackweek, you should also have received a separate 
+email to join the Slack workspace. Upon accepting the invite, please take a moment to 
+[complete your Slack profile](https://slack.com/help/articles/204092246-Edit-your-profile).
+Having your name and picture with your Slack account helps us and your peers
+to identify you on Slack and builds a more personal community throughout
+the week.
+
 ### JupyterHub
 
 We will offer all tutorials within the Jupyter Hub computing environment. 
