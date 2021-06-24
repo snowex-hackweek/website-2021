@@ -5,6 +5,7 @@ on:
     paths:
       - 'book/**'
       - '.github/workflows/test.yaml'
+      - '.binder/**'
     branches:
       - main
 
@@ -20,7 +21,7 @@ jobs:
 
     - name: Ensure Clean Notebooks
       run: |
-        pip install nb-clean
+        pip install nb-clean==2.0.2
         find book -name "*ipynb" | xargs nb-clean check --preserve-cell-metadata
 
     - name: Pull Docker Image
