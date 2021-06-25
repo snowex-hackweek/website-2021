@@ -2,7 +2,7 @@ name: NetlifyPreview
 
 on:
   pull_request_target:
-    types: [labeled]
+    types: [labeled, synchronize]
 
 env:
   DOCKER_IMAGE: uwhackweek/snowex:latest
