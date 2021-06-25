@@ -23,5 +23,6 @@
 - file: tutorials/index
   sections:
     - file: tutorials/raster/intro-ipyleaflet
+    - file: tutorials/camera-traps-tutorial/camera-traps-notebook
 - file: glossary
 - file: bibliography
