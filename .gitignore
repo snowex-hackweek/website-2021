@@ -1,3 +1,5 @@
+.DS_Store
+
 # Jupyter Book things
 .bash_history
 *_build
