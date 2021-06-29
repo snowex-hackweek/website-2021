@@ -5,12 +5,7 @@ from numpy import empty,argsort
 import os
 
 def read_CT_txt_files(DataDir):
-    
-
-    #DataDirContents=os.scandir(DataDir)
         
-    #n=len(list(DataDirContents)) #to preallocate S    
-    
     filenames = (f for f in os.scandir(DataDir) if not f.name.startswith('.'))
     n=len(list(filenames)) #to preallocate S    
     
@@ -18,7 +13,6 @@ def read_CT_txt_files(DataDir):
     height_min=empty([n])
     height_max=empty([n])
     
-    #DataDirContents=os.scandir(DataDir) #annoying that i need to repeat this
     filenames = (f for f in os.scandir(DataDir) if not f.name.startswith('.'))
     
     count=0
@@ -34,14 +28,10 @@ def read_CT_txt_files(DataDir):
         height_max[count]=float(height_min_max[0])
         height_min[count]=float(height_min_max[1])                   
                         
-        with open(fname,"r",encoding='iso-8859-1') as datafile:
-            
+        with open(fname,"r",encoding='iso-8859-1') as datafile:            
             for line in datafile:                
-
-                if 'Object surface / volume ratio' in line:
-                
-                    split_line=line.split(',')                    
-                    
+                if 'Object surface / volume ratio' in line:                
+                    split_line=line.split(',')                                        
                     SSA[count]=float(split_line[2])
                     count+=1                    
 
