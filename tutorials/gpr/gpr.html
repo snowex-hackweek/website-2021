@@ -1,0 +1,1482 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SnowEx Hackweek GPR Tutorial 2021 &#8212; SnowEx Hackweek</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Projects" href="../../projects/index.html" />
+    <link rel="prev" title="Microstructure Tutorial" href="../microstructure/microstructure-tutorial.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">SnowEx Hackweek</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to SnowEx Hackweek!
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../application.html">
+   Application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Hackweek Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../team.html">
+   Our Team
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../norms/index.html">
+   Hackweek Norms
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/CoC.html">
+     Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/community.html">
+     Learning Community
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../preliminary/index.html">
+   Preliminary Work
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/swc.html">
+     Software Carpentry Training
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/github.html">
+     GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/git.html">
+     Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/earthdata.html">
+     Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/pangeo.html">
+     Pangeo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/python.html">
+     Python Installation
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../index.html">
+   Tutorials
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-datasets/core-datasets-tutorial.html">
+     SnowEx Mission and Core Data Sets Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../geospatial/geospatial_vector.html">
+     Geospatial Data Analysis: Vector data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../raster/intro-ipyleaflet.html">
+     An introduction to rasters
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../sar/index.html">
+     Synthetic Aperture Radar
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/sentinel1.html">
+       Sentinel-1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/uavsar.html">
+       UAVSAR
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../database/index.html">
+     SnowEx Database
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/1_getting_started_example.html">
+       Introduction to the SnowEx Database
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/2_database_structure.html">
+       How is the Database Structured?
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/3_get_spiral_example.html">
+       Retrieve a Snow Depth Spiral
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/4_plot_raster_example.html">
+       Find A Raster Tile
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
+     Microstructure Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     SnowEx Hackweek GPR Tutorial 2021
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../projects/index.html">
+   Projects
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roles.html">
+     Project Roles and Responsibilities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/example_workflow.html">
+     Basic git workflow for a project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/example_workflow.html#project-data-download-storage-and-access">
+     Project Data - download, storage, and access
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/gpr/gpr.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/snowex-hackweek/website"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/snowex-hackweek/website/issues/new?title=Issue%20on%20page%20%2Ftutorials/gpr/gpr.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/snowex-hackweek/website/edit/main/book/tutorials/gpr/gpr.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#retrieve-density-gpr-and-magnaprobe-data-from-pit-1s1">
+   Retrieve density, GPR, and Magnaprobe data from Pit 1S1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#process">
+   Process
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-get-the-pit-site-coordinates">
+     Step 1: Get the pit/site coordinates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-build-a-buffered-circle-around-our-pit">
+     Step 2: Build a buffered circle around our pit
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-grab-density-profiles">
+     Step 3: Grab Density Profiles
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-4-request-all-gpr-twt-measured-inside-the-buffer">
+     Step 4: Request all GPR TWT measured inside the buffer
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-5-plot-it">
+     Step 5: Plot it!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-6-convert-twt-to-depth-using-snow-density">
+     Step 6: Convert TWT to Depth Using Snow Density
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-7-get-depth-probes">
+     Step 7: Get Depth Probes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-8-average-gpr-depths-to-compare-with-probed-depths">
+     Step 8: Average GPR Depths to Compare with Probed Depths
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-9-plot-the-depths-correlation-and-errors">
+     Step 9. Plot the Depths, Correlation, and Errors
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="snowex-hackweek-gpr-tutorial-2021">
+<h1>SnowEx Hackweek GPR Tutorial 2021<a class="headerlink" href="#snowex-hackweek-gpr-tutorial-2021" title="Permalink to this headline">¶</a></h1>
+<p><strong>Overview</strong></p>
+<p>In this tutorial we will request the snow pit 1S1 location and density, ground-penetrating radar (GPR) two-way travel-times (TWT) and geolocation data, and Magnaprobe snow depths and locations to make a quick comparison of the Magnaprobe snow depth measurements and the GPR estimated snow depths.</p>
+<p>We will calculate the average density from the pit and visualize a set of GPR travel-times around Pit 1S1. Given the average dry snow density of 1S1, we will then use an empirically derived expression from Kovacs et. al (1995) to estimate the radar wave speed. The wave speed allows us to convert the radar two-way travel-time to snow depth.</p>
+<p>Lastly we will use a few summary statistics to compare the GPR and Magnaprobe snow depths, and we will discuss the various potential sources of error that arise naturally, systematically, and/or algorithmically.</p>
+<p><strong>Slides</strong></p>
+<p><a class="reference external" href="https://docs.google.com/presentation/d/1Hh2CdCCvhWzcWzjzHi9WPum5NmOQt67B1vi1AwOzXCQ/edit?usp=sharing">https://docs.google.com/presentation/d/1Hh2CdCCvhWzcWzjzHi9WPum5NmOQt67B1vi1AwOzXCQ/edit?usp=sharing</a></p>
+<div class="section" id="retrieve-density-gpr-and-magnaprobe-data-from-pit-1s1">
+<h2>Retrieve density, GPR, and Magnaprobe data from Pit 1S1<a class="headerlink" href="#retrieve-density-gpr-and-magnaprobe-data-from-pit-1s1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Goal</strong>: Compare the Magnaprobe snow depth to the GPR estimated snow depth from SnowEx 2020 Grand Mesa IOP Pit 1S1</p>
+<p><strong>Approach</strong>:</p>
+<ol class="simple">
+<li><p>Retrieve the pit location from the Layer Data table</p></li>
+<li><p>Build a circle of 50 m radius around the pit location</p></li>
+<li><p>Request the pit data to get density layers and calculate the average</p></li>
+<li><p>Request all the GPR data within a 50 m distance of our pit</p></li>
+<li><p>Plot GPR TWT</p></li>
+<li><p>Convert TWT to depth using snow density</p></li>
+<li><p>Request the Magnaprobe depths around Pit 1S1</p></li>
+<li><p>Interpolate GPR depths to the locations of the Magnaprobe depths</p></li>
+<li><p>Compare statistics of GPR and Magnaprobe depths</p></li>
+</ol>
+</div>
+<div class="section" id="process">
+<h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-1-get-the-pit-site-coordinates">
+<h3>Step 1: Get the pit/site coordinates<a class="headerlink" href="#step-1-get-the-pit-site-coordinates" title="Permalink to this headline">¶</a></h3>
+<p>We must first import the necessary libraries for operating with the SnowEx SQL database.
+We then import the Point Data (e.g. GPR) and Layer Data (e.g. snow pit) and GeoPandas, PostGIS, and Python functionality. We also establish the Pit Site ID (1S1) and the buffer radius around the pit (50 m).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Import our DB access function</span>
+<span class="kn">from</span> <span class="nn">snowexsql.db</span> <span class="kn">import</span> <span class="n">get_db</span>
+
+<span class="c1"># Import the two tables we need GPR ---&gt; PointData, Density (Pits) --&gt; LayerData </span>
+<span class="kn">from</span> <span class="nn">snowexsql.data</span> <span class="kn">import</span> <span class="n">PointData</span><span class="p">,</span> <span class="n">LayerData</span>
+<span class="kn">from</span> <span class="nn">snowexsql.conversions</span> <span class="kn">import</span> <span class="n">query_to_geopandas</span>
+
+<span class="c1"># Import to make use of the postgis functions on the db that are not necessarily in python </span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">func</span><span class="p">,</span> <span class="n">Float</span>
+<span class="c1"># Import datetime module to filter by a date</span>
+<span class="kn">import</span> <span class="nn">datetime</span> 
+
+
+<span class="c1"># use numpy to calculate the average of the density results </span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+
+<span class="c1"># Import matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format=&#39;retina&#39;
+
+<span class="c1"># PIT Site Identifier</span>
+<span class="n">site_id</span> <span class="o">=</span> <span class="s1">&#39;1S1&#39;</span>
+
+<span class="c1"># Distance around the pit to collect data in meters</span>
+<span class="n">buffer_dist</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="c1"># Connect to the database we made.</span>
+<span class="n">db_name</span> <span class="o">=</span> <span class="s1">&#39;snow:hackweek@52.32.183.144/snowex&#39;</span>
+<span class="n">engine</span><span class="p">,</span> <span class="n">session</span> <span class="o">=</span> <span class="n">get_db</span><span class="p">(</span><span class="n">db_name</span><span class="p">)</span>
+
+<span class="c1"># Grab our pit geometry (position) object by provided site id from the site details table, Since there is multiple layers and dates we limit the request to 1</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">geom</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">site_id</span> <span class="o">==</span> <span class="n">site_id</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">site</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-2-build-a-buffered-circle-around-our-pit">
+<h3>Step 2: Build a buffered circle around our pit<a class="headerlink" href="#step-2-build-a-buffered-circle-around-our-pit" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cast the geometry point into text to be used by Postgis function ST_Buffer</span>
+<span class="n">point</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">site</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">geom</span><span class="o">.</span><span class="n">ST_AsText</span><span class="p">())</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+
+<span class="c1"># Create a polygon buffered by our distance centered on the pit using postgis ST_Buffer </span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">ST_Buffer</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">buffer_dist</span><span class="p">))</span>
+<span class="n">buffered_pit</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">all</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;POINT(741920 4322845)&#39;,)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-3-grab-density-profiles">
+<h3>Step 3: Grab Density Profiles<a class="headerlink" href="#step-3-grab-density-profiles" title="Permalink to this headline">¶</a></h3>
+<p>We query all Layer Data, cast these values to a float, and then compute the average. Then the query is filtered to only the data type ‘density’. The output rho_avg_all is the average density of all snow pits, we also filter the query again by site_id to extract the average density of pit 1S1. These density values are then printed to the screen for comparison.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Request the average (avg) of Layer data casted as a float. We have to cast to a float in the layer table because all main values are stored as a string to </span>
+<span class="c1"># ...accomodate the hand hardness. </span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">avg</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">Float</span><span class="p">)))</span>
+
+<span class="c1"># Filter our query only to density </span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">type</span><span class="o">==</span><span class="s1">&#39;density&#39;</span><span class="p">)</span>
+
+<span class="c1"># Request the data </span>
+<span class="n">rho_avg_all</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+<span class="c1"># Request the Average Density of Just 1S1</span>
+<span class="n">rho_avg_1s1</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">site_id</span> <span class="o">==</span> <span class="n">site_id</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># This is a gotcha. The data in layer data only is stored as a string to accomodate the hand hardness values </span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average density of all pits is </span><span class="si">{</span><span class="n">rho_avg_all</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">0.0f</span><span class="si">}</span><span class="s2"> kg/m3&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average density of pit 1S1 is </span><span class="si">{</span><span class="n">rho_avg_1s1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">0.0f</span><span class="si">}</span><span class="s2"> kg/m3&quot;</span><span class="p">)</span>
+
+<span class="c1"># Cast Densities to float</span>
+<span class="n">rho_avg_all</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">rho_avg_all</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">rho_avg_1s1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">rho_avg_1s1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average density of all pits is 266 kg/m3
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average density of pit 1S1 is 245 kg/m3
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-4-request-all-gpr-twt-measured-inside-the-buffer">
+<h3>Step 4: Request all GPR TWT measured inside the buffer<a class="headerlink" href="#step-4-request-all-gpr-twt-measured-inside-the-buffer" title="Permalink to this headline">¶</a></h3>
+<p>In this step, we first print all of the instruments and data types contained in PointData. Doing so let’s us know that in order to query the GPR two-way travel-times we use the identifier ‘two_way_travel’. We then apply a filter for the date January 29, 2020, and refine this query further with the filter for TWT only within our buffered region. Using geopandas, the query is cast into a dataframe. By default the queried PointData type is given the name ‘value’. To be more explicit we rename the variable as ‘twt’ within the dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Collect all Point Data where the instrument string contains the GPR in its name</span>
+<span class="c1">#qry = session.query(PointData).filter(PointData.instrument.contains(&#39;GPR&#39;))</span>
+<span class="c1"># Print all types of PointData in the query</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">instrument</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+<span class="c1"># Print all types of PointData in the query</span>
+<span class="n">tmp</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">type</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">PointData</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;two_way_travel&#39;</span><span class="p">)</span>
+
+<span class="c1"># Additionally Filter by a date </span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">date</span><span class="o">==</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">29</span><span class="p">))</span>
+
+<span class="c1"># See upload details at https://github.com/SnowEx/snowexsql/blob/087b382b8d5098f09db67310efd49f777525c0c8/scripts/upload/add_gpr.py#L27</span>
+
+<span class="c1"># Grab all the point data in the buffer using the POSTGIS ST_Within, anytime using the postgis functions we typically have to convert to text</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">ST_Within</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">geom</span><span class="o">.</span><span class="n">ST_AsText</span><span class="p">(),</span> <span class="n">buffered_pit</span><span class="o">.</span><span class="n">ST_AsText</span><span class="p">()))</span>
+
+<span class="c1"># Use our handy dandy function to execute the query and make it a geopandas dataframe</span>
+<span class="n">dfGPR</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+<span class="c1"># rename &#39;value&#39; in dataframe as &#39;twt&#39;</span>
+<span class="n">dfGPR</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;twt&#39;</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;mesa&#39;,), (&#39;magnaprobe&#39;,), (&#39;pulse EKKO Pro multi-polarization 1 GHz GPR&#39;,), (&#39;pit ruler&#39;,), (&#39;camera-trap&#39;,)]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;swe&#39;,), (&#39;depth&#39;,), (&#39;two_way_travel&#39;,)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-5-plot-it">
+<h3>Step 5: Plot it!<a class="headerlink" href="#step-5-plot-it" title="Permalink to this headline">¶</a></h3>
+<div class="cell tag_nbsphinx-gallery tag_nbsphinx-thumbnail docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the Matplotlib Axes object from the dataframe object, color points by snow depth value</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">dfGPR</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;twt&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;PuBu&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Use non-scientific notation for x and y ticks</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">ticklabel_format</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;plain&#39;</span><span class="p">,</span> <span class="n">useOffset</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Set the various plots x/y labels and title.</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Grand Mesa GPR Travel-times w/in </span><span class="si">{}</span><span class="s1">m of site </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">buffer_dist</span><span class="p">,</span> <span class="n">site_id</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Easting [m]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Northing [m]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(76.87036568247558, 0.5, &#39;Northing [m]&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/gpr_11_1.png" src="../../_images/gpr_11_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="step-6-convert-twt-to-depth-using-snow-density">
+<h3>Step 6: Convert TWT to Depth Using Snow Density<a class="headerlink" href="#step-6-convert-twt-to-depth-using-snow-density" title="Permalink to this headline">¶</a></h3>
+<p>We will relate the dry snow density to the electromagnetic wave speed using the Kovacs et. al (1995) formula</p>
+<div class="math notranslate nohighlight" id="equation-permitivity">
+<span class="eqno">(2)<a class="headerlink" href="#equation-permitivity" title="Permalink to this equation">¶</a></span>\[
+\epsilon_{\mathrm{r}}^{\prime}=(1+0.845 \rho)^{2} \quad .
+\]</div>
+<p>Equation <a class="reference internal" href="#equation-permitivity">(2)</a> calculates the dielectric constant <span class="math notranslate nohighlight">\(\epsilon_{\mathrm{r}}^{\prime}\)</span>, provided the snow density <span class="math notranslate nohighlight">\(\rho\)</span>. We must then relate the dielectric constant to the electromagnetic wave speed <span class="math notranslate nohighlight">\((v)\)</span></p>
+<div class="math notranslate nohighlight" id="equation-wavespeed">
+<span class="eqno">(3)<a class="headerlink" href="#equation-wavespeed" title="Permalink to this equation">¶</a></span>\[
+v = \frac{c}{\sqrt{\epsilon_{\mathrm{r}}^{\prime}}} \quad .
+\]</div>
+<p>In equation <a class="reference internal" href="#equation-wavespeed">(3)</a> <span class="math notranslate nohighlight">\(c\)</span> is the universal constant <span class="math notranslate nohighlight">\(0.3~m/ns\)</span>.</p>
+<p>We then calculate the depth of the snow</p>
+<div class="math notranslate nohighlight" id="equation-depthconversion">
+<span class="eqno">(4)<a class="headerlink" href="#equation-depthconversion" title="Permalink to this equation">¶</a></span>\[
+z = \frac{vt}{2} \quad ,
+\]</div>
+<p>using the two-way travel-time <span class="math notranslate nohighlight">\((t)\)</span> and the electromagnetic velocity.</p>
+<p>We add the GPR estimated snow depths to the dataframe, and print the head of the dataframe to confirm this addition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Average Snow Density</span>
+<span class="c1"># all pits</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="n">rho_avg_all</span>
+<span class="c1"># 1s1</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="n">rho_avg_1s1</span>
+<span class="c1"># convert density to specific gravity</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="n">rho</span><span class="o">/</span><span class="mi">1000</span>
+<span class="c1"># Calculate Dielectric Permittivity of Snow</span>
+<span class="n">epsilon</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.845</span><span class="o">*</span><span class="n">rho</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># m/ns</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">c</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">epsilon</span><span class="p">)</span> <span class="c1"># m/ns</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">dfGPR</span><span class="o">.</span><span class="n">twt</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">v</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="mi">100</span>
+<span class="c1"># Add the GPR depths to the datafram</span>
+<span class="n">dfGPR</span><span class="p">[</span><span class="s1">&#39;depth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span>
+<span class="n">dfGPR</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>site_name</th>
+      <th>date</th>
+      <th>time_created</th>
+      <th>time_updated</th>
+      <th>id</th>
+      <th>site_id</th>
+      <th>doi</th>
+      <th>date_accessed</th>
+      <th>instrument</th>
+      <th>type</th>
+      <th>...</th>
+      <th>northing</th>
+      <th>easting</th>
+      <th>elevation</th>
+      <th>utm_zone</th>
+      <th>geom</th>
+      <th>time</th>
+      <th>version_number</th>
+      <th>equipment</th>
+      <th>twt</th>
+      <th>depth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 14:54:48.022766+00:00</td>
+      <td>None</td>
+      <td>887718</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
+      <td>2021-05-30</td>
+      <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
+      <td>two_way_travel</td>
+      <td>...</td>
+      <td>4322821.215</td>
+      <td>741887.187</td>
+      <td>None</td>
+      <td>12</td>
+      <td>POINT (741887.187 4322821.215)</td>
+      <td>16:55:56.803000-06:00</td>
+      <td>None</td>
+      <td>None</td>
+      <td>7.6</td>
+      <td>94.442959</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 14:54:48.024993+00:00</td>
+      <td>None</td>
+      <td>887719</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
+      <td>2021-05-30</td>
+      <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
+      <td>two_way_travel</td>
+      <td>...</td>
+      <td>4322821.131</td>
+      <td>741887.227</td>
+      <td>None</td>
+      <td>12</td>
+      <td>POINT (741887.227 4322821.131)</td>
+      <td>16:55:56.836000-06:00</td>
+      <td>None</td>
+      <td>None</td>
+      <td>7.6</td>
+      <td>94.442959</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 14:54:48.027246+00:00</td>
+      <td>None</td>
+      <td>887720</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
+      <td>2021-05-30</td>
+      <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
+      <td>two_way_travel</td>
+      <td>...</td>
+      <td>4322821.046</td>
+      <td>741887.267</td>
+      <td>None</td>
+      <td>12</td>
+      <td>POINT (741887.267 4322821.046)</td>
+      <td>16:55:56.869000-06:00</td>
+      <td>None</td>
+      <td>None</td>
+      <td>7.6</td>
+      <td>94.442959</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 14:54:48.029566+00:00</td>
+      <td>None</td>
+      <td>887721</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
+      <td>2021-05-30</td>
+      <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
+      <td>two_way_travel</td>
+      <td>...</td>
+      <td>4322820.961</td>
+      <td>741887.306</td>
+      <td>None</td>
+      <td>12</td>
+      <td>POINT (741887.306 4322820.961)</td>
+      <td>16:55:56.902000-06:00</td>
+      <td>None</td>
+      <td>None</td>
+      <td>7.6</td>
+      <td>94.442959</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 14:54:48.031664+00:00</td>
+      <td>None</td>
+      <td>887722</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
+      <td>2021-05-30</td>
+      <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
+      <td>two_way_travel</td>
+      <td>...</td>
+      <td>4322820.876</td>
+      <td>741887.346</td>
+      <td>None</td>
+      <td>12</td>
+      <td>POINT (741887.346 4322820.876)</td>
+      <td>16:55:56.934000-06:00</td>
+      <td>None</td>
+      <td>None</td>
+      <td>7.6</td>
+      <td>94.442959</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 24 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="step-7-get-depth-probes">
+<h3>Step 7: Get Depth Probes<a class="headerlink" href="#step-7-get-depth-probes" title="Permalink to this headline">¶</a></h3>
+<p>We can recall the PointData types from above in Step 4, and we choose ‘depth’ as the PointData type filter. Again to ensure we are only considering data that was aquired on the same day as the GPR, we filter the depth data by the date January 29, 2020. We further refine this search to the instrument type ‘magnaprobe’ and of those data only query the points within our buffer. Lastly, we send this query to a new dataframe using the geopandas functinality, and rename the ‘value’ column as ‘depth’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter by the dataset type depth</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">PointData</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;depth&#39;</span><span class="p">)</span>
+
+<span class="c1"># Additionally Filter by a date </span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">date</span><span class="o">==</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">29</span><span class="p">))</span>
+
+<span class="c1"># Additionally Filter by instrument  </span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">instrument</span><span class="o">==</span><span class="s1">&#39;magnaprobe&#39;</span><span class="p">)</span>
+
+<span class="c1"># Grab all the point data in the buffer</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">ST_Within</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">geom</span><span class="o">.</span><span class="n">ST_AsText</span><span class="p">(),</span> <span class="n">buffered_pit</span><span class="o">.</span><span class="n">ST_AsText</span><span class="p">()))</span>
+
+<span class="c1"># Execute the query</span>
+<span class="c1"># Use our handy dandy function to execute the query and make it a geopandas dataframe</span>
+<span class="n">dfProbe</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+
+<span class="c1"># rename Probed Depths to dataframe</span>
+<span class="n">dfProbe</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;depth&#39;</span><span class="p">},</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
+<span class="n">dfProbe</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>site_name</th>
+      <th>date</th>
+      <th>time_created</th>
+      <th>time_updated</th>
+      <th>id</th>
+      <th>site_id</th>
+      <th>doi</th>
+      <th>date_accessed</th>
+      <th>instrument</th>
+      <th>type</th>
+      <th>...</th>
+      <th>longitude</th>
+      <th>northing</th>
+      <th>easting</th>
+      <th>elevation</th>
+      <th>utm_zone</th>
+      <th>geom</th>
+      <th>time</th>
+      <th>version_number</th>
+      <th>equipment</th>
+      <th>depth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 13:06:49.654453+00:00</td>
+      <td>None</td>
+      <td>80264</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/9IA978JIACAR</td>
+      <td>2021-05-30</td>
+      <td>magnaprobe</td>
+      <td>depth</td>
+      <td>...</td>
+      <td>-108.20561</td>
+      <td>4322848.80</td>
+      <td>741919.30</td>
+      <td>3031.6</td>
+      <td>None</td>
+      <td>POINT (741919.300 4322848.800)</td>
+      <td>07:08:00-06:00</td>
+      <td>1</td>
+      <td>CRREL_C</td>
+      <td>77.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 13:06:49.703341+00:00</td>
+      <td>None</td>
+      <td>80286</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/9IA978JIACAR</td>
+      <td>2021-05-30</td>
+      <td>magnaprobe</td>
+      <td>depth</td>
+      <td>...</td>
+      <td>-108.20554</td>
+      <td>4322850.09</td>
+      <td>741924.90</td>
+      <td>3036.1</td>
+      <td>None</td>
+      <td>POINT (741924.900 4322850.090)</td>
+      <td>07:10:00-06:00</td>
+      <td>1</td>
+      <td>CRREL_C</td>
+      <td>96.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 13:06:49.705901+00:00</td>
+      <td>None</td>
+      <td>80287</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/9IA978JIACAR</td>
+      <td>2021-05-30</td>
+      <td>magnaprobe</td>
+      <td>depth</td>
+      <td>...</td>
+      <td>-108.20554</td>
+      <td>4322853.04</td>
+      <td>741924.66</td>
+      <td>3035.2</td>
+      <td>None</td>
+      <td>POINT (741924.660 4322853.040)</td>
+      <td>07:10:00-06:00</td>
+      <td>1</td>
+      <td>CRREL_C</td>
+      <td>93.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 13:06:49.708092+00:00</td>
+      <td>None</td>
+      <td>80288</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/9IA978JIACAR</td>
+      <td>2021-05-30</td>
+      <td>magnaprobe</td>
+      <td>depth</td>
+      <td>...</td>
+      <td>-108.20553</td>
+      <td>4322853.45</td>
+      <td>741925.81</td>
+      <td>3035.5</td>
+      <td>None</td>
+      <td>POINT (741925.810 4322853.450)</td>
+      <td>07:10:00-06:00</td>
+      <td>1</td>
+      <td>CRREL_C</td>
+      <td>87.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 13:06:49.710224+00:00</td>
+      <td>None</td>
+      <td>80289</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/9IA978JIACAR</td>
+      <td>2021-05-30</td>
+      <td>magnaprobe</td>
+      <td>depth</td>
+      <td>...</td>
+      <td>-108.20554</td>
+      <td>4322854.54</td>
+      <td>741925.05</td>
+      <td>3036.1</td>
+      <td>None</td>
+      <td>POINT (741925.050 4322854.540)</td>
+      <td>07:11:00-06:00</td>
+      <td>1</td>
+      <td>CRREL_C</td>
+      <td>80.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 23 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="step-8-average-gpr-depths-to-compare-with-probed-depths">
+<h3>Step 8: Average GPR Depths to Compare with Probed Depths<a class="headerlink" href="#step-8-average-gpr-depths-to-compare-with-probed-depths" title="Permalink to this headline">¶</a></h3>
+<p>In this step we will compare the GPR estimated depths to the Magnaprobe depths. In order to accomplish this, we must interpolate the GPR locations to the locations of the probe. We will use inverse distance weighting as our interpolation method.
+Example Code taken from <a class="reference external" href="https://stackoverflow.com/questions/3104781/inverse-distance-weighted-idw-interpolation-with-python">https://stackoverflow.com/questions/3104781/inverse-distance-weighted-idw-interpolation-with-python</a></p>
+<p>Inverse distance weighting is a weighted average interpolant. The weights are computed as the inverse of the distance between the GPR locations <span class="math notranslate nohighlight">\((x,y)\)</span> and the depth probe locations (the interpolated locations <span class="math notranslate nohighlight">\((x_i,y_i)\)</span>)</p>
+<div class="math notranslate nohighlight" id="equation-weights">
+<span class="eqno">(5)<a class="headerlink" href="#equation-weights" title="Permalink to this equation">¶</a></span>\[\begin{split}
+d = {\sqrt{(x-x_i)^{2}+(y-y_i)^2}} \quad  \\
+w = \frac{1}{d} \quad .
+\end{split}\]</div>
+<p>Equation <a class="reference internal" href="#equation-weights">(5)</a> is then normalized</p>
+<div class="math notranslate nohighlight" id="equation-idweights">
+<span class="eqno">(6)<a class="headerlink" href="#equation-idweights" title="Permalink to this equation">¶</a></span>\[
+w = \frac{w}{\sum{w}} \quad ,
+\]</div>
+<p>to sum to one. For the <span class="math notranslate nohighlight">\(i^{th}\)</span> location these weights are multiplied by the GPR depths</p>
+<div class="math notranslate nohighlight" id="equation-applyweights">
+<span class="eqno">(7)<a class="headerlink" href="#equation-applyweights" title="Permalink to this equation">¶</a></span>\[
+z_i = w_i*z
+\]</div>
+<p>to compute a weighted average.</p>
+<p>In the following code implementation of the inverse distance weighting algorithm, the <code class="docutils literal notranslate"><span class="pre">subtract.outer</span></code> method of the universal functions (ufunc) within numpy is called which computes the distances in equation <a class="reference internal" href="#equation-weights">(5)</a> by looping through the interpolation points. The dot product (inner product) is then used to multiply the weights with the GPR depths. This algorithm relies on the use of a for loop within the <code class="docutils literal notranslate"><span class="pre">ufunc.outer</span></code> call, yet it seems quite efficient! A notable caveat of this algorithm, and a source of error, is that the interpolation considers all points in the domain, rather than a localized interpolation. An interpolation scheme that employs a search radius of three meters, rather than 50 meters (as established by the buffer distance in step one), would be preferable.</p>
+<p>We then assign the GPR estimated depths to the probe dataframe, and compute the error between the probed depths and the GPR depths.</p>
+<p>The head of the depth probe dataframe is printed to show that we have added the interpolated GPR depths and the error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inverse Distance Weighting Interpolation</span>
+<span class="k">def</span> <span class="nf">simple_idw</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">yi</span><span class="p">):</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">distance_matrix</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span><span class="n">yi</span><span class="p">)</span>
+
+    <span class="c1"># In IDW, weights are 1 / distance</span>
+    <span class="n">weights</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">dist</span>
+
+    <span class="c1"># Make weights sum to one</span>
+    <span class="n">weights</span> <span class="o">/=</span> <span class="n">weights</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Multiply the weights for each interpolated point by all observed Z-values</span>
+    <span class="n">zi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">weights</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">zi</span>
+
+<span class="k">def</span> <span class="nf">distance_matrix</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">):</span>
+    <span class="n">obs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">interp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+
+    <span class="c1"># Make a distance matrix between pairwise observations</span>
+    <span class="c1"># Note: from &lt;http://stackoverflow.com/questions/1871536&gt;</span>
+    <span class="c1"># (Yay for ufuncs!)</span>
+    <span class="n">d0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">obs</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">interp</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">d1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">subtract</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">obs</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">interp</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">d0</span><span class="p">,</span> <span class="n">d1</span><span class="p">)</span>
+
+<span class="c1"># Estimate the GPR Depths at the Probe Locations</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">simple_idw</span><span class="p">(</span><span class="n">dfGPR</span><span class="o">.</span><span class="n">easting</span><span class="p">,</span> <span class="n">dfGPR</span><span class="o">.</span><span class="n">northing</span><span class="p">,</span> <span class="n">dfGPR</span><span class="o">.</span><span class="n">depth</span><span class="p">,</span> <span class="n">dfProbe</span><span class="o">.</span><span class="n">easting</span><span class="p">,</span> <span class="n">dfProbe</span><span class="o">.</span><span class="n">northing</span><span class="p">)</span>
+<span class="c1"># Assign the GPR depths to the Probe dataframe</span>
+<span class="n">dfProbe</span><span class="p">[</span><span class="s1">&#39;depthGPR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span>
+<span class="c1"># Calculate the Error</span>
+<span class="n">err</span> <span class="o">=</span> <span class="n">dfProbe</span><span class="o">.</span><span class="n">depth</span><span class="o">-</span><span class="n">dfProbe</span><span class="o">.</span><span class="n">depthGPR</span>
+<span class="c1"># Assign the Error to the Probe Dataframe</span>
+<span class="n">dfProbe</span><span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">err</span>
+<span class="n">dfProbe</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>site_name</th>
+      <th>date</th>
+      <th>time_created</th>
+      <th>time_updated</th>
+      <th>id</th>
+      <th>site_id</th>
+      <th>doi</th>
+      <th>date_accessed</th>
+      <th>instrument</th>
+      <th>type</th>
+      <th>...</th>
+      <th>easting</th>
+      <th>elevation</th>
+      <th>utm_zone</th>
+      <th>geom</th>
+      <th>time</th>
+      <th>version_number</th>
+      <th>equipment</th>
+      <th>depth</th>
+      <th>depthGPR</th>
+      <th>error</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 13:06:49.654453+00:00</td>
+      <td>None</td>
+      <td>80264</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/9IA978JIACAR</td>
+      <td>2021-05-30</td>
+      <td>magnaprobe</td>
+      <td>depth</td>
+      <td>...</td>
+      <td>741919.30</td>
+      <td>3031.6</td>
+      <td>None</td>
+      <td>POINT (741919.300 4322848.800)</td>
+      <td>07:08:00-06:00</td>
+      <td>1</td>
+      <td>CRREL_C</td>
+      <td>77.0</td>
+      <td>87.603508</td>
+      <td>-10.603508</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 13:06:49.703341+00:00</td>
+      <td>None</td>
+      <td>80286</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/9IA978JIACAR</td>
+      <td>2021-05-30</td>
+      <td>magnaprobe</td>
+      <td>depth</td>
+      <td>...</td>
+      <td>741924.90</td>
+      <td>3036.1</td>
+      <td>None</td>
+      <td>POINT (741924.900 4322850.090)</td>
+      <td>07:10:00-06:00</td>
+      <td>1</td>
+      <td>CRREL_C</td>
+      <td>96.0</td>
+      <td>86.767049</td>
+      <td>9.232951</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 13:06:49.705901+00:00</td>
+      <td>None</td>
+      <td>80287</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/9IA978JIACAR</td>
+      <td>2021-05-30</td>
+      <td>magnaprobe</td>
+      <td>depth</td>
+      <td>...</td>
+      <td>741924.66</td>
+      <td>3035.2</td>
+      <td>None</td>
+      <td>POINT (741924.660 4322853.040)</td>
+      <td>07:10:00-06:00</td>
+      <td>1</td>
+      <td>CRREL_C</td>
+      <td>93.0</td>
+      <td>87.286674</td>
+      <td>5.713326</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 13:06:49.708092+00:00</td>
+      <td>None</td>
+      <td>80288</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/9IA978JIACAR</td>
+      <td>2021-05-30</td>
+      <td>magnaprobe</td>
+      <td>depth</td>
+      <td>...</td>
+      <td>741925.81</td>
+      <td>3035.5</td>
+      <td>None</td>
+      <td>POINT (741925.810 4322853.450)</td>
+      <td>07:10:00-06:00</td>
+      <td>1</td>
+      <td>CRREL_C</td>
+      <td>87.0</td>
+      <td>87.169223</td>
+      <td>-0.169223</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 13:06:49.710224+00:00</td>
+      <td>None</td>
+      <td>80289</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/9IA978JIACAR</td>
+      <td>2021-05-30</td>
+      <td>magnaprobe</td>
+      <td>depth</td>
+      <td>...</td>
+      <td>741925.05</td>
+      <td>3036.1</td>
+      <td>None</td>
+      <td>POINT (741925.050 4322854.540)</td>
+      <td>07:11:00-06:00</td>
+      <td>1</td>
+      <td>CRREL_C</td>
+      <td>80.0</td>
+      <td>87.454136</td>
+      <td>-7.454136</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 25 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="step-9-plot-the-depths-correlation-and-errors">
+<h3>Step 9. Plot the Depths, Correlation, and Errors<a class="headerlink" href="#step-9-plot-the-depths-correlation-and-errors" title="Permalink to this headline">¶</a></h3>
+<p>In this final step, we will compare the GPR depths and probed depths. We compute the Pearson correlation</p>
+<div class="math notranslate nohighlight" id="equation-pearson">
+<span class="eqno">(8)<a class="headerlink" href="#equation-pearson" title="Permalink to this equation">¶</a></span>\[
+r=\frac{\sum\left(x_{i}-\bar{x}\right)\left(y_{i}-\bar{y}\right)}{\sqrt{\sum\left(x_{i}-\bar{x}\right)^{2} \sum\left(y_{i}-\bar{y}\right)^{2}}} \quad ,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(x\)</span> represents the probed depths and <span class="math notranslate nohighlight">\(y\)</span> represents the GPR depths.</p>
+<p>We calculate the bias of the GPR estimated depths</p>
+<div class="math notranslate nohighlight" id="equation-mae">
+<span class="eqno">(9)<a class="headerlink" href="#equation-mae" title="Permalink to this equation">¶</a></span>\[
+\mathrm{MAE}=\frac{\sum_{i=1}^{N}\left|x_{i}-y_{i}\right|}{N} \quad ,
+\]</div>
+<p>as the mean absolute error (<span class="math notranslate nohighlight">\(\mathrm{MAE}\)</span>). The bias,determined by equation <a class="reference internal" href="#equation-mae">(9)</a>, can be caused by using the incorrect density value. A lower density value will bias the GPR estimated depths to larger values, whereas, a higher density value will bias the GPR depths to lower values. It has also been shown that the point of the probe can enter the soil, which biases the observed depths positively (McGrath et al., 2019). Similarly, the presence of vegitation beneath the snow cover can be a source of air. It is posible that the GPR signal is reflected from the air gap beneath snow that is not grounded. In this case the depth probe may contact the ground, though the GPR travel-time does not, leading to a positive bias. A fourth possible source of error in the comparison of these depths is the disagreement between the size of the GPR “footprint” (known as the fresnel zone radius), which is on the order of one meter, and the area of the probe tip which is about one centimeter. Because these instruments do not sample the same place on the ground, localized varibility in the ground topography can lead to errors between the measured and estimated depths.</p>
+<p>The root-mean-square error</p>
+<div class="math notranslate nohighlight" id="equation-rmse">
+<span class="eqno">(10)<a class="headerlink" href="#equation-rmse" title="Permalink to this equation">¶</a></span>\[
+\mathrm{RMSE}=\sqrt{\frac{\sum_{i=1}^{N}\left(x_{i}-y_{i}\right)^{2}}{N}}
+\]</div>
+<p>is a measurement of the standard deviation of the errors, if we assume that the errors are normally distributed and independent.</p>
+<p>In the code ection we, first, display these summary statistics. Then we view this information graphically. The first plot is the scatter of the observed depths versus the estimated depths with the regression line. The second plot is a histogram of the errors (observed - estimated). The histogram shows a positive bias, which indicates that a combination of the errors discussed above resulted in the probe measuring greater snow depths than the GPR on average. The final plot displays the errors in depth spatially. Roughly, by eye, it appears that areas with low travel-time (<span class="math notranslate nohighlight">\(\sim4~ns\)</span>, southeast quadrant) overestimate the depth, interestingly enough!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the Correlation</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">dfProbe</span><span class="o">.</span><span class="n">depth</span><span class="p">,</span><span class="n">dfProbe</span><span class="o">.</span><span class="n">depthGPR</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The correlation is&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span>
+<span class="c1"># Calculate the Mean Absolute Error</span>
+<span class="n">bias</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dfProbe</span><span class="o">.</span><span class="n">error</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The bias is&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">bias</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;cm&#39;</span><span class="p">)</span>
+<span class="c1"># Calculate the Root Mean Squared Error</span>
+<span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">dfProbe</span><span class="o">.</span><span class="n">error</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The rmse is&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">rmse</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;cm&#39;</span><span class="p">)</span>
+<span class="c1"># Compute the Regression Line</span>
+<span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span> <span class="n">polyfit</span><span class="p">(</span><span class="n">dfProbe</span><span class="o">.</span><span class="n">depth</span><span class="p">,</span><span class="n">dfProbe</span><span class="o">.</span><span class="n">depthGPR</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Plot the Correlation</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dfProbe</span><span class="o">.</span><span class="n">depth</span><span class="p">,</span><span class="n">dfProbe</span><span class="o">.</span><span class="n">depthGPR</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dfProbe</span><span class="o">.</span><span class="n">depth</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">dfProbe</span><span class="o">.</span><span class="n">depth</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Probe Depth [cm]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;GPR Depth [cm]&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot a Histogram of the Errors</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">dfProbe</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>  <span class="c1"># density=False would make counts</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;PDF&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Error [cm]&#39;</span><span class="p">);</span>
+<span class="c1"># Get the Matplotlib Axes object from the dataframe object, color points by snow depth value</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">dfProbe</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;PuBu&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Use non-scientific notation for x and y ticks</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">ticklabel_format</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;plain&#39;</span><span class="p">,</span> <span class="n">useOffset</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Set the various plots x/y labels and title.</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Error [cm] (Probed Depth - GPR Depth)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Easting [m]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Northing [m]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The correlation is 0.64
+The bias is 8.56 cm
+The rmse is 10.62 cm
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(60.245147830207486, 0.5, &#39;Northing [m]&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/gpr_19_2.png" src="../../_images/gpr_19_2.png" />
+<img alt="../../_images/gpr_19_3.png" src="../../_images/gpr_19_3.png" />
+<img alt="../../_images/gpr_19_4.png" src="../../_images/gpr_19_4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Close the session to avoid hanging transactions</span>
+<span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/gpr"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../microstructure/microstructure-tutorial.html" title="previous page">Microstructure Tutorial</a>
+    <a class='right-next' id="next-link" href="../../projects/index.html" title="next page">Projects</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By eScience Institute, University of Washington<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'G-QM84T4SB76', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
