@@ -42,6 +42,7 @@
             - file: tutorials/database/3_get_spiral_example
             - file: tutorials/database/4_plot_raster_example
         - file: tutorials/microstructure/microstructure-tutorial
+        - file: tutorials/gpr/gpr
 
 - part: Projects
   chapters:
