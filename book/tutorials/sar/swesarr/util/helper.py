@@ -73,6 +73,7 @@ def join_sar_radiom(da, radiom):
     from geopy.distance import distance
     import numpy as np
     import pandas as pd
+    import datetime
     
     # first, convert the data from the SAR's meter-based, 
     # universal transverse mercator (UTM) coordinate system
@@ -177,6 +178,16 @@ def join_sar_radiom(da, radiom):
                                    "17VV SAR", "17VH SAR",
                                    'X-band Rad', 'Ku-band Rad', 
                                    'Ka-band Rad'])
+    
+    # Convert UTC string to date time array
+    times = radiom.UTC.to_frame()
+    times = times['UTC'].to_list()
+
+    # convert to datetime
+    times = [datetime.datetime.strptime(time_str, '%Y%m%d-%H:%M:%S.%f') for time_str in times]
+
+    radiom.UTC = times
+
     
     # combine time data with swesarr measurements
     out_data = pd.concat( [radiom.UTC.to_frame(), swesarr_df], axis=1)
