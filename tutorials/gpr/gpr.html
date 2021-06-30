@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SnowEx Hackweek GPR Tutorial 2021 &#8212; SnowEx Hackweek</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.c441f2ba0852f4cabcb80105e3a46ae6.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -44,7 +41,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -60,14 +57,14 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Projects" href="../../projects/index.html" />
     <link rel="prev" title="Microstructure Tutorial" href="../microstructure/microstructure-tutorial.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -76,32 +73,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../index.html">
-  
-  <img src="../../_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">SnowEx Hackweek</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SnowEx Hackweek</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../intro.html">
    Welcome to SnowEx Hackweek!
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Details
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../application.html">
    Application
@@ -117,11 +114,16 @@
    Our Team
   </a>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../norms/index.html">
    Hackweek Norms
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../norms/CoC.html">
      Code of Conduct
@@ -133,21 +135,24 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Preparation
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../preliminary/index.html">
    Preliminary Work
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../preliminary/swc.html">
      Software Carpentry Training
@@ -184,21 +189,24 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Tutorials
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active collapsible-parent">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../index.html">
    Tutorials
   </a>
-  <ul class="current collapse-ul">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../jupyter.html">
      JupyterHub
@@ -219,11 +227,16 @@
      An introduction to rasters
     </a>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../sar/index.html">
      Synthetic Aperture Radar
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../sar/sentinel1.html">
        Sentinel-1
@@ -235,14 +248,17 @@
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 has-children">
     <a class="reference internal" href="../database/index.html">
      SnowEx Database
     </a>
-    <ul class="collapse-ul">
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../database/1_getting_started_example.html">
        Introduction to the SnowEx Database
@@ -264,8 +280,6 @@
       </a>
      </li>
     </ul>
-    <i class="fas fa-chevron-down">
-    </i>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
@@ -278,21 +292,24 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Projects
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../../projects/index.html">
    Projects
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../../projects/project_initialization.html">
      Project Initialization
@@ -308,22 +325,15 @@
      Basic git workflow for a project
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../projects/example_workflow.html#project-data-download-storage-and-access">
-     Project Data - download, storage, and access
-    </a>
-   </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Reference
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../glossary.html">
    Glossary
@@ -336,6 +346,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -403,12 +414,12 @@
     </div>
 </div>
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -417,12 +428,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#retrieve-density-gpr-and-magnaprobe-data-from-pit-1s1">
    Retrieve density, GPR, and Magnaprobe data from Pit 1S1
@@ -482,8 +492,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -657,7 +666,7 @@ We then import the Point Data (e.g. GPR) and Layer Data (e.g. snow pit) and GeoP
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;mesa&#39;,), (&#39;magnaprobe&#39;,), (&#39;pulse EKKO Pro multi-polarization 1 GHz GPR&#39;,), (&#39;pit ruler&#39;,), (&#39;camera-trap&#39;,)]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;swe&#39;,), (&#39;depth&#39;,), (&#39;two_way_travel&#39;,)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;depth&#39;,), (&#39;swe&#39;,), (&#39;two_way_travel&#39;,)]
 </pre></div>
 </div>
 </div>
@@ -777,121 +786,121 @@ z = \frac{vt}{2} \quad ,
       <th>0</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
-      <td>2021-06-10 14:54:48.022766+00:00</td>
+      <td>2021-06-10 14:54:36.998583+00:00</td>
       <td>None</td>
-      <td>887718</td>
+      <td>882750</td>
       <td>None</td>
       <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
       <td>2021-05-30</td>
       <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
       <td>two_way_travel</td>
       <td>...</td>
-      <td>4322821.215</td>
-      <td>741887.187</td>
+      <td>4322837.344</td>
+      <td>741941.641</td>
       <td>None</td>
       <td>12</td>
-      <td>POINT (741887.187 4322821.215)</td>
-      <td>16:55:56.803000-06:00</td>
+      <td>POINT (741941.641 4322837.344)</td>
+      <td>16:53:11.933000-06:00</td>
       <td>None</td>
       <td>None</td>
-      <td>7.6</td>
-      <td>94.442959</td>
+      <td>6.0</td>
+      <td>74.560231</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
-      <td>2021-06-10 14:54:48.024993+00:00</td>
+      <td>2021-06-10 14:54:37.000674+00:00</td>
       <td>None</td>
-      <td>887719</td>
+      <td>882751</td>
       <td>None</td>
       <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
       <td>2021-05-30</td>
       <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
       <td>two_way_travel</td>
       <td>...</td>
-      <td>4322821.131</td>
-      <td>741887.227</td>
+      <td>4322837.338</td>
+      <td>741941.627</td>
       <td>None</td>
       <td>12</td>
-      <td>POINT (741887.227 4322821.131)</td>
-      <td>16:55:56.836000-06:00</td>
+      <td>POINT (741941.627 4322837.338)</td>
+      <td>16:53:11.967000-06:00</td>
       <td>None</td>
       <td>None</td>
-      <td>7.6</td>
-      <td>94.442959</td>
+      <td>6.0</td>
+      <td>74.560231</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
-      <td>2021-06-10 14:54:48.027246+00:00</td>
+      <td>2021-06-10 14:54:37.017366+00:00</td>
       <td>None</td>
-      <td>887720</td>
+      <td>882759</td>
       <td>None</td>
       <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
       <td>2021-05-30</td>
       <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
       <td>two_way_travel</td>
       <td>...</td>
-      <td>4322821.046</td>
-      <td>741887.267</td>
+      <td>4322837.268</td>
+      <td>741941.510</td>
       <td>None</td>
       <td>12</td>
-      <td>POINT (741887.267 4322821.046)</td>
-      <td>16:55:56.869000-06:00</td>
+      <td>POINT (741941.510 4322837.268)</td>
+      <td>16:53:12.233000-06:00</td>
       <td>None</td>
       <td>None</td>
-      <td>7.6</td>
-      <td>94.442959</td>
+      <td>6.0</td>
+      <td>74.560231</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
-      <td>2021-06-10 14:54:48.029566+00:00</td>
+      <td>2021-06-10 14:54:37.077837+00:00</td>
       <td>None</td>
-      <td>887721</td>
+      <td>882788</td>
       <td>None</td>
       <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
       <td>2021-05-30</td>
       <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
       <td>two_way_travel</td>
       <td>...</td>
-      <td>4322820.961</td>
-      <td>741887.306</td>
+      <td>4322837.051</td>
+      <td>741940.717</td>
       <td>None</td>
       <td>12</td>
-      <td>POINT (741887.306 4322820.961)</td>
-      <td>16:55:56.902000-06:00</td>
+      <td>POINT (741940.717 4322837.051)</td>
+      <td>16:53:13.197000-06:00</td>
       <td>None</td>
       <td>None</td>
-      <td>7.6</td>
-      <td>94.442959</td>
+      <td>6.3</td>
+      <td>78.288242</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
-      <td>2021-06-10 14:54:48.031664+00:00</td>
+      <td>2021-06-10 14:54:37.002682+00:00</td>
       <td>None</td>
-      <td>887722</td>
+      <td>882752</td>
       <td>None</td>
       <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
       <td>2021-05-30</td>
       <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
       <td>two_way_travel</td>
       <td>...</td>
-      <td>4322820.876</td>
-      <td>741887.346</td>
+      <td>4322837.331</td>
+      <td>741941.613</td>
       <td>None</td>
       <td>12</td>
-      <td>POINT (741887.346 4322820.876)</td>
-      <td>16:55:56.934000-06:00</td>
+      <td>POINT (741941.613 4322837.331)</td>
+      <td>16:53:12-06:00</td>
       <td>None</td>
       <td>None</td>
-      <td>7.6</td>
-      <td>94.442959</td>
+      <td>6.0</td>
+      <td>74.560231</td>
     </tr>
   </tbody>
 </table>
@@ -973,30 +982,6 @@ z = \frac{vt}{2} \quad ,
       <th>0</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
-      <td>2021-06-10 13:06:49.654453+00:00</td>
-      <td>None</td>
-      <td>80264</td>
-      <td>None</td>
-      <td>https://doi.org/10.5067/9IA978JIACAR</td>
-      <td>2021-05-30</td>
-      <td>magnaprobe</td>
-      <td>depth</td>
-      <td>...</td>
-      <td>-108.20561</td>
-      <td>4322848.80</td>
-      <td>741919.30</td>
-      <td>3031.6</td>
-      <td>None</td>
-      <td>POINT (741919.300 4322848.800)</td>
-      <td>07:08:00-06:00</td>
-      <td>1</td>
-      <td>CRREL_C</td>
-      <td>77.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Grand Mesa</td>
-      <td>2020-01-29</td>
       <td>2021-06-10 13:06:49.703341+00:00</td>
       <td>None</td>
       <td>80286</td>
@@ -1018,7 +1003,79 @@ z = \frac{vt}{2} \quad ,
       <td>96.0</td>
     </tr>
     <tr>
+      <th>1</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 13:06:49.654453+00:00</td>
+      <td>None</td>
+      <td>80264</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/9IA978JIACAR</td>
+      <td>2021-05-30</td>
+      <td>magnaprobe</td>
+      <td>depth</td>
+      <td>...</td>
+      <td>-108.20561</td>
+      <td>4322848.80</td>
+      <td>741919.30</td>
+      <td>3031.6</td>
+      <td>None</td>
+      <td>POINT (741919.300 4322848.800)</td>
+      <td>07:08:00-06:00</td>
+      <td>1</td>
+      <td>CRREL_C</td>
+      <td>77.0</td>
+    </tr>
+    <tr>
       <th>2</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 13:06:49.656834+00:00</td>
+      <td>None</td>
+      <td>80265</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/9IA978JIACAR</td>
+      <td>2021-05-30</td>
+      <td>magnaprobe</td>
+      <td>depth</td>
+      <td>...</td>
+      <td>-108.20561</td>
+      <td>4322848.42</td>
+      <td>741918.73</td>
+      <td>3032.3</td>
+      <td>None</td>
+      <td>POINT (741918.730 4322848.420)</td>
+      <td>07:08:00-06:00</td>
+      <td>1</td>
+      <td>CRREL_C</td>
+      <td>65.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 13:06:49.658849+00:00</td>
+      <td>None</td>
+      <td>80266</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/9IA978JIACAR</td>
+      <td>2021-05-30</td>
+      <td>magnaprobe</td>
+      <td>depth</td>
+      <td>...</td>
+      <td>-108.20561</td>
+      <td>4322847.30</td>
+      <td>741918.48</td>
+      <td>3032.3</td>
+      <td>None</td>
+      <td>POINT (741918.480 4322847.300)</td>
+      <td>07:08:00-06:00</td>
+      <td>1</td>
+      <td>CRREL_C</td>
+      <td>69.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
       <td>2021-06-10 13:06:49.705901+00:00</td>
@@ -1040,54 +1097,6 @@ z = \frac{vt}{2} \quad ,
       <td>1</td>
       <td>CRREL_C</td>
       <td>93.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Grand Mesa</td>
-      <td>2020-01-29</td>
-      <td>2021-06-10 13:06:49.708092+00:00</td>
-      <td>None</td>
-      <td>80288</td>
-      <td>None</td>
-      <td>https://doi.org/10.5067/9IA978JIACAR</td>
-      <td>2021-05-30</td>
-      <td>magnaprobe</td>
-      <td>depth</td>
-      <td>...</td>
-      <td>-108.20553</td>
-      <td>4322853.45</td>
-      <td>741925.81</td>
-      <td>3035.5</td>
-      <td>None</td>
-      <td>POINT (741925.810 4322853.450)</td>
-      <td>07:10:00-06:00</td>
-      <td>1</td>
-      <td>CRREL_C</td>
-      <td>87.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Grand Mesa</td>
-      <td>2020-01-29</td>
-      <td>2021-06-10 13:06:49.710224+00:00</td>
-      <td>None</td>
-      <td>80289</td>
-      <td>None</td>
-      <td>https://doi.org/10.5067/9IA978JIACAR</td>
-      <td>2021-05-30</td>
-      <td>magnaprobe</td>
-      <td>depth</td>
-      <td>...</td>
-      <td>-108.20554</td>
-      <td>4322854.54</td>
-      <td>741925.05</td>
-      <td>3036.1</td>
-      <td>None</td>
-      <td>POINT (741925.050 4322854.540)</td>
-      <td>07:11:00-06:00</td>
-      <td>1</td>
-      <td>CRREL_C</td>
-      <td>80.0</td>
     </tr>
   </tbody>
 </table>
@@ -1206,30 +1215,6 @@ z_i = w_i*z
       <th>0</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
-      <td>2021-06-10 13:06:49.654453+00:00</td>
-      <td>None</td>
-      <td>80264</td>
-      <td>None</td>
-      <td>https://doi.org/10.5067/9IA978JIACAR</td>
-      <td>2021-05-30</td>
-      <td>magnaprobe</td>
-      <td>depth</td>
-      <td>...</td>
-      <td>741919.30</td>
-      <td>3031.6</td>
-      <td>None</td>
-      <td>POINT (741919.300 4322848.800)</td>
-      <td>07:08:00-06:00</td>
-      <td>1</td>
-      <td>CRREL_C</td>
-      <td>77.0</td>
-      <td>87.603508</td>
-      <td>-10.603508</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Grand Mesa</td>
-      <td>2020-01-29</td>
       <td>2021-06-10 13:06:49.703341+00:00</td>
       <td>None</td>
       <td>80286</td>
@@ -1251,7 +1236,79 @@ z_i = w_i*z
       <td>9.232951</td>
     </tr>
     <tr>
+      <th>1</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 13:06:49.654453+00:00</td>
+      <td>None</td>
+      <td>80264</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/9IA978JIACAR</td>
+      <td>2021-05-30</td>
+      <td>magnaprobe</td>
+      <td>depth</td>
+      <td>...</td>
+      <td>741919.30</td>
+      <td>3031.6</td>
+      <td>None</td>
+      <td>POINT (741919.300 4322848.800)</td>
+      <td>07:08:00-06:00</td>
+      <td>1</td>
+      <td>CRREL_C</td>
+      <td>77.0</td>
+      <td>87.603508</td>
+      <td>-10.603508</td>
+    </tr>
+    <tr>
       <th>2</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 13:06:49.656834+00:00</td>
+      <td>None</td>
+      <td>80265</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/9IA978JIACAR</td>
+      <td>2021-05-30</td>
+      <td>magnaprobe</td>
+      <td>depth</td>
+      <td>...</td>
+      <td>741918.73</td>
+      <td>3032.3</td>
+      <td>None</td>
+      <td>POINT (741918.730 4322848.420)</td>
+      <td>07:08:00-06:00</td>
+      <td>1</td>
+      <td>CRREL_C</td>
+      <td>65.0</td>
+      <td>87.661562</td>
+      <td>-22.661562</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 13:06:49.658849+00:00</td>
+      <td>None</td>
+      <td>80266</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/9IA978JIACAR</td>
+      <td>2021-05-30</td>
+      <td>magnaprobe</td>
+      <td>depth</td>
+      <td>...</td>
+      <td>741918.48</td>
+      <td>3032.3</td>
+      <td>None</td>
+      <td>POINT (741918.480 4322847.300)</td>
+      <td>07:08:00-06:00</td>
+      <td>1</td>
+      <td>CRREL_C</td>
+      <td>69.0</td>
+      <td>87.560465</td>
+      <td>-18.560465</td>
+    </tr>
+    <tr>
+      <th>4</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
       <td>2021-06-10 13:06:49.705901+00:00</td>
@@ -1273,54 +1330,6 @@ z_i = w_i*z
       <td>93.0</td>
       <td>87.286674</td>
       <td>5.713326</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Grand Mesa</td>
-      <td>2020-01-29</td>
-      <td>2021-06-10 13:06:49.708092+00:00</td>
-      <td>None</td>
-      <td>80288</td>
-      <td>None</td>
-      <td>https://doi.org/10.5067/9IA978JIACAR</td>
-      <td>2021-05-30</td>
-      <td>magnaprobe</td>
-      <td>depth</td>
-      <td>...</td>
-      <td>741925.81</td>
-      <td>3035.5</td>
-      <td>None</td>
-      <td>POINT (741925.810 4322853.450)</td>
-      <td>07:10:00-06:00</td>
-      <td>1</td>
-      <td>CRREL_C</td>
-      <td>87.0</td>
-      <td>87.169223</td>
-      <td>-0.169223</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Grand Mesa</td>
-      <td>2020-01-29</td>
-      <td>2021-06-10 13:06:49.710224+00:00</td>
-      <td>None</td>
-      <td>80289</td>
-      <td>None</td>
-      <td>https://doi.org/10.5067/9IA978JIACAR</td>
-      <td>2021-05-30</td>
-      <td>magnaprobe</td>
-      <td>depth</td>
-      <td>...</td>
-      <td>741925.05</td>
-      <td>3036.1</td>
-      <td>None</td>
-      <td>POINT (741925.050 4322854.540)</td>
-      <td>07:11:00-06:00</td>
-      <td>1</td>
-      <td>CRREL_C</td>
-      <td>80.0</td>
-      <td>87.454136</td>
-      <td>-7.454136</td>
     </tr>
   </tbody>
 </table>
@@ -1462,21 +1471,16 @@ The rmse is 10.62 cm
 
       </div>
     </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QM84T4SB76"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-QM84T4SB76');
+                </script>
 
-
-    
-    <!-- Google Analytics -->
-    <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'G-QM84T4SB76', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
-    
   </body>
 </html>
