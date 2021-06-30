@@ -211,3 +211,12 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 *Ask me about:* camera traps, Python
 ---
+
+**Dan McGrath**
+^^^
+<img src="https://avatars.githubusercontent.com/u/44067401?v=4" alt="picture of Dan McGrath" width="200" height="200">
++++
+*Affiliations:* Colorado State University
+
+*Ask me about:* Ground-penetrating radar, Cameron Pass, CO, drones/SfM
+---

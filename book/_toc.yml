@@ -46,6 +46,7 @@
           sections:
             - file: tutorials/lis/1_exploring_lis_output
             - file: tutorials/lis/2_interactive_dashboard
+        - file: tutorials/gpr/gpr
 
 - part: Projects
   chapters:
