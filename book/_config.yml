@@ -15,7 +15,14 @@ parse:
     slack_workspace_url: https://app.slack.com/client/T01S7M0BSNN/C01S7T6RQG3
     contact_email: snowex@uw.edu
   myst_enable_extensions:
+    # Defaults
+    - dollarmath
+    - linkify
+    - substitution
+    - colon_fence
+    # Extras
     - html_image
+
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
