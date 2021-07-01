@@ -38,6 +38,12 @@ jobs:
         role-to-assume: github-actions-role
         role-duration-seconds: 900
 
+    # NOTE: this gets picked up b/c of the docker run -v mount
+    - name: Configure NASA Earthdata Login
+      run: |
+        echo "machine urs.earthdata.nasa.gov login ${{ secrets.EARTHDATA_LOGIN }} password ${{ secrets.EARTHDATA_PASSWORD }}" > .netrc
+        chmod 0600 .netrc
+
     - name: Build JupyterBook
       run: |
         docker run -u root \
