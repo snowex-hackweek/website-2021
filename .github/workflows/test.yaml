@@ -1,7 +1,8 @@
 name: Test
 
 on:
-  pull_request:
+  pull_request_target:
+    types: [labeled, synchronize]
     paths:
       - 'book/**'
       - '.github/workflows/test.yaml'
@@ -15,14 +16,14 @@ env:
 jobs:
   build-and-test:
     runs-on: ubuntu-20.04
+    # This workflow accesses secrets and checks out a PR, so only run if labelled
+    # https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
+    if: contains(github.event.pull_request.labels.*.name, 'preview')
 
     steps:
     - uses: actions/checkout@v2
-
-    - name: Ensure Clean Notebooks
-      run: |
-        pip install nb-clean==2.0.2
-        find book -name "*ipynb" | xargs nb-clean check --preserve-cell-metadata
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
 
     - name: Pull Docker Image
       run: |
@@ -37,6 +38,12 @@ jobs:
         aws-region: us-west-2
         role-to-assume: github-actions-role
         role-duration-seconds: 900
+
+    # NOTE: this gets picked up b/c of the docker run -v mount
+    - name: Configure NASA Earthdata Login
+      run: |
+        echo "machine urs.earthdata.nasa.gov login ${{ secrets.EARTHDATA_LOGIN }} password ${{ secrets.EARTHDATA_PASSWORD }}" > .netrc
+        chmod 0600 .netrc
 
     - name: Build JupyterBook
       run: |

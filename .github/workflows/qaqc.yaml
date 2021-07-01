@@ -18,6 +18,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Ensure Clean Notebooks
+      run: |
+        pip install nb-clean==2.0.2
+        find book -name "*ipynb" | xargs nb-clean check --preserve-cell-metadata
+
     # NOTE: this isn't a comprehensive spellcheck, just common typos
     - name: Spellcheck
       uses: codespell-project/actions-codespell@master
