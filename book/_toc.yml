@@ -29,8 +29,10 @@
       sections:
         - file: tutorials/jupyter   
         - file: tutorials/core-datasets/core-datasets-tutorial
-        - file: tutorials/geospatial/geospatial_vector
-        - file: tutorials/raster/intro-ipyleaflet
+        - file: tutorials/geospatial/index
+          sections:
+            - file: tutorials/geospatial/rasters
+            - file: tutorials/geospatial/geospatial_vector
         - file: tutorials/sar/index
           sections:
             - file: tutorials/sar/sentinel1
