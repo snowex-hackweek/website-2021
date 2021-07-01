@@ -446,6 +446,11 @@
    Getting an Earthdata login
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configure-programmatic-access-to-nasa-servers">
+   Configure programmatic access to NASA servers
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -471,6 +476,14 @@
 <h2>Getting an Earthdata login<a class="headerlink" href="#getting-an-earthdata-login" title="Permalink to this headline">¶</a></h2>
 <p>If you do not already have an Earthdata login, then navigate to the <a class="reference external" href="https://urs.earthdata.nasa.gov/">Earthdata Login</a> page, a username and password, and then record this somewhere for use during the tutorials:</p>
 <p><img alt="earthdata-login" src="../_images/earthdata-login.png" /></p>
+</div>
+<div class="section" id="configure-programmatic-access-to-nasa-servers">
+<h2>Configure programmatic access to NASA servers<a class="headerlink" href="#configure-programmatic-access-to-nasa-servers" title="Permalink to this headline">¶</a></h2>
+<p>If you use web interfaces to retrieve nasa data such as <a class="reference external" href="https://earthdata.nasa.gov/">Earthdata Search</a> you are prompted to login. We will be using software to retrieve data from NASA Servers during the hackweek, so you must store your credentials on the JupyterHub as explained in <a class="reference external" href="https://wiki.earthdata.nasa.gov/display/EL/How+To+Access+Data+With+cURL+And+Wget">this documentation</a>. Run the following commands on the JupyterHub in a terminal replacing your Earthdata login username and password:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;machine urs.earthdata.nasa.gov login EARTHDATA_LOGIN password EARTHDATA_PASSWORD&quot;</span> &gt; ~/.netrc
+chmod <span class="m">0600</span> .netrc
+</pre></div>
+</div>
 </div>
 </div>
 
