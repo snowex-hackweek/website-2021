@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NASA Land Information System (LIS) &#8212; SnowEx Hackweek</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Visualizing and Comparing LIS Output" href="1_exploring_lis_output.html" />
+    <link rel="prev" title="Microstructure Tutorial" href="../microstructure/microstructure-tutorial.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SnowEx Hackweek</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to SnowEx Hackweek!
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../application.html">
+   Application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Hackweek Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../team.html">
+   Our Team
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../norms/index.html">
+   Hackweek Norms
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/CoC.html">
+     Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/community.html">
+     Learning Community
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../preliminary/index.html">
+   Preliminary Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/swc.html">
+     Software Carpentry Training
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/github.html">
+     GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/git.html">
+     Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/earthdata.html">
+     Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/pangeo.html">
+     Pangeo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/python.html">
+     Python Installation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Tutorials
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-datasets/core-datasets-tutorial.html">
+     SnowEx Mission and Core Data Sets Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../geospatial/geospatial_vector.html">
+     Geospatial Data Analysis: Vector data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../raster/intro-ipyleaflet.html">
+     An introduction to rasters
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../sar/index.html">
+     Synthetic Aperture Radar
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/sentinel1.html">
+       Sentinel-1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/uavsar.html">
+       UAVSAR
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../database/index.html">
+     SnowEx Database
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/1_getting_started_example.html">
+       Introduction to the SnowEx Database
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/2_database_structure.html">
+       How is the Database Structured?
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/3_get_spiral_example.html">
+       Retrieve a Snow Depth Spiral
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/4_plot_raster_example.html">
+       Find A Raster Tile
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
+     Microstructure Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
+     NASA Land Information System (LIS)
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="1_exploring_lis_output.html">
+       Visualizing and Comparing LIS Output
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="2_interactive_widgets.html">
+       Interactive Widgets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gpr/gpr.html">
+     SnowEx Hackweek GPR Tutorial 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/index.html">
+   Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roles.html">
+     Project Roles and Responsibilities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/example_workflow.html">
+     Basic git workflow for a project
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/lis/index.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/snowex-hackweek/website"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/snowex-hackweek/website/issues/new?title=Issue%20on%20page%20%2Ftutorials/lis/index.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/snowex-hackweek/website/edit/main/book/tutorials/lis/index.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-lis">
+   What is LIS?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tutorial-datasets">
+   Tutorial Datasets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lis-output">
+     LIS Output
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparison-datasets">
+     Comparison Datasets
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#snodas">
+       SNODAS
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#snotel">
+       SNOTEL
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="nasa-land-information-system-lis">
+<h1>NASA Land Information System (LIS)<a class="headerlink" href="#nasa-land-information-system-lis" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/nasa-lis-combined-logos.png"><img alt="../../_images/nasa-lis-combined-logos.png" src="../../_images/nasa-lis-combined-logos.png" style="width: 300px;" /></a>
+</div>
+<p><strong>Contributors:</strong> <em>Melissa Wrzesien<sup>1,4</sup>, Brendan McAndrew<sup>2,4</sup>, Jian Li<sup>3,5</sup></em></p>
+<p><em><sup>1</sup> Universities Space Research Association, <sup>2</sup> Science Systems and Applications, Inc., <sup>3</sup> InuTeq, LLC, <sup>4</sup> Hydrological Sciences Branch, NASA Goddard Space Flight Center, <sup>5</sup> Computational and Information Sciences and Technology Office (CISTO), NASA Goddard Space Flight</em></p>
+<div class="admonition-learning-objectives admonition">
+<p class="admonition-title">Learning Objectives</p>
+<ul class="simple">
+<li><p>Learn about NASA’s Land Information System</p></li>
+<li><p>Open, explore, and visualize LIS output</p></li>
+<li><p>Compare LIS simulation output to raster- and point-based observation datasets</p></li>
+</ul>
+<p>Duration:  45 min</p>
+</div>
+<div class="section" id="what-is-lis">
+<h2>What is LIS?<a class="headerlink" href="#what-is-lis" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>The Land Information System (LIS) is a software framework for high performance terrestrial hydrology modeling and data assimilation developed with the goal of integrating satellite and ground-based observational data products and advanced modeling techniques to produce optimal fields of land surface states and fluxes.</p>
+</div></blockquote>
+<p><strong>TL;DR</strong> LIS = land surface models + data assimilation</p>
+<div class="figure align-default" id="lis-diagram">
+<a class="reference internal image-reference" href="../../_images/LIS_schematic.png"><img alt="../../_images/LIS_schematic.png" src="../../_images/LIS_schematic.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Diagram of components of NASA LIS framework. (Image source: <a class="reference external" href="https://lis.gsfc.nasa.gov/software/lis/">https://lis.gsfc.nasa.gov/software/lis/</a>)</span><a class="headerlink" href="#lis-diagram" title="Permalink to this image">¶</a></p>
+</div>
+<p>One key feature LIS provides is flexibility to meet user needs. LIS consists of a collection of plug-ins, or modules, that allow users to design simulations with their choice of land surface model, meteorological forcing, data assimilation, hydrological routing, land surface parameters, and more. The plug-in based design also provides extensibility, making it easier to add new functionality to the LIS framework.</p>
+<p>Current efforts to expand support for snow modeling include implementation of snow modules, such as <a class="reference external" href="https://doi.org/10.1175/JHM548.1">SnowModel</a> and <a class="reference external" href="http://www.umr-cnrm.fr/spip.php?article265&amp;lang=en">Crocus</a>, into the LIS framework. These models, when run at the scale of ~100 meters, will enable simulation of wind redistribution, snow grain size, and other important processes for more accurate snow modeling.</p>
+<p>Development of LIS is led by the <a class="reference external" href="https://earth.gsfc.nasa.gov/hydro">Hydrological Sciences Laboratory</a> at <a class="reference external" href="https://www.nasa.gov/goddard">NASA’s Goddard Space Flight Center</a>.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">More information</p>
+<p><strong>Links</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://lis.gsfc.nasa.gov/">LIS Website</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NASA-LIS/LISF">LIS on GitHub</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NASA-LIS/LISF/blob/master/docs/">LIS Documentation</a></p></li>
+<li><p><a class="reference external" href="https://github.com/bmcandr/lis-public-tc-walkthrough">LIS Test Case Walkthrough</a></p></li>
+</ul>
+<p><strong>References</strong></p>
+<ul class="simple">
+<li><p>Kumar, S.V., C.D. Peters-Lidard, Y. Tian, P.R. Houser, J. Geiger, S. Olden, L. Lighty, J.L. Eastman, B. Doty, P. Dirmeyer, J. Adams, K. Mitchell, E. F. Wood, and J. Sheffield, 2006: Land Information System - An interoperable framework for high resolution land surface modeling. Environ. Modeling &amp; Software, 21, 1402-1415, <a class="reference external" href="https://doi.org/10.1016/j.envsoft.2005.07.004">doi:10.1016/j.envsoft.2005.07.004</a></p></li>
+<li><p>Peters-Lidard, C.D., P.R. Houser, Y. Tian, S.V. Kumar, J. Geiger, S. Olden, L. Lighty, B. Doty, P. Dirmeyer, J. Adams, K. Mitchell, E.F. Wood, and J. Sheffield, 2007: High-performance Earth system modeling with NASA/GSFC’s Land Information System. Innovations in Systems and Software Engineering, 3(3), 157-165, <a class="reference external" href="https://doi.org/10.1007/s11334-007-0028-x">doi:10.1007/s11334-007-0028-x</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="tutorial-datasets">
+<h2>Tutorial Datasets<a class="headerlink" href="#tutorial-datasets" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="lis-output">
+<h3>LIS Output<a class="headerlink" href="#lis-output" title="Permalink to this headline">¶</a></h3>
+<p>LIS generates gridded output with support for several filetypes: Fortran binary, GRIB1, and NetCDF. In this tutorial we will be using outputs originally generated as NetCDF files that have been converted into a <a class="reference external" href="https://zarr.readthedocs.io/en/stable/">Zarr</a> store. Why Zarr? We’ve been exploring cloud-based analysis pipelines and Zarr provides better performance when working with cloud-hosted data. More on this later…</p>
+<p>The table below describes the configuration options of the simulation used to generate the output we’ll be working with:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Domain</p></th>
+<th class="head"><p>Simulation Period</p></th>
+<th class="head"><p>Spatial Resolution</p></th>
+<th class="head"><p>Land Surface Model</p></th>
+<th class="head"><p>Meteorological Forcing</p></th>
+<th class="head"><p>Data Assimilated</p></th>
+<th class="head"><p>Output Frequency</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mississippi River Basin</p></td>
+<td><p>10/2016-09/2018</p></td>
+<td><p>0.1° x 0.1° (~10km)</p></td>
+<td><p>NoahMP 4.0.1</p></td>
+<td><p>MERRA2</p></td>
+<td><p>SNODAS</p></td>
+<td><p>Daily</p></td>
+</tr>
+</tbody>
+</table>
+<p>Map of the simulation domain:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "4e52fbf9436f4313913d88b7461cb447"}
+</script></div>
+</div>
+</div>
+<div class="section" id="comparison-datasets">
+<h3>Comparison Datasets<a class="headerlink" href="#comparison-datasets" title="Permalink to this headline">¶</a></h3>
+<p>We will compare the gridded LIS output to two types of data: raster and point data. For the raster comparison, we will use the <strong>SNODAS</strong> dataset. For the point comparison, we will use <strong>SNOTEL</strong> station data.</p>
+<div class="section" id="snodas">
+<h4>SNODAS<a class="headerlink" href="#snodas" title="Permalink to this headline">¶</a></h4>
+<p>SNODAS (or the Snow Data Assimilation System) is a gridded dataset that combined ground observations with a model to estimate daily snow depth and SWE across the contiguous United States at approximately 1 km spatial resolution. SNODAS is produced by NOAA and is available for download at the <a class="reference external" href="https://nsidc.org/data/g02158">NSIDC.</a> This data is distributed as a flat binary and <a class="reference external" href="https://nsidc.org/support/how/how-do-i-convert-snodas-binary-files-geotiff-or-netcdf">instructions are provided to convert to NetCDF or GeoTIFF</a>. Similar to the LIS output, we have further converted this to Zarr store for this tutorial.</p>
+</div>
+<div class="section" id="snotel">
+<h4>SNOTEL<a class="headerlink" href="#snotel" title="Permalink to this headline">¶</a></h4>
+<p>The SNOTEL (or Snow Telemetry) network includes over 800 automatic stations across the western US, including Alaska. SNOTEL stations report SWE, snow depth, and other meteorological variables. SNOTEL is run by the USDA and is available for download at the <a class="reference external" href="https://www.wcc.nrcs.usda.gov/snow/">NRCS website</a>. This data is text-based.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"c38baadb66fc4cafb8ba850fba35d755": {"model_name": "LeafletTileLayerModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletTileLayerModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletTileLayerView", "attribution": "&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> &copy; <a href=\"http://cartodb.com/attributions\">CartoDB</a>", "base": false, "bottom": true, "detect_retina": false, "loading": false, "max_native_zoom": 18, "max_zoom": 20, "min_native_zoom": 0, "min_zoom": 1, "name": "CartoDB.Positron", "no_wrap": false, "opacity": 1.0, "options": ["attribution", "detect_retina", "max_native_zoom", "max_zoom", "min_native_zoom", "min_zoom", "no_wrap", "tile_size", "tms"], "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "show_loading": false, "tile_size": 256, "tms": false, "url": "http://c.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png", "visible": true}}, "58b513d75b2f48e18c52639cb0e5d65a": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "ae579ff5995445a5bb8f6e4c21ea0aea": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "move"}}, "66a20ca8b1294277a3518882d7c85236": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "64b4fd29f38c462dbc98ce7fbfe0caf4": {"model_name": "LeafletMapStyleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "cursor": "grab"}}, "4e52fbf9436f4313913d88b7461cb447": {"model_name": "LeafletMapModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_dom_classes": [], "_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletMapModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletMapView", "bottom": 0.0, "bounce_at_zoom_limits": true, "box_zoom": true, "center": [41.25, -95.93], "close_popup_on_click": true, "controls": ["IPY_MODEL_1770ff0c6215469ca4e948fcbda23281", "IPY_MODEL_b6ca9861277f4d0c968353698101ba44"], "crs": {"name": "EPSG3857", "custom": false}, "default_style": "IPY_MODEL_58b513d75b2f48e18c52639cb0e5d65a", "double_click_zoom": true, "dragging": true, "dragging_style": "IPY_MODEL_ae579ff5995445a5bb8f6e4c21ea0aea", "east": 0.0, "fullscreen": false, "inertia": true, "inertia_deceleration": 3000, "inertia_max_speed": 1500, "interpolation": "bilinear", "keyboard": true, "keyboard_pan_offset": 80, "keyboard_zoom_offset": 1, "layers": ["IPY_MODEL_c38baadb66fc4cafb8ba850fba35d755", "IPY_MODEL_9097dfc2428a40d7b422f69a9ab08c94"], "layout": "IPY_MODEL_66a20ca8b1294277a3518882d7c85236", "left": 9007199254740991.0, "max_zoom": 18.0, "min_zoom": 1.0, "modisdate": "yesterday", "north": 0.0, "options": ["bounce_at_zoom_limits", "box_zoom", "center", "close_popup_on_click", "double_click_zoom", "dragging", "fullscreen", "inertia", "inertia_deceleration", "inertia_max_speed", "interpolation", "keyboard", "keyboard_pan_offset", "keyboard_zoom_offset", "max_zoom", "min_zoom", "scroll_wheel_zoom", "tap", "tap_tolerance", "touch_zoom", "world_copy_jump", "zoom", "zoom_animation_threshold", "zoom_delta", "zoom_snap", "zoom_start"], "right": 0.0, "scroll_wheel_zoom": false, "south": 0.0, "style": "IPY_MODEL_64b4fd29f38c462dbc98ce7fbfe0caf4", "tap": true, "tap_tolerance": 15, "top": 9007199254740991.0, "touch_zoom": true, "west": 0.0, "window_url": "", "world_copy_jump": false, "zoom": 4.0, "zoom_animation_threshold": 4, "zoom_delta": 1.0, "zoom_snap": 1.0, "zoom_start": 12.0}}, "1770ff0c6215469ca4e948fcbda23281": {"model_name": "LeafletZoomControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletZoomControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletZoomControlView", "options": ["position", "zoom_in_text", "zoom_in_title", "zoom_out_text", "zoom_out_title"], "position": "topleft", "zoom_in_text": "+", "zoom_in_title": "Zoom in", "zoom_out_text": "-", "zoom_out_title": "Zoom out"}}, "b6ca9861277f4d0c968353698101ba44": {"model_name": "LeafletAttributionControlModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletAttributionControlModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletAttributionControlView", "options": ["position", "prefix"], "position": "bottomright", "prefix": "ipyleaflet"}}, "9097dfc2428a40d7b422f69a9ab08c94": {"model_name": "LeafletRectangleModel", "model_module": "jupyter-leaflet", "model_module_version": "^0.14.0", "state": {"_model_module": "jupyter-leaflet", "_model_module_version": "^0.14.0", "_model_name": "LeafletRectangleModel", "_view_count": null, "_view_module": "jupyter-leaflet", "_view_module_version": "^0.14.0", "_view_name": "LeafletRectangleView", "base": false, "bottom": false, "bounds": [[28.55, -113.95], [49.95, -77.95]], "color": "#0033FF", "dash_array": null, "draggable": false, "fill": true, "fill_color": null, "fill_opacity": 0.2, "line_cap": "round", "line_join": "round", "locations": [], "name": "", "no_clip": true, "opacity": 1.0, "options": ["color", "dash_array", "draggable", "fill", "fill_color", "fill_opacity", "line_cap", "line_join", "no_clip", "opacity", "pointer_events", "smooth_factor", "stroke", "transform", "weight"], "pointer_events": "", "popup": null, "popup_max_height": null, "popup_max_width": 300, "popup_min_width": 50, "rotation": true, "scaling": true, "smooth_factor": 1.0, "stroke": true, "transform": false, "uniform_scaling": false, "weight": 5}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/lis"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../microstructure/microstructure-tutorial.html" title="previous page">Microstructure Tutorial</a>
+    <a class='right-next' id="next-link" href="1_exploring_lis_output.html" title="next page">Visualizing and Comparing LIS Output</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By eScience Institute, University of Washington<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QM84T4SB76"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-QM84T4SB76');
+                </script>
+
+  </body>
+</html>
