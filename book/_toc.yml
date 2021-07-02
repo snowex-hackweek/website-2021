@@ -28,7 +28,7 @@
     - file: tutorials/index
       sections:
         - file: tutorials/jupyter   
-        - file: tutorials/core-datasets/
+        - file: tutorials/core-datasets/index
           sections:
             - file: tutorials/core-datasets/01_introduction
             - file: tutorials/core-datasets/02_data-package
