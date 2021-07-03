@@ -1,23 +1,8 @@
-# Git and GitHub
-
-## What is Git?
-
-[Git](https://git-scm.com/) is a popular version control system that is used in 
-many open source software projects to manage their software code base. 
-
-You are not required to know Git in advance of this event, but come prepared to learn a lot about it! 
-
-[Here a quick introduction video from the official website](https://git-scm.com/video/what-is-git)
+# GitHub
 
 ## What is GitHub?
-[GitHub](https://github.com) is a hosting service for Git repositories, enabling 
-us to share code across teams in a web environment.  
-
-## What if I do not have the `git` command on my local machine?
-
-If you don't have Git installed on you local machine, you can download the latest 
-installer on [Git-SCM](https://git-scm.com). More help for the install process can 
-be found in the [official Git documentation](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+[GitHub](https://github.com) is a hosting service for {term}`Git` repositories,
+enabling us to share code across teams in a web environment.
 
 ## Why do I need a GitHub account?
 
@@ -34,39 +19,38 @@ Go to [GitHub](https://github.com/).
 ![github-signup](../img/github-signup.jpg)
 
 Next, enter your email address and click on the green 'Sing up for GitHub' button.
-You will need to answer a few required questions in the following dialogs. 
+You will need to answer a few required questions in the following dialogs.
 Be sure to save your password somewhere safe because you will need it later!
 
 ## Why are you joining the SnowEx Hackweek GitHub Organization?
 
-GitHub organizations are a way for teams to manage many repositories 
-specific to a project or workshop in one place. For the hackweek, having 
-an organization creates a central location to access all hackweek content. 
-GitHub organizations also have 'teams' that offer simple ways to provide repository 
+GitHub organizations are a way for teams to manage many repositories
+specific to a project or workshop in one place. For the hackweek, having
+an organization creates a central location to access all hackweek content.
+GitHub organizations also have 'teams' that offer simple ways to provide repository
 access to groups of people, rather than individuals.
 
-We have created a {{ hackweek }} GitHub organization ({{ github_org_url}}). 
-For security purposes you can only join the organization by invitation. 
+We have created a {{ hackweek }} GitHub organization ({{ github_org_url}}).
+For security purposes you can only join the organization by invitation.
 Here are the steps:
 
-1. We will then find your user ID on GitHub and send you an invitation to join our organization, 
-   which should generate an email notification to the email you provided when you signed up for GitHub.
+1. If you confirmed participation in the hackweek you will receive an email notification to the email you provided when you signed up for GitHub.
 1. Follow the link in the email to accept the invitation.
 
 (configure-github)=
 
 ## How should I configure my GitHub account?
 
-As you'll learn in the next lesson, we will use the {{ hackweek }} GitHub 
+As you'll learn in the next lesson, we will use the {{ hackweek }} GitHub
 organization as a way to manage access to our cloud computing resources.
 
-```{note}
-You must have *Public*, rather than *Private* organization membership (GitHub's default), 
-in order for our JupyterHub authentication to work. For events like hackweeks, 
+```{attention}
+You must have *Public*, rather than *Private* organization membership (GitHub's default),
+in order for our JupyterHub authentication to work. For events like hackweeks,
 public membership also helps so that others can recognize your participation in the event!
 ```
 
-First, navigate to the "People" tab on the {{ hackweek }} GitHub organization 
+First, navigate to the "People" tab on the {{ hackweek }} GitHub organization
 ({{ github_org_url }}) and find yourself:
 
 ![people-tab](../img/people-github.png)
@@ -83,4 +67,4 @@ When you click on the "Repositories" tab in the {{ '[GitHub organization]({url})
 
 ![repos-tab](../img/repos.png)
 
-Each repository is a container for a specific subset of material for this event. For example, we have a separate repository for each tutorial. There is a repository for the public-facing website you used to register for this event, and a repository for the wiki page. We'll also create new repositories for each project when we meet in person.
+Each repository is a container for a specific subset of material for this event. For example, there is a repository for the public-facing website you used to register for this event https://github.com/snowex-hackweek/website. We'll also create new repositories for each project.

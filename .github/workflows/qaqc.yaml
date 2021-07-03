@@ -1,0 +1,43 @@
+name: QualityContol
+
+on:
+  pull_request:
+    paths:
+      - 'book/**'
+      - '.github/workflows/qaqc.yaml'
+    branches:
+      - main
+
+env:
+  DOCKER_IMAGE: uwhackweek/snowex:latest
+
+jobs:
+  quality-control:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Ensure Clean Notebooks
+      run: |
+        pip install nb-clean==2.0.2
+        find book -name "*ipynb" | xargs nb-clean check --preserve-cell-metadata
+
+    # NOTE: this isn't a comprehensive spellcheck, just common typos
+    - name: Spellcheck
+      uses: codespell-project/actions-codespell@master
+      with:
+        check_filenames: true
+        check_hidden: true
+        only_warn: true
+
+    - name: Pull Docker Image
+      run: |
+        docker pull $DOCKER_IMAGE
+        docker images
+
+    # NOTE github actions id: uid=1001(runner) gid=121(docker) groups=121(docker),4(adm),101(systemd-journal)
+    # Docker volume mount requires uid matching host, so we change from default (jovyan uid=1000)
+    - name: Check External Links
+      run: |
+        docker run -u 1001 -v ${{ github.workspace }}:/home/jovyan:rw $DOCKER_IMAGE jb build book --builder linkcheck
