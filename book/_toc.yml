@@ -36,8 +36,7 @@
             - file: tutorials/sar/uavsar
         - file: tutorials/thermal-ir/index
           sections:
-            - file: tutorials/thermal-ir/thermal-ir-1
-            - file: tutorials/thermal-ir/thermal-ir-2
+            - file: tutorials/thermal-ir/thermal-ir-tutorial
 
 - part: Projects
   chapters:
