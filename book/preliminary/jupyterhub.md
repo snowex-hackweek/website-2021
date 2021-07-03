@@ -1,86 +1,72 @@
-# JupyterHub Connection
+# JupyterHub
 
 (event-jupyterhub)=
 ## Why are we using a shared cloud environment?
 
-Teaching software to a diverse group of participants, each with different computers and operating systems, can be challenging. As you'll learn in the next lesson, there are specific ways to configure our software for the tutorials to be successful, so it takes time to get everyone set up consistently. Our solution to this is to give everyone access to a cloud computing environment that is pre-configured for the specific software we will deploy. This cloud computing instance can be accessed from any web browser, which eliminates the need for configuring each person's individual computer.
+Our hackweek tutorials are designed with executable code examples, which require
+certain combinations of Python software packages to run. Configuring reproducible
+software environments for all participants, each with different computers and
+operating systems, can be challenging. Our solution to this is to give
+everyone access to a cloud computing environment that can be accessed from any
+web browser, which eliminates the need for configuring each person's computer.
 
-We will encourage you to use our shared resources for all the tutorials, and you can optionally use this for your projects as well. We also hope you will practice installing Python libraries locally on your laptop so that you can continue working after leaving our event (see our next lesson for details).
+We will encourage you to use our shared resources for all the tutorials, and you
+can optionally use this for your projects as well.
 
 
+(accessing-jupyterhub)=
 ## How do I access the shared cloud environment?
 
-Access to our shared cloud environment is easy. Just click go to {{ jupyterhub_url }}!
+Access to our shared cloud environment (JupyterHub) is under this URL: {{ jupyterhub_url }}!
 
-```{note}
-The screenshots below might not be exactly what you see as they are from past hackweek events
+### First time login
+
+```{attention}
+Before going to {{ jupyterhub_url }} you need to setup your {{ hackweek }}
+organization membership correctly. See: {ref}`configure-github`
 ```
 
-If this is your first time signing in, you need to ensure you've setup your {term}`GitHub` organization membership correctly (see {ref}`configure-github`), you can now click on the "Sign in with GitHub" button. Then, authorize the OAuth app (Access to the JupyterHub is restricted to GitHub Organization members, so when you log in, you membership must be checked).
+The first time you sign in, you will be asked to authorize the OAuth app as access
+to the JupyterHub is restricted to {{ hackweek }} GitHub Organization members.
+
+```{note}
+The screenshots below will not exactly match what you see and you should see your
+user information for instance.
+```
 
 ![jupyterhub-authentication](../img/jupyterhub-authentication.png)
 
-It can take several minutes for new servers to launch on the cloud - be patient! Once things are spun up you will see your very own instance of a {term}`JupyterLab` environment:
+### After each login
+
+```{attention}
+It can take several minutes for new servers to launch on the cloud - be patient!
+Once things are spun up you will see your very own instance of a {term}`JupyterLab` environment
+```
 
 ![jupyterlab](../img/jupyterlab.png)
 
-
-## What is Pangeo and how is this system configured?
-
-[Pangeo](https://pangeo.io) is a community of researchers building open, reproducible and scalable scientific software tools. Several of the UW eScience Hackweek organizers are involved in [projects with NASA and NSF](https://earthdata.nasa.gov/esds/competitive-programs/access/eos-data-cloud) to build prototype systems to enable data discovery in the era of expanding data volume and complexity.
-
-![jupyterhub-connectivity](../img/jupyterhub-connectivity.png)
-
-For this hackweek, we have created virtual computing instances on [Amazon Web Services](https://aws.amazon.com/) that can be deployed on demand in a parallel computing environment. We use JupyterHub as a way to give a Jupyter Notebook server to each person in a group. [These slides](https://www.slideshare.net/willingc/jupyterhub-a-thing-explainer-overview?from_action=save) give a nice overview of what JupyterHub is all about. We use JupyterHub in an educational setting because it enables us to quickly begin working with code without spending time to get the necessary libraries and dependencies set up on everyone's individual computers.
-
-## How do I get my code in and out of JupyterHub?
-
-When you log into JupyterHub you have access to your own virtual drive space under the `/home/jovyan` directory. No other users will be able to see or access your data files. You can easily upload files to your virtual drive space.
-
-Here we'll show you how to pull (copy) some files from GitHub into your virtual drive space using git. This will be a common task during the hackweek: at the start of each tutorial we'll ask you to "clone" (make a copy of a code repository) into your drive space on JupyterHub or local computer.
-
-Start by opening a linux terminal. There are two ways to do this in JupyterLab: (1) Navigate to the "File" menu, choose "New" and then "Terminal" or (2) click on the "terminal" button in JupyterLab:
-
-![terminal-button](../img/terminal-button.png)
-
-This will open a new terminal tab in your JupyterLab interface:
-
-![terminal-tab](../img/terminal.png)
-
-Now you can issue any Linux commands to manage your local file system.
-
-Now let's clone a repository. First, navigate in a browser on your own computer to the repository link [here](https://github.com/snowex-hackweek/website). Next, click on the green "clone or download" button and then copy the url into your clipboard by clicking the copy button:
-
-![clone](../img/clone.png)
-
-Now navigate back to your command line in JupyterLab. Type "git clone" and then paste in the url:
-
-![terminal-clone](../img/terminal-clone.png)
-
-```{note} A note about cutting and pasting
-Pasting something from your clipboard into the JupyterLab terminal requires holding down the "shift" key and right-clicking.  This is different from the usual Linux method that only requires a right click.
-```
-After issuing the Git clone command you should see something like this:
-
-![clone-result](../img/clone-result.png)
-
-You may also upload files from your local system using the upload button (up-pointing arrow) on the top left of the JupyterHub navigation panel. Similarly, you may download files to your local system by right-clicking the file and selecting download (down-pointing arrow).
-
-Simple, example GitHub/git/local-workspace workflows for getting a tutorial started in your JupyterHub instance and working on a group project are provided. The [getting started on a tutorial](https://icesat-2hackweek.github.io/learning-resources/tutorials/getting_started) workflow briefly reviews much of the information in this preliminary exercise along with steps for keeping the tutorial updated with the original, master copy. The [basic git workflow for a project](https://icesat-2hackweek.github.io/learning-resources/projects/example_workflow) serves as a reminder of the git workflow for working on a group project while minimizing code conflicts that could result from multiple people making changes to the same files simultaneously.
+When you log into JupyterHub you have access to your own virtual drive space
+under the `/home/jovyan` directory. No other users will be able to see or access
+your data files. You can add/remove/edit files in your virtual drive space.
 
 
-## How do I end my JupyterHub session? Will I lose all of my work?
+### How do I end my JupyterHub session?
 
-```{note}
-When you are finished working for the day it is important to explicitly log out of your JupyterHub session.
-```
-
-The reason for this is it will save us a bit of money! When you keep a session active it uses up AWS resources and keeps a series of virtual machines deployed.
-
-Stopping the server happens automatically when you log out, so navigate to "File -> Log Out" and just click "Log Out"!
+Stopping the server happens automatically when you navigate to "File -> Log Out"
+and click "Log Out"! to end a session. You can also select "File -> Hub Control
+Panel -> Stop my Server".
 
 ![hub-control-panel-button](../img/hub-logout-button.png)
 
-```{warning} logging out
-Logging out will **NOT** cause any of your work to be lost or deleted. It simply shuts down some resources. It would be equivalent to turning off your desktop computer at the end of the day.
+```{attention}
+When you are finished working for the day it is important to explicitly log
+out of your JupyterHub session.
 ```
+
+The reason for this is it will save us a bit of money! When you keep a session
+active it uses up AWS resources and keeps a series of virtual machines deployed.
+
+###  Will I lose all of my work?
+
+Logging out will **NOT** cause any files under `/home/jovyan` to be deleted. It
+is equivalent to turning off your desktop computer at the end of the day.
