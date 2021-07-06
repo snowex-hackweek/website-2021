@@ -1,0 +1,831 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camera Traps and Snow Applications &#8212; SnowEx Hackweek</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="NASA Land Information System (LIS)" href="../lis/index.html" />
+    <link rel="prev" title="Microstructure Tutorial" href="../microstructure/microstructure-tutorial.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SnowEx Hackweek</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to SnowEx Hackweek!
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../application.html">
+   Application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Hackweek Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../team.html">
+   Our Team
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../norms/index.html">
+   Hackweek Norms
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/CoC.html">
+     Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/community.html">
+     Learning Community
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../preliminary/index.html">
+   Preliminary Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/swc.html">
+     Software Carpentry Training
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/github.html">
+     GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/git.html">
+     Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/earthdata.html">
+     Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/pangeo.html">
+     Pangeo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/python.html">
+     Python Installation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Tutorials
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core-datasets/core-datasets-tutorial.html">
+     SnowEx Mission and Core Data Sets Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../geospatial/geospatial_vector.html">
+     Geospatial Data Analysis: Vector data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../raster/intro-ipyleaflet.html">
+     An introduction to rasters
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../sar/index.html">
+     Synthetic Aperture Radar
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/sentinel1.html">
+       Sentinel-1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/uavsar.html">
+       UAVSAR
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../database/index.html">
+     SnowEx Database
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/1_getting_started_example.html">
+       Introduction to the SnowEx Database
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/2_database_structure.html">
+       How is the Database Structured?
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/3_get_spiral_example.html">
+       Retrieve a Snow Depth Spiral
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/4_plot_raster_example.html">
+       Find A Raster Tile
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
+     Microstructure Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Camera Traps and Snow Applications
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../lis/index.html">
+     NASA Land Information System (LIS)
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lis/1_exploring_lis_output.html">
+       Visualizing and Comparing LIS Output
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lis/2_interactive_widgets.html">
+       Interactive Widgets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gpr/gpr.html">
+     SnowEx Hackweek GPR Tutorial 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/index.html">
+   Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roles.html">
+     Project Roles and Responsibilities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/example_workflow.html">
+     Basic git workflow for a project
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/camera-traps-tutorial/camera-traps-notebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/snowex-hackweek/website"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/snowex-hackweek/website/issues/new?title=Issue%20on%20page%20%2Ftutorials/camera-traps-tutorial/camera-traps-notebook.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/snowex-hackweek/website/edit/main/book/tutorials/camera-traps-tutorial/camera-traps-notebook.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-camera-trap">
+   What is a camera trap?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#camera-traps-and-snowex">
+   Camera Traps and SnowEx
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pulling-and-visualizing-camera-trap-data">
+     Pulling and visualizing camera trap data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#applications">
+   Applications
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#snow-depth">
+     Snow Depth
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-1-grab-all-the-pit-and-camera-locations">
+       Step 1: Grab all the pit and camera locations
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-2-plot-our-camera-and-pit-locations">
+       Step 2: Plot our camera and Pit locations
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-3-grab-plot-the-vegetated-and-open-camera-sites">
+       Step 3: Grab/Plot the Vegetated and Open Camera sites
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#current-and-future-work">
+   Current and Future Work
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Snow Depth
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-snow-properties">
+     Other snow properties
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="camera-traps-and-snow-applications">
+<h1>Camera Traps and Snow Applications<a class="headerlink" href="#camera-traps-and-snow-applications" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Catherine Breen, <a class="reference external" href="mailto:cbreen&#37;&#52;&#48;uw&#46;edu">cbreen<span>&#64;</span>uw<span>&#46;</span>edu</a></p></li>
+<li><p>Cassie Lumbrazo, <a class="reference external" href="mailto:lumbraca&#37;&#52;&#48;uw&#46;edu">lumbraca<span>&#64;</span>uw<span>&#46;</span>edu</a></p></li>
+</ul>
+<div class="section" id="what-is-a-camera-trap">
+<h2>What is a camera trap?<a class="headerlink" href="#what-is-a-camera-trap" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A camera trap (sometimes referred to as a remote camera or hunting camera) is similar to a normal camera except they:</p>
+<ul>
+<li><p><em>1) can detect  and take pictures when motion is in their vicinity.</em></p></li>
+<li><p><em>2) can take pictures at consistent intervals at settings preset by the user.</em></p></li>
+<li><p><em>3) are designed to withstand harsh conditions and to be left up for long periods of time.</em></p></li>
+</ul>
+</li>
+<li><p>Their potential for snow hydrology is exciting. Consistent daily camera trap photos can be analyzed contiously to form a <em>time-lapse</em> of snow conditions at one location. They can operate in sub-freezing temperatures and during storms – conditions when access with other types of measurements would have been difficult.</p></li>
+</ul>
+</div>
+<div class="section" id="camera-traps-and-snowex">
+<h2>Camera Traps and SnowEx<a class="headerlink" href="#camera-traps-and-snowex" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Camera traps were installed in both the 2017 and 2020 SnowEx campaigns.</p></li>
+<li><p>During the 2020 SnowEx field campaign, 30 cameras were installed in Grand Mesa, CO between September and May.</p></li>
+<li><p>Cameras were installed across a vegetation gradient on a scale of 1 (least vegetation and ) to 9 (most vegetation). Within each vegetation class, there were three sub-classes of snow depths: shallow, intermediate, and deep snow, that were derived from 2017 SnowEx lidar measurements.</p></li>
+<li><p>2017 camera trap time-lapse imagery has been submitted to the NSIDC (Raleigh &amp; Lumbrazo 2021). 2020 time-lapse is in progress for submission to the NSIDC with estimation of submission in summer 2021.</p></li>
+</ul>
+<div class="section" id="pulling-and-visualizing-camera-trap-data">
+<h3>Pulling and visualizing camera trap data<a class="headerlink" href="#pulling-and-visualizing-camera-trap-data" title="Permalink to this headline">¶</a></h3>
+<p>We will now pull some time-lapse imagery for one camera from the 2020 SnowEx field campaign. This is camera E9B. We will pull images and display a couple from various times of the winter season.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>aws s3 sync --no-progress s3://snowex-data/tutorial-data/camera-trap/ /tmp/camera-trap
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/camera-trap/WSCT0065.JPG to ../../../../../tmp/camera-trap/WSCT0065.JPG
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/camera-trap/WSCT0742.JPG to ../../../../../tmp/camera-trap/WSCT0742.JPG
+download: s3://snowex-data/tutorial-data/camera-trap/WSCT0716.JPG to ../../../../../tmp/camera-trap/WSCT0716.JPG
+download: s3://snowex-data/tutorial-data/camera-trap/WSCT0784.JPG to ../../../../../tmp/camera-trap/WSCT0784.JPG
+download: s3://snowex-data/tutorial-data/camera-trap/WSCT0024.JPG to ../../../../../tmp/camera-trap/WSCT0024.JPG
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/camera-trap/WSCT0101.JPG to ../../../../../tmp/camera-trap/WSCT0101.JPG
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/camera-trap/WSCT0378.JPG to ../../../../../tmp/camera-trap/WSCT0378.JPG
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span> 
+<span class="n">pil_img</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;/tmp/camera-trap/WSCT0101.JPG&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">pil_img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/camera-traps-notebook_5_0.jpg" src="../../_images/camera-traps-notebook_5_0.jpg" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pil_img</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;/tmp/camera-trap/WSCT0378.JPG&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">pil_img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/camera-traps-notebook_6_0.jpg" src="../../_images/camera-traps-notebook_6_0.jpg" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pil_img</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;/tmp/camera-trap/WSCT0742.JPG&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">pil_img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/camera-traps-notebook_7_0.jpg" src="../../_images/camera-traps-notebook_7_0.jpg" />
+</div>
+</div>
+<ul class="simple">
+<li><p>What do you notice? Is this an open or closed canopy site?</p></li>
+<li><p>Can you see the snow rising and falling on the pole?</p></li>
+<li><p>What are some snow properties that you might be able to measure using these devices?</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="applications">
+<h2>Applications<a class="headerlink" href="#applications" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="snow-depth">
+<h3>Snow Depth<a class="headerlink" href="#snow-depth" title="Permalink to this headline">¶</a></h3>
+<p>Installing snow poles in front of camera trap images can provide low-cost, long-term snow depth timeseries. Using manual and automated methods, one can find the snow depth by finding the difference between the number of pixels in a snow-free image and an image with snow, and converting the difference from pixels to centimeters.</p>
+<p>Snow depths from the 2020 SnowEx timelapse imagery have been manually processed with estimation of submission to the NSIDC database in summer 2021 (<em>in progress</em> Breen et al. 2021). Below we will explore the dataset.</p>
+<div class="section" id="step-1-grab-all-the-pit-and-camera-locations">
+<h4>Step 1: Grab all the pit and camera locations<a class="headerlink" href="#step-1-grab-all-the-pit-and-camera-locations" title="Permalink to this headline">¶</a></h4>
+<p><em>code credit: Micah Johnson</em></p>
+<p>The code block uses geopandas, matplotlib and pandas libraries to look at tabular data on the SnowEx SQL database. We will compare the camera trap locations to the 2020 snow pit locations on the Grand Mesa</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">snowexsql.db</span>
+<span class="kn">from</span> <span class="nn">snowexsql.db</span> <span class="kn">import</span> <span class="n">get_db</span>
+<span class="kn">from</span> <span class="nn">snowexsql.data</span> <span class="kn">import</span> <span class="n">PointData</span><span class="p">,</span> <span class="n">SiteData</span>
+<span class="kn">from</span> <span class="nn">snowexsql.conversions</span> <span class="kn">import</span> <span class="n">query_to_geopandas</span>
+
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Connect to the database</span>
+<span class="n">db_name</span> <span class="o">=</span> <span class="s1">&#39;snow:hackweek@52.32.183.144/snowex&#39;</span>
+<span class="n">engine</span><span class="p">,</span> <span class="n">session</span> <span class="o">=</span> <span class="n">get_db</span><span class="p">(</span><span class="n">db_name</span><span class="p">)</span>
+
+<span class="c1"># Grab all the point data that was that was measured with a camera-trap</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">PointData</span><span class="p">)</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">instrument</span> <span class="o">==</span> <span class="s1">&#39;camera-trap&#39;</span><span class="p">)</span>
+
+<span class="c1"># Convert it to a geopandas df</span>
+<span class="n">camera_depths</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+
+<span class="c1"># Grab all the unique pits geometry objects (locations)</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">SiteData</span><span class="o">.</span><span class="n">geom</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+<span class="n">pits</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+
+<span class="c1"># Print out how many of each that we found</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">camera_depths</span><span class="p">[</span><span class="s2">&quot;geom&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span><span class="si">}</span><span class="s1"> camera trap locations&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">pits</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="si">}</span><span class="s1"> pit site locations&#39;</span><span class="p">)</span>
+
+<span class="c1"># End our database session to avoid hanging transactions</span>
+<span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 28 camera trap locations
+Found 155 pit site locations
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-2-plot-our-camera-and-pit-locations">
+<h4>Step 2: Plot our camera and Pit locations<a class="headerlink" href="#step-2-plot-our-camera-and-pit-locations" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot our pits as triangles</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">pits</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pits&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot our cameras as squares</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">camera_depths</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;magenta&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Camera Traps&#39;</span><span class="p">)</span>
+
+<span class="c1"># Don&#39;t use scientific notation on the ticks for utm coords</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">ticklabel_format</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;plain&#39;</span><span class="p">,</span> <span class="n">useOffset</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Easting [m]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Northing [m]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/camera-traps-notebook_15_0.png" src="../../_images/camera-traps-notebook_15_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>What do you notice? Is there overlap between the snow pit and camera trap locations?</p></li>
+<li><p>How might the two datasets be compared?</p></li>
+</ul>
+</div>
+<div class="section" id="step-3-grab-plot-the-vegetated-and-open-camera-sites">
+<h4>Step 3: Grab/Plot the Vegetated and Open Camera sites<a class="headerlink" href="#step-3-grab-plot-the-vegetated-and-open-camera-sites" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grab the open site data from the db</span>
+<span class="n">open_site</span> <span class="o">=</span> <span class="s1">&#39;W1A&#39;</span>
+<span class="n">veg_site</span> <span class="o">=</span> <span class="s1">&#39;W9A&#39;</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">PointData</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">equipment</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">open_site</span><span class="p">))</span>
+<span class="n">df_open</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="c1"># Grab the vegetated site from the db</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">PointData</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">equipment</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">veg_site</span><span class="p">))</span>
+<span class="n">df_veg</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="c1"># Set the date as the index for easy plotting/reading</span>
+<span class="n">df_open</span> <span class="o">=</span> <span class="n">df_open</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+<span class="n">df_veg</span> <span class="o">=</span> <span class="n">df_veg</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the 2 datasets by date!</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">df_open</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Open (</span><span class="si">{</span><span class="n">open_site</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">df_veg</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Vegetated (</span><span class="si">{</span><span class="n">veg_site</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mess with some labeling to make it look nice</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Snow Depth [cm]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/camera-traps-notebook_18_0.png" src="../../_images/camera-traps-notebook_18_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>What do you notice about the differences between the open and closed canopy site?</p></li>
+<li><p>What might be some drawbacks to this method?</p></li>
+<li><p>What would it look like to map and compare all the closed canopy sites to all the open canopy sites?</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="current-and-future-work">
+<h2>Current and Future Work<a class="headerlink" href="#current-and-future-work" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Snow Depth<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Automated methods to extract snow depth using the Hough Transform (Currier et al. 2017) have been used on this (<em>in progress</em> Breen et al. 2021). The available automated and manual codes are available on GitHub: XX.</p>
+</div>
+<div class="section" id="other-snow-properties">
+<h3>Other snow properties<a class="headerlink" href="#other-snow-properties" title="Permalink to this headline">¶</a></h3>
+<p>Camera traps have many more applications for snow. One is using them to improve understanding of snow in trees. Cassie Lumbrazo and the Hydrology Lab at the UW <a class="reference external" href="https://www.zooniverse.org/projects/mozerm/snow-spotter">https://www.zooniverse.org/projects/mozerm/snow-spotter</a> have uploaded 1000s of photos in a citizen science project to increase labeling efforts for snow in trees and provide educational opportunities to learn about snow.</p>
+<ul class="simple">
+<li><p>How else might you use these images to advance SnowEx and snow hydrology?</p></li>
+</ul>
+<p><strong>Thank you for attending this tutorial! We look forward to see what you will find in these datasets!</strong></p>
+<p><em>Acknowledgements: Anthony Arendt, Scott Henderson, Carrie Vuyovich, Ryan Currier, Megan Mason, Micah Johhnson</em></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/camera-traps-tutorial"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../microstructure/microstructure-tutorial.html" title="previous page">Microstructure Tutorial</a>
+    <a class='right-next' id="next-link" href="../lis/index.html" title="next page">NASA Land Information System (LIS)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By eScience Institute, University of Washington<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QM84T4SB76"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-QM84T4SB76');
+                </script>
+
+  </body>
+</html>
