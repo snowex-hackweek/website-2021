@@ -26,7 +26,7 @@ Observations of snow surface temperature can tell us about the energy state of t
 
 <figure>
   <img src="figures/snow_temp_graph.png" width="600"/>
-    <figcaption><b>Fig. 1</b> Example of snow depth over time illustrating snow temperature at different depths with colorbar.<br/>(Figure by Jessica Lundquist)</figcaption>
+    <figcaption><b>Fig. 1</b> Example of snow depth over time illustrating snow temperature at different depths with colorbar.<br/>(Figure by Nic Wayand & Jessica Lundquist)</figcaption>
 </figure>
 
 A timeseries of snow surface temperature measurements at a single point can give a detailed look into how temperature changes over time, but not how it varies across the landscape. Often, installing snow temperature sensors in an area of interest isn't possible. Images of snow surface temperature from satellites or aircraft can provide insight into the snow surface energy balance across a large area such as an entire watershed in a single image. While we can get satellite imagery of anywhere on the globe, these images only provide a snapshot in time each time the satellite passes overhead. Many satellite remote sensing imagers you may already be familiar with include thermal infrared (TIR) bands (wavelengths between ~7-15 microns), such as Landsat, ASTER, Sentinel-3 SLSTR, MODIS, and VIIRS. Airborne TIR imagery, and now even using small drones, enables higher resolution images of targeted areas.
@@ -50,7 +50,7 @@ You can review some of the physics of electromagnetic radiation with [this fanta
 
 Much like cameras that observe the visible wavelengths, TIR cameras detect the emitted radiance with an array or line of sensors to form an image of Earth's surface. We can call this observed quantity "spectral radiance" (radiance observed for an interval of wavelengths in the electromagnetic spectrum that the TIR camera is sensitive to).
 
-The temperature of the imaged objects can be estimated by inverting the Planck function, which relates spectral radiance to an object's blackbody temperature.
+The temperature of the imaged objects can be estimated by inverting the Planck function, which relates spectral radiance to an object's blackbody temperature. (See [Lundquist et al., 2018](https://doi.org/10.1016/j.rse.2018.03.001) for more details.)
 
 Using the Planck function to solve for spectral radiance:
 
@@ -60,7 +60,7 @@ Inverting the Planck function to solve for brightness temperature:
 
 $T_B(\lambda,L)=\frac{hc}{k_B \lambda} ln^{-1}(1+\frac{2hc^2}{L \lambda^5})$
 
-This "brightness temperature" is the temperature the object would be at if it were a perfect emitter of TIR raditaion, or "blackbody". To estimate the object's true kinetic temperature, we can use the material's emissivity ($\varepsilon$), which ranges between 0 and 1, to compute kinetic temperature ($T$) from brightness temperature ($T_B$).
+This "brightness temperature" is the temperature the object would be at if it were a perfect emitter of TIR radiation, or "blackbody". To estimate the object's true kinetic temperature, we can use the material's emissivity ($\varepsilon$), which ranges between 0 and 1, to compute kinetic temperature ($T$) from brightness temperature ($T_B$).
 
 $T = \varepsilon T_B$
 
@@ -78,7 +78,7 @@ The UW-APL thermal IR imager (center) was flown over Grand Mesa several times ov
 The aircraft flight times were planned to be coincident with remote sensing satellites passing overhead. We will use a single ASTER thermal infrared image (right) in this tutorial that was taken at the same time as our example airborne IR mosaic.
 
 <figure>
-  <img src="figures/data-summary-slide.png" width="800"/>
+  <img src="figures/data-summary-slide.png" width="1000"/>
     <figcaption><b>Fig. 2</b> Data sources for this tutorial from the SnowEx 2020 field campaign at Grand Mesa.</figcaption>
 </figure>
 
@@ -91,7 +91,7 @@ For more details, see this presentation: [Snow Surface Temperature & Thermal Inf
 * Compare thermal infrared and SAR imagery, or snow temperature observations and snow model outputs
 
 :::{note}
-*Contact Steven Pestana during the hackweek for help accessing more airborne IR or visible imagery and related datasets*
+*Contact Steven Pestana during the hackweek for help accessing more airborne IR or visible imagery and related datasets.*
 :::
 
 ## Additional learning resources:
