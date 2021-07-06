@@ -44,6 +44,10 @@
             - file: tutorials/database/3_get_spiral_example
             - file: tutorials/database/4_plot_raster_example
         - file: tutorials/microstructure/microstructure-tutorial
+        - file: tutorials/lis/index
+          sections:
+            - file: tutorials/lis/1_exploring_lis_output
+            - file: tutorials/lis/2_interactive_widgets
         - file: tutorials/gpr/gpr
 
 - part: Projects
