@@ -48,8 +48,8 @@
             - file: tutorials/lis/2_interactive_widgets
         - file: tutorials/gpr/gpr
         - file: tutorials/lidar/index
-          #sections:
-            #- file: tutorials/lidar/ICESat2_tutorial
+          sections:
+            - file: tutorials/lidar/ICESat2_tutorial
 
 - part: Projects
   chapters:
