@@ -15,7 +15,7 @@
   * Part 2: Satellite IR remote sensing obsevations
 * [Downloading datasets through the NASA EarthData API](./thermal-ir-data-download.ipynb)
   * [earthdata_api.py](./earthdata_api.py)
-* ASTER L1T utilities ([from LP DAAC Data User Resources](https://git.earthdata.nasa.gov/projects/LPDUR/repos/aster-l1t/browse))
+* [ASTER L1T utilities from LP DAAC Data User Resources](https://git.earthdata.nasa.gov/projects/LPDUR/repos/aster-l1t/browse)
   * [README.md](./ast-l1t/README.md)
   * [ASTERL1T_hdf2tif.py](./ast-l1t/ASTERL1T_hdf2tif.py)
 
