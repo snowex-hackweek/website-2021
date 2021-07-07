@@ -32,6 +32,7 @@
         - file: tutorials/sar/index
           sections:
             - file: tutorials/sar/sentinel1
+            - file: tutorials/sar/swesarr
             - file: tutorials/sar/uavsar
         - file: tutorials/thermal-ir/index
           sections:
