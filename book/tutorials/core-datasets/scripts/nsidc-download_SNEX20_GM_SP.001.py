@@ -52,13 +52,13 @@ except ImportError:
     from urlparse import urlparse
     from urllib2 import urlopen, Request, HTTPError, URLError, build_opener, HTTPCookieProcessor
 
-short_name = 'SNEX20_SD'
+short_name = 'SNEX20_GM_SP'
 version = '1'
-time_start = '2020-01-28T00:00:00Z'
+time_start = '2020-01-27T00:00:00Z'
 time_end = '2020-02-12T23:59:59Z'
 bounding_box = ''
 polygon = ''
-filename_filter = ''
+filename_filter = '5N19'
 url_list = []
 
 CMR_URL = 'https://cmr.earthdata.nasa.gov'
@@ -221,13 +221,12 @@ def cmr_download(urls, force=False, quiet=False):
     for index, url in enumerate(urls, start=1):
         if not credentials and urlparse(url).scheme == 'https':
             credentials = get_credentials(url)
-        
-        
-        if not os.path.exists('data/depths'):
-            os.makedirs('data/depths')
+            
+        if not os.path.exists('data/pits'):
+            os.makedirs('data/pits')
 
-#        filename = url.split('/')[-1]
-        filename = "./data/depths/%s"%url.split('/')[-1]
+#         filename = url.split('/')[-1]
+        filename = "./data/pits/%s"%url.split('/')[-1]
         if not quiet:
             print('{0}/{1}: {2}'.format(str(index).zfill(len(str(url_count))),
                                         url_count, filename))
@@ -407,4 +406,3 @@ def main(argv=None):
 
 if __name__ == '__main__':
     main()
-#     os.remove('data/depths/SnowEx2020_SnowDepths_COGM_alldepths_v01.csv.xml')
