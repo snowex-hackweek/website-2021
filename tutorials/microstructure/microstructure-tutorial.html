@@ -51,6 +51,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Camera Traps and Snow Applications" href="../camera-traps-tutorial/camera-traps-notebook.html" />
@@ -476,6 +478,26 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   Learning Objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acknowledgments">
+   Acknowledgments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caveats">
+   Caveats
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fun-facts-about-snow-microstructure">
+   Fun Facts About Snow Microstructure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#snowex-microstructure-measurement-background">
    SnowEx Microstructure Measurement Background
   </a>
@@ -504,32 +526,22 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#load-needed-modules">
-     1. Load needed modules
+     0. Load needed modules
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#import-database">
-     2. Import Database
+    <a class="reference internal nav-link" href="#intercompare-integrating-sphere-datasets">
+     1. Intercompare Integrating Sphere Datasets
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#isolate-all-the-sites-with-multiple-ssa-instruments">
-     3. Isolate all the Sites with Multiple SSA Instruments
+    <a class="reference internal nav-link" href="#pull-the-snowmicropenetrometer-data-and-compute-ssa">
+     2. Pull the snowmicropenetrometer data and compute SSA
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plot-all-integrating-sphere-ssa-profiles-at-all-multi-instrumented-sites">
-     4. Plot all Integrating Sphere SSA profiles at all Multi-Instrumented Sites
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compare-integrating-sphere-with-smp">
-     5. Compare integrating sphere with SMP
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#compare-intergrating-sphere-smp-and-microct">
-     6. Compare intergrating sphere, SMP and microCT
+    <a class="reference internal nav-link" href="#read-microct-data-and-compare-intergrating-sphere-smp-and-ct-data">
+     3. Read microCT data, and compare intergrating sphere, SMP and CT data
     </a>
    </li>
   </ul>
@@ -547,35 +559,92 @@
                 
   <div class="section" id="microstructure-tutorial">
 <h1>Microstructure Tutorial<a class="headerlink" href="#microstructure-tutorial" title="Permalink to this headline">¶</a></h1>
-<p>Contributors: Mike Durand, HP Marshall, Micah Johnson, Tate Meehan… (not sure this should be there? I feel weird stealing other folks’ code otherwise!)</p>
-<p>Snow microstructure is important - it governs both visible and radar remote sensing to snow cover.</p>
-<p>(Show a graphic of sigma0 vs SWE as a function of grain size)</p>
-<p>(talk about need for priors for inversino)</p>
-<p>Snow microstructure is controlled by other snow properties, such as snow temperature, snow height and snow liquid water content.</p>
+<p>by Mike Durand, School of Earth Sciences and Byrd Polar &amp; Climate Research Center <a class="reference external" href="mailto:durand&#46;8&#37;&#52;&#48;osu&#46;edu">durand<span>&#46;</span>8<span>&#64;</span>osu<span>&#46;</span>edu</a></p>
+<div class="section" id="learning-objectives">
+<h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<p>At the end of this tutorial you should be able to…</p>
+<ul class="simple">
+<li><p>Explain why microstructure is important for remote sensing</p></li>
+<li><p>Define measures of microstructure, especially specific surface area</p></li>
+<li><p>Access and visualize tree different microstructure measurements from SnowEx Grand Mesa 2020</p></li>
+</ul>
+</div>
+<div class="section" id="acknowledgments">
+<h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this headline">¶</a></h2>
+<p>Contributions from: Micah Johnson, Mike Durand, HP Marshall, Tate Meehan, Megan Mason, Scott Henderson. This relies heavily on the snowexsqul database and example scripts created by Micah Johnson.</p>
+</div>
+<div class="section" id="caveats">
+<h2>Caveats<a class="headerlink" href="#caveats" title="Permalink to this headline">¶</a></h2>
+<p>The integrating sphere and the SMP data are published at NSIDC; you can read the pages there for documentation etc. However the microCT data are not yet published; please contact Lauren Farnsworth (lauren.b.farnsworth&#64;usace.army.mil) for questions on the CT data.</p>
+</div>
+<div class="section" id="fun-facts-about-snow-microstructure">
+<h2>Fun Facts About Snow Microstructure<a class="headerlink" href="#fun-facts-about-snow-microstructure" title="Permalink to this headline">¶</a></h2>
+<p>Snow microstructure plays a super important role in snow physics and snow remote sensing, so a lot of effort went towards measuring it in SnowEx 2020!</p>
+<p>There are several different quantities that are used to measure snow microstructure, including “grain size”. Grain size measurements are challenging to make in a repeatable way, and are also challenging to relate to the physical quantities that control remote sensing measurements. In the last ~15 years or so, a lot of effort has gone into more objective ways to measure microstructure.</p>
+<p>Snow microstructure  governs response of remote sensing to snow cover for visible, near-infrared and high-frequency microwave wavelengths. See Figure 1, below, and read <span id="id1">[<a class="reference internal" href="../../bibliography.html#id8">Dozier <em>et al.</em>, 2009</a>]</span>, for more information.</p>
+<a class="reference internal image-reference" href="../../_images/dozier2009_fig2.jpg"><img alt="dozier-figure" src="../../_images/dozier2009_fig2.jpg" style="width: 400px;" /></a>
+<p><b>Snow microstructure governs visible and near-infrared reflectance. This is figure 2 from <span id="id2">[<a class="reference internal" href="../../bibliography.html#id8">Dozier <em>et al.</em>, 2009</a>]</span></b></p>
+<p>Radar measurements such as those made by the Ku-band SWEARR instrument are also very sensitive to snow microstructure.</p>
+<a class="reference internal image-reference" href="../../_images/modeled-swe-L-response.png"><img alt="radar-figure" src="../../_images/modeled-swe-L-response.png" style="width: 400px;" /></a>
+<p><b>Modeled response of radar backscatter to SWE and single-scatter abledo (which in turn is a function of snow microstructure), based on a simple model suggested by <span id="id3">[<a class="reference internal" href="../../bibliography.html#id18">Ulaby, 2014</a>]</span></b></p>
+<p>Snow microstructure is super important to efforts to launch a Ku-band SAR to measure global snow water equivalent (SWE). An important area of research right now is exploring how to use estimates of microstructure (e.g. from snowpack evolution models) to improve SWE retrievals.</p>
+<p>Snow microstructure evolves through the season, and varies a lot with depth. Snow microstructure evoluation is controlled by other snow properties, such as snow temperature, snow height and snow liquid water content. A really great resource on snow microstructure is Kelly Elder’s recent talks:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://boisestate.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9a051fe4-db09-4f1d-92db-acd1003cc5cc">Snow Metamorphism</a></p></li>
+<li><p><a class="reference external" href="https://boisestate.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=136f7580-c1e2-4c55-ab33-acca003c23d6">Snow Grain Identification</a></p></li>
+</ul>
+</div>
 <div class="section" id="snowex-microstructure-measurement-background">
 <h2>SnowEx Microstructure Measurement Background<a class="headerlink" href="#snowex-microstructure-measurement-background" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="basic-microstructure-definitions">
 <h3>Basic Microstructure Definitions<a class="headerlink" href="#basic-microstructure-definitions" title="Permalink to this headline">¶</a></h3>
-<p>(graphic of CT image)</p>
-<p>Specific surface area (SSA)…</p>
-<p>Autocorrelation length (L)…</p>
-<p>Geometric grain size measurements (D)</p>
+<p>Microstructure definitions take a bit of getting used to. It’s very easy to get confused. Specific surface area (SSA) is one of the most important quantity used to measure snow microstructure, so that’s the focus here. Note that SSA is not the be-all and end-all, so there’s a short table describing how to relate SSA to other quantities just below.  A couple of good reads on all of this is <span id="id4">[<a class="reference internal" href="../../bibliography.html#id10">Mätzler, 2002</a>]</span> and <span id="id5">[<a class="reference internal" href="../../bibliography.html#id11">Matzl and Schneebeli, 2010</a>]</span>.</p>
+<a class="reference internal image-reference" href="../../_images/lowe_etal_2011_v2.png"><img alt="lowe-figure" src="../../_images/lowe_etal_2011_v2.png" style="width: 400px;" /></a>
+<p><b>Coarse and fine snow microstructure revealed by microCT. The microCT snow renderings on the left are Figure 2 from <span id="id6">[<a class="reference internal" href="../../bibliography.html#id9">Löwe <em>et al.</em>, 2011</a>]</span>. The colorbars indicate that fine-grained snow (a) has high SSA and low D<sub>eq</sub>, whereas coarse-grained snow (b) has low SSA and high D<sub>eq</sub>.</b></p>
+<p>Use Figure 3 above to ground these definitions: SSA is the surface area of the ice-air interface, normalized in some way. Confusingly, SSA is defined in a couple of different ways in the literature: sometimes, surface area within a particular volume of interest (VOI) is normalized by the mass of the ice in the VOI. As defined in this way, SSA has units of length squared per mass, usually expressed as m<sup>2</sup>/kg. Instead of normalizing by mass, SSA is sometimes defined by normalizing by the volume of the VOI (this is SSA<sub>v</sub> in <span id="id7">[<a class="reference internal" href="../../bibliography.html#id11">Matzl and Schneebeli, 2010</a>]</span>), and sometimes by normalizing by the volume of the ice in the VOI (this is SSA<sub>i</sub> in <span id="id8">[<a class="reference internal" href="../../bibliography.html#id11">Matzl and Schneebeli, 2010</a>]</span>, and q in <span id="id9">[<a class="reference internal" href="../../bibliography.html#id10">Mätzler, 2002</a>]</span>). Here let’s just go with the first definition I mentioned:</p>
+<div class="math notranslate nohighlight">
+\[
+SSA = \frac{\text{Surface area of ice-air interface}}{\text{Mass of ice}} \quad
+\]</div>
+<p>SSA tends to take values between 5 and 150 m<sup>2</sup>/kg: fresh, fine-grained snow has high SSA, and coarse snow has low SSA. Because it takes a little while for SSA values to become intuitive, a useful derived metric is the equivalent grain diameter (D<sub>eq</sub>; note that this is identical to D<sub>q</sub> in <span id="id10">[<a class="reference internal" href="../../bibliography.html#id10">Mätzler, 2002</a>]</span>), which by definition is the diameter that a sphere would have if it had a particular value of SSA. This is a one-to-one relationship, so there are no assumptions involved.</p>
+<div class="math notranslate nohighlight">
+\[
+D_{eq} = \frac{6}{SSA \rho_i} \quad
+\]</div>
+<p>Relationships of specific surface area to other metrics are given in this list if you’re curious but otherwise just skip past this bit</p>
+<ul class="simple">
+<li><p>Sometimes people refer to the “optical grain diameter”, which is the same as D<sub>eq</sub>. The “optical” refers to <span id="id11">[<a class="reference internal" href="../../bibliography.html#id12">Grenfell and Warren, 1999</a>]</span>, who showed that any snow with a particular SSA had similar (not identical) radiative transfer properties regardless of particle shape in the visible and near-infrared parts of the spectrum. But note the same is not true in the microwave spectrum.</p></li>
+<li><p>Autocorrelation length is usually one of two metrics that summarize the two-point microstructure autocorelation function of the three-dimensional ice-air matrix. Think of the probability that you change media (from ice to air or vice versa) as you move a certain distance within the snow microstructure. The length that defines the likelihood that you’ll change media is (an approximation of the correlation length). SSA is by definition (with almost no assumptions) equal to the slope of the autocorrelation function at the origin. But microwave scattering is controlled by correlations at longer lags. For more check out <span id="id12">[<a class="reference internal" href="../../bibliography.html#id10">Mätzler, 2002</a>]</span>. The lack of closing the loop between SSA and correlation length is a significant issue when we have measurements of SSA and microwaves as we do in SnowEx.</p></li>
+<li><p>Geometric grain size is what we usually measure when we measure with a hand lens. You can try to relate it to SSA or corelation length, but it is not always possible, and will change with different observers.</p></li>
+</ul>
+<p>Time to stop this list but there are many other metrics as well.</p>
 </div>
 <div class="section" id="microstructure-instruments">
 <h3>Microstructure Instruments<a class="headerlink" href="#microstructure-instruments" title="Permalink to this headline">¶</a></h3>
-<p>Micro-computed tomography (microCT)…</p>
-<p>Integrating Spheres…</p>
-<p>Snow micropenetrometers… Note micropine module used to estimate SSA … note that SMP includes the raw data… so need to add micropine library… Mike will ask Tate to send a comparison between SMP and SSA.</p>
+<p>Now that we know what we’re trying to measure (SSA, or correlation length) how do we actually measure? let’s talk just about three techniques used in SnowEx 2020 Grand Mesa.</p>
+<a class="reference internal image-reference" href="../../_images/microCT.png"><img alt="ct-figure" src="../../_images/microCT.png" style="width: 800px;" /></a>
+<p><b>Left: Lauren Farnsworth transports microCT samples from field sites back to Grand Mesa Lodge in a cold storage container. Right: the microCT machine in the lab at CRREL.</b></p>
+<p>Micro-computed tomography (microCT) is the only laboratory-based method used here, and it is the gold standard, although it does still come with caveats. The idea of microCT is to remove a sample of snow from a snow pit face, and either cast it with a compound such as diethyl pthalate that is still a liquid at 0° C, or preserve the same at a very cold temperature. Then the sample is sent back to the laboratory, and bombared with x-rays, similar to how you get x-rays to see if a bone is broken at the doctor. For much more on microCT, check out <span id="id13">[<a class="reference internal" href="../../bibliography.html#id13">HEGGLI <em>et al.</em>, 2011</a>]</span>. microCT can be used to extract a ton of information about snow microstructure, including SSA, correlation length and many others.</p>
+<a class="reference internal image-reference" href="../../_images/IntegratingSpheres.png"><img alt="ct-figure" src="../../_images/IntegratingSpheres.png" style="width: 800px;" /></a>
+<p><b>Left: Kehan Yang operates an IceCube unit at the Grand Mesa Lodge intercomparison snowpit. Top right: schematic showing the integrating sphere measurement principle, from <span id="id14">[<a class="reference internal" href="../../bibliography.html#id14">Gallet <em>et al.</em>, 2009</a>]</span>. Bottom right: snow in the IceCube sampling container, from <span id="id15">[<a class="reference internal" href="../../bibliography.html#id19">Leppänen and Kontu, 2018</a>]</span>. </b></p>
+<p>Integrating spheres are field-based and you make the measurements on samples extracted from the snowpit face. The principle of the measurement is based on firing a laser at the snow sample, within a special reflective hollow sphere, where one side is filled by the snow sample, and measuring how much of the laser is reflected at a sensor at a known geometry. For more information, check out <span id="id16">[<a class="reference internal" href="../../bibliography.html#id14">Gallet <em>et al.</em>, 2009</a>]</span>.  Most integrating sphere measurements are either made by a commercial firm (A2 Photonics) known as the <a class="reference external" href="https://a2photonicsensors.com/icecube-ssa/">IceCube</a> or a version constructed at the University of Sherbrooke known as the IRIS <span id="id17">[<a class="reference internal" href="../../bibliography.html#id15">Montpetit <em>et al.</em>, 2012</a>]</span>. These approaches are set up to measure SSA only. There were three of these at Grand Mesa - one of the Sherbrooke IRIS units, and two IceCubes, one from Finnish Meteorological Institute, and one from Ohio State University.</p>
+<a class="reference internal image-reference" href="../../_images/SMP.png"><img alt="ct-figure" src="../../_images/SMP.png" style="width: 800px;" /></a>
+<p><b>Left: Megan Mason operates the SMP. Right: Closeup of the SMP sensor tip.</b></p>
+<p>Snow micropenetrometers are also a field-based approach, but they do not require a snowpit, enabling far more observations to be made. Instead, an automated motor pushes a probe vertically downwards into the snowpack. The probe measures the force required to break snow microstructure, yielding a wealth of information. Snow density, specific surface area and correlation length can be retrieved; for more results see <span id="id18">[<a class="reference internal" href="../../bibliography.html#id16">Löwe and Herwijnen, 2012</a>]</span> and <span id="id19">[<a class="reference internal" href="../../bibliography.html#id17">Proksch <em>et al.</em>, 2015</a>]</span>. The micropen effort at Grand Mesa was led by Boise State University.</p>
+<p>These methods are not the only ways to measure microstructure! There are several others not mentioned here, but not used at Grand Mesa 2020. Ask if interested.</p>
 </div>
 </div>
 <div class="section" id="snowex-microstructure-measurement-data-overview">
 <h2>SnowEx Microstructure Measurement Data Overview<a class="headerlink" href="#snowex-microstructure-measurement-data-overview" title="Permalink to this headline">¶</a></h2>
-<p>Number of measurements made by various instruments. Sampling strategy. King’s Cross.</p>
+<p>Of the three methods described above, microCT is by far the most expensive and most time consuming. Samples have to be transported back to the laboratory and the processing time requires a microCT machine. Thus the fewest CT sapmles are taken.</p>
+<p>The integrating spheres require a snowpit to be dug, so we have an intermediate number of them: ~100.</p>
+<p>The micropen measurements are by far the fastest to make, so a cross pattern of SMP measurements was made on orthogonal directions intersecting at the snowpit. There are thousands of SMP profiles from Grand Mesa 2020.</p>
 </div>
 <div class="section" id="working-with-the-data">
 <h2>Working with the data<a class="headerlink" href="#working-with-the-data" title="Permalink to this headline">¶</a></h2>
+<p>We’re going to do two things! First, we’ll intercompare the three different integrating sphere instruments at four different pits where we had multiple instruments operating. We’d expect these data to be fairly self-consistent. Second, we’ll compare all three methods (integrating sphere, SMP and microCT) at a single pit where we had all of these measurements present. Here especially with the SMP we would expect to need to intercalibrate the data to match local conditions; so far SSA has only been fit to SMP force measurements in one study, and we should assume we’ll need a local calibration to get a tight fit.</p>
 <div class="section" id="load-needed-modules">
-<h3>1. Load needed modules<a class="headerlink" href="#load-needed-modules" title="Permalink to this headline">¶</a></h3>
+<h3>0. Load needed modules<a class="headerlink" href="#load-needed-modules" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modules needed to access snowexsql: SnowEx field data database</span>
@@ -588,13 +657,21 @@
 <span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+<span class="c1">#note - this cell does not return any output</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="import-database">
-<h3>2. Import Database<a class="headerlink" href="#import-database" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="intercompare-integrating-sphere-datasets">
+<h3>1. Intercompare Integrating Sphere Datasets<a class="headerlink" href="#intercompare-integrating-sphere-datasets" title="Permalink to this headline">¶</a></h3>
+<p>There were three integrating spheres. The IRIS unit from University of Sherbrooke was operated by Celine Vargel. The IceCube unit from the Finnish Meteorological Institute was operated by Juha Lemmetyinen. And the IceCube unit from Ohio State was operated by Kehan Yang and Kate Hale. Carefully read the <a class="reference external" href="https://nsidc.org/data/SNEX20_SSA/versions/1">documentation page</a> at NSIDC if you are interested in the data. If you are using the data for a project, please contact the authors and mention what you’re doing - they’ll appreciate it! Contact for SSA is Mike Durand (<a class="reference external" href="mailto:durand&#46;8&#37;&#52;&#48;osu&#46;edu">durand<span>&#46;</span>8<span>&#64;</span>osu<span>&#46;</span>edu</a>).</p>
+<p>See Micah’s tutorial on datasets for more on this! Won’t explain too much here</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">db_name</span> <span class="o">=</span> <span class="s1">&#39;snow:hackweek@52.32.183.144/snowex&#39;</span>
@@ -602,24 +679,190 @@
 
 <span class="c1"># Grab all the equivalent diameter profiles</span>
 <span class="n">q</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">LayerData</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;specific_surface_area&#39;</span><span class="p">)</span>
-
 <span class="n">df</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
 
 <span class="c1"># End our database session to avoid hanging transactions</span>
 <span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-<span class="c1"># Grab all the sites with equivalent diameter data (set reduces a list to only its unique entries)</span>
-<span class="n">sites</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1">#check out the results of the query</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>site_name</th>
+      <th>date</th>
+      <th>time_created</th>
+      <th>time_updated</th>
+      <th>id</th>
+      <th>doi</th>
+      <th>date_accessed</th>
+      <th>instrument</th>
+      <th>type</th>
+      <th>units</th>
+      <th>...</th>
+      <th>geom</th>
+      <th>time</th>
+      <th>depth</th>
+      <th>site_id</th>
+      <th>bottom_depth</th>
+      <th>comments</th>
+      <th>sample_a</th>
+      <th>sample_b</th>
+      <th>sample_c</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Grand Mesa</td>
+      <td>2020-02-01</td>
+      <td>2021-06-01 18:43:25.958229+00:00</td>
+      <td>None</td>
+      <td>12556</td>
+      <td>https://doi.org/10.5067/SNMM6NGGKWIT</td>
+      <td>2021-06-01</td>
+      <td>IRIS</td>
+      <td>specific_surface_area</td>
+      <td>None</td>
+      <td>...</td>
+      <td>POINT (742607.000 4322917.000)</td>
+      <td>09:00:00-06:00</td>
+      <td>74.0</td>
+      <td>1S8</td>
+      <td>None</td>
+      <td>surface hoar</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>31.24</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Grand Mesa</td>
+      <td>2020-02-01</td>
+      <td>2021-06-01 18:43:25.959662+00:00</td>
+      <td>None</td>
+      <td>12557</td>
+      <td>https://doi.org/10.5067/SNMM6NGGKWIT</td>
+      <td>2021-06-01</td>
+      <td>IRIS</td>
+      <td>specific_surface_area</td>
+      <td>None</td>
+      <td>...</td>
+      <td>POINT (742607.000 4322917.000)</td>
+      <td>09:00:00-06:00</td>
+      <td>71.0</td>
+      <td>1S8</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>38.22</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Grand Mesa</td>
+      <td>2020-02-01</td>
+      <td>2021-06-01 18:43:25.960999+00:00</td>
+      <td>None</td>
+      <td>12558</td>
+      <td>https://doi.org/10.5067/SNMM6NGGKWIT</td>
+      <td>2021-06-01</td>
+      <td>IRIS</td>
+      <td>specific_surface_area</td>
+      <td>None</td>
+      <td>...</td>
+      <td>POINT (742607.000 4322917.000)</td>
+      <td>09:00:00-06:00</td>
+      <td>69.0</td>
+      <td>1S8</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>38.98</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Grand Mesa</td>
+      <td>2020-02-01</td>
+      <td>2021-06-01 18:43:25.962333+00:00</td>
+      <td>None</td>
+      <td>12559</td>
+      <td>https://doi.org/10.5067/SNMM6NGGKWIT</td>
+      <td>2021-06-01</td>
+      <td>IRIS</td>
+      <td>specific_surface_area</td>
+      <td>None</td>
+      <td>...</td>
+      <td>POINT (742607.000 4322917.000)</td>
+      <td>09:00:00-06:00</td>
+      <td>64.0</td>
+      <td>1S8</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>37.35</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Grand Mesa</td>
+      <td>2020-02-01</td>
+      <td>2021-06-01 18:43:25.963983+00:00</td>
+      <td>None</td>
+      <td>12560</td>
+      <td>https://doi.org/10.5067/SNMM6NGGKWIT</td>
+      <td>2021-06-01</td>
+      <td>IRIS</td>
+      <td>specific_surface_area</td>
+      <td>None</td>
+      <td>...</td>
+      <td>POINT (742607.000 4322917.000)</td>
+      <td>09:00:00-06:00</td>
+      <td>59.0</td>
+      <td>1S8</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>24.56</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 27 columns</p>
+</div></div></div>
 </div>
-</div>
-<div class="section" id="isolate-all-the-sites-with-multiple-ssa-instruments">
-<h3>3. Isolate all the Sites with Multiple SSA Instruments<a class="headerlink" href="#isolate-all-the-sites-with-multiple-ssa-instruments" title="Permalink to this headline">¶</a></h3>
+<p>Since we want to intercompare integrating spheres, we need to isolate only the sites that actually had multiple integrating spheres measuring the same snow.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Store all site names that have mulitple SSA instruments</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grab all the sites with equivalent diameter data (set reduces a list to only its unique entries)</span>
+<span class="n">sites</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="c1"># Store all site names that have mulitple SSA instruments</span>
 <span class="n">multi_instr_sites</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">instruments</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -636,13 +879,18 @@
 
 <span class="c1"># Get a unqique list of SSA instruments that were colocated</span>
 <span class="n">instruments</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;instrument&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="n">instruments</span> <span class="c1">#check out the list of instruments. note that the IceCube values are displayed as serial numbers</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;IRIS&#39;, &#39;IS3-SP-11-01F&#39;, &#39;IS3-SP-15-01US&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="plot-all-integrating-sphere-ssa-profiles-at-all-multi-instrumented-sites">
-<h3>4. Plot all Integrating Sphere SSA profiles at all Multi-Instrumented Sites<a class="headerlink" href="#plot-all-integrating-sphere-ssa-profiles-at-all-multi-instrumented-sites" title="Permalink to this headline">¶</a></h3>
+<p>Finally, plot all Integrating Sphere SSA profiles at all Multi-Integrating Sphere Sites</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setup the subplot for each site for each instrument</span>
@@ -680,7 +928,7 @@
    
     <span class="c1"># Labeling and plot style choices</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;SSA [kg/m^2]&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;SSA [m^2/kg]&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Height above snow-soil interface [cm]&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Site </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">site</span><span class="o">.</span><span class="n">upper</span><span class="p">()))</span>
     
@@ -693,15 +941,333 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/microstructure-tutorial_9_0.png" src="../../_images/microstructure-tutorial_9_0.png" />
+<img alt="../../_images/microstructure-tutorial_13_0.png" src="../../_images/microstructure-tutorial_13_0.png" />
 </div>
 </div>
 </div>
-<div class="section" id="compare-integrating-sphere-with-smp">
-<h3>5. Compare integrating sphere with SMP<a class="headerlink" href="#compare-integrating-sphere-with-smp" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="pull-the-snowmicropenetrometer-data-and-compute-ssa">
+<h3>2. Pull the snowmicropenetrometer data and compute SSA<a class="headerlink" href="#pull-the-snowmicropenetrometer-data-and-compute-ssa" title="Permalink to this headline">¶</a></h3>
+<p>The next step is to grab some SMP data to compare to. We’re going to get the SMP at site 2N13, where we have a copule of SSA profiles from interating spheres (as well as microCT data, to be looked at in the next step!).</p>
+<p>The SMP measurements for SnowEx 2020 GrandMesa were all made by Megan Mason. If you’re interested in working with the SMP data, please carefully read the NSIDC <a class="reference external" href="https://nsidc.org/data/SNEX20_SMP/versions/1">documentation page</a>. If you’re planning to work with the data, please reach out to the author; the contact is (Megan Mason <a class="reference external" href="mailto:meganmason491&#37;&#52;&#48;u&#46;boisestate&#46;edu">meganmason491<span>&#64;</span>u<span>&#46;</span>boisestate<span>&#46;</span>edu</a>). If you use a profile, consider checking out the comments which are described in the <a class="reference external" href="https://nsidc.org/sites/nsidc.org/files/technical-references/SNEX20_SMP_FieldNotes.xlsx">Excel sheet linked from the Technical References part of the NSIDC documentation</a>, where there are some really useful comments.</p>
+<p>There are a few steps here, and one reason for that is just that the SMP data is quite large, and so the full-resolution SMP could not be included in Micah’s database. The full resolution profile from SMP is resolved ever 1.25 mm! Instead, the SMP data in Micah’s database is sampled to only every 100th datapoint, so it’s every 12.5 cm. But the database is still very useful! What we’ll do is use the database to find the right profile, then go and download that full resolution dataset from the NSIDC. Easy-peasey!</p>
+<p>First up, we’ll visualize the location of the SMP profiles, along with the snowpit location.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">site</span> <span class="o">=</span> <span class="s1">&#39;2N13&#39;</span>
+<span class="n">engine_smp</span><span class="p">,</span> <span class="n">session_smp</span> <span class="o">=</span> <span class="n">get_db</span><span class="p">(</span><span class="n">db_name</span><span class="p">)</span>
+<span class="n">q_smp</span> <span class="o">=</span> <span class="n">session_smp</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">LayerData</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;force&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">site_id</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">site</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">df_smp</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">q_smp</span><span class="p">,</span> <span class="n">engine_smp</span><span class="p">)</span>
+
+<span class="n">q_pit</span><span class="o">=</span><span class="n">session_smp</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">LayerData</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;hand_hardness&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">site_id</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">site</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">df_pit</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">q_pit</span><span class="p">,</span> <span class="n">engine_smp</span><span class="p">)</span>
+
+<span class="n">session_smp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># Plot SMP profile locations with colored by the time they were taken using upside down triangles</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">df_smp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SMP&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_pit</span><span class="o">.</span><span class="n">easting</span><span class="p">,</span> <span class="n">df_pit</span><span class="o">.</span><span class="n">northing</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pit (</span><span class="si">{}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">site</span><span class="p">))</span>
+
+<span class="c1"># Add important labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Easting [m]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Northing [m]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;SMP Locations at Site </span><span class="si">{}</span><span class="s1"> Showing Acquisition Order&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">site</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="c1"># Avoid using Scientific notation for coords.</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">ticklabel_format</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;plain&#39;</span><span class="p">,</span> <span class="n">useOffset</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="c1"># plt.tight_layout()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
 </div>
-<div class="section" id="compare-intergrating-sphere-smp-and-microct">
-<h3>6. Compare intergrating sphere, SMP and microCT<a class="headerlink" href="#compare-intergrating-sphere-smp-and-microct" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/microstructure-tutorial_15_0.png" src="../../_images/microstructure-tutorial_15_0.png" />
+</div>
+</div>
+<p>Next up, let’s find the closest SMP profile to the snowpit, and then find the profile ID of that profile, which is in the comments in the database.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find closest SMP profile to the pit</span>
+
+<span class="c1"># No profile is taken at the same time, so we grab all the unique times and sort them</span>
+<span class="n">times</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">df_smp</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+
+<span class="n">nprofiles</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+
+<span class="n">ids</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nprofiles</span><span class="p">)</span>
+
+<span class="n">p</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
+    <span class="n">ind</span> <span class="o">=</span> <span class="n">df_smp</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">t</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">df_smp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">ids</span><span class="p">[</span><span class="n">p</span><span class="p">]</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span>
+    <span class="n">p</span><span class="o">+=</span><span class="mi">1</span>
+    
+<span class="n">i_dists</span><span class="o">=</span><span class="n">df_smp</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span>
+
+<span class="n">df_smp_dists</span><span class="o">=</span><span class="n">df_smp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i_dists</span><span class="p">]</span>
+<span class="n">df_smp_dists</span><span class="o">=</span><span class="n">df_smp_dists</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">dists</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">df_smp_dists</span><span class="p">[</span><span class="s1">&#39;dists&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">df_smp_dists</span><span class="p">[</span><span class="s1">&#39;easting&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">df_pit</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">easting</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">df_smp_dists</span><span class="p">[</span><span class="s1">&#39;northing&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">df_pit</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">northing</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+    
+<span class="n">df_smp_dists</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;dists&#39;</span><span class="p">)[[</span><span class="s1">&#39;comments&#39;</span><span class="p">,</span><span class="s1">&#39;dists&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1">#check out the list of profiles sorted by distance to pit</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>comments</th>
+      <th>dists</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>7874</th>
+      <td>fname = SNEX20_SMP_S19M1174_2N13_20200206.CSV,...</td>
+      <td>1.551466</td>
+    </tr>
+    <tr>
+      <th>22517</th>
+      <td>fname = SNEX20_SMP_S19M1175_2N13_20200206.CSV,...</td>
+      <td>2.900187</td>
+    </tr>
+    <tr>
+      <th>16588</th>
+      <td>fname = SNEX20_SMP_S19M1173_2N13_20200206.CSV,...</td>
+      <td>5.031469</td>
+    </tr>
+    <tr>
+      <th>26026</th>
+      <td>fname = SNEX20_SMP_S19M1172_2N13_20200206.CSV,...</td>
+      <td>5.031469</td>
+    </tr>
+    <tr>
+      <th>4850</th>
+      <td>fname = SNEX20_SMP_S19M1176_2N13_20200206.CSV,...</td>
+      <td>14.095757</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>So the id of the closest SMP profile is S19M1174.  I went to the <a class="reference external" href="https://nsidc.org/data/SNEX20_SMP/versions/1">SMP page on NSIDC</a>, and went to “Download” and searched for this ID, downloaded the profile, and then re-uploaded to my home directory here in the Jupyter hub.</p>
+<p>Ok next up, we have to compute SSA from the SMP data. For this, we’ll use the “snowmicropyn” modules created by the Swiss SLF. You can read more about them <a class="reference external" href="https://snowmicropyn.readthedocs.io/en/latest/">at this site</a>. The software is a little out of date on Python versions; just ignore any warnings that pop up below!</p>
+<p>The next cell pulls in the needed modules, and then plots the profile of force measurements needed to break through the snow microstructure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">snowmicropyn</span> <span class="kn">import</span> <span class="n">Profile</span>
+<span class="kn">from</span> <span class="nn">snowmicropyn</span> <span class="kn">import</span> <span class="n">proksch2015</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pull in some tutorial datasets </span>
+<span class="o">!</span>aws s3 sync --quiet s3://snowex-data/tutorial-data/microstructure/ /tmp/microstructure
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Profile</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/tmp/microstructure/SMP/SNEX20_SMP_S19M1174_2N13_20200206.PNT&#39;</span><span class="p">,)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">samples</span><span class="o">.</span><span class="n">distance</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">samples</span><span class="o">.</span><span class="n">force</span><span class="p">)</span>
+<span class="c1"># Prettify our plot a bit</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Force [N]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Depth [mm]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/microstructure-tutorial_21_0.png" src="../../_images/microstructure-tutorial_21_0.png" />
+</div>
+</div>
+<p>The next step is the actual calculation of SSA from the force data. It then displays the data and lets you see that there is now a column called SSA! Note that this function is “proksch2015”. You can read about how it works in Martin Proksch’s paper <span id="id20">[<a class="reference internal" href="../../bibliography.html#id17">Proksch <em>et al.</em>, 2015</a>]</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the window size is a parameter you can play with. default is 2.5 mm setting to 10 mm does some smoothing</span>
+<span class="n">p2015</span> <span class="o">=</span> <span class="n">proksch2015</span><span class="o">.</span><span class="n">calc</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">samples</span><span class="p">,</span><span class="n">window</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> 
+<span class="n">p2015</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1">#check out the first few values of SSA</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>distance</th>
+      <th>P2015_density</th>
+      <th>P2015_ssa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>138.807871</td>
+      <td>43.578891</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5.0</td>
+      <td>133.771549</td>
+      <td>47.658957</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10.0</td>
+      <td>129.812119</td>
+      <td>53.579023</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>15.0</td>
+      <td>129.890037</td>
+      <td>53.449012</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>20.0</td>
+      <td>128.434393</td>
+      <td>55.982357</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="read-microct-data-and-compare-intergrating-sphere-smp-and-ct-data">
+<h3>3. Read microCT data, and compare intergrating sphere, SMP and CT data<a class="headerlink" href="#read-microct-data-and-compare-intergrating-sphere-smp-and-ct-data" title="Permalink to this headline">¶</a></h3>
+<p>The microCT samples were extracted in the field and processed at CRREL by Lauren Farnsworth, and is not yet published at NSIDC. Please contact her with questions (lauren.b.farnsworth&#64;usace.army.mil)!</p>
+<p>This module reads in microCT datafiles which are stored as text. Some additional data are available, showing the computer generated slices through the ice-air interface: contact Mike (<a class="reference external" href="mailto:durand&#46;8&#37;&#52;&#48;osu&#46;edu">durand<span>&#46;</span>8<span>&#64;</span>osu<span>&#46;</span>edu</a>) if you want to look at a subset of these data that Lauren has shared.</p>
+<p>Equivalent grain size is a useful quantity to compare: because it’s proportional to 1/SSA, and because after a point as you increase SSA more and more, all fine-grained snow acts more-or-less the same (converging to e.g. the “fine-grained” curve in Figure 1, above), we’ll look at equivalent diameter instead of SSA in this comparison.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">read_CT_txt_files</span> <span class="kn">import</span> <span class="n">read_CT_txt_files</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read micro CT for 2N13</span>
+<span class="n">data_dir</span><span class="o">=</span><span class="s1">&#39;/tmp/microstructure/microCT/txt/&#39;</span>
+<span class="p">[</span><span class="n">SSA_CT</span><span class="p">,</span><span class="n">height_min</span><span class="p">,</span><span class="n">height_max</span><span class="p">]</span><span class="o">=</span><span class="n">read_CT_txt_files</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
+
+<span class="n">SSA_CT</span> <span class="c1">#chck out the SSA values read in from MicroCT</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([10.43911668, 10.73460196, 10.6057361 , 10.9089422 , 11.16761178,
+       11.70006543, 11.76880044, 11.74672846, 11.577241  , 11.73143948,
+       11.68001091, 11.10273719, 11.7619084 , 11.87629226, 11.68687023,
+       11.42565976, 11.54909487, 11.30210469, 11.32300981, 11.32594329,
+       10.93379498, 10.92513631, 11.01997819, 10.67981461, 11.10715376,
+       10.99905125, 10.75124318, 11.50651036, 12.57513631, 12.81523446,
+       12.7846783 , 12.8248964 , 12.87141767, 13.00685932, 12.73911668,
+       13.01716467, 12.88      , 13.56685932, 13.35838604, 13.97314068,
+       14.23908397, 16.31159215, 17.56122137, 18.06660851, 17.45089422,
+       18.15394766, 17.93645583, 17.8674482 , 17.99497274, 17.89236641,
+       18.25597601, 18.17002181, 19.18184297, 19.1782988 , 18.36195202,
+       17.75116685, 17.61587786, 18.12836423, 17.58134133, 18.08393675,
+       18.87725191, 19.1989422 , 18.93825518, 17.83435115, 18.0187241 ,
+       16.42268266, 18.64861505, 17.39344602, 18.0421265 , 19.23437296,
+       22.07477644])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get data integrating sphere data for 2N13 and plot it </span>
+<span class="n">site</span><span class="o">=</span><span class="s1">&#39;2N13&#39;</span>
+<span class="n">engine_is</span><span class="p">,</span> <span class="n">session_is</span> <span class="o">=</span> <span class="n">get_db</span><span class="p">(</span><span class="n">db_name</span><span class="p">)</span>
+<span class="n">q_is</span> <span class="o">=</span> <span class="n">session_is</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">LayerData</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;specific_surface_area&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">site_id</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">site</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">df_is</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">q_is</span><span class="p">,</span> <span class="n">engine_is</span><span class="p">)</span>
+<span class="n">instruments_site</span> <span class="o">=</span> <span class="n">df_is</span><span class="p">[</span><span class="s1">&#39;instrument&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="c1"># Loop over all the integrating sphere instruments at this site. plot equivalent diameter</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">instr</span> <span class="ow">in</span> <span class="n">instruments_site</span><span class="p">:</span>
+
+    <span class="c1"># Grab our profile by site and instrument</span>
+    <span class="n">ind</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">site</span> 
+    <span class="n">ind2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;instrument&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">instr</span>
+    <span class="n">profile</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">ind</span> <span class="o">&amp;</span> <span class="n">ind2</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="c1"># Don&#39;t plot it unless there is data</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">profile</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+
+        <span class="c1"># Sort by depth so samples that are take out of order won&#39;t mess up the plot</span>
+        <span class="n">profile</span> <span class="o">=</span> <span class="n">profile</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;depth&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Layer profiles are always stored as strings. </span>
+        <span class="n">profile</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span><span class="o">/</span><span class="mi">917</span><span class="o">/</span><span class="n">profile</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span>
+
+        <span class="c1"># Plot our profile</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">profile</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">],</span> <span class="n">profile</span><span class="p">[</span><span class="s1">&#39;depth&#39;</span><span class="p">],</span> <span class="n">colors</span><span class="p">[</span><span class="n">instr</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">instr</span><span class="p">)</span>
+        
+<span class="c1">#All that&#39;s left to do is plot the CT and the SMP and label the plot!</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="mi">917</span><span class="o">/</span><span class="n">SSA_CT</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span><span class="n">height_min</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;microCT&#39;</span><span class="p">)</span>        <span class="c1">#CT data</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">6</span><span class="o">/</span><span class="mi">917</span><span class="o">/</span><span class="n">p2015</span><span class="o">.</span><span class="n">P2015_ssa</span><span class="o">*</span><span class="mi">1000</span><span class="p">,(</span><span class="nb">max</span><span class="p">(</span><span class="n">p2015</span><span class="o">.</span><span class="n">distance</span><span class="p">)</span><span class="o">-</span><span class="n">p2015</span><span class="o">.</span><span class="n">distance</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;SMP&#39;</span><span class="p">)</span> <span class="c1">#SMP data</span>
+
+<span class="c1"># Labeling and plot style choices</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Equivalent diameter, mm&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Height above snow-soil interface [cm]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Site </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">site</span><span class="o">.</span><span class="n">upper</span><span class="p">()))</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/microstructure-tutorial_28_0.png" src="../../_images/microstructure-tutorial_28_0.png" />
+</div>
+</div>
+<p>Wow, so the datasets are so very different, with the SMP being by far the most different. Because we might expect that the SMP is quite a ways off, actually, as the relationships between the force profile and SSA are empirical, and thus might change for different types of snow. There’s also significant differences between the microCT and the two integrating spheres. This is science - sometimes when we start intercomparing these quantities, we do not get a perfect match. This data hasn’t had kinks worked out yet - this is all hot off the press and ready for HackWeek!</p>
+<p>Some of the ways that you could imagine connecting microstructure measurements to other quantities would be with the SWESARR radar data. Although the radar data does seem to have some orthorectification issues that haven’t been fully worked out, I can imagine these being worked around by careful choice of places you match up the microstructure to the radar. Note that places that are shallower tend to have larger D<sub>eq</sub> and vice versa, and the spatial variability in SSA was fairly low in general in Grand Mesa 2020, so looking at multiple SSA vs radar samples might not yield a great correlation. But you never know, could be fun to try! Generaly speaking, we don’t expect a ton of impact of the microstructure on L-band (UAVSAR), but it would be interesting to explore that.</p>
+<p>One thing that could be of great value is to calibrate the SMP estimates of SSA to the integrating spheres. If you’re interested in doing that, do reach out first. This could be a really interesting thing to explore!</p>
+<p>It might also be interesting to compare the data to hand hardness measured in the snowpit, and to traditional hand lens measurements.</p>
 </div>
 </div>
 </div>
