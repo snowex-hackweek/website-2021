@@ -1,0 +1,18 @@
+# Location,Grand Mesa
+# Site,5N19
+# PitID,COGM5N19_20200128
+# Date/Local Time,2020-01-28T11:27
+# UTM Zone,12N
+# Easting,743219
+# Northing,4324260
+# Top (cm),Bottom (cm),Density A (kg/m3),Density B (kg/m3),Density C (kg/m3)
+102.0,92.0,136.0,138.0,NaN
+92.0,82.0,193.0,192.0,NaN
+82.0,72.0,232.0,221.0,NaN
+72.0,62.0,262.0,260.0,NaN
+62.0,52.0,275.0,278.0,NaN
+52.0,42.0,261.0,252.0,NaN
+42.0,32.0,267.0,269.0,NaN
+32.0,22.0,336.0,367.0,NaN
+22.0,12.0,268.0,246.0,NaN
+12.0,2.0,262.0,271.0,NaN

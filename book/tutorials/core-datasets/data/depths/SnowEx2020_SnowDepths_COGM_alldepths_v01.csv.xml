@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE GranuleMetaDataFile SYSTEM "http://ecsinfo.gsfc.nasa.gov/ECSInfo/ecsmetadata/dtds/DPL/ECS/ScienceGranuleMetadata.dtd">
+<GranuleMetaDataFile>
+    <DTDVersion>1.0</DTDVersion>
+    <DataCenterId>NSIDC</DataCenterId>
+    <GranuleURMetaData>
+        <GranuleUR>SC:SNEX20_SD.001:184913456</GranuleUR>
+        <DbID>184913456</DbID>
+        <InsertTime>2020-07-28 15:56:14.597</InsertTime>
+        <LastUpdate>2020-07-28 15:56:14.597</LastUpdate>
+        <CollectionMetaData>
+            <ShortName>SNEX20_SD</ShortName>
+            <VersionID>001</VersionID>
+        </CollectionMetaData>
+        <DataFiles>
+            <DataFileContainer>
+                <DistributedFileName>SnowEx2020_SnowDepths_COGM_alldepths_v01.csv</DistributedFileName>
+                <FileSize>3467468</FileSize>
+                <ChecksumType>MD5</ChecksumType>
+                <Checksum>fb0ca15893a818b50fc77535502b2b5e</Checksum>
+                <ChecksumOrigin>DPLIngst</ChecksumOrigin>
+            </DataFileContainer>
+        </DataFiles>
+        <ECSDataGranule>
+            <SizeMBECSDataGranule>3.30684</SizeMBECSDataGranule>
+            <LocalGranuleID>SnowEx2020_SnowDepths_COGM_alldepths_v01.csv</LocalGranuleID>
+            <ProductionDateTime>2020-07-27 15:25:09.000</ProductionDateTime>
+            <LocalVersionID>001</LocalVersionID>
+        </ECSDataGranule>
+        <RangeDateTime>
+            <RangeEndingTime>23:59:59.000000</RangeEndingTime>
+            <RangeEndingDate>2020-02-12</RangeEndingDate>
+            <RangeBeginningTime>00:00:01.000000</RangeBeginningTime>
+            <RangeBeginningDate>2020-01-28</RangeBeginningDate>
+        </RangeDateTime>
+        <SpatialDomainContainer>
+            <HorizontalSpatialDomainContainer>
+                <GPolygon>
+                    <Boundary>
+                        <Point>
+                            <PointLongitude>-108.228</PointLongitude>
+                            <PointLatitude>39.067</PointLatitude>
+                        </Point>
+                        <Point>
+                            <PointLongitude>-107.997</PointLongitude>
+                            <PointLatitude>39.067</PointLatitude>
+                        </Point>
+                        <Point>
+                            <PointLongitude>-107.997</PointLongitude>
+                            <PointLatitude>39.0</PointLatitude>
+                        </Point>
+                        <Point>
+                            <PointLongitude>-108.228</PointLongitude>
+                            <PointLatitude>39.0</PointLatitude>
+                        </Point>
+                    </Boundary>
+                </GPolygon>
+            </HorizontalSpatialDomainContainer>
+        </SpatialDomainContainer>
+        <Platform>
+            <PlatformShortName>FIELD SURVEYS</PlatformShortName>
+            <Instrument>
+                <InstrumentShortName>PROBES</InstrumentShortName>
+                <Sensor>
+                    <SensorShortName>PROBES</SensorShortName>
+                </Sensor>
+            </Instrument>
+        </Platform>
+        <PSAs>
+            <PSA>
+                <PSAName>SIPSMetGenVersion</PSAName>
+                <PSAValue>2.5</PSAValue>
+            </PSA>
+        </PSAs>
+    </GranuleURMetaData>
+</GranuleMetaDataFile>
+
