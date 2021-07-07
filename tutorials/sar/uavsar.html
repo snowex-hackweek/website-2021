@@ -500,22 +500,7 @@
      Data Download
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#unzipping-the-files-we-just-downloaded">
-     Unzipping the files we just downloaded
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#removing-unwanted-data">
-     Removing unwanted data
-    </a>
-   </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#converting-data-to-geotiffs">
-   Converting Data to GeoTiffs
-  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#opening-and-plotting-the-raw-uavsar-raster-files">
@@ -600,14 +585,10 @@
 </div>
 <a class="reference internal image-reference" href="../../_images/UAVSAR_plane.jpg"><img alt="uavsar airplane" src="../../_images/UAVSAR_plane.jpg" style="width: 800px;" /></a>
 <p>Intro slide deck: <a class="reference external" href="https://uavsar.jpl.nasa.gov/education/what-is-uavsar.html">https://uavsar.jpl.nasa.gov/education/what-is-uavsar.html</a></p>
+<p><em>Tutorial author:  Jack Tarricone, University of Nevada Reno</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import libraries</span>
-
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">zipfile</span>
-<span class="kn">import</span> <span class="nn">getpass</span>
-<span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span> 
 <span class="kn">import</span> <span class="nn">os</span>  <span class="c1"># for chdir, getcwd, path.basename, path.exists</span>
 <span class="kn">import</span> <span class="nn">hvplot.xarray</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># for DatetimeIndex </span>
@@ -616,7 +597,7 @@
 <span class="kn">import</span> <span class="nn">rasterio</span> <span class="k">as</span> <span class="nn">rio</span>
 <span class="kn">from</span> <span class="nn">rasterio.plot</span> <span class="kn">import</span> <span class="n">show</span> <span class="c1"># plotting raster data</span>
 <span class="kn">from</span> <span class="nn">rasterio.plot</span> <span class="kn">import</span> <span class="n">show_hist</span> <span class="c1">#histograms of raster data</span>
-<span class="kn">import</span> <span class="nn">codecs</span> <span class="c1"># for text parsing code</span>
+
 <span class="kn">import</span> <span class="nn">glob</span> <span class="c1"># for listing files in tiff conversion function</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># for add_subplot, axis, figure, imshow, legend, plot, set_axis_off, set_data,</span>
                                 <span class="c1"># set_title, set_xlabel, set_ylabel, set_ylim, subplots, title, twinx</span>
@@ -624,9 +605,6 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:param.main: pandas could not register all extension types imports failed with the following error: cannot import name &#39;ABCIndexClass&#39; from &#39;pandas.core.dtypes.generic&#39; (/srv/conda/envs/notebook/lib/python3.8/site-packages/pandas/core/dtypes/generic.py)
-</pre></div>
-</div>
 <script type="application/javascript">
 (function(root) {
   function now() {
@@ -2137,12 +2115,6 @@ if (window.Jupyter !== undefined) {
 <li><p>KML and KMZ files (.kml or .kmz): format for viewing files in Google Earth (can’t be used for analysis)</p></li>
 </ul>
 </div>
-<div class="polsar data types admonition">
-<p class="admonition-title">PolSAR Data Types</p>
-<ul class="simple">
-<li></li>
-</ul>
-</div>
 <div class="section" id="data-download">
 <h3>Data Download<a class="headerlink" href="#data-download" title="Permalink to this headline">¶</a></h3>
 <p>We will use our NASA EarthData credentials and ASF Vertex to download an InSAR pair data into our notebook directly. For this tutorial, we will be working with UAVSAR data from February of 2020. If you want to use different data in the future, change the links in the files variable. The screengrab below shows how I generated these download links from the ASF site.</p>
@@ -2150,386 +2122,36 @@ if (window.Jupyter !== undefined) {
 <a class="reference internal image-reference" href="../../_images/asf_vertex.png"><img alt="asf vertex" src="../../_images/asf_vertex.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Screenshot of ASF Vertex interface</span><a class="headerlink" href="#vertex" title="Permalink to this image">¶</a></p>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get NASA EARTHDATA Credentials from ~/.netrc or manual input</span>
-<span class="kn">import</span> <span class="nn">netrc</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="p">(</span><span class="n">ASF_USER</span><span class="p">,</span> <span class="n">account</span><span class="p">,</span> <span class="n">ASF_PASS</span><span class="p">)</span> <span class="o">=</span> <span class="n">netrc</span><span class="o">.</span><span class="n">netrc</span><span class="p">()</span><span class="o">.</span><span class="n">authenticators</span><span class="p">(</span><span class="s2">&quot;urs.earthdata.nasa.gov&quot;</span><span class="p">)</span>
-<span class="k">except</span><span class="p">:</span>
-    <span class="n">ASF_USER</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Username: &quot;</span><span class="p">)</span>
-    <span class="n">ASF_PASS</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="s2">&quot;Enter Password: &quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For efficiency, we’ve already downloaded and converted UAVSAR to a GIS-friendly Geotiff format for this tutorial. See the additional notebook for code and documentation: <span class="xref myst">uavsar-download.ipynb</span></p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># directory in which the notebook resides</span>
-<span class="k">if</span> <span class="s1">&#39;tutorial_home_dir&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
-     <span class="n">tutorial_home_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Notebook directory: &quot;</span><span class="p">,</span> <span class="n">tutorial_home_dir</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change to tmp directory and download staged tutorial data</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/tmp&#39;</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;/tmp/&#39;</span><span class="p">):</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/tmp&#39;</span><span class="p">)</span>
-   
-<span class="c1"># directory for data downloads</span>
-
-<span class="n">data_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/tmp&#39;</span><span class="p">)</span>
-<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
+<span class="o">!</span>aws s3 cp --no-progress s3://snowex-data/tutorial-data/sar/uavsar/ .  --recursive --exclude <span class="s2">&quot;*&quot;</span> --include <span class="s2">&quot;*tiff&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Notebook directory:  /home/jovyan/book/tutorials/sar
-/tmp
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/sar/uavsar/grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.amp2.grd.tiff to ./grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.amp2.grd.tiff
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span> 
-
-<span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://datapool.asf.alaska.edu/INTERFEROMETRY_GRD/UA/grmesa_27416_20003-028_20005-007_0011d_s01_L090_01_int_grd.zip&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;https://datapool.asf.alaska.edu/AMPLITUDE_GRD/UA/grmesa_27416_20003-028_20005-007_0011d_s01_L090_01_amp_grd.zip&#39;</span><span class="p">]</span>
-    
-<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;downloading </span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s1">...&#39;</span><span class="p">)</span>
-    <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
-    
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span><span class="n">filename</span><span class="p">)):</span>
-        <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;wget -q </span><span class="si">{0}</span><span class="s2"> --user=</span><span class="si">{1}</span><span class="s2"> --password=</span><span class="si">{2}</span><span class="s2"> -P </span><span class="si">{3}</span><span class="s2"> -nc&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">ASF_USER</span><span class="p">,</span> <span class="n">ASF_PASS</span><span class="p">,</span> <span class="n">data_dir</span><span class="p">)</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">filename</span> <span class="o">+</span> <span class="s2">&quot; already exists. Skipping download ..&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done&quot;</span><span class="p">)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/sar/uavsar/grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.amp1.grd.tiff to ./grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.amp1.grd.tiff
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloading https://datapool.asf.alaska.edu/INTERFEROMETRY_GRD/UA/grmesa_27416_20003-028_20005-007_0011d_s01_L090_01_int_grd.zip...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/sar/uavsar/grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.cor.grd.tiff to ./grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.cor.grd.tiff
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>downloading https://datapool.asf.alaska.edu/AMPLITUDE_GRD/UA/grmesa_27416_20003-028_20005-007_0011d_s01_L090_01_amp_grd.zip...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/sar/uavsar/grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.hgt.grd.tiff to ./grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.hgt.grd.tiff
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check to see if downloaded</span>
-<span class="c1"># the *.* syntax means print all files in the directory</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;/tmp/*.*&quot;</span><span class="p">))</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/sar/uavsar/grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.unw.grd.tiff to ./grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.unw.grd.tiff
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#use for deleting contents of temp directory if needed. DO NOT uncomment, this will cause the notebook to fail.</span>
-
-<span class="c1">#files = glob.glob(&quot;/tmp/*.*&quot;)</span>
-<span class="c1">#for f in files:</span>
-<span class="c1">#    os.remove(f)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="unzipping-the-files-we-just-downloaded">
-<h3>Unzipping the files we just downloaded<a class="headerlink" href="#unzipping-the-files-we-just-downloaded" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## unzip files just downloaded</span>
-
-<span class="c1"># define file path for both files</span>
-<span class="n">int_zip</span> <span class="o">=</span> <span class="s1">&#39;/tmp/grmesa_27416_20003-028_20005-007_0011d_s01_L090_01_int_grd.zip&#39;</span>
-<span class="n">amp_zip</span> <span class="o">=</span> <span class="s1">&#39;/tmp/grmesa_27416_20003-028_20005-007_0011d_s01_L090_01_amp_grd.zip&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># unzip</span>
-
-<span class="c1"># int</span>
-<span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">int_zip</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_ref</span><span class="p">:</span>
-    <span class="n">zip_ref</span><span class="o">.</span><span class="n">printdir</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Extracting all the files now...&#39;</span><span class="p">)</span>
-    <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s1">&#39;/tmp&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done&quot;</span><span class="p">)</span>
-    
-<span class="c1"># amp</span>
-<span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">amp_zip</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_ref</span><span class="p">:</span>
-    <span class="n">zip_ref</span><span class="o">.</span><span class="n">printdir</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Extracting all the files now...&#39;</span><span class="p">)</span>
-    <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s1">&#39;/tmp&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="removing-unwanted-data">
-<h3>Removing unwanted data<a class="headerlink" href="#removing-unwanted-data" title="Permalink to this headline">¶</a></h3>
-<p>For simplicity, we’ll only work with HH polarization. The three other polarizations (VV, VH, HV) provide additional information about the surface properties and can be utilized in further analysis.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># clean up unwanted data from what we just downloaded</span>
-
-<span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;/tmp&#39;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
-<span class="n">HV_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*HV_01*&#39;</span><span class="p">)</span> <span class="c1">#define all HV</span>
-<span class="n">VV_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*VV_01*&#39;</span><span class="p">)</span> <span class="c1">#define all VV</span>
-<span class="n">VH_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*VH_01*&#39;</span><span class="p">)</span> <span class="c1">#define all VH</span>
-<span class="n">zips</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.zip&#39;</span><span class="p">)</span> <span class="c1"># define the zip files</span>
-
-<span class="c1"># loops to remove them</span>
-
-<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">HV_files</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-    
-<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">VV_files</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-    
-<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">VH_files</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-    
-<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">zips</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check to see what files are left in the directory</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;/tmp/*.*&quot;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now we only have the HH polarization, the annotation file, and the 6 .grd files!</p>
-</div>
-</div>
-<div class="section" id="converting-data-to-geotiffs">
-<h2>Converting Data to GeoTiffs<a class="headerlink" href="#converting-data-to-geotiffs" title="Permalink to this headline">¶</a></h2>
-<p>The downloadable UAVSAR data comes in a flat binary format (.grd), which is not readable by GDAL (Geospatial Data Abstraction Library). Therefore it needs to be transformed for use in standard spatial analysis software (ArcGIS, QGIS, Python, R, MATLAB, etc.). To do this, we will use the uavsar_tiff_convert function, which takes information (latitude, longitude, number of lines and samples, data type, pixel size) from the annotation file to create an ENVI header (.hdr). Once the ENVI header is created, the files can be read into Python and converted to GeoTiffs.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, let&#39;s print the annotation file to get a look at it&#39;s content</span>
-<span class="c1"># these file contain a lot of information and can be very intimidating and hard to understand, but being able to read them is vital to working this UAVSAR data</span>
-
-<span class="c1">#f = open(&#39;/tmp/grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.ann&#39;, &#39;r&#39;)</span>
-<span class="c1">#file_contents = f.read()</span>
-<span class="c1">#print (file_contents)</span>
-<span class="o">!</span>head -n <span class="m">15</span> /tmp/grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.ann
-</pre></div>
-</div>
-</div>
-</div>
-<p>This function pulls out information from the annotation file, builds and ENVI header, and then converts the data to GeoTIFFS.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># folder is path to a folder with an .ann (or .txt) and .grd files (.amp1, .amp2, .cor, .unw, .int)</span>
-
-<span class="k">def</span> <span class="nf">uavsar_tiff_convert</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Builds a header file for the input UAVSAR .grd file,</span>
-<span class="sd">    allowing the data to be read as a raster dataset.</span>
-<span class="sd">    :param folder:   the folder containing the UAVSAR .grd and .ann files</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
-    <span class="n">int_file</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s1">&#39;int.grd&#39;</span><span class="p">))</span>
-
-    <span class="c1"># Empty lists to put information that will be recalled later.</span>
-    <span class="n">Lines_list</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">Samples_list</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">Latitude_list</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">Longitude_list</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">Files_list</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="c1"># Step 1: Look through folder and determine how many different flights there are</span>
-    <span class="c1"># by looking at the HDR files.</span>
-    <span class="k">for</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">files</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span> <span class="o">==</span> <span class="s2">&quot;.grd&quot;</span><span class="p">:</span>
-            <span class="n">newfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.hdr&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
-            <span class="n">newfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;ENVI</span>
-<span class="s2">description = </span><span class="si">{DESCFIELD}</span><span class="s2"></span>
-<span class="s2">samples = NSAMP</span>
-<span class="s2">lines = NLINE</span>
-<span class="s2">bands = 1</span>
-<span class="s2">header offset = 0</span>
-<span class="s2">data type = DATTYPE</span>
-<span class="s2">interleave = bsq</span>
-<span class="s2">sensor type = UAVSAR L-Band</span>
-<span class="s2">byte order = 0</span>
-<span class="s2">map info = {Geographic Lat/Lon, </span>
-<span class="s2">            1.000, </span>
-<span class="s2">            1.000, </span>
-<span class="s2">            LON, </span>
-<span class="s2">            LAT,  </span>
-<span class="s2">            0.0000555600000000, </span>
-<span class="s2">            0.0000555600000000, </span>
-<span class="s2">            WGS-84, units=Degrees}</span>
-<span class="s2">wavelength units = Unknown</span>
-<span class="s2">                &quot;&quot;&quot;</span>
-                          <span class="p">)</span>
-            <span class="n">newfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-            <span class="k">if</span> <span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">18</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Files_list</span><span class="p">:</span>
-                <span class="n">Files_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">18</span><span class="p">])</span>
-
-    <span class="c1">#Variables used to recall indexed values.</span>
-    <span class="n">var1</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="c1">#Step 2: Look through the folder and locate the annotation file(s).</span>
-    <span class="c1"># These can be in either .txt or .ann file types.</span>
-    <span class="k">for</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">Files_list</span><span class="p">[</span><span class="n">var1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">files</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span> <span class="o">==</span> <span class="s2">&quot;.txt&quot;</span> <span class="ow">or</span> <span class="n">files</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span> <span class="o">==</span> <span class="s2">&quot;.ann&quot;</span><span class="p">:</span>
-            <span class="c1">#Step 3: Once located, find the info we are interested in and append it to</span>
-            <span class="c1"># the appropriate list. We limit the variables to &lt;=1 so that they only</span>
-            <span class="c1"># return two values (one for each polarization of</span>
-            <span class="n">searchfile</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;windows-1252&#39;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">searchfile</span><span class="p">:</span>
-                <span class="k">if</span> <span class="s2">&quot;Ground Range Data Latitude Lines&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                    <span class="n">Lines</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">65</span><span class="p">:</span><span class="mi">70</span><span class="p">]</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of Lines: </span><span class="si">{</span><span class="n">Lines</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="n">Lines</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Lines_list</span><span class="p">:</span>
-                        <span class="n">Lines_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Lines</span><span class="p">)</span>
-
-                <span class="k">elif</span> <span class="s2">&quot;Ground Range Data Longitude Samples&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                    <span class="n">Samples</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">65</span><span class="p">:</span><span class="mi">70</span><span class="p">]</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of Samples: </span><span class="si">{</span><span class="n">Samples</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="n">Samples</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Samples_list</span><span class="p">:</span>
-                        <span class="n">Samples_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Samples</span><span class="p">)</span>
-
-                <span class="k">elif</span> <span class="s2">&quot;Ground Range Data Starting Latitude&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                    <span class="n">Latitude</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">65</span><span class="p">:</span><span class="mi">85</span><span class="p">]</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Top left lat: </span><span class="si">{</span><span class="n">Latitude</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="n">Latitude</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Latitude_list</span><span class="p">:</span>
-                        <span class="n">Latitude_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Latitude</span><span class="p">)</span>
-
-                <span class="k">elif</span> <span class="s2">&quot;Ground Range Data Starting Longitude&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                    <span class="n">Longitude</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">65</span><span class="p">:</span><span class="mi">85</span><span class="p">]</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Top left Lon: </span><span class="si">{</span><span class="n">Longitude</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="n">Longitude</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Longitude_list</span><span class="p">:</span>
-                        <span class="n">Longitude_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Longitude</span><span class="p">)</span>
-    
-                        
-                 
-            <span class="c1">#Reset the variables to zero for each different flight date.</span>
-            <span class="n">var1</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="n">searchfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-
-    <span class="c1"># Step 3: Open .hdr file and replace data for all type 4 (real numbers) data</span>
-    <span class="c1"># this all the .grd files expect for .int</span>
-    <span class="k">for</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">files</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span> <span class="o">==</span> <span class="s2">&quot;.hdr&quot;</span><span class="p">:</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sources</span><span class="p">:</span>
-                <span class="n">lines</span> <span class="o">=</span> <span class="n">sources</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sources</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="s2">&quot;data type = DATTYPE&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">19</span><span class="p">],</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
-                    <span class="k">elif</span> <span class="s2">&quot;DESCFIELD&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">15</span><span class="p">:</span><span class="mi">24</span><span class="p">],</span> <span class="n">folder</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
-                    <span class="k">elif</span> <span class="s2">&quot;lines&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">13</span><span class="p">],</span> <span class="n">Lines</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
-                    <span class="k">elif</span> <span class="s2">&quot;samples&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">15</span><span class="p">],</span> <span class="n">Samples</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
-                    <span class="k">elif</span> <span class="s2">&quot;LAT&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">15</span><span class="p">],</span> <span class="n">Latitude</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
-                    <span class="k">elif</span> <span class="s2">&quot;LON&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">15</span><span class="p">],</span> <span class="n">Longitude</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
-    
-    <span class="c1"># Step 3: Open .hdr file and replace data for .int file date type 6 (complex)                 </span>
-    <span class="k">for</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">files</span><span class="p">[</span><span class="o">-</span><span class="mi">8</span><span class="p">:]</span> <span class="o">==</span> <span class="s2">&quot;.int.hdr&quot;</span><span class="p">:</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sources</span><span class="p">:</span>
-                <span class="n">lines</span> <span class="o">=</span> <span class="n">sources</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sources</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="s2">&quot;data type = 4&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">13</span><span class="p">],</span> <span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
-                    <span class="k">elif</span> <span class="s2">&quot;DESCFIELD&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">15</span><span class="p">:</span><span class="mi">24</span><span class="p">],</span> <span class="n">folder</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
-                    <span class="k">elif</span> <span class="s2">&quot;lines&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">13</span><span class="p">],</span> <span class="n">Lines</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
-                    <span class="k">elif</span> <span class="s2">&quot;samples&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">15</span><span class="p">],</span> <span class="n">Samples</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
-                    <span class="k">elif</span> <span class="s2">&quot;LAT&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">15</span><span class="p">],</span> <span class="n">Latitude</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
-                    <span class="k">elif</span> <span class="s2">&quot;LON&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">15</span><span class="p">],</span> <span class="n">Longitude</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
-                        
-    
-    <span class="c1"># Step 4: Now we have an .hdr file, the data is geocoded and can be loaded into python with rasterio</span>
-    <span class="c1"># once loaded in we use gdal.Translate to convert and save as a .tiff</span>
-    
-    <span class="n">data_to_process</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s1">&#39;*.grd&#39;</span><span class="p">))</span> <span class="c1"># list all .grd files</span>
-    <span class="k">for</span> <span class="n">data_path</span> <span class="ow">in</span> <span class="n">data_to_process</span><span class="p">:</span> <span class="c1"># loop to open and translate .grd to .tiff, and save .tiffs using gdal</span>
-        <span class="n">raster_dataset</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GA_ReadOnly</span><span class="p">)</span>
-        <span class="n">raster</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Translate</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.tiff&#39;</span><span class="p">),</span> <span class="n">raster_dataset</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;Gtiff&#39;</span><span class="p">,</span> <span class="n">outputType</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float32</span><span class="p">)</span>
-    
-    <span class="c1"># Step 5: Save the .int raster, needs separate save because of the complex format</span>
-    <span class="n">data_to_process</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s1">&#39;*.int.grd&#39;</span><span class="p">))</span> <span class="c1"># list all .int.grd files (only 1)</span>
-    <span class="k">for</span> <span class="n">data_path</span> <span class="ow">in</span> <span class="n">data_to_process</span><span class="p">:</span>
-        <span class="n">raster_dataset</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GA_ReadOnly</span><span class="p">)</span>
-        <span class="n">raster</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Translate</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.tiff&#39;</span><span class="p">),</span> <span class="n">raster_dataset</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;Gtiff&#39;</span><span class="p">,</span> <span class="n">outputType</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_CFloat32</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;.tiffs have been created&quot;</span><span class="p">)</span>
-    <span class="k">return</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_folder</span> <span class="o">=</span> <span class="s1">&#39;/tmp&#39;</span> <span class="c1"># define folder where the .grd and .ann files are</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uavsar_tiff_convert</span><span class="p">(</span><span class="n">data_folder</span><span class="p">)</span> <span class="c1"># call the tiff convert function, and it will print the information it extracted from the .ann file</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now we’ll delete the unneeded .grd and .hdr files that our tiffs have been created. If you’re using this code on your local machine, this probably isn’t absolutely necessary. The JupyterHub cloud we’re working in has limited space, so deletion is needed.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">data_folder</span><span class="p">)</span>
-<span class="n">grd</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.grd&#39;</span><span class="p">)</span> <span class="c1">#define .grd</span>
-<span class="n">hdr</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.hdr*&#39;</span><span class="p">)</span> <span class="c1">#define .hdr</span>
-
-<span class="c1"># remove both</span>
-<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">grd</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-    
-<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">hdr</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check what&#39;s in the directory, only .tiffs and our annotation file!</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.*&quot;</span><span class="p">))</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/sar/uavsar/grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.int.grd.tiff to ./grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.int.grd.tiff
 </pre></div>
 </div>
 </div>
@@ -2560,6 +2182,15 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.amp1.grd.tiff
+grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.amp2.grd.tiff
+grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.cor.grd.tiff
+grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.unw.grd.tiff
+grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.hgt.grd.tiff
+</pre></div>
+</div>
+</div>
 </div>
 <p>Inspect the meta data the rasters using the rio (shorthand for rasterio) <code class="docutils literal notranslate"><span class="pre">profile</span></code> function.</p>
 <div class="cell docutils container">
@@ -2568,6 +2199,13 @@ if (window.Jupyter !== undefined) {
 <span class="n">meta_data</span> <span class="o">=</span> <span class="n">unw_rast</span><span class="o">.</span><span class="n">profile</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">meta_data</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;driver&#39;: &#39;GTiff&#39;, &#39;dtype&#39;: &#39;float32&#39;, &#39;nodata&#39;: None, &#39;width&#39;: 7014, &#39;height&#39;: 4768, &#39;count&#39;: 1, &#39;crs&#39;: CRS.from_epsg(4326), &#39;transform&#39;: Affine(5.556e-05, 0.0, -108.30355248000001,
+       0.0, -5.556e-05, 39.19030164), &#39;tiled&#39;: False, &#39;interleave&#39;: &#39;band&#39;}
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -2587,6 +2225,9 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_15_0.png" src="../../_images/uavsar_15_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="amp-2">
@@ -2599,6 +2240,9 @@ if (window.Jupyter !== undefined) {
 <span class="n">show</span><span class="p">((</span><span class="n">amp2_rast</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_17_0.png" src="../../_images/uavsar_17_0.png" />
 </div>
 </div>
 </div>
@@ -2613,6 +2257,9 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_19_0.png" src="../../_images/uavsar_19_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="dem">
@@ -2625,6 +2272,9 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_21_0.png" src="../../_images/uavsar_21_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2633,6 +2283,9 @@ if (window.Jupyter !== undefined) {
 <span class="n">show</span><span class="p">((</span><span class="n">dem_rast</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;gist_earth&#39;</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="mi">1900</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">3600</span><span class="p">);</span> <span class="c1">#estimated these values from the histogram</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_22_0.png" src="../../_images/uavsar_22_0.png" />
 </div>
 </div>
 </div>
@@ -2646,6 +2299,9 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_24_0.png" src="../../_images/uavsar_24_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2655,6 +2311,9 @@ if (window.Jupyter !== undefined) {
 <span class="n">show</span><span class="p">((</span><span class="n">unw_rast</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">);</span> <span class="c1"># info from histogram</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_25_0.png" src="../../_images/uavsar_25_0.png" />
 </div>
 </div>
 </div>
@@ -2695,6 +2354,9 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_29_0.png" src="../../_images/uavsar_29_0.png" />
+</div>
 </div>
 <p>Instead of using the <code class="docutils literal notranslate"><span class="pre">rio.show()</span></code> function, we’ll try out the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> (we are calling <code class="docutils literal notranslate"><span class="pre">plt</span></code>) <code class="docutils literal notranslate"><span class="pre">im.show()</span></code> style of plotting to implement a color scale.</p>
 <div class="cell docutils container">
@@ -2709,6 +2371,9 @@ if (window.Jupyter !== undefined) {
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_31_0.png" src="../../_images/uavsar_31_0.png" />
 </div>
 </div>
 <p>Now we’ll create a function called <code class="docutils literal notranslate"><span class="pre">show_two_images()</span></code> to plot two images at once. The function inputs are a data array, color map name, and a plot title for both images. It uses <code class="docutils literal notranslate"><span class="pre">np.nanpercentile()</span></code> to automatically set the color scale bounds, but you can also set them manually.</p>
@@ -2762,6 +2427,9 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_34_0.png" src="../../_images/uavsar_34_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="coherence-unwrapped-phase-dem">
@@ -2797,6 +2465,10 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_38_0.png" src="../../_images/uavsar_38_0.png" />
+<img alt="../../_images/uavsar_38_1.png" src="../../_images/uavsar_38_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2804,6 +2476,9 @@ if (window.Jupyter !== undefined) {
 <span class="n">show_two_images</span><span class="p">(</span><span class="n">dem_array</span><span class="p">,</span> <span class="n">unw_array</span><span class="p">,</span> <span class="s1">&#39;gist_earth&#39;</span><span class="p">,</span> <span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="s1">&#39;DEM (m)&#39;</span><span class="p">,</span> <span class="s1">&#39;UNW (radians)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_39_0.png" src="../../_images/uavsar_39_0.png" />
 </div>
 </div>
 <p>Let’s plot the UNW raster larger so we can get a better look at the detail.</p>
@@ -2823,6 +2498,9 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_41_0.png" src="../../_images/uavsar_41_0.png" />
+</div>
 </div>
 <p>This looks <strong>much</strong> better! Plotting the image at a larger scale allows us to see an accurate representation of the data.</p>
 </div>
@@ -2836,6 +2514,11 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/sar/gmesa_depth_change_02-01_02-13.tif to ./gmesa_depth_change_02-01_02-13.tif
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2845,6 +2528,12 @@ if (window.Jupyter !== undefined) {
 <span class="n">lidar_rast</span> <span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">lidar_dc</span><span class="p">)</span>
 <span class="n">meta_data</span> <span class="o">=</span> <span class="n">lidar_rast</span><span class="o">.</span><span class="n">profile</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">meta_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;driver&#39;: &#39;GTiff&#39;, &#39;dtype&#39;: &#39;float32&#39;, &#39;nodata&#39;: -3.4e+38, &#39;width&#39;: 7576, &#39;height&#39;: 3528, &#39;count&#39;: 1, &#39;crs&#39;: CRS.from_epsg(32612), &#39;transform&#39;: Affine(3.0, 0.0, 737454.0,
+       0.0, -3.0, 4330218.0), &#39;tiled&#39;: False, &#39;compress&#39;: &#39;lzw&#39;, &#39;interleave&#39;: &#39;band&#39;}
 </pre></div>
 </div>
 </div>
@@ -2867,6 +2556,12 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_48_0.png" src="../../_images/uavsar_48_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;LiDAR Depth Change&#39;}&gt;
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="lidar-vs-unw">
@@ -2878,6 +2573,13 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.8/site-packages/matplotlib/colors.py:1202: RuntimeWarning: overflow encountered in true_divide
+  resdat /= (vmax - vmin)
+</pre></div>
+</div>
+<img alt="../../_images/uavsar_50_1.png" src="../../_images/uavsar_50_1.png" />
+</div>
 </div>
 <p>The two rasters cover different areas, are different resolutions, and have different missing pixels. Let’s zoom into the top left corner of Grand Mesa where there was significant wind drifting to compare the two data sets.</p>
 <div class="cell docutils container">
@@ -2886,6 +2588,9 @@ if (window.Jupyter !== undefined) {
                 <span class="s1">&#39;RdBu&#39;</span><span class="p">,</span> <span class="s1">&#39;RdBu&#39;</span><span class="p">,</span> <span class="s1">&#39;LiDAR Depth Change (cm)&#39;</span><span class="p">,</span> <span class="s1">&#39;UNW (radians)&#39;</span><span class="p">,</span> <span class="n">vmin1</span> <span class="o">=</span> <span class="o">-.</span><span class="mi">3</span><span class="p">,</span> <span class="n">vmax1</span> <span class="o">=</span> <span class="o">.</span><span class="mi">3</span><span class="p">,</span> <span class="n">vmin2</span><span class="o">=-</span><span class="mi">4</span><span class="p">,</span> <span class="n">vmax2</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_52_0.png" src="../../_images/uavsar_52_0.png" />
 </div>
 </div>
 <p>As you can see in the two plots above, there is a very strong spatial relationship between LiDAR depth change and InSAR change in phase. This relationship is the basis of measuring changes in SWE using L-band InSAR. While we don’t get into the next step of converting phase change to SWE or depth change from InSAR, we will get into that in the UAVSAR project!</p>
