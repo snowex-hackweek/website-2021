@@ -10,24 +10,25 @@
 - use data conversion tools to create geotiff files
 :::
 
-* [Thermal IR observations from SnowEx 2020](thermal-ir-tutorial.ipynb)
+* [Thermal IR observations from SnowEx 2020](./thermal-ir-tutorial.ipynb)
   * Part 1: Comparing airborne IR imagery with ground-truth observations
   * Part 2: Satellite IR remote sensing obsevations
-* [Downloading datasets through the NASA EarthData API](thermal-ir-data-download.ipynb)
-  * [earthdata_api.py](earthdata_api.py)
+* [Downloading datasets through the NASA EarthData API](./thermal-ir-data-download.ipynb)
+  * [earthdata_api.py](./earthdata_api.py)
 * ASTER L1T utilities ([from LP DAAC Data User Resources](https://git.earthdata.nasa.gov/projects/LPDUR/repos/aster-l1t/browse))
-  * [README.md](ast-l1t/README.md)
-  * [ASTERL1T_hdf2tif.py](ast-l1t/ASTERL1T_hdf2tif.py)
+  * [README.md](./ast-l1t/README.md)
+  * [ASTERL1T_hdf2tif.py](./ast-l1t/ASTERL1T_hdf2tif.py)
 
 
 ## Why do we want thermal images of snow?
 
 Observations of snow surface temperature can tell us about the energy state of the snowpack, and tell us when the surface reaches melting point. The surface temperature represents the upper boundary of the energey balance within snow layers, and also the lower boundary layer for turbulent energy fluxes. We can use observations of snow surface temperature as a diagnostic tool to assess how well snow models represent this energy balance and the onset of snowmelt. (For example, see [Lapo et al., 2015](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2014WR016259)) 
 
-<figure>
-  <img src="figures/snow_temp_graph.png" width="600"/>
-    <figcaption><b>Fig. 1</b> Example of snow depth over time illustrating snow temperature at different depths with colorbar.<br/>(Figure by Nic Wayand & Jessica Lundquist)</figcaption>
-</figure>
+:::{figure-md} snowtemp
+  <img src="figures/snow_temp_graph.png" width="600">
+
+Example of snow depth over time illustrating snow temperature at different depths with colorbar.<br/>(Figure by Nic Wayand & Jessica Lundquist)
+:::
 
 A timeseries of snow surface temperature measurements at a single point can give a detailed look into how temperature changes over time, but not how it varies across the landscape. Often, installing snow temperature sensors in an area of interest isn't possible. Images of snow surface temperature from satellites or aircraft can provide insight into the snow surface energy balance across a large area such as an entire watershed in a single image. While we can get satellite imagery of anywhere on the globe, these images only provide a snapshot in time each time the satellite passes overhead. Many satellite remote sensing imagers you may already be familiar with include thermal infrared (TIR) bands (wavelengths between ~7-15 microns), such as Landsat, ASTER, Sentinel-3 SLSTR, MODIS, and VIIRS. Airborne TIR imagery, and now even using small drones, enables higher resolution images of targeted areas.
 
@@ -43,8 +44,7 @@ In this tutorial we'll look at both of these types of snow surface temperature d
 
 Unlike Earth surface imagery in the visible portion of the [electromagnetic spectrum](https://science.nasa.gov/ems), which captures reflected sunlight, TIR imagery captures emitted electromagnetic radiation from the Earth surface itself. All materials emit electromagnetic radiation proportional to their temperature, and at typical temperatures encountered at Earth's surface or atmosphere, this emisstion is within the TIR part of the spectrum.
 
-:::{admonition}
-:class: tip
+:::{tip}
 You can review some of the physics of electromagnetic radiation with [this fantastic resource](https://gsp.humboldt.edu/OLM/Courses/GSP_216_Online/lesson1-2/index.html).
 :::
 
@@ -77,10 +77,11 @@ The UW-APL thermal IR imager (center) was flown over Grand Mesa several times ov
 
 The aircraft flight times were planned to be coincident with remote sensing satellites passing overhead. We will use a single ASTER thermal infrared image (right) in this tutorial that was taken at the same time as our example airborne IR mosaic.
 
-<figure>
-  <img src="figures/data-summary-slide.png" width="1000"/>
-    <figcaption><b>Fig. 2</b> Data sources for this tutorial from the SnowEx 2020 field campaign at Grand Mesa.</figcaption>
-</figure>
+:::{figure-md} summary
+  <img src="figures/data-summary-slide.png" width="1000">
+
+Data sources for this tutorial from the SnowEx 2020 field campaign at Grand Mesa.
+:::
 
 For more details, see this presentation: [Snow Surface Temperature & Thermal Infrared Remote Sensing](https://spestana.github.io/assets/docs/snowex-presentation-aug2020.pdf) duing the Grand Mesa IOP, SnowEx 2020
 
