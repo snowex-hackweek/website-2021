@@ -10,7 +10,6 @@
     sections:
     - file: norms/CoC
     - file: norms/community
-
 - part: Preparation
   chapters:
     - file: preliminary/index
@@ -22,7 +21,6 @@
         - file: preliminary/earthdata
         - file: preliminary/pangeo
         - file: preliminary/python
-
 - part: Tutorials
   chapters:
     - file: tutorials/index
@@ -39,9 +37,24 @@
         - file: tutorials/sar/index
           sections:
             - file: tutorials/sar/sentinel1
+            - file: tutorials/sar/swesarr
             - file: tutorials/sar/uavsar
+        - file: tutorials/thermal-ir/index
+          sections:
+            - file: tutorials/thermal-ir/thermal-ir-tutorial
+        - file: tutorials/database/index
+          sections:
+            - file: tutorials/database/1_getting_started_example
+            - file: tutorials/database/2_database_structure
+            - file: tutorials/database/3_get_spiral_example
+            - file: tutorials/database/4_plot_raster_example
         - file: tutorials/microstructure/microstructure-tutorial
-
+        - file: tutorials/camera-traps-tutorial/camera-traps-notebook
+        - file: tutorials/lis/index
+          sections:
+            - file: tutorials/lis/1_exploring_lis_output
+            - file: tutorials/lis/2_interactive_widgets
+        - file: tutorials/gpr/gpr
 - part: Projects
   chapters:
     - file: projects/index
@@ -49,7 +62,6 @@
         - file: projects/project_initialization
         - file: projects/project_roles
         - file: projects/example_workflow
-
 - part: Reference
   chapters:
     - file: glossary
