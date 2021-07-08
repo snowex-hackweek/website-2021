@@ -13,20 +13,29 @@ All times listed below are UTC -7 (Pacific Daylight Time). You might want to con
 
 ## Monday July 12 
 
-### 9:00 to 10:30 AM: Introductory Session 
+### 9:00 to 10:00 AM: Introductory Session 
 
 *Lead Instructors: Anthony Arendt and Charley Haley*
 
-* Icebreaker
-* Provide overall schedule
+* Overview of hackweeks
 * Help people get connected
-* Explain how will this be different from an in-person event
 * Technology overview and check-in on accessibility
-* Code of conduct and setting norms of positive learning environments
-* Introduction to open-source and open science
+* Code of conduct 
+* Introduction to projects
 
+### 10:00 to 10:20 AM: Break
 
-### 11:00 AM to 11:45 AM: SnowEx Mission Overview and Datasets
+### 10:20 AM to 11:05 AM: GitHub, Git, JupyterHub
+
+*Lead Instructor: Joachim Meyer*
+
+* connecting to our shared JupyterHub environment
+* Git/GitHub review
+* learn how to clone tutorials into your working environment
+
+### 11:05 to 11:30 AM: Break
+
+### 11:30 AM to 12:15 PM: SnowEx Mission Overview and Datasets
 
 *Lead Instructors: Megan Mason, Carrie Vuyovich, HP Marshall*
 
@@ -37,23 +46,19 @@ All times listed below are UTC -7 (Pacific Daylight Time). You might want to con
     * data manipulation and analysis, cal/val
     * creating basic plots
 
-### 12:15 to 1:00 PM: GitHub, Git, JupyterHub
+### 12:15 to 12:30 PM Break
 
-*Lead Instructors: Joachim Meyer*
+### 12:30 - 1:50 PM Projects: Introductions and Pitching  
 
-* connecting to our shared JupyterHub environment
-* Git/GitHub review
-* learn how to clone tutorials into your working environment
+*Lead Instructors: Anthony Arendt and Charley Haley*
 
-### 1:15 - 2:30 PM Introduction to Projects  
-
-*Lead Instructors: Anthony Arendt*
-
-* expectations and how to hack
-* how will we break up into project groups on Monday
-* overview of existing list of projects
+* pitching of project ideas
+* breakout groups to learn more about which team you'd like to join
 * [Examples of 2020 Hackweek Projects](https://github.com/ICESAT-2HackWeek/2020_ICESat-2_Hackweek_Tutorials)
 
+### 1:50 to 2:30 PM: Project Team Breakouts
+
+* meeting with project teams to get your questions answered
 ________________________________________________________
 
 ## DAY 2
@@ -118,7 +123,7 @@ ________________________________________________________
 
 ### 12:45 - 1:30 PM: GPR (Parallel Session 2B)
 
-*Lead Instructors: Ryan Webb*
+*Lead Instructors: Dan McGrath, Tate Meehan, and Ryan Webb*
 
 ### 1:30 PM and later: project work
 
