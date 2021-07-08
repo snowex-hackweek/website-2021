@@ -123,7 +123,7 @@ ________________________________________________________
 
 ### 12:45 - 1:30 PM: GPR (Parallel Session 2B)
 
-*Lead Instructors: Ryan Webb*
+*Lead Instructors: Dan McGrath, Tate Meehan, and Ryan Webb*
 
 ### 1:30 PM and later: project work
 
