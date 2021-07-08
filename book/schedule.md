@@ -25,7 +25,17 @@ All times listed below are UTC -7 (Pacific Daylight Time). You might want to con
 
 ### 10:00 to 10:20 AM: Break
 
-### 10:20 AM to 11:05 AM: SnowEx Mission Overview and Datasets
+### 10:20 AM to 11:05 AM: GitHub, Git, JupyterHub
+
+*Lead Instructor: Joachim Meyer*
+
+* connecting to our shared JupyterHub environment
+* Git/GitHub review
+* learn how to clone tutorials into your working environment
+
+### 11:05 to 11:30 AM: Break
+
+### 11:30 AM to 12:15 PM: SnowEx Mission Overview and Datasets
 
 *Lead Instructors: Megan Mason, Carrie Vuyovich, HP Marshall*
 
@@ -35,16 +45,6 @@ All times listed below are UTC -7 (Pacific Daylight Time). You might want to con
     * methods for data extraction 
     * data manipulation and analysis, cal/val
     * creating basic plots
-
-### 11:05 to 11:30 AM: Break
-
-### 11:30 AM to 12:15 PM: GitHub, Git, JupyterHub
-
-*Lead Instructors: Joachim Meyer*
-
-* connecting to our shared JupyterHub environment
-* Git/GitHub review
-* learn how to clone tutorials into your working environment
 
 ### 12:15 to 12:30 PM Break
 
