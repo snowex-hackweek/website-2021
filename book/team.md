@@ -220,3 +220,12 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 *Ask me about:* Ground-penetrating radar, Cameron Pass, CO, drones/SfM
 ---
+
+**Cassie Lumbrazo**
+^^^
+<img src="https://avatars.githubusercontent.com/u/40898946?v=4" alt="picture of Cassie Lumbrazo" width="200" height="200">
++++
+*Affiliations:* University of Washington
+
+*Ask me about:* Time-lapse cameras, Python, Hydrologic Modeling
+---
