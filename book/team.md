@@ -187,7 +187,7 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 **Derek Hudson**
 ^^^
-<img src="https://raw.githubusercontent.com/db1950/misc/master/img/dhud.png" alt="picture of Derek Hudson" width="200" height="200">
+<img src="https://blogs.nasa.gov/swesarr/wp-content/uploads/sites/305/2021/06/dhud.png" alt="picture of Derek Hudson" width="200" height="200">
 +++
 *Affiliations:* NASA Goddard Space Flight Center
 
