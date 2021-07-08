@@ -52,7 +52,7 @@ jobs:
         docker run -u 1001 \
         -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN \
         -v ${{ github.workspace }}:/home/jovyan:rw \
-        $DOCKER_IMAGE jb build book --warningiserror --keep-going
+        $DOCKER_IMAGE jb build book
 
     - name: Save Build
       if: ${{ always() }}
