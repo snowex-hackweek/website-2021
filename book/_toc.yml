@@ -29,8 +29,9 @@
         - file: tutorials/core-datasets/core-datasets-tutorial
         - file: tutorials/geospatial/index
           sections:
-            - file: tutorials/geospatial/rasters
-            - file: tutorials/geospatial/geospatial_vector
+            - file: tutorials/geospatial/raster
+            - file: tutorials/geospatial/vector
+            - file: tutorials/geospatial/raster_and_vector
         - file: tutorials/sar/index
           sections:
             - file: tutorials/sar/sentinel1
