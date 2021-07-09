@@ -47,11 +47,11 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 **HP Marshall**
 ^^^
-<img src="https://d25vtythmttl3o.cloudfront.net/uploads/sites/153/2010/07/hpmarshall.jpg" alt="picture of HP Marshall" width="165" height="200">
+<img src="https://avatars.githubusercontent.com/u/23019134?v=4" alt="picture of HP Marshall" width="165" height="200">
 +++
 *Affiliations:* Boise State
 
-*Ask me about:* SnowEX, Radar
+*Ask me about:* SnowEX, Radar, UAVSAR
 ---
 
 **Jessica Lundquist**
