@@ -55,6 +55,10 @@
             - file: tutorials/lis/1_exploring_lis_output
             - file: tutorials/lis/2_interactive_widgets
         - file: tutorials/gpr/gpr
+        - file: tutorials/lidar/index
+          sections:
+            - file: tutorials/lidar/ICESat2_tutorial
+
 - part: Projects
   chapters:
     - file: projects/index
