@@ -43,7 +43,7 @@ It can take several minutes for new servers to launch on the cloud - be patient!
 Once things are spun up you will see your very own instance of a {term}`JupyterLab` environment
 ```
 
-![jupyterlab](../img/jupyterlab.png)
+![jupyterhub-overview](../img/jupyterhub-overview.png)
 
 When you log into JupyterHub you have access to your own virtual drive space
 under the `/home/jovyan` directory. No other users will be able to see or access
