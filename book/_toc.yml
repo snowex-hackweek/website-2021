@@ -26,7 +26,12 @@
     - file: tutorials/index
       sections:
         - file: tutorials/jupyter   
-        - file: tutorials/core-datasets/core-datasets-tutorial
+        - file: tutorials/core-datasets/index
+          sections:
+            - file: tutorials/core-datasets/01_introduction
+            - file: tutorials/core-datasets/02_data-package
+            - file: tutorials/core-datasets/03_practice-querying
+            - file: tutorials/core-datasets/04_pit-matrix-example
         - file: tutorials/geospatial/geospatial_vector
         - file: tutorials/raster/intro-ipyleaflet
         - file: tutorials/sar/index

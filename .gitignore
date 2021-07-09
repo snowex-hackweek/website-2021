@@ -138,3 +138,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#Tutorials
+./book/tutorials/core-datasets/images/
+./book/tutorials/core-datasets/data/
