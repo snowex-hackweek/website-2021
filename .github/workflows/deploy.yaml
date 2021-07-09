@@ -23,9 +23,29 @@ jobs:
         docker pull $DOCKER_IMAGE
         docker images
 
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-west-2
+        role-to-assume: github-actions-role
+        role-duration-seconds: 900
+
+    # NOTE: this gets picked up b/c of the docker run -v mount
+    - name: Configure NASA Earthdata Login
+      run: |
+        echo "machine urs.earthdata.nasa.gov login ${{ secrets.EARTHDATA_LOGIN }} password ${{ secrets.EARTHDATA_PASSWORD }}" > .netrc
+        chmod 0600 .netrc
+
+    # NOTE github actions id: uid=1001(runner) gid=121(docker) groups=121(docker),4(adm),101(systemd-journal)
+    # Docker volume mount requires uid matching host, so we change from default (jovyan uid=1000)
     - name: Build JupyterBook
       run: |
-        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw $DOCKER_IMAGE jb build book
+        docker run -u 1001 \
+        -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN \
+        -v ${{ github.workspace }}:/home/jovyan:rw \
+        $DOCKER_IMAGE jb build book
 
     - name: Publish to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
