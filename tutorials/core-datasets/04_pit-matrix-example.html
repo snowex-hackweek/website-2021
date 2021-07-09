@@ -1,0 +1,1329 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pit Matrix Example &#8212; SnowEx Hackweek</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Geospatial Data Analysis: Vector data" href="../geospatial/geospatial_vector.html" />
+    <link rel="prev" title="Practice Querying the Snowexsql Database" href="03_practice-querying.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SnowEx Hackweek</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to SnowEx Hackweek!
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../application.html">
+   Application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Hackweek Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../team.html">
+   Our Team
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../norms/index.html">
+   Hackweek Norms
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/CoC.html">
+     Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/community.html">
+     Learning Community
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../preliminary/index.html">
+   Preliminary Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/swc.html">
+     Software Carpentry Training
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/github.html">
+     GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/git.html">
+     Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/earthdata.html">
+     Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/pangeo.html">
+     Pangeo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/python.html">
+     Python Installation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Tutorials
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_introduction.html">
+     SnowEx Mission and Core Data Sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_data-package.html">
+     Depths and Snow Pit Data Package Contents
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_practice-querying.html">
+     Practice Querying the
+     <em>
+      <strong>
+       Snowexsql Database
+      </strong>
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Pit Matrix Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../geospatial/geospatial_vector.html">
+     Geospatial Data Analysis: Vector data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../raster/intro-ipyleaflet.html">
+     An introduction to rasters
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../sar/index.html">
+     Synthetic Aperture Radar
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/sentinel1.html">
+       Sentinel-1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/swesarr.html">
+       SWESARR Tutorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/uavsar.html">
+       UAVSAR
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../thermal-ir/index.html">
+     Thermal Infrared Remote Sensing of Snow
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../thermal-ir/thermal-ir-tutorial.html">
+       Thermal Infrared Remote Sensing of Snow
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../database/index.html">
+     SnowEx Database
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/1_getting_started_example.html">
+       Introduction to the SnowEx Database
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/2_database_structure.html">
+       How is the Database Structured?
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/3_get_spiral_example.html">
+       Retrieve a Snow Depth Spiral
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/4_plot_raster_example.html">
+       Find A Raster Tile
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
+     Microstructure Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../camera-traps-tutorial/camera-traps-notebook.html">
+     Camera Traps and Snow Applications
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../lis/index.html">
+     NASA Land Information System (LIS)
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lis/1_exploring_lis_output.html">
+       Visualizing and Comparing LIS Output
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lis/2_interactive_widgets.html">
+       Interactive Widgets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gpr/gpr.html">
+     SnowEx Hackweek GPR Tutorial 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/index.html">
+   Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roles.html">
+     Project Roles and Responsibilities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/example_workflow.html">
+     Basic git workflow for a project
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/core-datasets/04_pit-matrix-example.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/snowex-hackweek/website"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/snowex-hackweek/website/issues/new?title=Issue%20on%20page%20%2Ftutorials/core-datasets/04_pit-matrix-example.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/snowex-hackweek/website/edit/main/book/tutorials/core-datasets/04_pit-matrix-example.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distinguish-pits-by-vegetation-coverage">
+   Distinguish pits by vegetation coverage:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distinguish-pits-by-snow-depth-classes">
+     Distinguish pits by snow depth classes:
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pit-matrix-example">
+<h1>Pit Matrix Example<a class="headerlink" href="#pit-matrix-example" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># standard imports</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1">#database imports</span>
+<span class="kn">from</span> <span class="nn">snowexsql.db</span> <span class="kn">import</span> <span class="n">get_db</span>
+<span class="kn">from</span> <span class="nn">snowexsql.data</span> <span class="kn">import</span> <span class="n">SiteData</span><span class="p">,</span> <span class="n">ImageData</span><span class="p">,</span> <span class="n">LayerData</span><span class="p">,</span> <span class="n">PointData</span>
+<span class="kn">from</span> <span class="nn">snowexsql.conversions</span> <span class="kn">import</span> <span class="n">query_to_geopandas</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="distinguish-pits-by-vegetation-coverage">
+<h2>Distinguish pits by vegetation coverage:<a class="headerlink" href="#distinguish-pits-by-vegetation-coverage" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>treeless (0% tree cover)</p></li>
+<li><p>sparse (1-30% tree cover)</p></li>
+<li><p>dense (31-100% tree cover)</p></li>
+</ul>
+<p>*vegetation classes assigned based on optical imagery: tree density map, Nov. 2010 WorldView-2 Imagery</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parse_veg_class</span><span class="p">(</span><span class="n">site_id</span><span class="p">):</span>
+    
+    <span class="c1"># Classifying by vegetation coverage </span>
+    <span class="n">veg_class</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;treeless&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;sparse&#39;</span><span class="p">:[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="s1">&#39;dense&#39;</span><span class="p">:[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]}</span>
+   
+    <span class="n">vclass</span> <span class="o">=</span> <span class="kc">None</span> 
+    
+    <span class="n">class_id</span> <span class="o">=</span> <span class="n">site_id</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="n">class_id</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+        <span class="n">class_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">class_id</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">veg_class</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+            <span class="k">if</span> <span class="n">class_id</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+                <span class="n">vclass</span> <span class="o">=</span> <span class="n">k</span> 
+                
+    <span class="k">return</span> <span class="n">vclass</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="distinguish-pits-by-snow-depth-classes">
+<h3>Distinguish pits by snow depth classes:<a class="headerlink" href="#distinguish-pits-by-snow-depth-classes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>shallow (&lt;90cm)</p></li>
+<li><p>medium (90-122cm)</p></li>
+<li><p>deep (&gt;122cm)</p></li>
+</ul>
+<p>*depth classes assigned based on 2017 snow depth lidar data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parse_depth_class</span><span class="p">(</span><span class="n">site_id</span><span class="p">):</span>
+    <span class="c1"># Classifying by expected depth </span>
+    <span class="n">depth_class</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;shallow&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="s1">&#39;medium&#39;</span><span class="p">:[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="s1">&#39;deep&#39;</span><span class="p">:[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]}</span> 
+   
+    <span class="n">dclass</span> <span class="o">=</span> <span class="kc">None</span> 
+    
+    <span class="n">class_id</span> <span class="o">=</span> <span class="n">site_id</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="n">class_id</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span> <span class="c1">#for the outlier TS site</span>
+        <span class="n">class_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">class_id</span><span class="p">)</span> <span class="c1">#cast as integer</span>
+
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">depth_class</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> <span class="c1">#for the key, value pairs in the dict listed above:</span>
+
+            <span class="k">if</span> <span class="n">class_id</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+                <span class="n">dclass</span> <span class="o">=</span> <span class="n">k</span> 
+
+    <span class="k">return</span> <span class="n">dclass</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the database</span>
+<span class="n">db_name</span> <span class="o">=</span> <span class="s1">&#39;snow:hackweek@52.32.183.144/snowex&#39;</span>
+<span class="n">engine</span><span class="p">,</span> <span class="n">session</span> <span class="o">=</span> <span class="n">get_db</span><span class="p">(</span><span class="n">db_name</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">type</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">LayerData</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">type</span><span class="o">==</span><span class="s1">&#39;density&#39;</span><span class="p">)</span>
+
+<span class="c1"># Form our dataframe from the query </span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> <span class="c1">#cast the value as a float (they are strings)</span>
+ 
+<span class="c1"># parse snow pit data by the veg/depth matrix</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;veg_class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">parse_veg_class</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]]</span> <span class="c1">#run the parse_veg function for every site_id</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;depth_class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">parse_depth_class</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]]</span> <span class="c1">#run the parse_depth funciton for every site_id</span>
+
+<span class="c1"># # Show off our df </span>
+<span class="c1"># df.plot()</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">col_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;site_name&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;instrument&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;units&#39;</span><span class="p">,</span> <span class="s1">&#39;surveyors&#39;</span><span class="p">,</span> <span class="s1">&#39;latitude&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;longitude&#39;</span><span class="p">,</span> <span class="s1">&#39;geom&#39;</span><span class="p">,</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span> <span class="s1">&#39;site_id&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;veg_class&#39;</span><span class="p">,</span> <span class="s1">&#39;depth_class&#39;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col_list</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>site_name</th>
+      <th>date</th>
+      <th>id</th>
+      <th>instrument</th>
+      <th>type</th>
+      <th>units</th>
+      <th>surveyors</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>geom</th>
+      <th>depth</th>
+      <th>site_id</th>
+      <th>value</th>
+      <th>veg_class</th>
+      <th>depth_class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-30</td>
+      <td>4272</td>
+      <td>None</td>
+      <td>density</td>
+      <td>None</td>
+      <td>None</td>
+      <td>39.039987</td>
+      <td>-108.191917</td>
+      <td>POINT (743040.000 4324967.000)</td>
+      <td>75.0</td>
+      <td>9C17</td>
+      <td>124.5</td>
+      <td>dense</td>
+      <td>deep</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-30</td>
+      <td>4273</td>
+      <td>None</td>
+      <td>density</td>
+      <td>None</td>
+      <td>None</td>
+      <td>39.039987</td>
+      <td>-108.191917</td>
+      <td>POINT (743040.000 4324967.000)</td>
+      <td>65.0</td>
+      <td>9C17</td>
+      <td>207.0</td>
+      <td>dense</td>
+      <td>deep</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-30</td>
+      <td>4274</td>
+      <td>None</td>
+      <td>density</td>
+      <td>None</td>
+      <td>None</td>
+      <td>39.039987</td>
+      <td>-108.191917</td>
+      <td>POINT (743040.000 4324967.000)</td>
+      <td>55.0</td>
+      <td>9C17</td>
+      <td>230.0</td>
+      <td>dense</td>
+      <td>deep</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-30</td>
+      <td>4275</td>
+      <td>None</td>
+      <td>density</td>
+      <td>None</td>
+      <td>None</td>
+      <td>39.039987</td>
+      <td>-108.191917</td>
+      <td>POINT (743040.000 4324967.000)</td>
+      <td>45.0</td>
+      <td>9C17</td>
+      <td>258.5</td>
+      <td>dense</td>
+      <td>deep</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-30</td>
+      <td>4276</td>
+      <td>None</td>
+      <td>density</td>
+      <td>None</td>
+      <td>None</td>
+      <td>39.039987</td>
+      <td>-108.191917</td>
+      <td>POINT (743040.000 4324967.000)</td>
+      <td>35.0</td>
+      <td>9C17</td>
+      <td>258.0</td>
+      <td>dense</td>
+      <td>deep</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2817</th>
+      <td>Grand Mesa</td>
+      <td>2020-02-06</td>
+      <td>7</td>
+      <td>None</td>
+      <td>density</td>
+      <td>None</td>
+      <td>None</td>
+      <td>39.030796</td>
+      <td>-108.176157</td>
+      <td>POINT (744436.000 4323989.000)</td>
+      <td>59.0</td>
+      <td>9N30</td>
+      <td>323.5</td>
+      <td>dense</td>
+      <td>deep</td>
+    </tr>
+    <tr>
+      <th>2818</th>
+      <td>Grand Mesa</td>
+      <td>2020-02-06</td>
+      <td>8</td>
+      <td>None</td>
+      <td>density</td>
+      <td>None</td>
+      <td>None</td>
+      <td>39.030796</td>
+      <td>-108.176157</td>
+      <td>POINT (744436.000 4323989.000)</td>
+      <td>49.0</td>
+      <td>9N30</td>
+      <td>324.0</td>
+      <td>dense</td>
+      <td>deep</td>
+    </tr>
+    <tr>
+      <th>2819</th>
+      <td>Grand Mesa</td>
+      <td>2020-02-06</td>
+      <td>9</td>
+      <td>None</td>
+      <td>density</td>
+      <td>None</td>
+      <td>None</td>
+      <td>39.030796</td>
+      <td>-108.176157</td>
+      <td>POINT (744436.000 4323989.000)</td>
+      <td>39.0</td>
+      <td>9N30</td>
+      <td>329.0</td>
+      <td>dense</td>
+      <td>deep</td>
+    </tr>
+    <tr>
+      <th>2820</th>
+      <td>Grand Mesa</td>
+      <td>2020-02-06</td>
+      <td>10</td>
+      <td>None</td>
+      <td>density</td>
+      <td>None</td>
+      <td>None</td>
+      <td>39.030796</td>
+      <td>-108.176157</td>
+      <td>POINT (744436.000 4323989.000)</td>
+      <td>29.0</td>
+      <td>9N30</td>
+      <td>344.5</td>
+      <td>dense</td>
+      <td>deep</td>
+    </tr>
+    <tr>
+      <th>2821</th>
+      <td>Grand Mesa</td>
+      <td>2020-02-06</td>
+      <td>11</td>
+      <td>None</td>
+      <td>density</td>
+      <td>None</td>
+      <td>None</td>
+      <td>39.030796</td>
+      <td>-108.176157</td>
+      <td>POINT (744436.000 4323989.000)</td>
+      <td>19.0</td>
+      <td>9N30</td>
+      <td>371.0</td>
+      <td>dense</td>
+      <td>deep</td>
+    </tr>
+  </tbody>
+</table>
+<p>2822 rows × 15 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">depth</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       75.0
+1       65.0
+2       55.0
+3       45.0
+4       35.0
+        ... 
+2817    59.0
+2818    49.0
+2819    39.0
+2820    29.0
+2821    19.0
+Name: depth, Length: 2822, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># These are all of the unique site ids </span>
+<span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>153
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#make df with only 153 rows using site_id.unique</span>
+<span class="n">gb</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;site_id&#39;</span><span class="p">,</span> <span class="s1">&#39;veg_class&#39;</span><span class="p">])</span>
+<span class="c1">#gb = df.groupby(&#39;site_id&#39;)</span>
+<span class="n">gb</span><span class="p">[</span><span class="s1">&#39;site_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;veg_class&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>veg_class
+dense       50
+sparse      39
+treeless    60
+Name: site_name, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># d = df[[&#39;veg_class&#39;, &#39;depth_class&#39;]].groupby(df[&#39;site_id&#39;]).groups</span>
+<span class="c1"># gb = df.groupby([&#39;veg_class&#39;, &#39;site_id&#39;]).count()</span>
+<span class="c1"># gb = df.groupby([&#39;site_id&#39;]).count()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;veg_class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;veg_class&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+<span class="c1"># print(gb)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="mi">0</span><span class="n">bf2b49e8d55</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># gb = df.groupby([&#39;veg_class&#39;, &#39;site_id&#39;]).count()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># gb = df.groupby([&#39;site_id&#39;]).count()</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;veg_class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;veg_class&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># print(gb)</span>
+
+<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/pandas/core/series.py</span> in <span class="ni">groupby</span><span class="nt">(self, by, axis, level, as_index, sort, group_keys, squeeze, observed, dropna)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1718</span>         <span class="n">axis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_axis_number</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1719</span> 
+<span class="ne">-&gt; </span><span class="mi">1720</span>         <span class="k">return</span> <span class="n">SeriesGroupBy</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1721</span>             <span class="n">obj</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1722</span>             <span class="n">keys</span><span class="o">=</span><span class="n">by</span><span class="p">,</span>
+
+<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/pandas/core/groupby/groupby.py</span> in <span class="ni">__init__</span><span class="nt">(self, obj, keys, axis, level, grouper, exclusions, selection, as_index, sort, group_keys, squeeze, observed, mutated, dropna)</span>
+<span class="g g-Whitespace">    </span><span class="mi">558</span>             <span class="kn">from</span> <span class="nn">pandas.core.groupby.grouper</span> <span class="kn">import</span> <span class="n">get_grouper</span>
+<span class="g g-Whitespace">    </span><span class="mi">559</span> 
+<span class="ne">--&gt; </span><span class="mi">560</span>             <span class="n">grouper</span><span class="p">,</span> <span class="n">exclusions</span><span class="p">,</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">get_grouper</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">561</span>                 <span class="n">obj</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">562</span>                 <span class="n">keys</span><span class="p">,</span>
+
+<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/pandas/core/groupby/grouper.py</span> in <span class="ni">get_grouper</span><span class="nt">(obj, key, axis, level, sort, observed, mutated, validate, dropna)</span>
+<span class="g g-Whitespace">    </span><span class="mi">809</span>                 <span class="n">in_axis</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">gpr</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">gpr</span><span class="p">,</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">810</span>             <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">811</span>                 <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">gpr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">812</span>         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">gpr</span><span class="p">,</span> <span class="n">Grouper</span><span class="p">)</span> <span class="ow">and</span> <span class="n">gpr</span><span class="o">.</span><span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">813</span>             <span class="c1"># Add key to exclusions</span>
+
+<span class="ne">KeyError</span>: &#39;veg_class&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;veg_class&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">23</span><span class="o">-</span><span class="n">e4d8a61dcf2c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;veg_class&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: &#39;numpy.ndarray&#39; object has no attribute &#39;groupby&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;veg_class&#39;</span><span class="p">,</span> <span class="s1">&#39;site_id&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;veg_class&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="c1">#table I like!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>site_id</th>
+    </tr>
+    <tr>
+      <th>veg_class</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>dense</th>
+      <td>923</td>
+    </tr>
+    <tr>
+      <th>sparse</th>
+      <td>801</td>
+    </tr>
+    <tr>
+      <th>treeless</th>
+      <td>1017</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;veg_class&#39;</span><span class="p">,</span> <span class="s1">&#39;counter&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;veg_class&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;veg_class&#39;</span><span class="p">,</span> <span class="s1">&#39;depth&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;veg_class&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Plot depth classes</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;depth_class&#39;</span><span class="p">,</span> <span class="s1">&#39;counter&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;depth_class&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;depth_class&#39;</span><span class="p">,</span> <span class="s1">&#39;depth&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;depth_class&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unique_pit_id</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;unique_pit_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">unique_pit_id</span>
+
+<span class="c1"># groups = df[[&#39;unique_pit_id&#39;, &#39;veg_class&#39;, &#39;counter&#39;]].groupby(&#39;veg_class&#39;).groups</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">veg_class</span> <span class="o">==</span> <span class="s2">&quot;treeless&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">unique_pit_id</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()[</span><span class="s1">&#39;depth&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">veg_class</span> <span class="o">==</span> <span class="s2">&quot;sparse&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">unique_pit_id</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()[</span><span class="s1">&#39;depth&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">veg_class</span> <span class="o">==</span> <span class="s2">&quot;dense&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">unique_pit_id</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()[</span><span class="s1">&#39;depth&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">veg_class</span> <span class="o">==</span> <span class="s2">&quot;treeless&quot;</span><span class="p">][</span><span class="s2">&quot;unique_pit_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">veg_class</span> <span class="o">==</span> <span class="s2">&quot;sparse&quot;</span><span class="p">][</span><span class="s2">&quot;unique_pit_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">veg_class</span> <span class="o">==</span> <span class="s2">&quot;dense&quot;</span><span class="p">][</span><span class="s2">&quot;unique_pit_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the database</span>
+<span class="n">db_name</span> <span class="o">=</span> <span class="s1">&#39;snow:hackweek@52.32.183.144/snowex&#39;</span>
+<span class="n">engine</span><span class="p">,</span> <span class="n">session</span> <span class="o">=</span> <span class="n">get_db</span><span class="p">(</span><span class="n">db_name</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">SiteData</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">SiteData</span><span class="p">)</span>
+
+<span class="c1"># # Form our dataframe from the query </span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+<span class="c1"># df[&#39;value&#39;] = np.float64(df.value)   # these come out as strings ... </span>
+<span class="c1"># df[&#39;counter&#39;] = 1 </span>
+
+<span class="c1"># df[&#39;veg_class&#39;] = [parse_veg_class(i) for i in df[&#39;site_id&#39;]]</span>
+<span class="c1"># df[&#39;depth_class&#39;] = [parse_depth_class(i) for i in df[&#39;site_id&#39;]]</span>
+
+<span class="c1"># # Show off our df </span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;veg_class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">0</span><span class="n">a87688d7f94</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;veg_class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;df&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>PLOT: #1 Density</p>
+<ul class="simple">
+<li><p>depth (cm) vs. density (kg/m3) for snow depth classes</p></li>
+<li><p>3 colors: shallow (r), medium (g), deep (b)</p></li>
+<li><p>vertical bars to show the 10cm measurement increments (see ../images)</p></li>
+<li><p>time period – (hmm, all? single day? 1 week avg?)</p></li>
+</ul>
+<p>PLOT: #2 Temperature</p>
+<ul class="simple">
+<li><p>depth (cm) vs. temperature (C) for snow depth classes</p></li>
+<li><p>3 colors: shallow (r), medium (g), deep (b)</p></li>
+<li><p>x-axis is -10 to 0 (see ../images)</p></li>
+<li><p>time period – (hmm, all? single day? 1 week avg?)</p></li>
+<li><p>could plot all pits with light gray line (or group by depth classes in a light/transparent color) and then take the avg. of ‘shallow’, ‘medium’, ‘deep’ and plot with a bold color line</p></li>
+</ul>
+<p>PLOT: #3</p>
+<ul class="simple">
+<li><p>do something with stratigraphy here….still thinking on that…</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># site_id = &#39;5N34&#39;</span>
+<span class="c1"># dclass = None </span>
+<span class="c1"># class_id = site_id[0]</span>
+
+<span class="c1"># # (k for k,v in dict.iteritems() if v == value)</span>
+
+<span class="c1"># for k,v in depth_class.items():</span>
+<span class="c1">#     (k for k,v in class_id)</span>
+    
+    
+<span class="c1">#     print(k)</span>
+<span class="c1"># #     print(&#39;v:&#39;, v)</span>
+<span class="c1"># # #     if class_id = v</span>
+<span class="c1"># # #     dclass = k</span>
+<span class="c1"># # #     print(dclass)</span>
+<span class="c1"># # print(class_id)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># def parse_veg_class(site_id):</span>
+<span class="c1">#     # Classifying by vegetation coverage </span>
+<span class="c1">#     veg_class = {&#39;treeless&#39;:[1, 3], &#39;sparse&#39;:[4, 6], &#39;dense&#39;:[7, 9]}</span>
+   
+<span class="c1">#     vclass = None </span>
+    
+<span class="c1">#     class_id = site_id[0]</span>
+    
+<span class="c1">#     if class_id.isnumeric():</span>
+<span class="c1">#         class_id = int(class_id)</span>
+
+<span class="c1">#         for k,v in veg_class.items():</span>
+
+<span class="c1">#             if class_id &gt;= v[0] and class_id &lt;= v[1]:</span>
+<span class="c1">#                 vclass = k </span>
+                
+<span class="c1">#     return vclass</span>
+
+<span class="c1"># def parse_depth_class(site_id):</span>
+<span class="c1">#     # Classifying by expected depth </span>
+<span class="c1">#     depth_class = {&#39;shallow&#39;:[1, 4, 7], &#39;medium&#39;:[2, 5, 8], &#39;deep&#39;:[3, 6, 9]} #[1:3:9]</span>
+   
+<span class="c1">#     dclass = None </span>
+    
+<span class="c1">#     class_id = site_id[0]</span>
+    
+<span class="c1">#     if class_id.isnumeric(): #for the outlier TS site</span>
+<span class="c1">#         class_id = int(class_id) #cast as integer</span>
+
+<span class="c1">#         for k,v in depth_class.items(): #for the key, value pairs in the dict listed above:</span>
+
+<span class="c1">#             if class_id = v[0] or v[1] or v[2]:</span>
+<span class="c1">#                 dclass = k </span>
+<span class="c1">#                 break</span>
+
+<span class="c1">#     return dclass </span>
+
+<span class="c1"># site_id = &#39;5N34&#39;</span>
+<span class="c1"># dclass = None </span>
+<span class="c1"># class_id = site_id[0]</span>
+
+<span class="c1"># # (k for k,v in dict.iteritems() if v == value)</span>
+
+<span class="c1"># for k,v in depth_class.items():</span>
+<span class="c1">#     (k for k,v in class_id)</span>
+    
+    
+<span class="c1">#     print(k)</span>
+<span class="c1"># #     print(&#39;v:&#39;, v)</span>
+<span class="c1"># # #     if class_id = v</span>
+<span class="c1"># # #     dclass = k</span>
+<span class="c1"># # #     print(dclass)</span>
+<span class="c1"># # print(class_id)</span>
+
+<span class="c1"># # load the database</span>
+<span class="c1"># db_name = &#39;snow:hackweek@52.32.183.144/snowex&#39;</span>
+<span class="c1"># engine, session = get_db(db_name)</span>
+
+<span class="c1"># result = session.query(LayerData.type).distinct().all()</span>
+<span class="c1"># print(result)</span>
+
+<span class="c1"># qry = session.query(LayerData).filter(LayerData.type==&#39;density&#39;)</span>
+
+<span class="c1"># # Form our dataframe from the query </span>
+<span class="c1"># df = query_to_geopandas(qry, engine)</span>
+
+<span class="c1"># # Form a handy lambda for performant ops in df&#39;s</span>
+<span class="c1"># veg_class_lambda = lambda row: parse_veg_class(row[&#39;site_id&#39;])</span>
+<span class="c1"># df[&#39;veg_class&#39;] = df.apply(veg_class_lambda, axis=1)</span>
+
+<span class="c1"># # Show off our df </span>
+<span class="c1"># df.plot()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/core-datasets"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="03_practice-querying.html" title="previous page">Practice Querying the <em><strong>Snowexsql Database</strong></em></a>
+    <a class='right-next' id="next-link" href="../geospatial/geospatial_vector.html" title="next page">Geospatial Data Analysis: Vector data</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By eScience Institute, University of Washington<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QM84T4SB76"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-QM84T4SB76');
+                </script>
+
+  </body>
+</html>

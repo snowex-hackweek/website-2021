@@ -1,0 +1,1943 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Depths and Snow Pit Data Package Contents &#8212; SnowEx Hackweek</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Practice Querying the Snowexsql Database" href="03_practice-querying.html" />
+    <link rel="prev" title="SnowEx Mission and Core Data Sets" href="01_introduction.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SnowEx Hackweek</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to SnowEx Hackweek!
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../application.html">
+   Application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Hackweek Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../team.html">
+   Our Team
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../norms/index.html">
+   Hackweek Norms
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/CoC.html">
+     Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/community.html">
+     Learning Community
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../preliminary/index.html">
+   Preliminary Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/swc.html">
+     Software Carpentry Training
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/github.html">
+     GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/git.html">
+     Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/earthdata.html">
+     Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/pangeo.html">
+     Pangeo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/python.html">
+     Python Installation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Tutorials
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_introduction.html">
+     SnowEx Mission and Core Data Sets
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Depths and Snow Pit Data Package Contents
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_practice-querying.html">
+     Practice Querying the
+     <em>
+      <strong>
+       Snowexsql Database
+      </strong>
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_pit-matrix-example.html">
+     Pit Matrix Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../geospatial/geospatial_vector.html">
+     Geospatial Data Analysis: Vector data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../raster/intro-ipyleaflet.html">
+     An introduction to rasters
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../sar/index.html">
+     Synthetic Aperture Radar
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/sentinel1.html">
+       Sentinel-1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/swesarr.html">
+       SWESARR Tutorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/uavsar.html">
+       UAVSAR
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../thermal-ir/index.html">
+     Thermal Infrared Remote Sensing of Snow
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../thermal-ir/thermal-ir-tutorial.html">
+       Thermal Infrared Remote Sensing of Snow
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../database/index.html">
+     SnowEx Database
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/1_getting_started_example.html">
+       Introduction to the SnowEx Database
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/2_database_structure.html">
+       How is the Database Structured?
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/3_get_spiral_example.html">
+       Retrieve a Snow Depth Spiral
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/4_plot_raster_example.html">
+       Find A Raster Tile
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
+     Microstructure Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../camera-traps-tutorial/camera-traps-notebook.html">
+     Camera Traps and Snow Applications
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../lis/index.html">
+     NASA Land Information System (LIS)
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lis/1_exploring_lis_output.html">
+       Visualizing and Comparing LIS Output
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lis/2_interactive_widgets.html">
+       Interactive Widgets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gpr/gpr.html">
+     SnowEx Hackweek GPR Tutorial 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/index.html">
+   Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roles.html">
+     Project Roles and Responsibilities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/example_workflow.html">
+     Basic git workflow for a project
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/core-datasets/02_data-package.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/snowex-hackweek/website"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/snowex-hackweek/website/issues/new?title=Issue%20on%20page%20%2Ftutorials/core-datasets/02_data-package.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/snowex-hackweek/website/edit/main/book/tutorials/core-datasets/02_data-package.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-snow-depth-data-from-nsidc">
+   Download snow depth data from NSIDC
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#method-1-programmatically-download-snow-depth-data-from-nsidc">
+   Method 1: Programmatically download snow depth data from NSIDC
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#method-2-access-data-from-our-shared-resources-server">
+   Method 2: Access data from our shared resources server
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-the-depth-file">
+     Read the Depth File
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prep-for-data-analysis">
+     Prep for Data Analysis
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-groupby-to-sort-the-data-set">
+       Use .groupby() to sort the data set
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#your-turn">
+       <em>
+        <strong>
+         Your turn
+        </strong>
+       </em>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#find-depths-associated-with-a-certain-measurement-tool">
+       Find depths associated with a certain measurement tool
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       <em>
+        <strong>
+         Your turn
+        </strong>
+       </em>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting">
+     Plotting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-snow-pit-data-from-nsidc">
+   Download snow pit data from NSIDC
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#method-1-programmatically-download-snow-pit-data-from-nsidc">
+   Method 1: Programmatically download snow pit data from NSIDC
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Method 2: Access data from our shared resources server
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#don-t-want-to-work-with-all-the-files-method-to-filter-files">
+     Don’t want to work with all the files? Method to filter files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-the-pit-parameter-file">
+     Read the Pit Parameter File
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Plotting
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="depths-and-snow-pit-data-package-contents">
+<h1>Depths and Snow Pit Data Package Contents<a class="headerlink" href="#depths-and-snow-pit-data-package-contents" title="Permalink to this headline">¶</a></h1>
+<p>(12 minutes)</p>
+<p>Learning Objectives:</p>
+<ul class="simple">
+<li><p>Tools to access data.</p></li>
+<li><p>Code snippets to extract and prep data.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># standard imports</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1">#plotting imports</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">([</span><span class="s1">&#39;seaborn-notebook&#39;</span><span class="p">])</span>
+
+<span class="c1"># unique imports</span>
+<span class="kn">import</span> <span class="nn">s3fs</span> <span class="c1">#access data from the AWS s3 bucket</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="download-snow-depth-data-from-nsidc">
+<h2>Download snow depth data from NSIDC<a class="headerlink" href="#download-snow-depth-data-from-nsidc" title="Permalink to this headline">¶</a></h2>
+<p>From the SnowEx20 <a class="reference external" href="https://nsidc.org/data/SNEX20_SD/versions/1">Depth Probe Landing Page</a>, you can download data and access the <a class="reference external" href="https://nsidc.org/sites/nsidc.org/files/SNEX20_SD-V001-UserGuide_1.pdf">User’s Guide</a>
+<img alt="../../_images/SD-landingPage.png" src="../../_images/SD-landingPage.png" /></p>
+<p>The Community Snow Depth Probe data package is a single CSV with over 36,000 geolocated snow depths! Three different instrument types were used to measure depths and are recorded in the Measurement Tool column.</p>
+</div>
+<div class="section" id="method-1-programmatically-download-snow-depth-data-from-nsidc">
+<h2>Method 1: Programmatically download snow depth data from NSIDC<a class="headerlink" href="#method-1-programmatically-download-snow-depth-data-from-nsidc" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> &#39;./scripts/nsidc-download_SNEX20_SD.001.py&#39; 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grand Mesa 2020 Snow Depth data download complete&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Querying for data:
+	https://cmr.earthdata.nasa.gov/search/granules.json?provider=NSIDC_ECS&amp;sort_key[]=start_date&amp;sort_key[]=producer_granule_id&amp;scroll=true&amp;page_size=2000&amp;short_name=SNEX20_SD&amp;version=001&amp;version=01&amp;version=1&amp;temporal[]=2020-01-28T00:00:00Z,2020-02-12T23:59:59Z
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 1 matches.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading 2 files...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/2: ./data/depths/SnowEx2020_SnowDepths_COGM_alldepths_v01.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [===============                                             ]  25%  5.9MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [=============================================               ]  75%  8.1MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2/2: ./data/depths/SnowEx2020_SnowDepths_COGM_alldepths_v01.csv.xml
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  1.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grand Mesa 2020 Snow Depth data download complete
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># show filename:</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;./data/depths/&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.csv&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">filename</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SnowEx2020_SnowDepths_COGM_alldepths_v01.csv
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="method-2-access-data-from-our-shared-resources-server">
+<h2>Method 2: Access data from our shared resources server<a class="headerlink" href="#method-2-access-data-from-our-shared-resources-server" title="Permalink to this headline">¶</a></h2>
+<p>Quick and easy access for hackweek or if you haven’t gone through the steps to <a class="reference external" href="https://snowex-hackweek.github.io/website/preliminary/earthdata.html#configure-programmatic-access-to-nasa-servers">configure programmatic access</a> to NASA servers yet. This pulls data from our AWS, S3 bucket</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uses AWS credentials on machine</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">s3fs</span><span class="o">.</span><span class="n">S3FileSystem</span><span class="p">()</span> 
+
+<span class="c1"># which data bucket?</span>
+<span class="n">bucket</span> <span class="o">=</span> <span class="s1">&#39;snowex-data&#39;</span>  
+      
+<span class="c1"># contents inside /depths     </span>
+<span class="n">flist</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">bucket</span><span class="si">}</span><span class="s1">/tutorial-data/core-datasets/depths&#39;</span><span class="p">)</span> 
+
+<span class="c1"># show list of files</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;File list is: &#39;</span><span class="p">,</span> <span class="n">flist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File list is:  [&#39;snowex-data/tutorial-data/core-datasets/depths/SnowEx2020_SnowDepths_COGM_alldepths_v01.csv&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="read-the-depth-file">
+<h3>Read the Depth File<a class="headerlink" href="#read-the-depth-file" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># open depth data file, and create pandas dataframe</span>
+<span class="k">with</span> <span class="n">fs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">flist</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> 
+    
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span> <span class="c1">#parse the date[2] and time[3] columns such that they are read in as datetime dtypes</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;file has been read, and is ready to use.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>file has been read, and is ready to use.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check data types for each column</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date (yyyymmdd)_Time (hh:mm, local, MST)                           datetime64[ns]
+Measurement Tool (MP = Magnaprobe; M2 = Mesa 2; PR = Pit Ruler)            object
+ID                                                                          int64
+PitID                                                                      object
+Longitude                                                                 float64
+Latitude                                                                  float64
+Easting                                                                   float64
+Northing                                                                  float64
+Depth (cm)                                                                  int64
+elevation (m)                                                             float64
+equipment                                                                  object
+Version Number                                                              int64
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="prep-for-data-analysis">
+<h3>Prep for Data Analysis<a class="headerlink" href="#prep-for-data-analysis" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rename some columns for ease further down</span>
+<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Measurement Tool (MP = Magnaprobe; M2 = Mesa 2; PR = Pit Ruler)&#39;</span><span class="p">:</span><span class="s1">&#39;Measurement Tool&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;Date (yyyymmdd)_Time (hh:mm, local, MST)&#39;</span><span class="p">:</span> <span class="s2">&quot;Datetime&quot;</span><span class="p">},</span>
+          <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># set up filter for IOP date range</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">&#39;1/28/2020&#39;</span><span class="p">)</span> <span class="c1">#first day of GM IOP campaign</span>
+<span class="n">end</span>   <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s1">&#39;2/12/2020&#39;</span><span class="p">)</span> <span class="c1">#last day of GM IOP campaign</span>
+
+<span class="c1"># filter the IOP date range</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Datetime&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">start</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Datetime&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">)]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DataFrame shape is: &#39;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame shape is:  (36388, 12)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Datetime</th>
+      <th>Measurement Tool</th>
+      <th>ID</th>
+      <th>PitID</th>
+      <th>Longitude</th>
+      <th>Latitude</th>
+      <th>Easting</th>
+      <th>Northing</th>
+      <th>Depth (cm)</th>
+      <th>elevation (m)</th>
+      <th>equipment</th>
+      <th>Version Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2020-01-28 11:48:00</td>
+      <td>MP</td>
+      <td>100000</td>
+      <td>8N58</td>
+      <td>-108.13515</td>
+      <td>39.03045</td>
+      <td>747987.62</td>
+      <td>4324061.71</td>
+      <td>94</td>
+      <td>3148.2</td>
+      <td>CRREL_B</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2020-01-28 11:48:00</td>
+      <td>MP</td>
+      <td>100001</td>
+      <td>8N58</td>
+      <td>-108.13516</td>
+      <td>39.03045</td>
+      <td>747986.75</td>
+      <td>4324061.68</td>
+      <td>74</td>
+      <td>3148.3</td>
+      <td>CRREL_B</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2020-01-28 11:48:00</td>
+      <td>MP</td>
+      <td>100002</td>
+      <td>8N58</td>
+      <td>-108.13517</td>
+      <td>39.03045</td>
+      <td>747985.89</td>
+      <td>4324061.65</td>
+      <td>90</td>
+      <td>3148.2</td>
+      <td>CRREL_B</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2020-01-28 11:48:00</td>
+      <td>MP</td>
+      <td>100003</td>
+      <td>8N58</td>
+      <td>-108.13519</td>
+      <td>39.03044</td>
+      <td>747984.19</td>
+      <td>4324060.49</td>
+      <td>87</td>
+      <td>3148.6</td>
+      <td>CRREL_B</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2020-01-28 11:48:00</td>
+      <td>MP</td>
+      <td>100004</td>
+      <td>8N58</td>
+      <td>-108.13519</td>
+      <td>39.03042</td>
+      <td>747984.26</td>
+      <td>4324058.27</td>
+      <td>90</td>
+      <td>3150.1</td>
+      <td>CRREL_B</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="use-groupby-to-sort-the-data-set">
+<h4>Use .groupby() to sort the data set<a class="headerlink" href="#use-groupby-to-sort-the-data-set" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># group data by the measurement tool </span>
+<span class="c1"># gb = df.groupby(&#39;Measurement Tool&#39;, as_index=False).mean().round(1)</span>
+
+<span class="n">gb</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Measurement Tool&#39;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;count&#39;</span><span class="p">])</span>
+
+<span class="c1"># show mean snow depth from each tool</span>
+<span class="n">gb</span><span class="p">[[</span><span class="s1">&#39;Measurement Tool&#39;</span><span class="p">,</span> <span class="s1">&#39;Depth (cm)&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Measurement Tool</th>
+      <th>Depth (cm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="your-turn">
+<h4><em><strong>Your turn</strong></em><a class="headerlink" href="#your-turn" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># group data by the snow pit ID</span>
+
+
+<span class="c1"># show mean snow depth around each snow pit</span>
+
+
+<span class="c1">#(hint: what is the pit id column called? If you&#39;re not sure you can use df.columns to see a list of column names. Consider using .head() to display only the first 5 returns)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="find-depths-associated-with-a-certain-measurement-tool">
+<h4>Find depths associated with a certain measurement tool<a class="headerlink" href="#find-depths-associated-with-a-certain-measurement-tool" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;List of Measurement Tools: &#39;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Measurement Tool&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>List of Measurement Tools:  [&#39;MP&#39; &#39;M2&#39; &#39;PR&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>r = df.loc[df[‘Measurement Tool’] == ‘PR’]
+print(‘DataFrame shape is: ‘, r.shape)
+r.head()</p>
+</div>
+<div class="section" id="id1">
+<h4><em><strong>Your turn</strong></em><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find all depths recorded by the Mesa2</span>
+
+
+<span class="c1"># (hint: copy/paste is your friend)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s make sure we all have the same pd.DataFrame() again</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pit ruler snow depths from Grand Mesa IOP</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Measurement Tool&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;PR&#39;</span><span class="p">]</span> 
+<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;here!!!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>here!!!
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting">
+<h3>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot pit ruler depths</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Easting&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Northing&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;Depth (cm)&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;PuBu&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Grand Mesa Pit Ruler Depths&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Easting [m]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Northing [m]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Notice the point on the far right - that is the &quot;GML&quot; or Grand Mesa Lodge pit where all instruments were deployed for a comparison study. pitID=GML&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/02_data-package_25_0.png" src="../../_images/02_data-package_25_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Notice the point on the far right - that is the &quot;GML&quot; or Grand Mesa Lodge pit where all instruments were deployed for a comparison study. pitID=GML
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="s1">&#39;Depth (cm)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Grand Mesa Pit Ruler Depths&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Snow Depth (cm)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Frequency&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/02_data-package_26_1.png" src="../../_images/02_data-package_26_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="download-snow-pit-data-from-nsidc">
+<h2>Download snow pit data from NSIDC<a class="headerlink" href="#download-snow-pit-data-from-nsidc" title="Permalink to this headline">¶</a></h2>
+<p>From the SnowEx20 <a class="reference external" href="https://nsidc.org/data/SNEX20_GM_SP/versions/1">Snow Pit Landing Page</a>, you can download data and access the <a class="reference external" href="https://nsidc.org/data/SNEX20_GM_SP/versions/1">User’s Guide</a>.</p>
+<img alt="../../_images/SP-landingPage.png" src="../../_images/SP-landingPage.png" />
+</div>
+<div class="section" id="method-1-programmatically-download-snow-pit-data-from-nsidc">
+<h2>Method 1: Programmatically download snow pit data from NSIDC<a class="headerlink" href="#method-1-programmatically-download-snow-pit-data-from-nsidc" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load snow pit data</span>
+<span class="o">%</span><span class="k">run</span> &#39;scripts/nsidc-download_SNEX20_GM_SP.001.py&#39;
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grand Mesa 2020 Snow Pit data download complete&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Querying for data:
+	https://cmr.earthdata.nasa.gov/search/granules.json?provider=NSIDC_ECS&amp;sort_key[]=start_date&amp;sort_key[]=producer_granule_id&amp;scroll=true&amp;page_size=2000&amp;short_name=SNEX20_GM_SP&amp;version=001&amp;version=01&amp;version=1&amp;temporal[]=2020-01-27T00:00:00Z,2020-02-12T23:59:59Z&amp;options[producer_granule_id][pattern]=true&amp;producer_granule_id[]=*5N19*
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 1 matches.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading 20 files...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>01/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_book1_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [===============                                             ]  25%  6.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  7.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [=============================================               ]  75%  8.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>02/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_book2_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [===============                                             ]  25%  6.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [=============================================               ]  75%  8.1MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.6MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>03/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_book_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============                                                ]  20%  6.3MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================                                    ]  40%  8.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================================                        ]  60%  8.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [================================================            ]  80%  9.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  11.6MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>04/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_density_v01.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  446.8kB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>05/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_east_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.1MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  8.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  9.3MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>06/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_LWC_v01.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  478.2kB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>07/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_north_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.2MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.2MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  9.2MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.3MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>08/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_pit1_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  8.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.1MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  8.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  9.2MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.6MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>09/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_pit2_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  8.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.2MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  8.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  9.3MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_pit_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.1MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  8.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  8.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.6MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_siteDetails_v01.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  465.4kB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_south_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  10.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_SSA_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.6MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.3MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  9.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_stratigraphy_v01.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  375.4kB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_temperature_v01.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  192.0kB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_up_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  10.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  11.3MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_v01.pdf
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  1.6MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_v01.xlsx
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  1.3MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_west_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  8.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.1MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  8.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  9.2MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.6MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19.xml
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  5.1MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grand Mesa 2020 Snow Pit data download complete
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># show filenames</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;./data/pits/&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filename</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*5N19*&#39;</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">filename</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 SnowEx20_SnowPits_GMIOP_20200128_5N19_west_v01.jpg
+1 SnowEx20_SnowPits_GMIOP_20200128_5N19_east_v01.jpg
+2 SnowEx20_SnowPits_GMIOP_20200128_5N19_LWC_v01.csv
+3 SnowEx20_SnowPits_GMIOP_20200128_5N19_SSA_v01.jpg
+4 SnowEx20_SnowPits_GMIOP_20200128_5N19_book_v01.jpg
+5 SnowEx20_SnowPits_GMIOP_20200128_5N19_temperature_v01.csv
+6 SnowEx20_SnowPits_GMIOP_20200128_5N19_density_v01.csv
+7 SnowEx20_SnowPits_GMIOP_20200128_5N19_v01.xlsx
+8 SnowEx20_SnowPits_GMIOP_20200128_5N19.xml
+9 SnowEx20_SnowPits_GMIOP_20200128_5N19_up_v01.jpg
+10 SnowEx20_SnowPits_GMIOP_20200128_5N19_pit2_v01.jpg
+11 SnowEx20_SnowPits_GMIOP_20200128_5N19_north_v01.jpg
+12 SnowEx20_SnowPits_GMIOP_20200128_5N19_v01.pdf
+13 SnowEx20_SnowPits_GMIOP_20200128_5N19_pit_v01.jpg
+14 SnowEx20_SnowPits_GMIOP_20200128_5N19_book1_v01.jpg
+15 SnowEx20_SnowPits_GMIOP_20200128_5N19_stratigraphy_v01.csv
+16 SnowEx20_SnowPits_GMIOP_20200128_5N19_book2_v01.jpg
+17 SnowEx20_SnowPits_GMIOP_20200128_5N19_south_v01.jpg
+18 SnowEx20_SnowPits_GMIOP_20200128_5N19_siteDetails_v01.csv
+19 SnowEx20_SnowPits_GMIOP_20200128_5N19_pit1_v01.jpg
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Method 2: Access data from our shared resources server<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Again, quick access for hackweek or if you haven’t gone through the steps to <a class="reference external" href="https://snowex-hackweek.github.io/website/preliminary/earthdata.html#configure-programmatic-access-to-nasa-servers">configure programmatic access</a> to NASA servers yet. This pulls data from our AWS, S3 bucket</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uses AWS credentials on machine</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">s3fs</span><span class="o">.</span><span class="n">S3FileSystem</span><span class="p">()</span> 
+
+<span class="c1"># which data bucket?</span>
+<span class="n">bucket</span> <span class="o">=</span> <span class="s1">&#39;snowex-data&#39;</span>  
+      
+<span class="c1"># contents inside /pits     </span>
+<span class="n">flist</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">bucket</span><span class="si">}</span><span class="s1">/tutorial-data/core-datasets/pits/&#39;</span><span class="p">)</span>
+
+<span class="c1"># which files do we want?</span>
+<span class="n">suffix</span><span class="o">=</span><span class="s1">&#39;.csv&#39;</span>
+
+<span class="c1"># list comprehension to get .csv files (not .xlsx or .jpgs)</span>
+<span class="n">csv_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">filename</span> <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">flist</span> <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">suffix</span><span class="p">)]</span>
+<span class="n">csv_files</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_20200128_1N6_LWC_v01.csv&#39;,
+ &#39;snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_20200128_1N6_density_v01.csv&#39;,
+ &#39;snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_20200128_1N6_siteDetails_v01.csv&#39;,
+ &#39;snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_20200128_1N6_stratigraphy_v01.csv&#39;,
+ &#39;snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_20200128_1N6_temperature_v01.csv&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="don-t-want-to-work-with-all-the-files-method-to-filter-files">
+<h3>Don’t want to work with all the files? Method to filter files<a class="headerlink" href="#don-t-want-to-work-with-all-the-files-method-to-filter-files" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># what files would you like to find?</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="s1">&#39;temperature&#39;</span>
+<span class="n">pitID</span> <span class="o">=</span> <span class="s1">&#39;5N19&#39;</span>
+<span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;20200128&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="read-the-pit-parameter-file">
+<h3>Read the Pit Parameter File<a class="headerlink" href="#read-the-pit-parameter-file" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">fs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;/snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_v01.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">pitID</span><span class="p">,</span> <span class="n">parameter</span><span class="p">),</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    
+    <span class="n">t</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">t</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th># Height (cm)</th>
+      <th>Temperature (deg C)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>102</td>
+      <td>-9.5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>100</td>
+      <td>-9.4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>90</td>
+      <td>-11.5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>80</td>
+      <td>-7.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>70</td>
+      <td>-5.2</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>60</td>
+      <td>-4.1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>50</td>
+      <td>-3.5</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>40</td>
+      <td>-3.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>30</td>
+      <td>-2.5</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>20</td>
+      <td>-2.1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>-1.5</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0</td>
+      <td>-0.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>Plotting<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot temperature</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Temperature (deg C)&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;# Height (cm)&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;pit </span><span class="si">{}</span><span class="s1">: Temperature Profile&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pitID</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature (deg C)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Snow Depth (cm)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Snow Depth (cm)&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/02_data-package_38_1.png" src="../../_images/02_data-package_38_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># grab a different pit parameter file</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="s1">&#39;density&#39;</span>
+<span class="k">with</span> <span class="n">fs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;/snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_v01.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">pitID</span><span class="p">,</span> <span class="n">parameter</span><span class="p">),</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+
+    <span class="n">d</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th># Top (cm)</th>
+      <th>Bottom (cm)</th>
+      <th>Density A (kg/m3)</th>
+      <th>Density B (kg/m3)</th>
+      <th>Density C (kg/m3)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>102.0</td>
+      <td>92.0</td>
+      <td>136.0</td>
+      <td>138.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>92.0</td>
+      <td>82.0</td>
+      <td>193.0</td>
+      <td>192.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>82.0</td>
+      <td>72.0</td>
+      <td>232.0</td>
+      <td>221.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>72.0</td>
+      <td>62.0</td>
+      <td>262.0</td>
+      <td>260.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>62.0</td>
+      <td>52.0</td>
+      <td>275.0</td>
+      <td>278.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>52.0</td>
+      <td>42.0</td>
+      <td>261.0</td>
+      <td>252.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>42.0</td>
+      <td>32.0</td>
+      <td>267.0</td>
+      <td>269.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>32.0</td>
+      <td>22.0</td>
+      <td>336.0</td>
+      <td>367.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>22.0</td>
+      <td>12.0</td>
+      <td>268.0</td>
+      <td>246.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>12.0</td>
+      <td>2.0</td>
+      <td>262.0</td>
+      <td>271.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the average density </span>
+<span class="n">d</span><span class="p">[</span><span class="s1">&#39;Avg Density (kg/m3)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="p">[[</span><span class="s1">&#39;Density A (kg/m3)&#39;</span><span class="p">,</span> <span class="s1">&#39;Density B (kg/m3)&#39;</span><span class="p">,</span> <span class="s1">&#39;Density C (kg/m3)&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">skipna</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th># Top (cm)</th>
+      <th>Bottom (cm)</th>
+      <th>Density A (kg/m3)</th>
+      <th>Density B (kg/m3)</th>
+      <th>Density C (kg/m3)</th>
+      <th>Avg Density (kg/m3)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>102.0</td>
+      <td>92.0</td>
+      <td>136.0</td>
+      <td>138.0</td>
+      <td>NaN</td>
+      <td>137.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>92.0</td>
+      <td>82.0</td>
+      <td>193.0</td>
+      <td>192.0</td>
+      <td>NaN</td>
+      <td>192.5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>82.0</td>
+      <td>72.0</td>
+      <td>232.0</td>
+      <td>221.0</td>
+      <td>NaN</td>
+      <td>226.5</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>72.0</td>
+      <td>62.0</td>
+      <td>262.0</td>
+      <td>260.0</td>
+      <td>NaN</td>
+      <td>261.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>62.0</td>
+      <td>52.0</td>
+      <td>275.0</td>
+      <td>278.0</td>
+      <td>NaN</td>
+      <td>276.5</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>52.0</td>
+      <td>42.0</td>
+      <td>261.0</td>
+      <td>252.0</td>
+      <td>NaN</td>
+      <td>256.5</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>42.0</td>
+      <td>32.0</td>
+      <td>267.0</td>
+      <td>269.0</td>
+      <td>NaN</td>
+      <td>268.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>32.0</td>
+      <td>22.0</td>
+      <td>336.0</td>
+      <td>367.0</td>
+      <td>NaN</td>
+      <td>351.5</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>22.0</td>
+      <td>12.0</td>
+      <td>268.0</td>
+      <td>246.0</td>
+      <td>NaN</td>
+      <td>257.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>12.0</td>
+      <td>2.0</td>
+      <td>262.0</td>
+      <td>271.0</td>
+      <td>NaN</td>
+      <td>266.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_density</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">dataframe</span><span class="p">):</span>
+    
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This function helps you plot density profiles from snow pits. Use it to iterate through </span>
+<span class="sd">    DataFrame rows and plot the density for each top and bottom segment.</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">dataframe</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="c1"># plot blue bars to represent 10cm density intervals</span>
+        <span class="n">top</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;# Top (cm)&#39;</span><span class="p">]</span>
+        <span class="n">bottom</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Bottom (cm)&#39;</span><span class="p">]</span>
+        <span class="n">dens</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Avg Density (kg/m3)&quot;</span><span class="p">]</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">dens</span><span class="p">,</span> <span class="n">dens</span><span class="p">],[</span><span class="n">bottom</span><span class="p">,</span> <span class="n">top</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+        <span class="c1"># plot a red cross to show the spread between A and B samples</span>
+        <span class="n">densA</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Density A (kg/m3)&quot;</span><span class="p">]</span>
+        <span class="n">densB</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Density B (kg/m3)&quot;</span><span class="p">]</span>
+        <span class="n">middle</span> <span class="o">=</span> <span class="n">bottom</span> <span class="o">+</span> <span class="mf">5.</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">densA</span><span class="p">,</span> <span class="n">densB</span><span class="p">],[</span><span class="n">middle</span><span class="p">,</span><span class="n">middle</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">ax</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plot_density</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">140</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;pit </span><span class="si">{}</span><span class="s1">: Density Profile&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pitID</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Density kg/m3&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Snow Depth (cm)&#39;</span><span class="p">)</span>   
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Snow Depth (cm)&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/02_data-package_41_1.png" src="../../_images/02_data-package_41_1.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/core-datasets"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="01_introduction.html" title="previous page">SnowEx Mission and Core Data Sets</a>
+    <a class='right-next' id="next-link" href="03_practice-querying.html" title="next page">Practice Querying the <em><strong>Snowexsql Database</strong></em></a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By eScience Institute, University of Washington<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QM84T4SB76"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-QM84T4SB76');
+                </script>
+
+  </body>
+</html>

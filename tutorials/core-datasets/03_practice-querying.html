@@ -1,0 +1,1505 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Querying the Snowexsql Database &#8212; SnowEx Hackweek</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Pit Matrix Example" href="04_pit-matrix-example.html" />
+    <link rel="prev" title="Depths and Snow Pit Data Package Contents" href="02_data-package.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SnowEx Hackweek</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to SnowEx Hackweek!
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../application.html">
+   Application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Hackweek Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../team.html">
+   Our Team
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../norms/index.html">
+   Hackweek Norms
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/CoC.html">
+     Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/community.html">
+     Learning Community
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../preliminary/index.html">
+   Preliminary Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/swc.html">
+     Software Carpentry Training
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/github.html">
+     GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/git.html">
+     Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/earthdata.html">
+     Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/pangeo.html">
+     Pangeo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/python.html">
+     Python Installation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Tutorials
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_introduction.html">
+     SnowEx Mission and Core Data Sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_data-package.html">
+     Depths and Snow Pit Data Package Contents
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Practice Querying the
+     <em>
+      <strong>
+       Snowexsql Database
+      </strong>
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_pit-matrix-example.html">
+     Pit Matrix Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../geospatial/geospatial_vector.html">
+     Geospatial Data Analysis: Vector data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../raster/intro-ipyleaflet.html">
+     An introduction to rasters
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../sar/index.html">
+     Synthetic Aperture Radar
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/sentinel1.html">
+       Sentinel-1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/swesarr.html">
+       SWESARR Tutorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/uavsar.html">
+       UAVSAR
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../thermal-ir/index.html">
+     Thermal Infrared Remote Sensing of Snow
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../thermal-ir/thermal-ir-tutorial.html">
+       Thermal Infrared Remote Sensing of Snow
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../database/index.html">
+     SnowEx Database
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/1_getting_started_example.html">
+       Introduction to the SnowEx Database
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/2_database_structure.html">
+       How is the Database Structured?
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/3_get_spiral_example.html">
+       Retrieve a Snow Depth Spiral
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/4_plot_raster_example.html">
+       Find A Raster Tile
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
+     Microstructure Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../camera-traps-tutorial/camera-traps-notebook.html">
+     Camera Traps and Snow Applications
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../lis/index.html">
+     NASA Land Information System (LIS)
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lis/1_exploring_lis_output.html">
+       Visualizing and Comparing LIS Output
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lis/2_interactive_widgets.html">
+       Interactive Widgets
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gpr/gpr.html">
+     SnowEx Hackweek GPR Tutorial 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/index.html">
+   Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roles.html">
+     Project Roles and Responsibilities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/example_workflow.html">
+     Basic git workflow for a project
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/core-datasets/03_practice-querying.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/snowex-hackweek/website"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/snowex-hackweek/website/issues/new?title=Issue%20on%20page%20%2Ftutorials/core-datasets/03_practice-querying.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/snowex-hackweek/website/edit/main/book/tutorials/core-datasets/03_practice-querying.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#snow-pit-data-are-contained-in-the-following-data-tables">
+   <strong>
+    Snow Pit
+   </strong>
+   data are contained in the following data tables:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-1-let-s-find-all-the-pits-that-overlap-with-an-airborne-instrument-of-interest">
+     Example 1: Let’s find all the pits that overlap with an airborne instrument of interest!
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-unsure-of-the-flight-date-but-know-which-instrument-you-d-like-to-overlap-with-here-s-how">
+       1a). Unsure of the flight date, but know which instrument you’d like to overlap with, here’s how:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#b-want-to-select-an-exact-flight-date-match-here-s-how">
+       1b). Want to select an exact flight date match? Here’s how:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#c-want-to-select-a-range-of-dates-near-the-flight-date-here-s-how">
+       1c). Want to select a range of dates near the flight date? Here’s how:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#d-have-a-known-date-in-mind-that-you-wish-to-select-here-s-how">
+       1d). Have a known date in mind that you wish to select, here’s how:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#your-turn">
+     Your turn
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#try-this-query-for-a-different-airborne-instrument-hint-airborne-lidar-aso-inc">
+       try this: query for a different airborne instrument (hint: airborne lidar–&gt; ‘ASO Inc.’)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nice-work-almost-done-here">
+     Nice work, almost done here!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classify-pit-data-based-on-the-depth-and-vegetation-matrix">
+   Classify pit data based on the depth and vegetation matrix
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-2">
+     Example 2:
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-distinguish-pits-by-vegetation-coverage">
+       2a).Distinguish pits by vegetation coverage:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#b-distinguish-pits-by-snow-depth-classes">
+       2b). Distinguish pits by snow depth classes:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="practice-querying-the-snowexsql-database">
+<h1>Practice Querying the <em><strong>Snowexsql Database</strong></em><a class="headerlink" href="#practice-querying-the-snowexsql-database" title="Permalink to this headline">¶</a></h1>
+<p>(12 minutes)</p>
+<p>Learning Objectives:</p>
+<ul class="simple">
+<li><p>First taste of the database!</p></li>
+<li><p>Code snippets to extract and prep data.</p></li>
+<li><p>Generate ideas for project pitches.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># standard imports</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="c1">#database imports</span>
+<span class="kn">from</span> <span class="nn">snowexsql.db</span> <span class="kn">import</span> <span class="n">get_db</span>
+<span class="kn">from</span> <span class="nn">snowexsql.data</span> <span class="kn">import</span> <span class="n">PointData</span><span class="p">,</span> <span class="n">LayerData</span><span class="p">,</span> <span class="n">ImageData</span><span class="p">,</span> <span class="n">SiteData</span>
+<span class="kn">from</span> <span class="nn">snowexsql.conversions</span> <span class="kn">import</span> <span class="n">query_to_geopandas</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the database</span>
+<span class="n">db_name</span> <span class="o">=</span> <span class="s1">&#39;snow:hackweek@52.32.183.144/snowex&#39;</span>
+<span class="n">engine</span><span class="p">,</span> <span class="n">session</span> <span class="o">=</span> <span class="n">get_db</span><span class="p">(</span><span class="n">db_name</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;snowexsql database successfully loaded!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>snowexsql database successfully loaded!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="snow-pit-data-are-contained-in-the-following-data-tables">
+<h2><strong>Snow Pit</strong> data are contained in the following data tables:<a class="headerlink" href="#snow-pit-data-are-contained-in-the-following-data-tables" title="Permalink to this headline">¶</a></h2>
+<p><em>PointData</em>  = pit ruler depths, SWE.<br />
+<em>LayerData</em>  = density, temperature, stratigraphy, etc.<br />
+<em>SiteData</em>   = siteID, airTemp, vegetation, visit time, weather, etc.</p>
+<div class="section" id="example-1-let-s-find-all-the-pits-that-overlap-with-an-airborne-instrument-of-interest">
+<h3>Example 1: Let’s find all the pits that overlap with an airborne instrument of interest!<a class="headerlink" href="#example-1-let-s-find-all-the-pits-that-overlap-with-an-airborne-instrument-of-interest" title="Permalink to this headline">¶</a></h3>
+<p>First, it would be helpful to know, which of the airborne instruments are part of the database, right?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Query the session using .surveyors() to generate a list</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">surveyors</span><span class="p">)</span>
+
+<span class="c1"># Locate all that are distinct</span>
+<span class="n">airborne_instrument_list</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">surveyors</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list of airborne instruments by &quot;surveyor&quot; name: &#39;</span><span class="p">,</span> <span class="n">airborne_instrument_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list of airborne instruments by &quot;surveyor&quot; name:  [(&#39;USGS&#39;,), (&#39;UAVSAR team, JPL&#39;,), (&#39;ASO Inc.&#39;,)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="a-unsure-of-the-flight-date-but-know-which-instrument-you-d-like-to-overlap-with-here-s-how">
+<h4>1a). Unsure of the flight date, but know which instrument you’d like to overlap with, here’s how:<a class="headerlink" href="#a-unsure-of-the-flight-date-but-know-which-instrument-you-d-like-to-overlap-with-here-s-how" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Form on the Images table that returns Raster collection dates</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+
+<span class="c1"># Filter for UAVSAR data</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">surveyors</span> <span class="o">==</span> <span class="s1">&#39;UAVSAR team, JPL&#39;</span><span class="p">)</span>
+
+<span class="c1"># Grab the unique dates</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+<span class="n">qry</span>
+<span class="c1"># Execute the query </span>
+<span class="n">dates</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> 
+
+<span class="c1"># Clean up the dates to remove the tuple</span>
+<span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">]</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;UAVSAR flight dates are: &#39;</span><span class="p">,</span> <span class="n">dates</span><span class="p">)</span>
+
+<span class="c1"># Find all the snow pits done on these days and return a geopandas df</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">SiteData</span><span class="o">.</span><span class="n">geom</span><span class="p">,</span> <span class="n">SiteData</span><span class="o">.</span><span class="n">site_id</span><span class="p">,</span> <span class="n">SiteData</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">SiteData</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">in_</span><span class="p">(</span><span class="n">dates</span><span class="p">))</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+<span class="n">surveyors</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">surveyors</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list of airborne instruments&#39;</span><span class="p">,</span> <span class="n">surveyors</span><span class="p">)</span>
+
+<span class="c1"># Close your session to avoid hanging transactions</span>
+<span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UAVSAR flight dates are:  [datetime.date(2020, 1, 31), datetime.date(2020, 2, 12)]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list of airborne instruments [(&#39;USGS&#39;,), (&#39;UAVSAR team, JPL&#39;,), (&#39;ASO Inc.&#39;,)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="b-want-to-select-an-exact-flight-date-match-here-s-how">
+<h4>1b). Want to select an exact flight date match? Here’s how:<a class="headerlink" href="#b-want-to-select-an-exact-flight-date-match-here-s-how" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pick a day from the list of dates</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
+
+<span class="c1"># Find all the snow pits done on these days and return a geopandas df</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">SiteData</span><span class="o">.</span><span class="n">geom</span><span class="p">,</span> <span class="n">SiteData</span><span class="o">.</span><span class="n">site_id</span><span class="p">,</span> <span class="n">SiteData</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">SiteData</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dt</span><span class="p">)</span>
+<span class="n">df_exact</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+<span class="n">df_exact</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geom</th>
+      <th>site_id</th>
+      <th>date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>POINT (740652.000 4327445.000)</td>
+      <td>2C2</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>POINT (744396.000 4323540.000)</td>
+      <td>8C26</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>POINT (741960.000 4326644.000)</td>
+      <td>6C10</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>POINT (741493.000 4326833.000)</td>
+      <td>1C8</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>POINT (745340.000 4322754.000)</td>
+      <td>8S28</td>
+      <td>2020-01-31</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="c-want-to-select-a-range-of-dates-near-the-flight-date-here-s-how">
+<h4>1c). Want to select a range of dates near the flight date? Here’s how:<a class="headerlink" href="#c-want-to-select-a-range-of-dates-near-the-flight-date-here-s-how" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Form a date range to query on either side of our chosen day </span>
+<span class="n">date_range</span> <span class="o">=</span> <span class="p">[</span><span class="n">dt</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+
+<span class="c1"># Find all the snow pits done on these days and return a geopandas df</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">SiteData</span><span class="o">.</span><span class="n">geom</span><span class="p">,</span> <span class="n">SiteData</span><span class="o">.</span><span class="n">site_id</span><span class="p">,</span> <span class="n">SiteData</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">SiteData</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">in_</span><span class="p">(</span><span class="n">date_range</span><span class="p">))</span>
+<span class="n">df_range</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+<span class="n">df_range</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geom</th>
+      <th>site_id</th>
+      <th>date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>POINT (744561.000 4322721.000)</td>
+      <td>5S21</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>POINT (746228.000 4322671.000)</td>
+      <td>9S39</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>POINT (745937.000 4322754.000)</td>
+      <td>2S37</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>POINT (746546.000 4324066.000)</td>
+      <td>8N45</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>POINT (746350.000 4321976.000)</td>
+      <td>6C34</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>POINT (746149.000 4322488.000)</td>
+      <td>3S38</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>POINT (743652.000 4322680.000)</td>
+      <td>3S14</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>POINT (747055.000 4323916.000)</td>
+      <td>5N50</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>POINT (746553.000 4323759.000)</td>
+      <td>6N46</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>POINT (746303.000 4322571.000)</td>
+      <td>9S40</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>POINT (745842.000 4323805.000)</td>
+      <td>9N44</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>POINT (746802.000 4324222.000)</td>
+      <td>2N48</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>POINT (743109.000 4322924.000)</td>
+      <td>2S11</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>POINT (742607.000 4322917.000)</td>
+      <td>1S8</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>POINT (740652.000 4327445.000)</td>
+      <td>2C2</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>POINT (744396.000 4323540.000)</td>
+      <td>8C26</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>POINT (741960.000 4326644.000)</td>
+      <td>6C10</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>POINT (741493.000 4326833.000)</td>
+      <td>1C8</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>POINT (745340.000 4322754.000)</td>
+      <td>8S28</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>POINT (744862.000 4323250.000)</td>
+      <td>4C30</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>POINT (742466.000 4324372.000)</td>
+      <td>2N12</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>POINT (744477.000 4323731.000)</td>
+      <td>8C22</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>POINT (740765.000 4327379.000)</td>
+      <td>2C3</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>POINT (741378.000 4326992.000)</td>
+      <td>1C7</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>POINT (740508.000 4327577.000)</td>
+      <td>1C1</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>POINT (744757.000 4323667.000)</td>
+      <td>6C24</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>POINT (741132.000 4327061.000)</td>
+      <td>2C6</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>POINT (742453.000 4325752.000)</td>
+      <td>1C14</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>POINT (740839.000 4327345.000)</td>
+      <td>2C4</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>POINT (741580.000 4326713.000)</td>
+      <td>2C9</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>POINT (745010.000 4323372.000)</td>
+      <td>9C28</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>POINT (743817.000 4324185.000)</td>
+      <td>4N27</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>POINT (743446.000 4324827.000)</td>
+      <td>9C19</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>POINT (743402.000 4324736.000)</td>
+      <td>5C20</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>POINT (745598.000 4323988.000)</td>
+      <td>5N41</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>POINT (743040.000 4324967.000)</td>
+      <td>9C17</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>POINT (744913.000 4324095.000)</td>
+      <td>8N34</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>POINT (744625.000 4323947.000)</td>
+      <td>6N31</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>POINT (744281.000 4324245.000)</td>
+      <td>9N29</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>POINT (743884.000 4324477.000)</td>
+      <td>5C21</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>POINT (744548.000 4323646.000)</td>
+      <td>8C25</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>POINT (745121.000 4324175.000)</td>
+      <td>6N36</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>POINT (745305.000 4323998.000)</td>
+      <td>8N38</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>POINT (745678.000 4322446.000)</td>
+      <td>2S35</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>POINT (745458.000 4322762.000)</td>
+      <td>5S31</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>POINT (742674.000 4325582.000)</td>
+      <td>7C15</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>POINT (745787.000 4322066.000)</td>
+      <td>2C33</td>
+      <td>2020-01-30</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="d-have-a-known-date-in-mind-that-you-wish-to-select-here-s-how">
+<h4>1d). Have a known date in mind that you wish to select, here’s how:<a class="headerlink" href="#d-have-a-known-date-in-mind-that-you-wish-to-select-here-s-how" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find all the data that was collected on 2-12-2020</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># Grab all Point data instruments from our date</span>
+<span class="n">point_instruments</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">instrument</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dt</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Point Data are: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">point_instruments</span><span class="p">)</span>
+
+<span class="c1"># Grab all Layer data instruments from our date</span>
+<span class="n">layer_instruments</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">instrument</span><span class="p">,</span> <span class="n">LayerData</span><span class="o">.</span><span class="n">type</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dt</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Layer Data are: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">layer_instruments</span><span class="p">)</span>
+
+<span class="c1"># Grab all Image data instruments from our date</span>
+<span class="n">image_instruments</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">instrument</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dt</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Image Data are: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">image_instruments</span><span class="p">)</span>
+
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">geom</span><span class="p">,</span> <span class="n">PointData</span><span class="o">.</span><span class="n">instrument</span><span class="p">,</span> <span class="n">PointData</span><span class="o">.</span><span class="n">site_id</span><span class="p">,</span> <span class="n">PointData</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dt</span><span class="p">)</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point Data are: 
+ [(&#39;camera-trap&#39;,), (&#39;magnaprobe&#39;,), (&#39;pit ruler&#39;,)]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Layer Data are: 
+ [(&#39;IRIS&#39;, &#39;equivalent_diameter&#39;), (&#39;IRIS&#39;, &#39;reflectance&#39;), (&#39;IRIS&#39;, &#39;sample_signal&#39;), (&#39;IRIS&#39;, &#39;specific_surface_area&#39;), (&#39;IS3-SP-11-01F&#39;, &#39;equivalent_diameter&#39;), (&#39;IS3-SP-11-01F&#39;, &#39;reflectance&#39;), (&#39;IS3-SP-11-01F&#39;, &#39;sample_signal&#39;), (&#39;IS3-SP-11-01F&#39;, &#39;specific_surface_area&#39;), (&#39;snowmicropen&#39;, &#39;force&#39;), (None, &#39;density&#39;), (None, &#39;grain_size&#39;), (None, &#39;grain_type&#39;), (None, &#39;hand_hardness&#39;), (None, &#39;lwc_vol&#39;), (None, &#39;manual_wetness&#39;), (None, &#39;permittivity&#39;), (None, &#39;temperature&#39;)]
+Image Data are: 
+ [(&#39;UAVSAR, L-band InSAR&#39;,)]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geom</th>
+      <th>instrument</th>
+      <th>site_id</th>
+      <th>date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>POINT (769735.347 4332902.516)</td>
+      <td>camera-trap</td>
+      <td>None</td>
+      <td>2020-02-12</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>POINT (743766.479 4321444.155)</td>
+      <td>camera-trap</td>
+      <td>None</td>
+      <td>2020-02-12</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>POINT (743766.479 4321444.155)</td>
+      <td>camera-trap</td>
+      <td>None</td>
+      <td>2020-02-12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>POINT (768631.888 4332353.548)</td>
+      <td>camera-trap</td>
+      <td>None</td>
+      <td>2020-02-12</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>POINT (768631.888 4332353.548)</td>
+      <td>camera-trap</td>
+      <td>None</td>
+      <td>2020-02-12</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1569</th>
+      <td>POINT (742223.910 4326424.260)</td>
+      <td>magnaprobe</td>
+      <td>None</td>
+      <td>2020-02-12</td>
+    </tr>
+    <tr>
+      <th>1570</th>
+      <td>POINT (742225.570 4326426.530)</td>
+      <td>magnaprobe</td>
+      <td>None</td>
+      <td>2020-02-12</td>
+    </tr>
+    <tr>
+      <th>1571</th>
+      <td>POINT (742229.900 4326426.670)</td>
+      <td>magnaprobe</td>
+      <td>None</td>
+      <td>2020-02-12</td>
+    </tr>
+    <tr>
+      <th>1572</th>
+      <td>POINT (742232.530 4326425.640)</td>
+      <td>magnaprobe</td>
+      <td>None</td>
+      <td>2020-02-12</td>
+    </tr>
+    <tr>
+      <th>1573</th>
+      <td>POINT (742233.430 4326424.550)</td>
+      <td>magnaprobe</td>
+      <td>None</td>
+      <td>2020-02-12</td>
+    </tr>
+  </tbody>
+</table>
+<p>1574 rows × 4 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="your-turn">
+<h3>Your turn<a class="headerlink" href="#your-turn" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="try-this-query-for-a-different-airborne-instrument-hint-airborne-lidar-aso-inc">
+<h4>try this: query for a different airborne instrument (hint: airborne lidar–&gt; ‘ASO Inc.’)<a class="headerlink" href="#try-this-query-for-a-different-airborne-instrument-hint-airborne-lidar-aso-inc" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="nice-work-almost-done-here">
+<h3>Nice work, almost done here!<a class="headerlink" href="#nice-work-almost-done-here" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="classify-pit-data-based-on-the-depth-and-vegetation-matrix">
+<h2>Classify pit data based on the depth and vegetation matrix<a class="headerlink" href="#classify-pit-data-based-on-the-depth-and-vegetation-matrix" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-2">
+<h3>Example 2:<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="a-distinguish-pits-by-vegetation-coverage">
+<h4>2a).Distinguish pits by vegetation coverage:<a class="headerlink" href="#a-distinguish-pits-by-vegetation-coverage" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>treeless (0% tree cover)</p></li>
+<li><p>sparse (1-30% tree cover)</p></li>
+<li><p>dense (31-100% tree cover)</p></li>
+</ul>
+<p>*vegetation classes assigned based on optical imagery: tree density map, Nov. 2010 WorldView-2 Imagery</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parse_veg_class</span><span class="p">(</span><span class="n">site_id</span><span class="p">):</span>
+    
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This function parses snow pit data into three vegetation classes:</span>
+<span class="sd">        - 1). Treeless, 2). Sparce, and 3). Dense</span>
+<span class="sd">        </span>
+<span class="sd">    It uses a python dictionary where:</span>
+<span class="sd">        (k) keys: are the vegetation classes</span>
+<span class="sd">        (v) values: are the first digit in the pitID assignment</span>
+
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="c1"># Classifying by vegetation coverage </span>
+    <span class="n">veg_class</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;treeless&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;sparse&#39;</span><span class="p">:[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="s1">&#39;dense&#39;</span><span class="p">:[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]}</span>
+   
+    <span class="n">vclass</span> <span class="o">=</span> <span class="kc">None</span> 
+    
+    <span class="n">class_id</span> <span class="o">=</span> <span class="n">site_id</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="n">class_id</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+        <span class="n">class_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">class_id</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">veg_class</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+            <span class="k">if</span> <span class="n">class_id</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span> <span class="c1">#if the first digit in the site_id is &#39;v&#39; assign it to the corresponding &#39;k&#39;</span>
+                <span class="n">vclass</span> <span class="o">=</span> <span class="n">k</span> 
+                
+    <span class="k">return</span> <span class="n">vclass</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;tokenize&gt;&quot;</span><span class="gt">, line </span><span class="mi">15</span>
+    <span class="n">veg_class</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;treeless&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;sparse&#39;</span><span class="p">:[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="s1">&#39;dense&#39;</span><span class="p">:[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]}</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: unindent does not match any outer indentation level
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="b-distinguish-pits-by-snow-depth-classes">
+<h4>2b). Distinguish pits by snow depth classes:<a class="headerlink" href="#b-distinguish-pits-by-snow-depth-classes" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>shallow (&lt;90cm)</p></li>
+<li><p>medium (90-122cm)</p></li>
+<li><p>deep (&gt;122cm)</p></li>
+</ul>
+<p>*depth classes assigned based on 2017 snow depth lidar data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parse_depth_class</span><span class="p">(</span><span class="n">site_id</span><span class="p">):</span>
+    
+            <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    This function parses snow pit data into three depth classes:</span>
+<span class="sd">        - 1). Shallow, 2). Medium, and 3). Deep</span>
+<span class="sd">        </span>
+<span class="sd">    It uses a python dictionary where:</span>
+<span class="sd">        (k) keys: are the depth classes</span>
+<span class="sd">        (v) values: are the first digit in the pitID assignment</span>
+<span class="sd">      </span>
+<span class="sd">  </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+        
+    <span class="c1"># Classifying by expected depth </span>
+    <span class="n">depth_class</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;shallow&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="s1">&#39;medium&#39;</span><span class="p">:[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="s1">&#39;deep&#39;</span><span class="p">:[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]}</span> 
+   
+    <span class="n">dclass</span> <span class="o">=</span> <span class="kc">None</span> 
+    
+    <span class="n">class_id</span> <span class="o">=</span> <span class="n">site_id</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="n">class_id</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span> <span class="c1">#for the outlier TS site</span>
+        <span class="n">class_id</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">class_id</span><span class="p">)</span> <span class="c1">#cast as integer</span>
+
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">depth_class</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> <span class="c1">#for the key, value pairs in the dict listed above:</span>
+
+            <span class="k">if</span> <span class="n">class_id</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span> <span class="c1">#if the first digit in the site_id is &#39;v&#39; assign it to the corresponding &#39;k&#39;</span>
+                <span class="n">dclass</span> <span class="o">=</span> <span class="n">k</span> 
+
+    <span class="k">return</span> <span class="n">dclass</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the database</span>
+<span class="n">db_name</span> <span class="o">=</span> <span class="s1">&#39;snow:hackweek@52.32.183.144/snowex&#39;</span>
+<span class="n">engine</span><span class="p">,</span> <span class="n">session</span> <span class="o">=</span> <span class="n">get_db</span><span class="p">(</span><span class="n">db_name</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">type</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">LayerData</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">type</span><span class="o">==</span><span class="s1">&#39;density&#39;</span><span class="p">)</span>
+
+<span class="c1"># Form our dataframe from the query </span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span> <span class="c1">#cast the value as a float (they are strings)</span>
+ 
+<span class="c1"># parse snow pit data by the veg/depth matrix</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;veg_class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">parse_veg_class</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]]</span> <span class="c1">#run the parse_veg function for every site_id</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;depth_class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">parse_depth_class</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]]</span> <span class="c1">#run the parse_depth funciton for every site_id</span>
+
+<span class="c1"># # Show off our df </span>
+<span class="c1"># df.plot()</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">col_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;site_name&#39;</span><span class="p">,</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;instrument&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;units&#39;</span><span class="p">,</span> <span class="s1">&#39;surveyors&#39;</span><span class="p">,</span> <span class="s1">&#39;latitude&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;longitude&#39;</span><span class="p">,</span> <span class="s1">&#39;geom&#39;</span><span class="p">,</span><span class="s1">&#39;depth&#39;</span><span class="p">,</span> <span class="s1">&#39;site_id&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span> <span class="s1">&#39;veg_class&#39;</span><span class="p">,</span> <span class="s1">&#39;depth_class&#39;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col_list</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># These are all of the unique site ids </span>
+<span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#make df with only 153 rows using site_id.unique</span>
+<span class="n">gb</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;site_id&#39;</span><span class="p">,</span> <span class="s1">&#39;veg_class&#39;</span><span class="p">])</span>
+<span class="c1">#gb = df.groupby(&#39;site_id&#39;)</span>
+<span class="n">gb</span><span class="p">[</span><span class="s1">&#39;site_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;veg_class&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># d = df[[&#39;veg_class&#39;, &#39;depth_class&#39;]].groupby(df[&#39;site_id&#39;]).groups</span>
+<span class="c1"># gb = df.groupby([&#39;veg_class&#39;, &#39;site_id&#39;]).count()</span>
+<span class="c1"># gb = df.groupby([&#39;site_id&#39;]).count()</span>
+<span class="c1"># df[&#39;veg_class&#39;].groupby(&#39;veg_class&#39;).count()</span>
+
+<span class="c1"># print(gb)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># df[&#39;site_id&#39;].unique().groupby(&#39;veg_class&#39;).count()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;veg_class&#39;</span><span class="p">,</span> <span class="s1">&#39;site_id&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;veg_class&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="c1">#table I like!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Great for debugging especially when trying different queries</span>
+<span class="c1"># session.rollback()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/core-datasets"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="02_data-package.html" title="previous page">Depths and Snow Pit Data Package Contents</a>
+    <a class='right-next' id="next-link" href="04_pit-matrix-example.html" title="next page">Pit Matrix Example</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By eScience Institute, University of Washington<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QM84T4SB76"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-QM84T4SB76');
+                </script>
+
+  </body>
+</html>
