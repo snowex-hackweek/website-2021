@@ -1,56 +1,219 @@
-# JupyterHub
+# GitHub, Git, JupyterHub
 
-## How do I get my code in and out of JupyterHub?
+## Git review
 
-Here we'll show you how to pull (copy) some files from GitHub into your virtual
-drive space using git. This will be a common task during the hackweek: at the
-start of each tutorial we'll ask you to "clone" (make a copy of a code repository)
-into your drive space on JupyterHub or local computer.
+Here we will do a quick refresher on the different commands you will be using
+during this event. A good summary is [this cheatsheet from GitHub](https://training.github.com/downloads/github-git-cheat-sheet.pdf).
 
-Start by opening a linux terminal. There are two ways to do this in JupyterLab:
-(1) Navigate to the "File" menu, choose "New" and then "Terminal" or (2) click on
-the "terminal" button in JupyterLab:
+These are a few commands we will use throughout the week:
+| Git command | What it does |
+|---|---|
+|`git add` | Adds a new, previously untracked file to version control |
+|`git commit` | Saves the current state of the document and creates an entry in the log |
+|`git log` | Shows the history for the repository |
+| `git clone` | Copies a repository to your local environment, including all the history |
+| `git pull` | Gets the latest changes of a previously cloned repository |
+| `git push` | Pushes your local changes to the remote repository, sharing them with others |
 
-![terminal-button](../img/terminal-button.png)
+## How do I make notes in the tutorials?
 
-This will open a new terminal tab in your JupyterLab interface:
+In order to make personal notes in the notebooks for each tutorial that you
+can save and keep for later reference, you first need to make a
+[fork](https://docs.github.com/en/get-started/quickstart/github-glossary#clone)
+of the website. A fork is your personalized copy of the website that will be
+stored under your GitHub user account instead of the SnowEx organization account.
+This also enables you to write to that repository, which in contrast you can not
+do with the SnowEx organization repository. A fork is also a first common step
+to contribute to open-source projects and further described in the
+[Pro Git book](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project).
 
-![terminal-tab](../img/terminal.png)
+To make a fork of the website, go to the
+[GitHub repository](https://github.com/snowex-hackweek/website)
+and hit the 'Fork' button in the top right corner. In the follow-up dialog,
+choose your user account as the destination
 
-Now you can issue any Linux commands to manage your local file system.
+![github-fork](../img/github-fork.png)
 
-Now let's clone a repository. First, navigate in a browser on your own computer
-to the repository link [here](https://github.com/snowex-hackweek/website). Next,
-click on the green "clone or download" button and then copy the url into your
-clipboard by clicking the copy button:
+Next steps are the same as described in the follow section on how to get code
+copied to the JupyterHub.
 
-![clone](../img/clone.png)
+## How do I get code from GitHub to the JupyterHub?
 
-Now navigate back to your command line in JupyterLab. Type "git clone" and then
-paste in the url:
+After you successfully set up the {ref}`git command<setting-up-git>`, you can
+copy code between the two using the [clone](https://docs.github.com/en/get-started/quickstart/github-glossary#clone)
+command with git. A `clone` creates a copy of the repository with the current
+state of the repository including the complete history.
 
-![terminal-clone](../img/terminal-clone.png)
+### Example: Clone the fork of the website with the tutorials
 
-```{note} A note about cutting and pasting
-Pasting something from your clipboard into the JupyterLab terminal requires holding 
-down the "shift" key and right-clicking.  This is different from the usual Linux 
-method that only requires a right click.
+1. Go to the your user page on GitHub and select the 'website' repository.
+
+   The URL to clone the repository can be found after clicking on the green 'Code' button.
+
+   ![github-code](../img/github-clone-url.png)
+   <br/><br/>
+
+2. On the JupyterHub, open a new Terminal using the 'Launcher' or via the menu
+   File -> New -> Terminal
+
+   By default, a new Terminal will be in your home directory. Use the `pwd`
+   command to verify:
+
+   ```shell
+      pwd
+   ```
+
+   Output:
+   ```shell
+   /home/jovyan
+   ```
+
+3. In the Terminal, issue the `git clone` command and paste the URL you copied
+   in step 1.
+
+    ```{note} A note about cutting and pasting
+    Pasting something from your clipboard into the JupyterLab terminal requires holding 
+    down the "shift" key and right-clicking.  This is different from the usual Linux 
+    method that only requires a right click.
+    ```
+
+   ```{attention}
+      The below sample command has the `<github-username>` as a placeholder.
+      This should be replaced with your GitHub username.
+   ```
+
+   Your command should look like this before hitting the Enter key to execute it:
+    ```shell
+    git clone https://github.com/<github-username>/website
+    ```
+
+   Sample output:
+   ```shell
+   Cloning into 'website'...
+   remote: Enumerating objects: 3295, done.
+   remote: Counting objects: 100% (310/310), done.
+   remote: Compressing objects: 100% (212/212), done.
+   remote: Total 3295 (delta 159), reused 201 (delta 80), pack-reused 2985
+   Receiving objects: 100% (3295/3295), 84.81 MiB | 31.23 MiB/s, done.
+   Resolving deltas: 100% (1951/1951), done.
+   ```
+
+4. You now have a local copy of the website.
+
+   To verify, list the current working directory via the `ls` command:
+
+   ```shell
+   (notebook) jovyan@jupyter:~$ ls -l
+   ```
+
+   Sample output:
+   ```shell
+   total 4
+   drwxr-sr-x 6 jovyan users 4096 Jul  9 17:10 website
+   ```
+
+   You will also see the folder on the left-hand side in the file explorer:
+   ![jupyterhub-website-folder](../img/jupyterhub-website-folder.png)
+
+You are now set up to follow along with all tutorials, including making changes
+and then saving those by [recording changes with `git`](http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository).
+To store your commits to GitHub, don't forget to issue a `git push` from your
+repository.
+
+## How do I keep up with changes to the initial forked repository?
+
+By making a fork of the website, you are creating a copy of the website as
+of the date you clicked the 'Fork' button. This also means that your version will not
+get any updates automatically if the SnowEx website repository is changed after
+your fork was created.
+
+To update your forked version with changes from the SnowEx version, you need to
+do a one time setup. This process is also called
+['working with a remote'](http://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
+for a git repository.
+
+### Add the SnowEx organization repository as a remote
+
+A remote is defined with a label and a URL. In our case and command below,
+we are using 'SnowEx' as the label and `https://github.com/snowex-hackweek/website.git`
+as the URL.
+
+```shell
+git remote add SnowEx https://github.com/snowex-hackweek/website.git
 ```
-After issuing the Git clone command you should see something like this:
 
-![clone-result](../img/clone-result.png)
+The command will not return any output. Instead, we verify by printing the 
+list of known remotes for this repository:
 
-You may also upload files from your local system using the upload button
-(up-pointing arrow) on the top left of the JupyterHub navigation panel. Similarly,
-you may download files to your local system by right-clicking the file and selecting
-download (down-pointing arrow).
+```{attention}
+   The below sample output has the `<github-username>` as a placeholder
+   and should show your GitHub username.
+```
 
-Simple, example GitHub/git/local-workspace workflows for getting a tutorial
-started in your JupyterHub instance and working on a group project are provided.
-The [getting started on a tutorial](https://icesat-2hackweek.github.io/learning-resources/tutorials/getting_started)
-workflow briefly reviews much of the information in this preliminary exercise
-along with steps for keeping the tutorial updated with the original, master copy.
-The [basic git workflow for a project](https://icesat-2hackweek.github.io/learning-resources/projects/example_workflow)
-serves as a reminder of the git workflow for working on a group project while
-minimizing code conflicts that could result from multiple people making changes
-to the same files simultaneously.
+```shell
+ git remote -v
+ SnowEx	https://github.com/snowex-hackweek/website.git (fetch)
+ SnowEx	https://github.com/snowex-hackweek/website.git (push)
+ origin	https://github.com/<github-username>/website.git (fetch)
+ origin	https://github.com/<github-username>/website.git (push)
+```
+
+You are now set up and do not need to repeat this before every update you
+fetch from the website.
+
+### Getting the changes from the originally forked repository
+
+To update your fork of the website, you first need to fetch and then pull
+the changes. A fetch is a pre-step that reads all the changes that need to
+be applied to your fork. The `SnowEx` command options indicates from which
+source the changes will be queried from.
+
+Reading changes from the remote 'SnowEx':
+```shell
+git fetch SnowEx
+```
+
+To now also get and apply those changes, you need to issue a `pull` command.
+In contrast to the above, you also need to specify which branch you want
+to get the changes from. In most cases, this will be the 'main' or 'master' branch
+of a repository.
+
+```{attention}
+It is __highly__ recommend to have no uncommitted changes in your
+repository before pulling changes from a remote. To verify this, a `git status`
+command should return `nothing to commit, working tree clean` at the end of the
+output.
+```
+
+Applying changes from the remote 'SnowEx':
+```shell
+git pull SnowEx main
+```
+
+```{note}
+For more information about branches, see the 
+[Pro Git book chapter](http://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
+```
+
+Last and to update your fork on GitHub, issue a:
+```shell
+git push
+```
+
+### Overview of a forked and then updated repository
+
+![git-fork-clone-update](../img/git-fork-clone-update.png)
+
+## How can I upload a file to the JupyterHub?
+
+```{attention}
+The below description works well for smaller files (<10 MB) or zipped archives.
+Talk to any of the instructiors or post on Slack in case you need to upload
+larger files.
+```
+
+Uploading a file to your userspace on the JupyterHub can be done using the
+user interface in the browser. Below screenshot shows the location of the upload
+button (purple highlighted box), which will open a dialog in your browser.
+
+![upload-file](../img/jupyterhub-upload.png)
