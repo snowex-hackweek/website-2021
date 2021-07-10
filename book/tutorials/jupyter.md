@@ -117,8 +117,30 @@ state of the repository including the complete history.
 
 You are now set up to follow along with all tutorials, including making changes
 and then saving those by [recording changes with `git`](http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository).
+
 To store your commits to GitHub, don't forget to issue a `git push` from your
 repository.
+
+```{admonition} For advanced users: Using a branch for personal changes
+While it is not required to create a [branch](https://docs.github.com/en/get-started/quickstart/github-glossary#branch)
+for your personal annotations, it is a common practice to do so when making changes
+to a repository. 
+
+Think of the `main` branch as the tried and tested version of a repository and 
+a new branch from that is used to introduce a change that can slowly progress.
+Once ready, it will be merged to the 'main' branch. 
+
+The chapter of [contributing to a project](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project)
+describes more behind this principle.
+
+Commands for branches:
+* To create a branch named _my_work_:
+`git branch my_work`
+* To change to the branch:
+`git checkout my_work`
+* To delete a branch:
+`git branch -d my_work`
+```
 
 ## How do I keep up with changes to the initial forked repository?
 
