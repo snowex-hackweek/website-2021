@@ -53,7 +53,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Pit Matrix Example" href="04_pit-matrix-example.html" />
+    <link rel="next" title="Geospatial Data Analysis: Vector data" href="../geospatial/geospatial_vector.html" />
     <link rel="prev" title="Depths and Snow Pit Data Package Contents" href="02_data-package.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -222,17 +222,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Practice Querying the
-     <em>
-      <strong>
-       Snowexsql Database
-      </strong>
-     </em>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="04_pit-matrix-example.html">
-     Pit Matrix Example
+     Practice Querying the Snowexsql Database
     </a>
    </li>
    <li class="toctree-l2">
@@ -539,20 +529,17 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#snow-pit-data-are-contained-in-the-following-data-tables">
-   <strong>
-    Snow Pit
-   </strong>
-   data are contained in the following data tables:
+   Snow Pit data are contained in the following data tables:
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-1-let-s-find-all-the-pits-that-overlap-with-an-airborne-instrument-of-interest">
-     Example 1: Let’s find all the pits that overlap with an airborne instrument of interest!
+    <a class="reference internal nav-link" href="#example-1-let-s-find-all-the-pits-that-overlap-with-an-airborne-sensor-of-interest">
+     Example 1: Let’s find all the pits that overlap with an airborne sensor of interest!
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-unsure-of-the-flight-date-but-know-which-instrument-you-d-like-to-overlap-with-here-s-how">
-       1a). Unsure of the flight date, but know which instrument you’d like to overlap with, here’s how:
+      <a class="reference internal nav-link" href="#a-unsure-of-the-flight-date-but-know-which-sensor-you-d-like-to-overlap-with-here-s-how">
+       1a). Unsure of the flight date, but know which sensor you’d like to overlap with, here’s how:
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -566,20 +553,8 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#d-have-a-known-date-in-mind-that-you-wish-to-select-here-s-how">
-       1d). Have a known date in mind that you wish to select, here’s how:
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#your-turn">
-     Your turn
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#try-this-query-for-a-different-airborne-instrument-hint-airborne-lidar-aso-inc">
-       try this: query for a different airborne instrument (hint: airborne lidar–&gt; ‘ASO Inc.’)
+      <a class="reference internal nav-link" href="#d-have-a-known-date-in-mind-that-you-wish-to-select-data-for-here-s-how">
+       1d). Have a known date in mind that you wish to select data for, here’s how:
       </a>
      </li>
     </ul>
@@ -627,7 +602,7 @@
               <div>
                 
   <div class="section" id="practice-querying-the-snowexsql-database">
-<h1>Practice Querying the <em><strong>Snowexsql Database</strong></em><a class="headerlink" href="#practice-querying-the-snowexsql-database" title="Permalink to this headline">¶</a></h1>
+<h1>Practice Querying the Snowexsql Database<a class="headerlink" href="#practice-querying-the-snowexsql-database" title="Permalink to this headline">¶</a></h1>
 <p>(12 minutes)</p>
 <p>Learning Objectives:</p>
 <ul class="simple">
@@ -667,59 +642,64 @@
 </div>
 </div>
 <div class="section" id="snow-pit-data-are-contained-in-the-following-data-tables">
-<h2><strong>Snow Pit</strong> data are contained in the following data tables:<a class="headerlink" href="#snow-pit-data-are-contained-in-the-following-data-tables" title="Permalink to this headline">¶</a></h2>
+<h2>Snow Pit data are contained in the following data tables:<a class="headerlink" href="#snow-pit-data-are-contained-in-the-following-data-tables" title="Permalink to this headline">¶</a></h2>
 <p><em>PointData</em>  = pit ruler depths, SWE.<br />
 <em>LayerData</em>  = density, temperature, stratigraphy, etc.<br />
 <em>SiteData</em>   = siteID, airTemp, vegetation, visit time, weather, etc.</p>
-<div class="section" id="example-1-let-s-find-all-the-pits-that-overlap-with-an-airborne-instrument-of-interest">
-<h3>Example 1: Let’s find all the pits that overlap with an airborne instrument of interest!<a class="headerlink" href="#example-1-let-s-find-all-the-pits-that-overlap-with-an-airborne-instrument-of-interest" title="Permalink to this headline">¶</a></h3>
-<p>First, it would be helpful to know, which of the airborne instruments are part of the database, right?</p>
+<div class="section" id="example-1-let-s-find-all-the-pits-that-overlap-with-an-airborne-sensor-of-interest">
+<h3>Example 1: Let’s find all the pits that overlap with an airborne sensor of interest!<a class="headerlink" href="#example-1-let-s-find-all-the-pits-that-overlap-with-an-airborne-sensor-of-interest" title="Permalink to this headline">¶</a></h3>
+<p>First, it would be helpful to know, which of the airborne sensors are part of the database, right?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Query the session using .surveyors() to generate a list</span>
 <span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">surveyors</span><span class="p">)</span>
 
 <span class="c1"># Locate all that are distinct</span>
-<span class="n">airborne_instrument_list</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">surveyors</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="n">airborne_sensors_list</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">surveyors</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list of airborne instruments by &quot;surveyor&quot; name: &#39;</span><span class="p">,</span> <span class="n">airborne_instrument_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list of airborne sensors by &quot;surveyor&quot; name: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">airborne_sensors_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list of airborne instruments by &quot;surveyor&quot; name:  [(&#39;USGS&#39;,), (&#39;UAVSAR team, JPL&#39;,), (&#39;ASO Inc.&#39;,)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list of airborne sensors by &quot;surveyor&quot; name: 
+ [(&#39;USGS&#39;,), (&#39;UAVSAR team, JPL&#39;,), (&#39;ASO Inc.&#39;,)]
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="a-unsure-of-the-flight-date-but-know-which-instrument-you-d-like-to-overlap-with-here-s-how">
-<h4>1a). Unsure of the flight date, but know which instrument you’d like to overlap with, here’s how:<a class="headerlink" href="#a-unsure-of-the-flight-date-but-know-which-instrument-you-d-like-to-overlap-with-here-s-how" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="a-unsure-of-the-flight-date-but-know-which-sensor-you-d-like-to-overlap-with-here-s-how">
+<h4>1a). Unsure of the flight date, but know which sensor you’d like to overlap with, here’s how:<a class="headerlink" href="#a-unsure-of-the-flight-date-but-know-which-sensor-you-d-like-to-overlap-with-here-s-how" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Form on the Images table that returns Raster collection dates</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># airborne sensor from list above</span>
+<span class="n">sensor</span> <span class="o">=</span> <span class="s1">&#39;UAVSAR team, JPL&#39;</span>
+
+<span class="c1"># Form on the Images table that returns Raster collection dates</span>
 <span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
 
 <span class="c1"># Filter for UAVSAR data</span>
-<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">surveyors</span> <span class="o">==</span> <span class="s1">&#39;UAVSAR team, JPL&#39;</span><span class="p">)</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">surveyors</span> <span class="o">==</span> <span class="n">sensor</span><span class="p">)</span>
 
 <span class="c1"># Grab the unique dates</span>
 <span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
-<span class="n">qry</span>
+
 <span class="c1"># Execute the query </span>
 <span class="n">dates</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> 
 
-<span class="c1"># Clean up the dates to remove the tuple</span>
+<span class="c1"># Clean up the dates </span>
 <span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">]</span> 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;UAVSAR flight dates are: &#39;</span><span class="p">,</span> <span class="n">dates</span><span class="p">)</span>
+<span class="n">dlist</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">]</span>
+<span class="n">dlist</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dlist</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> flight dates are: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">sensor</span><span class="p">,</span> <span class="n">dlist</span><span class="p">))</span>
 
-<span class="c1"># Find all the snow pits done on these days and return a geopandas df</span>
+<span class="c1"># Find all the snow pits done on these days</span>
 <span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">SiteData</span><span class="o">.</span><span class="n">geom</span><span class="p">,</span> <span class="n">SiteData</span><span class="o">.</span><span class="n">site_id</span><span class="p">,</span> <span class="n">SiteData</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
 <span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">SiteData</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">in_</span><span class="p">(</span><span class="n">dates</span><span class="p">))</span>
+
+<span class="c1"># return a geopandas df</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-
-<span class="n">surveyors</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">surveyors</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list of airborne instruments&#39;</span><span class="p">,</span> <span class="n">surveyors</span><span class="p">)</span>
 
 <span class="c1"># Close your session to avoid hanging transactions</span>
 <span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -727,10 +707,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UAVSAR flight dates are:  [datetime.date(2020, 1, 31), datetime.date(2020, 2, 12)]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list of airborne instruments [(&#39;USGS&#39;,), (&#39;UAVSAR team, JPL&#39;,), (&#39;ASO Inc.&#39;,)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UAVSAR team, JPL flight dates are: 2020-01-31, 2020-02-12
 </pre></div>
 </div>
 </div>
@@ -743,15 +720,22 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pick a day from the list of dates</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="n">dates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
 
-<span class="c1"># Find all the snow pits done on these days and return a geopandas df</span>
+<span class="c1"># Find all the snow pits done on these days </span>
 <span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">SiteData</span><span class="o">.</span><span class="n">geom</span><span class="p">,</span> <span class="n">SiteData</span><span class="o">.</span><span class="n">site_id</span><span class="p">,</span> <span class="n">SiteData</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
 <span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">SiteData</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dt</span><span class="p">)</span>
+
+<span class="c1"># return a geopandas df</span>
 <span class="n">df_exact</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> pits overlap with </span><span class="si">%s</span><span class="s1"> on </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_exact</span><span class="p">),</span> <span class="n">sensor</span><span class="p">,</span> <span class="n">dt</span><span class="p">))</span>
 <span class="n">df_exact</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17 pits overlap with UAVSAR team, JPL on 2020-01-31
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -821,12 +805,23 @@
 <span class="c1"># Find all the snow pits done on these days and return a geopandas df</span>
 <span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">SiteData</span><span class="o">.</span><span class="n">geom</span><span class="p">,</span> <span class="n">SiteData</span><span class="o">.</span><span class="n">site_id</span><span class="p">,</span> <span class="n">SiteData</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
 <span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">SiteData</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">in_</span><span class="p">(</span><span class="n">date_range</span><span class="p">))</span>
+
+<span class="c1"># return a geopandas df</span>
 <span class="n">df_range</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+
+<span class="c1"># clean up dates (for print statement only)</span>
+<span class="n">dlist</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">date_range</span><span class="p">]</span>
+<span class="n">dlist</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dlist</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> pits overlap with </span><span class="si">%s</span><span class="s1"> on </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df_range</span><span class="p">),</span> <span class="n">sensor</span><span class="p">,</span> <span class="n">dlist</span><span class="p">))</span>
 <span class="n">df_range</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47 pits overlap with UAVSAR team, JPL on 2020-01-30, 2020-01-31, 2020-02-01
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1138,8 +1133,8 @@
 </div></div></div>
 </div>
 </div>
-<div class="section" id="d-have-a-known-date-in-mind-that-you-wish-to-select-here-s-how">
-<h4>1d). Have a known date in mind that you wish to select, here’s how:<a class="headerlink" href="#d-have-a-known-date-in-mind-that-you-wish-to-select-here-s-how" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="d-have-a-known-date-in-mind-that-you-wish-to-select-data-for-here-s-how">
+<h4>1d). Have a known date in mind that you wish to select data for, here’s how:<a class="headerlink" href="#d-have-a-known-date-in-mind-that-you-wish-to-select-data-for-here-s-how" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find all the data that was collected on 2-12-2020</span>
@@ -1147,147 +1142,58 @@
 
 <span class="c1"># Grab all Point data instruments from our date</span>
 <span class="n">point_instruments</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">instrument</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dt</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Point Data are: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">point_instruments</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Point Data on </span><span class="si">%s</span><span class="s1"> are: </span><span class="se">\n</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">dt</span><span class="p">),</span> <span class="n">point_instruments</span><span class="p">))</span>
 
 <span class="c1"># Grab all Layer data instruments from our date</span>
 <span class="n">layer_instruments</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">instrument</span><span class="p">,</span> <span class="n">LayerData</span><span class="o">.</span><span class="n">type</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dt</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Layer Data are: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">layer_instruments</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Layer Data are: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">layer_instruments</span><span class="p">)</span>
 
 <span class="c1"># Grab all Image data instruments from our date</span>
 <span class="n">image_instruments</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">instrument</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dt</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Image Data are: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">image_instruments</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Image Data are: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">image_instruments</span><span class="p">)</span>
 
 <span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">geom</span><span class="p">,</span> <span class="n">PointData</span><span class="o">.</span><span class="n">instrument</span><span class="p">,</span> <span class="n">PointData</span><span class="o">.</span><span class="n">site_id</span><span class="p">,</span> <span class="n">PointData</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
 <span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dt</span><span class="p">)</span> 
 <span class="n">df</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
 <span class="n">df</span>
+
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">geom</span><span class="p">,</span> <span class="n">LayerData</span><span class="o">.</span><span class="n">instrument</span><span class="p">,</span> <span class="n">LayerData</span><span class="o">.</span><span class="n">site_id</span><span class="p">,</span> <span class="n">LayerData</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">LayerData</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dt</span><span class="p">)</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+<span class="n">df</span>
+
+<span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">instrument</span><span class="p">,</span> <span class="n">ImageData</span><span class="o">.</span><span class="n">site_id</span><span class="p">,</span> <span class="n">ImageData</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">date</span> <span class="o">==</span> <span class="n">dt</span><span class="p">)</span> 
+<span class="n">qry</span> <span class="o">=</span> <span class="n">qry</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point Data are: 
- [(&#39;camera-trap&#39;,), (&#39;magnaprobe&#39;,), (&#39;pit ruler&#39;,)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point Data on %s are: 
+%s (&#39;2020-02-12&#39;, [(&#39;camera-trap&#39;,), (&#39;magnaprobe&#39;,), (&#39;pit ruler&#39;,)])
+
+Layer Data are: 
+ [(&#39;IRIS&#39;, &#39;equivalent_diameter&#39;), (&#39;IRIS&#39;, &#39;reflectance&#39;), (&#39;IRIS&#39;, &#39;sample_signal&#39;), (&#39;IRIS&#39;, &#39;specific_surface_area&#39;), (&#39;IS3-SP-11-01F&#39;, &#39;equivalent_diameter&#39;), (&#39;IS3-SP-11-01F&#39;, &#39;reflectance&#39;), (&#39;IS3-SP-11-01F&#39;, &#39;sample_signal&#39;), (&#39;IS3-SP-11-01F&#39;, &#39;specific_surface_area&#39;), (&#39;snowmicropen&#39;, &#39;force&#39;), (None, &#39;density&#39;), (None, &#39;grain_size&#39;), (None, &#39;grain_type&#39;), (None, &#39;hand_hardness&#39;), (None, &#39;lwc_vol&#39;), (None, &#39;manual_wetness&#39;), (None, &#39;permittivity&#39;), (None, &#39;temperature&#39;)]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Layer Data are: 
- [(&#39;IRIS&#39;, &#39;equivalent_diameter&#39;), (&#39;IRIS&#39;, &#39;reflectance&#39;), (&#39;IRIS&#39;, &#39;sample_signal&#39;), (&#39;IRIS&#39;, &#39;specific_surface_area&#39;), (&#39;IS3-SP-11-01F&#39;, &#39;equivalent_diameter&#39;), (&#39;IS3-SP-11-01F&#39;, &#39;reflectance&#39;), (&#39;IS3-SP-11-01F&#39;, &#39;sample_signal&#39;), (&#39;IS3-SP-11-01F&#39;, &#39;specific_surface_area&#39;), (&#39;snowmicropen&#39;, &#39;force&#39;), (None, &#39;density&#39;), (None, &#39;grain_size&#39;), (None, &#39;grain_type&#39;), (None, &#39;hand_hardness&#39;), (None, &#39;lwc_vol&#39;), (None, &#39;manual_wetness&#39;), (None, &#39;permittivity&#39;), (None, &#39;temperature&#39;)]
-Image Data are: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Image Data are: 
  [(&#39;UAVSAR, L-band InSAR&#39;,)]
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>geom</th>
-      <th>instrument</th>
-      <th>site_id</th>
-      <th>date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>POINT (743766.479 4321444.155)</td>
-      <td>camera-trap</td>
-      <td>None</td>
-      <td>2020-02-12</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>POINT (743766.479 4321444.155)</td>
-      <td>camera-trap</td>
-      <td>None</td>
-      <td>2020-02-12</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>POINT (771338.607 4332280.166)</td>
-      <td>camera-trap</td>
-      <td>None</td>
-      <td>2020-02-12</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>POINT (768027.662 4332519.266)</td>
-      <td>camera-trap</td>
-      <td>None</td>
-      <td>2020-02-12</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>POINT (768027.662 4332519.266)</td>
-      <td>camera-trap</td>
-      <td>None</td>
-      <td>2020-02-12</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>1569</th>
-      <td>POINT (742222.150 4326425.320)</td>
-      <td>magnaprobe</td>
-      <td>None</td>
-      <td>2020-02-12</td>
-    </tr>
-    <tr>
-      <th>1570</th>
-      <td>POINT (742224.670 4326427.620)</td>
-      <td>magnaprobe</td>
-      <td>None</td>
-      <td>2020-02-12</td>
-    </tr>
-    <tr>
-      <th>1571</th>
-      <td>POINT (742226.340 4326429.890)</td>
-      <td>magnaprobe</td>
-      <td>None</td>
-      <td>2020-02-12</td>
-    </tr>
-    <tr>
-      <th>1572</th>
-      <td>POINT (742229.730 4326432.220)</td>
-      <td>magnaprobe</td>
-      <td>None</td>
-      <td>2020-02-12</td>
-    </tr>
-    <tr>
-      <th>1573</th>
-      <td>POINT (742232.290 4326433.410)</td>
-      <td>magnaprobe</td>
-      <td>None</td>
-      <td>2020-02-12</td>
-    </tr>
-  </tbody>
-</table>
-<p>1574 rows × 4 columns</p>
-</div></div></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2020-02-12&#39;
+</pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="your-turn">
-<h3>Your turn<a class="headerlink" href="#your-turn" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="try-this-query-for-a-different-airborne-instrument-hint-airborne-lidar-aso-inc">
-<h4>try this: query for a different airborne instrument (hint: airborne lidar–&gt; ‘ASO Inc.’)<a class="headerlink" href="#try-this-query-for-a-different-airborne-instrument-hint-airborne-lidar-aso-inc" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
 <div class="section" id="nice-work-almost-done-here">
@@ -1506,7 +1412,7 @@ Image Data are:
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="02_data-package.html" title="previous page">Depths and Snow Pit Data Package Contents</a>
-    <a class='right-next' id="next-link" href="04_pit-matrix-example.html" title="next page">Pit Matrix Example</a>
+    <a class='right-next' id="next-link" href="../geospatial/geospatial_vector.html" title="next page">Geospatial Data Analysis: Vector data</a>
 
         </div>
         
