@@ -42,6 +42,7 @@
         - file: tutorials/thermal-ir/index
           sections:
             - file: tutorials/thermal-ir/thermal-ir-tutorial
+            - file: tutorials/thermal-ir/thermal-ir-data-download
         - file: tutorials/database/index
           sections:
             - file: tutorials/database/1_getting_started_example
