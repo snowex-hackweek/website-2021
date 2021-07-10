@@ -47,8 +47,11 @@
           sections:
             - file: tutorials/database/1_getting_started_example
             - file: tutorials/database/2_database_structure
-            - file: tutorials/database/3_get_spiral_example
-            - file: tutorials/database/4_plot_raster_example
+            - file: tutorials/database/3_forming_queries
+            - file: tutorials/database/4_get_spiral_example
+            - file: tutorials/database/5_plot_raster_example
+            - file: tutorials/database/6_exporting_data
+            - file: tutorials/database/7_wrap_up
         - file: tutorials/microstructure/microstructure-tutorial
         - file: tutorials/camera-traps-tutorial/camera-traps-notebook
         - file: tutorials/lis/index
