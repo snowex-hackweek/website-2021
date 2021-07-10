@@ -53,7 +53,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Retrieve a Snow Depth Spiral" href="3_get_spiral_example.html" />
+    <link rel="next" title="Forming Queries" href="3_forming_queries.html" />
     <link rel="prev" title="Introduction to the SnowEx Database" href="1_getting_started_example.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -315,13 +315,28 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="3_get_spiral_example.html">
-       Retrieve a Snow Depth Spiral
+      <a class="reference internal" href="3_forming_queries.html">
+       Forming Queries
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="4_plot_raster_example.html">
-       Find A Raster Tile
+      <a class="reference internal" href="4_get_spiral_example.html">
+       Forming Queries: Example Visualizng Depths
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="5_plot_raster_example.html">
+       Forming Queries: PostGIS Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="6_exporting_data.html">
+       Exporting Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="7_wrap_up.html">
+       Wrap up
       </a>
      </li>
     </ul>
@@ -534,7 +549,7 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#step-1-get-a-database-session">
-     Step 1: Get a Database Session
+     Step 1: Get a database session
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -585,12 +600,13 @@ do research with. With that in mind follow the steps below to see how the the da
 <li><p>Access the database using the snowexsql python library</p></li>
 <li><p>Query the database to see the underlying tables</p></li>
 <li><p>Query each table to see what columns are available</p></li>
+<li><p>Query to see what datasets are available</p></li>
 </ol>
 </div>
 <div class="section" id="process">
 <h2>Process<a class="headerlink" href="#process" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="step-1-get-a-database-session">
-<h3>Step 1: Get a Database Session<a class="headerlink" href="#step-1-get-a-database-session" title="Permalink to this headline">¶</a></h3>
+<h3>Step 1: Get a database session<a class="headerlink" href="#step-1-get-a-database-session" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the connection function from the snowexsql library</span>
@@ -621,57 +637,69 @@ do research with. With that in mind follow the steps below to see how the the da
 </div>
 </div>
 </div>
+<p>We can also import classes that reflect these tables in python!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">snowexsql.data</span> <span class="kn">import</span> <span class="n">LayerData</span><span class="p">,</span> <span class="n">PointData</span><span class="p">,</span> <span class="n">ImageData</span><span class="p">,</span> <span class="n">SiteData</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="step-3-query-a-table-to-see-what-columns-you-can-use">
 <h3>Step 3: Query a Table to see what columns you can use!<a class="headerlink" href="#step-3-query-a-table-to-see-what-columns-you-can-use" title="Permalink to this headline">¶</a></h3>
-<p>In our python library <code class="docutils literal notranslate"><span class="pre">snowexsql</span></code> there are classes that reflect the database tables. This makes it easier to use in python.
+<p>In our python library <a class="reference external" href="https://github.com/SnowEx/snowexsql/">snowexsql</a> there are classes that reflect the database tables. This makes it easier to use in python.
 For google purposes this is also called Object Relational Mapping (ORM).</p>
-<p>Import the table class from <code class="docutils literal notranslate"><span class="pre">snowexsql.data</span></code> and <code class="docutils literal notranslate"><span class="pre">snowexsql.db.get_table_attributes</span></code>. The use <code class="docutils literal notranslate"><span class="pre">get_table_attributes</span></code> to see what
+<p>Import the table class from <a class="reference external" href="https://snowexsql.readthedocs.io/en/latest/snowexsql.html#module-snowexsql.data"><code class="docutils literal notranslate"><span class="pre">snowexsql.data</span></code></a> and <a class="reference external" href="https://snowexsql.readthedocs.io/en/latest/snowexsql.html#snowexsql.db.get_table_attributes"><code class="docutils literal notranslate"><span class="pre">snowexsql.db.get_table_attributes</span></code></a>. The use <code class="docutils literal notranslate"><span class="pre">get_table_attributes</span></code> to see what
 columns are in each table!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the class reflecting the points table in the db</span>
 <span class="kn">from</span> <span class="nn">snowexsql.data</span> <span class="kn">import</span> <span class="n">PointData</span>
 
-<span class="c1"># Import a function to investigate a table</span>
+<span class="c1"># Import the function to investigate a table</span>
 <span class="kn">from</span> <span class="nn">snowexsql.db</span> <span class="kn">import</span> <span class="n">get_table_attributes</span>
 
 <span class="c1"># Use the function to see what columns are available to use. </span>
 <span class="n">db_columns</span> <span class="o">=</span> <span class="n">get_table_attributes</span><span class="p">(</span><span class="n">PointData</span><span class="p">)</span>
-<span class="n">db_columns</span>
+
+<span class="c1"># Print out the results nicely</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;These are the available columns in the table:</span><span class="se">\n</span><span class="s2"> </span><span class="se">\n</span><span class="s2">* </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">* &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">db_columns</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;date&#39;,
- &#39;date_accessed&#39;,
- &#39;doi&#39;,
- &#39;easting&#39;,
- &#39;elevation&#39;,
- &#39;equipment&#39;,
- &#39;geom&#39;,
- &#39;instrument&#39;,
- &#39;latitude&#39;,
- &#39;longitude&#39;,
- &#39;metadata&#39;,
- &#39;northing&#39;,
- &#39;site_id&#39;,
- &#39;site_name&#39;,
- &#39;surveyors&#39;,
- &#39;time&#39;,
- &#39;time_created&#39;,
- &#39;time_updated&#39;,
- &#39;type&#39;,
- &#39;units&#39;,
- &#39;utm_zone&#39;,
- &#39;value&#39;,
- &#39;version_number&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>These are the available columns in the table:
+ 
+* date
+* date_accessed
+* doi
+* easting
+* elevation
+* equipment
+* geom
+* instrument
+* latitude
+* longitude
+* metadata
+* northing
+* site_id
+* site_name
+* surveyors
+* time
+* time_created
+* time_updated
+* type
+* units
+* utm_zone
+* value
+* version_number
 </pre></div>
 </div>
 </div>
 </div>
 <p><strong>Try this:</strong> Using what we just did, use <code class="docutils literal notranslate"><span class="pre">get_table_attributes</span></code> to look at the other tables.</p>
-<p><strong>Hint</strong>: You have to change the table class name in two places in the above block.</p>
+<p><strong>Hint</strong>: You have to change the table class name in two places in the above code block.</p>
 </div>
 </div>
 <div class="section" id="discussion-what-s-the-difference-in-these-tables">
@@ -688,7 +716,8 @@ There you will find notes on the database structure. datasets, and of course our
 <ul class="simple">
 <li><p><a class="reference external" href="https://geoalchemy-2.readthedocs.io/en/0.8.4/">https://geoalchemy-2.readthedocs.io/en/0.8.4/</a> - geoalchemy is library that allows us to leverage postgis and other gis functions</p></li>
 <li><p><a class="reference external" href="https://docs.sqlalchemy.org/en/14/">https://docs.sqlalchemy.org/en/14/</a>            - sqlalchemy is the underlying library that lets us map python to databases</p></li>
-<li><p><a class="reference external" href="https://postgis.net/">https://postgis.net/</a>                          - POSTGIS is the extension that make postgres have GIS capabilities. This is here as a resource but it will be discussed in more                                                   detail later.</p></li>
+<li><p><a class="reference external" href="https://postgis.net/docs/manual-3.0/PostGIS_Special_Functions_Index.html">https://postgis.net/docs/manual-3.0/PostGIS_Special_Functions_Index.html</a> - POSTGIS is the extension that make postgres have GIS capabilities. This is here as a resource but it will be discussed in more                                                   detail later.</p></li>
+<li><p><a class="reference external" href="https://snowexsql.readthedocs.io/en/latest/cheat_sheet.html">https://snowexsql.readthedocs.io/en/latest/cheat_sheet.html</a> - This is a cheat sheet we put together to help you use the database.</p></li>
 </ul>
 </div>
 <div class="section" id="recap">
@@ -701,7 +730,14 @@ There you will find notes on the database structure. datasets, and of course our
 <li><p>Some resources to begin helping yourself.</p></li>
 </ul>
 <p>If you don’t feel comfortable with these, you are probably not alone, let’s discuss it!</p>
-<p><strong>Lets work with some data. Next up <code class="docutils literal notranslate"><span class="pre">get_depth_spiral_example</span></code></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Close out the session to avoid hanging transactions</span>
+<span class="n">session</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -731,7 +767,7 @@ There you will find notes on the database structure. datasets, and of course our
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="1_getting_started_example.html" title="previous page">Introduction to the SnowEx Database</a>
-    <a class='right-next' id="next-link" href="3_get_spiral_example.html" title="next page">Retrieve a Snow Depth Spiral</a>
+    <a class='right-next' id="next-link" href="3_forming_queries.html" title="next page">Forming Queries</a>
 
         </div>
         
