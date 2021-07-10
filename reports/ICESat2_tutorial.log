@@ -121,7 +121,7 @@ During handling of the above exception, another exception occurred:
 [0;32m--> 181[0;31m             raise NewConnectionError(
 [0m[1;32m    182[0m                 [0mself[0m[0;34m,[0m [0;34m"Failed to establish a new connection: %s"[0m [0;34m%[0m [0me[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mNewConnectionError[0m: <urllib3.connection.HTTPConnection object at 0x7f83a6d63250>: Failed to establish a new connection: [Errno 110] Connection timed out
+[0;31mNewConnectionError[0m: <urllib3.connection.HTTPConnection object at 0x7f8c1e776b50>: Failed to establish a new connection: [Errno 110] Connection timed out
 
 During handling of the above exception, another exception occurred:
 
@@ -141,7 +141,7 @@ During handling of the above exception, another exception occurred:
 [0;32m--> 573[0;31m             [0;32mraise[0m [0mMaxRetryError[0m[0;34m([0m[0m_pool[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0merror[0m [0;32mor[0m [0mResponseError[0m[0;34m([0m[0mcause[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m    574[0m [0;34m[0m[0m
 
-[0;31mMaxRetryError[0m: HTTPConnectionPool(host='34.216.150.33', port=9081): Max retries exceeded with url: /source/atl06 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f83a6d63250>: Failed to establish a new connection: [Errno 110] Connection timed out'))
+[0;31mMaxRetryError[0m: HTTPConnectionPool(host='34.216.150.33', port=9081): Max retries exceeded with url: /source/atl06 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8c1e776b50>: Failed to establish a new connection: [Errno 110] Connection timed out'))
 
 During handling of the above exception, another exception occurred:
 
@@ -176,7 +176,7 @@ During handling of the above exception, another exception occurred:
 [0;32m--> 516[0;31m             [0;32mraise[0m [0mConnectionError[0m[0;34m([0m[0me[0m[0;34m,[0m [0mrequest[0m[0;34m=[0m[0mrequest[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m    517[0m [0;34m[0m[0m
 
-[0;31mConnectionError[0m: HTTPConnectionPool(host='34.216.150.33', port=9081): Max retries exceeded with url: /source/atl06 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f83a6d63250>: Failed to establish a new connection: [Errno 110] Connection timed out'))
+[0;31mConnectionError[0m: HTTPConnectionPool(host='34.216.150.33', port=9081): Max retries exceeded with url: /source/atl06 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f8c1e776b50>: Failed to establish a new connection: [Errno 110] Connection timed out'))
 
 During handling of the above exception, another exception occurred:
 
