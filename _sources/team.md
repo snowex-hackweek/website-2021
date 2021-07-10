@@ -47,7 +47,7 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 **HP Marshall**
 ^^^
-<img src="https://avatars.githubusercontent.com/u/23019134?v=4" alt="picture of HP Marshall" width="165" height="200">
+<img src="https://avatars.githubusercontent.com/u/23019134?v=4?s=100" alt="picture of HP Marshall" width="165" height="200">
 +++
 *Affiliations:* Boise State
 
