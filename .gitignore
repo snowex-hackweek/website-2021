@@ -140,5 +140,4 @@ dmypy.json
 .pyre/
 
 #Tutorials
-./book/tutorials/core-datasets/images/
 ./book/tutorials/core-datasets/data/
