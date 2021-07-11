@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JupyterHub &#8212; SnowEx Hackweek</title>
+    <title>GitHub, Git, JupyterHub &#8212; SnowEx Hackweek</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -207,7 +207,7 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     JupyterHub
+     GitHub, Git, JupyterHub
     </a>
    </li>
    <li class="toctree-l2">
@@ -528,8 +528,52 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-do-i-get-my-code-in-and-out-of-jupyterhub">
-   How do I get my code in and out of JupyterHub?
+  <a class="reference internal nav-link" href="#git-review">
+   Git review
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-do-i-make-notes-in-the-tutorials">
+   How do I make notes in the tutorials?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-do-i-get-code-from-github-to-the-jupyterhub">
+   How do I get code from GitHub to the JupyterHub?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-clone-the-fork-of-the-website-with-the-tutorials">
+     Example: Clone the fork of the website with the tutorials
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-do-i-keep-up-with-changes-to-the-initial-forked-repository">
+   How do I keep up with changes to the initial forked repository?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-the-snowex-organization-repository-as-a-remote">
+     Add the SnowEx organization repository as a remote
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-the-changes-from-the-originally-forked-repository">
+     Getting the changes from the originally forked repository
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overview-of-a-forked-and-then-updated-repository">
+     Overview of a forked and then updated repository
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-can-i-upload-a-file-to-the-jupyterhub">
+   How can I upload a file to the JupyterHub?
   </a>
  </li>
 </ul>
@@ -543,29 +587,88 @@
         
               <div>
                 
-  <div class="section" id="jupyterhub">
-<h1>JupyterHub<a class="headerlink" href="#jupyterhub" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="how-do-i-get-my-code-in-and-out-of-jupyterhub">
-<h2>How do I get my code in and out of JupyterHub?<a class="headerlink" href="#how-do-i-get-my-code-in-and-out-of-jupyterhub" title="Permalink to this headline">¶</a></h2>
-<p>Here we’ll show you how to pull (copy) some files from GitHub into your virtual
-drive space using git. This will be a common task during the hackweek: at the
-start of each tutorial we’ll ask you to “clone” (make a copy of a code repository)
-into your drive space on JupyterHub or local computer.</p>
-<p>Start by opening a linux terminal. There are two ways to do this in JupyterLab:
-(1) Navigate to the “File” menu, choose “New” and then “Terminal” or (2) click on
-the “terminal” button in JupyterLab:</p>
-<p><img alt="terminal-button" src="../_images/terminal-button.png" /></p>
-<p>This will open a new terminal tab in your JupyterLab interface:</p>
-<p><img alt="terminal-tab" src="../_images/terminal.png" /></p>
-<p>Now you can issue any Linux commands to manage your local file system.</p>
-<p>Now let’s clone a repository. First, navigate in a browser on your own computer
-to the repository link <a class="reference external" href="https://github.com/snowex-hackweek/website">here</a>. Next,
-click on the green “clone or download” button and then copy the url into your
-clipboard by clicking the copy button:</p>
-<p><img alt="clone" src="../_images/clone.png" /></p>
-<p>Now navigate back to your command line in JupyterLab. Type “git clone” and then
-paste in the url:</p>
-<p><img alt="terminal-clone" src="../_images/terminal-clone.png" /></p>
+  <div class="section" id="github-git-jupyterhub">
+<h1>GitHub, Git, JupyterHub<a class="headerlink" href="#github-git-jupyterhub" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="git-review">
+<h2>Git review<a class="headerlink" href="#git-review" title="Permalink to this headline">¶</a></h2>
+<p>Here we will do a quick refresher on the different commands you will be using
+during this event. A good summary is <a class="reference external" href="https://training.github.com/downloads/github-git-cheat-sheet.pdf">this cheatsheet from GitHub</a>.</p>
+<p>These are a few commands we will use throughout the week:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Git command</p></th>
+<th class="head"><p>What it does</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code></p></td>
+<td><p>Adds a new, previously untracked file to version control</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code></p></td>
+<td><p>Saves the current state of the document and creates an entry in the log</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code></p></td>
+<td><p>Shows the history for the repository</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code></p></td>
+<td><p>Copies a repository to your local environment, including all the history</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code></p></td>
+<td><p>Gets the latest changes of a previously cloned repository</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></p></td>
+<td><p>Pushes your local changes to the remote repository, sharing them with others</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="how-do-i-make-notes-in-the-tutorials">
+<h2>How do I make notes in the tutorials?<a class="headerlink" href="#how-do-i-make-notes-in-the-tutorials" title="Permalink to this headline">¶</a></h2>
+<p>In order to make personal notes in the notebooks for each tutorial that you
+can save and keep for later reference, you first need to make a
+<a class="reference external" href="https://docs.github.com/en/get-started/quickstart/github-glossary#clone">fork</a>
+of the website. A fork is your personalized copy of the website that will be
+stored under your GitHub user account instead of the SnowEx organization account.
+This also enables you to write to that repository, which in contrast you can not
+do with the SnowEx organization repository. A fork is also a first common step
+to contribute to open-source projects and further described in the
+<a class="reference external" href="http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project">Pro Git book</a>.</p>
+<p>To make a fork of the website, go to the
+<a class="reference external" href="https://github.com/snowex-hackweek/website">GitHub repository</a>
+and hit the ‘Fork’ button in the top right corner. In the follow-up dialog,
+choose your user account as the destination</p>
+<p><img alt="github-fork" src="../_images/github-fork.png" /></p>
+<p>Next steps are the same as described in the follow section on how to get code
+copied to the JupyterHub.</p>
+</div>
+<div class="section" id="how-do-i-get-code-from-github-to-the-jupyterhub">
+<h2>How do I get code from GitHub to the JupyterHub?<a class="headerlink" href="#how-do-i-get-code-from-github-to-the-jupyterhub" title="Permalink to this headline">¶</a></h2>
+<p>After you successfully set up the <a class="reference internal" href="../preliminary/git.html#setting-up-git"><span class="std std-ref">git command</span></a>, you can
+copy code between the two using the <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/github-glossary#clone">clone</a>
+command with git. A <code class="docutils literal notranslate"><span class="pre">clone</span></code> creates a copy of the repository with the current
+state of the repository including the complete history.</p>
+<div class="section" id="example-clone-the-fork-of-the-website-with-the-tutorials">
+<h3>Example: Clone the fork of the website with the tutorials<a class="headerlink" href="#example-clone-the-fork-of-the-website-with-the-tutorials" title="Permalink to this headline">¶</a></h3>
+<ol>
+<li><p>Go to the your user page on GitHub and select the ‘website’ repository.</p>
+<p>The URL to clone the repository can be found after clicking on the green ‘Code’ button.</p>
+<p><img alt="github-code" src="../_images/github-clone-url.png" />
+<br/><br/></p>
+</li>
+<li><p>On the JupyterHub, open a new Terminal using the ‘Launcher’ or via the menu
+File -&gt; New -&gt; Terminal</p>
+<p>By default, a new Terminal will be in your home directory. Use the <code class="docutils literal notranslate"><span class="pre">pwd</span></code>
+command to verify:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>   <span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>/home/jovyan
+</pre></div>
+</div>
+</li>
+<li><p>In the Terminal, issue the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> command and paste the URL you copied
+in step 1.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A note about cutting and pasting
@@ -573,21 +676,153 @@ Pasting something from your clipboard into the JupyterLab terminal requires hold
 down the “shift” key and right-clicking.  This is different from the usual Linux
 method that only requires a right click.</p>
 </div>
-<p>After issuing the Git clone command you should see something like this:</p>
-<p><img alt="clone-result" src="../_images/clone-result.png" /></p>
-<p>You may also upload files from your local system using the upload button
-(up-pointing arrow) on the top left of the JupyterHub navigation panel. Similarly,
-you may download files to your local system by right-clicking the file and selecting
-download (down-pointing arrow).</p>
-<p>Simple, example GitHub/git/local-workspace workflows for getting a tutorial
-started in your JupyterHub instance and working on a group project are provided.
-The <a class="reference external" href="https://icesat-2hackweek.github.io/learning-resources/tutorials/getting_started">getting started on a tutorial</a>
-workflow briefly reviews much of the information in this preliminary exercise
-along with steps for keeping the tutorial updated with the original, master copy.
-The <a class="reference external" href="https://icesat-2hackweek.github.io/learning-resources/projects/example_workflow">basic git workflow for a project</a>
-serves as a reminder of the git workflow for working on a group project while
-minimizing code conflicts that could result from multiple people making changes
-to the same files simultaneously.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The below sample command has the <code class="docutils literal notranslate"><span class="pre">&lt;github-username&gt;</span></code> as a placeholder.
+This should be replaced with your GitHub username.</p>
+</div>
+<p>Your command should look like this before hitting the Enter key to execute it:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/&lt;github-username&gt;/website
+</pre></div>
+</div>
+<p>Sample output:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Cloning into <span class="s1">&#39;website&#39;</span>...
+remote: Enumerating objects: <span class="m">3295</span>, <span class="k">done</span>.
+remote: Counting objects: <span class="m">100</span>% <span class="o">(</span><span class="m">310</span>/310<span class="o">)</span>, <span class="k">done</span>.
+remote: Compressing objects: <span class="m">100</span>% <span class="o">(</span><span class="m">212</span>/212<span class="o">)</span>, <span class="k">done</span>.
+remote: Total <span class="m">3295</span> <span class="o">(</span>delta <span class="m">159</span><span class="o">)</span>, reused <span class="m">201</span> <span class="o">(</span>delta <span class="m">80</span><span class="o">)</span>, pack-reused <span class="m">2985</span>
+Receiving objects: <span class="m">100</span>% <span class="o">(</span><span class="m">3295</span>/3295<span class="o">)</span>, <span class="m">84</span>.81 MiB <span class="p">|</span> <span class="m">31</span>.23 MiB/s, <span class="k">done</span>.
+Resolving deltas: <span class="m">100</span>% <span class="o">(</span><span class="m">1951</span>/1951<span class="o">)</span>, <span class="k">done</span>.
+</pre></div>
+</div>
+</li>
+<li><p>You now have a local copy of the website.</p>
+<p>To verify, list the current working directory via the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>notebook<span class="o">)</span> jovyan@jupyter:~$ ls -l
+</pre></div>
+</div>
+<p>Sample output:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>total <span class="m">4</span>
+drwxr-sr-x <span class="m">6</span> jovyan users <span class="m">4096</span> Jul  <span class="m">9</span> <span class="m">17</span>:10 website
+</pre></div>
+</div>
+<p>You will also see the folder on the left-hand side in the file explorer:
+<img alt="jupyterhub-website-folder" src="../_images/jupyterhub-website-folder.png" /></p>
+</li>
+</ol>
+<p>You are now set up to follow along with all tutorials, including making changes
+and then saving those by <a class="reference external" href="http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">recording changes with <code class="docutils literal notranslate"><span class="pre">git</span></code></a>.</p>
+<p>To store your commits to GitHub, don’t forget to issue a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code> from your
+repository.</p>
+<div class="admonition-for-advanced-users-using-a-branch-for-personal-changes admonition">
+<p class="admonition-title">For advanced users: Using a branch for personal changes</p>
+<p>While it is not required to create a <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/github-glossary#branch">branch</a>
+for your personal annotations, it is a common practice to do so when making changes
+to a repository.</p>
+<p>Think of the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch as the tried and tested version of a repository and
+a new branch from that is used to introduce a change that can slowly progress.
+Once ready, it will be merged to the ‘main’ branch.</p>
+<p>The chapter of <a class="reference external" href="http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project">contributing to a project</a>
+describes more behind this principle.</p>
+<p>Commands for branches:</p>
+<ul class="simple">
+<li><p>To create a branch named <em>my_work</em>:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">my_work</span></code></p></li>
+<li><p>To change to the branch:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">my_work</span></code></p></li>
+<li><p>To delete a branch:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-d</span> <span class="pre">my_work</span></code></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="how-do-i-keep-up-with-changes-to-the-initial-forked-repository">
+<h2>How do I keep up with changes to the initial forked repository?<a class="headerlink" href="#how-do-i-keep-up-with-changes-to-the-initial-forked-repository" title="Permalink to this headline">¶</a></h2>
+<p>By making a fork of the website, you are creating a copy of the website as
+of the date you clicked the ‘Fork’ button. This also means that your version will not
+get any updates automatically if the SnowEx website repository is changed after
+your fork was created.</p>
+<p>To update your forked version with changes from the SnowEx version, you need to
+do a one time setup. This process is also called
+<a class="reference external" href="http://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes">‘working with a remote’</a>
+for a git repository.</p>
+<div class="section" id="add-the-snowex-organization-repository-as-a-remote">
+<h3>Add the SnowEx organization repository as a remote<a class="headerlink" href="#add-the-snowex-organization-repository-as-a-remote" title="Permalink to this headline">¶</a></h3>
+<p>A remote is defined with a label and a URL. In our case and command below,
+we are using ‘SnowEx’ as the label and <code class="docutils literal notranslate"><span class="pre">https://github.com/snowex-hackweek/website.git</span></code>
+as the URL.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git remote add SnowEx https://github.com/snowex-hackweek/website.git
+</pre></div>
+</div>
+<p>The command will not return any output. Instead, we verify by printing the
+list of known remotes for this repository:</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The below sample output has the <code class="docutils literal notranslate"><span class="pre">&lt;github-username&gt;</span></code> as a placeholder
+and should show your GitHub username.</p>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span> git remote -v
+ SnowEx	https://github.com/snowex-hackweek/website.git <span class="o">(</span>fetch<span class="o">)</span>
+ SnowEx	https://github.com/snowex-hackweek/website.git <span class="o">(</span>push<span class="o">)</span>
+ origin	https://github.com/&lt;github-username&gt;/website.git <span class="o">(</span>fetch<span class="o">)</span>
+ origin	https://github.com/&lt;github-username&gt;/website.git <span class="o">(</span>push<span class="o">)</span>
+</pre></div>
+</div>
+<p>You are now set up and do not need to repeat this before every update you
+fetch from the website.</p>
+</div>
+<div class="section" id="getting-the-changes-from-the-originally-forked-repository">
+<h3>Getting the changes from the originally forked repository<a class="headerlink" href="#getting-the-changes-from-the-originally-forked-repository" title="Permalink to this headline">¶</a></h3>
+<p>To update your fork of the website, you first need to fetch and then pull
+the changes. A fetch is a pre-step that reads all the changes that need to
+be applied to your fork. The <code class="docutils literal notranslate"><span class="pre">SnowEx</span></code> command options indicates from which
+source the changes will be queried from.</p>
+<p>Reading changes from the remote ‘SnowEx’:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git fetch SnowEx
+</pre></div>
+</div>
+<p>To now also get and apply those changes, you need to issue a <code class="docutils literal notranslate"><span class="pre">pull</span></code> command.
+In contrast to the above, you also need to specify which branch you want
+to get the changes from. In most cases, this will be the ‘main’ or ‘master’ branch
+of a repository.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>It is <strong>highly</strong> recommend to have no uncommitted changes in your
+repository before pulling changes from a remote. To verify this, a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>
+command should return <code class="docutils literal notranslate"><span class="pre">nothing</span> <span class="pre">to</span> <span class="pre">commit,</span> <span class="pre">working</span> <span class="pre">tree</span> <span class="pre">clean</span></code> at the end of the
+output.</p>
+</div>
+<p>Applying changes from the remote ‘SnowEx’:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git pull SnowEx main
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information about branches, see the
+<a class="reference external" href="http://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell">Pro Git book chapter</a></p>
+</div>
+<p>Last and to update your fork on GitHub, issue a:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git push
+</pre></div>
+</div>
+</div>
+<div class="section" id="overview-of-a-forked-and-then-updated-repository">
+<h3>Overview of a forked and then updated repository<a class="headerlink" href="#overview-of-a-forked-and-then-updated-repository" title="Permalink to this headline">¶</a></h3>
+<p><img alt="git-fork-clone-update" src="../_images/git-fork-clone-update.png" /></p>
+</div>
+</div>
+<div class="section" id="how-can-i-upload-a-file-to-the-jupyterhub">
+<h2>How can I upload a file to the JupyterHub?<a class="headerlink" href="#how-can-i-upload-a-file-to-the-jupyterhub" title="Permalink to this headline">¶</a></h2>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The below description works well for smaller files (&lt;10 MB) or zipped archives.
+Talk to any of the instructiors or post on Slack in case you need to upload
+larger files.</p>
+</div>
+<p>Uploading a file to your userspace on the JupyterHub can be done using the
+user interface in the browser. Below screenshot shows the location of the upload
+button (purple highlighted box), which will open a dialog in your browser.</p>
+<p><img alt="upload-file" src="../_images/jupyterhub-upload.png" /></p>
 </div>
 </div>
 
