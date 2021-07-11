@@ -71,8 +71,8 @@ state of the repository including the complete history.
 3. In the Terminal, issue the `git clone` command and paste the URL you copied
    in step 1.
 
-    ```{note} A note about cutting and pasting
-    Pasting something from your clipboard into the JupyterLab terminal requires holding 
+    ```{admonition} A note about cutting and pasting
+    Pasting something from your clipboard into the JupyterLab terminal can require holding 
     down the "shift" key and right-clicking.  This is different from the usual Linux 
     method that only requires a right click.
     ```
@@ -235,8 +235,17 @@ git push
 
 ```{attention}
 The below description works well for smaller files (<10 MB) or zipped archives.
-Talk to any of the instructiors or post on Slack in case you need to upload
-larger files.
+
+Your files are persisted acrosss server shutdowns and startups and you don't have
+to upload them again when you log out at the end of the day and restart anew the
+next day.
+
+The user space has a total limit of 10 GB, which is a SnowEx JupyterHub set limit.
+You can use `/tmp` for temporary large files and they **are not** persistet after
+logout. 
+
+We also have an Amazon S3 bucket for larger files you need for your projects.
+Ping us on Slack for details on how to get your files onto there.
 ```
 
 Uploading a file to your userspace on the JupyterHub can be done using the
