@@ -8,8 +8,8 @@ during this event. A good summary is [this cheatsheet from GitHub](https://train
 These are a few commands we will use throughout the week:
 | Git command | What it does |
 |---|---|
-|`git add` | Adds a new, previously untracked file to version control |
-|`git commit` | Saves the current state of the document and creates an entry in the log |
+|`git add` | Adds a new, previously untracked file to version control and marks already tracked files to be committed with the next `commit' |
+|`git commit` | Saves the current state of the repository and creates an entry in the log |
 |`git log` | Shows the history for the repository |
 | `git clone` | Copies a repository to your local environment, including all the history |
 | `git pull` | Gets the latest changes of a previously cloned repository |
