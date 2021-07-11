@@ -26,7 +26,11 @@
     - file: tutorials/index
       sections:
         - file: tutorials/jupyter   
-        - file: tutorials/core-datasets/core-datasets-tutorial
+        - file: tutorials/core-datasets/index
+          sections:
+            - file: tutorials/core-datasets/01_introduction
+            - file: tutorials/core-datasets/02_data-package
+            - file: tutorials/core-datasets/03_practice-querying
         - file: tutorials/geospatial/index
           sections:
             - file: tutorials/geospatial/raster
@@ -40,12 +44,16 @@
         - file: tutorials/thermal-ir/index
           sections:
             - file: tutorials/thermal-ir/thermal-ir-tutorial
+            - file: tutorials/thermal-ir/thermal-ir-data-download
         - file: tutorials/database/index
           sections:
             - file: tutorials/database/1_getting_started_example
             - file: tutorials/database/2_database_structure
-            - file: tutorials/database/3_get_spiral_example
-            - file: tutorials/database/4_plot_raster_example
+            - file: tutorials/database/3_forming_queries
+            - file: tutorials/database/4_get_spiral_example
+            - file: tutorials/database/5_plot_raster_example
+            - file: tutorials/database/6_exporting_data
+            - file: tutorials/database/7_wrap_up
         - file: tutorials/microstructure/microstructure-tutorial
         - file: tutorials/camera-traps-tutorial/camera-traps-notebook
         - file: tutorials/lis/index
@@ -53,6 +61,10 @@
             - file: tutorials/lis/1_exploring_lis_output
             - file: tutorials/lis/2_interactive_widgets
         - file: tutorials/gpr/gpr
+        - file: tutorials/lidar/index
+          sections:
+            - file: tutorials/lidar/ICESat2_tutorial
+
 - part: Projects
   chapters:
     - file: projects/index
