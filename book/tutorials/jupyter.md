@@ -128,7 +128,7 @@ to a repository.
 
 Think of the `main` branch as the tried and tested version of a repository and 
 a new branch from that is used to introduce a change that can slowly progress.
-Once ready, it will be merged to the 'main' branch. 
+Once ready, it will be merged to the `main` branch. 
 
 The chapter of [contributing to a project](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project)
 describes more behind this principle.
