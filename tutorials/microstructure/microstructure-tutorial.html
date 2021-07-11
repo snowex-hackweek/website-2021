@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Microstructure Tutorial &#8212; SnowEx Hackweek</title>
+    <title>Snow Microstructure Tutorial &#8212; SnowEx Hackweek</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,8 +55,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Camera Traps and Snow Applications" href="../camera-traps-tutorial/camera-traps-notebook.html" />
-    <link rel="prev" title="Wrap up" href="../database/7_wrap_up.html" />
+    <link rel="next" title="GPR" href="../gpr/gpr.html" />
+    <link rel="prev" title="Downloading datasets for the thermal IR tutorial" href="../thermal-ir/thermal-ir-data-download.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -207,39 +207,9 @@
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../jupyter.html">
-     GitHub, Git, JupyterHub
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-datasets/01_introduction.html">
-     SnowEx Mission and Core Data Sets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-datasets/02_data-package.html">
-     Depths and Snow Pit Data Package Contents
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../core-datasets/03_practice-querying.html">
-     Practice Querying the Snowexsql Database
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../geospatial/geospatial_vector.html">
-     Geospatial Data Analysis: Vector data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../raster/intro-ipyleaflet.html">
-     An introduction to rasters
-    </a>
-   </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../sar/index.html">
-     Synthetic Aperture Radar
+    <a class="reference internal" href="../day_1.html">
+     Day 1
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
     <label for="toctree-checkbox-4">
@@ -248,47 +218,42 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../sar/sentinel1.html">
-       Sentinel-1
+      <a class="reference internal" href="../jupyter.html">
+       GitHub, Git, JupyterHub
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../sar/swesarr.html">
-       SWESARR Tutorial
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../core-datasets/index.html">
+       SnowEx Mission and Core Data Sets
       </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../sar/uavsar.html">
-       UAVSAR
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../thermal-ir/index.html">
-     Thermal Infrared Remote Sensing of Snow
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-    <label for="toctree-checkbox-5">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../thermal-ir/thermal-ir-tutorial.html">
-       Thermal Infrared Remote Sensing of Snow
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../thermal-ir/thermal-ir-data-download.html">
-       Downloading datasets for the thermal IR tutorial
-      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/01_introduction.html">
+         SnowEx Mission and Core Data Sets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/02_data-package.html">
+         Depths and Snow Pit Data Package Contents
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/03_practice-querying.html">
+         Practice Querying the Snowexsql Database
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../database/index.html">
-     SnowEx Database
+    <a class="reference internal" href="../day_2.html">
+     Day 2
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
     <label for="toctree-checkbox-6">
@@ -297,92 +262,187 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../database/1_getting_started_example.html">
-       Introduction to the SnowEx Database
+      <a class="reference internal" href="../geospatial/geospatial_vector.html">
+       Geospatial Data Analysis: Vector data
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../database/2_database_structure.html">
-       How is the Database Structured?
+      <a class="reference internal" href="../raster/intro-ipyleaflet.html">
+       An introduction to rasters
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../database/3_forming_queries.html">
-       Forming Queries
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../database/index.html">
+       SnowEx Database
       </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../database/4_get_spiral_example.html">
-       Forming Queries: Example Visualizng Depths
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../database/5_plot_raster_example.html">
-       Forming Queries: PostGIS Functions
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../database/6_exporting_data.html">
-       Exporting Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../database/7_wrap_up.html">
-       Wrap up
-      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/1_getting_started_example.html">
+         Introduction to the SnowEx Database
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/2_database_structure.html">
+         How is the Database Structured?
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/3_forming_queries.html">
+         Forming Queries
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/4_get_spiral_example.html">
+         Forming Queries: Example Visualizng Depths
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/5_plot_raster_example.html">
+         Forming Queries: PostGIS Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/6_exporting_data.html">
+         Exporting Data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/7_wrap_up.html">
+         Wrap up
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Microstructure Tutorial
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../day_3.html">
+     Day 3
     </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../camera-traps-tutorial/camera-traps-notebook.html">
-     Camera Traps and Snow Applications
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../lis/index.html">
-     NASA Land Information System (LIS)
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-    <label for="toctree-checkbox-7">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lis/1_exploring_lis_output.html">
-       Visualizing and Comparing LIS Output
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../lis/2_interactive_widgets.html">
-       Interactive Widgets
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../gpr/gpr.html">
-     SnowEx Hackweek GPR Tutorial 2021
-    </a>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../lidar/index.html">
-     LIDAR
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
     <label for="toctree-checkbox-8">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../lidar/index.html">
+       LIDAR
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+      <label for="toctree-checkbox-9">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lidar/ICESat2_tutorial.html">
+         Introduction
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../thermal-ir/index.html">
+       Thermal Infrared Remote Sensing of Snow
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../thermal-ir/thermal-ir-tutorial.html">
+         Thermal Infrared Remote Sensing of Snow
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../thermal-ir/thermal-ir-data-download.html">
+         Downloading datasets for the thermal IR tutorial
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Snow Microstructure Tutorial
+      </a>
+     </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../lidar/ICESat2_tutorial.html">
-       Introduction
+      <a class="reference internal" href="../gpr/gpr.html">
+       GPR
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_4.html">
+     Day 4
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../sar/index.html">
+       Synthetic Aperture Radar
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+      <label for="toctree-checkbox-12">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sar/sentinel1.html">
+         Sentinel-1
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sar/swesarr.html">
+         SWESARR Tutorial
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sar/uavsar.html">
+         UAVSAR
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../lis/index.html">
+       NASA Land Information System (LIS)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lis/1_exploring_lis_output.html">
+         Visualizing and Comparing LIS Output
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lis/2_interactive_widgets.html">
+         Interactive Widgets
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../camera-traps-tutorial/camera-traps-notebook.html">
+       Camera Traps and Snow Applications
       </a>
      </li>
     </ul>
@@ -400,8 +460,8 @@
   <a class="reference internal" href="../../projects/index.html">
    Projects
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -592,8 +652,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#read-microct-data-and-compare-intergrating-sphere-smp-and-ct-data">
-     3. Read microCT data, and compare intergrating sphere, SMP and CT data
+    <a class="reference internal nav-link" href="#read-microct-data-and-compare-integrating-sphere-smp-and-ct-data">
+     3. Read microCT data, and compare integrating sphere, SMP and CT data
     </a>
    </li>
   </ul>
@@ -609,8 +669,8 @@
         
               <div>
                 
-  <div class="section" id="microstructure-tutorial">
-<h1>Microstructure Tutorial<a class="headerlink" href="#microstructure-tutorial" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="snow-microstructure-tutorial">
+<h1>Snow Microstructure Tutorial<a class="headerlink" href="#snow-microstructure-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>by Mike Durand, School of Earth Sciences and Byrd Polar &amp; Climate Research Center <a class="reference external" href="mailto:durand&#46;8&#37;&#52;&#48;osu&#46;edu">durand<span>&#46;</span>8<span>&#64;</span>osu<span>&#46;</span>edu</a></p>
 <div class="section" id="learning-objectives">
 <h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
@@ -638,9 +698,9 @@
 <p><b>Snow microstructure governs visible and near-infrared reflectance. This is figure 2 from <span id="id2">[<a class="reference internal" href="../../bibliography.html#id8">Dozier <em>et al.</em>, 2009</a>]</span></b></p>
 <p>Radar measurements such as those made by the Ku-band SWEARR instrument are also very sensitive to snow microstructure.</p>
 <a class="reference internal image-reference" href="../../_images/modeled-swe-L-response.png"><img alt="radar-figure" src="../../_images/modeled-swe-L-response.png" style="width: 400px;" /></a>
-<p><b>Modeled response of radar backscatter to SWE and single-scatter abledo (which in turn is a function of snow microstructure), based on a simple model suggested by <span id="id3">[<a class="reference internal" href="../../bibliography.html#id18">Ulaby, 2014</a>]</span></b></p>
+<p><b>Modeled response of radar backscatter to SWE and single-scatter albedo (which in turn is a function of snow microstructure), based on a simple model suggested by <span id="id3">[<a class="reference internal" href="../../bibliography.html#id18">Ulaby, 2014</a>]</span></b></p>
 <p>Snow microstructure is super important to efforts to launch a Ku-band SAR to measure global snow water equivalent (SWE). An important area of research right now is exploring how to use estimates of microstructure (e.g. from snowpack evolution models) to improve SWE retrievals.</p>
-<p>Snow microstructure evolves through the season, and varies a lot with depth. Snow microstructure evoluation is controlled by other snow properties, such as snow temperature, snow height and snow liquid water content. A really great resource on snow microstructure is Kelly Elder’s recent talks:</p>
+<p>Snow microstructure evolves through the season, and varies a lot with depth. Snow microstructure evaluation is controlled by other snow properties, such as snow temperature, snow height and snow liquid water content. A really great resource on snow microstructure is Kelly Elder’s recent talks:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://boisestate.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9a051fe4-db09-4f1d-92db-acd1003cc5cc">Snow Metamorphism</a></p></li>
 <li><p><a class="reference external" href="https://boisestate.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=136f7580-c1e2-4c55-ab33-acca003c23d6">Snow Grain Identification</a></p></li>
@@ -666,7 +726,7 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 <p>Relationships of specific surface area to other metrics are given in this list if you’re curious but otherwise just skip past this bit</p>
 <ul class="simple">
 <li><p>Sometimes people refer to the “optical grain diameter”, which is the same as D<sub>eq</sub>. The “optical” refers to <span id="id11">[<a class="reference internal" href="../../bibliography.html#id12">Grenfell and Warren, 1999</a>]</span>, who showed that any snow with a particular SSA had similar (not identical) radiative transfer properties regardless of particle shape in the visible and near-infrared parts of the spectrum. But note the same is not true in the microwave spectrum.</p></li>
-<li><p>Autocorrelation length is usually one of two metrics that summarize the two-point microstructure autocorelation function of the three-dimensional ice-air matrix. Think of the probability that you change media (from ice to air or vice versa) as you move a certain distance within the snow microstructure. The length that defines the likelihood that you’ll change media is (an approximation of the correlation length). SSA is by definition (with almost no assumptions) equal to the slope of the autocorrelation function at the origin. But microwave scattering is controlled by correlations at longer lags. For more check out <span id="id12">[<a class="reference internal" href="../../bibliography.html#id10">Mätzler, 2002</a>]</span>. The lack of closing the loop between SSA and correlation length is a significant issue when we have measurements of SSA and microwaves as we do in SnowEx.</p></li>
+<li><p>Auto-correlation length is usually one of two metrics that summarize the two-point microstructure auto-correlation function of the three-dimensional ice-air matrix. Think of the probability that you change media (from ice to air or vice versa) as you move a certain distance within the snow microstructure. The length that defines the likelihood that you’ll change media is (an approximation of the correlation length). SSA is by definition (with almost no assumptions) equal to the slope of the autocorrelation function at the origin. But microwave scattering is controlled by correlations at longer lags. For more check out <span id="id12">[<a class="reference internal" href="../../bibliography.html#id10">Mätzler, 2002</a>]</span>. The lack of closing the loop between SSA and correlation length is a significant issue when we have measurements of SSA and microwaves as we do in SnowEx.</p></li>
 <li><p>Geometric grain size is what we usually measure when we measure with a hand lens. You can try to relate it to SSA or corelation length, but it is not always possible, and will change with different observers.</p></li>
 </ul>
 <p>Time to stop this list but there are many other metrics as well.</p>
@@ -914,7 +974,7 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grab all the sites with equivalent diameter data (set reduces a list to only its unique entries)</span>
 <span class="n">sites</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 
-<span class="c1"># Store all site names that have mulitple SSA instruments</span>
+<span class="c1"># Store all site names that have multiple SSA instruments</span>
 <span class="n">multi_instr_sites</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">instruments</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -999,7 +1059,7 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 </div>
 <div class="section" id="pull-the-snowmicropenetrometer-data-and-compute-ssa">
 <h3>2. Pull the snowmicropenetrometer data and compute SSA<a class="headerlink" href="#pull-the-snowmicropenetrometer-data-and-compute-ssa" title="Permalink to this headline">¶</a></h3>
-<p>The next step is to grab some SMP data to compare to. We’re going to get the SMP at site 2N13, where we have a copule of SSA profiles from interating spheres (as well as microCT data, to be looked at in the next step!).</p>
+<p>The next step is to grab some SMP data to compare to. We’re going to get the SMP at site 2N13, where we have a couple of SSA profiles from interacting spheres (as well as microCT data, to be looked at in the next step!).</p>
 <p>The SMP measurements for SnowEx 2020 GrandMesa were all made by Megan Mason. If you’re interested in working with the SMP data, please carefully read the NSIDC <a class="reference external" href="https://nsidc.org/data/SNEX20_SMP/versions/1">documentation page</a>. If you’re planning to work with the data, please reach out to the author; the contact is (Megan Mason <a class="reference external" href="mailto:meganmason491&#37;&#52;&#48;u&#46;boisestate&#46;edu">meganmason491<span>&#64;</span>u<span>&#46;</span>boisestate<span>&#46;</span>edu</a>). If you use a profile, consider checking out the comments which are described in the <a class="reference external" href="https://nsidc.org/sites/nsidc.org/files/technical-references/SNEX20_SMP_FieldNotes.xlsx">Excel sheet linked from the Technical References part of the NSIDC documentation</a>, where there are some really useful comments.</p>
 <p>There are a few steps here, and one reason for that is just that the SMP data is quite large, and so the full-resolution SMP could not be included in Micah’s database. The full resolution profile from SMP is resolved ever 1.25 mm! Instead, the SMP data in Micah’s database is sampled to only every 100th datapoint, so it’s every 12.5 cm. But the database is still very useful! What we’ll do is use the database to find the right profile, then go and download that full resolution dataset from the NSIDC. Easy-peasey!</p>
 <p>First up, we’ll visualize the location of the SMP profiles, along with the snowpit location.</p>
@@ -1224,8 +1284,8 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 </div></div></div>
 </div>
 </div>
-<div class="section" id="read-microct-data-and-compare-intergrating-sphere-smp-and-ct-data">
-<h3>3. Read microCT data, and compare intergrating sphere, SMP and CT data<a class="headerlink" href="#read-microct-data-and-compare-intergrating-sphere-smp-and-ct-data" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="read-microct-data-and-compare-integrating-sphere-smp-and-ct-data">
+<h3>3. Read microCT data, and compare integrating sphere, SMP and CT data<a class="headerlink" href="#read-microct-data-and-compare-integrating-sphere-smp-and-ct-data" title="Permalink to this headline">¶</a></h3>
 <p>The microCT samples were extracted in the field and processed at CRREL by Lauren Farnsworth, and is not yet published at NSIDC. Please contact her with questions (lauren.b.farnsworth&#64;usace.army.mil)!</p>
 <p>This module reads in microCT datafiles which are stored as text. Some additional data are available, showing the computer generated slices through the ice-air interface: contact Mike (<a class="reference external" href="mailto:durand&#46;8&#37;&#52;&#48;osu&#46;edu">durand<span>&#46;</span>8<span>&#64;</span>osu<span>&#46;</span>edu</a>) if you want to look at a subset of these data that Lauren has shared.</p>
 <p>Equivalent grain size is a useful quantity to compare: because it’s proportional to 1/SSA, and because after a point as you increase SSA more and more, all fine-grained snow acts more-or-less the same (converging to e.g. the “fine-grained” curve in Figure 1, above), we’ll look at equivalent diameter instead of SSA in this comparison.</p>
@@ -1242,7 +1302,7 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 <span class="n">data_dir</span><span class="o">=</span><span class="s1">&#39;/tmp/microstructure/microCT/txt/&#39;</span>
 <span class="p">[</span><span class="n">SSA_CT</span><span class="p">,</span><span class="n">height_min</span><span class="p">,</span><span class="n">height_max</span><span class="p">]</span><span class="o">=</span><span class="n">read_CT_txt_files</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
 
-<span class="n">SSA_CT</span> <span class="c1">#chck out the SSA values read in from MicroCT</span>
+<span class="n">SSA_CT</span> <span class="c1">#check out the SSA values read in from MicroCT</span>
 </pre></div>
 </div>
 </div>
@@ -1317,7 +1377,7 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 </div>
 </div>
 <p>Wow, so the datasets are so very different, with the SMP being by far the most different. Because we might expect that the SMP is quite a ways off, actually, as the relationships between the force profile and SSA are empirical, and thus might change for different types of snow. There’s also significant differences between the microCT and the two integrating spheres. This is science - sometimes when we start intercomparing these quantities, we do not get a perfect match. This data hasn’t had kinks worked out yet - this is all hot off the press and ready for HackWeek!</p>
-<p>Some of the ways that you could imagine connecting microstructure measurements to other quantities would be with the SWESARR radar data. Although the radar data does seem to have some orthorectification issues that haven’t been fully worked out, I can imagine these being worked around by careful choice of places you match up the microstructure to the radar. Note that places that are shallower tend to have larger D<sub>eq</sub> and vice versa, and the spatial variability in SSA was fairly low in general in Grand Mesa 2020, so looking at multiple SSA vs radar samples might not yield a great correlation. But you never know, could be fun to try! Generaly speaking, we don’t expect a ton of impact of the microstructure on L-band (UAVSAR), but it would be interesting to explore that.</p>
+<p>Some of the ways that you could imagine connecting microstructure measurements to other quantities would be with the SWESARR radar data. Although the radar data does seem to have some orthorectification issues that haven’t been fully worked out, I can imagine these being worked around by careful choice of places you match up the microstructure to the radar. Note that places that are shallower tend to have larger D<sub>eq</sub> and vice versa, and the spatial variability in SSA was fairly low in general in Grand Mesa 2020, so looking at multiple SSA vs radar samples might not yield a great correlation. But you never know, could be fun to try! Generally speaking, we don’t expect a ton of impact of the microstructure on L-band (UAVSAR), but it would be interesting to explore that.</p>
 <p>One thing that could be of great value is to calibrate the SMP estimates of SSA to the integrating spheres. If you’re interested in doing that, do reach out first. This could be a really interesting thing to explore!</p>
 <p>It might also be interesting to compare the data to hand hardness measured in the snowpit, and to traditional hand lens measurements.</p>
 </div>
@@ -1349,8 +1409,8 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../database/7_wrap_up.html" title="previous page">Wrap up</a>
-    <a class='right-next' id="next-link" href="../camera-traps-tutorial/camera-traps-notebook.html" title="next page">Camera Traps and Snow Applications</a>
+    <a class='left-prev' id="prev-link" href="../thermal-ir/thermal-ir-data-download.html" title="previous page">Downloading datasets for the thermal IR tutorial</a>
+    <a class='right-next' id="next-link" href="../gpr/gpr.html" title="next page">GPR</a>
 
         </div>
         
