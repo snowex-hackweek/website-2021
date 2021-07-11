@@ -32,6 +32,7 @@
             - file: tutorials/core-datasets/02_data-package
             - file: tutorials/core-datasets/03_practice-querying
         - file: tutorials/geospatial/geospatial_vector
+        - file: tutorials/nsidc-access/nsidc-data-access
         - file: tutorials/raster/intro-ipyleaflet
         - file: tutorials/sar/index
           sections:
