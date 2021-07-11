@@ -41,7 +41,7 @@ copied to the JupyterHub.
 
 After you successfully set up the {ref}`git command<setting-up-git>`, you can
 copy code between the two using the [clone](https://docs.github.com/en/get-started/quickstart/github-glossary#clone)
-command with git. A `clone` creates a copy of the repository with the current
+command with `git`. A `clone` creates a copy of the repository with the current
 state of the repository including the complete history.
 
 ### Example: Clone the fork of the website with the tutorials
@@ -157,8 +157,13 @@ for a git repository.
 ### Add the SnowEx organization repository as a remote
 
 A remote is defined with a label and a URL. In our case and command below,
-we are using 'SnowEx' as the label and `https://github.com/snowex-hackweek/website.git`
+we are using `SnowEx` as the label and `https://github.com/snowex-hackweek/website.git`
 as the URL.
+
+```{Note} 
+The chosen label `SnowEx` is found in many projects as the `upstream`. Here we
+just went with a more descriptive label instead of the default value.
+```
 
 ```shell
 git remote add SnowEx https://github.com/snowex-hackweek/website.git
