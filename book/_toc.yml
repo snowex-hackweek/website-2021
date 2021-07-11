@@ -61,6 +61,7 @@
         - file: tutorials/lidar/index
           sections:
             - file: tutorials/lidar/ICESat2_tutorial
+        - file: tutorials/machine-learning/Machine_Learning_Tutorial
 
 - part: Projects
   chapters:
