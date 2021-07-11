@@ -46,7 +46,7 @@ state of the repository including the complete history.
 
 ### Example: Clone the fork of the website with the tutorials
 
-1. Go to the your user page on GitHub and select the 'website' repository.
+1. Go to your user page on GitHub and select the 'website' repository.
 
    The URL to clone the repository can be found after clicking on the green 'Code' button.
 
