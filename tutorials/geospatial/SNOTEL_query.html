@@ -1,0 +1,1807 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Query of SNOTEL data &#8212; SnowEx Hackweek</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SnowEx Database" href="../database/index.html" />
+    <link rel="prev" title="Vector data" href="vector.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SnowEx Hackweek</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to SnowEx Hackweek!
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../application.html">
+   Application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Hackweek Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../team.html">
+   Our Team
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../norms/index.html">
+   Hackweek Norms
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/CoC.html">
+     Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/community.html">
+     Learning Community
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../preliminary/index.html">
+   Preliminary Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/swc.html">
+     Software Carpentry Training
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/github.html">
+     GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/git.html">
+     Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/earthdata.html">
+     Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/pangeo.html">
+     Pangeo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/python.html">
+     Python Installation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Tutorials
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_1.html">
+     Day 1
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../jupyter.html">
+       GitHub, Git, JupyterHub
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../core-datasets/index.html">
+       SnowEx Mission and Core Data Sets
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/01_introduction.html">
+         SnowEx Mission and Core Data Sets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/02_data-package.html">
+         Depths and Snow Pit Data Package Contents
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/03_practice-querying.html">
+         Practice Querying the Snowexsql Database
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../day_2.html">
+     Day 2
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active has-children">
+      <a class="reference internal" href="index.html">
+       Geospatial fundamentals
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="current">
+       <li class="toctree-l4">
+        <a class="reference internal" href="raster.html">
+         Raster data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="vector.html">
+         Vector data
+        </a>
+       </li>
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
+         Dynamic Query of SNOTEL data
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../database/index.html">
+       SnowEx Database
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/1_getting_started_example.html">
+         Introduction to the SnowEx Database
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/2_database_structure.html">
+         How is the Database Structured?
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/3_forming_queries.html">
+         Forming Queries
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/4_get_spiral_example.html">
+         Forming Queries: Example Visualizng Depths
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/5_plot_raster_example.html">
+         Forming Queries: PostGIS Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/6_exporting_data.html">
+         Exporting Data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/7_wrap_up.html">
+         Wrap up
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_3.html">
+     Day 3
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../lidar/index.html">
+       LIDAR
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lidar/ICESat2_tutorial.html">
+         Introduction
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../thermal-ir/index.html">
+       Thermal Infrared Remote Sensing of Snow
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../thermal-ir/thermal-ir-tutorial.html">
+         Thermal Infrared Remote Sensing of Snow
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../thermal-ir/thermal-ir-data-download.html">
+         Downloading datasets for the thermal IR tutorial
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
+       Snow Microstructure Tutorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../gpr/gpr.html">
+       GPR
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_4.html">
+     Day 4
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../sar/index.html">
+       Synthetic Aperture Radar
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sar/sentinel1.html">
+         Sentinel-1
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sar/swesarr.html">
+         SWESARR Tutorial
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sar/uavsar.html">
+         UAVSAR
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../lis/index.html">
+       NASA Land Information System (LIS)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lis/1_exploring_lis_output.html">
+         Visualizing and Comparing LIS Output
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lis/2_interactive_widgets.html">
+         Interactive Widgets
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../camera-traps-tutorial/camera-traps-notebook.html">
+       Camera Traps and Snow Applications
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../machine-learning/Machine_Learning_Tutorial.html">
+       Introduction to Machine Learning
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/index.html">
+   Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roles.html">
+     Project Roles and Responsibilities
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../SnowEx_News_and_MonthlyMeetings.html">
+   SnowEx News and MonthlyMeetings
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/geospatial/SNOTEL_query.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/snowex-hackweek/website"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/snowex-hackweek/website/issues/new?title=Issue%20on%20page%20%2Ftutorials/geospatial/SNOTEL_query.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/snowex-hackweek/website/edit/main/book/tutorials/geospatial/SNOTEL_query.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-a-bit-about-snotel-data-for-the-western-u-s">
+   Read a bit about SNOTEL data for the Western U.S.
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#about-snotel-sites-and-data">
+     About SNOTEL sites and data:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sample-plots-for-snotel-site-at-paradise-wa-south-side-of-mt-rainier">
+     Sample plots for SNOTEL site at Paradise, WA (south side of Mt. Rainier)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interactive-dashboard">
+     Interactive dashboard
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#snow-today">
+     Snow today
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cuahsi-wof-server-and-automated-python-data-queries">
+   CUAHSI WOF server and automated Python data queries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acronym-soup">
+     Acronym soup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-options">
+     Python options
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#important-ulmo-installation-note">
+     Important ulmo installation note
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-spatial-query-snotel-sites">
+   Part 1: Spatial Query SNOTEL sites
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#store-the-dictionary-as-a-pandas-dataframe-called-sites-df">
+     Store the dictionary as a Pandas DataFrame called
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sites_df
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clean-up-the-dataframe-and-prepare-point-geometry-objects">
+     Clean up the DataFrame and prepare Point geometry objects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#review-output">
+     Review output
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convert-to-a-geopandas-geodataframe">
+     Convert to a Geopandas GeoDataFrame
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-scatterplot-showing-elevation-values-for-all-sites">
+     Create a scatterplot showing elevation values for all sites
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exclude-the-alaska-ak-points-to-isolate-points-over-western-u-s">
+     Exclude the Alaska (AK) points to isolate points over Western U.S.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-your-scatterplot-as-sanity-check">
+     Update your scatterplot as sanity check
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#export-snotel-site-geodataframe-as-a-geojson">
+     Export SNOTEL site GeoDataFrame as a geojson
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-spatial-filter-points-by-polygon">
+   Part 2: Spatial filter points by polygon
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-grand-mesa-polygon">
+     Load Grand Mesa Polygon
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#isolate-polygon-geometry-within-geodataframe">
+     Isolate Polygon geometry within GeoDataFrame
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-boolean-index-for-points-that-intersect-the-polygon">
+     Generate boolean index for points that intersect the polygon
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-fancy-indexing-to-isolate-points-and-return-new-geodataframe">
+     Use fancy indexing to isolate points and return new GeoDataFrame
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quick-plot">
+     Quick plot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-time-series-analysis-for-one-station">
+   Part 3: Time series analysis for one station
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-available-measurements-for-this-site">
+     Get available measurements for this site
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-consider-the-snotel-snwd-d-variable-daily-snow-depth">
+     Let’s consider the ‘SNOTEL:SNWD_D’ variable (Daily Snow Depth)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-a-function-to-fetch-data">
+     Define a function to fetch data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-this-function-to-get-the-full-snotel-snwd-d-record-for-one-station">
+     Use this function to get the full ‘SNOTEL:SNWD_D’ record for one station
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-quick-plot-to-view-the-time-series">
+     Create a quick plot to view the time series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compute-the-integer-day-of-year-doy-and-integer-day-of-water-year-dowy">
+     Compute the integer day of year (doy) and integer day of water year (dowy)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compute-statistics-for-each-day-of-water-year-using-values-from-all-years">
+     Compute statistics for each day of water year, using values from all years
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-a-plot-of-these-aggregated-dowy-values">
+     Create a plot of these aggregated dowy values
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-the-daily-snow-depth-values-for-the-current-water-year">
+     Add the daily snow depth values for the current water year
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-percentage-of-normal-snow-depth-as-defined-by-long-term-median-for-this-dowy-at-this-site-for-april-1-of-current-year">
+     What is the percentage of “normal” snow depth (as defined by long-term median for this dowy) at this site for April 1 of current year?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#index-by-date-or-date-range">
+     Index by date or date range
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#query-multiple-sites">
+     Query multiple sites
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#determine-pearson-s-correlation-coefficient-for-the-two-time-series">
+     Determine Pearson’s correlation coefficient for the two time series
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="dynamic-query-of-snotel-data">
+<h1>Dynamic Query of SNOTEL data<a class="headerlink" href="#dynamic-query-of-snotel-data" title="Permalink to this headline">¶</a></h1>
+<p>SnowEx Hackweek<br />
+July 13, 2021</p>
+<p>Author: David Shean</p>
+<div class="section" id="read-a-bit-about-snotel-data-for-the-western-u-s">
+<h2>Read a bit about SNOTEL data for the Western U.S.<a class="headerlink" href="#read-a-bit-about-snotel-data-for-the-western-u-s" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.wcc.nrcs.usda.gov/snow/">https://www.wcc.nrcs.usda.gov/snow/</a></p>
+<p>This is actually a nice web interface, with some advanced querying and interactive visualization.  You can also download formatted ASCII files (csv) for analysis.  This is great for one-time projects, but it’s nice to have reproducible code that can be updated as new data appear, without manual steps.  That’s what we’re going to do here.</p>
+<div class="section" id="about-snotel-sites-and-data">
+<h3>About SNOTEL sites and data:<a class="headerlink" href="#about-snotel-sites-and-data" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.wcc.nrcs.usda.gov/about/mon_automate.html">https://www.wcc.nrcs.usda.gov/about/mon_automate.html</a></p></li>
+<li><p><a class="reference external" href="https://www.wcc.nrcs.usda.gov/snotel/snotel_sensors.html">https://www.wcc.nrcs.usda.gov/snotel/snotel_sensors.html</a></p></li>
+<li><p><a class="reference external" href="https://directives.sc.egov.usda.gov/OpenNonWebContent.aspx?content=27630.wba">https://directives.sc.egov.usda.gov/OpenNonWebContent.aspx?content=27630.wba</a></p></li>
+</ul>
+</div>
+<div class="section" id="sample-plots-for-snotel-site-at-paradise-wa-south-side-of-mt-rainier">
+<h3>Sample plots for SNOTEL site at Paradise, WA (south side of Mt. Rainier)<a class="headerlink" href="#sample-plots-for-snotel-site-at-paradise-wa-south-side-of-mt-rainier" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.nwrfc.noaa.gov/snow/snowplot.cgi?AFSW1">https://www.nwrfc.noaa.gov/snow/snowplot.cgi?AFSW1</a></p></li>
+<li><p>We will reproduce some of these plots/metrics in this tutorial</p></li>
+</ul>
+</div>
+<div class="section" id="interactive-dashboard">
+<h3>Interactive dashboard<a class="headerlink" href="#interactive-dashboard" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://climate.washington.edu/climate-data/snowdepth/">https://climate.washington.edu/climate-data/snowdepth/</a></p></li>
+</ul>
+</div>
+<div class="section" id="snow-today">
+<h3>Snow today<a class="headerlink" href="#snow-today" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://nsidc.org/reports/snow-today">https://nsidc.org/reports/snow-today</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="cuahsi-wof-server-and-automated-python-data-queries">
+<h2>CUAHSI WOF server and automated Python data queries<a class="headerlink" href="#cuahsi-wof-server-and-automated-python-data-queries" title="Permalink to this headline">¶</a></h2>
+<p>We are going to use a server set up by CUAHSI to serve the SNOTEL data, using a standardized database storage format and query structure.  You don’t need to worry about this, but can quickly review the following:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://hiscentral.cuahsi.org/pub_network.aspx?n=241">http://hiscentral.cuahsi.org/pub_network.aspx?n=241</a></p></li>
+<li><p><a class="reference external" href="http://his.cuahsi.org/wofws.html">http://his.cuahsi.org/wofws.html</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#This is the latest CUAHSI API endpoint</span>
+<span class="c1">#http://his.cuahsi.org/wofws.html</span>
+<span class="n">wsdlurl</span> <span class="o">=</span> <span class="s1">&#39;http://hydroportal.cuahsi.org/Snotel/cuahsi_1_1.asmx?WSDL&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="acronym-soup">
+<h3>Acronym soup<a class="headerlink" href="#acronym-soup" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>SNOTEL = Snow Telemetry</p></li>
+<li><p>CUAHSI = Consortium of Universities for the Advancement of Hydrologic Science, Inc</p></li>
+<li><p>WOF = WaterOneFlow</p></li>
+<li><p>WSDL = Web Services Description Language</p></li>
+<li><p>USDA = United States Department of Agriculture</p></li>
+<li><p>NRCS = National Resources Conservation Service</p></li>
+<li><p>AWDB = Air-Water Database</p></li>
+</ul>
+</div>
+<div class="section" id="python-options">
+<h3>Python options<a class="headerlink" href="#python-options" title="Permalink to this headline">¶</a></h3>
+<p>There are a few packages out there that offer convenience functions to query the online SNOTEL databases and unpack the results.</p>
+<ul class="simple">
+<li><p>climata (<a class="reference external" href="https://pypi.org/project/climata/">https://pypi.org/project/climata/</a>) - last commit Sept 2017 (not a good sign)</p></li>
+<li><p>ulmo (<a class="reference external" href="https://github.com/ulmo-dev/ulmo">https://github.com/ulmo-dev/ulmo</a>) - last commit Oct 2020 (will be superseded by a package called Quest, but still maintained by <a class="reference external" href="https://apl.uw.edu/people/profile.php?last_name=Mayorga&amp;first_name=Emilio">Emilio Mayorga</a> over at UW APL)</p></li>
+</ul>
+<p>You can also write your own queries using the Python <code class="docutils literal notranslate"><span class="pre">requests</span></code> module and some built-in XML parsing libraries.</p>
+<p>Hopefully not overwhelming amount of information - let’s just go with ulmo for now.  I’ve done most of the work to prepare functions for querying and processing the data.  Once you wrap your head around all of the acronyms, it’s pretty simple, basically running a few functions here: <a class="reference external" href="https://ulmo.readthedocs.io/en/latest/api.html#module-ulmo.cuahsi.wof">https://ulmo.readthedocs.io/en/latest/api.html#module-ulmo.cuahsi.wof</a></p>
+<p>We will use ulmo with daily data for this exercise, but please feel free to experiment with hourly data, other variables or other approaches to fetch SNOTEL data.</p>
+</div>
+<div class="section" id="important-ulmo-installation-note">
+<h3>Important ulmo installation note<a class="headerlink" href="#important-ulmo-installation-note" title="Permalink to this headline">¶</a></h3>
+<p>We’re going to use the latest development version of ulmo, straight from the github source!  This is a good exercise, and will show you how to install a package directly from source code on github.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Install directly from github repo main branch</span>
+<span class="o">%</span><span class="k">pip</span> install -q git+https://github.com/ulmo-dev/ulmo.git
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Despite warning, shouldn&#39;t need to restart kernel if all goes well</span>
+<span class="kn">import</span> <span class="nn">ulmo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
+<span class="kn">import</span> <span class="nn">contextily</span> <span class="k">as</span> <span class="nn">ctx</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-1-spatial-query-snotel-sites">
+<h2>Part 1: Spatial Query SNOTEL sites<a class="headerlink" href="#part-1-spatial-query-snotel-sites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Use the ulmo cuahsi interface and the <code class="docutils literal notranslate"><span class="pre">get_sites</span></code> function to fetch available site metadata from server</p></li>
+<li><p>This will return a Python dictionary</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sites</span> <span class="o">=</span> <span class="n">ulmo</span><span class="o">.</span><span class="n">cuahsi</span><span class="o">.</span><span class="n">wof</span><span class="o">.</span><span class="n">get_sites</span><span class="p">(</span><span class="n">wsdlurl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Preview first item in dictionary</span>
+<span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">sites</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="store-the-dictionary-as-a-pandas-dataframe-called-sites-df">
+<h3>Store the dictionary as a Pandas DataFrame called <code class="docutils literal notranslate"><span class="pre">sites_df</span></code><a class="headerlink" href="#store-the-dictionary-as-a-pandas-dataframe-called-sites-df" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>See the Pandas <code class="docutils literal notranslate"><span class="pre">from_dict</span></code> function</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">orient</span></code> option so the sites comprise the DataFrame index, with columns for ‘name’, ‘elevation_m’, etc</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">dropna</span></code> method to remove any empty records</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sites_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">sites</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;index&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">sites_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="clean-up-the-dataframe-and-prepare-point-geometry-objects">
+<h3>Clean up the DataFrame and prepare Point geometry objects<a class="headerlink" href="#clean-up-the-dataframe-and-prepare-point-geometry-objects" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Convert <code class="docutils literal notranslate"><span class="pre">'location'</span></code> column (contains dictionary with <code class="docutils literal notranslate"><span class="pre">'latitude'</span></code> and <code class="docutils literal notranslate"><span class="pre">'longitude'</span></code> values) to Shapely <code class="docutils literal notranslate"><span class="pre">Point</span></code> objects</p></li>
+<li><p>Store as a new <code class="docutils literal notranslate"><span class="pre">'geometry'</span></code> column (needed by GeoPandas)</p></li>
+<li><p>Drop the <code class="docutils literal notranslate"><span class="pre">'location'</span></code> column, as this is no longer needed</p></li>
+<li><p>Update the <code class="docutils literal notranslate"><span class="pre">dtype</span></code> of the <code class="docutils literal notranslate"><span class="pre">'elevation_m'</span></code> column to float</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sites_df</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">Point</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">]))</span> <span class="k">for</span> <span class="n">loc</span> <span class="ow">in</span> <span class="n">sites_df</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sites_df</span> <span class="o">=</span> <span class="n">sites_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;location&#39;</span><span class="p">)</span>
+<span class="n">sites_df</span> <span class="o">=</span> <span class="n">sites_df</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">&quot;elevation_m&quot;</span><span class="p">:</span><span class="nb">float</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="review-output">
+<h3>Review output<a class="headerlink" href="#review-output" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Take a moment to familiarize yourself with the DataFrame structure and different columns.</p></li>
+<li><p>Note that the index is a set of strings with format ‘SNOTEL:1000_OR_SNTL’</p></li>
+<li><p>Extract the first record with <code class="docutils literal notranslate"><span class="pre">loc</span></code></p>
+<ul>
+<li><p>Review the <code class="docutils literal notranslate"><span class="pre">'site_property'</span></code> dictionary - could parse this and store as separate fields in the DataFrame if desired</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sites_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sites_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;SNOTEL:301_CA_SNTL&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sites_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;SNOTEL:301_CA_SNTL&#39;</span><span class="p">][</span><span class="s1">&#39;site_property&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="convert-to-a-geopandas-geodataframe">
+<h3>Convert to a Geopandas GeoDataFrame<a class="headerlink" href="#convert-to-a-geopandas-geodataframe" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>We already have <code class="docutils literal notranslate"><span class="pre">'geometry'</span></code> column, but still need to define the <code class="docutils literal notranslate"><span class="pre">crs</span></code> of the point coordiantes</p></li>
+<li><p>Note the number of records</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sites_gdf_all</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">sites_df</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">)</span>
+<span class="n">sites_gdf_all</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sites_gdf_all</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-a-scatterplot-showing-elevation-values-for-all-sites">
+<h3>Create a scatterplot showing elevation values for all sites<a class="headerlink" href="#create-a-scatterplot-showing-elevation-values-for-all-sites" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#geojson of state polygons</span>
+<span class="n">states_url</span> <span class="o">=</span> <span class="s1">&#39;http://eric.clst.org/assets/wiki/uploads/Stuff/gz_2010_us_040_00_5m.json&#39;</span>
+<span class="n">states_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">states_url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">sites_gdf_all</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;elevation_m&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;inferno&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#This prevents matplotlib from updating the axes extent (states polygons cover larger area than SNOTEL points)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">autoscale</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">states_gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exclude-the-alaska-ak-points-to-isolate-points-over-western-u-s">
+<h3>Exclude the Alaska (AK) points to isolate points over Western U.S.<a class="headerlink" href="#exclude-the-alaska-ak-points-to-isolate-points-over-western-u-s" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Simple appraoch is to remove points where the site name contains ‘AK’ with attribute filter</p></li>
+<li><p>Note the number of records</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sites_gdf_conus</span> <span class="o">=</span> <span class="n">sites_gdf_all</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">sites_gdf_all</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;AK&#39;</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Alternatively, can use a spatial filter (see GeoPandas <code class="docutils literal notranslate"><span class="pre">cx</span></code> indexer functionality for a bounding box)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#xmin, xmax, ymin, ymax = [-126, 102, 30, 50]</span>
+<span class="c1">#sites_gdf_conus = sites_gdf_all.cx[xmin:xmax, ymin:ymax]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sites_gdf_conus</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="update-your-scatterplot-as-sanity-check">
+<h3>Update your scatterplot as sanity check<a class="headerlink" href="#update-your-scatterplot-as-sanity-check" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Should look something like the Western U.S.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">sites_gdf_conus</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;elevation_m&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;inferno&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">autoscale</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">states_gdf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="export-snotel-site-geodataframe-as-a-geojson">
+<h3>Export SNOTEL site GeoDataFrame as a geojson<a class="headerlink" href="#export-snotel-site-geodataframe-as-a-geojson" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Maybe useful for other purposes, and can avoid all of the above processing, just load directly with geopandas <code class="docutils literal notranslate"><span class="pre">read_file</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sites_fn</span> <span class="o">=</span> <span class="s1">&#39;snotel_conus_sites.json&#39;</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">sites_fn</span><span class="p">):</span>
+    <span class="n">sites_gdf_conus</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="n">sites_fn</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">&#39;GeoJSON&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-2-spatial-filter-points-by-polygon">
+<h2>Part 2: Spatial filter points by polygon<a class="headerlink" href="#part-2-spatial-filter-points-by-polygon" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="load-grand-mesa-polygon">
+<h3>Load Grand Mesa Polygon<a class="headerlink" href="#load-grand-mesa-polygon" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_poly_fn</span> <span class="o">=</span> <span class="s1">&#39;grand_mesa_poly.geojson&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_poly</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">gm_poly_fn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_poly</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="isolate-polygon-geometry-within-geodataframe">
+<h3>Isolate Polygon geometry within GeoDataFrame<a class="headerlink" href="#isolate-polygon-geometry-within-geodataframe" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_poly</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_poly</span><span class="o">.</span><span class="n">total_bounds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_poly</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#Still a GeoSeries</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_geom</span> <span class="o">=</span> <span class="n">gm_poly</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">geometry</span>
+<span class="n">gm_geom</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">gm_geom</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">gm_geom</span><span class="o">.</span><span class="n">exterior</span><span class="o">.</span><span class="n">coords</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_geom</span><span class="o">.</span><span class="n">bounds</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="generate-boolean-index-for-points-that-intersect-the-polygon">
+<h3>Generate boolean index for points that intersect the polygon<a class="headerlink" href="#generate-boolean-index-for-points-that-intersect-the-polygon" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>This will return a new GeoDataSeries with True/False values for each record</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">sites_gdf_all</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">gm_geom</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="use-fancy-indexing-to-isolate-points-and-return-new-geodataframe">
+<h3>Use fancy indexing to isolate points and return new GeoDataFrame<a class="headerlink" href="#use-fancy-indexing-to-isolate-points-and-return-new-geodataframe" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_snotel_sites</span> <span class="o">=</span> <span class="n">sites_gdf_all</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_snotel_sites</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="quick-plot">
+<h3>Quick plot<a class="headerlink" href="#quick-plot" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">gm_snotel_sites</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;elevation_m&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;inferno&#39;</span><span class="p">,</span> \
+                  <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;label&#39;</span><span class="p">:</span><span class="s1">&#39;Elevation (m)&#39;</span><span class="p">})</span>
+<span class="c1">#ctx.add_basemap(ax=ax, crs=gm_snotel_sites.crs, source=ctx.providers.Stamen.Terrain)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Grand Mesa SNOTEL Stations&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hvplot.pandas</span>
+<span class="kn">from</span> <span class="nn">geoviews</span> <span class="kn">import</span> <span class="n">tile_sources</span> <span class="k">as</span> <span class="n">gvts</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm_snotel_sites</span><span class="o">.</span><span class="n">hvplot</span><span class="p">(</span><span class="n">hover_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">,</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">map_tiles</span> <span class="o">=</span> <span class="n">gvts</span><span class="o">.</span><span class="n">EsriImagery</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">map_tiles</span> <span class="o">*</span> <span class="n">gm_snotel_sites</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="s1">&#39;EPSG:3857&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">hvplot</span><span class="p">(</span><span class="n">hover_cols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;index&#39;</span><span class="p">,</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-3-time-series-analysis-for-one-station">
+<h2>Part 3: Time series analysis for one station<a class="headerlink" href="#part-3-time-series-analysis-for-one-station" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://wcc.sc.egov.usda.gov/nwcc/site?sitenum=622&amp;state=co">https://wcc.sc.egov.usda.gov/nwcc/site?sitenum=622&amp;state=co</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sitecode</span> <span class="o">=</span> <span class="n">gm_snotel_sites</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">sitecode</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="get-available-measurements-for-this-site">
+<h3>Get available measurements for this site<a class="headerlink" href="#get-available-measurements-for-this-site" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ulmo</span><span class="o">.</span><span class="n">cuahsi</span><span class="o">.</span><span class="n">wof</span><span class="o">.</span><span class="n">get_site_info</span><span class="p">(</span><span class="n">wsdlurl</span><span class="p">,</span> <span class="n">sitecode</span><span class="p">)[</span><span class="s1">&#39;series&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>_H = “hourly”</p></li>
+<li><p>_D = “daily”</p></li>
+<li><p>_sm, _m = “monthly”</p></li>
+</ul>
+</div>
+<div class="section" id="let-s-consider-the-snotel-snwd-d-variable-daily-snow-depth">
+<h3>Let’s consider the ‘SNOTEL:SNWD_D’ variable (Daily Snow Depth)<a class="headerlink" href="#let-s-consider-the-snotel-snwd-d-variable-daily-snow-depth" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Assign ‘SNOTEL:SNWD_D’ to a variable named <code class="docutils literal notranslate"><span class="pre">variablecode</span></code></p></li>
+<li><p>Get some information about the variable using <code class="docutils literal notranslate"><span class="pre">get_variable_info</span></code> method</p>
+<ul>
+<li><p>Note the units, nodata value, etc.</p></li>
+</ul>
+</li>
+<li><p>Note: The snow depth records are usually shorter/noisier than the SWE records for SNOTEL sites</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Daily SWE</span>
+<span class="c1">#variablecode = &#39;SNOTEL:WTEQ_D&#39;</span>
+<span class="c1">#Daily snow depth</span>
+<span class="n">variablecode</span> <span class="o">=</span> <span class="s1">&#39;SNOTEL:SNWD_D&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Hourly SWE</span>
+<span class="c1">#variablecode = &#39;SNOTEL:WTEQ_H&#39;</span>
+<span class="c1">#Hourly snow depth</span>
+<span class="c1">#variablecode = &#39;SNOTEL:SNWD_H&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ulmo</span><span class="o">.</span><span class="n">cuahsi</span><span class="o">.</span><span class="n">wof</span><span class="o">.</span><span class="n">get_variable_info</span><span class="p">(</span><span class="n">wsdlurl</span><span class="p">,</span> <span class="n">variablecode</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="define-a-function-to-fetch-data">
+<h3>Define a function to fetch data<a class="headerlink" href="#define-a-function-to-fetch-data" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>I’ve done this for you, but please review the comments and steps to see what is going on under the hood</p></li>
+<li><p>You’ll probably have to do similar data wrangling for another project at some point in the future</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Get current datetime</span>
+<span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">snotel_fetch</span><span class="p">(</span><span class="n">sitecode</span><span class="p">,</span> <span class="n">variablecode</span><span class="o">=</span><span class="s1">&#39;SNOTEL:SNWD_D&#39;</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="s1">&#39;1950-10-01&#39;</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="n">today</span><span class="p">):</span>
+    <span class="c1">#print(sitecode, variablecode, start_date, end_date)</span>
+    <span class="n">values_df</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1">#Request data from the server</span>
+        <span class="n">site_values</span> <span class="o">=</span> <span class="n">ulmo</span><span class="o">.</span><span class="n">cuahsi</span><span class="o">.</span><span class="n">wof</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="n">wsdlurl</span><span class="p">,</span> <span class="n">sitecode</span><span class="p">,</span> <span class="n">variablecode</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end_date</span><span class="p">)</span>
+        <span class="c1">#Convert to a Pandas DataFrame   </span>
+        <span class="n">values_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">site_values</span><span class="p">[</span><span class="s1">&#39;values&#39;</span><span class="p">])</span>
+        <span class="c1">#Parse the datetime values to Pandas Timestamp objects</span>
+        <span class="n">values_df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">values_df</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">],</span> <span class="n">utc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="c1">#Set the DataFrame index to the Timestamps</span>
+        <span class="n">values_df</span> <span class="o">=</span> <span class="n">values_df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;datetime&#39;</span><span class="p">)</span>
+        <span class="c1">#Convert values to float and replace -9999 nodata values with NaN</span>
+        <span class="n">values_df</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">values_df</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="o">-</span><span class="mi">9999</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+        <span class="c1">#Remove any records flagged with lower quality</span>
+        <span class="n">values_df</span> <span class="o">=</span> <span class="n">values_df</span><span class="p">[</span><span class="n">values_df</span><span class="p">[</span><span class="s1">&#39;quality_control_level_code&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">]</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unable to fetch </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">variablecode</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">values_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="use-this-function-to-get-the-full-snotel-snwd-d-record-for-one-station">
+<h3>Use this function to get the full ‘SNOTEL:SNWD_D’ record for one station<a class="headerlink" href="#use-this-function-to-get-the-full-snotel-snwd-d-record-for-one-station" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Inspect the results</p></li>
+<li><p>We used a dummy start date of Jan 1, 1950.  What is the actual the first date returned?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Get all records, can filter later</span>
+<span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">1950</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">end_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sitecode</span><span class="p">)</span>
+<span class="n">values_df</span> <span class="o">=</span> <span class="n">snotel_fetch</span><span class="p">(</span><span class="n">sitecode</span><span class="p">,</span> <span class="n">variablecode</span><span class="p">,</span> <span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">)</span>
+<span class="n">values_df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">values_df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Get number of decimal years between first and last observation</span>
+<span class="n">nyears</span> <span class="o">=</span> <span class="p">(</span><span class="n">values_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">values_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">())</span><span class="o">.</span><span class="n">days</span><span class="o">/</span><span class="mf">365.25</span>
+<span class="n">nyears</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-a-quick-plot-to-view-the-time-series">
+<h3>Create a quick plot to view the time series<a class="headerlink" href="#create-a-quick-plot-to-view-the-time-series" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Take a moment to inspect the <code class="docutils literal notranslate"><span class="pre">value</span></code> column, which is where the <code class="docutils literal notranslate"><span class="pre">SNWD_D</span></code> values are stored</p></li>
+<li><p>Sanity check thought question: <em>What are the units again?</em></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">values_df</span><span class="o">.</span><span class="n">hvplot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="compute-the-integer-day-of-year-doy-and-integer-day-of-water-year-dowy">
+<h3>Compute the integer day of year (doy) and integer day of water year (dowy)<a class="headerlink" href="#compute-the-integer-day-of-year-doy-and-integer-day-of-water-year-dowy" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Can get doy for each record with <code class="docutils literal notranslate"><span class="pre">df.index.dayofyear</span></code></p>
+<ul>
+<li><p>Can compute on the fly, but add a new column to store these values</p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.19/generated/pandas.DatetimeIndex.dayofyear.html">https://pandas.pydata.org/pandas-docs/version/0.19/generated/pandas.DatetimeIndex.dayofyear.html</a></p></li>
+</ul>
+</li>
+<li><p>For the day of water year, you’ll need to offset by 9 months, then compute day of year</p>
+<ul>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Water_year">https://en.wikipedia.org/wiki/Water_year</a></p></li>
+<li><p>Add another column to store these values</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add DOY and DOWY column</span>
+<span class="c1">#Need to revisit for leap year support</span>
+<span class="k">def</span> <span class="nf">add_dowy</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">col</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;doy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">dayofyear</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;doy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dayofyear</span>
+    <span class="c1">#df[&#39;dowy&#39;] = (df[&#39;doy&#39;].index - pd.DateOffset(months=9)).dayofyear</span>
+    <span class="c1"># Sept 30 is doy 273</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;dowy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;doy&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">273</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;dowy&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;dowy&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">365</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add_dowy</span><span class="p">(</span><span class="n">values_df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="compute-statistics-for-each-day-of-water-year-using-values-from-all-years">
+<h3>Compute statistics for each day of water year, using values from all years<a class="headerlink" href="#compute-statistics-for-each-day-of-water-year-using-values-from-all-years" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Seems like a Pandas groupby/agg might work here</p></li>
+<li><p>Stats should at least include min, max, mean, and median</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stat_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">,</span><span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;std&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">,</span><span class="s1">&#39;mad&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doy_stats</span> <span class="o">=</span> <span class="n">values_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;dowy&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">stat_list</span><span class="p">)[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span>
+<span class="n">doy_stats</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-a-plot-of-these-aggregated-dowy-values">
+<h3>Create a plot of these aggregated dowy values<a class="headerlink" href="#create-a-plot-of-these-aggregated-dowy-values" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Your output independent variable (x-axis) should be day of water year (1-366), and dependent variable (y-axis) should be median value for that day of year, computed using values from all available years</p>
+<ul>
+<li><p>You may have to explicitly specify the x and y valuese for your plot function</p></li>
+</ul>
+</li>
+<li><p>Something like the 30-year mean and median here: <a class="reference external" href="https://www.nwrfc.noaa.gov/snow/plot_SWE.php?id=AFSW1">https://www.nwrfc.noaa.gov/snow/plot_SWE.php?id=AFSW1</a></p></li>
+<li><p>Extra credit: add shaded regions for standard deviation or normalized median absolute deviation (nmad) for each doy to show spread in values over the full record</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">stat</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">]:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">doy_stats</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">doy_stats</span><span class="p">[</span><span class="n">stat</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">stat</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">doy_stats</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">doy_stats</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">doy_stats</span><span class="p">[</span><span class="s1">&#39;std&#39;</span><span class="p">],</span> <span class="n">doy_stats</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">doy_stats</span><span class="p">[</span><span class="s1">&#39;std&#39;</span><span class="p">],</span> \
+                <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;1-std&#39;</span><span class="p">)</span>
+
+<span class="n">title</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">sitecode</span><span class="si">}</span><span class="s1">: </span><span class="se">\n</span><span class="si">{</span><span class="n">values_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="si">}</span><span class="s1"> to </span><span class="si">{</span><span class="n">values_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">()</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">nyears</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> years)&#39;</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Day of Water Year (Oct 1)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Snow depth (in)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">366</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="add-the-daily-snow-depth-values-for-the-current-water-year">
+<h3>Add the daily snow depth values for the current water year<a class="headerlink" href="#add-the-daily-snow-depth-values-for-the-current-water-year" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Can use pandas indexing here with simple strings (‘YYYY-MM-DD’), or Timestamp objects</p>
+<ul>
+<li><p>Standard slicing also works with <code class="docutils literal notranslate"><span class="pre">:</span></code></p></li>
+</ul>
+</li>
+<li><p>Make sure to <code class="docutils literal notranslate"><span class="pre">dropna</span></code> to remove any records missing data</p></li>
+<li><p>Add this to your plot</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Define variable to store current year</span>
+<span class="n">curr_y</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">year</span>
+<span class="n">curr_y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df_wy = values_df.loc[&#39;2019-10-1&#39;:].dropna()</span>
+<span class="n">df_wy</span> <span class="o">=</span> <span class="n">values_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">curr_y</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="s1">-10-1&#39;</span><span class="p">:]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">stat</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">,</span><span class="s1">&#39;max&#39;</span><span class="p">,</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span><span class="s1">&#39;median&#39;</span><span class="p">]:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">doy_stats</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">doy_stats</span><span class="p">[</span><span class="n">stat</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">stat</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">doy_stats</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">doy_stats</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">doy_stats</span><span class="p">[</span><span class="s1">&#39;std&#39;</span><span class="p">],</span> <span class="n">doy_stats</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">doy_stats</span><span class="p">[</span><span class="s1">&#39;std&#39;</span><span class="p">],</span> \
+                <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;1-std&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Day of Water Year&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Snow depth (in)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_wy</span><span class="p">[</span><span class="s1">&#39;dowy&#39;</span><span class="p">],</span> <span class="n">df_wy</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Current WY&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">366</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="what-is-the-percentage-of-normal-snow-depth-as-defined-by-long-term-median-for-this-dowy-at-this-site-for-april-1-of-current-year">
+<h3>What is the percentage of “normal” snow depth (as defined by long-term median for this dowy) at this site for April 1 of current year?<a class="headerlink" href="#what-is-the-percentage-of-normal-snow-depth-as-defined-by-long-term-median-for-this-dowy-at-this-site-for-april-1-of-current-year" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_wy</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">curr_y</span><span class="si">}</span><span class="s1">-4-1&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">apr1_doy</span> <span class="o">=</span> <span class="n">df_wy</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">curr_y</span><span class="si">}</span><span class="s1">-4-1&#39;</span><span class="p">][</span><span class="s1">&#39;dowy&#39;</span><span class="p">]</span>
+<span class="n">apr1_doy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doy_stats</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">apr1_doy</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Percent of normal</span>
+<span class="n">perc_normal</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">df_wy</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">curr_y</span><span class="si">}</span><span class="s1">-4-1&#39;</span><span class="p">][</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">doy_stats</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">apr1_doy</span><span class="p">][</span><span class="s1">&#39;median&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">perc_normal</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">% percent of normal snow depth on DOWY </span><span class="si">{</span><span class="n">apr1_doy</span><span class="si">}</span><span class="s1"> in </span><span class="si">{</span><span class="n">curr_y</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="index-by-date-or-date-range">
+<h3>Index by date or date range<a class="headerlink" href="#index-by-date-or-date-range" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt1</span> <span class="o">=</span> <span class="s1">&#39;2017-2-1&#39;</span>
+<span class="n">dt2</span> <span class="o">=</span> <span class="s1">&#39;2017-2-7&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">values_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dt1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">values_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">dt1</span><span class="p">:</span><span class="n">dt2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="query-multiple-sites">
+<h3>Query multiple sites<a class="headerlink" href="#query-multiple-sites" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Define an empty dictionary to store returns for each site</span>
+<span class="n">value_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">sitecode</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gm_snotel_sites</span><span class="o">.</span><span class="n">index</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%i</span><span class="s1"> of </span><span class="si">%i</span><span class="s1"> sites: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">gm_snotel_sites</span><span class="o">.</span><span class="n">index</span><span class="p">),</span> <span class="n">sitecode</span><span class="p">))</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">snotel_fetch</span><span class="p">(</span><span class="n">sitecode</span><span class="p">,</span> <span class="n">variablecode</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">out</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">value_dict</span><span class="p">[</span><span class="n">sitecode</span><span class="p">]</span> <span class="o">=</span> <span class="n">out</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span>
+<span class="c1">#Convert the dictionary to a DataFrame, automatically handles different datetime ranges (nice!)</span>
+<span class="n">multi_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">value_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multi_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multi_df</span><span class="o">.</span><span class="n">hvplot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Hack to remove bad measurements</span>
+<span class="n">multi_df</span><span class="p">[</span><span class="n">multi_df</span> <span class="o">&gt;</span> <span class="mi">190</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multi_df</span><span class="o">.</span><span class="n">hvplot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="determine-pearson-s-correlation-coefficient-for-the-two-time-series">
+<h3>Determine Pearson’s correlation coefficient for the two time series<a class="headerlink" href="#determine-pearson-s-correlation-coefficient-for-the-two-time-series" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient">https://en.wikipedia.org/wiki/Pearson_correlation_coefficient</a></p></li>
+<li><p>See the Pandas <code class="docutils literal notranslate"><span class="pre">corr</span></code> method</p>
+<ul>
+<li><p>This should properly handle nan under the hood!</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multi_df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Highly correlated snow depth records for these two sites!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multi_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">hvplot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SNOTEL:622_CO_SNTL&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;SNOTEL:682_CO_SNTL&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/geospatial"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="vector.html" title="previous page">Vector data</a>
+    <a class='right-next' id="next-link" href="../database/index.html" title="next page">SnowEx Database</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By eScience Institute, University of Washington<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QM84T4SB76"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-QM84T4SB76');
+                </script>
+
+  </body>
+</html>
