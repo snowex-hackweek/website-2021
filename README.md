@@ -4,6 +4,9 @@
 https://snowex-hackweek.github.io/website
 
 ## Run tutorials on JupyterHub
+
+** NOTE: this is the preferred way to run tutorials, because you will have access to some external resources like s3://snowex-data **
+
   1. Log onto http://snowex.hackweek.io (you need to be a member of https://github.com/snowex-hackweek)
   2. Clone this repository `git clone https://github.com/snowex-hackweek/website`
   3. Navigate to tutorial notebook you want to run: `cd website/book/tutorials/raster`
@@ -14,11 +17,11 @@ https://snowex-hackweek.github.io/website
 [![badge](https://img.shields.io/static/v1.svg?logo=Jupyter&label=MyBinder.org&message=gcp-central&color=blue)](https://gke.mybinder.org/v2/gh/snowex-hackweek/website/main?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fsnowex-hackweek%252Fwebsite%26urlpath%3Dlab%252Ftree%252Fwebsite/book/tutorials%252F%26branch%3Dmain)
 
 ## Run tutorials locally
-If you have Docker installed on any machine you can also run tutorials:
+First install [Docker](https://docs.docker.com/get-docker/) if you don't have it
 ```
 git clone https://github.com/snowex-hackweek/website
 cd website/book/tutorials
-docker run -it --name SNOWEX -p 8888:8888 -v $PWD:/home/jovyan uwhackweek/snowex:latest jupyter lab --ip 0.0.0.0
+docker compose up
 ```
 
 ## GitHub Deployment (changing book contents)
