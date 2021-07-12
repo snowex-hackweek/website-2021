@@ -81,7 +81,7 @@ Snow has a very high emissivity (0.98-0.99) (except for coarser grained snow, or
 
 ## What kinds of data will we be using?
 
-During the field campaign at Grand Mesa, we wanted to capture the spatial variabilies of surface temperature and how temperatures changed over time. While at each snow pit surface temperature was logged and its precise time of measurement recorded, we also wanted a continuous timeseries of temperature measurements at a point in open snow that would be visible by airborne and satellite-based remote sensing. 
+During the field campaign at Grand Mesa, we wanted to capture the spatial variabilities of surface temperature and how temperatures changed over time. While at each snow pit surface temperature was logged and its precise time of measurement recorded, we also wanted a continuous timeseries of temperature measurements at a point in open snow that would be visible by airborne and satellite-based remote sensing. 
 
 In the figure below, the field campaign map (left) showing snow pit locations and flight-line paths is annotated with two snow surface temperature timeseries measurements sites, the *Mesa West* meteorlogical station, and *Snow Pit 2S10*. We will use data from snow pit 2S10 for this tutorial.
 

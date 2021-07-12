@@ -9,7 +9,7 @@ many open source software projects to manage their software code base.
 You are not required to know Git in advance of this event, but come prepared to learn a lot about it!
 [Here a quick introduction video from the official website](https://git-scm.com/video/what-is-git)
 ```
-
+(setting-up-git)=
 ## Setting up on JupyterHub
 
 Below are instructions to get you setup with `git` on the SnowEx hackweek
