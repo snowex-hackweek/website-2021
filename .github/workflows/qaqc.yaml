@@ -41,10 +41,10 @@ jobs:
       shell: python
       run: |
         import yaml
-        with open('_config.yml') as f:
+        with open('./book/_config.yml') as f:
           data = yaml.safe_load(f)
           data['execute']['execute_notebooks'] = 'off'
-        with open('_config.yml', 'w') as f:
+        with open('./book/_config.yml', 'w') as f:
           yaml.dump(data, f)
 
     # NOTE: create separate _config.yml to pass --config (and skip executing notebooks?)
