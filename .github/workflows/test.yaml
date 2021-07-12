@@ -49,7 +49,7 @@ jobs:
     - name: Build JupyterBook
       env:
         # Warning: careful exposing secrets in scripts
-        EARTHDATA_USER: ${{ secrets.EARTHDATA_LOGIN }}
+        EARTHDATA_LOGIN: ${{ secrets.EARTHDATA_LOGIN }}
         EARTHDATA_PASSWORD: ${{ secrets.EARTHDATA_PASSWORD }}
       run: |
         docker run -u root \
