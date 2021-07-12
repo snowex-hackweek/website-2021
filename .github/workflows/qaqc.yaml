@@ -18,6 +18,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Setup Cache
+      uses: actions/cache@v2
+      # NOTE: change key (jupyterbook-1) to force rebuilding cache
+      with:
+        path: ./book/_build
+        key: jupyterbook
+
     - name: Ensure Clean Notebooks
       run: |
         pip install nb-clean==2.0.2
@@ -36,6 +43,7 @@ jobs:
         docker pull $DOCKER_IMAGE
         docker images
 
+    # NOTE: create separate _config.yml to pass --config (and skip executing notebooks?)
     - name: Check External Links
       run: |
         docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw $DOCKER_IMAGE jb build book --builder linkcheck

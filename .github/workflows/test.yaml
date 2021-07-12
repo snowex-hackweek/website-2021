@@ -25,6 +25,13 @@ jobs:
       with:
         ref: ${{ github.event.pull_request.head.sha }}
 
+    - name: Setup Cache
+      uses: actions/cache@v2
+      # NOTE: change key (jupyterbook-1) to force rebuilding cache
+      with:
+        path: ./book/_build
+        key: jupyterbook
+
     - name: Pull Docker Image
       run: |
         docker pull $DOCKER_IMAGE
@@ -42,11 +49,11 @@ jobs:
     - name: Build JupyterBook
       env:
         # Warning: careful exposing secrets in scripts
-        EARTHDATA_USER: ${{ secrets.EARTHDATA_USER }}
+        EARTHDATA_USER: ${{ secrets.EARTHDATA_LOGIN }}
         EARTHDATA_PASSWORD: ${{ secrets.EARTHDATA_PASSWORD }}
       run: |
         docker run -u root \
-        -e EARTHDATA_USER -e EARTHDATA_PASSWORD \
+        -e EARTHDATA_LOGIN -e EARTHDATA_PASSWORD \
         -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN \
         -v ${{ github.workspace }}:/home/jovyan:rw \
         $DOCKER_IMAGE .github/workflows/build.sh
