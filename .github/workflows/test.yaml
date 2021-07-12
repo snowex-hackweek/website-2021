@@ -49,7 +49,7 @@ jobs:
         -e EARTHDATA_USER -e EARTHDATA_PASSWORD \
         -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN \
         -v ${{ github.workspace }}:/home/jovyan:rw \
-        $DOCKER_IMAGE ./github/workflows/build.sh
+        $DOCKER_IMAGE .github/workflows/build.sh
 
     - name: Save Build
       if: ${{ always() }}
