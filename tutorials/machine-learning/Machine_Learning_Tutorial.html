@@ -1,0 +1,2039 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Machine Learning &#8212; SnowEx Hackweek</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Projects" href="../../projects/index.html" />
+    <link rel="prev" title="Camera Traps and Snow Applications" href="../camera-traps-tutorial/camera-traps-notebook.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SnowEx Hackweek</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to SnowEx Hackweek!
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../application.html">
+   Application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Hackweek Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../team.html">
+   Our Team
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../norms/index.html">
+   Hackweek Norms
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/CoC.html">
+     Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/community.html">
+     Learning Community
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../preliminary/index.html">
+   Preliminary Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/swc.html">
+     Software Carpentry Training
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/github.html">
+     GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/git.html">
+     Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/earthdata.html">
+     Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/pangeo.html">
+     Pangeo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/python.html">
+     Python Installation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Tutorials
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_1.html">
+     Day 1
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../jupyter.html">
+       GitHub, Git, JupyterHub
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../core-datasets/index.html">
+       SnowEx Mission and Core Data Sets
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/01_introduction.html">
+         SnowEx Mission and Core Data Sets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/02_data-package.html">
+         Depths and Snow Pit Data Package Contents
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/03_practice-querying.html">
+         Practice Querying the Snowexsql Database
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_2.html">
+     Day 2
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geospatial/geospatial_vector.html">
+       Geospatial Data Analysis: Vector data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../raster/intro-ipyleaflet.html">
+       An introduction to rasters
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../database/index.html">
+       SnowEx Database
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/1_getting_started_example.html">
+         Introduction to the SnowEx Database
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/2_database_structure.html">
+         How is the Database Structured?
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/3_forming_queries.html">
+         Forming Queries
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/4_get_spiral_example.html">
+         Forming Queries: Example Visualizng Depths
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/5_plot_raster_example.html">
+         Forming Queries: PostGIS Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/6_exporting_data.html">
+         Exporting Data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/7_wrap_up.html">
+         Wrap up
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_3.html">
+     Day 3
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../lidar/index.html">
+       LIDAR
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+      <label for="toctree-checkbox-9">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lidar/ICESat2_tutorial.html">
+         Introduction
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../thermal-ir/index.html">
+       Thermal Infrared Remote Sensing of Snow
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../thermal-ir/thermal-ir-tutorial.html">
+         Thermal Infrared Remote Sensing of Snow
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../thermal-ir/thermal-ir-data-download.html">
+         Downloading datasets for the thermal IR tutorial
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
+       Snow Microstructure Tutorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../gpr/gpr.html">
+       GPR
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../day_4.html">
+     Day 4
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../sar/index.html">
+       Synthetic Aperture Radar
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+      <label for="toctree-checkbox-12">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sar/sentinel1.html">
+         Sentinel-1
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sar/swesarr.html">
+         SWESARR Tutorial
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sar/uavsar.html">
+         UAVSAR
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../lis/index.html">
+       NASA Land Information System (LIS)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lis/1_exploring_lis_output.html">
+         Visualizing and Comparing LIS Output
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lis/2_interactive_widgets.html">
+         Interactive Widgets
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../camera-traps-tutorial/camera-traps-notebook.html">
+       Camera Traps and Snow Applications
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Introduction to Machine Learning
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/index.html">
+   Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roles.html">
+     Project Roles and Responsibilities
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../SnowEx_News_and_MonthlyMeetings.html">
+   SnowEx_News_and_MonthlyMeetings
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/machine-learning/Machine_Learning_Tutorial.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/snowex-hackweek/website"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/snowex-hackweek/website/issues/new?title=Issue%20on%20page%20%2Ftutorials/machine-learning/Machine_Learning_Tutorial.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/snowex-hackweek/website/edit/main/book/tutorials/machine-learning/Machine_Learning_Tutorial.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-outcomes">
+   Learning Outcomes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-machine-learning">
+   What is Machine Learning?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#binary-example">
+     Binary Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#snowex-data">
+   SnowEx Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-dataset">
+   Load Dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#train-and-test-sets">
+   Train and Test Sets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inspect-the-data">
+     Inspect the Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#normalization">
+     Normalization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sepatare-features-from-labels">
+     Sepatare Features from Labels
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-estimate-f">
+   Why Estimate
+   <span class="math notranslate nohighlight">
+    \(f\)
+   </span>
+   ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-do-we-estimate-f">
+   How Do We Estimate
+   <span class="math notranslate nohighlight">
+    \(f\)
+   </span>
+   ?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#machine-learning-algorithms">
+     Machine Learning Algorithms
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#machine-learning-installation-guide">
+   Machine Learning Installation Guide
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-regression">
+   Linear Regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#performance-evaluation">
+   Performance Evaluation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modeling-setup">
+   Modeling Setup
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-regression-coefficient">
+     Linear Regression Coefficient
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#neural-networks">
+   Neural Networks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-preceptron-or-single-neuron">
+     A preceptron or Single Neuron
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-the-perceptron-works">
+       How the perceptron works
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-activation-functions">
+     Visualizing Activation Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#families-of-neural-networks">
+     Families of Neural Networks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#feedforward-neural-network">
+     Feedforward Neural Network
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prediction">
+     Prediction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#check-performance">
+     Check Performance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualize-performance">
+     Visualize Performance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualize-error">
+     Visualize Error
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save-the-best-model">
+     Save the Best Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#main-challenges-of-machine-learning">
+     Main Challenges of Machine Learning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#improving-your-deep-learning-model">
+     Improving your Deep Learning Model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#your-turn">
+   Your Turn
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reference">
+   Reference
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendix-a">
+   Appendix A
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-regression-weights">
+     Linear Regression Weights
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training-a-linear-regression-estimating-the-optimal-weights">
+     Training a Linear Regression (Estimating the Optimal Weights)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#optimizing-the-empirical-risk">
+       Optimizing the Empirical Risk
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendix-b">
+   Appendix B
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#neural-network-weights">
+     Neural Network Weights
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training-a-neural-network-finding-optimal-weights-for-prediction">
+     Training a Neural Network (Finding Optimal Weights for Prediction)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction-to-machine-learning">
+<h1>Introduction to Machine Learning<a class="headerlink" href="#introduction-to-machine-learning" title="Permalink to this headline">¶</a></h1>
+<center> Compiled by: </center>
+<center> Ibrahim O. Alabi (Computing PhD, Data Science, Boise State University) </center><div class="section" id="learning-outcomes">
+<h2>Learning Outcomes<a class="headerlink" href="#learning-outcomes" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Understand the goals and main concepts of a Machine Learning Algorithm</p></li>
+<li><p>Prepare a SnowEx dataset for Machine Learning</p></li>
+<li><p>Understand the fundamental types and techniques in Machine Learning</p></li>
+<li><p>Implement Machine Learning with a SnowEx dataset</p></li>
+</ol>
+</div>
+<div class="section" id="what-is-machine-learning">
+<h2>What is Machine Learning?<a class="headerlink" href="#what-is-machine-learning" title="Permalink to this headline">¶</a></h2>
+<p>Machine Learning simply means building algorithms or computer models using data. The goal is to use these “trained” computer models to make decisions.</p>
+<p>Here is a general definition;</p>
+<blockquote>
+<div><p>Machine Learning is the field of study that gives computers the ability to learn without being explicitly programmed (Arthur Samuel, 1959)</p>
+</div></blockquote>
+<p>Over the years, ML algorithms have achieved great success in a wide variety of fields. Its success stories include disease diagnostics, image recognition, self-driving cars, spam detectors, and handwritten digit recognition. In this tutorial we will train a model using a SnowEx dataset.</p>
+<div class="section" id="binary-example">
+<h3>Binary Example<a class="headerlink" href="#binary-example" title="Permalink to this headline">¶</a></h3>
+<p>Suppose we want to build a computer model that returns 1 if the input is a prime number and 0 otherwise. This model may be represented as follows;</p>
+<div class="math notranslate nohighlight">
+\[Y = F(X)\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X \to\)</span> the number entered also called a feature</p></li>
+<li><p><span class="math notranslate nohighlight">\(Y \to\)</span> the outcome we want to predict</p></li>
+<li><p><span class="math notranslate nohighlight">\(F \to\)</span> the model that gets the job done</p></li>
+</ul>
+<p>Contrary to classical programming where we the program function, in Machine Learning we learn the function by training the algorithm with data.</p>
+<img alt="Drawing" src="../../_images/ml.jpeg" />
+<p><span class="math notranslate nohighlight">\(\qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad\)</span> image by <a class="reference external" href="https://twitter.com/Kpaxs/status/1163058544402411520">Kpaxs on Twitter</a></p>
+<p>Machine Learning is useful when the function cannot be programmed or the relationship between the features and outcome is unknown.</p>
+</div>
+</div>
+<div class="section" id="snowex-data">
+<h2>SnowEx Data<a class="headerlink" href="#snowex-data" title="Permalink to this headline">¶</a></h2>
+<p>Now we will import airborned data from 2017 SnowEx Campaign. In Machine Learning terminologies, it contains the following features;</p>
+<ul class="simple">
+<li><p>phase</p></li>
+<li><p>coherence</p></li>
+<li><p>amplitude</p></li>
+<li><p>incidence angle</p></li>
+</ul>
+<p>and outcome</p>
+<ul class="simple">
+<li><p>snow depth</p></li>
+</ul>
+<p>The goal is to use the data to learn the computer model <span class="math notranslate nohighlight">\(f\)</span> so that</p>
+<p>snow_depth = <span class="math notranslate nohighlight">\(f\)</span>(phase, coherence, amplitude, incidence angle)</p>
+<p>Once <span class="math notranslate nohighlight">\(f\)</span> is learned, it can be used to predict snow depth given the features.</p>
+</div>
+<div class="section" id="load-dataset">
+<h2>Load Dataset<a class="headerlink" href="#load-dataset" title="Permalink to this headline">¶</a></h2>
+<p>Note that this dataset has been cleaned in a separate notebook, and it is available for anyone interested.</p>
+<p>Load libraries:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span><span class="p">,</span> <span class="n">mean_absolute_percentage_error</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/snow_depth_data.csv&quot;</span><span class="p">)</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 3000 entries, 0 to 2999
+Data columns (total 5 columns):
+ #   Column      Non-Null Count  Dtype  
+---  ------      --------------  -----  
+ 0   amplitude   3000 non-null   float64
+ 1   coherence   3000 non-null   float64
+ 2   phase       3000 non-null   float64
+ 3   inc_ang     3000 non-null   float64
+ 4   snow_depth  3000 non-null   float64
+dtypes: float64(5)
+memory usage: 117.3 KB
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>amplitude</th>
+      <th>coherence</th>
+      <th>phase</th>
+      <th>inc_ang</th>
+      <th>snow_depth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.198821</td>
+      <td>0.866390</td>
+      <td>-8.844648</td>
+      <td>0.797111</td>
+      <td>0.969895</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.198821</td>
+      <td>0.866390</td>
+      <td>-8.844648</td>
+      <td>0.797111</td>
+      <td>1.006760</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.212010</td>
+      <td>0.785662</td>
+      <td>-8.843649</td>
+      <td>0.799110</td>
+      <td>1.033615</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.212010</td>
+      <td>0.785662</td>
+      <td>-8.843649</td>
+      <td>0.799110</td>
+      <td>1.043625</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.173967</td>
+      <td>0.714862</td>
+      <td>-8.380865</td>
+      <td>0.792508</td>
+      <td>1.593430</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The data used in this tutorial is already clean. The data cleaning was done in a separate notebook, and it is available for anyone interested.</p>
+</div>
+<div class="section" id="train-and-test-sets">
+<h2>Train and Test Sets<a class="headerlink" href="#train-and-test-sets" title="Permalink to this headline">¶</a></h2>
+<p>For the algorithm to learn the relationship pattern between the feature(s) and the outcome variable, it has to be exposed to examples. The dataset containing the examples for training a learning machine is called the <em>train set</em> (<span class="math notranslate nohighlight">\(\mathcal{D}^{(tr)}\)</span>).</p>
+<p>On the other hand, the accuracy of an algorithm is measured on how well it predicts the outcome of observations it has not seen before. The dataset containing the observations not used in training the ML algorithm is called the <em>test set</em> (<span class="math notranslate nohighlight">\(\mathcal{D}^{(te)}\)</span>).</p>
+<p>In practice, we divide our dataset into train and test sets, train the algorithm on the train set and evaluate its performance on the test set.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">test_dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">train_dataset</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="inspect-the-data">
+<h3>Inspect the Data<a class="headerlink" href="#inspect-the-data" title="Permalink to this headline">¶</a></h3>
+<p><strong>Visualization</strong></p>
+<p>Before modelling, it is always a good idea to visualize our dataset. With visualization, we gain insights into the relationships between the variables and the shape of the distribution of each variable. For this data, we shall look into the scatterplot matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">[[</span><span class="s1">&#39;snow_depth&#39;</span><span class="p">,</span><span class="s1">&#39;amplitude&#39;</span><span class="p">,</span> <span class="s1">&#39;coherence&#39;</span><span class="p">,</span> <span class="s1">&#39;phase&#39;</span><span class="p">,</span> <span class="s1">&#39;inc_ang&#39;</span><span class="p">]],</span> <span class="n">diag_kind</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f8346ad7640&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Machine_Learning_Tutorial_10_1.png" src="../../_images/Machine_Learning_Tutorial_10_1.png" />
+</div>
+</div>
+<p>Each panel of the scatterplot matrix is a scatterplot for a pair of variables whose identities are given by the corresponding row and column labels. None of the features have a linear relationship with <span class="math notranslate nohighlight">\(\texttt{snow_depth}\)</span>. This may indicate that a linear model might not be the best option.</p>
+<p><strong>Descriptive Statistics</strong></p>
+<ul class="simple">
+<li><p>count: the size of the training set</p></li>
+<li><p>mean: arithmetic mean</p></li>
+<li><p>std: sample standard deviation</p></li>
+<li><p>min: minimum value</p></li>
+<li><p>25%: 25<span class="math notranslate nohighlight">\(^{th}\)</span> percentile</p></li>
+<li><p>50%: 50<span class="math notranslate nohighlight">\(^{th}\)</span> percentile also called the median</p></li>
+<li><p>75%: 75<span class="math notranslate nohighlight">\(^{th}\)</span> percentile</p></li>
+<li><p>max: maximum value</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_dataset</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>amplitude</th>
+      <td>2400.0</td>
+      <td>0.151192</td>
+      <td>0.040073</td>
+      <td>0.077860</td>
+      <td>0.119580</td>
+      <td>0.148579</td>
+      <td>0.175531</td>
+      <td>0.368253</td>
+    </tr>
+    <tr>
+      <th>coherence</th>
+      <td>2400.0</td>
+      <td>0.778119</td>
+      <td>0.048796</td>
+      <td>0.700428</td>
+      <td>0.738597</td>
+      <td>0.773580</td>
+      <td>0.811030</td>
+      <td>0.942499</td>
+    </tr>
+    <tr>
+      <th>phase</th>
+      <td>2400.0</td>
+      <td>-8.419475</td>
+      <td>0.338714</td>
+      <td>-9.240785</td>
+      <td>-8.743792</td>
+      <td>-8.326929</td>
+      <td>-8.145543</td>
+      <td>-7.690262</td>
+    </tr>
+    <tr>
+      <th>inc_ang</th>
+      <td>2400.0</td>
+      <td>0.772514</td>
+      <td>0.054758</td>
+      <td>0.679981</td>
+      <td>0.719910</td>
+      <td>0.775250</td>
+      <td>0.809429</td>
+      <td>0.880183</td>
+    </tr>
+    <tr>
+      <th>snow_depth</th>
+      <td>2400.0</td>
+      <td>1.178734</td>
+      <td>0.629103</td>
+      <td>0.051438</td>
+      <td>0.667404</td>
+      <td>0.961838</td>
+      <td>1.652085</td>
+      <td>2.551194</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="normalization">
+<h3>Normalization<a class="headerlink" href="#normalization" title="Permalink to this headline">¶</a></h3>
+<p>The features and outcome are measured in different units and hence are on different scales. Machine Learning algorithms are very sensitive and important information can be lost if they are not on the same scale A simple way to address this is to project all the variables onto the same scale, in a process known as <strong>Normalization</strong>.</p>
+<p>Normalization simply consists of transforming the variables such that all values are in the unit interval [0, 1]. With Normalization, if <span class="math notranslate nohighlight">\(X_j\)</span> is one of the variables, and we have <span class="math notranslate nohighlight">\(n\)</span> observations <span class="math notranslate nohighlight">\(X_{1j}, X_{2j}, \cdots, X_{nj}\)</span>, then the normalized version of <span class="math notranslate nohighlight">\(X_{ij}\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{X}{ij} = \frac{X_{ij} - \min X_j}{\max X_j - \min X_j}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+<span class="n">scaled_train</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">)</span>
+<span class="n">scaled_test</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">)</span> <span class="c1">## fit_transform != transform. </span>
+                                             <span class="c1">## transform uses the parameters of fit_transform</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sepatare-features-from-labels">
+<h3>Sepatare Features from Labels<a class="headerlink" href="#sepatare-features-from-labels" title="Permalink to this headline">¶</a></h3>
+<p>Our last dtep for preparing the data for Machine Learning is to separate the features from the outcome.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_X</span><span class="p">,</span> <span class="n">train_y</span> <span class="o">=</span> <span class="n">scaled_train</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">scaled_train</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">test_X</span><span class="p">,</span> <span class="n">test_y</span> <span class="o">=</span> <span class="n">scaled_test</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">scaled_test</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="why-estimate-f">
+<h2>Why Estimate <span class="math notranslate nohighlight">\(f\)</span>?<a class="headerlink" href="#why-estimate-f" title="Permalink to this headline">¶</a></h2>
+<p>We estimate <span class="math notranslate nohighlight">\(f\)</span> for two main reasons;</p>
+<ol class="simple">
+<li><p>Prediction: in this case, the features <span class="math notranslate nohighlight">\(X\)</span> are available, but there is no explicit rule for obtaining the outcome <span class="math notranslate nohighlight">\(Y\)</span>.</p></li>
+<li><p>Inference: in practice, we are sometimes interested in how changing the input <span class="math notranslate nohighlight">\(X\)</span> effects <span class="math notranslate nohighlight">\(Y\)</span>. Inference can tell us which features are significantly associated with a paticular outcome and the nature of the relationship between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>.</p></li>
+</ol>
+</div>
+<div class="section" id="how-do-we-estimate-f">
+<h2>How Do We Estimate <span class="math notranslate nohighlight">\(f\)</span>?<a class="headerlink" href="#how-do-we-estimate-f" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="machine-learning-algorithms">
+<h3>Machine Learning Algorithms<a class="headerlink" href="#machine-learning-algorithms" title="Permalink to this headline">¶</a></h3>
+<p>Machine learning algorithms can be categorized based on different criteria. In this tutorial, our categorization will be based on the amount and type of supervision needed during the training process. Based on this criterion, there are four major categories; supervised learning, unsupervised learning, semisupervised learning, and reinforcement learning. We shall limit our definition to the first two;</p>
+<ul class="simple">
+<li><p><strong>Supervised Learning</strong>: this refers to tasks where we have a specific outcome to predict. That is, every observation of the features has a corresponding outcome. An example of a supervised learning task is predicting snow depth based on some influencing features.</p></li>
+<li><p><strong>Unsupervised Learning</strong>: this refers to tasks where we have no outcome to predict.  Here, rather than predict an outcome, we seek to understand the relationship between the features or between the observations or to detect anomalous observations. Considering the example above, we assume the snow depth variable does not exist and we either understand the relationship between the features or between the observations based on the features.</p></li>
+</ul>
+<p>It is worth noting that a variable can either be categorical or continuous. For now, let’s focus on the nature of the outcome variable. In <em>Supervised Learning</em> parlance, if the outcome variable is categorical, we have a <em>classification</em> task and if continuous, we are in the presence of a <em>regression</em> task. Categorical implies that the variable is made of distinct categories (e.g. hair color: grey, blonde, black) and continuous implies that the variable is measured (e.g. snow depth). For the rest of this tutorial, we will focus on <em>Supervised Learning</em> tasks with a special concentration on regression tasks.</p>
+</div>
+</div>
+<div class="section" id="machine-learning-installation-guide">
+<h2>Machine Learning Installation Guide<a class="headerlink" href="#machine-learning-installation-guide" title="Permalink to this headline">¶</a></h2>
+<p>For this notebook to run successfully, you have to install the following packages;</p>
+<ol class="simple">
+<li><p>TensorFlow</p></li>
+<li><p>Keras</p></li>
+</ol>
+<p><strong>Tensorflow</strong>: it is an end-to-end open source platform for machine learning. It makes it easy to train and deploy machine learning models. TensorFlow was created at Google and supports many of their large-scale Machine Learning applications. Read more at <a class="reference external" href="https://keras.io/about/">About TensorFlow</a></p>
+<p><strong>Keras:</strong>  Keras is a deep learning Application Programming Interface (API) written in Python, running on top of the machine learning platform TensorFlow. It was developed with a focus on enabling fast experimentation. Read more at <a class="reference external" href="https://www.tensorflow.org/">About Keras</a>.</p>
+<p>Other packages needed come pre-installed in Anaconda</p>
+<p>The install the packages above, lunch the <strong>Anaconda prompt</strong> and type the following commands</p>
+<p>        <span class="math notranslate nohighlight">\(\texttt{C:\Users\Default&gt; pip install tensorflow}\)</span></p>
+<p>        <span class="math notranslate nohighlight">\(\texttt{C:\Users\Default&gt; pip install keras}\)</span></p>
+<p>After installation, you will be able to continue with the tutorial. For this tutorial, both Tensorflow and Keras used are version 2.5</p>
+<p>Most Machine Learning techniques can be characterised as either <em>parametric</em> or <em>non-parametric</em>. A common parametric method is Linear Regression while Neural Networks are a common non-parametric method.</p>
+</div>
+<div class="section" id="linear-regression">
+<h2>Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">¶</a></h2>
+<p>Assume a functional form for <span class="math notranslate nohighlight">\(f\)</span>, e.g we may assume that <span class="math notranslate nohighlight">\(f\)</span> is a linear function of <span class="math notranslate nohighlight">\(X\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[f(X) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_k X_k\]</div>
+<p>and the goal of ML is to estimate the parameters of the model <span class="math notranslate nohighlight">\(\beta_0, \beta_1, \cdots, \beta_k\)</span>. This is called Linear Regression.</p>
+<p>The parametric approach simplifies the problem of estimating <span class="math notranslate nohighlight">\(f\)</span> to a parameter estimation problem. The disadvantage is that we assume a particular shape of <span class="math notranslate nohighlight">\(f\)</span> that may not match the true shape of <span class="math notranslate nohighlight">\(f\)</span>. The major advantage of using parametric approach that when inference is the goal we can understand how changing <span class="math notranslate nohighlight">\(X_1, X_2, \cdots, X_k\)</span> effects <span class="math notranslate nohighlight">\(Y\)</span></p>
+</div>
+<div class="section" id="performance-evaluation">
+<h2>Performance Evaluation<a class="headerlink" href="#performance-evaluation" title="Permalink to this headline">¶</a></h2>
+<p>Each time we estimate the true outcome (<span class="math notranslate nohighlight">\(Y\)</span>) using a trained ML algorithm (<span class="math notranslate nohighlight">\(f(X)\)</span>), the discrepancy between the observed and predicted must be quantified. The question is, how do we quantify this discrepancy? This brings the notion of <strong>loss function</strong>.</p>
+<p><em>Loss Function</em> <span class="math notranslate nohighlight">\(\mathcal{L} (\cdot,\cdot)\)</span> is a bivariate function that quantifies the loss (error) we sustain from predicting <span class="math notranslate nohighlight">\(Y\)</span> with <span class="math notranslate nohighlight">\(f(X)\)</span>. Put another way, <strong>loss function</strong> quantifies how close the prediction <span class="math notranslate nohighlight">\(f(X)\)</span> is to the ground truth <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+<ul class="simple">
+<li><p>Regression Loss Function</p></li>
+</ul>
+<p>There exists quite a number of ways for which the loss of a regression problem may be quantified. We now illustrate two of them;</p>
+<ol class="simple">
+<li></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L} (Y,f(X)) = (Y - f(X))^2
+\]</div>
+<p>This is popularly known as the <em>squared error loss</em> and it is simply the square of the difference between the observed and the predicted values. The loss is squared so that the function reaches its minimum (convex).</p>
+<ol class="simple">
+<li></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L} (Y,f(X)) = |Y - f(X)|
+\]</div>
+<p>Another way to quantify regression loss is by taking the absolute value of the difference between the observed (<span class="math notranslate nohighlight">\(Y\)</span>) and the predicted (<span class="math notranslate nohighlight">\(f(X)\)</span>) values. This is called the L1 loss.</p>
+<p>It is worth noting that the <em>loss function</em> as defined above corresponds to a single observation. However, in practice, we want to quantify the loss over the entire dataset and this is where the notion of <strong>empirical risk</strong> comes in. Loss quantified over the entire dataset is called the <em>empirical risk</em>. Our goal in ML is to develop an algorithm such that the <em>empirical risk</em> is as minimum as possible. <em>Empirical risk</em> is also called the <em>cost function</em> or the <em>objective function</em> we want to minimize.</p>
+<ul class="simple">
+<li><p>Regression Empirical Risk</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\widehat{\mathcal{R}}_n(f) = \frac{1}{n}\sum_{i=1}^n{\mathcal{L}(Y_i, f(X_i))}
+\]</div>
+<p>The empirical risk corresponding to the squared error loss is called “mean squared error”, while the empirical risk corresponding to the L1 loss is called “mean absolute error”. Other Regression Loss functions can be found at <a class="reference external" href="https://keras.io/api/losses/">Keras: losses</a></p>
+</div>
+<div class="section" id="modeling-setup">
+<h2>Modeling Setup<a class="headerlink" href="#modeling-setup" title="Permalink to this headline">¶</a></h2>
+<p>Load libraries:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NOTE: this part of the tutorial uses additional libraries not in the default snowex jupyterhub</span>
+<span class="c1"># mamba is a python package management alternative to conda and pip https://github.com/mamba-org/mamba</span>
+<span class="o">!</span>mamba install -y -q tensorflow
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Package                     Version  Build               Channel                    Size
+────────────────────────────────────────────────────────────────────────────────────────────
+  Install:
+────────────────────────────────────────────────────────────────────────────────────────────
+
+<span class=" -Color -Color-Green">  _tflow_select          </span>       2.3.0  mkl                 pkgs/main/linux-64         2 KB
+<span class=" -Color -Color-Green">  abseil-cpp             </span>  20200923.3  h9c3ff4c_0          conda-forge/linux-64     955 KB
+<span class=" -Color -Color-Green">  absl-py                </span>      0.13.0  pyhd8ed1ab_0        conda-forge/noarch        97 KB
+<span class=" -Color -Color-Green">  astor                  </span>       0.8.1  pyh9f0ad1d_0        conda-forge/noarch        25 KB
+<span class=" -Color -Color-Green">  astunparse             </span>       1.6.3  pyhd8ed1ab_0        conda-forge/noarch        15 KB
+<span class=" -Color -Color-Green">  dataclasses            </span>         0.8  pyhc8e2a94_1        conda-forge/noarch         7 KB
+<span class=" -Color -Color-Green">  flatbuffers            </span>       2.0.0  h9c3ff4c_0          conda-forge/linux-64       1 MB
+<span class=" -Color -Color-Green">  gast                   </span>       0.4.0  pyh9f0ad1d_0        conda-forge/noarch        12 KB
+<span class=" -Color -Color-Green">  google-pasta           </span>       0.2.0  pyh8c360ce_0        conda-forge/noarch        42 KB
+<span class=" -Color -Color-Green">  grpcio                 </span>      1.38.1  py38hdd6454d_0      conda-forge/linux-64       2 MB
+<span class=" -Color -Color-Green">  keras-preprocessing    </span>       1.1.2  pyhd8ed1ab_0        conda-forge/noarch        34 KB
+<span class=" -Color -Color-Green">  libprotobuf            </span>      3.14.0  h780b84a_0          conda-forge/linux-64       2 MB
+<span class=" -Color -Color-Green">  opt_einsum             </span>       3.3.0  pyhd8ed1ab_1        conda-forge/noarch        53 KB
+<span class=" -Color -Color-Green">  protobuf               </span>      3.14.0  py38h709712a_1      conda-forge/linux-64     348 KB
+<span class=" -Color -Color-Green">  python-flatbuffers     </span>        1.12  pyhd8ed1ab_1        conda-forge/noarch        19 KB
+<span class=" -Color -Color-Green">  tensorboard            </span>       2.5.0  pyhd8ed1ab_0        conda-forge/noarch         5 MB
+<span class=" -Color -Color-Green">  tensorboard-data-server</span>       0.6.0  py38h2b97feb_0      conda-forge/linux-64       3 MB
+<span class=" -Color -Color-Green">  tensorboard-plugin-wit </span>       1.8.0  pyh44b312d_0        conda-forge/noarch       670 KB
+<span class=" -Color -Color-Green">  tensorflow             </span>       2.5.0  mkl_py38hce4fbe1_0  pkgs/main/linux-64         4 KB
+<span class=" -Color -Color-Green">  tensorflow-base        </span>       2.5.0  mkl_py38h35b2a3d_0  pkgs/main/linux-64        76 MB
+<span class=" -Color -Color-Green">  tensorflow-estimator   </span>       2.5.0  pyh81a9013_1        conda-forge/noarch       289 KB
+<span class=" -Color -Color-Green">  termcolor              </span>       1.1.0  py_2                conda-forge/noarch         6 KB
+<span class=" -Color -Color-Green">  werkzeug               </span>       2.0.1  pyhd8ed1ab_0        conda-forge/noarch       219 KB
+
+  Upgrade:
+────────────────────────────────────────────────────────────────────────────────────────────
+
+<span class=" -Color -Color-Red">  ca-certificates        </span>   2020.12.5  ha878542_0          installed                      
+<span class=" -Color -Color-Green">  ca-certificates        </span>    2021.7.5  h06a4308_1          pkgs/main/linux-64       113 KB
+<span class=" -Color -Color-Red">  certifi                </span>   2020.12.5  py38h578d9bd_1      installed                      
+<span class=" -Color -Color-Green">  certifi                </span>   2021.5.30  py38h578d9bd_0      conda-forge/linux-64     141 KB
+<span class=" -Color -Color-Red">  sqlite                 </span>      3.34.0  h74cdb3f_0          installed                      
+<span class=" -Color -Color-Green">  sqlite                 </span>      3.36.0  h9cd32fc_0          conda-forge/linux-64       1 MB
+
+  Downgrade:
+────────────────────────────────────────────────────────────────────────────────────────────
+
+<span class=" -Color -Color-Red">  google-auth-oauthlib   </span>       0.4.4  pyhd8ed1ab_0        installed                      
+<span class=" -Color -Color-Green">  google-auth-oauthlib   </span>       0.4.1  py_2                conda-forge/noarch        18 KB
+<span class=" -Color -Color-Red">  wheel                  </span>      0.36.2  pyhd3deb0d_0        installed                      
+<span class=" -Color -Color-Green">  wheel                  </span>      0.35.1  pyh9f0ad1d_0        conda-forge/noarch        29 KB
+
+  Summary:
+
+  Install: 23 packages
+  Upgrade: 3 packages
+  Downgrade: 2 packages
+
+  Total download: 95 MB
+
+────────────────────────────────────────────────────────────────────────────────────────────
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Preparing transaction: ...working... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
+Verifying transaction: ...working... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
+Executing transaction: ...working... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span> <span class="c1"># Keras is part of standard tensorflow library</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Check the version of Tensorflow and Keras</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TensorFlow version ==&gt;&quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Keras version ==&gt;&quot;</span><span class="p">,</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TensorFlow version ==&gt; 2.5.0
+Keras version ==&gt; 2.5.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>The machine learning algorithm uses a linear regression model to fit the features to the outcome. It will initialize different weights depending on the seed. We define a random seed so that we get same result each time we do the regression.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">set_seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">## For reproducible results</span>
+<span class="n">linear_regression</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span> <span class="c1"># Specify layers in their sequential order</span>
+<span class="c1"># inputs are 4 dimensions (4 dimensions = 4 features)</span>
+<span class="c1"># Dense = Fully Connected.  </span>
+<span class="n">linear_regression</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="kc">None</span> <span class="p">,</span><span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">train_X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],)))</span>
+<span class="c1"># Output layer has no activation with just 1 node</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Compile</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">opt</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">)</span>
+<span class="n">linear_regression</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">opt</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The mean squared error is minimized to find optimal parameters. A discussion of diffent optimization methods is provided in Appendix A.</p>
+<ul class="simple">
+<li><p><strong>Print Architecture</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">linear_regression</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: &quot;sequential&quot;
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense (Dense)                (None, 1)                 5         
+=================================================================
+Total params: 5
+Trainable params: 5
+Non-trainable params: 0
+_________________________________________________________________
+None
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note since there are 4 features, we have 5 regression parameters.</p>
+<ul class="simple">
+<li><p><strong>Fit Model</strong></p></li>
+</ul>
+<p>The regression parameters are formed with data in the training set. An epoch is when an entire batch of the training set has been used. The number of times we iterate over the dataset is known as the number of <strong>epochs</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="c1"># NOTE: can changed from epochs=150 to run faster, change to verbose=1 for per-epoch output</span>
+<span class="n">history</span> <span class="o">=</span><span class="n">linear_regression</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_X</span><span class="p">,</span> <span class="n">train_y</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">validation_split</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 15.2 s, sys: 7.46 s, total: 22.6 s
+Wall time: 11.6 s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Machine_Learning_Tutorial_33_0.png" src="../../_images/Machine_Learning_Tutorial_33_0.png" />
+</div>
+</div>
+<div class="section" id="linear-regression-coefficient">
+<h3>Linear Regression Coefficient<a class="headerlink" href="#linear-regression-coefficient" title="Permalink to this headline">¶</a></h3>
+<p>Note that all coefficients are from the transformed data. Therefore, we need to take the inverse transform before quantifying our error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear_regression</span><span class="o">.</span><span class="n">get_weights</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[array([[-0.24055055],
+        [-0.29702863],
+        [ 0.3636011 ],
+        [ 0.4034688 ]], dtype=float32),
+ array([0.23857969], dtype=float32)]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>model</strong>: <span class="math notranslate nohighlight">\(\texttt{snow_depth} = 0.18 - 0.31 \texttt{amplitude} - 0.14 \texttt{coherence} + 0.40\texttt{phase} + 0.40\texttt{inc_ang} \)</span></p>
+</div>
+</div>
+<div class="section" id="neural-networks">
+<h2>Neural Networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">¶</a></h2>
+<p>Neural networks (NN) are a type of non-parametric method. Another non-parametric approach is Support Vector Machine (SVM) but we will not discuss that here. Non-parametric approaches do not assume any shape for <span class="math notranslate nohighlight">\(f\)</span>. Instead, the try to estimate <span class="math notranslate nohighlight">\(f\)</span> that gets as close to the data points as possible. Neural networks are learning machines inspired by the functionality of biological neurons. They are not models of the brain, because there is no proven evidence that the brain operates the same way neural networks learn representations. However, some of the concepts were inspired by understanding the brain. Every NN consists of three distinct layers;</p>
+<ol class="simple">
+<li><p>Input layer</p></li>
+<li><p>Hidden layer(s) and</p></li>
+<li><p>Output layer.</p></li>
+</ol>
+<p>To understand the functioning of these layers, we begin by exploring the building blocks of neural networks; a single neuron or perceptron.</p>
+<div class="section" id="a-preceptron-or-single-neuron">
+<h3>A preceptron or Single Neuron<a class="headerlink" href="#a-preceptron-or-single-neuron" title="Permalink to this headline">¶</a></h3>
+<p>Each layer in a NN consists of small individual units called neurons (usually represented with a circle). A neuron receives inputs from other neurons, performs some mathematical operations, and then produces an output. Each neuron in the input layer represents a  feature. In essence, the number of neurons in the input layer equals the number of features. Each neuron in the input layer is connected to every neuron in the hidden layer. The number of neurons in the hidden layer is not fixed, it is problem dependent and it is often determined via cross-validation or validation set approach in practice.</p>
+<img alt="Drawing" src="../../_images/feedforward.png" />
+<p>The configuration of the hidden layer(s) controls the complexity of the network. A NN may contain more than one hidden layer. A NN with more than one hidden layer is called a <strong>deep neural network</strong> while that with a single hidden layer is a <strong>shallow neural network</strong>. The final layer of a neural network is called the output layer and it holds the predicted outcomes of observations passed into the input layer. Every inter-neuron connection has an associated weight, these weights are what the neural network learns during the training process. When connections between the layers do not form a loop, such networks are called <strong>feedforward neural networks</strong> and if otherwise, they are called <strong>recurrent neural networks</strong>. In this tutorial, we shall concentrate on the feed forward neural networks.</p>
+<div class="section" id="how-the-perceptron-works">
+<h4>How the perceptron works<a class="headerlink" href="#how-the-perceptron-works" title="Permalink to this headline">¶</a></h4>
+<p>Consider a dataset <span class="math notranslate nohighlight">\(\mathcal{D}_n = \left\lbrace (\textbf{x}_1, y_1), (\textbf{x}_2, y_2), \cdots, (\textbf{x}_n, y_n) \right\rbrace\)</span> where <span class="math notranslate nohighlight">\(\textbf{x}_i^\top \equiv ({x}_{i1}, {x}_{i2}, \cdots, {x}_{ik})\)</span> denotes the <span class="math notranslate nohighlight">\(k\)</span>-dimensional vector of features, and <span class="math notranslate nohighlight">\(y_i\)</span> represents the corresponding outcome. Given a set of input fed into the network through the input layer, the output of a neuron in the hidden layer is</p>
+<div class="math notranslate nohighlight">
+\[
+ f(\textbf{x}_i;\textbf{w}) = g(w_0 + \textbf{w}^\top \textbf{x}_i),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\textbf{w} = (w_1, w_2, \cdots, w_k)^\top\)</span> is a vector of weights and  <span class="math notranslate nohighlight">\(w_0\)</span> is the bias term associated with the neuron. The weights can be thought of as the slopes in a linear regression and the bias as the intercept. The function <span class="math notranslate nohighlight">\(g(\cdot)\)</span> is known as the activation function and it is  used to introduce non-linearity into the network.</p>
+<img alt="Drawing" src="../../_images/perceptron.png" />
+<p><span class="math notranslate nohighlight">\(\qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad\)</span>  A Perceptron</p>
+<p>There exists a number of activation functions in practice, the commonly used ones are</p>
+<ol class="simple">
+<li><p>Sigmoid or Logistic activation function $<span class="math notranslate nohighlight">\(g(z) = \frac{1}{1 + e^{-z}}.\)</span>$</p></li>
+<li><p>Hyperbolic Tangent activation function $<span class="math notranslate nohighlight">\(g(z) = \tanh (z) = \frac{e^{z}-e^{-z}}{e^{z}+e^{-z}}.\)</span>$</p></li>
+<li><p>Rectified Linear Unit activation function $<span class="math notranslate nohighlight">\(g(z) = \max(0,z).\)</span>$</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="visualizing-activation-functions">
+<h3>Visualizing Activation Functions<a class="headerlink" href="#visualizing-activation-functions" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A function that performs the sigmoid transformation</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments:</span>
+<span class="sd">    ---------</span>
+<span class="sd">        -* z: array/list of numbers to activate</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">        -* logistic: the transformed/activated version of the array</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">logistic</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">z</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">logistic</span>
+    
+
+<span class="k">def</span> <span class="nf">Tanh</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A function that performs the hyperbolic tangent transformation</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments:</span>
+<span class="sd">    ---------</span>
+<span class="sd">        -* z: array/list of numbers to activate</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">        -* hyp: the transformed/activated version of the array</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">hyp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">hyp</span>
+
+
+<span class="k">def</span> <span class="nf">ReLu</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A function that performs the hyperbolic tangent transformation</span>
+<span class="sd">    </span>
+<span class="sd">    Arguments:</span>
+<span class="sd">    ---------</span>
+<span class="sd">        -* z: array/list of numbers to activate</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">        -* points: the transformed/activated version of the array</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">z</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">points</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">fa</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">Sigmoid</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\frac</span><span class="si">{1}</span><span class="s1">{1 + e^{-z}}$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;g(z)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Sigmoid Activation Function&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">22</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">Tanh</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\tanh (z)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;g(z)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Hyperbolic Tangent Activation Function&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">ReLu</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\max(0,z)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;g(z)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Rectified Linear Unit Activation Function&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">18</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f830df8a8e0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Machine_Learning_Tutorial_39_1.png" src="../../_images/Machine_Learning_Tutorial_39_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="families-of-neural-networks">
+<h3>Families of Neural Networks<a class="headerlink" href="#families-of-neural-networks" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Feedforward Neural Networks: often used for structural data</p></li>
+<li><p>Convolutional Neural Networks: the gold standard for image classification</p></li>
+<li><p>Transfer Learning: reusing knowledge from previous tasks on new tasks</p></li>
+<li><p>Recurrent Neural Networks: well suited for sequence data such as texts, time series, drawing generation</p></li>
+<li><p>Encoder-Decoders: comminly used for but not limited to machine translation</p></li>
+<li><p>Generative Adversarial Networks: usually used for 3D modelling for video games, animation, etc.</p></li>
+<li><p>Graph Neural Networks: usually used to work with graph data.</p></li>
+</ol>
+</div>
+<div class="section" id="feedforward-neural-network">
+<h3>Feedforward Neural Network<a class="headerlink" href="#feedforward-neural-network" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Specify Architecture</strong></p></li>
+</ul>
+<p>Here, we shall include three hidden layers with 1000, 512, and 256 neurons respectively. Layers added using the “<span class="math notranslate nohighlight">\(\texttt{network.add(\)</span>\cdots<span class="math notranslate nohighlight">\()}\)</span>” command.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tf</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">set_seed</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1">## For reproducible results</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span> <span class="c1"># Specify layers in their sequential order</span>
+<span class="c1"># inputs are 4 dimensions (4 dimensions = 4 features)</span>
+<span class="c1"># Dense = Fully Connected.   </span>
+<span class="c1"># First hidden layer has 1000 neurons with relu activations.</span>
+<span class="c1"># Second hidden layer has 512 neurons with relu activations</span>
+<span class="c1"># Third hidden layer has 256 neurons with Sigmoid activations</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span> <span class="p">,</span><span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">train_X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],)))</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span> <span class="c1"># sigmoid, tanh</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
+<span class="c1"># Output layer uses no activation with 1 output neurons</span>
+<span class="n">network</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># Output layer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Compile</strong></p></li>
+</ul>
+<p>The learning rate controls how the weights and bias are optimized. A discussion of the optimization procedure for Neural Networks can be found in Appendix B. If the learning rate is too small the training may get stuck, while if it is too big the trained model may be unreliable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">opt</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">opt</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Print Architecture</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model: &quot;sequential_1&quot;
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense_1 (Dense)              (None, 1000)              5000      
+_________________________________________________________________
+dense_2 (Dense)              (None, 512)               512512    
+_________________________________________________________________
+dense_3 (Dense)              (None, 256)               131328    
+_________________________________________________________________
+dense_4 (Dense)              (None, 1)                 257       
+=================================================================
+Total params: 649,097
+Trainable params: 649,097
+Non-trainable params: 0
+_________________________________________________________________
+</pre></div>
+</div>
+</div>
+</div>
+<p>Number of weights connecting the input and the first hidden layer = (1000 <span class="math notranslate nohighlight">\(\times\)</span> 4) + 1000(bias) = 5000</p>
+<ul class="simple">
+<li><p>4 = <span class="math notranslate nohighlight">\(\texttt{number of features}\)</span></p></li>
+<li><p>1000 = <span class="math notranslate nohighlight">\(\texttt{number of nodes in the first hidden layer}\)</span></p></li>
+</ul>
+<p>Number of weights connecting the first hidden layer and the second hidden layer = (1000 <span class="math notranslate nohighlight">\(\times\)</span> 512) + 512(bias) = 512512</p>
+<ul class="simple">
+<li><p>512 = <span class="math notranslate nohighlight">\(\texttt{number of nodes in the second hidden layer}\)</span></p></li>
+<li><p>1000 = <span class="math notranslate nohighlight">\(\texttt{number of nodes in the first hidden layer}\)</span></p></li>
+</ul>
+<p>Number of weights connecting the second hidden layer and the third hidden layer = (512 <span class="math notranslate nohighlight">\(\times\)</span> 256) + 256(bias) = 131328</p>
+<ul class="simple">
+<li><p>256 = <span class="math notranslate nohighlight">\(\texttt{number of nodes in the third hidden layer}\)</span></p></li>
+<li><p>512 = <span class="math notranslate nohighlight">\(\texttt{number of nodes in the second hidden layer}\)</span></p></li>
+</ul>
+<p>Number of weights connecting the third (last) hidden and the output layers = (256 <span class="math notranslate nohighlight">\(\times\)</span> 1) + 1(bias) = 257</p>
+<ul class="simple">
+<li><p>256 = <span class="math notranslate nohighlight">\(\texttt{number of nodes in the third hidden layer}\)</span></p></li>
+<li><p>1 = <span class="math notranslate nohighlight">\(\texttt{number of nodes in the output layer}\)</span></p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>Fit Model</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="c1"># NOTE: if you have time, consider upping epochs -&gt; 150</span>
+<span class="n">history</span> <span class="o">=</span><span class="n">network</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_X</span><span class="p">,</span> <span class="n">train_y</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">validation_split</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 13.4 s, sys: 3.55 s, total: 17 s
+Wall time: 8.83 s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Machine_Learning_Tutorial_50_0.png" src="../../_images/Machine_Learning_Tutorial_50_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="prediction">
+<h3>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h3>
+<p>We have used Machine Learning to build two computer models <span class="math notranslate nohighlight">\(f\)</span> with SnowEx data. Now we will use the computer models to estimate snow depth for a given set of features (phase, coherence, amplitude, incidence angle).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Linear Regression</span>
+
+<span class="n">yhat_linReg</span> <span class="o">=</span> <span class="n">linear_regression</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_X</span><span class="p">)</span>
+<span class="n">inv_yhat_linReg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">test_X</span><span class="p">,</span> <span class="n">yhat_linReg</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">inv_yhat_linReg</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">inv_yhat_linReg</span><span class="p">)</span>
+<span class="n">inv_yhat_linReg</span> <span class="o">=</span> <span class="n">inv_yhat_linReg</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1">## DNN</span>
+<span class="n">yhat_dnn</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_X</span><span class="p">)</span> 
+<span class="n">inv_yhat_dnn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">test_X</span><span class="p">,</span> <span class="n">yhat_dnn</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">inv_yhat_dnn</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">inv_yhat_dnn</span><span class="p">)</span>
+<span class="n">inv_yhat_dnn</span> <span class="o">=</span> <span class="n">inv_yhat_dnn</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1">## True Snow Depth (Test Set)</span>
+<span class="n">inv_y</span> <span class="o">=</span> <span class="n">test_dataset</span><span class="p">[</span><span class="s2">&quot;snow_depth&quot;</span><span class="p">]</span>
+
+
+<span class="c1">## Put Observed and Predicted (Linear Regression and DNN) in a Dataframe</span>
+<span class="n">prediction_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Observed&quot;</span><span class="p">:</span> <span class="n">inv_y</span><span class="p">,</span>
+                    <span class="s2">&quot;LR&quot;</span><span class="p">:</span><span class="n">inv_yhat_linReg</span><span class="p">,</span> <span class="s2">&quot;DNN&quot;</span><span class="p">:</span><span class="n">inv_yhat_dnn</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-performance">
+<h3>Check Performance<a class="headerlink" href="#check-performance" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">metrics_print</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span><span class="n">test_predict</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test RMSE: &#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_predict</span><span class="p">)),</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test R^2 : &#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">((</span><span class="n">r2_score</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_predict</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="p">,</span><span class="s2">&quot;%&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test MAPE: &#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">mean_absolute_percentage_error</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_predict</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;%&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;##************** Linear Regression Results **************##&quot;</span><span class="p">)</span>
+<span class="n">metrics_print</span><span class="p">(</span><span class="n">prediction_df</span><span class="p">[</span><span class="s1">&#39;Observed&#39;</span><span class="p">],</span> <span class="n">prediction_df</span><span class="p">[</span><span class="s1">&#39;LR&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;##************** Deep Learning Results **************##&quot;</span><span class="p">)</span>
+<span class="n">metrics_print</span><span class="p">(</span><span class="n">prediction_df</span><span class="p">[</span><span class="s1">&#39;Observed&#39;</span><span class="p">],</span> <span class="n">prediction_df</span><span class="p">[</span><span class="s1">&#39;DNN&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>##************** Linear Regression Results **************##
+Test RMSE:  0.47
+Test R^2 :  47.74 %
+Test MAPE:  41.44 %
+ 
+ 
+##************** Deep Learning Results **************##
+Test RMSE:  0.31
+Test R^2 :  76.24 %
+Test MAPE:  27.64 %
+ 
+ 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visualize-performance">
+<h3>Visualize Performance<a class="headerlink" href="#visualize-performance" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fa</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">prediction_df</span><span class="p">[</span><span class="s1">&#39;Observed&#39;</span><span class="p">],</span><span class="n">prediction_df</span><span class="p">[</span><span class="s1">&#39;LR&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;True Values [snow_depth]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Predictions [snow_depth]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Linear Regression&quot;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">prediction_df</span><span class="p">[</span><span class="s1">&#39;Observed&#39;</span><span class="p">],</span><span class="n">prediction_df</span><span class="p">[</span><span class="s1">&#39;DNN&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;True Values [snow_depth]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Predictions [snow_depth]&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Deep Neural Network&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Deep Neural Network&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Machine_Learning_Tutorial_57_1.png" src="../../_images/Machine_Learning_Tutorial_57_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="visualize-error">
+<h3>Visualize Error<a class="headerlink" href="#visualize-error" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LR_error</span> <span class="o">=</span> <span class="n">prediction_df</span><span class="p">[</span><span class="s1">&#39;Observed&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">prediction_df</span><span class="p">[</span><span class="s1">&#39;LR&#39;</span><span class="p">]</span>
+<span class="n">DNN_error</span> <span class="o">=</span> <span class="n">prediction_df</span><span class="p">[</span><span class="s1">&#39;Observed&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">prediction_df</span><span class="p">[</span><span class="s1">&#39;DNN&#39;</span><span class="p">]</span>
+
+<span class="n">fa</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">LR_error</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Linear Regression&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">DNN_error</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Deep Neural Network&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Deep Neural Network&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Machine_Learning_Tutorial_59_1.png" src="../../_images/Machine_Learning_Tutorial_59_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="save-the-best-model">
+<h3>Save the Best Model<a class="headerlink" href="#save-the-best-model" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;DNN&#39;</span><span class="p">)</span>
+
+<span class="c1">## To load model, use;</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;DNN&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:tensorflow:Assets written to: DNN/assets
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="main-challenges-of-machine-learning">
+<h3>Main Challenges of Machine Learning<a class="headerlink" href="#main-challenges-of-machine-learning" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Bad Data (insufficient training data, nonrepresentative training data, irrelevant features)</p></li>
+<li><p>Bad Algorithm (overfitting the training the data, underfitting the training data)</p></li>
+</ol>
+</div>
+<div class="section" id="improving-your-deep-learning-model">
+<h3>Improving your Deep Learning Model<a class="headerlink" href="#improving-your-deep-learning-model" title="Permalink to this headline">¶</a></h3>
+<p>Here are some ways to improve your deep neural network;</p>
+<ol class="simple">
+<li><p>Regularization (early stopping, dropout, etc)</p></li>
+<li><p>Hyperparameter Optimization</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="your-turn">
+<h2>Your Turn<a class="headerlink" href="#your-turn" title="Permalink to this headline">¶</a></h2>
+<p>Using same dataset, fit a deep neural network with four hidden layers. Set a random seed of 200 for reproducible results. The number of neuron in the hidden layers should be 512, 256, 128, and 64 respectively. Use the “sigmoid” activation for all hidden layers, optimize using the “mean_absolute_error”, and set your number of epochs to 50.</p>
+<ol class="simple">
+<li><p>Plot the training and validation loss. COmpare to previous DNN model.</p></li>
+<li><p>Use new DNN model to predict snow depth with the test data. Evaluate performance using RMSE, <span class="math notranslate nohighlight">\(R^2\)</span>, and MAPE. Compare to results from previous DNN model.</p></li>
+<li><p>Plot predicted snow depth vs. the observed snow depth. Which DNN model do you think is most reliable?</p></li>
+</ol>
+</div>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="https://twitter.com/svpino">Santiago on Twitter</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1501.00604">A Taxonomy of Big Data for Optimal Predictive Machine Learning and Data Mining by Ernest Fokoue</a></p></li>
+<li><p><a class="reference external" href="https://link.springer.com/book/10.1007%2F978-1-4614-7138-7">An Introduction to Statistical Learning with Applications in R</a></p></li>
+<li><p><a class="reference external" href="https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646">Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems 2nd Edition</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/channel/UCtslD4DGH6PKyG_1gFAX7sg">MIT 6.S191: Introduction to Deep Learning</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=AhE8RhPGH1A&amp;t=2685s">Intro to Deep Learning (ML Tech Talks)</a></p></li>
+</ol>
+</div>
+<div class="section" id="appendix-a">
+<h2>Appendix A<a class="headerlink" href="#appendix-a" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="linear-regression-weights">
+<h3>Linear Regression Weights<a class="headerlink" href="#linear-regression-weights" title="Permalink to this headline">¶</a></h3>
+<p>Linear regression is a very simple supervised learning technique used for predicting a quantitative outcome variable. It is a parametric approach that lives up its name: it assumes a linear relationship between the outcome and the predictors. When only one predictor is involved, it is called <span class="math notranslate nohighlight">\(\texttt{Simple Linear Regression}\)</span> and when more than one predictor is involved, it is called <span class="math notranslate nohighlight">\(\texttt{Multiple Linear Regression}\)</span>. For illustration purpose, the multiple linear regression will be used.</p>
+<p>Consider a dataset <span class="math notranslate nohighlight">\(\mathcal{D}_n = \left\lbrace (\textbf{x}_1, y_1), (\textbf{x}_2, y_2), \cdots, (\textbf{x}_n, y_n) \right\rbrace\)</span> where <span class="math notranslate nohighlight">\(\textbf{x}_i^\top \equiv ({x}_{i1}, {x}_{i2}, \cdots, {x}_{ik})\)</span> denotes the <span class="math notranslate nohighlight">\(k\)</span>-dimensional vector of the features, and <span class="math notranslate nohighlight">\(y_i\)</span> represents the corresponding outcome. In our case, <span class="math notranslate nohighlight">\(y_i\)</span> is continuous. Mathematically, the predicted value (<span class="math notranslate nohighlight">\(\hat{y}\)</span>) from the linear regression is given as;</p>
+<div class="math notranslate nohighlight">
+\[\hat{y} = w_0 + \textbf{w}^\top \textbf{x} = w_0 + w_1x_1 + w_2x_2 + \cdots + w_kx_k\]</div>
+<p>where <span class="math notranslate nohighlight">\(\textbf{w} = (w_1, w_2, \cdots, w_k)^\top \in \mathbb{R}^k\)</span> is a vector of weights and  <span class="math notranslate nohighlight">\(w_0  \in \mathbb{R}\)</span> is the bias/intercept term. The weights could be thought of as how each feature affects the prediction. If a feature receives a positive weight, then increasing the value of that feature
+increases the value of our prediction and vice versa.</p>
+</div>
+<div class="section" id="training-a-linear-regression-estimating-the-optimal-weights">
+<h3>Training a Linear Regression (Estimating the Optimal Weights)<a class="headerlink" href="#training-a-linear-regression-estimating-the-optimal-weights" title="Permalink to this headline">¶</a></h3>
+<p>Just as mentioned above, there are different ways to quantify loss of a regression problem. In this tutorial, we shall limit our discussion to the squared error loss. For linear regression using the squared error loss, the loss function is written as</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L} (y, \hat{y}) = (y - \hat{y})^2\]</div>
+<p>The corresponding empirical risk is given as</p>
+<div class="math notranslate nohighlight">
+\[
+\widehat{\mathcal{R}}_n(\textbf{w}) = \frac{1}{n^{(tr)}} \sum_{i = 1}^{n^{(tr)}}(y_i - \hat{y}_i)^2
+\]</div>
+<p>In essence, we want to find a set of weights such that the empirical risk is minimized. The full empirical risk minimization for linear regression can be written as:</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{w}^{\star} = \underset{\textbf{w}}{{\tt argmin}}\  \widehat{\mathcal{R}}_n(\textbf{w})
+\]</div>
+<p>The superscript (<span class="math notranslate nohighlight">\(tr\)</span>) indicates that all optimization is performed on the train set only.</p>
+<div class="section" id="optimizing-the-empirical-risk">
+<h4>Optimizing the Empirical Risk<a class="headerlink" href="#optimizing-the-empirical-risk" title="Permalink to this headline">¶</a></h4>
+<p>The empirical risk as written above can be optimized in two ways;</p>
+<ol class="simple">
+<li><p>Using the Ordinary Least Squares approach</p></li>
+<li><p>Using Gradient Descent.</p></li>
+</ol>
+<p><strong>Ordinary Least Squares (OLS)</strong>: OLS is an unconstrained optimization technique which minimizes the sum of squared residuals (squared error loss). The OLS approach provides a closed-form (formula) solution to the empirical risk minimization problem. In this tutorial, we shall state the closed form solution without proof. The closed form solution to the empirical risk minimization problem is written as;</p>
+<div class="math notranslate nohighlight">
+\[
+\textbf{w}^{\star} = (\textbf{X}_{tr}^\top \textbf{X})^{-1} \textbf{X}_{tr}^\top \textbf{y}_{tr}
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\textbf{X}_{tr}\)</span> is the training data matrix and <span class="math notranslate nohighlight">\(\textbf{y}_{tr}\)</span> the vector of training dependent variable.</p>
+<p><strong>Gradient Decent</strong>: the gradient descent algorithm is as follows:</p>
+<ol class="simple">
+<li><p>Initialize weights and biases with random numbers.</p></li>
+<li><p>Loop until convergence:</p>
+<ol class="simple">
+<li><p>Compute the gradient; <span class="math notranslate nohighlight">\(\frac{\partial \widehat{\mathcal{R}}_n(\textbf{w})}{\partial \textbf{w}}\)</span></p></li>
+<li><p>Updated weights; <span class="math notranslate nohighlight">\(\textbf{w} \leftarrow  \textbf{w} - \eta  \frac{\partial \widehat{\mathcal{R}}_n(\textbf{w})}{\partial \textbf{w}}\)</span></p></li>
+</ol>
+</li>
+<li><p>Return the weights</p></li>
+</ol>
+<p>This is repeated for the bias and every single weight. The <span class="math notranslate nohighlight">\(\eta\)</span> in step 2(B) of the gradient descent algorithm is called the learning rate. It is a measure of how fast we descend the hill (since we are moving from large to small errors). Large learning rates may cause divergence and very small learning rates may take too many iterations before convergence.</p>
+</div>
+</div>
+</div>
+<div class="section" id="appendix-b">
+<h2>Appendix B<a class="headerlink" href="#appendix-b" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="neural-network-weights">
+<h3>Neural Network Weights<a class="headerlink" href="#neural-network-weights" title="Permalink to this headline">¶</a></h3>
+<p>Building up a NN with at least one hidden layer known as  multi layer perceptron (MLP) requires only repeating the  mathematical operation illustrated for the perceptron for every neuron in the hidden layer(s). Consider the feedforward NN in the above figure, each neuron in the hidden layer does the follow computation:</p>
+<div class="math notranslate nohighlight">
+\[z_j = w_{0,j}^{(1)} + \textbf{w}_j^{\top(1)}\textbf{x}_i\]</div>
+<p>The final output (predicted value) is;</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}_i =h(w_{0,j}^{(2)} + \textbf{w}_j^{\top(2)}g(\textbf{z}_i))\]</div>
+<p>where <span class="math notranslate nohighlight">\(\textbf{w}_j^{(1)}\)</span> is the vector of weights connecting the input layer to the <span class="math notranslate nohighlight">\(j\)</span>th neuron of the hidden layer, <span class="math notranslate nohighlight">\(\textbf{w}_j^{(2)}\)</span> is the vector of weights connecting the <span class="math notranslate nohighlight">\(j\)</span>th neuron in the hidden layer to the output neuron, and <span class="math notranslate nohighlight">\(h(\cdot)\)</span> is the activation function applied to the output layer (if any).</p>
+</div>
+<div class="section" id="training-a-neural-network-finding-optimal-weights-for-prediction">
+<h3>Training a Neural Network (Finding Optimal Weights for Prediction)<a class="headerlink" href="#training-a-neural-network-finding-optimal-weights-for-prediction" title="Permalink to this headline">¶</a></h3>
+<p>A neural network using gradient descent approach as spelt out above. The only the difference is how the gradient (<span class="math notranslate nohighlight">\(\frac{\partial \widehat{\mathcal{R}}_n(\textbf{w})}{\partial \textbf{w}}\)</span>) in step 2A. is performed. In neural networks, <span class="math notranslate nohighlight">\(\frac{\partial \widehat{\mathcal{R}}_n(\textbf{w})}{\partial \textbf{w}}\)</span> is performed using the Backpropagation approach. The details of backpropagation is beyond the scope of this tutorial.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/machine-learning"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../camera-traps-tutorial/camera-traps-notebook.html" title="previous page">Camera Traps and Snow Applications</a>
+    <a class='right-next' id="next-link" href="../../projects/index.html" title="next page">Projects</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By eScience Institute, University of Washington<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QM84T4SB76"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-QM84T4SB76');
+                </script>
+
+  </body>
+</html>
