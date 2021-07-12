@@ -69,6 +69,7 @@
                 - file: tutorials/lis/1_exploring_lis_output
                 - file: tutorials/lis/2_interactive_widgets
             - file: tutorials/camera-traps-tutorial/camera-traps-notebook
+            - file: tutorials/machine-learning/Machine_Learning_Tutorial
 
 - part: Projects
   chapters:
