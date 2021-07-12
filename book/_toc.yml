@@ -39,7 +39,7 @@
               sections:
                 - file: tutorials/geospatial/raster
                 - file: tutorials/geospatial/vector
-                - file: tutorials/geospatial/raster_and_vector
+                - file: tutorials/geospatial/SNOTEL_query
             - file: tutorials/database/index
               sections:
                 - file: tutorials/database/1_getting_started_example
