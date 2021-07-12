@@ -229,3 +229,13 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 *Ask me about:* Time-lapse cameras, Python, Hydrologic Modeling
 ---
+
+**Clare Webster**
+^^^
+<img src="https://avatars.githubusercontent.com/u/57391070?v=4" alt="picture of Clare Webster" width="200" height="200">
++++
+*Affiliations:* WSL Institute for Snow and Avalanche Research SLF Switzerland
+
+*Ask me about:* Lidar, forest structure, radiative transfer modelling, Julia
+---
+
