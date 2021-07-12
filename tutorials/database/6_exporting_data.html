@@ -474,11 +474,6 @@
      Project Roles and Responsibilities
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../projects/example_workflow.html">
-     Basic git workflow for a project
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -632,7 +627,7 @@
 <p><strong>Note</strong>: Shapefiles do not support datetime object so they must be converted to strings before writing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the hand method for converting querys to dataframes</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the hand method for converting queries to dataframes</span>
 <span class="kn">from</span> <span class="nn">snowexsql.conversions</span> <span class="kn">import</span> <span class="n">query_to_geopandas</span>
 
 <span class="n">qry</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">SiteData</span><span class="o">.</span><span class="n">geom</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>

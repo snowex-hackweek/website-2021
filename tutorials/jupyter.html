@@ -474,11 +474,6 @@
      Project Roles and Responsibilities
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../projects/example_workflow.html">
-     Basic git workflow for a project
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -662,10 +657,10 @@ during this event. A good summary is <a class="reference external" href="https:/
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code></p></td>
-<td><p>Adds a new, previously untracked file to version control</p></td>
+<td><p>Adds a new, previously untracked file to version control and marks already tracked files to be committed with the next `commit’</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code></p></td>
-<td><p>Saves the current state of the document and creates an entry in the log</p></td>
+<td><p>Saves the current state of the repository and creates an entry in the log</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code></p></td>
 <td><p>Shows the history for the repository</p></td>
@@ -705,12 +700,12 @@ copied to the JupyterHub.</p>
 <h2>How do I get code from GitHub to the JupyterHub?<a class="headerlink" href="#how-do-i-get-code-from-github-to-the-jupyterhub" title="Permalink to this headline">¶</a></h2>
 <p>After you successfully set up the <a class="reference internal" href="../preliminary/git.html#setting-up-git"><span class="std std-ref">git command</span></a>, you can
 copy code between the two using the <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/github-glossary#clone">clone</a>
-command with git. A <code class="docutils literal notranslate"><span class="pre">clone</span></code> creates a copy of the repository with the current
+command with <code class="docutils literal notranslate"><span class="pre">git</span></code>. A <code class="docutils literal notranslate"><span class="pre">clone</span></code> creates a copy of the repository with the current
 state of the repository including the complete history.</p>
 <div class="section" id="example-clone-the-fork-of-the-website-with-the-tutorials">
 <h3>Example: Clone the fork of the website with the tutorials<a class="headerlink" href="#example-clone-the-fork-of-the-website-with-the-tutorials" title="Permalink to this headline">¶</a></h3>
 <ol>
-<li><p>Go to the your user page on GitHub and select the ‘website’ repository.</p>
+<li><p>Go to your user page on GitHub and select the ‘website’ repository.</p>
 <p>The URL to clone the repository can be found after clicking on the green ‘Code’ button.</p>
 <p><img alt="github-code" src="../_images/github-clone-url.png" />
 <br/><br/></p>
@@ -729,10 +724,9 @@ command to verify:</p>
 </li>
 <li><p>In the Terminal, issue the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code> command and paste the URL you copied
 in step 1.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A note about cutting and pasting
-Pasting something from your clipboard into the JupyterLab terminal requires holding
+<div class="admonition-a-note-about-cutting-and-pasting admonition">
+<p class="admonition-title">A note about cutting and pasting</p>
+<p>Pasting something from your clipboard into the JupyterLab terminal can require holding
 down the “shift” key and right-clicking.  This is different from the usual Linux
 method that only requires a right click.</p>
 </div>
@@ -781,7 +775,7 @@ for your personal annotations, it is a common practice to do so when making chan
 to a repository.</p>
 <p>Think of the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch as the tried and tested version of a repository and
 a new branch from that is used to introduce a change that can slowly progress.
-Once ready, it will be merged to the ‘main’ branch.</p>
+Once ready, it will be merged to the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.</p>
 <p>The chapter of <a class="reference external" href="http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project">contributing to a project</a>
 describes more behind this principle.</p>
 <p>Commands for branches:</p>
@@ -809,8 +803,13 @@ for a git repository.</p>
 <div class="section" id="add-the-snowex-organization-repository-as-a-remote">
 <h3>Add the SnowEx organization repository as a remote<a class="headerlink" href="#add-the-snowex-organization-repository-as-a-remote" title="Permalink to this headline">¶</a></h3>
 <p>A remote is defined with a label and a URL. In our case and command below,
-we are using ‘SnowEx’ as the label and <code class="docutils literal notranslate"><span class="pre">https://github.com/snowex-hackweek/website.git</span></code>
+we are using <code class="docutils literal notranslate"><span class="pre">SnowEx</span></code> as the label and <code class="docutils literal notranslate"><span class="pre">https://github.com/snowex-hackweek/website.git</span></code>
 as the URL.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The chosen label <code class="docutils literal notranslate"><span class="pre">SnowEx</span></code> is found in many projects as the <code class="docutils literal notranslate"><span class="pre">upstream</span></code>. Here we
+just went with a more descriptive label instead of the default value.</p>
+</div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git remote add SnowEx https://github.com/snowex-hackweek/website.git
 </pre></div>
 </div>
@@ -875,9 +874,15 @@ output.</p>
 <h2>How can I upload a file to the JupyterHub?<a class="headerlink" href="#how-can-i-upload-a-file-to-the-jupyterhub" title="Permalink to this headline">¶</a></h2>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>The below description works well for smaller files (&lt;10 MB) or zipped archives.
-Talk to any of the instructiors or post on Slack in case you need to upload
-larger files.</p>
+<p>The below description works well for smaller files (&lt;10 MB) or zipped archives.</p>
+<p>Your files are persisted acrosss server shutdowns and startups and you don’t have
+to upload them again when you log out at the end of the day and restart anew the
+next day.</p>
+<p>The user space has a total limit of 10 GB, which is a SnowEx JupyterHub set limit.
+You can use <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> for temporary large files and they <strong>are not</strong> persistet after
+logout.</p>
+<p>We also have an Amazon S3 bucket for larger files you need for your projects.
+Ping us on Slack for details on how to get your files onto there.</p>
 </div>
 <p>Uploading a file to your userspace on the JupyterHub can be done using the
 user interface in the browser. Below screenshot shows the location of the upload
