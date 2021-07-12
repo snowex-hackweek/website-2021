@@ -22,10 +22,10 @@ jobs:
 
     - name: Setup Cache
       uses: actions/cache@v2
-      # NOTE: change key (jupyterbook-1) to force rebuilding cache
+      # NOTE: change key to "jupyterbook-N+1" to force rebuilding cache
       with:
         path: ./book/_build
-        key: jupyterbook
+        key: jupyterbook-1
 
     - name: Pull SnowEX Docker Image
       run: |
