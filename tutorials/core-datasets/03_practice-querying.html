@@ -690,11 +690,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>snowexsql database successfully loaded!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="snow-pit-data-are-contained-in-the-following-data-tables">
 <h2>Snow Pit data are contained in the following data tables:<a class="headerlink" href="#snow-pit-data-are-contained-in-the-following-data-tables" title="Permalink to this headline">¶</a></h2>
@@ -713,12 +708,6 @@
 <span class="n">airborne_sensors_list</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">surveyors</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list of airborne sensors by &quot;surveyor&quot; name: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">airborne_sensors_list</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list of airborne sensors by &quot;surveyor&quot; name: 
- [(&#39;USGS&#39;,), (&#39;UAVSAR team, JPL&#39;,), (&#39;ASO Inc.&#39;,)]
 </pre></div>
 </div>
 </div>
@@ -761,11 +750,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UAVSAR team, JPL flight dates are: 2020-01-31, 2020-02-12
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="b-want-to-select-an-exact-flight-date-match-here-s-how">
@@ -787,67 +771,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17 pits overlap with UAVSAR team, JPL on 2020-01-31
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>geom</th>
-      <th>site_id</th>
-      <th>date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>POINT (740652.000 4327445.000)</td>
-      <td>2C2</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>POINT (744396.000 4323540.000)</td>
-      <td>8C26</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>POINT (741960.000 4326644.000)</td>
-      <td>6C10</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>POINT (741493.000 4326833.000)</td>
-      <td>1C8</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>POINT (745340.000 4322754.000)</td>
-      <td>8S28</td>
-      <td>2020-01-31</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 <div class="section" id="c-want-to-select-a-range-of-dates-near-the-flight-date-here-s-how">
@@ -873,319 +796,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47 pits overlap with UAVSAR team, JPL on 2020-01-30, 2020-01-31, 2020-02-01
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>geom</th>
-      <th>site_id</th>
-      <th>date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>POINT (744561.000 4322721.000)</td>
-      <td>5S21</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>POINT (746228.000 4322671.000)</td>
-      <td>9S39</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>POINT (745937.000 4322754.000)</td>
-      <td>2S37</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>POINT (746546.000 4324066.000)</td>
-      <td>8N45</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>POINT (746350.000 4321976.000)</td>
-      <td>6C34</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>POINT (746149.000 4322488.000)</td>
-      <td>3S38</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>POINT (743652.000 4322680.000)</td>
-      <td>3S14</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>POINT (747055.000 4323916.000)</td>
-      <td>5N50</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>POINT (746553.000 4323759.000)</td>
-      <td>6N46</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>POINT (746303.000 4322571.000)</td>
-      <td>9S40</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>POINT (745842.000 4323805.000)</td>
-      <td>9N44</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>POINT (746802.000 4324222.000)</td>
-      <td>2N48</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>POINT (743109.000 4322924.000)</td>
-      <td>2S11</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>POINT (742607.000 4322917.000)</td>
-      <td>1S8</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>POINT (740652.000 4327445.000)</td>
-      <td>2C2</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>POINT (744396.000 4323540.000)</td>
-      <td>8C26</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>POINT (741960.000 4326644.000)</td>
-      <td>6C10</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>POINT (741493.000 4326833.000)</td>
-      <td>1C8</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>POINT (745340.000 4322754.000)</td>
-      <td>8S28</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>POINT (744862.000 4323250.000)</td>
-      <td>4C30</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>POINT (742466.000 4324372.000)</td>
-      <td>2N12</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>POINT (744477.000 4323731.000)</td>
-      <td>8C22</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>POINT (740765.000 4327379.000)</td>
-      <td>2C3</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>POINT (741378.000 4326992.000)</td>
-      <td>1C7</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>POINT (740508.000 4327577.000)</td>
-      <td>1C1</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>POINT (744757.000 4323667.000)</td>
-      <td>6C24</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>POINT (741132.000 4327061.000)</td>
-      <td>2C6</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>POINT (742453.000 4325752.000)</td>
-      <td>1C14</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>POINT (740839.000 4327345.000)</td>
-      <td>2C4</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>POINT (741580.000 4326713.000)</td>
-      <td>2C9</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>POINT (745010.000 4323372.000)</td>
-      <td>9C28</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>POINT (743817.000 4324185.000)</td>
-      <td>4N27</td>
-      <td>2020-01-30</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>POINT (743446.000 4324827.000)</td>
-      <td>9C19</td>
-      <td>2020-01-30</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>POINT (743402.000 4324736.000)</td>
-      <td>5C20</td>
-      <td>2020-01-30</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>POINT (745598.000 4323988.000)</td>
-      <td>5N41</td>
-      <td>2020-01-30</td>
-    </tr>
-    <tr>
-      <th>35</th>
-      <td>POINT (743040.000 4324967.000)</td>
-      <td>9C17</td>
-      <td>2020-01-30</td>
-    </tr>
-    <tr>
-      <th>36</th>
-      <td>POINT (744913.000 4324095.000)</td>
-      <td>8N34</td>
-      <td>2020-01-30</td>
-    </tr>
-    <tr>
-      <th>37</th>
-      <td>POINT (744625.000 4323947.000)</td>
-      <td>6N31</td>
-      <td>2020-01-30</td>
-    </tr>
-    <tr>
-      <th>38</th>
-      <td>POINT (744281.000 4324245.000)</td>
-      <td>9N29</td>
-      <td>2020-01-30</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>POINT (743884.000 4324477.000)</td>
-      <td>5C21</td>
-      <td>2020-01-30</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>POINT (744548.000 4323646.000)</td>
-      <td>8C25</td>
-      <td>2020-01-30</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>POINT (745121.000 4324175.000)</td>
-      <td>6N36</td>
-      <td>2020-01-30</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>POINT (745305.000 4323998.000)</td>
-      <td>8N38</td>
-      <td>2020-01-30</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>POINT (745678.000 4322446.000)</td>
-      <td>2S35</td>
-      <td>2020-01-30</td>
-    </tr>
-    <tr>
-      <th>44</th>
-      <td>POINT (745458.000 4322762.000)</td>
-      <td>5S31</td>
-      <td>2020-01-30</td>
-    </tr>
-    <tr>
-      <th>45</th>
-      <td>POINT (742674.000 4325582.000)</td>
-      <td>7C15</td>
-      <td>2020-01-30</td>
-    </tr>
-    <tr>
-      <th>46</th>
-      <td>POINT (745787.000 4322066.000)</td>
-      <td>2C33</td>
-      <td>2020-01-30</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 <div class="section" id="d-have-a-known-date-in-mind-that-you-wish-to-select-data-for-here-s-how">
@@ -1223,28 +833,10 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point Data on %s are: 
-%s (&#39;2020-02-12&#39;, [(&#39;camera-trap&#39;,), (&#39;magnaprobe&#39;,), (&#39;pit ruler&#39;,)])
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Layer Data are: 
- [(&#39;IRIS&#39;, &#39;equivalent_diameter&#39;), (&#39;IRIS&#39;, &#39;reflectance&#39;), (&#39;IRIS&#39;, &#39;sample_signal&#39;), (&#39;IRIS&#39;, &#39;specific_surface_area&#39;), (&#39;IS3-SP-11-01F&#39;, &#39;equivalent_diameter&#39;), (&#39;IS3-SP-11-01F&#39;, &#39;reflectance&#39;), (&#39;IS3-SP-11-01F&#39;, &#39;sample_signal&#39;), (&#39;IS3-SP-11-01F&#39;, &#39;specific_surface_area&#39;), (&#39;snowmicropen&#39;, &#39;force&#39;), (None, &#39;density&#39;), (None, &#39;grain_size&#39;), (None, &#39;grain_type&#39;), (None, &#39;hand_hardness&#39;), (None, &#39;lwc_vol&#39;), (None, &#39;manual_wetness&#39;), (None, &#39;permittivity&#39;), (None, &#39;temperature&#39;)]
-
-Image Data are: 
- [(&#39;UAVSAR, L-band InSAR&#39;,)]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2020-02-12&#39;
 </pre></div>
 </div>
 </div>
@@ -1298,14 +890,6 @@ Image Data are:
                 <span class="n">vclass</span> <span class="o">=</span> <span class="n">k</span> 
                 
     <span class="k">return</span> <span class="n">vclass</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;tokenize&gt;&quot;</span><span class="gt">, line </span><span class="mi">15</span>
-    <span class="n">veg_class</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;treeless&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;sparse&#39;</span><span class="p">:[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="s1">&#39;dense&#39;</span><span class="p">:[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]}</span>
-    <span class="o">^</span>
-<span class="ne">IndentationError</span>: unindent does not match any outer indentation level
 </pre></div>
 </div>
 </div>

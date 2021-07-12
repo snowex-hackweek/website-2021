@@ -675,31 +675,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Only including hdf files in list
-Writing list of URLs to /tmp/thermal-ir/aster_download_list.txt
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">0637</span><span class="n">c3abed7c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">url_list</span> <span class="o">=</span> <span class="n">earthdata_granule_search</span><span class="p">(</span><span class="n">product</span><span class="p">,</span> <span class="n">version</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                                     <span class="n">bounding_box</span><span class="p">,</span> <span class="n">timestampsUTC</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                                     <span class="n">search_time_window</span><span class="p">,</span> <span class="n">search_time_window_units</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                                     <span class="n">list_filepath</span><span class="p">,</span> <span class="n">ext</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># we can print the list of files, but these are also saved to a file</span>
-
-<span class="nn">~/book/tutorials/thermal-ir/earthdata_api.py</span> in <span class="ni">earthdata_granule_search</span><span class="nt">(product, version, bounding_box, timestampsUTC, search_time_window, search_time_window_units, list_filepath, ext)</span>
-<span class="g g-Whitespace">     </span><span class="mi">83</span>         <span class="c1"># open a file there to write to</span>
-<span class="g g-Whitespace">     </span><span class="mi">84</span>         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Writing list of URLs to </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">list_filepath</span><span class="p">))</span>
-<span class="ne">---&gt; </span><span class="mi">85</span>         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">list_filepath</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">86</span>             <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">flattened_url_list</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">87</span>                 <span class="c1"># output each url to a separate line in the file</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/tmp/thermal-ir/aster_download_list.txt&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Now we can open a terminal and use wget to download the files that are listed.</strong></p>
 <p>Open a terminal and navigate to the data directory for this tutorial</p>
