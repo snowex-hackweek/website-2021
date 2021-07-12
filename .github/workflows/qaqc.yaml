@@ -18,13 +18,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Setup Cache
-      uses: actions/cache@v2
-      # NOTE: change key (jupyterbook-1) to force rebuilding cache
-      with:
-        path: ./book/_build
-        key: jupyterbook
-
     - name: Ensure Clean Notebooks
       run: |
         pip install nb-clean==2.0.2
@@ -42,6 +35,17 @@ jobs:
       run: |
         docker pull $DOCKER_IMAGE
         docker images
+
+    # borrowed from https://github.com/ProjectPythia/pythia-foundations/blob/main/.github/workflows/link-checker.yaml
+    - name: Disable Notebook Execution
+       shell: python
+       run: |
+         import yaml
+         with open('_config.yml') as f:
+           data = yaml.safe_load(f)
+         data['execute']['execute_notebooks'] = 'off'
+         with open('_config.yml', 'w') as f:
+           yaml.dump(data, f)
 
     # NOTE: create separate _config.yml to pass --config (and skip executing notebooks?)
     - name: Check External Links
