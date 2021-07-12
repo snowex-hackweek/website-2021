@@ -4,7 +4,7 @@ This section contains everything you need to know about hackweek projects:
 
 * What are the [roles and responsibilities](project_roles.md) of hackweek project participants?
 * How to [initialize a project](project_initialization.md) within the hackweek Github Organization?
-* What are the [recommended GitHub workflows](example_workflow.md) for managing projects?
+* What are the [recommended GitHub workflows](https://github.com/snowex-hackweek/learning-git#git-workflows) for managing projects?
 
 ## Purpose of the projects:
 
