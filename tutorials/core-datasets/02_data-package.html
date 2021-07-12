@@ -757,42 +757,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Querying for data:
-	https://cmr.earthdata.nasa.gov/search/granules.json?provider=NSIDC_ECS&amp;sort_key[]=start_date&amp;sort_key[]=producer_granule_id&amp;scroll=true&amp;page_size=2000&amp;short_name=SNEX20_SD&amp;version=001&amp;version=01&amp;version=1&amp;temporal[]=2020-01-28T00:00:00Z,2020-02-12T23:59:59Z
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 1 matches.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading 2 files...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/2: ./data/depths/SnowEx2020_SnowDepths_COGM_alldepths_v01.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [===============                                             ]  25%  6.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.5MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [=============================================               ]  75%  8.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  11.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2/2: ./data/depths/SnowEx2020_SnowDepths_COGM_alldepths_v01.csv.xml
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  1.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grand Mesa 2020 Snow Depth data download complete
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -801,11 +765,6 @@
 
 <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.csv&#39;</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">filename</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SnowEx2020_SnowDepths_COGM_alldepths_v01.csv
 </pre></div>
 </div>
 </div>
@@ -830,11 +789,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File list is:  [&#39;snowex-data/tutorial-data/core-datasets/depths/SnowEx2020_SnowDepths_COGM_alldepths_v01.csv&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="read-the-depth-file">
 <h3>Read the Depth File<a class="headerlink" href="#read-the-depth-file" title="Permalink to this headline">¶</a></h3>
@@ -849,33 +803,11 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>file has been read, and is ready to use.
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check data types for each column</span>
 <span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Date (yyyymmdd)_Time (hh:mm, local, MST)                           datetime64[ns]
-Measurement Tool (MP = Magnaprobe; M2 = Mesa 2; PR = Pit Ruler)            object
-ID                                                                          int64
-PitID                                                                      object
-Longitude                                                                 float64
-Latitude                                                                  float64
-Easting                                                                   float64
-Northing                                                                  float64
-Depth (cm)                                                                  int64
-elevation (m)                                                             float64
-equipment                                                                  object
-Version Number                                                              int64
-dtype: object
 </pre></div>
 </div>
 </div>
@@ -903,121 +835,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame shape is:  (36388, 12)
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Datetime</th>
-      <th>Measurement Tool</th>
-      <th>ID</th>
-      <th>PitID</th>
-      <th>Longitude</th>
-      <th>Latitude</th>
-      <th>Easting</th>
-      <th>Northing</th>
-      <th>Depth (cm)</th>
-      <th>elevation (m)</th>
-      <th>equipment</th>
-      <th>Version Number</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2020-01-28 11:48:00</td>
-      <td>MP</td>
-      <td>100000</td>
-      <td>8N58</td>
-      <td>-108.13515</td>
-      <td>39.03045</td>
-      <td>747987.62</td>
-      <td>4324061.71</td>
-      <td>94</td>
-      <td>3148.2</td>
-      <td>CRREL_B</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2020-01-28 11:48:00</td>
-      <td>MP</td>
-      <td>100001</td>
-      <td>8N58</td>
-      <td>-108.13516</td>
-      <td>39.03045</td>
-      <td>747986.75</td>
-      <td>4324061.68</td>
-      <td>74</td>
-      <td>3148.3</td>
-      <td>CRREL_B</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2020-01-28 11:48:00</td>
-      <td>MP</td>
-      <td>100002</td>
-      <td>8N58</td>
-      <td>-108.13517</td>
-      <td>39.03045</td>
-      <td>747985.89</td>
-      <td>4324061.65</td>
-      <td>90</td>
-      <td>3148.2</td>
-      <td>CRREL_B</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2020-01-28 11:48:00</td>
-      <td>MP</td>
-      <td>100003</td>
-      <td>8N58</td>
-      <td>-108.13519</td>
-      <td>39.03044</td>
-      <td>747984.19</td>
-      <td>4324060.49</td>
-      <td>87</td>
-      <td>3148.6</td>
-      <td>CRREL_B</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>2020-01-28 11:48:00</td>
-      <td>MP</td>
-      <td>100004</td>
-      <td>8N58</td>
-      <td>-108.13519</td>
-      <td>39.03042</td>
-      <td>747984.26</td>
-      <td>4324058.27</td>
-      <td>90</td>
-      <td>3150.1</td>
-      <td>CRREL_B</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="section" id="use-groupby-to-sort-the-data-set">
 <h4>Use .groupby() to sort the data set<a class="headerlink" href="#use-groupby-to-sort-the-data-set" title="Permalink to this headline">¶</a></h4>
@@ -1031,48 +848,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Measurement Tool</th>
-      <th>Depth (cm)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>M2</td>
-      <td>97.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>MP</td>
-      <td>94.8</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>PR</td>
-      <td>94.6</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 <div class="section" id="your-turn">
@@ -1099,11 +874,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>List of Measurement Tools:  [&#39;MP&#39; &#39;M2&#39; &#39;PR&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1113,121 +883,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame shape is:  (148, 12)
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Datetime</th>
-      <th>Measurement Tool</th>
-      <th>ID</th>
-      <th>PitID</th>
-      <th>Longitude</th>
-      <th>Latitude</th>
-      <th>Easting</th>
-      <th>Northing</th>
-      <th>Depth (cm)</th>
-      <th>elevation (m)</th>
-      <th>equipment</th>
-      <th>Version Number</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>37755</th>
-      <td>2020-01-30 11:24:00</td>
-      <td>PR</td>
-      <td>300001</td>
-      <td>7C15</td>
-      <td>-108.19593</td>
-      <td>39.04563</td>
-      <td>742673.94</td>
-      <td>4325582.37</td>
-      <td>100</td>
-      <td>3048.699951</td>
-      <td>ruler</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>37756</th>
-      <td>2020-01-29 15:00:00</td>
-      <td>PR</td>
-      <td>300002</td>
-      <td>6C37</td>
-      <td>-108.14791</td>
-      <td>39.00760</td>
-      <td>746962.00</td>
-      <td>4321491.00</td>
-      <td>117</td>
-      <td>3087.709961</td>
-      <td>ruler</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>37757</th>
-      <td>2020-02-09 12:30:00</td>
-      <td>PR</td>
-      <td>300003</td>
-      <td>8C31</td>
-      <td>-108.16401</td>
-      <td>39.02144</td>
-      <td>745520.00</td>
-      <td>4322983.00</td>
-      <td>98</td>
-      <td>3099.639893</td>
-      <td>ruler</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>37758</th>
-      <td>2020-01-28 09:13:00</td>
-      <td>PR</td>
-      <td>300004</td>
-      <td>6N18</td>
-      <td>-108.19103</td>
-      <td>39.03404</td>
-      <td>743137.23</td>
-      <td>4324309.43</td>
-      <td>92</td>
-      <td>3055.590088</td>
-      <td>ruler</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>37760</th>
-      <td>2020-02-10 10:30:00</td>
-      <td>PR</td>
-      <td>300006</td>
-      <td>8S41</td>
-      <td>-108.14962</td>
-      <td>39.01659</td>
-      <td>746783.00</td>
-      <td>4322484.00</td>
-      <td>95</td>
-      <td>3113.870117</td>
-      <td>ruler</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 <div class="section" id="id1">
@@ -1251,11 +906,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataFrame is back to only pit ruler depths
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1274,12 +924,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/02_data-package_25_0.png" src="../../_images/02_data-package_25_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Notice the point on the far right - that is the &quot;GML&quot; or Grand Mesa Lodge pit where all instruments were deployed for a comparison study. pitID=GML
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1291,12 +935,6 @@ dtype: object
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Frequency&#39;)
-</pre></div>
-</div>
-<img alt="../../_images/02_data-package_26_1.png" src="../../_images/02_data-package_26_1.png" />
 </div>
 </div>
 </div>
@@ -1316,306 +954,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Querying for data:
-	https://cmr.earthdata.nasa.gov/search/granules.json?provider=NSIDC_ECS&amp;sort_key[]=start_date&amp;sort_key[]=producer_granule_id&amp;scroll=true&amp;page_size=2000&amp;short_name=SNEX20_GM_SP&amp;version=001&amp;version=01&amp;version=1&amp;temporal[]=2020-01-27T00:00:00Z,2020-02-12T23:59:59Z&amp;options[producer_granule_id][pattern]=true&amp;producer_granule_id[]=*5N19*
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 1 matches.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading 20 files...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>01/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_book1_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [===============                                             ]  25%  6.5MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.6MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [=============================================               ]  75%  8.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.5MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>02/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_book2_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [===============                                             ]  25%  6.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  7.5MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [=============================================               ]  75%  8.6MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>03/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_book_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============                                                ]  20%  6.5MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================                                    ]  40%  7.5MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================================                        ]  60%  8.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [================================================            ]  80%  9.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  11.1MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>04/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_density_v01.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  334.8kB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>05/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_east_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  4.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  6.6MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  7.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  8.1MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  8.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.3MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>06/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_LWC_v01.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  380.0kB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>07/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_north_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  9.0MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  9.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  11.0MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>08/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_pit1_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.1MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.0MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  9.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>09/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_pit2_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  9.0MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  10.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_pit_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.5MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.5MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.5MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  10.0MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_siteDetails_v01.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  423.3kB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_south_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  4.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  6.5MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  7.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  8.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  8.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_SSA_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  9.0MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  10.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.9MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_stratigraphy_v01.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  394.4kB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_temperature_v01.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  165.2kB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_up_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.9MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  9.1MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  10.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  12.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_v01.pdf
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  1.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_v01.xlsx
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  2.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_west_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.5MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  9.9MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.3MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19.xml
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  231.9kB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grand Mesa 2020 Snow Pit data download complete
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1624,30 +962,6 @@ dtype: object
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filename</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*5N19*&#39;</span><span class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">filename</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 SnowEx20_SnowPits_GMIOP_20200128_5N19_west_v01.jpg
-1 SnowEx20_SnowPits_GMIOP_20200128_5N19_east_v01.jpg
-2 SnowEx20_SnowPits_GMIOP_20200128_5N19_LWC_v01.csv
-3 SnowEx20_SnowPits_GMIOP_20200128_5N19_SSA_v01.jpg
-4 SnowEx20_SnowPits_GMIOP_20200128_5N19_book_v01.jpg
-5 SnowEx20_SnowPits_GMIOP_20200128_5N19_temperature_v01.csv
-6 SnowEx20_SnowPits_GMIOP_20200128_5N19_density_v01.csv
-7 SnowEx20_SnowPits_GMIOP_20200128_5N19_v01.xlsx
-8 SnowEx20_SnowPits_GMIOP_20200128_5N19.xml
-9 SnowEx20_SnowPits_GMIOP_20200128_5N19_up_v01.jpg
-10 SnowEx20_SnowPits_GMIOP_20200128_5N19_pit2_v01.jpg
-11 SnowEx20_SnowPits_GMIOP_20200128_5N19_north_v01.jpg
-12 SnowEx20_SnowPits_GMIOP_20200128_5N19_v01.pdf
-13 SnowEx20_SnowPits_GMIOP_20200128_5N19_pit_v01.jpg
-14 SnowEx20_SnowPits_GMIOP_20200128_5N19_book1_v01.jpg
-15 SnowEx20_SnowPits_GMIOP_20200128_5N19_stratigraphy_v01.csv
-16 SnowEx20_SnowPits_GMIOP_20200128_5N19_book2_v01.jpg
-17 SnowEx20_SnowPits_GMIOP_20200128_5N19_south_v01.jpg
-18 SnowEx20_SnowPits_GMIOP_20200128_5N19_siteDetails_v01.csv
-19 SnowEx20_SnowPits_GMIOP_20200128_5N19_pit1_v01.jpg
 </pre></div>
 </div>
 </div>
@@ -1676,15 +990,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_20200128_1N6_LWC_v01.csv&#39;,
- &#39;snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_20200128_1N6_density_v01.csv&#39;,
- &#39;snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_20200128_1N6_siteDetails_v01.csv&#39;,
- &#39;snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_20200128_1N6_stratigraphy_v01.csv&#39;,
- &#39;snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_20200128_1N6_temperature_v01.csv&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="don-t-want-to-work-with-all-the-files-method-to-filter-files">
 <h3>Don’t want to work with all the files? Method to filter files<a class="headerlink" href="#don-t-want-to-work-with-all-the-files-method-to-filter-files" title="Permalink to this headline">¶</a></h3>
@@ -1710,93 +1015,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th># Height (cm)</th>
-      <th>Temperature (deg C)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>102</td>
-      <td>-9.5</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>100</td>
-      <td>-9.4</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>90</td>
-      <td>-11.5</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>80</td>
-      <td>-7.5</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>70</td>
-      <td>-5.2</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>60</td>
-      <td>-4.1</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>50</td>
-      <td>-3.5</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>40</td>
-      <td>-3.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>30</td>
-      <td>-2.5</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>20</td>
-      <td>-2.1</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>10</td>
-      <td>-1.5</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>0</td>
-      <td>-0.8</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 <div class="section" id="id3">
@@ -1813,12 +1031,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Snow Depth (cm)&#39;)
-</pre></div>
-</div>
-<img alt="../../_images/02_data-package_38_1.png" src="../../_images/02_data-package_38_1.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1831,116 +1043,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th># Top (cm)</th>
-      <th>Bottom (cm)</th>
-      <th>Density A (kg/m3)</th>
-      <th>Density B (kg/m3)</th>
-      <th>Density C (kg/m3)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>102.0</td>
-      <td>92.0</td>
-      <td>136.0</td>
-      <td>138.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>92.0</td>
-      <td>82.0</td>
-      <td>193.0</td>
-      <td>192.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>82.0</td>
-      <td>72.0</td>
-      <td>232.0</td>
-      <td>221.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>72.0</td>
-      <td>62.0</td>
-      <td>262.0</td>
-      <td>260.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>62.0</td>
-      <td>52.0</td>
-      <td>275.0</td>
-      <td>278.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>52.0</td>
-      <td>42.0</td>
-      <td>261.0</td>
-      <td>252.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>42.0</td>
-      <td>32.0</td>
-      <td>267.0</td>
-      <td>269.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>32.0</td>
-      <td>22.0</td>
-      <td>336.0</td>
-      <td>367.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>22.0</td>
-      <td>12.0</td>
-      <td>268.0</td>
-      <td>246.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>12.0</td>
-      <td>2.0</td>
-      <td>262.0</td>
-      <td>271.0</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1950,127 +1052,6 @@ dtype: object
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th># Top (cm)</th>
-      <th>Bottom (cm)</th>
-      <th>Density A (kg/m3)</th>
-      <th>Density B (kg/m3)</th>
-      <th>Density C (kg/m3)</th>
-      <th>Avg Density (kg/m3)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>102.0</td>
-      <td>92.0</td>
-      <td>136.0</td>
-      <td>138.0</td>
-      <td>NaN</td>
-      <td>137.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>92.0</td>
-      <td>82.0</td>
-      <td>193.0</td>
-      <td>192.0</td>
-      <td>NaN</td>
-      <td>192.5</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>82.0</td>
-      <td>72.0</td>
-      <td>232.0</td>
-      <td>221.0</td>
-      <td>NaN</td>
-      <td>226.5</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>72.0</td>
-      <td>62.0</td>
-      <td>262.0</td>
-      <td>260.0</td>
-      <td>NaN</td>
-      <td>261.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>62.0</td>
-      <td>52.0</td>
-      <td>275.0</td>
-      <td>278.0</td>
-      <td>NaN</td>
-      <td>276.5</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>52.0</td>
-      <td>42.0</td>
-      <td>261.0</td>
-      <td>252.0</td>
-      <td>NaN</td>
-      <td>256.5</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>42.0</td>
-      <td>32.0</td>
-      <td>267.0</td>
-      <td>269.0</td>
-      <td>NaN</td>
-      <td>268.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>32.0</td>
-      <td>22.0</td>
-      <td>336.0</td>
-      <td>367.0</td>
-      <td>NaN</td>
-      <td>351.5</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>22.0</td>
-      <td>12.0</td>
-      <td>268.0</td>
-      <td>246.0</td>
-      <td>NaN</td>
-      <td>257.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>12.0</td>
-      <td>2.0</td>
-      <td>262.0</td>
-      <td>271.0</td>
-      <td>NaN</td>
-      <td>266.5</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2108,12 +1089,6 @@ dtype: object
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Snow Depth (cm)&#39;</span><span class="p">)</span>   
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Snow Depth (cm)&#39;)
-</pre></div>
-</div>
-<img alt="../../_images/02_data-package_41_1.png" src="../../_images/02_data-package_41_1.png" />
 </div>
 </div>
 </div>
