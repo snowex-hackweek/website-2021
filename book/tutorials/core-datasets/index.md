@@ -1,1 +1,4 @@
-SnowEx Mission and Core Data Sets
+# SnowEx Mission and Core Data Sets
+
+```{tableofcontents}
+```

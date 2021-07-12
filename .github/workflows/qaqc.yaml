@@ -36,8 +36,18 @@ jobs:
         docker pull $DOCKER_IMAGE
         docker images
 
-    # NOTE github actions id: uid=1001(runner) gid=121(docker) groups=121(docker),4(adm),101(systemd-journal)
-    # Docker volume mount requires uid matching host, so we change from default (jovyan uid=1000)
+    # borrowed from https://github.com/ProjectPythia/pythia-foundations/blob/main/.github/workflows/link-checker.yaml
+    - name: Disable Notebook Execution
+      shell: python
+      run: |
+        import yaml
+        with open('_config.yml') as f:
+          data = yaml.safe_load(f)
+          data['execute']['execute_notebooks'] = 'off'
+        with open('_config.yml', 'w') as f:
+          yaml.dump(data, f)
+
+    # NOTE: create separate _config.yml to pass --config (and skip executing notebooks?)
     - name: Check External Links
       run: |
-        docker run -u 1001 -v ${{ github.workspace }}:/home/jovyan:rw $DOCKER_IMAGE jb build book --builder linkcheck
+        docker run -u root -v ${{ github.workspace }}:/home/jovyan:rw $DOCKER_IMAGE jb build book --builder linkcheck
