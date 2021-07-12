@@ -766,53 +766,27 @@
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading 2 files...
-netrc error: bad follower token &#39;pEzrak-wutras-ponpo2&#39; (/home/jovyan/.netrc, line 1)
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">~/</span><span class="n">book</span><span class="o">/</span><span class="n">tutorials</span><span class="o">/</span><span class="n">core</span><span class="o">-</span><span class="n">datasets</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">nsidc</span><span class="o">-</span><span class="n">download_SNEX20_SD</span><span class="o">.</span><span class="mf">001.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">    </span><span class="mi">407</span> 
-<span class="g g-Whitespace">    </span><span class="mi">408</span> <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">409</span>     <span class="n">main</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">410</span> <span class="c1">#     os.remove(&#39;data/depths/SnowEx2020_SnowDepths_COGM_alldepths_v01.csv.xml&#39;)</span>
-
-<span class="nn">~/book/tutorials/core-datasets/scripts/nsidc-download_SNEX20_SD.001.py</span> in <span class="ni">main</span><span class="nt">(argv)</span>
-<span class="g g-Whitespace">    </span><span class="mi">401</span>                                   <span class="n">filename_filter</span><span class="o">=</span><span class="n">filename_filter</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span> 
-<span class="ne">--&gt; </span><span class="mi">403</span>         <span class="n">cmr_download</span><span class="p">(</span><span class="n">url_list</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="n">force</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">404</span>     <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">405</span>         <span class="n">quit</span><span class="p">()</span>
-
-<span class="nn">~/book/tutorials/core-datasets/scripts/nsidc-download_SNEX20_SD.001.py</span> in <span class="ni">cmr_download</span><span class="nt">(urls, force, quiet)</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span>     <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">urls</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">222</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">credentials</span> <span class="ow">and</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">scheme</span> <span class="o">==</span> <span class="s1">&#39;https&#39;</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">223</span>             <span class="n">credentials</span> <span class="o">=</span> <span class="n">get_credentials</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span> 
-<span class="g g-Whitespace">    </span><span class="mi">225</span> 
-
-<span class="nn">~/book/tutorials/core-datasets/scripts/nsidc-download_SNEX20_SD.001.py</span> in <span class="ni">get_credentials</span><span class="nt">(url)</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span>     <span class="k">while</span> <span class="ow">not</span> <span class="n">credentials</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">username</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">109</span>             <span class="n">username</span> <span class="o">=</span> <span class="n">get_username</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span>             <span class="n">password</span> <span class="o">=</span> <span class="n">get_password</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>         <span class="n">credentials</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">:</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
-
-<span class="nn">~/book/tutorials/core-datasets/scripts/nsidc-download_SNEX20_SD.001.py</span> in <span class="ni">get_username</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">80</span> 
-<span class="g g-Whitespace">     </span><span class="mi">81</span>     <span class="k">while</span> <span class="ow">not</span> <span class="n">username</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">82</span>         <span class="n">username</span> <span class="o">=</span> <span class="n">do_input</span><span class="p">(</span><span class="s1">&#39;Earthdata username: &#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">83</span>     <span class="k">return</span> <span class="n">username</span>
-<span class="g g-Whitespace">     </span><span class="mi">84</span> 
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">843</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">844</span><span class="s2">         if not self._allow_stdin:</span>
-<span class="ne">--&gt; </span><span class="mi">845</span><span class="s2">             raise StdinNotImplementedError(</span>
-<span class="g g-Whitespace">    </span><span class="mi">846</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">847</span><span class="s2">             )</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/2: ./data/depths/SnowEx2020_SnowDepths_COGM_alldepths_v01.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [===============                                             ]  25%  6.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [=============================================               ]  75%  8.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  11.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2/2: ./data/depths/SnowEx2020_SnowDepths_COGM_alldepths_v01.csv.xml
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  1.7MB/s   
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grand Mesa 2020 Snow Depth data download complete
@@ -827,6 +801,11 @@ netrc error: bad follower token &#39;pEzrak-wutras-ponpo2&#39; (/home/jovyan/.ne
 
 <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.csv&#39;</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">filename</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SnowEx2020_SnowDepths_COGM_alldepths_v01.csv
 </pre></div>
 </div>
 </div>
@@ -1346,52 +1325,291 @@ dtype: object
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading 20 files...
-netrc error: bad follower token &#39;pEzrak-wutras-ponpo2&#39; (/home/jovyan/.netrc, line 1)
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">~/</span><span class="n">book</span><span class="o">/</span><span class="n">tutorials</span><span class="o">/</span><span class="n">core</span><span class="o">-</span><span class="n">datasets</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">nsidc</span><span class="o">-</span><span class="n">download_SNEX20_GM_SP</span><span class="o">.</span><span class="mf">001.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">    </span><span class="mi">406</span> 
-<span class="g g-Whitespace">    </span><span class="mi">407</span> <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">408</span>     <span class="n">main</span><span class="p">()</span>
-
-<span class="nn">~/book/tutorials/core-datasets/scripts/nsidc-download_SNEX20_GM_SP.001.py</span> in <span class="ni">main</span><span class="nt">(argv)</span>
-<span class="g g-Whitespace">    </span><span class="mi">400</span>                                   <span class="n">filename_filter</span><span class="o">=</span><span class="n">filename_filter</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">401</span> 
-<span class="ne">--&gt; </span><span class="mi">402</span>         <span class="n">cmr_download</span><span class="p">(</span><span class="n">url_list</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="n">force</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="n">quiet</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">403</span>     <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">404</span>         <span class="n">quit</span><span class="p">()</span>
-
-<span class="nn">~/book/tutorials/core-datasets/scripts/nsidc-download_SNEX20_GM_SP.001.py</span> in <span class="ni">cmr_download</span><span class="nt">(urls, force, quiet)</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span>     <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">urls</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">222</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">credentials</span> <span class="ow">and</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">scheme</span> <span class="o">==</span> <span class="s1">&#39;https&#39;</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">223</span>             <span class="n">credentials</span> <span class="o">=</span> <span class="n">get_credentials</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span> 
-<span class="g g-Whitespace">    </span><span class="mi">225</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;data/pits&#39;</span><span class="p">):</span>
-
-<span class="nn">~/book/tutorials/core-datasets/scripts/nsidc-download_SNEX20_GM_SP.001.py</span> in <span class="ni">get_credentials</span><span class="nt">(url)</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span>     <span class="k">while</span> <span class="ow">not</span> <span class="n">credentials</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">username</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">109</span>             <span class="n">username</span> <span class="o">=</span> <span class="n">get_username</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span>             <span class="n">password</span> <span class="o">=</span> <span class="n">get_password</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>         <span class="n">credentials</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">:</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
-
-<span class="nn">~/book/tutorials/core-datasets/scripts/nsidc-download_SNEX20_GM_SP.001.py</span> in <span class="ni">get_username</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">80</span> 
-<span class="g g-Whitespace">     </span><span class="mi">81</span>     <span class="k">while</span> <span class="ow">not</span> <span class="n">username</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">82</span>         <span class="n">username</span> <span class="o">=</span> <span class="n">do_input</span><span class="p">(</span><span class="s1">&#39;Earthdata username: &#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">83</span>     <span class="k">return</span> <span class="n">username</span>
-<span class="g g-Whitespace">     </span><span class="mi">84</span> 
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">843</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">844</span><span class="s2">         if not self._allow_stdin:</span>
-<span class="ne">--&gt; </span><span class="mi">845</span><span class="s2">             raise StdinNotImplementedError(</span>
-<span class="g g-Whitespace">    </span><span class="mi">846</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">847</span><span class="s2">             )</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>01/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_book1_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [===============                                             ]  25%  6.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.6MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [=============================================               ]  75%  8.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>02/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_book2_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [===============                                             ]  25%  6.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  7.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [=============================================               ]  75%  8.6MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.2MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>03/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_book_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============                                                ]  20%  6.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================                                    ]  40%  7.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================================                        ]  60%  8.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [================================================            ]  80%  9.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  11.1MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>04/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_density_v01.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  334.8kB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>05/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_east_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  4.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  6.6MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  7.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  8.1MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  8.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.3MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>06/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_LWC_v01.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  380.0kB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>07/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_north_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  9.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  9.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  11.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>08/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_pit1_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.1MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.2MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.2MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  9.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>09/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_pit2_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  9.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  10.2MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_pit_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  10.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_siteDetails_v01.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  423.3kB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_south_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  4.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  6.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  7.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  8.2MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  8.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_SSA_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  9.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  10.2MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.9MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_stratigraphy_v01.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  394.4kB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_temperature_v01.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  165.2kB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_up_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.9MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  9.1MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.8MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  10.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  12.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_v01.pdf
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  1.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_v01.xlsx
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  2.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_west_v01.jpg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.5MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.7MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  9.4MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  9.9MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.3MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19.xml
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  231.9kB/s   
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grand Mesa 2020 Snow Pit data download complete
@@ -1406,6 +1624,30 @@ netrc error: bad follower token &#39;pEzrak-wutras-ponpo2&#39; (/home/jovyan/.ne
 
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filename</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*5N19*&#39;</span><span class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">filename</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 SnowEx20_SnowPits_GMIOP_20200128_5N19_west_v01.jpg
+1 SnowEx20_SnowPits_GMIOP_20200128_5N19_east_v01.jpg
+2 SnowEx20_SnowPits_GMIOP_20200128_5N19_LWC_v01.csv
+3 SnowEx20_SnowPits_GMIOP_20200128_5N19_SSA_v01.jpg
+4 SnowEx20_SnowPits_GMIOP_20200128_5N19_book_v01.jpg
+5 SnowEx20_SnowPits_GMIOP_20200128_5N19_temperature_v01.csv
+6 SnowEx20_SnowPits_GMIOP_20200128_5N19_density_v01.csv
+7 SnowEx20_SnowPits_GMIOP_20200128_5N19_v01.xlsx
+8 SnowEx20_SnowPits_GMIOP_20200128_5N19.xml
+9 SnowEx20_SnowPits_GMIOP_20200128_5N19_up_v01.jpg
+10 SnowEx20_SnowPits_GMIOP_20200128_5N19_pit2_v01.jpg
+11 SnowEx20_SnowPits_GMIOP_20200128_5N19_north_v01.jpg
+12 SnowEx20_SnowPits_GMIOP_20200128_5N19_v01.pdf
+13 SnowEx20_SnowPits_GMIOP_20200128_5N19_pit_v01.jpg
+14 SnowEx20_SnowPits_GMIOP_20200128_5N19_book1_v01.jpg
+15 SnowEx20_SnowPits_GMIOP_20200128_5N19_stratigraphy_v01.csv
+16 SnowEx20_SnowPits_GMIOP_20200128_5N19_book2_v01.jpg
+17 SnowEx20_SnowPits_GMIOP_20200128_5N19_south_v01.jpg
+18 SnowEx20_SnowPits_GMIOP_20200128_5N19_siteDetails_v01.csv
+19 SnowEx20_SnowPits_GMIOP_20200128_5N19_pit1_v01.jpg
 </pre></div>
 </div>
 </div>

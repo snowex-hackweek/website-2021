@@ -722,6 +722,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>snowexsql database successfully loaded!
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="snow-pit-data-are-contained-in-the-following-data-tables">
 <h2>Snow Pit data are contained in the following data tables:<a class="headerlink" href="#snow-pit-data-are-contained-in-the-following-data-tables" title="Permalink to this headline">¶</a></h2>
@@ -740,6 +745,12 @@
 <span class="n">airborne_sensors_list</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">ImageData</span><span class="o">.</span><span class="n">surveyors</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;list of airborne sensors by &quot;surveyor&quot; name: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">airborne_sensors_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list of airborne sensors by &quot;surveyor&quot; name: 
+ [(&#39;USGS&#39;,), (&#39;UAVSAR team, JPL&#39;,), (&#39;ASO Inc.&#39;,)]
 </pre></div>
 </div>
 </div>
@@ -784,6 +795,19 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UAVSAR team, JPL flight dates are: 2020-01-31, 2020-02-12
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                             geom site_id        date
+0  POINT (740652.000 4327445.000)     2C2  2020-01-31
+1  POINT (744396.000 4323540.000)    8C26  2020-01-31
+2  POINT (741960.000 4326644.000)    6C10  2020-01-31
+3  POINT (741493.000 4326833.000)     1C8  2020-01-31
+4  POINT (745340.000 4322754.000)    8S28  2020-01-31
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="b-want-to-select-an-exact-flight-date-match-here-s-how">
@@ -807,6 +831,67 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17 pits overlap with UAVSAR team, JPL on 2020-01-31
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geom</th>
+      <th>site_id</th>
+      <th>date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>POINT (740652.000 4327445.000)</td>
+      <td>2C2</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>POINT (744396.000 4323540.000)</td>
+      <td>8C26</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>POINT (741960.000 4326644.000)</td>
+      <td>6C10</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>POINT (741493.000 4326833.000)</td>
+      <td>1C8</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>POINT (745340.000 4322754.000)</td>
+      <td>8S28</td>
+      <td>2020-01-31</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="c-want-to-select-a-range-of-dates-near-the-flight-date-here-s-how">
@@ -834,6 +919,97 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47 pits overlap with UAVSAR team, JPL on 2020-01-30, 2020-01-31, 2020-02-01
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geom</th>
+      <th>site_id</th>
+      <th>date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>18</th>
+      <td>POINT (745340.000 4322754.000)</td>
+      <td>8S28</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>POINT (744561.000 4322721.000)</td>
+      <td>5S21</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>POINT (746228.000 4322671.000)</td>
+      <td>9S39</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>POINT (745305.000 4323998.000)</td>
+      <td>8N38</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>POINT (746553.000 4323759.000)</td>
+      <td>6N46</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>POINT (744757.000 4323667.000)</td>
+      <td>6C24</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>POINT (745121.000 4324175.000)</td>
+      <td>6N36</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>POINT (744477.000 4323731.000)</td>
+      <td>8C22</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>POINT (744862.000 4323250.000)</td>
+      <td>4C30</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>POINT (741580.000 4326713.000)</td>
+      <td>2C9</td>
+      <td>2020-01-31</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="d-have-a-known-date-that-you-wish-to-select-data-for-here-s-how">
@@ -878,6 +1054,16 @@
 <span class="n">image_type</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">image_type</span><span class="p">]</span>
 <span class="n">image_type</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">image_type</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Image Data on </span><span class="si">%s</span><span class="s1"> are: </span><span class="si">%s</span><span class="s1">, with the following list of parameters: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">dt</span><span class="p">),</span> <span class="n">image_instruments</span><span class="p">,</span> <span class="n">image_type</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point data on 2020-02-12 are: camera-trap, magnaprobe, pit ruler, with the following list of parameters: depth
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Layer Data on 2020-02-12 are: IRIS, IS3-SP-11-01F, snowmicropen, with the following list of parameters: density, equivalent_diameter, force, grain_size, grain_type, hand_hardness, lwc_vol, manual_wetness, permittivity, reflectance, sample_signal, specific_surface_area, temperature
+
+Image Data on 2020-02-12 are: UAVSAR, L-band InSAR, with the following list of parameters: insar correlation, insar interferogram real, insar interferogram imaginary, insar amplitude
 </pre></div>
 </div>
 </div>
@@ -1009,6 +1195,100 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>site_id</th>
+      <th>date</th>
+      <th>type</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>depth</th>
+      <th>value</th>
+      <th>veg_class</th>
+      <th>depth_class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2769</th>
+      <td>8N52</td>
+      <td>2020-02-04</td>
+      <td>density</td>
+      <td>39.030752</td>
+      <td>-108.145157</td>
+      <td>58.0</td>
+      <td>255.0</td>
+      <td>dense</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>2810</th>
+      <td>6S34</td>
+      <td>2020-02-04</td>
+      <td>density</td>
+      <td>39.015800</td>
+      <td>-108.162619</td>
+      <td>10.0</td>
+      <td>NaN</td>
+      <td>sparse</td>
+      <td>deep</td>
+    </tr>
+    <tr>
+      <th>586</th>
+      <td>5N24</td>
+      <td>2020-02-12</td>
+      <td>density</td>
+      <td>39.032945</td>
+      <td>-108.185682</td>
+      <td>86.0</td>
+      <td>348.5</td>
+      <td>sparse</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>1069</th>
+      <td>5S49</td>
+      <td>2020-02-04</td>
+      <td>density</td>
+      <td>39.016456</td>
+      <td>-108.138215</td>
+      <td>71.0</td>
+      <td>268.5</td>
+      <td>sparse</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>2704</th>
+      <td>3S52</td>
+      <td>2020-02-04</td>
+      <td>density</td>
+      <td>39.016467</td>
+      <td>-108.126597</td>
+      <td>50.0</td>
+      <td>267.0</td>
+      <td>treeless</td>
+      <td>deep</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1018,6 +1298,22 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">gb</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;veg_class&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">gb</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;depth_class&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>veg_class
+dense       50
+sparse      39
+treeless    60
+Name: site_id, dtype: int64
+
+
+depth_class
+deep       45
+medium     78
+shallow    26
+Name: site_id, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -1035,6 +1331,9 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03_practice-querying_21_0.png" src="../../_images/03_practice-querying_21_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1044,6 +1343,9 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03_practice-querying_22_0.png" src="../../_images/03_practice-querying_22_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
