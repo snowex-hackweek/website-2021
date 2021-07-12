@@ -80,7 +80,6 @@
       sections:
         - file: projects/project_initialization
         - file: projects/project_roles
-        - file: projects/example_workflow
 - part: Reference
   chapters:
     - file: glossary
