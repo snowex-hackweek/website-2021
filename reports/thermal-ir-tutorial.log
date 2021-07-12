@@ -32,7 +32,7 @@ airborne_ir = xr.open_rasterio('/tmp/thermal-ir/SNOWEX2020_IR_PLANE_2020Feb08_mo
 [0;32m---> 53[0;31m             [0mvalue[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_cache[0m[0;34m[[0m[0mkey[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m     54[0m             [0mself[0m[0;34m.[0m[0m_cache[0m[0;34m.[0m[0mmove_to_end[0m[0;34m([0m[0mkey[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mKeyError[0m: [<function open at 0x7f4d93850550>, ('/tmp/thermal-ir/SNOWEX2020_IR_PLANE_2020Feb08_mosaicked_2020-02-08T181915.tif',), 'r', ()]
+[0;31mKeyError[0m: [<function open at 0x7f8e3c9b9550>, ('/tmp/thermal-ir/SNOWEX2020_IR_PLANE_2020Feb08_mosaicked_2020-02-08T181915.tif',), 'r', ()]
 
 During handling of the above exception, another exception occurred:
 
