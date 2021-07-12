@@ -10,5 +10,7 @@ time you log in.
 
 [![badge](https://img.shields.io/static/v1.svg?logo=Jupyter&label=Launch&message=SnowExJupyterHub&color=orange)](https://snowex.hackweek.io)
 
+See the [Hackweek Schedule](../schedule.md) for exact times for the tutorials.
+
 ```{tableofcontents}
 ```

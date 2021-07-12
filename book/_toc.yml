@@ -27,15 +27,6 @@
       sections:
         - file: tutorials/day_1
           sections:
-<<<<<<< HEAD
-            - file: tutorials/core-datasets/01_introduction
-            - file: tutorials/core-datasets/02_data-package
-            - file: tutorials/core-datasets/03_practice-querying
-        - file: tutorials/geospatial/geospatial_vector
-        - file: tutorials/nsidc-access/nsidc-data-access
-        - file: tutorials/raster/intro-ipyleaflet
-        - file: tutorials/sar/index
-=======
           - file: tutorials/jupyter
           - file: tutorials/core-datasets/index
             sections:
@@ -43,19 +34,21 @@
               - file: tutorials/core-datasets/02_data-package
               - file: tutorials/core-datasets/03_practice-querying
         - file: tutorials/day_2
->>>>>>> main
           sections:
-          - file: tutorials/geospatial/geospatial_vector
-          - file: tutorials/raster/intro-ipyleaflet
-          - file: tutorials/database/index
-            sections:
-              - file: tutorials/database/1_getting_started_example
-              - file: tutorials/database/2_database_structure
-              - file: tutorials/database/3_forming_queries
-              - file: tutorials/database/4_get_spiral_example
-              - file: tutorials/database/5_plot_raster_example
-              - file: tutorials/database/6_exporting_data
-              - file: tutorials/database/7_wrap_up
+            - file: tutorials/geospatial/index
+              sections:
+                - file: tutorials/geospatial/raster
+                - file: tutorials/geospatial/vector
+                - file: tutorials/geospatial/SNOTEL_query
+            - file: tutorials/database/index
+              sections:
+                - file: tutorials/database/1_getting_started_example
+                - file: tutorials/database/2_database_structure
+                - file: tutorials/database/3_forming_queries
+                - file: tutorials/database/4_get_spiral_example
+                - file: tutorials/database/5_plot_raster_example
+                - file: tutorials/database/6_exporting_data
+                - file: tutorials/database/7_wrap_up
         - file: tutorials/day_3
           sections:
             - file: tutorials/lidar/index
@@ -79,6 +72,7 @@
                 - file: tutorials/lis/1_exploring_lis_output
                 - file: tutorials/lis/2_interactive_widgets
             - file: tutorials/camera-traps-tutorial/camera-traps-notebook
+            - file: tutorials/machine-learning/Machine_Learning_Tutorial
 
 - part: Projects
   chapters:
@@ -86,8 +80,8 @@
       sections:
         - file: projects/project_initialization
         - file: projects/project_roles
-        - file: projects/example_workflow
 - part: Reference
   chapters:
     - file: glossary
     - file: bibliography
+    - file: SnowEx_News_and_MonthlyMeetings

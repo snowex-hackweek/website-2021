@@ -18,6 +18,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Setup Cache
+      uses: actions/cache@v2
+      # NOTE: change key "jupyterbook-N+1" to force rebuilding cache
+      with:
+        path: ./book/_build
+        key: jupyterbook-2
+
     - name: Pull Docker Image
       run: |
         docker pull $DOCKER_IMAGE
@@ -32,20 +39,17 @@ jobs:
         role-to-assume: github-actions-role
         role-duration-seconds: 900
 
-    # NOTE: this gets picked up b/c of the docker run -v mount
-    - name: Configure NASA Earthdata Login
-      run: |
-        echo "machine urs.earthdata.nasa.gov login ${{ secrets.EARTHDATA_LOGIN }} password ${{ secrets.EARTHDATA_PASSWORD }}" > .netrc
-        chmod 0600 .netrc
-
-    # NOTE github actions id: uid=1001(runner) gid=121(docker) groups=121(docker),4(adm),101(systemd-journal)
-    # Docker volume mount requires uid matching host, so we change from default (jovyan uid=1000)
     - name: Build JupyterBook
+      env:
+        # Warning: careful exposing secrets in scripts
+        EARTHDATA_LOGIN: ${{ secrets.EARTHDATA_LOGIN }}
+        EARTHDATA_PASSWORD: ${{ secrets.EARTHDATA_PASSWORD }}
       run: |
-        docker run -u 1001 \
+        docker run -u root \
+        -e EARTHDATA_LOGIN -e EARTHDATA_PASSWORD \
         -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN \
         -v ${{ github.workspace }}:/home/jovyan:rw \
-        $DOCKER_IMAGE jb build book
+        $DOCKER_IMAGE .github/workflows/build.sh
 
     - name: Publish to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3

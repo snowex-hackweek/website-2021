@@ -8,8 +8,8 @@ during this event. A good summary is [this cheatsheet from GitHub](https://train
 These are a few commands we will use throughout the week:
 | Git command | What it does |
 |---|---|
-|`git add` | Adds a new, previously untracked file to version control |
-|`git commit` | Saves the current state of the document and creates an entry in the log |
+|`git add` | Adds a new, previously untracked file to version control and marks already tracked files to be committed with the next `commit' |
+|`git commit` | Saves the current state of the repository and creates an entry in the log |
 |`git log` | Shows the history for the repository |
 | `git clone` | Copies a repository to your local environment, including all the history |
 | `git pull` | Gets the latest changes of a previously cloned repository |
@@ -41,12 +41,12 @@ copied to the JupyterHub.
 
 After you successfully set up the {ref}`git command<setting-up-git>`, you can
 copy code between the two using the [clone](https://docs.github.com/en/get-started/quickstart/github-glossary#clone)
-command with git. A `clone` creates a copy of the repository with the current
+command with `git`. A `clone` creates a copy of the repository with the current
 state of the repository including the complete history.
 
 ### Example: Clone the fork of the website with the tutorials
 
-1. Go to the your user page on GitHub and select the 'website' repository.
+1. Go to your user page on GitHub and select the 'website' repository.
 
    The URL to clone the repository can be found after clicking on the green 'Code' button.
 
@@ -71,8 +71,8 @@ state of the repository including the complete history.
 3. In the Terminal, issue the `git clone` command and paste the URL you copied
    in step 1.
 
-    ```{note} A note about cutting and pasting
-    Pasting something from your clipboard into the JupyterLab terminal requires holding 
+    ```{admonition} A note about cutting and pasting
+    Pasting something from your clipboard into the JupyterLab terminal can require holding 
     down the "shift" key and right-clicking.  This is different from the usual Linux 
     method that only requires a right click.
     ```
@@ -128,7 +128,7 @@ to a repository.
 
 Think of the `main` branch as the tried and tested version of a repository and 
 a new branch from that is used to introduce a change that can slowly progress.
-Once ready, it will be merged to the 'main' branch. 
+Once ready, it will be merged to the `main` branch. 
 
 The chapter of [contributing to a project](http://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project)
 describes more behind this principle.
@@ -157,8 +157,13 @@ for a git repository.
 ### Add the SnowEx organization repository as a remote
 
 A remote is defined with a label and a URL. In our case and command below,
-we are using 'SnowEx' as the label and `https://github.com/snowex-hackweek/website.git`
+we are using `SnowEx` as the label and `https://github.com/snowex-hackweek/website.git`
 as the URL.
+
+```{Note} 
+The chosen label `SnowEx` is found in many projects as the `upstream`. Here we
+just went with a more descriptive label instead of the default value.
+```
 
 ```shell
 git remote add SnowEx https://github.com/snowex-hackweek/website.git
@@ -230,8 +235,17 @@ git push
 
 ```{attention}
 The below description works well for smaller files (<10 MB) or zipped archives.
-Talk to any of the instructiors or post on Slack in case you need to upload
-larger files.
+
+Your files are persisted acrosss server shutdowns and startups and you don't have
+to upload them again when you log out at the end of the day and restart anew the
+next day.
+
+The user space has a total limit of 10 GB, which is a SnowEx JupyterHub set limit.
+You can use `/tmp` for temporary large files and they **are not** persistet after
+logout. 
+
+We also have an Amazon S3 bucket for larger files you need for your projects.
+Ping us on Slack for details on how to get your files onto there.
 ```
 
 Uploading a file to your userspace on the JupyterHub can be done using the
