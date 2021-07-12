@@ -2265,7 +2265,22 @@ if (window.Jupyter !== undefined) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fatal error: An error occurred (ExpiredToken) when calling the ListObjectsV2 operation: The provided token has expired.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/sar/uavsar/grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.cor.grd.tiff to ./grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.cor.grd.tiff
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/sar/uavsar/grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.amp2.grd.tiff to ./grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.amp2.grd.tiff
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/sar/uavsar/grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.amp1.grd.tiff to ./grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.amp1.grd.tiff
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/sar/uavsar/grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.hgt.grd.tiff to ./grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.hgt.grd.tiff
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/sar/uavsar/grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.unw.grd.tiff to ./grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.unw.grd.tiff
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/sar/uavsar/grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.int.grd.tiff to ./grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.int.grd.tiff
 </pre></div>
 </div>
 </div>
@@ -2296,6 +2311,15 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.amp1.grd.tiff
+grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.amp2.grd.tiff
+grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.cor.grd.tiff
+grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.unw.grd.tiff
+grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.hgt.grd.tiff
+</pre></div>
+</div>
+</div>
 </div>
 <p>Inspect the meta data the rasters using the rio (shorthand for rasterio) <code class="docutils literal notranslate"><span class="pre">profile</span></code> function.</p>
 <div class="cell docutils container">
@@ -2307,14 +2331,8 @@ if (window.Jupyter !== undefined) {
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mi">07</span><span class="n">f2e2bd6e91</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">unw_rast</span> <span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">unw</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">meta_data</span> <span class="o">=</span> <span class="n">unw_rast</span><span class="o">.</span><span class="n">profile</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">meta_data</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;unw&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;driver&#39;: &#39;GTiff&#39;, &#39;dtype&#39;: &#39;float32&#39;, &#39;nodata&#39;: None, &#39;width&#39;: 7014, &#39;height&#39;: 4768, &#39;count&#39;: 1, &#39;crs&#39;: CRS.from_epsg(4326), &#39;transform&#39;: Affine(5.556e-05, 0.0, -108.30355248000001,
+       0.0, -5.556e-05, 39.19030164), &#39;tiled&#39;: False, &#39;interleave&#39;: &#39;band&#39;}
 </pre></div>
 </div>
 </div>
@@ -2336,6 +2354,9 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_15_0.png" src="../../_images/uavsar_15_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="amp-2">
@@ -2348,6 +2369,9 @@ if (window.Jupyter !== undefined) {
 <span class="n">show</span><span class="p">((</span><span class="n">amp2_rast</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_17_0.png" src="../../_images/uavsar_17_0.png" />
 </div>
 </div>
 </div>
@@ -2362,6 +2386,9 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_19_0.png" src="../../_images/uavsar_19_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="dem">
@@ -2374,6 +2401,9 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_21_0.png" src="../../_images/uavsar_21_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2382,6 +2412,9 @@ if (window.Jupyter !== undefined) {
 <span class="n">show</span><span class="p">((</span><span class="n">dem_rast</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;gist_earth&#39;</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="mi">1900</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">3600</span><span class="p">);</span> <span class="c1">#estimated these values from the histogram</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_22_0.png" src="../../_images/uavsar_22_0.png" />
 </div>
 </div>
 </div>
@@ -2395,6 +2428,9 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_24_0.png" src="../../_images/uavsar_24_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2404,6 +2440,9 @@ if (window.Jupyter !== undefined) {
 <span class="n">show</span><span class="p">((</span><span class="n">unw_rast</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">vmin</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">);</span> <span class="c1"># info from histogram</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_25_0.png" src="../../_images/uavsar_25_0.png" />
 </div>
 </div>
 </div>
@@ -2444,6 +2483,9 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_29_0.png" src="../../_images/uavsar_29_0.png" />
+</div>
 </div>
 <p>Instead of using the <code class="docutils literal notranslate"><span class="pre">rio.show()</span></code> function, we’ll try out the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> (we are calling <code class="docutils literal notranslate"><span class="pre">plt</span></code>) <code class="docutils literal notranslate"><span class="pre">im.show()</span></code> style of plotting to implement a color scale.</p>
 <div class="cell docutils container">
@@ -2458,6 +2500,9 @@ if (window.Jupyter !== undefined) {
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_31_0.png" src="../../_images/uavsar_31_0.png" />
 </div>
 </div>
 <p>Now we’ll create a function called <code class="docutils literal notranslate"><span class="pre">show_two_images()</span></code> to plot two images at once. The function inputs are a data array, color map name, and a plot title for both images. It uses <code class="docutils literal notranslate"><span class="pre">np.nanpercentile()</span></code> to automatically set the color scale bounds, but you can also set them manually.</p>
@@ -2511,6 +2556,9 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_34_0.png" src="../../_images/uavsar_34_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="coherence-unwrapped-phase-dem">
@@ -2546,6 +2594,10 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_38_0.png" src="../../_images/uavsar_38_0.png" />
+<img alt="../../_images/uavsar_38_1.png" src="../../_images/uavsar_38_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2553,6 +2605,9 @@ if (window.Jupyter !== undefined) {
 <span class="n">show_two_images</span><span class="p">(</span><span class="n">dem_array</span><span class="p">,</span> <span class="n">unw_array</span><span class="p">,</span> <span class="s1">&#39;gist_earth&#39;</span><span class="p">,</span> <span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="s1">&#39;DEM (m)&#39;</span><span class="p">,</span> <span class="s1">&#39;UNW (radians)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_39_0.png" src="../../_images/uavsar_39_0.png" />
 </div>
 </div>
 <p>Let’s plot the UNW raster larger so we can get a better look at the detail.</p>
@@ -2572,6 +2627,9 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_41_0.png" src="../../_images/uavsar_41_0.png" />
+</div>
 </div>
 <p>This looks <strong>much</strong> better! Plotting the image at a larger scale allows us to see an accurate representation of the data.</p>
 </div>
@@ -2585,6 +2643,11 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>download: s3://snowex-data/tutorial-data/sar/gmesa_depth_change_02-01_02-13.tif to ./gmesa_depth_change_02-01_02-13.tif
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2594,6 +2657,12 @@ if (window.Jupyter !== undefined) {
 <span class="n">lidar_rast</span> <span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">lidar_dc</span><span class="p">)</span>
 <span class="n">meta_data</span> <span class="o">=</span> <span class="n">lidar_rast</span><span class="o">.</span><span class="n">profile</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">meta_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;driver&#39;: &#39;GTiff&#39;, &#39;dtype&#39;: &#39;float32&#39;, &#39;nodata&#39;: -3.4e+38, &#39;width&#39;: 7576, &#39;height&#39;: 3528, &#39;count&#39;: 1, &#39;crs&#39;: CRS.from_epsg(32612), &#39;transform&#39;: Affine(3.0, 0.0, 737454.0,
+       0.0, -3.0, 4330218.0), &#39;tiled&#39;: False, &#39;compress&#39;: &#39;lzw&#39;, &#39;interleave&#39;: &#39;band&#39;}
 </pre></div>
 </div>
 </div>
@@ -2616,6 +2685,12 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_48_0.png" src="../../_images/uavsar_48_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;LiDAR Depth Change&#39;}&gt;
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="lidar-vs-unw">
@@ -2627,6 +2702,13 @@ if (window.Jupyter !== undefined) {
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.8/site-packages/matplotlib/colors.py:1202: RuntimeWarning: overflow encountered in true_divide
+  resdat /= (vmax - vmin)
+</pre></div>
+</div>
+<img alt="../../_images/uavsar_50_1.png" src="../../_images/uavsar_50_1.png" />
+</div>
 </div>
 <p>The two rasters cover different areas, are different resolutions, and have different missing pixels. Let’s zoom into the top left corner of Grand Mesa where there was significant wind drifting to compare the two data sets.</p>
 <div class="cell docutils container">
@@ -2635,6 +2717,9 @@ if (window.Jupyter !== undefined) {
                 <span class="s1">&#39;RdBu&#39;</span><span class="p">,</span> <span class="s1">&#39;RdBu&#39;</span><span class="p">,</span> <span class="s1">&#39;LiDAR Depth Change (cm)&#39;</span><span class="p">,</span> <span class="s1">&#39;UNW (radians)&#39;</span><span class="p">,</span> <span class="n">vmin1</span> <span class="o">=</span> <span class="o">-.</span><span class="mi">3</span><span class="p">,</span> <span class="n">vmax1</span> <span class="o">=</span> <span class="o">.</span><span class="mi">3</span><span class="p">,</span> <span class="n">vmin2</span><span class="o">=-</span><span class="mi">4</span><span class="p">,</span> <span class="n">vmax2</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/uavsar_52_0.png" src="../../_images/uavsar_52_0.png" />
 </div>
 </div>
 <p>As you can see in the two plots above, there is a very strong spatial relationship between LiDAR depth change and InSAR change in phase. This relationship is the basis of measuring changes in SWE using L-band InSAR. While we don’t get into the next step of converting phase change to SWE or depth change from InSAR, we will get into that in the UAVSAR project!</p>

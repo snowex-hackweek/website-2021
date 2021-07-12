@@ -117,7 +117,7 @@ df.head() #check out the results of the query
 [0;32m--> 122[0;31m     [0mconn[0m [0;34m=[0m [0m_connect[0m[0;34m([0m[0mdsn[0m[0;34m,[0m [0mconnection_factory[0m[0;34m=[0m[0mconnection_factory[0m[0;34m,[0m [0;34m**[0m[0mkwasync[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m    123[0m     [0;32mif[0m [0mcursor_factory[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mOperationalError[0m: could not connect to server: Connection timed out
+[0;31mOperationalError[0m: could not connect to server: Connection refused
 	Is the server running on host "52.32.183.144" and accepting
 	TCP/IP connections on port 5432?
 
@@ -328,12 +328,12 @@ The above exception was the direct cause of the following exception:
 [0m[1;32m    123[0m     [0;32mif[0m [0mcursor_factory[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [1;32m    124[0m         [0mconn[0m[0;34m.[0m[0mcursor_factory[0m [0;34m=[0m [0mcursor_factory[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mOperationalError[0m: (psycopg2.OperationalError) could not connect to server: Connection timed out
+[0;31mOperationalError[0m: (psycopg2.OperationalError) could not connect to server: Connection refused
 	Is the server running on host "52.32.183.144" and accepting
 	TCP/IP connections on port 5432?
 
 (Background on this error at: http://sqlalche.me/e/13/e3q8)
-OperationalError: (psycopg2.OperationalError) could not connect to server: Connection timed out
+OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
 	Is the server running on host "52.32.183.144" and accepting
 	TCP/IP connections on port 5432?
 

@@ -861,7 +861,7 @@ strings to interact with the database.</p>
 <span class="ne">--&gt; </span><span class="mi">122</span>     <span class="n">conn</span> <span class="o">=</span> <span class="n">_connect</span><span class="p">(</span><span class="n">dsn</span><span class="p">,</span> <span class="n">connection_factory</span><span class="o">=</span><span class="n">connection_factory</span><span class="p">,</span> <span class="o">**</span><span class="n">kwasync</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">123</span>     <span class="k">if</span> <span class="n">cursor_factory</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
-<span class="ne">OperationalError</span>: could not connect to server: Connection timed out
+<span class="ne">OperationalError</span>: could not connect to server: Connection refused
 	<span class="n">Is</span> <span class="n">the</span> <span class="n">server</span> <span class="n">running</span> <span class="n">on</span> <span class="n">host</span> <span class="s2">&quot;52.32.183.144&quot;</span> <span class="ow">and</span> <span class="n">accepting</span>
 	<span class="n">TCP</span><span class="o">/</span><span class="n">IP</span> <span class="n">connections</span> <span class="n">on</span> <span class="n">port</span> 5432<span class="o">?</span>
 
@@ -1030,7 +1030,7 @@ strings to interact with the database.</p>
 <span class="g g-Whitespace">    </span><span class="mi">123</span>     <span class="k">if</span> <span class="n">cursor_factory</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">124</span>         <span class="n">conn</span><span class="o">.</span><span class="n">cursor_factory</span> <span class="o">=</span> <span class="n">cursor_factory</span>
 
-<span class="ne">OperationalError</span>: (psycopg2.OperationalError) could not connect to server: Connection timed out
+<span class="ne">OperationalError</span>: (psycopg2.OperationalError) could not connect to server: Connection refused
 	<span class="n">Is</span> <span class="n">the</span> <span class="n">server</span> <span class="n">running</span> <span class="n">on</span> <span class="n">host</span> <span class="s2">&quot;52.32.183.144&quot;</span> <span class="ow">and</span> <span class="n">accepting</span>
 	<span class="n">TCP</span><span class="o">/</span><span class="n">IP</span> <span class="n">connections</span> <span class="n">on</span> <span class="n">port</span> 5432<span class="o">?</span>
 
