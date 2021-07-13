@@ -15,6 +15,8 @@ All times listed below are UTC -7 (Pacific Daylight Time). You might want to con
 
 ### 9:00 to 10:00 AM: Introductory Session 
 
+#### [Link to video](https://youtu.be/cHQloxZFtOQ)
+
 *Lead Instructors: Anthony Arendt and Charley Haley*
 
 * Overview of hackweeks
@@ -36,6 +38,8 @@ All times listed below are UTC -7 (Pacific Daylight Time). You might want to con
 ### 11:05 to 11:30 AM: Break
 
 ### 11:30 AM to 12:15 PM: SnowEx Mission Overview and Datasets
+
+#### [Link to video](https://youtu.be/5hVQusosGSg)
 
 *Lead Instructors: Megan Mason, Carrie Vuyovich, HP Marshall*
 
@@ -99,6 +103,10 @@ ________________________________________________________
 ### 1:30 PM and later: project work
 
 *Helpers available for consultation as needed*
+
+### 1:30 to 2:00 PM: Virtual Happy Hour (optional)
+
+*Lead Facilitator: Charley Haley*
 ________________________________________________________
 
 ## DAY 3
@@ -108,6 +116,10 @@ ________________________________________________________
 ### 9:00 to 10:30 AM: Vector and Raster Data Analysis, Part 2
 
 *Lead Instructors: Scott Henderson and David Shean*
+
+### 10:30 to 11:00 AM: Virtual Coffee Gathering (optional)
+
+*Lead Facilitator: Charley Haley*
 
 ### 11:00 to 11:45 AM: LiDAR (Parallel Session 1A)
 
