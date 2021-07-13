@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Snow Microstructure Tutorial &#8212; SnowEx Hackweek</title>
+    <title>Microstructure Tutorial &#8212; SnowEx Hackweek</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -393,7 +393,7 @@
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Snow Microstructure Tutorial
+       Microstructure Tutorial
       </a>
      </li>
      <li class="toctree-l3">
@@ -679,8 +679,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#read-microct-data-and-compare-integrating-sphere-smp-and-ct-data">
-     3. Read microCT data, and compare integrating sphere, SMP and CT data
+    <a class="reference internal nav-link" href="#read-microct-data-and-compare-intergrating-sphere-smp-and-ct-data">
+     3. Read microCT data, and compare intergrating sphere, SMP and CT data
     </a>
    </li>
   </ul>
@@ -696,8 +696,8 @@
         
               <div>
                 
-  <div class="section" id="snow-microstructure-tutorial">
-<h1>Snow Microstructure Tutorial<a class="headerlink" href="#snow-microstructure-tutorial" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="microstructure-tutorial">
+<h1>Microstructure Tutorial<a class="headerlink" href="#microstructure-tutorial" title="Permalink to this headline">¶</a></h1>
 <p>by Mike Durand, School of Earth Sciences and Byrd Polar &amp; Climate Research Center <a class="reference external" href="mailto:durand&#46;8&#37;&#52;&#48;osu&#46;edu">durand<span>&#46;</span>8<span>&#64;</span>osu<span>&#46;</span>edu</a></p>
 <div class="section" id="learning-objectives">
 <h2>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
@@ -727,7 +727,7 @@
 <a class="reference internal image-reference" href="../../_images/modeled-swe-L-response.png"><img alt="radar-figure" src="../../_images/modeled-swe-L-response.png" style="width: 400px;" /></a>
 <p><b>Modeled response of radar backscatter to SWE and single-scatter albedo (which in turn is a function of snow microstructure), based on a simple model suggested by <span id="id3">[<a class="reference internal" href="../../bibliography.html#id18">Ulaby, 2014</a>]</span></b></p>
 <p>Snow microstructure is super important to efforts to launch a Ku-band SAR to measure global snow water equivalent (SWE). An important area of research right now is exploring how to use estimates of microstructure (e.g. from snowpack evolution models) to improve SWE retrievals.</p>
-<p>Snow microstructure evolves through the season, and varies a lot with depth. Snow microstructure evaluation is controlled by other snow properties, such as snow temperature, snow height and snow liquid water content. A really great resource on snow microstructure is Kelly Elder’s recent talks:</p>
+<p>Snow microstructure evolves through the season, and varies a lot with depth. Snow microstructure evolution is controlled by other snow properties, such as snow temperature, snow height and snow liquid water content. A really great resource on snow microstructure is Kelly Elder’s recent talks:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://boisestate.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9a051fe4-db09-4f1d-92db-acd1003cc5cc">Snow Metamorphism</a></p></li>
 <li><p><a class="reference external" href="https://boisestate.hosted.panopto.com/Panopto/Pages/Embed.aspx?id=136f7580-c1e2-4c55-ab33-acca003c23d6">Snow Grain Identification</a></p></li>
@@ -753,7 +753,7 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 <p>Relationships of specific surface area to other metrics are given in this list if you’re curious but otherwise just skip past this bit</p>
 <ul class="simple">
 <li><p>Sometimes people refer to the “optical grain diameter”, which is the same as D<sub>eq</sub>. The “optical” refers to <span id="id11">[<a class="reference internal" href="../../bibliography.html#id12">Grenfell and Warren, 1999</a>]</span>, who showed that any snow with a particular SSA had similar (not identical) radiative transfer properties regardless of particle shape in the visible and near-infrared parts of the spectrum. But note the same is not true in the microwave spectrum.</p></li>
-<li><p>Auto-correlation length is usually one of two metrics that summarize the two-point microstructure auto-correlation function of the three-dimensional ice-air matrix. Think of the probability that you change media (from ice to air or vice versa) as you move a certain distance within the snow microstructure. The length that defines the likelihood that you’ll change media is (an approximation of the correlation length). SSA is by definition (with almost no assumptions) equal to the slope of the autocorrelation function at the origin. But microwave scattering is controlled by correlations at longer lags. For more check out <span id="id12">[<a class="reference internal" href="../../bibliography.html#id10">Mätzler, 2002</a>]</span>. The lack of closing the loop between SSA and correlation length is a significant issue when we have measurements of SSA and microwaves as we do in SnowEx.</p></li>
+<li><p>Autocorrelation length is usually one of two metrics that summarize the two-point microstructure autocorelation function of the three-dimensional ice-air matrix. Think of the probability that you change media (from ice to air or vice versa) as you move a certain distance within the snow microstructure. The length that defines the likelihood that you’ll change media is (an approximation of the correlation length). SSA is by definition (with almost no assumptions) equal to the slope of the autocorrelation function at the origin. But microwave scattering is controlled by correlations at longer lags. For more check out <span id="id12">[<a class="reference internal" href="../../bibliography.html#id10">Mätzler, 2002</a>]</span>. The lack of closing the loop between SSA and correlation length is a significant issue when we have measurements of SSA and microwaves as we do in SnowEx.</p></li>
 <li><p>Geometric grain size is what we usually measure when we measure with a hand lens. You can try to relate it to SSA or corelation length, but it is not always possible, and will change with different observers.</p></li>
 </ul>
 <p>Time to stop this list but there are many other metrics as well.</p>
@@ -769,7 +769,7 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 <p>Integrating spheres are field-based and you make the measurements on samples extracted from the snowpit face. The principle of the measurement is based on firing a laser at the snow sample, within a special reflective hollow sphere, where one side is filled by the snow sample, and measuring how much of the laser is reflected at a sensor at a known geometry. For more information, check out <span id="id16">[<a class="reference internal" href="../../bibliography.html#id14">Gallet <em>et al.</em>, 2009</a>]</span>.  Most integrating sphere measurements are either made by a commercial firm (A2 Photonics) known as the <a class="reference external" href="https://a2photonicsensors.com/icecube-ssa/">IceCube</a> or a version constructed at the University of Sherbrooke known as the IRIS <span id="id17">[<a class="reference internal" href="../../bibliography.html#id15">Montpetit <em>et al.</em>, 2012</a>]</span>. These approaches are set up to measure SSA only. There were three of these at Grand Mesa - one of the Sherbrooke IRIS units, and two IceCubes, one from Finnish Meteorological Institute, and one from Ohio State University.</p>
 <a class="reference internal image-reference" href="../../_images/SMP.png"><img alt="ct-figure" src="../../_images/SMP.png" style="width: 800px;" /></a>
 <p><b>Left: Megan Mason operates the SMP. Right: Closeup of the SMP sensor tip.</b></p>
-<p>Snow micropenetrometers are also a field-based approach, but they do not require a snowpit, enabling far more observations to be made. Instead, an automated motor pushes a probe vertically downwards into the snowpack. The probe measures the force required to break snow microstructure, yielding a wealth of information. Snow density, specific surface area and correlation length can be retrieved; for more results see <span id="id18">[<a class="reference internal" href="../../bibliography.html#id16">Löwe and Herwijnen, 2012</a>]</span> and <span id="id19">[<a class="reference internal" href="../../bibliography.html#id17">Proksch <em>et al.</em>, 2015</a>]</span>. The micropen effort at Grand Mesa was led by Boise State University.</p>
+<p>Snow micropenetrometers are also a field-based approach, but they do not require a snowpit, enabling far more observations to be made. Instead, an automated motor pushes a probe vertically downwards into the snowpack. The probe measures the force required to break snow microstructure, yielding a wealth of information. Snow density, specific surface area and correlation length can be retrieved; for background see <span id="id18">[<a class="reference internal" href="../../bibliography.html#id16">Löwe and Herwijnen, 2012</a>]</span> and <span id="id19">[<a class="reference internal" href="../../bibliography.html#id17">Proksch <em>et al.</em>, 2015</a>]</span>. The micropen effort at Grand Mesa was led by Boise State University. A key thing to be aware of is that differences in the various SMP instruments mean that the empirical relationship of <span id="id20">[<a class="reference internal" href="../../bibliography.html#id17">Proksch <em>et al.</em>, 2015</a>]</span> will give quite poor results for the particular instrument used in SnowEx, as fully explained in <span id="id21">[<a class="reference internal" href="../../bibliography.html#id20">Calonne <em>et al.</em>, 2020</a>]</span>.</p>
 <p>These methods are not the only ways to measure microstructure! There are several others not mentioned here, but not used at Grand Mesa 2020. Ask if interested.</p>
 </div>
 </div>
@@ -827,173 +827,6 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>site_name</th>
-      <th>date</th>
-      <th>time_created</th>
-      <th>time_updated</th>
-      <th>id</th>
-      <th>doi</th>
-      <th>date_accessed</th>
-      <th>instrument</th>
-      <th>type</th>
-      <th>units</th>
-      <th>...</th>
-      <th>geom</th>
-      <th>time</th>
-      <th>depth</th>
-      <th>site_id</th>
-      <th>bottom_depth</th>
-      <th>comments</th>
-      <th>sample_a</th>
-      <th>sample_b</th>
-      <th>sample_c</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Grand Mesa</td>
-      <td>2020-02-01</td>
-      <td>2021-06-01 18:43:25.958229+00:00</td>
-      <td>None</td>
-      <td>12556</td>
-      <td>https://doi.org/10.5067/SNMM6NGGKWIT</td>
-      <td>2021-06-01</td>
-      <td>IRIS</td>
-      <td>specific_surface_area</td>
-      <td>None</td>
-      <td>...</td>
-      <td>POINT (742607.000 4322917.000)</td>
-      <td>09:00:00-06:00</td>
-      <td>74.0</td>
-      <td>1S8</td>
-      <td>None</td>
-      <td>surface hoar</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>31.24</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Grand Mesa</td>
-      <td>2020-02-01</td>
-      <td>2021-06-01 18:43:25.959662+00:00</td>
-      <td>None</td>
-      <td>12557</td>
-      <td>https://doi.org/10.5067/SNMM6NGGKWIT</td>
-      <td>2021-06-01</td>
-      <td>IRIS</td>
-      <td>specific_surface_area</td>
-      <td>None</td>
-      <td>...</td>
-      <td>POINT (742607.000 4322917.000)</td>
-      <td>09:00:00-06:00</td>
-      <td>71.0</td>
-      <td>1S8</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>38.22</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Grand Mesa</td>
-      <td>2020-02-01</td>
-      <td>2021-06-01 18:43:25.960999+00:00</td>
-      <td>None</td>
-      <td>12558</td>
-      <td>https://doi.org/10.5067/SNMM6NGGKWIT</td>
-      <td>2021-06-01</td>
-      <td>IRIS</td>
-      <td>specific_surface_area</td>
-      <td>None</td>
-      <td>...</td>
-      <td>POINT (742607.000 4322917.000)</td>
-      <td>09:00:00-06:00</td>
-      <td>69.0</td>
-      <td>1S8</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>38.98</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Grand Mesa</td>
-      <td>2020-02-01</td>
-      <td>2021-06-01 18:43:25.962333+00:00</td>
-      <td>None</td>
-      <td>12559</td>
-      <td>https://doi.org/10.5067/SNMM6NGGKWIT</td>
-      <td>2021-06-01</td>
-      <td>IRIS</td>
-      <td>specific_surface_area</td>
-      <td>None</td>
-      <td>...</td>
-      <td>POINT (742607.000 4322917.000)</td>
-      <td>09:00:00-06:00</td>
-      <td>64.0</td>
-      <td>1S8</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>37.35</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Grand Mesa</td>
-      <td>2020-02-01</td>
-      <td>2021-06-01 18:43:25.963983+00:00</td>
-      <td>None</td>
-      <td>12560</td>
-      <td>https://doi.org/10.5067/SNMM6NGGKWIT</td>
-      <td>2021-06-01</td>
-      <td>IRIS</td>
-      <td>specific_surface_area</td>
-      <td>None</td>
-      <td>...</td>
-      <td>POINT (742607.000 4322917.000)</td>
-      <td>09:00:00-06:00</td>
-      <td>59.0</td>
-      <td>1S8</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>24.56</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 27 columns</p>
-</div></div></div>
 </div>
 <p>Since we want to intercompare integrating spheres, we need to isolate only the sites that actually had multiple integrating spheres measuring the same snow.</p>
 <div class="cell docutils container">
@@ -1001,7 +834,7 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grab all the sites with equivalent diameter data (set reduces a list to only its unique entries)</span>
 <span class="n">sites</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 
-<span class="c1"># Store all site names that have multiple SSA instruments</span>
+<span class="c1"># Store all site names that have mulitple SSA instruments</span>
 <span class="n">multi_instr_sites</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">instruments</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -1020,11 +853,6 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 <span class="n">instruments</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;instrument&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 
 <span class="n">instruments</span> <span class="c1">#check out the list of instruments. note that the IceCube values are displayed as serial numbers</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;IRIS&#39;, &#39;IS3-SP-11-01F&#39;, &#39;IS3-SP-15-01US&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -1079,16 +907,14 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/microstructure-tutorial_13_0.png" src="../../_images/microstructure-tutorial_13_0.png" />
-</div>
 </div>
 </div>
 <div class="section" id="pull-the-snowmicropenetrometer-data-and-compute-ssa">
 <h3>2. Pull the snowmicropenetrometer data and compute SSA<a class="headerlink" href="#pull-the-snowmicropenetrometer-data-and-compute-ssa" title="Permalink to this headline">¶</a></h3>
-<p>The next step is to grab some SMP data to compare to. We’re going to get the SMP at site 2N13, where we have a couple of SSA profiles from interacting spheres (as well as microCT data, to be looked at in the next step!).</p>
+<p>The next step is to grab some SMP data to compare to. We’re going to get the SMP at site 2N13, where we have a copule of SSA profiles from interating spheres (as well as microCT data, to be looked at in the next step!).</p>
 <p>The SMP measurements for SnowEx 2020 GrandMesa were all made by Megan Mason. If you’re interested in working with the SMP data, please carefully read the NSIDC <a class="reference external" href="https://nsidc.org/data/SNEX20_SMP/versions/1">documentation page</a>. If you’re planning to work with the data, please reach out to the author; the contact is (Megan Mason <a class="reference external" href="mailto:meganmason491&#37;&#52;&#48;u&#46;boisestate&#46;edu">meganmason491<span>&#64;</span>u<span>&#46;</span>boisestate<span>&#46;</span>edu</a>). If you use a profile, consider checking out the comments which are described in the <a class="reference external" href="https://nsidc.org/sites/nsidc.org/files/technical-references/SNEX20_SMP_FieldNotes.xlsx">Excel sheet linked from the Technical References part of the NSIDC documentation</a>, where there are some really useful comments.</p>
 <p>There are a few steps here, and one reason for that is just that the SMP data is quite large, and so the full-resolution SMP could not be included in Micah’s database. The full resolution profile from SMP is resolved ever 1.25 mm! Instead, the SMP data in Micah’s database is sampled to only every 100th datapoint, so it’s every 12.5 cm. But the database is still very useful! What we’ll do is use the database to find the right profile, then go and download that full resolution dataset from the NSIDC. Easy-peasey!</p>
+<p>As mentioned above, <span id="id22">[<a class="reference internal" href="../../bibliography.html#id20">Calonne <em>et al.</em>, 2020</a>]</span> tested applying the relationship of <span id="id23">[<a class="reference internal" href="../../bibliography.html#id17">Proksch <em>et al.</em>, 2015</a>]</span> and got quite poor results, explained them by the difference in hardware between generations of SMP instruments. We were unaware of that when designing the tutorial, and so set up use of the so-called official SMP processing repository, linked below, which has not yet been updated with the latest relationship. This would make a great project, as mentioned later!</p>
 <p>First up, we’ll visualize the location of the SMP profiles, along with the snowpit location.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1119,9 +945,6 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/microstructure-tutorial_15_0.png" src="../../_images/microstructure-tutorial_15_0.png" />
 </div>
 </div>
 <p>Next up, let’s find the closest SMP profile to the snowpit, and then find the profile ID of that profile, which is in the comments in the database.</p>
@@ -1154,61 +977,9 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>comments</th>
-      <th>dists</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>7857</th>
-      <td>fname = SNEX20_SMP_S19M1174_2N13_20200206.CSV,...</td>
-      <td>1.551466</td>
-    </tr>
-    <tr>
-      <th>22500</th>
-      <td>fname = SNEX20_SMP_S19M1175_2N13_20200206.CSV,...</td>
-      <td>2.900187</td>
-    </tr>
-    <tr>
-      <th>16571</th>
-      <td>fname = SNEX20_SMP_S19M1173_2N13_20200206.CSV,...</td>
-      <td>5.031469</td>
-    </tr>
-    <tr>
-      <th>26009</th>
-      <td>fname = SNEX20_SMP_S19M1172_2N13_20200206.CSV,...</td>
-      <td>5.031469</td>
-    </tr>
-    <tr>
-      <th>4833</th>
-      <td>fname = SNEX20_SMP_S19M1176_2N13_20200206.CSV,...</td>
-      <td>14.095757</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <p>So the id of the closest SMP profile is S19M1174.  I went to the <a class="reference external" href="https://nsidc.org/data/SNEX20_SMP/versions/1">SMP page on NSIDC</a>, and went to “Download” and searched for this ID, downloaded the profile, and then re-uploaded to my home directory here in the Jupyter hub.</p>
-<p>Ok next up, we have to compute SSA from the SMP data. For this, we’ll use the “snowmicropyn” modules created by the Swiss SLF. You can read more about them <a class="reference external" href="https://snowmicropyn.readthedocs.io/en/latest/">at this site</a>. The software is a little out of date on Python versions; just ignore any warnings that pop up below!</p>
+<p>Ok next up, we have to compute SSA from the SMP data. For this, we’ll use the “snowmicropyn” modules created by the Swiss SLF. You can read more about them <a class="reference external" href="https://snowmicropyn.readthedocs.io/en/latest/">at this site</a>. The software is a little out of date on Python versions; just ignore any warnings that pop up below! Also, the use of the  <span id="id24">[<a class="reference internal" href="../../bibliography.html#id17">Proksch <em>et al.</em>, 2015</a>]</span> relationship is also out-of-date, as mentioned above. Getting it updated for use with this tutorial would make a perfect project!</p>
 <p>The next cell pulls in the needed modules, and then plots the profile of force measurements needed to break through the snow microstructure.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1238,11 +1009,8 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/microstructure-tutorial_21_0.png" src="../../_images/microstructure-tutorial_21_0.png" />
 </div>
-</div>
-<p>The next step is the actual calculation of SSA from the force data. It then displays the data and lets you see that there is now a column called SSA! Note that this function is “proksch2015”. You can read about how it works in Martin Proksch’s paper <span id="id20">[<a class="reference internal" href="../../bibliography.html#id17">Proksch <em>et al.</em>, 2015</a>]</span>.</p>
+<p>The next step is the actual calculation of SSA from the force data. It then displays the data and lets you see that there is now a column called SSA! Note that this function is “proksch2015”. You can read about how it works in Martin Proksch’s paper <span id="id25">[<a class="reference internal" href="../../bibliography.html#id17">Proksch <em>et al.</em>, 2015</a>]</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the window size is a parameter you can play with. default is 2.5 mm setting to 10 mm does some smoothing</span>
@@ -1251,68 +1019,10 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>distance</th>
-      <th>P2015_density</th>
-      <th>P2015_ssa</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.0</td>
-      <td>138.807871</td>
-      <td>43.578891</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>5.0</td>
-      <td>133.771549</td>
-      <td>47.658957</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>10.0</td>
-      <td>129.812119</td>
-      <td>53.579023</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>15.0</td>
-      <td>129.890037</td>
-      <td>53.449012</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>20.0</td>
-      <td>128.434393</td>
-      <td>55.982357</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
-<div class="section" id="read-microct-data-and-compare-integrating-sphere-smp-and-ct-data">
-<h3>3. Read microCT data, and compare integrating sphere, SMP and CT data<a class="headerlink" href="#read-microct-data-and-compare-integrating-sphere-smp-and-ct-data" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="read-microct-data-and-compare-intergrating-sphere-smp-and-ct-data">
+<h3>3. Read microCT data, and compare intergrating sphere, SMP and CT data<a class="headerlink" href="#read-microct-data-and-compare-intergrating-sphere-smp-and-ct-data" title="Permalink to this headline">¶</a></h3>
 <p>The microCT samples were extracted in the field and processed at CRREL by Lauren Farnsworth, and is not yet published at NSIDC. Please contact her with questions (lauren.b.farnsworth&#64;usace.army.mil)!</p>
 <p>This module reads in microCT datafiles which are stored as text. Some additional data are available, showing the computer generated slices through the ice-air interface: contact Mike (<a class="reference external" href="mailto:durand&#46;8&#37;&#52;&#48;osu&#46;edu">durand<span>&#46;</span>8<span>&#64;</span>osu<span>&#46;</span>edu</a>) if you want to look at a subset of these data that Lauren has shared.</p>
 <p>Equivalent grain size is a useful quantity to compare: because it’s proportional to 1/SSA, and because after a point as you increase SSA more and more, all fine-grained snow acts more-or-less the same (converging to e.g. the “fine-grained” curve in Figure 1, above), we’ll look at equivalent diameter instead of SSA in this comparison.</p>
@@ -1329,26 +1039,7 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 <span class="n">data_dir</span><span class="o">=</span><span class="s1">&#39;/tmp/microstructure/microCT/txt/&#39;</span>
 <span class="p">[</span><span class="n">SSA_CT</span><span class="p">,</span><span class="n">height_min</span><span class="p">,</span><span class="n">height_max</span><span class="p">]</span><span class="o">=</span><span class="n">read_CT_txt_files</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
 
-<span class="n">SSA_CT</span> <span class="c1">#check out the SSA values read in from MicroCT</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([10.43911668, 10.73460196, 10.6057361 , 10.9089422 , 11.16761178,
-       11.70006543, 11.76880044, 11.74672846, 11.577241  , 11.73143948,
-       11.68001091, 11.10273719, 11.7619084 , 11.87629226, 11.68687023,
-       11.42565976, 11.54909487, 11.30210469, 11.32300981, 11.32594329,
-       10.93379498, 10.92513631, 11.01997819, 10.67981461, 11.10715376,
-       10.99905125, 10.75124318, 11.50651036, 12.57513631, 12.81523446,
-       12.7846783 , 12.8248964 , 12.87141767, 13.00685932, 12.73911668,
-       13.01716467, 12.88      , 13.56685932, 13.35838604, 13.97314068,
-       14.23908397, 16.31159215, 17.56122137, 18.06660851, 17.45089422,
-       18.15394766, 17.93645583, 17.8674482 , 17.99497274, 17.89236641,
-       18.25597601, 18.17002181, 19.18184297, 19.1782988 , 18.36195202,
-       17.75116685, 17.61587786, 18.12836423, 17.58134133, 18.08393675,
-       18.87725191, 19.1989422 , 18.93825518, 17.83435115, 18.0187241 ,
-       16.42268266, 18.64861505, 17.39344602, 18.0421265 , 19.23437296,
-       22.07477644])
+<span class="n">SSA_CT</span> <span class="c1">#chck out the SSA values read in from MicroCT</span>
 </pre></div>
 </div>
 </div>
@@ -1399,12 +1090,10 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/microstructure-tutorial_28_0.png" src="../../_images/microstructure-tutorial_28_0.png" />
 </div>
-</div>
-<p>Wow, so the datasets are so very different, with the SMP being by far the most different. Because we might expect that the SMP is quite a ways off, actually, as the relationships between the force profile and SSA are empirical, and thus might change for different types of snow. There’s also significant differences between the microCT and the two integrating spheres. This is science - sometimes when we start intercomparing these quantities, we do not get a perfect match. This data hasn’t had kinks worked out yet - this is all hot off the press and ready for HackWeek!</p>
-<p>Some of the ways that you could imagine connecting microstructure measurements to other quantities would be with the SWESARR radar data. Although the radar data does seem to have some orthorectification issues that haven’t been fully worked out, I can imagine these being worked around by careful choice of places you match up the microstructure to the radar. Note that places that are shallower tend to have larger D<sub>eq</sub> and vice versa, and the spatial variability in SSA was fairly low in general in Grand Mesa 2020, so looking at multiple SSA vs radar samples might not yield a great correlation. But you never know, could be fun to try! Generally speaking, we don’t expect a ton of impact of the microstructure on L-band (UAVSAR), but it would be interesting to explore that.</p>
+<p>Wow, so the datasets are so very different, with the SMP being by far the most different. Comparing with <span id="id26">[<a class="reference internal" href="../../bibliography.html#id20">Calonne <em>et al.</em>, 2020</a>]</span> shows that the SMP is off in the same direction as diagnosed in that paper. Thus, the difference is most likely due to the difference in SMP instruments. Dr. Mel Sandells of Northumbria University has a github branch of the SMP software SnowMicropyn that has the newer fit relationship integrated in the software. It would be a nice project to loop in Mel’s branch with this notebook and see how well things compare to SnowEx data. I’d be happy to help anyone interested get rolling on that!</p>
+<p>There’s also significant differences between the microCT and the two integrating spheres. This is science - sometimes when we start intercomparing these quantities, we do not get a perfect match. This would also be a fascinating thing to explore in a Hackweek project.</p>
+<p>Some of the ways that you could imagine connecting microstructure measurements to other quantities would be with the SWESARR radar data. Although the radar data does seem to have some orthorectification issues that haven’t been fully worked out, I can imagine these being worked around by careful choice of places you match up the microstructure to the radar. Note that places that are shallower tend to have larger D<sub>eq</sub> and vice versa, and the spatial variability in SSA was fairly low in general in Grand Mesa 2020, so looking at multiple SSA vs radar samples might not yield a great correlation. But you never know, could be fun to try! Generaly speaking, we don’t expect a ton of impact of the microstructure on L-band (UAVSAR), but it would be interesting to explore that.</p>
 <p>One thing that could be of great value is to calibrate the SMP estimates of SSA to the integrating spheres. If you’re interested in doing that, do reach out first. This could be a really interesting thing to explore!</p>
 <p>It might also be interesting to compare the data to hand hardness measured in the snowpit, and to traditional hand lens measurements.</p>
 </div>

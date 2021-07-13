@@ -1,0 +1,62 @@
+Traceback (most recent call last):
+  File "/srv/conda/envs/notebook/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/srv/conda/envs/notebook/lib/python3.8/site-packages/nbclient/client.py", line 1107, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/srv/conda/envs/notebook/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/srv/conda/envs/notebook/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/srv/conda/envs/notebook/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/srv/conda/envs/notebook/lib/python3.8/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/srv/conda/envs/notebook/lib/python3.8/site-packages/nbclient/client.py", line 852, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/srv/conda/envs/notebook/lib/python3.8/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from IPython.display import Image 
+pil_img = Image(filename='/tmp/camera-trap/WSCT0101.JPG')
+display(pil_img)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+[0;32m<ipython-input-2-ab670d2084be>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0;32mfrom[0m [0mIPython[0m[0;34m.[0m[0mdisplay[0m [0;32mimport[0m [0mImage[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0mpil_img[0m [0;34m=[0m [0mImage[0m[0;34m([0m[0mfilename[0m[0;34m=[0m[0;34m'/tmp/camera-trap/WSCT0101.JPG'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      3[0m [0mdisplay[0m[0;34m([0m[0mpil_img[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/srv/conda/envs/notebook/lib/python3.8/site-packages/IPython/core/display.py[0m in [0;36m__init__[0;34m(self, data, url, filename, format, embed, width, height, retina, unconfined, metadata)[0m
+[1;32m   1222[0m         [0mself[0m[0;34m.[0m[0mretina[0m [0;34m=[0m [0mretina[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1223[0m         [0mself[0m[0;34m.[0m[0munconfined[0m [0;34m=[0m [0munconfined[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1224[0;31m         super(Image, self).__init__(data=data, url=url, filename=filename, 
+[0m[1;32m   1225[0m                 metadata=metadata)
+[1;32m   1226[0m [0;34m[0m[0m
+
+[0;32m/srv/conda/envs/notebook/lib/python3.8/site-packages/IPython/core/display.py[0m in [0;36m__init__[0;34m(self, data, url, filename, metadata)[0m
+[1;32m    628[0m             [0mself[0m[0;34m.[0m[0mmetadata[0m [0;34m=[0m [0;34m{[0m[0;34m}[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    629[0m [0;34m[0m[0m
+[0;32m--> 630[0;31m         [0mself[0m[0;34m.[0m[0mreload[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    631[0m         [0mself[0m[0;34m.[0m[0m_check_data[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    632[0m [0;34m[0m[0m
+
+[0;32m/srv/conda/envs/notebook/lib/python3.8/site-packages/IPython/core/display.py[0m in [0;36mreload[0;34m(self)[0m
+[1;32m   1254[0m         [0;34m"""Reload the raw data from file or URL."""[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1255[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0membed[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1256[0;31m             [0msuper[0m[0;34m([0m[0mImage[0m[0;34m,[0m[0mself[0m[0;34m)[0m[0;34m.[0m[0mreload[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1257[0m             [0;32mif[0m [0mself[0m[0;34m.[0m[0mretina[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1258[0m                 [0mself[0m[0;34m.[0m[0m_retina_shape[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/srv/conda/envs/notebook/lib/python3.8/site-packages/IPython/core/display.py[0m in [0;36mreload[0;34m(self)[0m
+[1;32m    653[0m         [0;34m"""Reload the raw data from file or URL."""[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    654[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0mfilename[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 655[0;31m             [0;32mwith[0m [0mopen[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mfilename[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0m_read_flags[0m[0;34m)[0m [0;32mas[0m [0mf[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    656[0m                 [0mself[0m[0;34m.[0m[0mdata[0m [0;34m=[0m [0mf[0m[0;34m.[0m[0mread[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    657[0m         [0;32melif[0m [0mself[0m[0;34m.[0m[0murl[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/tmp/camera-trap/WSCT0101.JPG'
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/camera-trap/WSCT0101.JPG'
+
