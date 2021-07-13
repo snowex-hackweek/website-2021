@@ -17,16 +17,59 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-gdf_buffer = gdf_buffer.drop(columns=['date'])
-gdf_buffer.to_file('snow-data-20170208.shp')
+# Start authenticated session with Earthdata Login to allow for data downloads:
+
+def setup_earthdata_login_auth(endpoint: str='urs.earthdata.nasa.gov'):
+    netrc_name = "_netrc" if system()=="Windows" else ".netrc"
+    try:
+        username, _, password = netrc(file=join(expanduser('~'), netrc_name)).authenticators(endpoint)
+    except (FileNotFoundError, TypeError):
+        print('Please provide your Earthdata Login credentials for access.')
+        print('Your info will only be passed to %s and will not be exposed in Jupyter.' % (endpoint))
+        username = input('Username: ')
+        password = getpass('Password: ')
+    manager = request.HTTPPasswordMgrWithDefaultRealm()
+    manager.add_password(None, endpoint, username, password)
+    auth = request.HTTPBasicAuthHandler(manager)
+    jar = CookieJar()
+    processor = request.HTTPCookieProcessor(jar)
+    opener = request.build_opener(auth, processor)
+    request.install_opener(opener)
+
+setup_earthdata_login_auth(endpoint="urs.earthdata.nasa.gov")
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-12-9768ad286398>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0mgdf_buffer[0m [0;34m=[0m [0mgdf_buffer[0m[0;34m.[0m[0mdrop[0m[0;34m([0m[0mcolumns[0m[0;34m=[0m[0;34m[[0m[0;34m'date'[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0mgdf_buffer[0m[0;34m.[0m[0mto_file[0m[0;34m([0m[0;34m'snow-data-20170208.shp'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-9-3bcac15cb742>[0m in [0;36msetup_earthdata_login_auth[0;34m(endpoint)[0m
+[1;32m      5[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 6[0;31m         [0musername[0m[0;34m,[0m [0m_[0m[0;34m,[0m [0mpassword[0m [0;34m=[0m [0mnetrc[0m[0;34m([0m[0mfile[0m[0;34m=[0m[0mjoin[0m[0;34m([0m[0mexpanduser[0m[0;34m([0m[0;34m'~'[0m[0;34m)[0m[0;34m,[0m [0mnetrc_name[0m[0;34m)[0m[0;34m)[0m[0;34m.[0m[0mauthenticators[0m[0;34m([0m[0mendpoint[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      7[0m     [0;32mexcept[0m [0;34m([0m[0mFileNotFoundError[0m[0;34m,[0m [0mTypeError[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mNameError[0m: name 'gdf_buffer' is not defined
-NameError: name 'gdf_buffer' is not defined
+[0;31mTypeError[0m: 'module' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+[0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+[0;32m<ipython-input-9-3bcac15cb742>[0m in [0;36m<module>[0;34m[0m
+[1;32m     18[0m     [0mrequest[0m[0;34m.[0m[0minstall_opener[0m[0;34m([0m[0mopener[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     19[0m [0;34m[0m[0m
+[0;32m---> 20[0;31m [0msetup_earthdata_login_auth[0m[0;34m([0m[0mendpoint[0m[0;34m=[0m[0;34m"urs.earthdata.nasa.gov"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m<ipython-input-9-3bcac15cb742>[0m in [0;36msetup_earthdata_login_auth[0;34m(endpoint)[0m
+[1;32m      8[0m         [0mprint[0m[0;34m([0m[0;34m'Please provide your Earthdata Login credentials for access.'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      9[0m         [0mprint[0m[0;34m([0m[0;34m'Your info will only be passed to %s and will not be exposed in Jupyter.'[0m [0;34m%[0m [0;34m([0m[0mendpoint[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 10[0;31m         [0musername[0m [0;34m=[0m [0minput[0m[0;34m([0m[0;34m'Username: '[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     11[0m         [0mpassword[0m [0;34m=[0m [0mgetpass[0m[0;34m([0m[0;34m'Password: '[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     12[0m     [0mmanager[0m [0;34m=[0m [0mrequest[0m[0;34m.[0m[0mHTTPPasswordMgrWithDefaultRealm[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/srv/conda/envs/notebook/lib/python3.8/site-packages/ipykernel/kernelbase.py[0m in [0;36mraw_input[0;34m(self, prompt)[0m
+[1;32m    843[0m         """
+[1;32m    844[0m         [0;32mif[0m [0;32mnot[0m [0mself[0m[0;34m.[0m[0m_allow_stdin[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 845[0;31m             raise StdinNotImplementedError(
+[0m[1;32m    846[0m                 [0;34m"raw_input was called, but this frontend does not support input requests."[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    847[0m             )
+
+[0;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
 

@@ -644,11 +644,13 @@
        Snow Today
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#nsidc-s-snowex-pages">
-       NSIDC’s SnowEx pages
-      </a>
-     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nsidc-s-snowex-pages">
+     NSIDC’s SnowEx pages
+    </a>
+    <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#other-relevant-snow-products">
        Other relevant snow products:
@@ -656,12 +658,12 @@
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-packages">
+     Import Packages
+    </a>
+   </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#import-packages">
-   Import Packages
-  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-discovery">
@@ -676,6 +678,11 @@
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#create-polygon-coordinate-string">
        Create polygon coordinate string
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#alternatively-specify-bounding-box-region-of-interest">
+       Alternatively: Specify bounding box region of interest
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -706,6 +713,13 @@
     <a class="reference internal nav-link" href="#option-1-python-script-from-the-data-set-landing-page">
      Option 1: Python script from the data set landing page
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#earthdata-login-authentication-setup-notes">
+       Earthdata Login authentication setup notes
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#option-2-additional-data-access-services-api-access">
@@ -732,13 +746,13 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#read-in-snowex-data-and-buffer-points-around-snotel-location">
-   Read in SnowEx data and buffer points around Snotel location
+  <a class="reference internal nav-link" href="#read-in-snowex-data">
+   Read in SnowEx data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#convert-to-time-values-and-extract-a-single-day">
-     Convert to time values and extract a single day
+    <a class="reference internal nav-link" href="#extract-date-values">
+     Extract date values
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -748,21 +762,16 @@
      </li>
     </ul>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-data-imagery-services">
+   Additional data imagery services
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#additional-data-imagery-services">
-     Additional data imagery services
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#nasa-worldview-and-the-global-browse-imagery-service">
-       NASA Worldview and the Global Browse Imagery Service
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#export-dataframe-to-shapefile">
-     Export dataframe to Shapefile
+    <a class="reference internal nav-link" href="#nasa-worldview-and-the-global-browse-imagery-service">
+     NASA Worldview and the Global Browse Imagery Service
     </a>
    </li>
   </ul>
@@ -782,14 +791,14 @@
 <h1>Accessing SnowEx Data at the NSIDC DAAC<a class="headerlink" href="#accessing-snowex-data-at-the-nsidc-daac" title="Permalink to this headline">¶</a></h1>
 <p>2021 SnowEx Hackweek</p>
 <p>Author: Amy Steiker, NSIDC DAAC, CIRES, University of Colorado</p>
-<p>This tutorial provides a brief overview of the resources provided by the NASA National Snow and Ice Data Center Distributed Active Archive Center, or NSIDC DAAC, and demonstrates how to access SnowEx data across several methods.</p>
+<p>This tutorial provides a brief overview of the resources provided by the NASA National Snow and Ice Data Center Distributed Active Archive Center, or NSIDC DAAC, and demonstrates how to disscovery and access SnowEx data programmatically.</p>
 <div class="section" id="learning-objectives">
 <h2>Learning Objectives:<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
 <li><p>Identify resources available at the NSIDC DAAC to help you work with SnowEx data.</p></li>
 <li><p>Search and discover file size and coverage of SnowEx data over a time and geojson region of interest.</p></li>
-<li><p>Set up Earthdata Login authentication.</p></li>
-<li><p>Download SnowEx data programmatically using the NSIDC DAAC API.</p></li>
+<li><p>Set up Earthdata Login authentication needed to access NASA Earthdata.</p></li>
+<li><p>Download SnowEx data programmatically using the NSIDC DAAC Application Programming Interface (API).</p></li>
 </ol>
 </div>
 <hr class="docutils" />
@@ -803,6 +812,11 @@
 <div class="section" id="select-data-resources">
 <h4>Select Data Resources<a class="headerlink" href="#select-data-resources" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
+<li><p><a class="reference external" href="https://github.com/nsidc/NSIDC-Data-Tutorials">NSIDC Data Tutorials</a></p>
+<ul>
+<li><p>Jupyter Notebook tutorials providing guidance on working with various NSIDC DAAC data products, including how to access, subset, transform, and visualize data.</p></li>
+</ul>
+</li>
 <li><p><a class="reference external" href="https://nsidc.org/data/search/#keywords=snow">NSIDC Data Search</a></p>
 <ul>
 <li><p>Search NSIDC snow data</p></li>
@@ -829,8 +843,9 @@
 <h4>Snow Today<a class="headerlink" href="#snow-today" title="Permalink to this headline">¶</a></h4>
 <p><a class="reference external" href="https://nsidc.org/snow-today">Snow Today</a>, a collaboration with the University of Colorado’s Institute of Alpine and Arctic Research (INSTAAR), provides near-real-time snow analysis for the western United States and regular reports on conditions during the winter season. Snow Today is funded by NASA Hydrological Sciences Program and utilizes data from the Moderate Resolution Imaging Spectroradiometer (MODIS) instrument and snow station data from the Snow Telemetry (SNOTEL) network by the Natural Resources Conservation Service (NRCS), United States Department of Agriculture (USDA) and the California Department of Water Resources: <a class="reference external" href="http://www.wcc.nrcs.usda.gov/snow">www.wcc.nrcs.usda.gov/snow</a>.</p>
 </div>
+</div>
 <div class="section" id="nsidc-s-snowex-pages">
-<h4>NSIDC’s SnowEx pages<a class="headerlink" href="#nsidc-s-snowex-pages" title="Permalink to this headline">¶</a></h4>
+<h3>NSIDC’s SnowEx pages<a class="headerlink" href="#nsidc-s-snowex-pages" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://nsidc.org/data/snowex">SnowEx</a></p>
 <ul>
@@ -838,7 +853,6 @@
 </ul>
 </li>
 </ul>
-</div>
 <div class="section" id="other-relevant-snow-products">
 <h4>Other relevant snow products:<a class="headerlink" href="#other-relevant-snow-products" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
@@ -851,10 +865,9 @@
 </ul>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="import-packages">
-<h2>Import Packages<a class="headerlink" href="#import-packages" title="Permalink to this headline">¶</a></h2>
+<h3>Import Packages<a class="headerlink" href="#import-packages" title="Permalink to this headline">¶</a></h3>
 <p>Get started by importing packages needed to run the following code blocks, including the <code class="docutils literal notranslate"><span class="pre">tutorial_helper_functions</span></code> module provided within this repository.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -884,12 +897,11 @@
 </div>
 </div>
 </div>
+</div>
 <hr class="docutils" />
 <div class="section" id="data-discovery">
 <h2>Data Discovery<a class="headerlink" href="#data-discovery" title="Permalink to this headline">¶</a></h2>
 <p>Start by identifying your study area and exploring coincident data over the same time and area.</p>
-<p>NASA Earthdata Search can be used to visualize file coverage over multiple data sets of interest:
-<a class="reference external" href="https://search.earthdata.nasa.gov/projects?projectId=5366449248">https://search.earthdata.nasa.gov/projects?projectId=5366449248</a></p>
 <div class="section" id="identify-area-and-time-of-interest">
 <h3>Identify area and time of interest<a class="headerlink" href="#identify-area-and-time-of-interest" title="Permalink to this headline">¶</a></h3>
 <p>Since our focus is on the Grand Mesa study site of the NASA SnowEx campaign, we’ll use that area to search for coincident data across other data products. From the <a class="reference external" href="https://doi.org/10.5067/G21LGCNLFSC5">SnowEx17 Ground Penetrating Radar Version 2</a> landing page, you can find the rectangular spatial coverage under the Overview tab, or you can draw a polygon over your area of interest in the map under the Download Data tab and export the shape as a geojson file using the Export Polygon icon shown below. An example polygon geojson file is provided in the /Data folder of this repository.</p>
@@ -916,6 +928,19 @@
 </div>
 </div>
 </div>
+<div class="section" id="alternatively-specify-bounding-box-region-of-interest">
+<h4>Alternatively: Specify bounding box region of interest<a class="headerlink" href="#alternatively-specify-bounding-box-region-of-interest" title="Permalink to this headline">¶</a></h4>
+<p>Instead of using a vector shape file to specify a region of interest, you can simply use a bounding box. The following cell is commented out below, which can be used instead of the <code class="docutils literal notranslate"><span class="pre">polygon</span></code> search parameter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bounds = poly.bounds # Get polygon bounds to be used as bounding box input</span>
+<span class="c1"># bounding_box = &#39;,&#39;.join(map(str, list(bounds))) # Bounding Box spatial parameter in decimal degree &#39;W,S,E,N&#39; format. </span>
+<span class="c1"># print(bounding_box)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="set-time-range">
 <h4>Set time range<a class="headerlink" href="#set-time-range" title="Permalink to this headline">¶</a></h4>
 <p>This is an optional parameter; set this to specify a time range of interest. In this case we’ll just select all of 2017 to ensure that we receive all files within this data set campaign.</p>
@@ -935,7 +960,9 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">param_dict</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;short_name&#39;</span><span class="p">:</span> <span class="s1">&#39;SNEX17_GPR&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;polygon&#39;</span><span class="p">:</span> <span class="n">polygon</span><span class="p">,</span>
+    <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;polygon&#39;</span><span class="p">:</span> <span class="n">polygon</span><span class="p">,</span>
+<span class="c1">#     &#39;bounding_box&#39;: bounding_box, #optional alternative to polygon search parameter; if using, remove or comment out polygon search parameter</span>
     <span class="s1">&#39;temporal&#39;</span><span class="p">:</span><span class="n">temporal</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
@@ -1006,7 +1033,28 @@
 <h2>Data Access<a class="headerlink" href="#data-access" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="option-1-python-script-from-the-data-set-landing-page">
 <h3>Option 1: Python script from the data set landing page<a class="headerlink" href="#option-1-python-script-from-the-data-set-landing-page" title="Permalink to this headline">¶</a></h3>
-<p>The <a class="reference external" href="https://snowex-hackweek.github.io/website/tutorials/core-datasets/02_data-package.html">Depths and Snow Pit Data Package Contents</a> tutorial demonstrates how to access data using the script provided under the “Download Data” tab of each NSIDC DAAC data set landing page. Note that you must create a <code class="docutils literal notranslate"><span class="pre">.netrc</span></code> file within the JupyterHub environment, as well ensure you have a Earthdata Login profile, as described in the preliminary work article <a class="reference external" href="https://snowex-hackweek.github.io/website/preliminary/earthdata.html#configure-programmatic-access-to-nasa-servers">here</a>.</p>
+<p>The <a class="reference external" href="https://snowex-hackweek.github.io/website/tutorials/core-datasets/02_data-package.html">Depths and Snow Pit Data Package Contents</a> tutorial demonstrates how to access data using the script provided under the “Download Data” tab of each NSIDC DAAC data set landing page.</p>
+<div class="section" id="earthdata-login-authentication-setup-notes">
+<h4>Earthdata Login authentication setup notes<a class="headerlink" href="#earthdata-login-authentication-setup-notes" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>All data with the NASA Earthdata system are freely available to the public, but requires an Earthdata Login profile to access. If you have not already done so, visit <a class="reference external" href="http://urs.earthdata.nasa.gov">http://urs.earthdata.nasa.gov</a> to register (it just takes a minute to set up).</p></li>
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">.netrc</span></code> file within the JupyterHub environment. This is a hidden file typically stored in your home directory that contains your Earthdata login username and password. This is a secure and easy way to ensure that any data download requests are authenticated against your profile. You can set up your <code class="docutils literal notranslate"><span class="pre">.netrc</span></code> within the JupyterHub environment as copied from the preliminary work article <a class="reference external" href="https://snowex-hackweek.github.io/website/preliminary/earthdata.html#configure-programmatic-access-to-nasa-servers">here</a>:</p></li>
+</ol>
+<p>Run the following commands on the JupyterHub in a terminal replacing your Earthdata login username and password:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;machine urs.earthdata.nasa.gov login EARTHDATA_LOGIN password EARTHDATA_PASSWORD&quot;</span> <span class="o">&gt;</span> <span class="o">~/.</span><span class="n">netrc</span>
+<span class="n">chmod</span> <span class="mi">0600</span> <span class="o">.</span><span class="n">netrc</span>
+</pre></div>
+</div>
+<p>Note that the script below should prompt you with your Earthdata Login username and password if a <code class="docutils literal notranslate"><span class="pre">.netrc</span></code> file does not exist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> &#39;./scripts/nsidc-download_SNEX20_SD.001.py&#39; 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grand Mesa 2020 Snow Depth data download complete&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="option-2-additional-data-access-services-api-access">
 <h3>Option 2: Additional data access services: API Access<a class="headerlink" href="#option-2-additional-data-access-services-api-access" title="Permalink to this headline">¶</a></h3>
@@ -1015,16 +1063,18 @@
 <p>This API offers you the ability to order data using specific temporal and spatial filters. These options can be requested in a single access command without the need to script against our data directory structure. See the <a class="reference external" href="https://nsidc.org/support/how/how-do-i-programmatically-request-data-services">programmatic access guide</a> for more information on API options.</p>
 <div class="section" id="create-the-data-request-api-endpoint">
 <h4>Create the data request API endpoint<a class="headerlink" href="#create-the-data-request-api-endpoint" title="Permalink to this headline">¶</a></h4>
-<p>Programmatic API requests are formatted as HTTPS URLs that contain key-value-pairs specifying the service operations that we specified above. We will first create a string of key-value-pairs from our data dictionary and we’ll feed those into our API endpoint. This API endpoint can be executed via command line, a web browser, or in Python below.</p>
+<p>Programmatic API requests are formatted as HTTPS URLs that contain key-value-pairs specifying the service operations that we specified above.</p>
+<p>The cell below sets up the API request URL using our data search parameters as well as a few other configuration parameters. We will first create a string of key-value-pairs from our data dictionary and we’ll feed those into our API endpoint. This API endpoint can be executed via command line, a web browser, or in Python below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set NSIDC data access base URL</span>
 <span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://n5eil02u.ecs.nsidc.org/egi/request&#39;</span>
 
-<span class="c1">#Set the request mode to asynchronous and set page number</span>
+<span class="c1">#Set the request mode to asynchronous, &quot;no&quot; processing agent (no subsetting or reformatting services available), and optionally removing metadata delivery</span>
 
 <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;request_mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;async&#39;</span>
 <span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;agent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;NO&#39;</span>
+<span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;INCLUDE_META&#39;</span><span class="p">]</span> <span class="o">=</span><span class="s1">&#39;N&#39;</span> <span class="c1">#optional if you do not wish to receive the associated metadata files with each science file. </span>
 
 <span class="n">param_string</span> <span class="o">=</span> <span class="s1">&#39;&amp;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{!s}</span><span class="s2">=</span><span class="si">{!r}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">param_dict</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="c1"># Convert param_dict to string</span>
 <span class="n">param_string</span> <span class="o">=</span> <span class="n">param_string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="c1"># Remove quotes</span>
@@ -1039,10 +1089,10 @@
 </div>
 <div class="section" id="input-earthdata-login-credentials">
 <h4>Input Earthdata Login credentials<a class="headerlink" href="#input-earthdata-login-credentials" title="Permalink to this headline">¶</a></h4>
-<p>An Earthdata Login account is required to access data from the NSIDC DAAC. If you do not already have an Earthdata Login account, visit <a class="reference external" href="http://urs.earthdata.nasa.gov">http://urs.earthdata.nasa.gov</a> to register.</p>
+<p>For our API access option, An Earthdata Login account is required to access data from the NSIDC DAAC. If you do not already have an Earthdata Login account, visit <a class="reference external" href="http://urs.earthdata.nasa.gov">http://urs.earthdata.nasa.gov</a> to register.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start authenticated session with Earthdata Loging to allow for data downloads:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start authenticated session with Earthdata Login to allow for data downloads:</span>
 
 <span class="k">def</span> <span class="nf">setup_earthdata_login_auth</span><span class="p">(</span><span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">&#39;urs.earthdata.nasa.gov&#39;</span><span class="p">):</span>
     <span class="n">netrc_name</span> <span class="o">=</span> <span class="s2">&quot;_netrc&quot;</span> <span class="k">if</span> <span class="n">system</span><span class="p">()</span><span class="o">==</span><span class="s2">&quot;Windows&quot;</span> <span class="k">else</span> <span class="s2">&quot;.netrc&quot;</span>
@@ -1152,9 +1202,9 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="read-in-snowex-data-and-buffer-points-around-snotel-location">
-<h2>Read in SnowEx data and buffer points around Snotel location<a class="headerlink" href="#read-in-snowex-data-and-buffer-points-around-snotel-location" title="Permalink to this headline">¶</a></h2>
-<p>This SnowEx data set is provided in CSV. A <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/overview.html">Pandas DataFrame</a> is used to easily read in data. For these next steps, just one day’s worth of data will be selected from this file and the coincident ASO and MODIS data will be selected.</p>
+<div class="section" id="read-in-snowex-data">
+<h2>Read in SnowEx data<a class="headerlink" href="#read-in-snowex-data" title="Permalink to this headline">¶</a></h2>
+<p>This SnowEx data set is provided in CSV. A <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/overview.html">Pandas DataFrame</a> is used to easily read in data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snowex_path</span> <span class="o">=</span> <span class="s1">&#39;./Outputs/SnowEx17_GPR_Version2_Week1.csv&#39;</span> <span class="c1"># Define local filepath</span>
@@ -1164,15 +1214,14 @@
 </div>
 </div>
 </div>
-<div class="section" id="convert-to-time-values-and-extract-a-single-day">
-<h3>Convert to time values and extract a single day<a class="headerlink" href="#convert-to-time-values-and-extract-a-single-day" title="Permalink to this headline">¶</a></h3>
-<p>The collection date needs to be extracted from the <code class="docutils literal notranslate"><span class="pre">collection</span></code> value and a new dataframe will be generated as a subset of the original based on a single day:</p>
+<div class="section" id="extract-date-values">
+<h3>Extract date values<a class="headerlink" href="#extract-date-values" title="Permalink to this headline">¶</a></h3>
+<p>The collection date needs to be extracted from the <code class="docutils literal notranslate"><span class="pre">collection</span></code> parameter:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%m</span><span class="si">%d</span><span class="s2">%y&quot;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
-<span class="n">df_subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2017-02-08&#39;</span><span class="p">]</span> <span class="c1"># subset original dataframe and only select this date</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1180,10 +1229,10 @@
 </div>
 <div class="section" id="convert-to-geopandas-dataframe-to-provide-point-geometry">
 <h4>Convert to Geopandas dataframe to provide point geometry<a class="headerlink" href="#convert-to-geopandas-dataframe-to-provide-point-geometry" title="Permalink to this headline">¶</a></h4>
-<p>According to the SnowEx documentation, the data are available in UTM Zone 12N so we’ll set to this projection so that we can buffer in meters in the next step:</p>
+<p>According to the SnowEx documentation, the data are available in UTM Zone 12N so we’ll set to this projection to allow for geospatial analysis:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf_utm</span><span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">df_subset</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">df_subset</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">df_subset</span><span class="o">.</span><span class="n">y</span><span class="p">),</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:32612&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf_utm</span><span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">y</span><span class="p">),</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:32612&#39;</span><span class="p">)</span>
 <span class="n">gdf_utm</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1191,26 +1240,15 @@
 </div>
 </div>
 </div>
+</div>
+<hr class="docutils" />
 <div class="section" id="additional-data-imagery-services">
-<h3>Additional data imagery services<a class="headerlink" href="#additional-data-imagery-services" title="Permalink to this headline">¶</a></h3>
+<h2>Additional data imagery services<a class="headerlink" href="#additional-data-imagery-services" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="nasa-worldview-and-the-global-browse-imagery-service">
-<h4>NASA Worldview and the Global Browse Imagery Service<a class="headerlink" href="#nasa-worldview-and-the-global-browse-imagery-service" title="Permalink to this headline">¶</a></h4>
+<h3>NASA Worldview and the Global Browse Imagery Service<a class="headerlink" href="#nasa-worldview-and-the-global-browse-imagery-service" title="Permalink to this headline">¶</a></h3>
 <p>NASA’s EOSDIS Worldview mapping application provides the capability to interactively browse over 900 global, full-resolution satellite imagery layers and then download the underlying data. Many of the available imagery layers are updated within three hours of observation, essentially showing the entire Earth as it looks “right now.”</p>
-<p>According to the <a class="reference external" href="https://nsidc.org/data/mod10a1">MOD10A1 landing page</a>, snow cover imagery layers from this data set are available through NASA Worldview. This layer can be downloaded as various image files including GeoTIFF using the snapshot feature at the top right of the page. This link presents the MOD10A1 NDSI layer over our time and area of interest: <a class="reference external" href="https://go.nasa.gov/35CgYMd">https://go.nasa.gov/35CgYMd</a>.</p>
+<p>Several MODIS snow data products from NSIDC include high-resolution browse imagery available through NASA Worldview, including <a class="reference external" href="https://nsidc.org/data/mod10a1">“MODIS/Terra Snow Cover Daily L3 Global 500m SIN Grid, Version 61”</a>. This layer can be downloaded as various image files including GeoTIFF using the snapshot feature at the top right of the page. This link presents the MOD10A1 NDSI layer over our time and area of interest: <a class="reference external" href="https://go.nasa.gov/35CgYMd">https://go.nasa.gov/35CgYMd</a>.</p>
 <p>Additionally, the NASA Global Browse Imagery Service provides up to date, full resolution imagery for select NSIDC DAAC data sets as web services including WMTS, WMS, KML, and more. These layers can be accessed in GIS applications following guidance on the <a class="reference external" href="https://wiki.earthdata.nasa.gov/display/GIBS/Geographic+Information+System+%28GIS%29+Usage">GIBS documentation pages</a>.</p>
-</div>
-</div>
-<div class="section" id="export-dataframe-to-shapefile">
-<h3>Export dataframe to Shapefile<a class="headerlink" href="#export-dataframe-to-shapefile" title="Permalink to this headline">¶</a></h3>
-<p>Finally, the dataframe can be exported as an Esri shapefile for further analysis in GIS:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf_buffer</span> <span class="o">=</span> <span class="n">gdf_buffer</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
-<span class="n">gdf_buffer</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s1">&#39;snow-data-20170208.shp&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
