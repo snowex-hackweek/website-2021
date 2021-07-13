@@ -1,0 +1,1299 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lidar remote sensing of snow &#8212; SnowEx Hackweek</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Thermal Infrared Remote Sensing of Snow" href="../thermal-ir/index.html" />
+    <link rel="prev" title="Introduction" href="ICESat2_tutorial.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SnowEx Hackweek</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to SnowEx Hackweek!
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../application.html">
+   Application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Hackweek Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../team.html">
+   Our Team
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../norms/index.html">
+   Hackweek Norms
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/CoC.html">
+     Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/community.html">
+     Learning Community
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../preliminary/index.html">
+   Preliminary Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/swc.html">
+     Software Carpentry Training
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/github.html">
+     GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/git.html">
+     Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/earthdata.html">
+     Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/pangeo.html">
+     Pangeo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/python.html">
+     Python Installation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Tutorials
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_1.html">
+     Day 1
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../jupyter.html">
+       GitHub, Git, JupyterHub
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../core-datasets/index.html">
+       SnowEx Mission and Core Data Sets
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/01_introduction.html">
+         SnowEx Mission and Core Data Sets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/02_data-package.html">
+         Depths and Snow Pit Data Package Contents
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/03_practice-querying.html">
+         Practice Querying the Snowexsql Database
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_2.html">
+     Day 2
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../geospatial/index.html">
+       Geospatial fundamentals
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geospatial/raster.html">
+         Raster data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geospatial/vector.html">
+         Vector data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geospatial/SNOTEL_query.html">
+         Dynamic Query of SNOTEL data
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../nsidc-access/nsidc-data-access.html">
+       Accessing SnowEx Data at the NSIDC DAAC
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../database/index.html">
+       SnowEx Database
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/1_getting_started_example.html">
+         Introduction to the SnowEx Database
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/2_database_structure.html">
+         How is the Database Structured?
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/3_forming_queries.html">
+         Forming Queries
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/4_get_spiral_example.html">
+         Forming Queries: Example Visualizng Depths
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/5_plot_raster_example.html">
+         Forming Queries: PostGIS Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/6_exporting_data.html">
+         Exporting Data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/7_wrap_up.html">
+         Wrap up
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../day_3.html">
+     Day 3
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active has-children">
+      <a class="reference internal" href="index.html">
+       LIDAR
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="current">
+       <li class="toctree-l4">
+        <a class="reference internal" href="ICESat2_tutorial.html">
+         Introduction
+        </a>
+       </li>
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
+         Lidar remote sensing of snow
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../thermal-ir/index.html">
+       Thermal Infrared Remote Sensing of Snow
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../thermal-ir/thermal-ir-tutorial.html">
+         Thermal Infrared Remote Sensing of Snow
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../thermal-ir/thermal-ir-data-download.html">
+         Downloading datasets for the thermal IR tutorial
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
+       Microstructure Tutorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../gpr/gpr.html">
+       GPR
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_4.html">
+     Day 4
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../sar/index.html">
+       Synthetic Aperture Radar
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sar/sentinel1.html">
+         Sentinel-1
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sar/swesarr.html">
+         SWESARR Tutorial
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sar/uavsar.html">
+         UAVSAR
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../lis/index.html">
+       NASA Land Information System (LIS)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lis/1_exploring_lis_output.html">
+         Visualizing and Comparing LIS Output
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lis/2_interactive_data_exploration.html">
+         Interactive Data Exploration
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../camera-traps-tutorial/camera-traps-notebook.html">
+       Camera Traps and Snow Applications
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../machine-learning/Machine_Learning_Tutorial.html">
+       Introduction to Machine Learning
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/index.html">
+   Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roles.html">
+     Project Roles and Responsibilities
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../SnowEx_News_and_MonthlyMeetings.html">
+   SnowEx News and MonthlyMeetings
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/lidar/ASO_data_tutorial.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/snowex-hackweek/website"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/snowex-hackweek/website/issues/new?title=Issue%20on%20page%20%2Ftutorials/lidar/ASO_data_tutorial.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/snowex-hackweek/website/edit/main/book/tutorials/lidar/ASO_data_tutorial.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lidar remote sensing of snow
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intro-aso">
+     Intro ASO
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-data-inspection">
+     Basic data inspection
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#import-the-packages-needed-for-this-tutorial">
+       Import the packages needed for this tutorial
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-overview-and-visualisation">
+     Data overview and visualisation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#canopy-height-models">
+     Canopy height models
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clipping-rasters">
+     Clipping rasters
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#raster-resolution">
+     Raster resolution
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resampling">
+     Resampling
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-things-to-think-about">
+   Other things to think about
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#additional-datasets">
+     Additional datasets
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lidar-remote-sensing-of-snow">
+<h1>Lidar remote sensing of snow<a class="headerlink" href="#lidar-remote-sensing-of-snow" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="intro-aso">
+<h2>Intro ASO<a class="headerlink" href="#intro-aso" title="Permalink to this headline">¶</a></h2>
+<p>See an overview of ASO operations <a class="reference external" href="https://www.cbrfc.noaa.gov/report/AWRA2019_Pres3.pdf">here</a></p>
+<p>ASO set-up: Riegl Q1560 dual laser scanning lidar 1064nm (image credit ASO)</p>
+<!-- ![ASO_plane](figures/ASO_plane.png) -->
+<a class="reference internal image-reference" href="../../_images/ASO_plane.png"><img alt="../../_images/ASO_plane.png" src="../../_images/ASO_plane.png" style="width: 500px;" /></a>
+<p>ASO data collection (image credit ASO)</p>
+<a class="reference internal image-reference" href="../../_images/ASO_data.png"><img alt="../../_images/ASO_data.png" src="../../_images/ASO_data.png" style="width: 500px;" /></a>
+<p>Laser reflections together create a 3D point cloud of the earth surface (image credit ASO)</p>
+<p>Point clouds can be classified and processed using specialised software such as <a class="reference external" href="https://pdal.io/">pdal</a>.</p>
+<p>We won’t cover that here, because ASO has already processed all the snow depth datasets for us.</p>
+<p>ASO rasterises the point clouds to produce snow depth maps as rasters. Point clouds can also be rasterised to create canopy height models (CHMs) or digital terrain models (DTMs). These formats allow us to analyse the information easier.</p>
+<p>ASO states “Snow depths in exposed areas are within 1-2 cm at the 50 m scale”</p>
+<a class="reference internal image-reference" href="../../_images/ASO_accuracy.png"><img alt="../../_images/ASO_accuracy.png" src="../../_images/ASO_accuracy.png" style="width: 300px;" /></a>
+<p>However, point-to-point variability can exist between manual and lidar measurements due to:</p>
+<ul class="simple">
+<li><p>vegetation, particularly shrubs</p></li>
+<li><p>geo-location accuracy of manual measurements</p></li>
+<li><p>combination of both in forests</p></li>
+</ul>
+</div>
+<div class="section" id="basic-data-inspection">
+<h2>Basic data inspection<a class="headerlink" href="#basic-data-inspection" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="import-the-packages-needed-for-this-tutorial">
+<h3>Import the packages needed for this tutorial<a class="headerlink" href="#import-the-packages-needed-for-this-tutorial" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general purpose data manipulation and analysis</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># packages for working with raster datasets</span>
+<span class="kn">import</span> <span class="nn">rasterio</span>
+<span class="kn">from</span> <span class="nn">rasterio.mask</span> <span class="kn">import</span> <span class="n">mask</span>
+<span class="kn">from</span> <span class="nn">rasterio.plot</span> <span class="kn">import</span> <span class="n">show</span>
+<span class="kn">from</span> <span class="nn">rasterio.enums</span> <span class="kn">import</span> <span class="n">Resampling</span>
+
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="c1"># allows us to work with raster data as arrays</span>
+
+<span class="c1"># packages for working with geospatial data</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">pycrs</span>
+
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">box</span>
+
+<span class="c1"># import packages for viewing the data</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">pyplot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#define paths</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">CURDIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="s2">&quot;__file__&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># matplotlib functionality</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="c1"># %matplotlib notebook</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The command <em>%matplotlib notebook</em> allows you to plot data interactively, which makes things way more interesting. If you want, you can test to see if this works for you. If not, go back to <em>%matplotlib inline</em></p>
+</div>
+</div>
+<div class="section" id="data-overview-and-visualisation">
+<h2>Data overview and visualisation<a class="headerlink" href="#data-overview-and-visualisation" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># open the raster</span>
+<span class="n">fparts_SD_GM_3m</span> <span class="o">=</span> <span class="s2">&quot;data/ASO_GrandMesa_2020Feb1-2_snowdepth_3m_clipped.tif&quot;</span>
+
+<span class="n">SD_GM_3m</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fparts_SD_GM_3m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check the CRS - is it consistent with other datasets we want to use?</span>
+<span class="n">SD_GM_3m</span><span class="o">.</span><span class="n">crs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>ASO datasets are in EPSG: 32612. However, you might find other SnowEx datasets are in EPGS:26912. This can be changed using reproject in rioxarray. See <a class="reference external" href="https://corteva.github.io/rioxarray/stable/examples/reproject.html">here</a> for an example.
+For now, we’ll stay in 32612.</p>
+<p>With the above raster open, you can look at the different attributes of the raster. For example, the cellsize:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SD_GM_3m</span><span class="o">.</span><span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The raster boundaries…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SD_GM_3m</span><span class="o">.</span><span class="n">bounds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And the dimensions. Note this is in pixels, not in meters. To get the total size, you can multiply the dimensions by the resolution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">SD_GM_3m</span><span class="o">.</span><span class="n">width</span><span class="p">,</span><span class="n">SD_GM_3m</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>rasterio.open allows you to quickly look at the data…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig1</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">pyplot</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">show</span><span class="p">((</span><span class="n">SD_GM_3m</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>While this can allow us to very quickly visualise the data, it doesn’t show us a lot about the data itself.</p>
+<p>We can also open the data from the geotiff as as a data array, giving us more flexibility in the data analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, close the rasterio file</span>
+<span class="n">SD_GM_3m</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can re-open the data as an array and visualise it using pyplot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dat_array_3m</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="n">fparts_SD_GM_3m</span><span class="p">)</span>
+
+<span class="c1"># plot the raster </span>
+
+<span class="n">fig2</span><span class="p">,</span> <span class="n">ax2</span> <span class="o">=</span> <span class="n">pyplot</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">pos2</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dat_array_3m</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.5</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;GM Snow Depth 3m&#39;</span><span class="p">)</span>
+<span class="n">fig2</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pos2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We set the figure to display the colorbar with a maximum of 1.5m. But you can see in the north of the area there are some very deep snow depths.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">dat_array_3m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Optional - use the interactive plot to pan and zoom in and out to have a look at the snow depth distribution across the Grand Mesa. This should work for you if you run your notebook locally.</p>
+<p>We can clip the larger domain to a smaller areas to better visualise the snow depth distributions in the areas we’re interested in.</p>
+<p>Depending on the field site, you could look at distributions in different slope classes, vegetation classes (bush vs forest vs open) or aspect classes.</p>
+<p>For now, we’ll focus on a forest-dominated area and use the canopy height model (CHM) to clip the snow depth data.</p>
+</div>
+<div class="section" id="canopy-height-models">
+<h2>Canopy height models<a class="headerlink" href="#canopy-height-models" title="Permalink to this headline">¶</a></h2>
+<p>We will use an existing raster of a canopy height model (CHM) to clip our snow depth map. This CHM is an area investigated by <a class="reference external" href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019WR024898">Mazzotti et al. 2019</a>. You can also access the data <a class="reference external" href="https://www.envidat.ch/#/metadata/als-based-snow-depth">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the chm</span>
+<span class="n">chm</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="s1">&#39;data/CHM_20160926GMb_700x700_EPSG32612.tif&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check the crs is the same as the snow depth data</span>
+<span class="n">chm</span><span class="o">.</span><span class="n">crs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Don’t forget that if the coordinate systems in your datasets don’t match then you will need to transform one of them. You can change the coordinate systems using the links above. (Note, I’ve already transformed this dataset from EPSG 32613).</p>
+<p>Let’s have a quick look at the chm data as an xarray.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chm</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can see the resolution of the CHM is 0.5m, which is much higher than the snow depth dataset.</p>
+<p>Can you think why we would want to have CHM at such a high resolution?</p>
+<p>There are two main reasons:</p>
+<ul class="simple">
+<li><p>resolution high enough to represent individual trees</p></li>
+<li><p>maximum canopy height can mis-represented in lower resolution CHMs</p></li>
+</ul>
+<p>We can extract simple statistics from the dataset the same way you would with a numpy dataset. For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chm</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the CHM, setting the maximum color value to the maximum canopy height in the dataset</span>
+<span class="n">fig3</span><span class="p">,</span> <span class="n">ax3</span> <span class="o">=</span> <span class="n">pyplot</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">pos3</span> <span class="o">=</span> <span class="n">ax3</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">chm</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">chm</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;CHM Grand Mesa B&#39;</span><span class="p">)</span>
+<span class="n">fig3</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pos3</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you play around and zoom in, you can see individual trees. If you were wanting to investigate the role of canopy structure at the individual tree level on snow depth distribution, this is the level of detail you would want to work with.</p>
+</div>
+<div class="section" id="clipping-rasters">
+<h2>Clipping rasters<a class="headerlink" href="#clipping-rasters" title="Permalink to this headline">¶</a></h2>
+<p>Let’s clip the snow depth dataset to the same boundaries as the CHM.</p>
+<p>One way to clip the snow depth raster is to use another raster as an area of interest.</p>
+<p>We will use the CHM as a mask, following <a class="reference external" href="https://automating-gis-processes.github.io/CSC18/lessons/L6/clipping-raster.html">this</a> tutorial.</p>
+<p>You can also use shapefiles (see <a class="reference external" href="https://rasterio.readthedocs.io/en/latest/topics/masking-by-shapefile.html">here</a> for another example) if you want to use more complicated geometry, or you can manually define your coordinates.</p>
+<p>We can extract the boundaries of the CHM and create a bounding box using the Shapely package</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bbox</span> <span class="o">=</span> <span class="n">box</span><span class="p">(</span><span class="n">chm</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">chm</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span><span class="n">chm</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="n">chm</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">bbox</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want to come back and do this later, you don’t need a raster or shapefile. If you only know the min/max coordinates of the area you’re interested in, that’s fine too.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bbox = box(minx,miny,maxx,maxy)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You could also add a buffer around your CHM, if you wanted to see a bigger area:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#buffer = 200</span>
+<span class="c1">#bbox = box(cb[0]-buffer,cb[1]-buffer,cb[2]+buffer,cb[3]+buffer)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>But for now let’s just stay with the same limits as the CHM.
+We need to put the bounding box into a geodataframe</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geo</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">({</span><span class="s1">&#39;geometry&#39;</span><span class="p">:</span> <span class="n">bbox</span><span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">crs</span><span class="o">=</span><span class="n">chm</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And then extract the coordinates to a format that we can use with rasterio.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getFeatures</span><span class="p">(</span><span class="n">gdf</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Function to parse features from GeoDataFrame in such a manner that rasterio wants them&quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">json</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">gdf</span><span class="o">.</span><span class="n">to_json</span><span class="p">())[</span><span class="s1">&#39;features&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;geometry&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coords</span> <span class="o">=</span> <span class="n">getFeatures</span><span class="p">(</span><span class="n">geo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>After all that, we’re ready to clip the raster. We do this using the mask function from rasterio, and specifying crop=TRUE</p>
+<p>We also need to re-open the dataset as a rasterio object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SD_GM_3m</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">SD_GM_3m</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fparts_SD_GM_3m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out_img</span><span class="p">,</span> <span class="n">out_transform</span> <span class="o">=</span> <span class="n">mask</span><span class="p">(</span><span class="n">SD_GM_3m</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">crop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We also need to copy the meta information across to the new raster</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out_meta</span> <span class="o">=</span> <span class="n">SD_GM_3m</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">epsg_code</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">SD_GM_3m</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;init&#39;</span><span class="p">][</span><span class="mi">5</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And update the metadata with the new dimsions etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out_meta</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;driver&quot;</span><span class="p">:</span> <span class="s2">&quot;GTiff&quot;</span><span class="p">,</span>
+   <span class="o">....</span><span class="p">:</span>                  <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="n">out_img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+   <span class="o">....</span><span class="p">:</span>                  <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="n">out_img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+   <span class="o">....</span><span class="p">:</span>                  <span class="s2">&quot;transform&quot;</span><span class="p">:</span> <span class="n">out_transform</span><span class="p">,</span>
+   <span class="o">....</span><span class="p">:</span>                  <span class="s2">&quot;crs&quot;</span><span class="p">:</span> <span class="n">pycrs</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">from_epsg_code</span><span class="p">(</span><span class="n">epsg_code</span><span class="p">)</span><span class="o">.</span><span class="n">to_proj4</span><span class="p">()}</span>
+   <span class="o">....</span><span class="p">:</span>                          <span class="p">)</span>
+   <span class="o">....</span><span class="p">:</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we should save this new raster. Let’s call the area ‘GMb’, to match the name of the CHM.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out_tif</span> <span class="o">=</span> <span class="s2">&quot;data/ASO_GrandMesa_2020Feb1-2_snowdepth_3m_clip_GMb.tif&quot;</span>
+
+<span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">out_tif</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">out_meta</span><span class="p">)</span> <span class="k">as</span> <span class="n">dest</span><span class="p">:</span>
+    <span class="n">dest</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">out_img</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To check the result is correct, we can read the data back in.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SD_GMb_3m</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="n">out_tif</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the new SD map </span>
+<span class="n">fig4</span><span class="p">,</span> <span class="n">ax4</span> <span class="o">=</span> <span class="n">pyplot</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">pos4</span> <span class="o">=</span> <span class="n">ax4</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">SD_GMb_3m</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">ax4</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;GMb Snow Depth 3m&#39;</span><span class="p">)</span>
+<span class="n">fig4</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pos4</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here’s an aerial image of the same area. What patterns do you see in the snow depth map when compared to the aerial image?</p>
+<a class="reference internal image-reference" href="../../_images/GMb_Aerial.png"><img alt="../../_images/GMb_Aerial.png" src="../../_images/GMb_Aerial.png" style="width: 300px;" /></a>
+<p>(Image from Google Earth)</p>
+<p>If you plotted snow depth compared to canopy height, what do you think you’d see in the graph?</p>
+</div>
+<div class="section" id="raster-resolution">
+<h2>Raster resolution<a class="headerlink" href="#raster-resolution" title="Permalink to this headline">¶</a></h2>
+<p>ASO also creates a 50m SD data product. So, let’s have a look at that in the same area.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SD_GM_50m</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;data/ASO_GrandMesa_Mosaic_2020Feb1-2_snowdepth_50m.tif&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out_img_50</span><span class="p">,</span> <span class="n">out_transform_50</span> <span class="o">=</span> <span class="n">mask</span><span class="p">(</span><span class="n">SD_GM_50m</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">crop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">out_meta_50</span> <span class="o">=</span> <span class="n">SD_GM_50m</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">epsg_code_50</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">SD_GM_50m</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;init&#39;</span><span class="p">][</span><span class="mi">5</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out_meta_50</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;driver&quot;</span><span class="p">:</span> <span class="s2">&quot;GTiff&quot;</span><span class="p">,</span>
+   <span class="o">....</span><span class="p">:</span>                  <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="n">out_img_50</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+   <span class="o">....</span><span class="p">:</span>                  <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="n">out_img_50</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+   <span class="o">....</span><span class="p">:</span>                  <span class="s2">&quot;transform&quot;</span><span class="p">:</span> <span class="n">out_transform_50</span><span class="p">,</span>
+   <span class="o">....</span><span class="p">:</span>                  <span class="s2">&quot;crs&quot;</span><span class="p">:</span> <span class="n">pycrs</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">from_epsg_code</span><span class="p">(</span><span class="n">epsg_code</span><span class="p">)</span><span class="o">.</span><span class="n">to_proj4</span><span class="p">()}</span>
+   <span class="o">....</span><span class="p">:</span>                          <span class="p">)</span>
+   <span class="o">....</span><span class="p">:</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out_tif_50</span> <span class="o">=</span> <span class="s2">&quot;data/ASO_GrandMesa_Mosaic_2020Feb1-2_snowdepth_50m_clip_GMb.tif&quot;</span>
+
+<span class="k">with</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">out_tif_50</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">out_meta_50</span><span class="p">)</span> <span class="k">as</span> <span class="n">dest</span><span class="p">:</span>
+    <span class="n">dest</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">out_img_50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SD_GM_50m</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SD_GMb_50m</span> <span class="o">=</span> <span class="n">xarray</span><span class="o">.</span><span class="n">open_rasterio</span><span class="p">(</span><span class="n">out_tif_50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we have the two rasters clipped to the same area, we can compare them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### plot them side by side with a minimum and maximum values of 0m and 1.5m</span>
+<span class="n">fig5</span><span class="p">,</span> <span class="n">ax5</span> <span class="o">=</span> <span class="n">pyplot</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">pos5</span> <span class="o">=</span> <span class="n">ax5</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">SD_GMb_3m</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">ax5</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;GMb Snow Depth 3m&#39;</span><span class="p">)</span>
+<span class="n">fig5</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pos5</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax5</span><span class="p">)</span>
+
+<span class="n">fig6</span><span class="p">,</span> <span class="n">ax6</span> <span class="o">=</span> <span class="n">pyplot</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">pos6</span> <span class="o">=</span> <span class="n">ax6</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">SD_GMb_50m</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">ax6</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;GM Snow Depth 50m&#39;</span><span class="p">)</span>
+<span class="n">fig6</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pos6</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s have a look at the two resolutions next to each other. What do you notice?</p>
+<p>We can look at the data in more detail. For example, histograms show us the snow depth distribution across the area.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot histograms of the snow depth distributions across a range from 0 to 1.5m in 25cm increments</span>
+<span class="n">fig7</span><span class="p">,</span> <span class="n">ax7</span> <span class="o">=</span> <span class="n">pyplot</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">SD_GMb_3m</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span><span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span> <span class="o">+</span> <span class="mf">0.025</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">));</span>
+<span class="n">ax7</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;GM Snow Depth 3m&#39;</span><span class="p">)</span>
+<span class="n">ax7</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.5</span><span class="p">))</span>
+
+<span class="n">fig8</span><span class="p">,</span> <span class="n">ax8</span> <span class="o">=</span> <span class="n">pyplot</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">pyplot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">SD_GMb_50m</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span><span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span> <span class="o">+</span> <span class="mf">0.025</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">));</span>
+<span class="n">ax8</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;GM Snow Depth 50m&#39;</span><span class="p">)</span>
+<span class="n">ax8</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Things to think about:</p>
+<ul class="simple">
+<li><p>What are the maximum and minimum snow depths between the two datasets?</p></li>
+<li><p>Does the distribution in snow depths across the area change with resolution?</p></li>
+<li><p>How representative are the different datasets for snow depth at different process scales? Can you see the forest in the 50m data?</p></li>
+<li><p>There are snow free areas in the 3m data, but not in the 50m. What do you think this means for validating modelled snow depletion?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SD_GMb_3m</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">SD_GMb_50m</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">chm</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="resampling">
+<h2>Resampling<a class="headerlink" href="#resampling" title="Permalink to this headline">¶</a></h2>
+<p>If you are looking to compare your modelled snow depth, you can resample your lidar snow depth to the same resolution as your model.</p>
+<p>You can see the code <a class="reference external" href="https://rasterio.readthedocs.io/en/latest/topics/resampling.html">here</a></p>
+<p>Let’s say we want to sample the whole domain at 250 m resolution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Resample your raster</span>
+
+<span class="c1"># select your upscale_factor - this is related to the resolution of your raster</span>
+<span class="c1"># upscale_factor = old_resolution/desired_resolution</span>
+<span class="n">upscale_factor</span> <span class="o">=</span> <span class="mi">50</span><span class="o">/</span><span class="mi">250</span>
+
+<span class="n">SD_GMb_50m_rio</span> <span class="o">=</span> <span class="n">rasterio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;data/ASO_GrandMesa_Mosaic_2020Feb1-2_snowdepth_50m_clip_GMb.tif&quot;</span><span class="p">)</span>
+
+<span class="c1"># resample data to target shape using the bilinear method</span>
+<span class="n">new_res</span> <span class="o">=</span> <span class="n">SD_GMb_50m_rio</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
+    <span class="n">out_shape</span><span class="o">=</span><span class="p">(</span>
+        <span class="n">SD_GMb_50m_rio</span><span class="o">.</span><span class="n">count</span><span class="p">,</span>
+        <span class="nb">int</span><span class="p">(</span><span class="n">SD_GMb_50m_rio</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="n">upscale_factor</span><span class="p">),</span>
+        <span class="nb">int</span><span class="p">(</span><span class="n">SD_GMb_50m_rio</span><span class="o">.</span><span class="n">width</span> <span class="o">*</span> <span class="n">upscale_factor</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="n">resampling</span><span class="o">=</span><span class="n">Resampling</span><span class="o">.</span><span class="n">bilinear</span>
+<span class="p">)</span>
+
+<span class="c1"># scale image transform</span>
+<span class="n">transform</span> <span class="o">=</span> <span class="n">SD_GMb_50m_rio</span><span class="o">.</span><span class="n">transform</span> <span class="o">*</span> <span class="n">SD_GMb_50m_rio</span><span class="o">.</span><span class="n">transform</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">SD_GMb_50m_rio</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="n">new_res</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
+    <span class="p">(</span><span class="n">SD_GMb_50m_rio</span><span class="o">.</span><span class="n">height</span> <span class="o">/</span> <span class="n">new_res</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="p">)</span>
+
+<span class="c1"># display the raster</span>
+<span class="n">fig9</span><span class="p">,</span> <span class="n">ax9</span> <span class="o">=</span> <span class="n">pyplot</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">pos9</span> <span class="o">=</span> <span class="n">ax9</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">new_res</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">ax9</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;GM Snow Depth 50m&#39;</span><span class="p">)</span>
+<span class="n">fig9</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pos9</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Play around with different upscaling factors and see what sort of results you get. How do the maximum and minimum values across the area change?</p>
+<p>Other possibilities:</p>
+<ul class="simple">
+<li><p>Load the 3 m  dataset and resample from the higher resolution.</p></li>
+<li><p>You can clip to larger areas, such as a model domain, to resample to larger pixel sizes.</p></li>
+<li><p>Load another dataset and see if you see the same patterns.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SD_GMb_50m_rio</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="other-things-to-think-about">
+<h1>Other things to think about<a class="headerlink" href="#other-things-to-think-about" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial was just to get you started thinking about lidar datasets. ASO also collected data for SnowEx on Grand Mesa in 2017. They’ve also collected data in numerous other locations across the years that you also have access you.</p>
+<p>The geospatial tutorial showed you how to extract values from rasters to points. Using these methods, you could extract the ASO values to the manual snow depth measurements to assess the performance of the lidar snow depth data product.</p>
+<div class="section" id="additional-datasets">
+<h2>Additional datasets<a class="headerlink" href="#additional-datasets" title="Permalink to this headline">¶</a></h2>
+<p>ASO have collected many datasets, in numerous locations.</p>
+<p>If you’re interested in the 2020 season here are some .zip files to access ASO 2020 data for other sites/campaigns
+In these folders are snow depth and SWE data products. These links are to directly download .zip folders.</p>
+<p><a class="reference external" href="https://asopublic.s3-us-west-1.amazonaws.com/USCO/GM/2020/0201/ASO_GrandMesa_mosaic_2020Feb1-2_AllData_and_Reports.zip">Grand Mesa Feb 1-2</a></p>
+<p><a class="reference external" href="https://asopublic.s3-us-west-1.amazonaws.com/USCO/GM/2020/0213/ASO_GrandMesa_mosaic_2020Feb13_AllData_and_Reports.zip">Grand Mesa Feb 13</a></p>
+<p><a class="reference external" href="https://asopublic.s3-us-west-1.amazonaws.com/USCO/GE/2020/0214/ASO_EastRiver_mosaic_2020Feb14-20_AllData_and_Reports.zip">East River Feb 14-20</a></p>
+<p><a class="reference external" href="https://asopublic.s3-us-west-1.amazonaws.com/USCO/GT/2020/0220/ASO_TaylorRiver_mosaic_2020Feb20_AllData_and_Reports.zip">Taylor River Feb 20</a></p>
+<p><a class="reference external" href="https://asopublic.s3-us-west-1.amazonaws.com/USID/RY/2020/0218/ASO_Reynolds_mosaic_2020Feb18-19_AllData_and_Reports.zip">Reynolds Creek Feb 18-19</a></p>
+<p>So far, there are no snow-off campaigns from the 2020 season due to covid.</p>
+<p>But you can find ASO bare earth DTMs and other ASO data, including 3 m and 50 m snow depth, SWE across other sites and years <a class="reference external" href="https://nsidc.org/data/aso/data-summaries">here</a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/lidar"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="ICESat2_tutorial.html" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="../thermal-ir/index.html" title="next page">Thermal Infrared Remote Sensing of Snow</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By eScience Institute, University of Washington<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QM84T4SB76"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-QM84T4SB76');
+                </script>
+
+  </body>
+</html>
