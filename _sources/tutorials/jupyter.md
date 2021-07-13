@@ -1,5 +1,9 @@
 # GitHub, Git, JupyterHub
 
+## [JupyterHub login setup](../preliminary/jupyterhub)
+
+## [First time `git` setup](../preliminary/git)
+
 ## Git review
 
 Here we will do a quick refresher on the different commands you will be using

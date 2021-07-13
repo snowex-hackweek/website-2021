@@ -716,9 +716,14 @@ surrounded by quotes <code class="docutils literal notranslate"><span class="pre
 </div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git config --global user.name <span class="s2">&quot;SnowEx Attendee&quot;</span>
 git config --global user.email <span class="s2">&quot;attendee@hackweek.com&quot;</span>
+git config --global pull.rebase <span class="nb">false</span>
 git config --global credential.helper store
 </pre></div>
 </div>
+<p>The third line is a configuration option that needs to be done with a first time
+setup. It specifies the strategy on how git will apply changes you pull from
+a remote git repository.
+More on strategies is <a class="reference external" href="http://git-scm.com/book/en/v2/Git-Branching-Rebasing">described here.</a></p>
 <p>The last line of the config will store your GitHub credentials and will save
 you from re-entering your username and password from the command line with each
 push, pull, or interactions with GitHub.</p>
@@ -785,9 +790,16 @@ Already up to date.
 </pre></div>
 </div>
 <p>With the <code class="docutils literal notranslate"><span class="pre">git</span></code> command successfully set up, you can now remove the test
-repository via the JupyterHub user interface. Use a right click on the folder
-in the left panel and choose <strong>Delete</strong>.</p>
-<p><img alt="jupyterhub-delete-repo" src="../_images/jupyterhub-delete-repo.png" /></p>
+repository.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Be careful with the <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-rf</span></code> command. There will be <strong>no</strong> confirmation prompt
+for this action and files and folders removed with this command are not
+recoverable.</p>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rm -rf github_setup_check
+</pre></div>
+</div>
 <div class="section" id="optional-advanced-github-setup">
 <h4>(Optional) Advanced GitHub setup<a class="headerlink" href="#optional-advanced-github-setup" title="Permalink to this headline">¶</a></h4>
 <p>In addition to interacting with GitHub via the <code class="docutils literal notranslate"><span class="pre">git</span></code> command, you can also use
