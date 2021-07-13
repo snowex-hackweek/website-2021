@@ -4,8 +4,8 @@ These are short tutorials on geospatial data analysis using the Python programmi
 
 The two primary types of geospatial data are raster and vector data:
 
-* **Vector** data structures represent specific features on the Earth's surface, and assign attributes to those features.
-* **Raster** data is stored as a grid of values which are rendered on a map as pixels. Each pixel value represents an area on the Earth's surface.
+* **Vector** data structures that represent features (points, lines, polygons) on the Earth's surface and attributes of those features.
+* **Raster** data is stored as a grid of values which are rendered on a map as pixels. Each pixel value represents some property (e.g., elevation, temperature) for an area on the Earth's surface.
 
 In addition to the notebooks we've put together, check out these great resources:
 
