@@ -71,13 +71,23 @@ ________________________________________________________
 
 ### 9:00 to 9:30 AM: Project Team Building
 
-*Lead Instructors: Charley Haley and Anthony Arendt*
+*Lead Instructors: Charley Haley and Naomi Alterman*
+
+#### [Link to slides](https://docs.google.com/presentation/d/1qJDpFdS42kF5pcrbmxm1xFWzNoNamVrnMFelwAOh73Q/edit?usp=sharing)
 
 * guidance on how to foster an inclusive, fun and productive project team
 * recommended best practices for effective collaboration
 * options for addressing challenges
 
-### 9:30 to 10:15 AM: Vector and Raster Data Analysis: Part 1
+### 9:30 to 10:00 AM: GitHub, Git, JupyterHub
+
+*Lead Instructor: Joachim Meyer*
+
+* recap of material we did not cover on Day 1
+
+### 10:00 to 10:15 AM: Break
+
+### 10:15 to 11:00 AM: Vector and Raster Data Analysis: Part 1
 
 *Lead Instructors: David Shean, Scott Henderson*
 
@@ -86,11 +96,13 @@ ________________________________________________________
 * projections, regridding, sampling and spatial queries
 
 
-### 10:30 to 11:00 AM: NSIDC Data Access
+### 11:00 to 11:30 AM: NSIDC Data Access
 
 *Lead Instructor: Amy Steiker*
 
-### 11:15 AM to 12:45 PM: Databases
+### 11:30 AM to 12:00 PM: Break
+
+### 12:00 to 1:00 PM: Databases
 
 *Lead Instructor: Micah Johnson*
 
@@ -100,9 +112,13 @@ ________________________________________________________
 * creating map visualizations of available datasets
 * extract data to a flat file
 
-### 1:30 PM and later: project work
+### 1:00 PM and later: project work
 
 *Helpers available for consultation as needed*
+
+### 2:30 to 3:00 PM: Virtual Happy Hour (optional)
+
+*Lead Facilitator: Charley Haley*
 ________________________________________________________
 
 ## DAY 3
@@ -112,6 +128,10 @@ ________________________________________________________
 ### 9:00 to 10:30 AM: Vector and Raster Data Analysis, Part 2
 
 *Lead Instructors: Scott Henderson and David Shean*
+
+### 10:30 to 11:00 AM: Virtual Coffee Gathering (optional)
+
+*Lead Facilitator: Charley Haley*
 
 ### 11:00 to 11:45 AM: LiDAR (Parallel Session 1A)
 
