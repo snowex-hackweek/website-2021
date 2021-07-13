@@ -103,6 +103,10 @@ ________________________________________________________
 ### 1:30 PM and later: project work
 
 *Helpers available for consultation as needed*
+
+### 1:30 to 2:00 PM: Virtual Happy Hour (optional)
+
+*Lead Facilitator: Charley Haley*
 ________________________________________________________
 
 ## DAY 3
@@ -112,6 +116,10 @@ ________________________________________________________
 ### 9:00 to 10:30 AM: Vector and Raster Data Analysis, Part 2
 
 *Lead Instructors: Scott Henderson and David Shean*
+
+### 10:30 to 11:00 AM: Virtual Coffee Gathering (optional)
+
+*Lead Facilitator: Charley Haley*
 
 ### 11:00 to 11:45 AM: LiDAR (Parallel Session 1A)
 
