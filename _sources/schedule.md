@@ -15,6 +15,8 @@ All times listed below are UTC -7 (Pacific Daylight Time). You might want to con
 
 ### 9:00 to 10:00 AM: Introductory Session 
 
+#### [Link to video](https://youtu.be/cHQloxZFtOQ)
+
 *Lead Instructors: Anthony Arendt and Charley Haley*
 
 * Overview of hackweeks
@@ -36,6 +38,8 @@ All times listed below are UTC -7 (Pacific Daylight Time). You might want to con
 ### 11:05 to 11:30 AM: Break
 
 ### 11:30 AM to 12:15 PM: SnowEx Mission Overview and Datasets
+
+#### [Link to video](https://youtu.be/5hVQusosGSg)
 
 *Lead Instructors: Megan Mason, Carrie Vuyovich, HP Marshall*
 
