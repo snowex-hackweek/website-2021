@@ -73,6 +73,8 @@ ________________________________________________________
 
 *Lead Instructors: Charley Haley and Naomi Alterman*
 
+#### [Link to slides](https://docs.google.com/presentation/d/1qJDpFdS42kF5pcrbmxm1xFWzNoNamVrnMFelwAOh73Q/edit?usp=sharing)
+
 * guidance on how to foster an inclusive, fun and productive project team
 * recommended best practices for effective collaboration
 * options for addressing challenges
