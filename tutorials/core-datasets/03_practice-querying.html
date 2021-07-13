@@ -286,6 +286,11 @@
        </li>
       </ul>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../nsidc-access/nsidc-data-access.html">
+       Accessing SnowEx Data at the NSIDC DAAC
+      </a>
+     </li>
      <li class="toctree-l3 has-children">
       <a class="reference internal" href="../database/index.html">
        SnowEx Database
@@ -749,316 +754,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-OperationalError                          Traceback (most recent call last)
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/base.py in _wrap_pool_connect(self, fn, connection)
-   2335         try:
--&gt; 2336             return fn()
-   2337         except dialect.dbapi.Error as e:
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py in connect(self)
-    363         if not self._use_threadlocal:
---&gt; 364             return _ConnectionFairy._checkout(self)
-    365 
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py in _checkout(cls, pool, threadconns, fairy)
-    777         if not fairy:
---&gt; 778             fairy = _ConnectionRecord.checkout(pool)
-    779 
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py in checkout(cls, pool)
-    494     def checkout(cls, pool):
---&gt; 495         rec = pool._do_get()
-    496         try:
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/impl.py in _do_get(self)
-    139                 with util.safe_reraise():
---&gt; 140                     self._dec_overflow()
-    141         else:
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py in __exit__(self, type_, value, traceback)
-     67             if not self.warn_only:
----&gt; 68                 compat.raise_(
-     69                     exc_value,
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/compat.py in raise_(***failed resolving arguments***)
-    181         try:
---&gt; 182             raise exception
-    183         finally:
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/impl.py in _do_get(self)
-    136             try:
---&gt; 137                 return self._create_connection()
-    138             except:
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py in _create_connection(self)
-    308 
---&gt; 309         return _ConnectionRecord(self)
-    310 
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py in __init__(self, pool, connect)
-    439         if connect:
---&gt; 440             self.__connect(first_connect_check=True)
-    441         self.finalize_callback = deque()
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py in __connect(self, first_connect_check)
-    660             with util.safe_reraise():
---&gt; 661                 pool.logger.debug(&quot;Error on connect(): %s&quot;, e)
-    662         else:
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py in __exit__(self, type_, value, traceback)
-     67             if not self.warn_only:
----&gt; 68                 compat.raise_(
-     69                     exc_value,
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/compat.py in raise_(***failed resolving arguments***)
-    181         try:
---&gt; 182             raise exception
-    183         finally:
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py in __connect(self, first_connect_check)
-    655             self.starttime = time.time()
---&gt; 656             connection = pool._invoke_creator(self)
-    657             pool.logger.debug(&quot;Created new connection %r&quot;, connection)
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py in connect(connection_record)
-    113                             return connection
---&gt; 114                 return dialect.connect(*cargs, **cparams)
-    115 
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/default.py in connect(self, *cargs, **cparams)
-    507         # inherits the docstring from interfaces.Dialect.connect
---&gt; 508         return self.dbapi.connect(*cargs, **cparams)
-    509 
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/psycopg2/__init__.py in connect(dsn, connection_factory, cursor_factory, **kwargs)
-    121     dsn = _ext.make_dsn(dsn, **kwargs)
---&gt; 122     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
-    123     if cursor_factory is not None:
-
-OperationalError: could not connect to server: Connection refused
-	Is the server running on host &quot;52.32.183.144&quot; and accepting
-	TCP/IP connections on port 5432?
-
-
-The above exception was the direct cause of the following exception:
-
-OperationalError                          Traceback (most recent call last)
-&lt;ipython-input-3-84d5cda3fc9f&gt; in &lt;module&gt;
-      3 
-      4 # Locate all that are distinct
-----&gt; 5 airborne_sensors_list = session.query(ImageData.surveyors).distinct().all()
-      6 
-      7 print(&#39;list of airborne sensors by &quot;surveyor&quot; name: \n&#39;, airborne_sensors_list)
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/orm/query.py in all(self)
-   3371                 :ref:`faq_query_deduplicating`
-   3372         &quot;&quot;&quot;
--&gt; 3373         return list(self)
-   3374 
-   3375     @_generative(_no_clauseelement_condition)
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/orm/query.py in __iter__(self)
-   3533         if self._autoflush and not self._populate_existing:
-   3534             self.session._autoflush()
--&gt; 3535         return self._execute_and_instances(context)
-   3536 
-   3537     def __str__(self):
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/orm/query.py in _execute_and_instances(self, querycontext)
-   3554 
-   3555     def _execute_and_instances(self, querycontext):
--&gt; 3556         conn = self._get_bind_args(
-   3557             querycontext, self._connection_from_session, close_with_result=True
-   3558         )
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/orm/query.py in _get_bind_args(self, querycontext, fn, **kw)
-   3569 
-   3570     def _get_bind_args(self, querycontext, fn, **kw):
--&gt; 3571         return fn(
-   3572             mapper=self._bind_mapper(), clause=querycontext.statement, **kw
-   3573         )
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/orm/query.py in _connection_from_session(self, **kw)
-   3548 
-   3549     def _connection_from_session(self, **kw):
--&gt; 3550         conn = self.session.connection(**kw)
-   3551         if self._execution_options:
-   3552             conn = conn.execution_options(**self._execution_options)
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/orm/session.py in connection(self, mapper, clause, bind, close_with_result, execution_options, **kw)
-   1140             bind = self.get_bind(mapper, clause=clause, **kw)
-   1141 
--&gt; 1142         return self._connection_for_bind(
-   1143             bind,
-   1144             close_with_result=close_with_result,
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/orm/session.py in _connection_for_bind(self, engine, execution_options, **kw)
-   1148     def _connection_for_bind(self, engine, execution_options=None, **kw):
-   1149         if self.transaction is not None:
--&gt; 1150             return self.transaction._connection_for_bind(
-   1151                 engine, execution_options
-   1152             )
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/orm/session.py in _connection_for_bind(self, bind, execution_options)
-    431                     )
-    432             else:
---&gt; 433                 conn = bind._contextual_connect()
-    434                 local_connect = True
-    435 
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/base.py in _contextual_connect(self, close_with_result, **kwargs)
-   2300         return self._connection_cls(
-   2301             self,
--&gt; 2302             self._wrap_pool_connect(self.pool.connect, None),
-   2303             close_with_result=close_with_result,
-   2304             **kwargs
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/base.py in _wrap_pool_connect(self, fn, connection)
-   2337         except dialect.dbapi.Error as e:
-   2338             if connection is None:
--&gt; 2339                 Connection._handle_dbapi_exception_noconnection(
-   2340                     e, dialect, self
-   2341                 )
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/base.py in _handle_dbapi_exception_noconnection(cls, e, dialect, engine)
-   1581             util.raise_(newraise, with_traceback=exc_info[2], from_=e)
-   1582         elif should_wrap:
--&gt; 1583             util.raise_(
-   1584                 sqlalchemy_exception, with_traceback=exc_info[2], from_=e
-   1585             )
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/compat.py in raise_(***failed resolving arguments***)
-    180 
-    181         try:
---&gt; 182             raise exception
-    183         finally:
-    184             # credit to
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/base.py in _wrap_pool_connect(self, fn, connection)
-   2334         dialect = self.dialect
-   2335         try:
--&gt; 2336             return fn()
-   2337         except dialect.dbapi.Error as e:
-   2338             if connection is None:
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py in connect(self)
-    362         &quot;&quot;&quot;
-    363         if not self._use_threadlocal:
---&gt; 364             return _ConnectionFairy._checkout(self)
-    365 
-    366         try:
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py in _checkout(cls, pool, threadconns, fairy)
-    776     def _checkout(cls, pool, threadconns=None, fairy=None):
-    777         if not fairy:
---&gt; 778             fairy = _ConnectionRecord.checkout(pool)
-    779 
-    780             fairy._pool = pool
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py in checkout(cls, pool)
-    493     @classmethod
-    494     def checkout(cls, pool):
---&gt; 495         rec = pool._do_get()
-    496         try:
-    497             dbapi_connection = rec.get_connection()
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/impl.py in _do_get(self)
-    138             except:
-    139                 with util.safe_reraise():
---&gt; 140                     self._dec_overflow()
-    141         else:
-    142             return self._do_get()
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py in __exit__(self, type_, value, traceback)
-     66             self._exc_info = None  # remove potential circular references
-     67             if not self.warn_only:
----&gt; 68                 compat.raise_(
-     69                     exc_value,
-     70                     with_traceback=exc_tb,
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/compat.py in raise_(***failed resolving arguments***)
-    180 
-    181         try:
---&gt; 182             raise exception
-    183         finally:
-    184             # credit to
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/impl.py in _do_get(self)
-    135         if self._inc_overflow():
-    136             try:
---&gt; 137                 return self._create_connection()
-    138             except:
-    139                 with util.safe_reraise():
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py in _create_connection(self)
-    307         &quot;&quot;&quot;Called by subclasses to create a new ConnectionRecord.&quot;&quot;&quot;
-    308 
---&gt; 309         return _ConnectionRecord(self)
-    310 
-    311     def _invalidate(self, connection, exception=None, _checkin=True):
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py in __init__(self, pool, connect)
-    438         self.__pool = pool
-    439         if connect:
---&gt; 440             self.__connect(first_connect_check=True)
-    441         self.finalize_callback = deque()
-    442 
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py in __connect(self, first_connect_check)
-    659         except Exception as e:
-    660             with util.safe_reraise():
---&gt; 661                 pool.logger.debug(&quot;Error on connect(): %s&quot;, e)
-    662         else:
-    663             if first_connect_check:
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py in __exit__(self, type_, value, traceback)
-     66             self._exc_info = None  # remove potential circular references
-     67             if not self.warn_only:
----&gt; 68                 compat.raise_(
-     69                     exc_value,
-     70                     with_traceback=exc_tb,
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/compat.py in raise_(***failed resolving arguments***)
-    180 
-    181         try:
---&gt; 182             raise exception
-    183         finally:
-    184             # credit to
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py in __connect(self, first_connect_check)
-    654         try:
-    655             self.starttime = time.time()
---&gt; 656             connection = pool._invoke_creator(self)
-    657             pool.logger.debug(&quot;Created new connection %r&quot;, connection)
-    658             self.connection = connection
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py in connect(connection_record)
-    112                         if connection is not None:
-    113                             return connection
---&gt; 114                 return dialect.connect(*cargs, **cparams)
-    115 
-    116             creator = pop_kwarg(&quot;creator&quot;, connect)
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/default.py in connect(self, *cargs, **cparams)
-    506     def connect(self, *cargs, **cparams):
-    507         # inherits the docstring from interfaces.Dialect.connect
---&gt; 508         return self.dbapi.connect(*cargs, **cparams)
-    509 
-    510     def create_connect_args(self, url):
-
-/srv/conda/envs/notebook/lib/python3.8/site-packages/psycopg2/__init__.py in connect(dsn, connection_factory, cursor_factory, **kwargs)
-    120 
-    121     dsn = _ext.make_dsn(dsn, **kwargs)
---&gt; 122     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
-    123     if cursor_factory is not None:
-    124         conn.cursor_factory = cursor_factory
-
-OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
-	Is the server running on host &quot;52.32.183.144&quot; and accepting
-	TCP/IP connections on port 5432?
-
-(Background on this error at: http://sqlalche.me/e/13/e3q8)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list of airborne sensors by &quot;surveyor&quot; name: 
+ [(&#39;USGS&#39;,), (&#39;UAVSAR team, JPL&#39;,), (&#39;ASO Inc.&#39;,)]
 </pre></div>
 </div>
 </div>
@@ -1103,6 +800,19 @@ OperationalError: (psycopg2.OperationalError) could not connect to server: Conne
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>UAVSAR team, JPL flight dates are: 2020-01-31, 2020-02-12
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                             geom site_id        date
+0  POINT (740652.000 4327445.000)     2C2  2020-01-31
+1  POINT (744396.000 4323540.000)    8C26  2020-01-31
+2  POINT (741960.000 4326644.000)    6C10  2020-01-31
+3  POINT (741493.000 4326833.000)     1C8  2020-01-31
+4  POINT (745340.000 4322754.000)    8S28  2020-01-31
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="b-want-to-select-an-exact-flight-date-match-here-s-how">
@@ -1126,6 +836,67 @@ OperationalError: (psycopg2.OperationalError) could not connect to server: Conne
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17 pits overlap with UAVSAR team, JPL on 2020-01-31
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geom</th>
+      <th>site_id</th>
+      <th>date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>POINT (740652.000 4327445.000)</td>
+      <td>2C2</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>POINT (744396.000 4323540.000)</td>
+      <td>8C26</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>POINT (741960.000 4326644.000)</td>
+      <td>6C10</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>POINT (741493.000 4326833.000)</td>
+      <td>1C8</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>POINT (745340.000 4322754.000)</td>
+      <td>8S28</td>
+      <td>2020-01-31</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="c-want-to-select-a-range-of-dates-near-the-flight-date-here-s-how">
@@ -1153,6 +924,97 @@ OperationalError: (psycopg2.OperationalError) could not connect to server: Conne
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47 pits overlap with UAVSAR team, JPL on 2020-01-30, 2020-01-31, 2020-02-01
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>geom</th>
+      <th>site_id</th>
+      <th>date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>15</th>
+      <td>POINT (744396.000 4323540.000)</td>
+      <td>8C26</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>POINT (744281.000 4324245.000)</td>
+      <td>9N29</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>POINT (741960.000 4326644.000)</td>
+      <td>6C10</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>POINT (745121.000 4324175.000)</td>
+      <td>6N36</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>POINT (744477.000 4323731.000)</td>
+      <td>8C22</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>POINT (740508.000 4327577.000)</td>
+      <td>1C1</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>POINT (741378.000 4326992.000)</td>
+      <td>1C7</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>POINT (745598.000 4323988.000)</td>
+      <td>5N41</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>POINT (743884.000 4324477.000)</td>
+      <td>5C21</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>POINT (742453.000 4325752.000)</td>
+      <td>1C14</td>
+      <td>2020-01-31</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="d-have-a-known-date-that-you-wish-to-select-data-for-here-s-how">
@@ -1197,6 +1059,16 @@ OperationalError: (psycopg2.OperationalError) could not connect to server: Conne
 <span class="n">image_type</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">image_type</span><span class="p">]</span>
 <span class="n">image_type</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">image_type</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Image Data on </span><span class="si">%s</span><span class="s1"> are: </span><span class="si">%s</span><span class="s1">, with the following list of parameters: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">dt</span><span class="p">),</span> <span class="n">image_instruments</span><span class="p">,</span> <span class="n">image_type</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point data on 2020-02-12 are: camera, magnaprobe, pit ruler, with the following list of parameters: depth
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Layer Data on 2020-02-12 are: IRIS, IS3-SP-11-01F, snowmicropen, with the following list of parameters: density, equivalent_diameter, force, grain_size, grain_type, hand_hardness, lwc_vol, manual_wetness, permittivity, reflectance, sample_signal, specific_surface_area, temperature
+
+Image Data on 2020-02-12 are: UAVSAR, L-band InSAR, with the following list of parameters: insar correlation, insar interferogram real, insar interferogram imaginary, insar amplitude
 </pre></div>
 </div>
 </div>
@@ -1328,6 +1200,100 @@ OperationalError: (psycopg2.OperationalError) could not connect to server: Conne
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>site_id</th>
+      <th>date</th>
+      <th>type</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>depth</th>
+      <th>value</th>
+      <th>veg_class</th>
+      <th>depth_class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>325</th>
+      <td>8S28</td>
+      <td>2020-01-31</td>
+      <td>density</td>
+      <td>39.019427</td>
+      <td>-108.166169</td>
+      <td>114.0</td>
+      <td>129.5</td>
+      <td>dense</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>1631</th>
+      <td>8C18</td>
+      <td>2020-02-05</td>
+      <td>density</td>
+      <td>39.039719</td>
+      <td>-108.189756</td>
+      <td>58.0</td>
+      <td>280.0</td>
+      <td>dense</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>347</th>
+      <td>6C37</td>
+      <td>2020-01-29</td>
+      <td>density</td>
+      <td>39.007604</td>
+      <td>-108.147913</td>
+      <td>57.0</td>
+      <td>294.5</td>
+      <td>sparse</td>
+      <td>deep</td>
+    </tr>
+    <tr>
+      <th>2527</th>
+      <td>1S8</td>
+      <td>2020-02-01</td>
+      <td>density</td>
+      <td>39.021657</td>
+      <td>-108.197644</td>
+      <td>74.0</td>
+      <td>229.0</td>
+      <td>treeless</td>
+      <td>shallow</td>
+    </tr>
+    <tr>
+      <th>2664</th>
+      <td>8N54</td>
+      <td>2020-02-04</td>
+      <td>density</td>
+      <td>39.030728</td>
+      <td>-108.141577</td>
+      <td>67.0</td>
+      <td>192.0</td>
+      <td>dense</td>
+      <td>medium</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1337,6 +1303,22 @@ OperationalError: (psycopg2.OperationalError) could not connect to server: Conne
 <span class="nb">print</span><span class="p">(</span><span class="n">gb</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;veg_class&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">gb</span><span class="p">[</span><span class="s1">&#39;site_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;depth_class&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>veg_class
+dense       50
+sparse      39
+treeless    60
+Name: site_id, dtype: int64
+
+
+depth_class
+deep       45
+medium     78
+shallow    26
+Name: site_id, dtype: int64
 </pre></div>
 </div>
 </div>
@@ -1354,6 +1336,9 @@ OperationalError: (psycopg2.OperationalError) could not connect to server: Conne
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03_practice-querying_21_0.png" src="../../_images/03_practice-querying_21_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1363,6 +1348,9 @@ OperationalError: (psycopg2.OperationalError) could not connect to server: Conne
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/03_practice-querying_22_0.png" src="../../_images/03_practice-querying_22_0.png" />
 </div>
 </div>
 <div class="cell docutils container">

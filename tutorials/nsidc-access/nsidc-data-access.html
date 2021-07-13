@@ -1,0 +1,1784 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessing SnowEx Data at the NSIDC DAAC &#8212; SnowEx Hackweek</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SnowEx Database" href="../database/index.html" />
+    <link rel="prev" title="Dynamic Query of SNOTEL data" href="../geospatial/SNOTEL_query.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SnowEx Hackweek</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to SnowEx Hackweek!
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../application.html">
+   Application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Hackweek Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../team.html">
+   Our Team
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../norms/index.html">
+   Hackweek Norms
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/CoC.html">
+     Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/community.html">
+     Learning Community
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../preliminary/index.html">
+   Preliminary Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/swc.html">
+     Software Carpentry Training
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/github.html">
+     GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/git.html">
+     Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/earthdata.html">
+     Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/pangeo.html">
+     Pangeo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/python.html">
+     Python Installation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Tutorials
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_1.html">
+     Day 1
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../jupyter.html">
+       GitHub, Git, JupyterHub
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../core-datasets/index.html">
+       SnowEx Mission and Core Data Sets
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/01_introduction.html">
+         SnowEx Mission and Core Data Sets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/02_data-package.html">
+         Depths and Snow Pit Data Package Contents
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/03_practice-querying.html">
+         Practice Querying the Snowexsql Database
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../day_2.html">
+     Day 2
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../geospatial/index.html">
+       Geospatial fundamentals
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geospatial/raster.html">
+         Raster data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geospatial/vector.html">
+         Vector data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geospatial/SNOTEL_query.html">
+         Dynamic Query of SNOTEL data
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Accessing SnowEx Data at the NSIDC DAAC
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../database/index.html">
+       SnowEx Database
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/1_getting_started_example.html">
+         Introduction to the SnowEx Database
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/2_database_structure.html">
+         How is the Database Structured?
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/3_forming_queries.html">
+         Forming Queries
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/4_get_spiral_example.html">
+         Forming Queries: Example Visualizng Depths
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/5_plot_raster_example.html">
+         Forming Queries: PostGIS Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/6_exporting_data.html">
+         Exporting Data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/7_wrap_up.html">
+         Wrap up
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_3.html">
+     Day 3
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../lidar/index.html">
+       LIDAR
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lidar/ICESat2_tutorial.html">
+         Introduction
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../thermal-ir/index.html">
+       Thermal Infrared Remote Sensing of Snow
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../thermal-ir/thermal-ir-tutorial.html">
+         Thermal Infrared Remote Sensing of Snow
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../thermal-ir/thermal-ir-data-download.html">
+         Downloading datasets for the thermal IR tutorial
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
+       Snow Microstructure Tutorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../gpr/gpr.html">
+       GPR
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_4.html">
+     Day 4
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../sar/index.html">
+       Synthetic Aperture Radar
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sar/sentinel1.html">
+         Sentinel-1
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sar/swesarr.html">
+         SWESARR Tutorial
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sar/uavsar.html">
+         UAVSAR
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../lis/index.html">
+       NASA Land Information System (LIS)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lis/1_exploring_lis_output.html">
+         Visualizing and Comparing LIS Output
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lis/2_interactive_data_exploration.html">
+         Interactive Data Exploration
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../camera-traps-tutorial/camera-traps-notebook.html">
+       Camera Traps and Snow Applications
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../machine-learning/Machine_Learning_Tutorial.html">
+       Introduction to Machine Learning
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/index.html">
+   Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roles.html">
+     Project Roles and Responsibilities
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../SnowEx_News_and_MonthlyMeetings.html">
+   SnowEx News and MonthlyMeetings
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/nsidc-access/nsidc-data-access.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/snowex-hackweek/website"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/snowex-hackweek/website/issues/new?title=Issue%20on%20page%20%2Ftutorials/nsidc-access/nsidc-data-access.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/snowex-hackweek/website/edit/main/book/tutorials/nsidc-access/nsidc-data-access.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   Learning Objectives:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#explore-snow-products-and-resources">
+   Explore snow products and resources
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nsidc-introduction">
+     NSIDC introduction
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#select-data-resources">
+       Select Data Resources
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#snow-today">
+       Snow Today
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nsidc-s-snowex-pages">
+     NSIDC’s SnowEx pages
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#other-relevant-snow-products">
+       Other relevant snow products:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-packages">
+     Import Packages
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-discovery">
+   Data Discovery
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identify-area-and-time-of-interest">
+     Identify area and time of interest
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-polygon-coordinate-string">
+       Create polygon coordinate string
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#set-time-range">
+       Set time range
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-data-parameter-dictionary">
+     Create data parameter dictionary
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#determine-how-many-files-exist-over-this-time-and-area-of-interest-as-well-as-the-average-size-and-total-volume-of-those-files">
+     Determine how many files exist over this time and area of interest, as well as the average size and total volume of those files
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-access">
+   Data Access
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#option-1-python-script-from-the-data-set-landing-page">
+     Option 1: Python script from the data set landing page
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#option-2-additional-data-access-services-api-access">
+     Option 2: Additional data access services: API Access
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-the-data-request-api-endpoint">
+       Create the data request API endpoint
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#input-earthdata-login-credentials">
+       Input Earthdata Login credentials
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#download-data">
+       Download data
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-in-snowex-data-and-buffer-points-around-snotel-location">
+   Read in SnowEx data and buffer points around Snotel location
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convert-to-time-values-and-extract-a-single-day">
+     Convert to time values and extract a single day
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#convert-to-geopandas-dataframe-to-provide-point-geometry">
+       Convert to Geopandas dataframe to provide point geometry
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#additional-data-imagery-services">
+     Additional data imagery services
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#nasa-worldview-and-the-global-browse-imagery-service">
+       NASA Worldview and the Global Browse Imagery Service
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#export-dataframe-to-shapefile">
+     Export dataframe to Shapefile
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="accessing-snowex-data-at-the-nsidc-daac">
+<h1>Accessing SnowEx Data at the NSIDC DAAC<a class="headerlink" href="#accessing-snowex-data-at-the-nsidc-daac" title="Permalink to this headline">¶</a></h1>
+<p>2021 SnowEx Hackweek</p>
+<p>Author: Amy Steiker, NSIDC DAAC, CIRES, University of Colorado</p>
+<p>This tutorial provides a brief overview of the resources provided by the NASA National Snow and Ice Data Center Distributed Active Archive Center, or NSIDC DAAC, and demonstrates how to access SnowEx data across several methods.</p>
+<div class="section" id="learning-objectives">
+<h2>Learning Objectives:<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Identify resources available at the NSIDC DAAC to help you work with SnowEx data.</p></li>
+<li><p>Search and discover file size and coverage of SnowEx data over a time and geojson region of interest.</p></li>
+<li><p>Set up Earthdata Login authentication.</p></li>
+<li><p>Download SnowEx data programmatically using the NSIDC DAAC API.</p></li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="explore-snow-products-and-resources">
+<h2>Explore snow products and resources<a class="headerlink" href="#explore-snow-products-and-resources" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nsidc-introduction">
+<h3>NSIDC introduction<a class="headerlink" href="#nsidc-introduction" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://nsidc.org">The National Snow and Ice Data Center</a>, located in Boulder, Colorado, provides over 1100 data sets covering the Earth’s cryosphere and more, all of which are available to the public free of charge. Beyond providing these data, NSIDC creates tools for data access, supports data users, performs scientific research, and educates the public about the cryosphere.</p>
+<img alt="../../_images/nsidc-daac-header.png" class="align-left" src="../../_images/nsidc-daac-header.png" />
+<p>The <a class="reference external" href="https://nsidc.org/daac">NASA National Snow and Ice Data Center Distributed Active Archive Center (NSIDC DAAC)</a> provides access to over 700 data products (over 2 PB of data and growing!) in support of cryospheric research, global change detection, and water resource management. NSIDC is one of 12 DAACs as part of NASA’s EOSDIS, or Earth Observing System Data and Information System, and is also the largest program within the National Snow and Ice Data Center, as part of the University of Colorado’s Cooperative Institute for Research in Environmental Sciences.</p>
+<div class="section" id="select-data-resources">
+<h4>Select Data Resources<a class="headerlink" href="#select-data-resources" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://nsidc.org/data/search/#keywords=snow">NSIDC Data Search</a></p>
+<ul>
+<li><p>Search NSIDC snow data</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://nsidc.org/the-drift/data-update/">NSIDC Data Update Announcements</a></p>
+<ul>
+<li><p>News and tips for data users</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="http://search.earthdata.nasa.gov/">NASA Earthdata Search</a></p>
+<ul>
+<li><p>Search and access data across the NASA Earthdata</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://worldview.earthdata.nasa.gov/">NASA Worldview</a></p>
+<ul>
+<li><p>Interactive interface for browsing full-resolution, global, daily satellite images</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="snow-today">
+<h4>Snow Today<a class="headerlink" href="#snow-today" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://nsidc.org/snow-today">Snow Today</a>, a collaboration with the University of Colorado’s Institute of Alpine and Arctic Research (INSTAAR), provides near-real-time snow analysis for the western United States and regular reports on conditions during the winter season. Snow Today is funded by NASA Hydrological Sciences Program and utilizes data from the Moderate Resolution Imaging Spectroradiometer (MODIS) instrument and snow station data from the Snow Telemetry (SNOTEL) network by the Natural Resources Conservation Service (NRCS), United States Department of Agriculture (USDA) and the California Department of Water Resources: <a class="reference external" href="http://www.wcc.nrcs.usda.gov/snow">www.wcc.nrcs.usda.gov/snow</a>.</p>
+</div>
+</div>
+<div class="section" id="nsidc-s-snowex-pages">
+<h3>NSIDC’s SnowEx pages<a class="headerlink" href="#nsidc-s-snowex-pages" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://nsidc.org/data/snowex">SnowEx</a></p>
+<ul>
+<li><p>We will be using the ‘SnowEx17 Ground Penetrating Radar, Version 2’ dataset in the following steps: <a class="reference external" href="https://doi.org/10.5067/G21LGCNLFSC5">https://doi.org/10.5067/G21LGCNLFSC5</a></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="other-relevant-snow-products">
+<h4>Other relevant snow products:<a class="headerlink" href="#other-relevant-snow-products" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://nsidc.org/data/search/#keywords=aso/sortKeys=score,,desc/facetFilters=%257B%2522facet_parameter%2522%253A%255B%2522SNOW%2520DEPTH%2522%252C%2522SNOW%2520WATER%2520EQUIVALENT%2522%255D%257D/pageNumber=1/itemsPerPage=25">ASO Snow Data</a></p></li>
+<li><p><a class="reference external" href="https://nsidc.org/data/search/#sortKeys=score,,desc/facetFilters=%257B%2522facet_parameter%2522%253A%255B%2522SNOW%2520COVER%2522%252C%2522Snow%2520Cover%2522%252C%2522SNOW%2520WATER%2520EQUIVALENT%2522%252C%2522SNOW%2520DEPTH%2522%252C%2522SNOW%2520MELT%2522%252C%2522SNOW%2520VOLUME%2520BUDGET%2522%252C%2522SNOW%252FICE%2522%255D%252C%2522facet_sensor%2522%253A%255B%2522%2520%257C%2520MODIS%2522%252C%2522Moderate-Resolution%2520Imaging%2520Spectroradiometer%2520%257C%2520MODIS%2522%255D%252C%2522facet_sponsored_program%2522%253A%255B%2522NASA%2520National%2520Snow%2520and%2520Ice%2520Data%2520Center%2520Distributed%2520Active%2520Archive%2520Center%2520%257C%2520NASA%2520NSIDC%2520DAAC%2522%255D%257D/pageNumber=1/itemsPerPage=25">MODIS Snow Data</a></p></li>
+<li><p><a class="reference external" href="http://nsidc.org/data/search/#sortKeys=score,,desc/facetFilters=%257B%2522facet_sensor%2522%253A%255B%2522Visible-Infrared%2520Imager-Radiometer%2520Suite%2520%257C%2520VIIRS%2522%255D%252C%2522facet_parameter%2522%253A%255B%2522SNOW%2520COVER%2522%252C%2522Snow%2520Cover%2522%255D%257D/pageNumber=1/itemsPerPage=25">VIIRS Snow Data</a></p></li>
+<li><p><a class="reference external" href="http://nsidc.org/data/search/#sortKeys=score,,desc/facetFilters=%257B%2522facet_sensor%2522%253A%255B%2522Advanced%2520Microwave%2520Scanning%2520Radiometer-EOS%2520%257C%2520AMSR-E%2522%252C%2522Advanced%2520Microwave%2520Scanning%2520Radiometer%25202%2520%257C%2520AMSR2%2522%255D%252C%2522facet_parameter%2522%253A%255B%2522SNOW%2520WATER%2520EQUIVALENT%2522%252C%2522Snow%2520Water%2520Equivalent%2522%255D%257D/pageNumber=1/itemsPerPage=25">AMSR-E and AMSR-E/AMSR2 Unified Snow Data</a></p></li>
+<li><p><a class="reference external" href="http://nsidc.org/data/search/#keywords=measures/sortKeys=score,,desc/facetFilters=%257B%2522facet_parameter%2522%253A%255B%2522SNOW%2520COVER%2522%255D%252C%2522facet_sponsored_program%2522%253A%255B%2522NASA%2520National%2520Snow%2520and%2520Ice%2520Data%2520Center%2520Distributed%2520Active%2520Archive%2520Center%2520%257C%2520NASA%2520NSIDC%2520DAAC%2522%255D%252C%2522facet_format%2522%253A%255B%2522NetCDF%2522%255D%252C%2522facet_temporal_duration%2522%253A%255B%252210%252B%2520years%2522%255D%257D/pageNumber=1/itemsPerPage=25">MEaSUREs Snow Data</a></p></li>
+<li><p>Near-Real-Time SSM/I-SSMIS EASE-Grid Daily Global Ice Concentration and Snow Extent (NISE), Version 5: <a class="reference external" href="https://doi.org/10.5067/3KB2JPLFPK3R">https://doi.org/10.5067/3KB2JPLFPK3R</a></p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="import-packages">
+<h3>Import Packages<a class="headerlink" href="#import-packages" title="Permalink to this headline">¶</a></h3>
+<p>Get started by importing packages needed to run the following code blocks, including the <code class="docutils literal notranslate"><span class="pre">tutorial_helper_functions</span></code> module provided within this repository.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Polygon</span><span class="p">,</span> <span class="n">mapping</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry.polygon</span> <span class="kn">import</span> <span class="n">orient</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pprint</span>
+<span class="kn">import</span> <span class="nn">getpass</span>
+<span class="kn">from</span> <span class="nn">netrc</span> <span class="kn">import</span> <span class="n">netrc</span>
+<span class="kn">from</span> <span class="nn">platform</span> <span class="kn">import</span> <span class="n">system</span>
+<span class="kn">from</span> <span class="nn">getpass</span> <span class="kn">import</span> <span class="n">getpass</span>
+<span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">request</span>
+<span class="kn">from</span> <span class="nn">http.cookiejar</span> <span class="kn">import</span> <span class="n">CookieJar</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span><span class="p">,</span> <span class="n">expanduser</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">xml.etree</span> <span class="kn">import</span> <span class="n">ElementTree</span> <span class="k">as</span> <span class="n">ET</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="data-discovery">
+<h2>Data Discovery<a class="headerlink" href="#data-discovery" title="Permalink to this headline">¶</a></h2>
+<p>Start by identifying your study area and exploring coincident data over the same time and area.</p>
+<p>NASA Earthdata Search can be used to visualize file coverage over multiple data sets of interest:
+<a class="reference external" href="https://search.earthdata.nasa.gov/projects?projectId=5366449248">https://search.earthdata.nasa.gov/projects?projectId=5366449248</a></p>
+<div class="section" id="identify-area-and-time-of-interest">
+<h3>Identify area and time of interest<a class="headerlink" href="#identify-area-and-time-of-interest" title="Permalink to this headline">¶</a></h3>
+<p>Since our focus is on the Grand Mesa study site of the NASA SnowEx campaign, we’ll use that area to search for coincident data across other data products. From the <a class="reference external" href="https://doi.org/10.5067/G21LGCNLFSC5">SnowEx17 Ground Penetrating Radar Version 2</a> landing page, you can find the rectangular spatial coverage under the Overview tab, or you can draw a polygon over your area of interest in the map under the Download Data tab and export the shape as a geojson file using the Export Polygon icon shown below. An example polygon geojson file is provided in the /Data folder of this repository.</p>
+<img alt="../../_images/Data-download-polygon-export.png" class="align-left" src="../../_images/Data-download-polygon-export.png" />
+<div class="section" id="create-polygon-coordinate-string">
+<h4>Create polygon coordinate string<a class="headerlink" href="#create-polygon-coordinate-string" title="Permalink to this headline">¶</a></h4>
+<p>Read in the geojson file as a GeoDataFrame object and simplify and reorder using the shapely package. This will be converted back to a dictionary to be applied as our polygon search parameter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">polygon_filepath</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;/Data/nsidc-polygon.json&#39;</span><span class="p">)</span> <span class="c1"># Note: A shapefile or other vector-based spatial data format could be substituted here.</span>
+
+<span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">polygon_filepath</span><span class="p">)</span> <span class="c1">#Return a GeoDataFrame object</span>
+
+<span class="c1"># Simplify polygon for complex shapes in order to pass a reasonable request length to CMR. The larger the tolerance value, the more simplified the polygon.</span>
+<span class="c1"># Orient counter-clockwise: CMR polygon points need to be provided in counter-clockwise order. The last point should match the first point to close the polygon.</span>
+<span class="n">poly</span> <span class="o">=</span> <span class="n">orient</span><span class="p">(</span><span class="n">gdf</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">preserve_topology</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">sign</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+
+<span class="c1">#Format dictionary to polygon coordinate pairs for CMR polygon filtering</span>
+<span class="n">polygon</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">xy</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">poly</span><span class="o">.</span><span class="n">exterior</span><span class="o">.</span><span class="n">coords</span><span class="o">.</span><span class="n">xy</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">xy</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Polygon coordinates to be used in search:&#39;</span><span class="p">,</span> <span class="n">polygon</span><span class="p">)</span>
+<span class="n">poly</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polygon coordinates to be used in search: -108.2352445938561,38.98556907427165,-107.85284607930835,38.978765032966244,-107.85494925720668,39.10596902171742,-108.22772795408136,39.11294532581687,-108.2352445938561,38.98556907427165
+</pre></div>
+</div>
+<img alt="../../_images/nsidc-data-access_7_1.svg" src="../../_images/nsidc-data-access_7_1.svg" /></div>
+</div>
+</div>
+<div class="section" id="set-time-range">
+<h4>Set time range<a class="headerlink" href="#set-time-range" title="Permalink to this headline">¶</a></h4>
+<p>This is an optional parameter; set this to specify a time range of interest. In this case we’ll just select all of 2017 to ensure that we receive all files within this data set campaign.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temporal</span> <span class="o">=</span> <span class="s1">&#39;2017-01-01T00:00:00Z,2017-12-31T23:59:59Z&#39;</span> <span class="c1"># Set temporal range</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-data-parameter-dictionary">
+<h3>Create data parameter dictionary<a class="headerlink" href="#create-data-parameter-dictionary" title="Permalink to this headline">¶</a></h3>
+<p>Create a dictionary with the data set shortname and version, as well as the temporal range and polygonal area of interest. Data set shortnames, or IDs, as well as version numbers, are located at the top of every NSIDC landing page.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">param_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;short_name&#39;</span><span class="p">:</span> <span class="s1">&#39;SNEX17_GPR&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="s1">&#39;polygon&#39;</span><span class="p">:</span> <span class="n">polygon</span><span class="p">,</span>
+    <span class="s1">&#39;temporal&#39;</span><span class="p">:</span><span class="n">temporal</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="determine-how-many-files-exist-over-this-time-and-area-of-interest-as-well-as-the-average-size-and-total-volume-of-those-files">
+<h3>Determine how many files exist over this time and area of interest, as well as the average size and total volume of those files<a class="headerlink" href="#determine-how-many-files-exist-over-this-time-and-area-of-interest-as-well-as-the-average-size-and-total-volume-of-those-files" title="Permalink to this headline">¶</a></h3>
+<p>We will use the <code class="docutils literal notranslate"><span class="pre">granule_info</span></code> function to query metadata about each data set and associated files using the <a class="reference external" href="https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html">Common Metadata Repository (CMR)</a>, which is a high-performance, high-quality, continuously evolving metadata system that catalogs Earth Science data and associated service metadata records. Note that not all NSIDC data can be searched at the file level using CMR, particularly those outside of the NASA DAAC program.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">search_granules</span><span class="p">(</span><span class="n">search_parameters</span><span class="p">,</span> <span class="n">geojson</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output_format</span><span class="o">=</span><span class="s2">&quot;json&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Performs a granule search with token authentication for restricted results</span>
+<span class="sd">    </span>
+<span class="sd">    :search_parameters: dictionary of CMR search parameters</span>
+<span class="sd">    :token: CMR token needed for restricted search</span>
+<span class="sd">    :geojson: filepath to GeoJSON file for spatial search</span>
+<span class="sd">    :output_format: select format for results https://cmr.earthdata.nasa.gov/search/site/docs/search/api.html#supported-result-formats</span>
+<span class="sd">    </span>
+<span class="sd">    :returns: if hits is greater than 0, search results are returned in chosen output_format, otherwise returns None.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">search_url</span> <span class="o">=</span> <span class="s2">&quot;https://cmr.earthdata.nasa.gov/search/granules&quot;</span>
+
+    
+    <span class="k">if</span> <span class="n">geojson</span><span class="p">:</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;shapefile&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">geojson</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">geojson</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">),</span> <span class="s2">&quot;application/geo+json&quot;</span><span class="p">)}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="kc">None</span>
+    
+    
+    <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;scroll&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;page_size&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="p">}</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">search_url</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">output_format</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameters</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">search_parameters</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="n">files</span><span class="p">)</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+    <span class="k">except</span> <span class="n">HTTPError</span> <span class="k">as</span> <span class="n">http_err</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;HTTP Error: </span><span class="si">{</span><span class="n">http_error</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="n">hits</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;CMR-Hits&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">hits</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="n">hits</span><span class="si">}</span><span class="s2"> files&quot;</span><span class="p">)</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+        <span class="n">granules</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">granules</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;feed&#39;</span><span class="p">][</span><span class="s1">&#39;entry&#39;</span><span class="p">])</span>
+        <span class="n">granule_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">granule</span><span class="p">[</span><span class="s1">&#39;granule_size&#39;</span><span class="p">])</span> <span class="k">for</span> <span class="n">granule</span> <span class="ow">in</span> <span class="n">granules</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The total size of all files is </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">granule_sizes</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> MB&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found no hits&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+<span class="n">search_granules</span><span class="p">(</span><span class="n">param_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 3 files
+The total size of all files is 209.20 MB
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;feed&#39;: {&#39;updated&#39;: &#39;2021-07-13T03:50:07.480Z&#39;,
+  &#39;id&#39;: &#39;https://cmr.earthdata.nasa.gov:443/search/granules.json?short_name=SNEX17_GPR&amp;version=2&amp;polygon=-108.2352445938561%2C38.98556907427165%2C-107.85284607930835%2C38.978765032966244%2C-107.85494925720668%2C39.10596902171742%2C-108.22772795408136%2C39.11294532581687%2C-108.2352445938561%2C38.98556907427165&amp;temporal=2017-01-01T00%3A00%3A00Z%2C2017-12-31T23%3A59%3A59Z&#39;,
+  &#39;title&#39;: &#39;ECHO granule metadata&#39;,
+  &#39;entry&#39;: [{&#39;producer_granule_id&#39;: &#39;SnowEx17_GPR_Version2_Week1.csv&#39;,
+    &#39;time_start&#39;: &#39;2017-02-08T00:00:00.000Z&#39;,
+    &#39;updated&#39;: &#39;2019-11-20T14:19:39.156Z&#39;,
+    &#39;dataset_id&#39;: &#39;SnowEx17 Ground Penetrating Radar V002&#39;,
+    &#39;data_center&#39;: &#39;NSIDC_ECS&#39;,
+    &#39;title&#39;: &#39;SC:SNEX17_GPR.002:167128516&#39;,
+    &#39;coordinate_system&#39;: &#39;GEODETIC&#39;,
+    &#39;day_night_flag&#39;: &#39;UNSPECIFIED&#39;,
+    &#39;time_end&#39;: &#39;2017-02-10T23:59:59.000Z&#39;,
+    &#39;id&#39;: &#39;G1657541380-NSIDC_ECS&#39;,
+    &#39;original_format&#39;: &#39;ECHO10&#39;,
+    &#39;granule_size&#39;: &#39;57.3195&#39;,
+    &#39;browse_flag&#39;: False,
+    &#39;polygons&#39;: [[&#39;39.05189 -108.06789 39.04958 -108.07092 39.02644 -108.13422 39.04032 -108.18504 39.0357 -108.2211 39.01719 -108.21534 38.99637 -108.18261 39.00562 -108.11049 39.02413 -108.06225 39.03338 -108.06213 39.02876 -108.08619 39.04264 -108.05301 39.05189 -108.05289 39.0542 -108.06786 39.05189 -108.06789&#39;]],
+    &#39;collection_concept_id&#39;: &#39;C1655875737-NSIDC_ECS&#39;,
+    &#39;online_access_flag&#39;: True,
+    &#39;links&#39;: [{&#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;type&#39;: &#39;text/plain&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/DP1/SNOWEX/SNEX17_GPR.002/2017.02.08/SnowEx17_GPR_Version2_Week1.csv&#39;},
+     {&#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/metadata#&#39;,
+      &#39;type&#39;: &#39;text/xml&#39;,
+      &#39;title&#39;: &#39;(METADATA)&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/DP1/SNOWEX/SNEX17_GPR.002/2017.02.08/SnowEx17_GPR_Version2_Week1.csv.xml&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;length&#39;: &#39;0.0KB&#39;,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/SNOWEX/SNEX17_GPR.002/&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;length&#39;: &#39;0.0KB&#39;,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://search.earthdata.nasa.gov/search/granules?p=C1655875737-NSIDC_ECS&amp;q=SNEX17_GPR&amp;m=29.76382409255042!-108.823974609375!4!1!0!0%2C2&amp;tl=1558474061!4!!&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/metadata#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://doi.org/10.5067/G21LGCNLFSC5&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/documentation#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://doi.org/10.5067/G21LGCNLFSC5&#39;}]},
+   {&#39;producer_granule_id&#39;: &#39;SnowEx17_GPR_Version2_Week2.csv&#39;,
+    &#39;time_start&#39;: &#39;2017-02-14T00:00:00.000Z&#39;,
+    &#39;updated&#39;: &#39;2019-11-20T14:19:39.156Z&#39;,
+    &#39;dataset_id&#39;: &#39;SnowEx17 Ground Penetrating Radar V002&#39;,
+    &#39;data_center&#39;: &#39;NSIDC_ECS&#39;,
+    &#39;title&#39;: &#39;SC:SNEX17_GPR.002:167128520&#39;,
+    &#39;coordinate_system&#39;: &#39;GEODETIC&#39;,
+    &#39;day_night_flag&#39;: &#39;UNSPECIFIED&#39;,
+    &#39;time_end&#39;: &#39;2017-02-17T23:59:59.000Z&#39;,
+    &#39;id&#39;: &#39;G1657541238-NSIDC_ECS&#39;,
+    &#39;original_format&#39;: &#39;ECHO10&#39;,
+    &#39;granule_size&#39;: &#39;85.516&#39;,
+    &#39;browse_flag&#39;: False,
+    &#39;polygons&#39;: [[&#39;39.10738 -107.88943 39.10738 -107.89539 39.0912 -107.95508 39.07271 -108.02372 39.0542 -108.09234 39.04264 -108.16078 39.0357 -108.2113 39.03338 -108.2113 39.0195 -108.20533 39.00099 -108.18454 39.00099 -108.12811 39.00099 -108.08653 39.02644 -108.02094 39.0357 -107.94938 39.02413 -107.93155 39.04726 -107.89867 39.08195 -107.85677 39.10507 -107.86257 39.10969 -107.88644 39.10738 -107.88943&#39;]],
+    &#39;collection_concept_id&#39;: &#39;C1655875737-NSIDC_ECS&#39;,
+    &#39;online_access_flag&#39;: True,
+    &#39;links&#39;: [{&#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;type&#39;: &#39;text/plain&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/DP1/SNOWEX/SNEX17_GPR.002/2017.02.14/SnowEx17_GPR_Version2_Week2.csv&#39;},
+     {&#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/metadata#&#39;,
+      &#39;type&#39;: &#39;text/xml&#39;,
+      &#39;title&#39;: &#39;(METADATA)&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/DP1/SNOWEX/SNEX17_GPR.002/2017.02.14/SnowEx17_GPR_Version2_Week2.csv.xml&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;length&#39;: &#39;0.0KB&#39;,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/SNOWEX/SNEX17_GPR.002/&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;length&#39;: &#39;0.0KB&#39;,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://search.earthdata.nasa.gov/search/granules?p=C1655875737-NSIDC_ECS&amp;q=SNEX17_GPR&amp;m=29.76382409255042!-108.823974609375!4!1!0!0%2C2&amp;tl=1558474061!4!!&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/metadata#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://doi.org/10.5067/G21LGCNLFSC5&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/documentation#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://doi.org/10.5067/G21LGCNLFSC5&#39;}]},
+   {&#39;producer_granule_id&#39;: &#39;SnowEx17_GPR_Version2_Week3.csv&#39;,
+    &#39;time_start&#39;: &#39;2017-02-21T00:00:00.000Z&#39;,
+    &#39;updated&#39;: &#39;2020-02-18T12:25:16.785Z&#39;,
+    &#39;dataset_id&#39;: &#39;SnowEx17 Ground Penetrating Radar V002&#39;,
+    &#39;data_center&#39;: &#39;NSIDC_ECS&#39;,
+    &#39;title&#39;: &#39;SC:SNEX17_GPR.002:173252482&#39;,
+    &#39;coordinate_system&#39;: &#39;GEODETIC&#39;,
+    &#39;day_night_flag&#39;: &#39;UNSPECIFIED&#39;,
+    &#39;time_end&#39;: &#39;2017-02-25T23:59:59.000Z&#39;,
+    &#39;id&#39;: &#39;G1694922459-NSIDC_ECS&#39;,
+    &#39;original_format&#39;: &#39;ECHO10&#39;,
+    &#39;granule_size&#39;: &#39;66.3598&#39;,
+    &#39;browse_flag&#39;: False,
+    &#39;polygons&#39;: [[&#39;39.05189 -108.06789 39.04958 -108.06792 39.03107 -108.08616 39.0195 -108.15531 39.00331 -108.14352 39.00562 -108.11049 39.00562 -108.05349 39.01719 -108.05334 39.02876 -108.02919 39.0542 -108.05586 39.0542 -108.06786 39.05189 -108.06789&#39;]],
+    &#39;collection_concept_id&#39;: &#39;C1655875737-NSIDC_ECS&#39;,
+    &#39;online_access_flag&#39;: True,
+    &#39;links&#39;: [{&#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;type&#39;: &#39;text/plain&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/DP1/SNOWEX/SNEX17_GPR.002/2017.02.21/SnowEx17_GPR_Version2_Week3.csv&#39;},
+     {&#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/metadata#&#39;,
+      &#39;type&#39;: &#39;text/xml&#39;,
+      &#39;title&#39;: &#39;(METADATA)&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/DP1/SNOWEX/SNEX17_GPR.002/2017.02.21/SnowEx17_GPR_Version2_Week3.csv.xml&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;length&#39;: &#39;0.0KB&#39;,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/SNOWEX/SNEX17_GPR.002/&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;length&#39;: &#39;0.0KB&#39;,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://search.earthdata.nasa.gov/search/granules?p=C1655875737-NSIDC_ECS&amp;q=SNEX17_GPR&amp;m=29.76382409255042!-108.823974609375!4!1!0!0%2C2&amp;tl=1558474061!4!!&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/metadata#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://doi.org/10.5067/G21LGCNLFSC5&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/documentation#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://doi.org/10.5067/G21LGCNLFSC5&#39;}]}]}}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="data-access">
+<h2>Data Access<a class="headerlink" href="#data-access" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="option-1-python-script-from-the-data-set-landing-page">
+<h3>Option 1: Python script from the data set landing page<a class="headerlink" href="#option-1-python-script-from-the-data-set-landing-page" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://snowex-hackweek.github.io/website/tutorials/core-datasets/02_data-package.html">Depths and Snow Pit Data Package Contents</a> tutorial demonstrates how to access data using the script provided under the “Download Data” tab of each NSIDC DAAC data set landing page. Note that you must create a <code class="docutils literal notranslate"><span class="pre">.netrc</span></code> file within the JupyterHub environment, as well ensure you have a Earthdata Login profile, as described in the preliminary work article <a class="reference external" href="https://snowex-hackweek.github.io/website/preliminary/earthdata.html#configure-programmatic-access-to-nasa-servers">here</a>.</p>
+</div>
+<div class="section" id="option-2-additional-data-access-services-api-access">
+<h3>Option 2: Additional data access services: API Access<a class="headerlink" href="#option-2-additional-data-access-services-api-access" title="Permalink to this headline">¶</a></h3>
+<p>Data can be accessed directly from our HTTPS file system as described in the aforementioned tutorial, or through the NSIDC DAAC’s Application Programming Interface (API).</p>
+<p>What is an API? You can think of an API as a middle man between an application or end-use (in this case, us) and a data provider. Here, the data provider is both the Common Metadata Repository (CMR) housing data information, and NSIDC as the data distributor. These APIs are generally structured as a URL with a base plus individual key-value-pairs separated by ‘&amp;’. This option is beneficial for those of you who want to incorporate data access directly into your visualization and analysis coding workflow, without the need to utilize the NSIDC website. This method is also reproducible and documented to ensure data provenance.</p>
+<p>This API offers you the ability to order data using specific temporal and spatial filters. These options can be requested in a single access command without the need to script against our data directory structure. See the <a class="reference external" href="https://nsidc.org/support/how/how-do-i-programmatically-request-data-services">programmatic access guide</a> for more information on API options.</p>
+<div class="section" id="create-the-data-request-api-endpoint">
+<h4>Create the data request API endpoint<a class="headerlink" href="#create-the-data-request-api-endpoint" title="Permalink to this headline">¶</a></h4>
+<p>Programmatic API requests are formatted as HTTPS URLs that contain key-value-pairs specifying the service operations that we specified above. We will first create a string of key-value-pairs from our data dictionary and we’ll feed those into our API endpoint. This API endpoint can be executed via command line, a web browser, or in Python below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Set NSIDC data access base URL</span>
+<span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://n5eil02u.ecs.nsidc.org/egi/request&#39;</span>
+
+<span class="c1">#Set the request mode to asynchronous and set page number</span>
+
+<span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;request_mode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;async&#39;</span>
+<span class="n">param_dict</span><span class="p">[</span><span class="s1">&#39;agent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;NO&#39;</span>
+
+<span class="n">param_string</span> <span class="o">=</span> <span class="s1">&#39;&amp;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{!s}</span><span class="s2">=</span><span class="si">{!r}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">param_dict</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="c1"># Convert param_dict to string</span>
+<span class="n">param_string</span> <span class="o">=</span> <span class="n">param_string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="c1"># Remove quotes</span>
+
+<span class="n">api_list</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}</span><span class="s1">?</span><span class="si">{</span><span class="n">param_string</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">api_request</span> <span class="o">=</span> <span class="n">api_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">api_request</span><span class="p">)</span> <span class="c1"># Print API base URL + request parameters</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://n5eil02u.ecs.nsidc.org/egi/request?short_name=SNEX17_GPR&amp;version=2&amp;polygon=-108.2352445938561,38.98556907427165,-107.85284607930835,38.978765032966244,-107.85494925720668,39.10596902171742,-108.22772795408136,39.11294532581687,-108.2352445938561,38.98556907427165&amp;temporal=2017-01-01T00:00:00Z,2017-12-31T23:59:59Z&amp;request_mode=async&amp;agent=NO
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="input-earthdata-login-credentials">
+<h4>Input Earthdata Login credentials<a class="headerlink" href="#input-earthdata-login-credentials" title="Permalink to this headline">¶</a></h4>
+<p>An Earthdata Login account is required to access data from the NSIDC DAAC. If you do not already have an Earthdata Login account, visit <a class="reference external" href="http://urs.earthdata.nasa.gov">http://urs.earthdata.nasa.gov</a> to register.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start authenticated session with Earthdata Loging to allow for data downloads:</span>
+
+<span class="k">def</span> <span class="nf">setup_earthdata_login_auth</span><span class="p">(</span><span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">&#39;urs.earthdata.nasa.gov&#39;</span><span class="p">):</span>
+    <span class="n">netrc_name</span> <span class="o">=</span> <span class="s2">&quot;_netrc&quot;</span> <span class="k">if</span> <span class="n">system</span><span class="p">()</span><span class="o">==</span><span class="s2">&quot;Windows&quot;</span> <span class="k">else</span> <span class="s2">&quot;.netrc&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">username</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">password</span> <span class="o">=</span> <span class="n">netrc</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">join</span><span class="p">(</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~&#39;</span><span class="p">),</span> <span class="n">netrc_name</span><span class="p">))</span><span class="o">.</span><span class="n">authenticators</span><span class="p">(</span><span class="n">endpoint</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">FileNotFoundError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please provide your Earthdata Login credentials for access.&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your info will only be passed to </span><span class="si">%s</span><span class="s1"> and will not be exposed in Jupyter.&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">endpoint</span><span class="p">))</span>
+        <span class="n">username</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Username: &#39;</span><span class="p">)</span>
+        <span class="n">password</span> <span class="o">=</span> <span class="n">getpass</span><span class="p">(</span><span class="s1">&#39;Password: &#39;</span><span class="p">)</span>
+    <span class="n">manager</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">HTTPPasswordMgrWithDefaultRealm</span><span class="p">()</span>
+    <span class="n">manager</span><span class="o">.</span><span class="n">add_password</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">endpoint</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+    <span class="n">auth</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">HTTPBasicAuthHandler</span><span class="p">(</span><span class="n">manager</span><span class="p">)</span>
+    <span class="n">jar</span> <span class="o">=</span> <span class="n">CookieJar</span><span class="p">()</span>
+    <span class="n">processor</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">HTTPCookieProcessor</span><span class="p">(</span><span class="n">jar</span><span class="p">)</span>
+    <span class="n">opener</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">auth</span><span class="p">,</span> <span class="n">processor</span><span class="p">)</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">install_opener</span><span class="p">(</span><span class="n">opener</span><span class="p">)</span>
+
+<span class="n">setup_earthdata_login_auth</span><span class="p">(</span><span class="n">endpoint</span><span class="o">=</span><span class="s2">&quot;urs.earthdata.nasa.gov&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="download-data">
+<h4>Download data<a class="headerlink" href="#download-data" title="Permalink to this headline">¶</a></h4>
+<p>Download data using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library. The data will be downloaded directly to this directory in a new Outputs folder. The progress of each order will be reported.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">request_nsidc_data</span><span class="p">(</span><span class="n">API_request</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Performs a data customization and access request from NSIDC&#39;s API/</span>
+<span class="sd">    Creates an output folder in the working directory if one does not already exist.</span>
+<span class="sd">    </span>
+<span class="sd">    :API_request: NSIDC API endpoint; see https://nsidc.org/support/how/how-do-i-programmatically-request-data-services for more info</span>
+<span class="sd">    on how to configure the API request.</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">path</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;/Outputs&#39;</span><span class="p">)</span> <span class="c1"># Create an output folder if the folder does not already exist.</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        
+    <span class="n">base_url</span> <span class="o">=</span> <span class="s1">&#39;https://n5eil02u.ecs.nsidc.org/egi/request&#39;</span>
+
+    
+    <span class="n">r</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">API_request</span><span class="p">)</span>
+    <span class="n">esir_root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">orderlist</span> <span class="o">=</span> <span class="p">[]</span>   <span class="c1"># Look up order ID</span>
+    <span class="k">for</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">esir_root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;./order/&quot;</span><span class="p">):</span>
+        <span class="n">orderlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">order</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">orderID</span> <span class="o">=</span> <span class="n">orderlist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">statusURL</span> <span class="o">=</span> <span class="n">base_url</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">orderID</span> <span class="c1"># Create status URL</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Order status URL: &#39;</span><span class="p">,</span> <span class="n">statusURL</span><span class="p">)</span>
+    <span class="n">request_response</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">statusURL</span><span class="p">)</span> <span class="c1"># Find order status  </span>
+    <span class="n">request_root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">request_response</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+    <span class="n">statuslist</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">status</span> <span class="ow">in</span> <span class="n">request_root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;./requestStatus/&quot;</span><span class="p">):</span>
+        <span class="n">statuslist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">status</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">statuslist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">while</span> <span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;pending&#39;</span> <span class="ow">or</span> <span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;processing&#39;</span><span class="p">:</span> <span class="c1">#Continue loop while request is still processing</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Job status is &#39;</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span><span class="s1">&#39;. Trying again.&#39;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">loop_response</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">statusURL</span><span class="p">)</span>
+        <span class="n">loop_root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">loop_response</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+        <span class="n">statuslist</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#find status</span>
+        <span class="k">for</span> <span class="n">status</span> <span class="ow">in</span> <span class="n">loop_root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;./requestStatus/&quot;</span><span class="p">):</span>
+            <span class="n">statuslist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">status</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="n">statuslist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;pending&#39;</span> <span class="ow">or</span> <span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;processing&#39;</span><span class="p">:</span>
+            <span class="k">continue</span>
+    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;complete_with_errors&#39;</span> <span class="ow">or</span> <span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;failed&#39;</span><span class="p">:</span> <span class="c1"># Provide complete_with_errors error message:</span>
+        <span class="n">messagelist</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="n">loop_root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&quot;./processInfo/&quot;</span><span class="p">):</span>
+            <span class="n">messagelist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Job status is &#39;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;error messages:&#39;</span><span class="p">)</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">messagelist</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;complete&#39;</span> <span class="ow">or</span> <span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;complete_with_errors&#39;</span><span class="p">:</span><span class="c1"># Download zipped order if status is complete or complete_with_errors</span>
+        <span class="n">downloadURL</span> <span class="o">=</span> <span class="s1">&#39;https://n5eil02u.ecs.nsidc.org/esir/&#39;</span> <span class="o">+</span> <span class="n">orderID</span> <span class="o">+</span> <span class="s1">&#39;.zip&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Job status is &#39;</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Zip download URL: &#39;</span><span class="p">,</span> <span class="n">downloadURL</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Beginning download of zipped output...&#39;</span><span class="p">)</span>
+        <span class="n">zip_response</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">downloadURL</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">zip_response</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span> <span class="k">as</span> <span class="n">z</span><span class="p">:</span>
+            <span class="n">z</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Download is complete.&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Request failed.&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Clean up Outputs folder by removing individual granule folders </span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">topdown</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">shutil</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">),</span> <span class="n">path</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+                <span class="k">pass</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">dirs</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+    <span class="k">return</span>  
+
+<span class="n">request_nsidc_data</span><span class="p">(</span><span class="n">api_request</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Order status URL:  https://n5eil02u.ecs.nsidc.org/egi/request/5000001156652
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Job status is  complete
+Zip download URL:  https://n5eil02u.ecs.nsidc.org/esir/5000001156652.zip
+Beginning download of zipped output...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Download is complete.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="read-in-snowex-data-and-buffer-points-around-snotel-location">
+<h2>Read in SnowEx data and buffer points around Snotel location<a class="headerlink" href="#read-in-snowex-data-and-buffer-points-around-snotel-location" title="Permalink to this headline">¶</a></h2>
+<p>This SnowEx data set is provided in CSV. A <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/overview.html">Pandas DataFrame</a> is used to easily read in data. For these next steps, just one day’s worth of data will be selected from this file and the coincident ASO and MODIS data will be selected.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snowex_path</span> <span class="o">=</span> <span class="s1">&#39;./Outputs/SnowEx17_GPR_Version2_Week1.csv&#39;</span> <span class="c1"># Define local filepath</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">snowex_path</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span> 
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>collection</th>
+      <th>trace</th>
+      <th>long</th>
+      <th>lat</th>
+      <th>elev</th>
+      <th>twtt</th>
+      <th>Thickness</th>
+      <th>SWE</th>
+      <th>x</th>
+      <th>y</th>
+      <th>UTM_Zone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>GPR_0042_020817</td>
+      <td>2581</td>
+      <td>-108.066856</td>
+      <td>39.043146</td>
+      <td>3240.2</td>
+      <td>5.89</td>
+      <td>0.692</td>
+      <td>225</td>
+      <td>753854.880092</td>
+      <td>4.325659e+06</td>
+      <td>12 S</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>GPR_0042_020817</td>
+      <td>2582</td>
+      <td>-108.066856</td>
+      <td>39.043146</td>
+      <td>3240.2</td>
+      <td>5.89</td>
+      <td>0.692</td>
+      <td>225</td>
+      <td>753854.899385</td>
+      <td>4.325660e+06</td>
+      <td>12 S</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>GPR_0042_020817</td>
+      <td>2583</td>
+      <td>-108.066856</td>
+      <td>39.043146</td>
+      <td>3240.2</td>
+      <td>5.87</td>
+      <td>0.690</td>
+      <td>224</td>
+      <td>753854.918686</td>
+      <td>4.325660e+06</td>
+      <td>12 S</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>GPR_0042_020817</td>
+      <td>2584</td>
+      <td>-108.066855</td>
+      <td>39.043146</td>
+      <td>3240.2</td>
+      <td>5.86</td>
+      <td>0.689</td>
+      <td>224</td>
+      <td>753854.937987</td>
+      <td>4.325660e+06</td>
+      <td>12 S</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>GPR_0042_020817</td>
+      <td>2585</td>
+      <td>-108.066855</td>
+      <td>39.043147</td>
+      <td>3240.2</td>
+      <td>5.84</td>
+      <td>0.686</td>
+      <td>223</td>
+      <td>753854.957280</td>
+      <td>4.325660e+06</td>
+      <td>12 S</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="convert-to-time-values-and-extract-a-single-day">
+<h3>Convert to time values and extract a single day<a class="headerlink" href="#convert-to-time-values-and-extract-a-single-day" title="Permalink to this headline">¶</a></h3>
+<p>The collection date needs to be extracted from the <code class="docutils literal notranslate"><span class="pre">collection</span></code> value and a new dataframe will be generated as a subset of the original based on a single day:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">collection</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%m</span><span class="si">%d</span><span class="s2">%y&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+<span class="n">df_subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2017-02-08&#39;</span><span class="p">]</span> <span class="c1"># subset original dataframe and only select this date</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>collection</th>
+      <th>trace</th>
+      <th>long</th>
+      <th>lat</th>
+      <th>elev</th>
+      <th>twtt</th>
+      <th>Thickness</th>
+      <th>SWE</th>
+      <th>x</th>
+      <th>y</th>
+      <th>UTM_Zone</th>
+      <th>date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>GPR_0042_020817</td>
+      <td>2581</td>
+      <td>-108.066856</td>
+      <td>39.043146</td>
+      <td>3240.20</td>
+      <td>5.89</td>
+      <td>0.692</td>
+      <td>225</td>
+      <td>753854.880092</td>
+      <td>4.325659e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+    </tr>
+    <tr>
+      <th>109172</th>
+      <td>GPR_0043_020817</td>
+      <td>6360</td>
+      <td>-108.063209</td>
+      <td>39.049202</td>
+      <td>3248.49</td>
+      <td>11.49</td>
+      <td>1.350</td>
+      <td>439</td>
+      <td>754148.853700</td>
+      <td>4.326342e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+    </tr>
+    <tr>
+      <th>109173</th>
+      <td>GPR_0043_020817</td>
+      <td>6361</td>
+      <td>-108.063209</td>
+      <td>39.049202</td>
+      <td>3248.50</td>
+      <td>11.56</td>
+      <td>1.358</td>
+      <td>441</td>
+      <td>754148.882549</td>
+      <td>4.326342e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+    </tr>
+    <tr>
+      <th>109174</th>
+      <td>GPR_0043_020817</td>
+      <td>6362</td>
+      <td>-108.063208</td>
+      <td>39.049202</td>
+      <td>3248.50</td>
+      <td>11.62</td>
+      <td>1.365</td>
+      <td>444</td>
+      <td>754148.911407</td>
+      <td>4.326342e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+    </tr>
+    <tr>
+      <th>109175</th>
+      <td>GPR_0043_020817</td>
+      <td>6363</td>
+      <td>-108.063208</td>
+      <td>39.049202</td>
+      <td>3248.50</td>
+      <td>11.64</td>
+      <td>1.368</td>
+      <td>445</td>
+      <td>754148.947466</td>
+      <td>4.326342e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="convert-to-geopandas-dataframe-to-provide-point-geometry">
+<h4>Convert to Geopandas dataframe to provide point geometry<a class="headerlink" href="#convert-to-geopandas-dataframe-to-provide-point-geometry" title="Permalink to this headline">¶</a></h4>
+<p>According to the SnowEx documentation, the data are available in UTM Zone 12N so we’ll set to this projection so that we can buffer in meters in the next step:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf_utm</span><span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">df_subset</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">df_subset</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">df_subset</span><span class="o">.</span><span class="n">y</span><span class="p">),</span> <span class="n">crs</span><span class="o">=</span><span class="s1">&#39;EPSG:32612&#39;</span><span class="p">)</span>
+<span class="n">gdf_utm</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>collection</th>
+      <th>trace</th>
+      <th>long</th>
+      <th>lat</th>
+      <th>elev</th>
+      <th>twtt</th>
+      <th>Thickness</th>
+      <th>SWE</th>
+      <th>x</th>
+      <th>y</th>
+      <th>UTM_Zone</th>
+      <th>date</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>GPR_0042_020817</td>
+      <td>2581</td>
+      <td>-108.066856</td>
+      <td>39.043146</td>
+      <td>3240.20</td>
+      <td>5.89</td>
+      <td>0.692</td>
+      <td>225</td>
+      <td>753854.880092</td>
+      <td>4.325659e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+      <td>POINT (753854.880 4325659.484)</td>
+    </tr>
+    <tr>
+      <th>109172</th>
+      <td>GPR_0043_020817</td>
+      <td>6360</td>
+      <td>-108.063209</td>
+      <td>39.049202</td>
+      <td>3248.49</td>
+      <td>11.49</td>
+      <td>1.350</td>
+      <td>439</td>
+      <td>754148.853700</td>
+      <td>4.326342e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+      <td>POINT (754148.854 4326341.915)</td>
+    </tr>
+    <tr>
+      <th>109173</th>
+      <td>GPR_0043_020817</td>
+      <td>6361</td>
+      <td>-108.063209</td>
+      <td>39.049202</td>
+      <td>3248.50</td>
+      <td>11.56</td>
+      <td>1.358</td>
+      <td>441</td>
+      <td>754148.882549</td>
+      <td>4.326342e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+      <td>POINT (754148.883 4326341.916)</td>
+    </tr>
+    <tr>
+      <th>109174</th>
+      <td>GPR_0043_020817</td>
+      <td>6362</td>
+      <td>-108.063208</td>
+      <td>39.049202</td>
+      <td>3248.50</td>
+      <td>11.62</td>
+      <td>1.365</td>
+      <td>444</td>
+      <td>754148.911407</td>
+      <td>4.326342e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+      <td>POINT (754148.911 4326341.917)</td>
+    </tr>
+    <tr>
+      <th>109175</th>
+      <td>GPR_0043_020817</td>
+      <td>6363</td>
+      <td>-108.063208</td>
+      <td>39.049202</td>
+      <td>3248.50</td>
+      <td>11.64</td>
+      <td>1.368</td>
+      <td>445</td>
+      <td>754148.947466</td>
+      <td>4.326342e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+      <td>POINT (754148.947 4326341.918)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="additional-data-imagery-services">
+<h3>Additional data imagery services<a class="headerlink" href="#additional-data-imagery-services" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="nasa-worldview-and-the-global-browse-imagery-service">
+<h4>NASA Worldview and the Global Browse Imagery Service<a class="headerlink" href="#nasa-worldview-and-the-global-browse-imagery-service" title="Permalink to this headline">¶</a></h4>
+<p>NASA’s EOSDIS Worldview mapping application provides the capability to interactively browse over 900 global, full-resolution satellite imagery layers and then download the underlying data. Many of the available imagery layers are updated within three hours of observation, essentially showing the entire Earth as it looks “right now.”</p>
+<p>According to the <a class="reference external" href="https://nsidc.org/data/mod10a1">MOD10A1 landing page</a>, snow cover imagery layers from this data set are available through NASA Worldview. This layer can be downloaded as various image files including GeoTIFF using the snapshot feature at the top right of the page. This link presents the MOD10A1 NDSI layer over our time and area of interest: <a class="reference external" href="https://go.nasa.gov/35CgYMd">https://go.nasa.gov/35CgYMd</a>.</p>
+<p>Additionally, the NASA Global Browse Imagery Service provides up to date, full resolution imagery for select NSIDC DAAC data sets as web services including WMTS, WMS, KML, and more. These layers can be accessed in GIS applications following guidance on the <a class="reference external" href="https://wiki.earthdata.nasa.gov/display/GIBS/Geographic+Information+System+%28GIS%29+Usage">GIBS documentation pages</a>.</p>
+</div>
+</div>
+<div class="section" id="export-dataframe-to-shapefile">
+<h3>Export dataframe to Shapefile<a class="headerlink" href="#export-dataframe-to-shapefile" title="Permalink to this headline">¶</a></h3>
+<p>Finally, the dataframe can be exported as an Esri shapefile for further analysis in GIS:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf_buffer</span> <span class="o">=</span> <span class="n">gdf_buffer</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+<span class="n">gdf_buffer</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s1">&#39;snow-data-20170208.shp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">9768</span><span class="n">ad286398</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gdf_buffer</span> <span class="o">=</span> <span class="n">gdf_buffer</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">gdf_buffer</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s1">&#39;snow-data-20170208.shp&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;gdf_buffer&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/nsidc-access"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../geospatial/SNOTEL_query.html" title="previous page">Dynamic Query of SNOTEL data</a>
+    <a class='right-next' id="next-link" href="../database/index.html" title="next page">SnowEx Database</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By eScience Institute, University of Washington<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QM84T4SB76"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-QM84T4SB76');
+                </script>
+
+  </body>
+</html>

@@ -286,6 +286,11 @@
        </li>
       </ul>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../nsidc-access/nsidc-data-access.html">
+       Accessing SnowEx Data at the NSIDC DAAC
+      </a>
+     </li>
      <li class="toctree-l3 current active has-children">
       <a class="reference internal" href="index.html">
        SnowEx Database
@@ -718,309 +723,7 @@ snow depths dataset. This tutorial shows how easy it is to get at that data in t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">OperationalError</span><span class="g g-Whitespace">                          </span>Traceback (most recent call last)
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/base.py</span> in <span class="ni">_wrap_pool_connect</span><span class="nt">(self, fn, connection)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2335</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2336</span>             <span class="k">return</span> <span class="n">fn</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">2337</span>         <span class="k">except</span> <span class="n">dialect</span><span class="o">.</span><span class="n">dbapi</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py</span> in <span class="ni">connect</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">363</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_use_threadlocal</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">364</span>             <span class="k">return</span> <span class="n">_ConnectionFairy</span><span class="o">.</span><span class="n">_checkout</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">365</span> 
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py</span> in <span class="ni">_checkout</span><span class="nt">(cls, pool, threadconns, fairy)</span>
-<span class="g g-Whitespace">    </span><span class="mi">777</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">fairy</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">778</span>             <span class="n">fairy</span> <span class="o">=</span> <span class="n">_ConnectionRecord</span><span class="o">.</span><span class="n">checkout</span><span class="p">(</span><span class="n">pool</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">779</span> 
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py</span> in <span class="ni">checkout</span><span class="nt">(cls, pool)</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span>     <span class="k">def</span> <span class="nf">checkout</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">pool</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">495</span>         <span class="n">rec</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">_do_get</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">496</span>         <span class="k">try</span><span class="p">:</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/impl.py</span> in <span class="ni">_do_get</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span>                 <span class="k">with</span> <span class="n">util</span><span class="o">.</span><span class="n">safe_reraise</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">140</span>                     <span class="bp">self</span><span class="o">.</span><span class="n">_dec_overflow</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span>         <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py</span> in <span class="ni">__exit__</span><span class="nt">(self, type_, value, traceback)</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span>             <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">warn_only</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">68</span>                 <span class="n">compat</span><span class="o">.</span><span class="n">raise_</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span>                     <span class="n">exc_value</span><span class="p">,</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/compat.py</span> in <span class="ni">raise_</span><span class="nt">(***failed resolving arguments***)</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">182</span>             <span class="k">raise</span> <span class="n">exception</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>         <span class="k">finally</span><span class="p">:</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/impl.py</span> in <span class="ni">_do_get</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span>             <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">137</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_create_connection</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span>             <span class="k">except</span><span class="p">:</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py</span> in <span class="ni">_create_connection</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span> 
-<span class="ne">--&gt; </span><span class="mi">309</span>         <span class="k">return</span> <span class="n">_ConnectionRecord</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span> 
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py</span> in <span class="ni">__init__</span><span class="nt">(self, pool, connect)</span>
-<span class="g g-Whitespace">    </span><span class="mi">439</span>         <span class="k">if</span> <span class="n">connect</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">440</span>             <span class="bp">self</span><span class="o">.</span><span class="n">__connect</span><span class="p">(</span><span class="n">first_connect_check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">441</span>         <span class="bp">self</span><span class="o">.</span><span class="n">finalize_callback</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py</span> in <span class="ni">__connect</span><span class="nt">(self, first_connect_check)</span>
-<span class="g g-Whitespace">    </span><span class="mi">660</span>             <span class="k">with</span> <span class="n">util</span><span class="o">.</span><span class="n">safe_reraise</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">661</span>                 <span class="n">pool</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Error on connect(): </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">662</span>         <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py</span> in <span class="ni">__exit__</span><span class="nt">(self, type_, value, traceback)</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span>             <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">warn_only</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">68</span>                 <span class="n">compat</span><span class="o">.</span><span class="n">raise_</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span>                     <span class="n">exc_value</span><span class="p">,</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/compat.py</span> in <span class="ni">raise_</span><span class="nt">(***failed resolving arguments***)</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">182</span>             <span class="k">raise</span> <span class="n">exception</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>         <span class="k">finally</span><span class="p">:</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py</span> in <span class="ni">__connect</span><span class="nt">(self, first_connect_check)</span>
-<span class="g g-Whitespace">    </span><span class="mi">655</span>             <span class="bp">self</span><span class="o">.</span><span class="n">starttime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">656</span>             <span class="n">connection</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">_invoke_creator</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">657</span>             <span class="n">pool</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Created new connection </span><span class="si">%r</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">connection</span><span class="p">)</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py</span> in <span class="ni">connect</span><span class="nt">(connection_record)</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span>                             <span class="k">return</span> <span class="n">connection</span>
-<span class="ne">--&gt; </span><span class="mi">114</span>                 <span class="k">return</span> <span class="n">dialect</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">*</span><span class="n">cargs</span><span class="p">,</span> <span class="o">**</span><span class="n">cparams</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span> 
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/default.py</span> in <span class="ni">connect</span><span class="nt">(self, *cargs, **cparams)</span>
-<span class="g g-Whitespace">    </span><span class="mi">507</span>         <span class="c1"># inherits the docstring from interfaces.Dialect.connect</span>
-<span class="ne">--&gt; </span><span class="mi">508</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dbapi</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">*</span><span class="n">cargs</span><span class="p">,</span> <span class="o">**</span><span class="n">cparams</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">509</span> 
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/psycopg2/__init__.py</span> in <span class="ni">connect</span><span class="nt">(dsn, connection_factory, cursor_factory, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span>     <span class="n">dsn</span> <span class="o">=</span> <span class="n">_ext</span><span class="o">.</span><span class="n">make_dsn</span><span class="p">(</span><span class="n">dsn</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">122</span>     <span class="n">conn</span> <span class="o">=</span> <span class="n">_connect</span><span class="p">(</span><span class="n">dsn</span><span class="p">,</span> <span class="n">connection_factory</span><span class="o">=</span><span class="n">connection_factory</span><span class="p">,</span> <span class="o">**</span><span class="n">kwasync</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span>     <span class="k">if</span> <span class="n">cursor_factory</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="ne">OperationalError</span>: could not connect to server: Connection refused
-	<span class="n">Is</span> <span class="n">the</span> <span class="n">server</span> <span class="n">running</span> <span class="n">on</span> <span class="n">host</span> <span class="s2">&quot;52.32.183.144&quot;</span> <span class="ow">and</span> <span class="n">accepting</span>
-	<span class="n">TCP</span><span class="o">/</span><span class="n">IP</span> <span class="n">connections</span> <span class="n">on</span> <span class="n">port</span> 5432<span class="o">?</span>
-
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">OperationalError</span><span class="g g-Whitespace">                          </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mf">9e4029</span><span class="n">c541f0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> 
-<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="c1"># Execute the query and convert to geopandas in one handy function</span>
-<span class="ne">---&gt; </span><span class="mi">20</span> <span class="n">df</span> <span class="o">=</span> <span class="n">query_to_geopandas</span><span class="p">(</span><span class="n">qry</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> 
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="c1"># how many did we retrieve?</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/snowexsql/conversions.py</span> in <span class="ni">query_to_geopandas</span><span class="nt">(query, engine)</span>
-<span class="g g-Whitespace">    </span><span class="mi">158</span> 
-<span class="g g-Whitespace">    </span><span class="mi">159</span>     <span class="c1"># Get dataframe from geopandas using the query and engine</span>
-<span class="ne">--&gt; </span><span class="mi">160</span>     <span class="n">df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="o">.</span><span class="n">from_postgis</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">161</span> 
-<span class="g g-Whitespace">    </span><span class="mi">162</span>     <span class="k">return</span> <span class="n">df</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/geopandas/geodataframe.py</span> in <span class="ni">from_postgis</span><span class="nt">(cls, sql, con, geom_col, crs, index_col, coerce_float, parse_dates, params, chunksize)</span>
-<span class="g g-Whitespace">    </span><span class="mi">657</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">658</span><span class="sd"> </span>
-<span class="ne">--&gt; </span><span class="mi">659</span><span class="sd">         df = geopandas.io.sql._read_postgis(</span>
-<span class="g g-Whitespace">    </span><span class="mi">660</span><span class="sd">             sql,</span>
-<span class="g g-Whitespace">    </span><span class="mi">661</span><span class="sd">             con,</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/geopandas/io/sql.py</span> in <span class="ni">_read_postgis</span><span class="nt">(sql, con, geom_col, crs, index_col, coerce_float, parse_dates, params, chunksize)</span>
-<span class="g g-Whitespace">    </span><span class="mi">152</span><span class="sd">     if chunksize is None:</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span><span class="sd">         # read all in one chunk and return a single GeoDataFrame</span>
-<span class="ne">--&gt; </span><span class="mi">154</span><span class="sd">         df = pd.read_sql(</span>
-<span class="g g-Whitespace">    </span><span class="mi">155</span><span class="sd">             sql,</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="sd">             con,</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/pandas/io/sql.py</span> in <span class="ni">read_sql</span><span class="nt">(sql, con, index_col, coerce_float, params, parse_dates, columns, chunksize)</span>
-<span class="g g-Whitespace">    </span><span class="mi">519</span><span class="sd">         )</span>
-<span class="g g-Whitespace">    </span><span class="mi">520</span><span class="sd">     else:</span>
-<span class="ne">--&gt; </span><span class="mi">521</span><span class="sd">         return pandas_sql.read_query(</span>
-<span class="g g-Whitespace">    </span><span class="mi">522</span><span class="sd">             sql,</span>
-<span class="g g-Whitespace">    </span><span class="mi">523</span><span class="sd">             index_col=index_col,</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/pandas/io/sql.py</span> in <span class="ni">read_query</span><span class="nt">(self, sql, index_col, coerce_float, parse_dates, params, chunksize)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1306</span><span class="sd">         args = _convert_params(sql, params)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1307</span><span class="sd"> </span>
-<span class="ne">-&gt; </span><span class="mi">1308</span><span class="sd">         result = self.execute(*args)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1309</span><span class="sd">         columns = result.keys()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1310</span><span class="sd"> </span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/pandas/io/sql.py</span> in <span class="ni">execute</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1174</span><span class="sd">     def execute(self, *args, **kwargs):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1175</span><span class="sd">         &quot;&quot;&quot;</span><span class="n">Simple</span> <span class="n">passthrough</span> <span class="n">to</span> <span class="n">SQLAlchemy</span> <span class="n">connectable</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1176</span><span class="s2">         return self.connectable.execution_options().execute(*args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1177</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1178</span><span class="s2">     def read_table(</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/base.py</span> in <span class="ni">execute</span><span class="nt">(self, statement, *multiparams, **params)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2232</span><span class="s2">         &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2233</span> 
-<span class="ne">-&gt; </span><span class="mi">2234</span>         <span class="n">connection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_contextual_connect</span><span class="p">(</span><span class="n">close_with_result</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2235</span>         <span class="k">return</span> <span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="o">*</span><span class="n">multiparams</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2236</span> 
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/base.py</span> in <span class="ni">_contextual_connect</span><span class="nt">(self, close_with_result, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2300</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection_cls</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2301</span>             <span class="bp">self</span><span class="p">,</span>
-<span class="ne">-&gt; </span><span class="mi">2302</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_wrap_pool_connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="o">.</span><span class="n">connect</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">2303</span>             <span class="n">close_with_result</span><span class="o">=</span><span class="n">close_with_result</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2304</span>             <span class="o">**</span><span class="n">kwargs</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/base.py</span> in <span class="ni">_wrap_pool_connect</span><span class="nt">(self, fn, connection)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2337</span>         <span class="k">except</span> <span class="n">dialect</span><span class="o">.</span><span class="n">dbapi</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2338</span>             <span class="k">if</span> <span class="n">connection</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2339</span>                 <span class="n">Connection</span><span class="o">.</span><span class="n">_handle_dbapi_exception_noconnection</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">2340</span>                     <span class="n">e</span><span class="p">,</span> <span class="n">dialect</span><span class="p">,</span> <span class="bp">self</span>
-<span class="g g-Whitespace">   </span><span class="mi">2341</span>                 <span class="p">)</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/base.py</span> in <span class="ni">_handle_dbapi_exception_noconnection</span><span class="nt">(cls, e, dialect, engine)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1581</span>             <span class="n">util</span><span class="o">.</span><span class="n">raise_</span><span class="p">(</span><span class="n">newraise</span><span class="p">,</span> <span class="n">with_traceback</span><span class="o">=</span><span class="n">exc_info</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">from_</span><span class="o">=</span><span class="n">e</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1582</span>         <span class="k">elif</span> <span class="n">should_wrap</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1583</span>             <span class="n">util</span><span class="o">.</span><span class="n">raise_</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1584</span>                 <span class="n">sqlalchemy_exception</span><span class="p">,</span> <span class="n">with_traceback</span><span class="o">=</span><span class="n">exc_info</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">from_</span><span class="o">=</span><span class="n">e</span>
-<span class="g g-Whitespace">   </span><span class="mi">1585</span>             <span class="p">)</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/compat.py</span> in <span class="ni">raise_</span><span class="nt">(***failed resolving arguments***)</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span> 
-<span class="g g-Whitespace">    </span><span class="mi">181</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">182</span>             <span class="k">raise</span> <span class="n">exception</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>         <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span>             <span class="c1"># credit to</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/base.py</span> in <span class="ni">_wrap_pool_connect</span><span class="nt">(self, fn, connection)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2334</span>         <span class="n">dialect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dialect</span>
-<span class="g g-Whitespace">   </span><span class="mi">2335</span>         <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2336</span>             <span class="k">return</span> <span class="n">fn</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">2337</span>         <span class="k">except</span> <span class="n">dialect</span><span class="o">.</span><span class="n">dbapi</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">2338</span>             <span class="k">if</span> <span class="n">connection</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py</span> in <span class="ni">connect</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">362</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">363</span><span class="sd">         if not self._use_threadlocal:</span>
-<span class="ne">--&gt; </span><span class="mi">364</span><span class="sd">             return _ConnectionFairy._checkout(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">365</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span><span class="sd">         try:</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py</span> in <span class="ni">_checkout</span><span class="nt">(cls, pool, threadconns, fairy)</span>
-<span class="g g-Whitespace">    </span><span class="mi">776</span><span class="sd">     def _checkout(cls, pool, threadconns=None, fairy=None):</span>
-<span class="g g-Whitespace">    </span><span class="mi">777</span><span class="sd">         if not fairy:</span>
-<span class="ne">--&gt; </span><span class="mi">778</span><span class="sd">             fairy = _ConnectionRecord.checkout(pool)</span>
-<span class="g g-Whitespace">    </span><span class="mi">779</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">780</span><span class="sd">             fairy._pool = pool</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py</span> in <span class="ni">checkout</span><span class="nt">(cls, pool)</span>
-<span class="g g-Whitespace">    </span><span class="mi">493</span><span class="sd">     @classmethod</span>
-<span class="g g-Whitespace">    </span><span class="mi">494</span><span class="sd">     def checkout(cls, pool):</span>
-<span class="ne">--&gt; </span><span class="mi">495</span><span class="sd">         rec = pool._do_get()</span>
-<span class="g g-Whitespace">    </span><span class="mi">496</span><span class="sd">         try:</span>
-<span class="g g-Whitespace">    </span><span class="mi">497</span><span class="sd">             dbapi_connection = rec.get_connection()</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/impl.py</span> in <span class="ni">_do_get</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span><span class="sd">             except:</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span><span class="sd">                 with util.safe_reraise():</span>
-<span class="ne">--&gt; </span><span class="mi">140</span><span class="sd">                     self._dec_overflow()</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span><span class="sd">         else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span><span class="sd">             return self._do_get()</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py</span> in <span class="ni">__exit__</span><span class="nt">(self, type_, value, traceback)</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span><span class="sd">             self._exc_info = None  # remove potential circular references</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span><span class="sd">             if not self.warn_only:</span>
-<span class="ne">---&gt; </span><span class="mi">68</span><span class="sd">                 compat.raise_(</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span><span class="sd">                     exc_value,</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span><span class="sd">                     with_traceback=exc_tb,</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/compat.py</span> in <span class="ni">raise_</span><span class="nt">(***failed resolving arguments***)</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span><span class="sd">         try:</span>
-<span class="ne">--&gt; </span><span class="mi">182</span><span class="sd">             raise exception</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span><span class="sd">         finally:</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span><span class="sd">             # credit to</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/impl.py</span> in <span class="ni">_do_get</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">135</span><span class="sd">         if self._inc_overflow():</span>
-<span class="g g-Whitespace">    </span><span class="mi">136</span><span class="sd">             try:</span>
-<span class="ne">--&gt; </span><span class="mi">137</span><span class="sd">                 return self._create_connection()</span>
-<span class="g g-Whitespace">    </span><span class="mi">138</span><span class="sd">             except:</span>
-<span class="g g-Whitespace">    </span><span class="mi">139</span><span class="sd">                 with util.safe_reraise():</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py</span> in <span class="ni">_create_connection</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">307</span><span class="sd">         &quot;&quot;&quot;</span><span class="n">Called</span> <span class="n">by</span> <span class="n">subclasses</span> <span class="n">to</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">ConnectionRecord</span><span class="o">.</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span><span class="s2"> </span>
-<span class="ne">--&gt; </span><span class="mi">309</span><span class="s2">         return _ConnectionRecord(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">311</span><span class="s2">     def _invalidate(self, connection, exception=None, _checkin=True):</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py</span> in <span class="ni">__init__</span><span class="nt">(self, pool, connect)</span>
-<span class="g g-Whitespace">    </span><span class="mi">438</span><span class="s2">         self.__pool = pool</span>
-<span class="g g-Whitespace">    </span><span class="mi">439</span><span class="s2">         if connect:</span>
-<span class="ne">--&gt; </span><span class="mi">440</span><span class="s2">             self.__connect(first_connect_check=True)</span>
-<span class="g g-Whitespace">    </span><span class="mi">441</span><span class="s2">         self.finalize_callback = deque()</span>
-<span class="g g-Whitespace">    </span><span class="mi">442</span><span class="s2"> </span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py</span> in <span class="ni">__connect</span><span class="nt">(self, first_connect_check)</span>
-<span class="g g-Whitespace">    </span><span class="mi">659</span><span class="s2">         except Exception as e:</span>
-<span class="g g-Whitespace">    </span><span class="mi">660</span><span class="s2">             with util.safe_reraise():</span>
-<span class="ne">--&gt; </span><span class="mi">661</span><span class="s2">                 pool.logger.debug(&quot;Error on connect(): </span><span class="si">%s</span><span class="s2">&quot;, e)</span>
-<span class="g g-Whitespace">    </span><span class="mi">662</span><span class="s2">         else:</span>
-<span class="g g-Whitespace">    </span><span class="mi">663</span><span class="s2">             if first_connect_check:</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py</span> in <span class="ni">__exit__</span><span class="nt">(self, type_, value, traceback)</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span><span class="s2">             self._exc_info = None  # remove potential circular references</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span><span class="s2">             if not self.warn_only:</span>
-<span class="ne">---&gt; </span><span class="mi">68</span><span class="s2">                 compat.raise_(</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span><span class="s2">                     exc_value,</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span><span class="s2">                     with_traceback=exc_tb,</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/util/compat.py</span> in <span class="ni">raise_</span><span class="nt">(***failed resolving arguments***)</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span><span class="s2">         try:</span>
-<span class="ne">--&gt; </span><span class="mi">182</span><span class="s2">             raise exception</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span><span class="s2">         finally:</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span><span class="s2">             # credit to</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/pool/base.py</span> in <span class="ni">__connect</span><span class="nt">(self, first_connect_check)</span>
-<span class="g g-Whitespace">    </span><span class="mi">654</span><span class="s2">         try:</span>
-<span class="g g-Whitespace">    </span><span class="mi">655</span><span class="s2">             self.starttime = time.time()</span>
-<span class="ne">--&gt; </span><span class="mi">656</span><span class="s2">             connection = pool._invoke_creator(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">657</span><span class="s2">             pool.logger.debug(&quot;Created new connection </span><span class="si">%r</span><span class="s2">&quot;, connection)</span>
-<span class="g g-Whitespace">    </span><span class="mi">658</span><span class="s2">             self.connection = connection</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/strategies.py</span> in <span class="ni">connect</span><span class="nt">(connection_record)</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span><span class="s2">                         if connection is not None:</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span><span class="s2">                             return connection</span>
-<span class="ne">--&gt; </span><span class="mi">114</span><span class="s2">                 return dialect.connect(*cargs, **cparams)</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span><span class="s2">             creator = pop_kwarg(&quot;creator&quot;, connect)</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/sqlalchemy/engine/default.py</span> in <span class="ni">connect</span><span class="nt">(self, *cargs, **cparams)</span>
-<span class="g g-Whitespace">    </span><span class="mi">506</span><span class="s2">     def connect(self, *cargs, **cparams):</span>
-<span class="g g-Whitespace">    </span><span class="mi">507</span><span class="s2">         # inherits the docstring from interfaces.Dialect.connect</span>
-<span class="ne">--&gt; </span><span class="mi">508</span><span class="s2">         return self.dbapi.connect(*cargs, **cparams)</span>
-<span class="g g-Whitespace">    </span><span class="mi">509</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span><span class="s2">     def create_connect_args(self, url):</span>
-
-<span class="nn">/srv/conda/envs/notebook/lib/python3.8/site-packages/psycopg2/__init__.py</span> in <span class="ni">connect</span><span class="nt">(dsn, connection_factory, cursor_factory, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span><span class="s2"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span><span class="s2">     dsn = _ext.make_dsn(dsn, **kwargs)</span>
-<span class="ne">--&gt; </span><span class="mi">122</span><span class="s2">     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span><span class="s2">     if cursor_factory is not None:</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span><span class="s2">         conn.cursor_factory = cursor_factory</span>
-
-<span class="ne">OperationalError</span>: (psycopg2.OperationalError) could not connect to server: Connection refused
-<span class="s2">	Is the server running on host &quot;52.32.183.144&quot; and accepting</span>
-<span class="s2">	TCP/IP connections on port 5432?</span>
-
-<span class="s2">(Background on this error at: http://sqlalche.me/e/13/e3q8)</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>304 records returned!
 </pre></div>
 </div>
 </div>
@@ -1046,6 +749,9 @@ snow depths dataset. This tutorial shows how easy it is to get at that data in t
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4_get_spiral_example_6_0.png" src="../../_images/4_get_spiral_example_6_0.png" />
+</div>
 </div>
 <p>Lets try to filter to get the data to show only a depth spiral.</p>
 <div class="cell docutils container">
@@ -1053,6 +759,11 @@ snow depths dataset. This tutorial shows how easy it is to get at that data in t
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let see what instruments are available </span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">instrument</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">PointData</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="s1">&#39;depth&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;mesa&#39;,), (&#39;magnaprobe&#39;,), (&#39;camera&#39;,), (&#39;pulse EKKO Pro multi-polarization 1 GHz GPR&#39;,), (&#39;pit ruler&#39;,)]
 </pre></div>
 </div>
 </div>
