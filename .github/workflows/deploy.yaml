@@ -23,7 +23,7 @@ jobs:
       # NOTE: change key "jupyterbook-N+1" to force rebuilding cache
       with:
         path: ./book/_build
-        key: jupyterbook-2
+        key: jupyterbook-3
 
     - name: Pull Docker Image
       run: |
@@ -37,7 +37,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-west-2
         role-to-assume: github-actions-role
-        role-duration-seconds: 900
+        role-duration-seconds: 1800
 
     - name: Build JupyterBook
       env:

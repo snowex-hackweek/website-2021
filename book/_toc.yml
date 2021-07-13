@@ -40,6 +40,7 @@
                 - file: tutorials/geospatial/raster
                 - file: tutorials/geospatial/vector
                 - file: tutorials/geospatial/SNOTEL_query
+            - file: tutorials/nsidc-access/nsidc-data-access
             - file: tutorials/database/index
               sections:
                 - file: tutorials/database/1_getting_started_example
@@ -54,6 +55,7 @@
             - file: tutorials/lidar/index
               sections:
                 - file: tutorials/lidar/ICESat2_tutorial
+                - file: tutorials/lidar/ASO_data_tutorial
             - file: tutorials/thermal-ir/index
               sections:
                 - file: tutorials/thermal-ir/thermal-ir-tutorial

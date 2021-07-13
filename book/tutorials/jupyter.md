@@ -1,5 +1,9 @@
 # GitHub, Git, JupyterHub
 
+## [JupyterHub login setup](../preliminary/jupyterhub)
+
+## [First time `git` setup](../preliminary/git)
+
 ## Git review
 
 Here we will do a quick refresher on the different commands you will be using
@@ -80,6 +84,10 @@ state of the repository including the complete history.
    ```{attention}
       The below sample command has the `<github-username>` as a placeholder.
       This should be replaced with your GitHub username.
+      <br/><br/>
+      This step will also create a folder in the current location of your
+      terminal. The folder will be called `website`, which originates from the 
+      name of the repository.
    ```
 
    Your command should look like this before hitting the Enter key to execute it:
@@ -166,6 +174,9 @@ just went with a more descriptive label instead of the default value.
 ```
 
 ```shell
+# Change to the website folder, it was created with the `clone`
+cd website
+# Add the remote
 git remote add SnowEx https://github.com/snowex-hackweek/website.git
 ```
 

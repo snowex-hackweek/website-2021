@@ -23,12 +23,11 @@ parse:
     # Extras
     - html_image
 
-
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
   # NOTE: 'cache' to use jupyter-cache, or 'force' to run all
-  execute_notebooks: auto
+  execute_notebooks: cache
   allow_errors: false
   # Per-cell notebook execution limit (seconds)
   timeout: 300
