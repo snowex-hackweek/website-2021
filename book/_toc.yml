@@ -55,6 +55,7 @@
             - file: tutorials/lidar/index
               sections:
                 - file: tutorials/lidar/ICESat2_tutorial
+                - file: tutorials/lidar/ASO_data_tutorial
             - file: tutorials/thermal-ir/index
               sections:
                 - file: tutorials/thermal-ir/thermal-ir-tutorial
