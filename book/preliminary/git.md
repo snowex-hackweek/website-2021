@@ -39,8 +39,14 @@ surrounded by quotes `"`.
 ```shell
 git config --global user.name "SnowEx Attendee"
 git config --global user.email "attendee@hackweek.com"
+git config --global pull.rebase false
 git config --global credential.helper store
 ```
+
+The third line is a configuration option that needs to be done with a first time
+setup. It specifies the strategy on how git will apply changes you pull from
+a remote git repository. 
+More on strategies is [described here.](http://git-scm.com/book/en/v2/Git-Branching-Rebasing)
 
 The last line of the config will store your GitHub credentials and will save
 you from re-entering your username and password from the command line with each
@@ -119,10 +125,17 @@ Already up to date.
 ```
 
 With the `git` command successfully set up, you can now remove the test
-repository via the JupyterHub user interface. Use a right click on the folder
-in the left panel and choose **Delete**.
+repository.
 
-![jupyterhub-delete-repo](../img/jupyterhub-delete-repo.png)
+```{Danger}
+Be careful with the `rm -rf` command. There will be **no** confirmation prompt
+for this action and files and folders removed with this command are not
+recoverable.
+```
+
+```shell
+rm -rf github_setup_check
+```
 
 #### (Optional) Advanced GitHub setup
 In addition to interacting with GitHub via the `git` command, you can also use
