@@ -29,6 +29,8 @@ All times listed below are UTC -7 (Pacific Daylight Time). You might want to con
 
 ### 10:20 AM to 11:05 AM: GitHub, Git, JupyterHub
 
+#### [Link to video](https://youtu.be/rKhs5FLI5rc)
+
 *Lead Instructor: Joachim Meyer*
 
 * connecting to our shared JupyterHub environment
@@ -74,12 +76,15 @@ ________________________________________________________
 *Lead Instructors: Charley Haley and Naomi Alterman*
 
 #### [Link to slides](https://docs.google.com/presentation/d/1qJDpFdS42kF5pcrbmxm1xFWzNoNamVrnMFelwAOh73Q/edit?usp=sharing)
+#### [Link to video](https://youtu.be/qJX573AAr5g)
 
 * guidance on how to foster an inclusive, fun and productive project team
 * recommended best practices for effective collaboration
 * options for addressing challenges
 
 ### 9:30 to 10:00 AM: GitHub, Git, JupyterHub
+
+#### [Link to video](https://youtu.be/rKhs5FLI5rc)
 
 *Lead Instructor: Joachim Meyer*
 
@@ -88,6 +93,8 @@ ________________________________________________________
 ### 10:00 to 10:15 AM: Break
 
 ### 10:15 to 11:00 AM: Vector and Raster Data Analysis: Part 1
+
+#### [Link to video](https://youtu.be/AmwCowCadI0)
 
 *Lead Instructors: David Shean, Scott Henderson*
 
@@ -98,11 +105,15 @@ ________________________________________________________
 
 ### 11:00 to 11:30 AM: NSIDC Data Access
 
+#### [Link to video](https://youtu.be/An--phlTH7o)
+
 *Lead Instructor: Amy Steiker*
 
 ### 11:30 AM to 12:00 PM: Break
 
 ### 12:00 to 1:00 PM: Databases
+
+#### [Link to video](https://youtu.be/BZ1oAkTNu8s)
 
 *Lead Instructor: Micah Johnson*
 
