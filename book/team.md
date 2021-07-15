@@ -257,4 +257,13 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Ask me about:* SnowEx, NASA THP snow program
 ---
 
+**Jessica Scheick**
+^^^
+<img src="https://avatars.githubusercontent.com/u/11756442?v=4" alt="picture of Jessica Scheick" width="200" height="200">
++++
+*Affiliations:* University of New Hampshire
+
+*Ask me about:* open science, Python, git, GitHub, glaciers, ICESat-2/icepyx
+---
+
 ````
