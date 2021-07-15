@@ -248,4 +248,13 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Ask me about:* NASA's Land Information System, Python, Git
 ---
 
+**Carrie Vuyovich**
+^^^
+<img src="https://avatars.githubusercontent.com/u/45520683?v=4" alt="picture of Carrie Vuyovich" width="200" height="200">
++++
+*Affiliations:* NASA Goddard Space Flight Center
+
+*Ask me about:* SnowEx, NASA THP snow program
+---
+
 ````
