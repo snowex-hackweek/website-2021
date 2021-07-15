@@ -2,7 +2,7 @@
 
 ## What is Open Science?
 
-![open-science-defn](../img/open-science-defn.png)
+![open-science-defn](./img/open-science-defn.png)
 
 Open science is the process of making science open and accessible to all through reproducibility and availability of research data and analysis steps.
 Practicing open science allows you to get critical feedback throughout the process, rather than just towards the end of a project.
@@ -41,7 +41,7 @@ These organizations and communities are dedicated to creating, teaching, and sha
   - Currently (May 2021) working directly with NASA DAACs
 - [The Center for Open Science (COS)](https://www.cos.io/)
   - Keywords: community; badges; community; sharing; tracking; recognition; open science; open research
- - Organization promoting open science
+  - Organization promoting open science
 - [Software Sustainability Institute](https://software.ac.uk/)
   - Keywords: tutorials; workshops; fellowships; reproducible; sustainable software
   - UK-based institute cultivating “better, more sustainable, research software to enable world-class research.”
