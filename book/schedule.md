@@ -183,7 +183,7 @@ ________________________________________________________
 
 *Lead Instructors: Ibrahim Olalekan Alabi and Evi Ofekeze*
 
-### 11:00 to 12:30 AM: Microwave Radar (Parallel Session 1A)
+### 11:00 AM to 12:30 PM: Microwave Radar (Parallel Session 1A)
 
 *Lead Instructors: Dylan Boyd, Batu Osmanoglu, HP Marshall, Jack Terricone, Scott Henderson*
 
@@ -204,9 +204,13 @@ ________________________________________________________
 
 ## Friday July 16
 
-### 9:00 to 10:00 AM: Data Integration
+### 9:00 to 10:00 AM: Project work / open office hours
+
+Join us in the main zoom room if you have any questions!
 
 ### 10:30 to 11:15 AM: Open Source Software
+
+*Lead Instructors: Jessica Scheick, Joachim Meyer and Micah Johnson*
 
 ### 11:30 AM to 12:00 PM: Evaluation Form
 
