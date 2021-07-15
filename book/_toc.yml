@@ -73,7 +73,7 @@
               sections:
                 - file: tutorials/lis/1_exploring_lis_output
                 - file: tutorials/lis/2_interactive_data_exploration
-            - file: tutorials/camera-traps-tutorial/camera-traps-notebook
+            - file: tutorials/camera-traps-tutorial/timelapse-camera-tutorial
             - file: tutorials/machine-learning/Machine_Learning_Tutorial
 
 - part: Projects

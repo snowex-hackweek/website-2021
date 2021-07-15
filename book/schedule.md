@@ -29,6 +29,8 @@ All times listed below are UTC -7 (Pacific Daylight Time). You might want to con
 
 ### 10:20 AM to 11:05 AM: GitHub, Git, JupyterHub
 
+#### [Link to video](https://youtu.be/rKhs5FLI5rc)
+
 *Lead Instructor: Joachim Meyer*
 
 * connecting to our shared JupyterHub environment
@@ -74,12 +76,15 @@ ________________________________________________________
 *Lead Instructors: Charley Haley and Naomi Alterman*
 
 #### [Link to slides](https://docs.google.com/presentation/d/1qJDpFdS42kF5pcrbmxm1xFWzNoNamVrnMFelwAOh73Q/edit?usp=sharing)
+#### [Link to video](https://youtu.be/qJX573AAr5g)
 
 * guidance on how to foster an inclusive, fun and productive project team
 * recommended best practices for effective collaboration
 * options for addressing challenges
 
 ### 9:30 to 10:00 AM: GitHub, Git, JupyterHub
+
+#### [Link to video](https://youtu.be/rKhs5FLI5rc)
 
 *Lead Instructor: Joachim Meyer*
 
@@ -89,7 +94,9 @@ ________________________________________________________
 
 ### 10:15 to 11:00 AM: Vector and Raster Data Analysis: Part 1
 
-*Lead Instructors: David Shean, Scott Henderson*
+#### [Link to video](https://youtu.be/AmwCowCadI0)
+
+*Lead Instructors: David Shean and Scott Henderson*
 
 * fundamentals of integrating vector and raster data
 * comparing with in situ data
@@ -98,11 +105,15 @@ ________________________________________________________
 
 ### 11:00 to 11:30 AM: NSIDC Data Access
 
+#### [Link to video](https://youtu.be/An--phlTH7o)
+
 *Lead Instructor: Amy Steiker*
 
 ### 11:30 AM to 12:00 PM: Break
 
 ### 12:00 to 1:00 PM: Databases
+
+#### [Link to video](https://youtu.be/BZ1oAkTNu8s)
 
 *Lead Instructor: Micah Johnson*
 
@@ -127,6 +138,8 @@ ________________________________________________________
 
 ### 9:00 to 10:30 AM: Vector and Raster Data Analysis, Part 2
 
+#### [Link to video](https://youtu.be/ZXg70BH3wW4)
+
 *Lead Instructors: Scott Henderson and David Shean*
 
 ### 10:30 to 11:00 AM: Virtual Coffee Gathering (optional)
@@ -135,17 +148,25 @@ ________________________________________________________
 
 ### 11:00 to 11:45 AM: LiDAR (Parallel Session 1A)
 
+#### [Link to video](https://youtu.be/MKWg5yDN0YY)
+
 *Lead Instructors: Clare Webster and Ben Smith*
 
 ### 11:00 to 11:45 AM: Thermal IR (Parallel Session 1B)
 
-*Lead Instructors: Jessica, Steven*
+#### [Link to video](https://youtu.be/dkI0pVYclt0)
+
+*Lead Instructors: Jessica Lundquist and Steven Pestana*
 
 ### 12:45 - 1:30 PM: Snow Microstructure (Parallel Session 2A)
 
-*Lead Instructors: Mike Durrand*
+#### [Link to video](https://youtu.be/ovSST10BJWo)
+
+*Lead Instructors: Mike Durand*
 
 ### 12:45 - 1:30 PM: GPR (Parallel Session 2B)
+
+#### [Link to video](https://youtu.be/gp8kPT26ljA)
 
 *Lead Instructors: Dan McGrath, Tate Meehan, and Ryan Webb*
 
@@ -164,7 +185,7 @@ ________________________________________________________
 
 ### 11:00 to 12:30 AM: Microwave Radar (Parallel Session 1A)
 
-*Lead Instructors: Dylan Boyd, Batu Osmanoglu, HP Marshall, Jack Terricone and Scott Henderson*
+*Lead Instructors: Dylan Boyd, Batu Osmanoglu, HP Marshall, Jack Terricone, Scott Henderson*
 
 ### 11:00 to 11:45 AM: Modeling (Parallel Session 1B)
 
