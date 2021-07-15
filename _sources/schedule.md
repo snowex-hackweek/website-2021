@@ -96,7 +96,7 @@ ________________________________________________________
 
 #### [Link to video](https://youtu.be/AmwCowCadI0)
 
-*Lead Instructors: David Shean, Scott Henderson*
+*Lead Instructors: David Shean and Scott Henderson*
 
 * fundamentals of integrating vector and raster data
 * comparing with in situ data
@@ -138,6 +138,8 @@ ________________________________________________________
 
 ### 9:00 to 10:30 AM: Vector and Raster Data Analysis, Part 2
 
+#### [Link to video](https://youtu.be/ZXg70BH3wW4)
+
 *Lead Instructors: Scott Henderson and David Shean*
 
 ### 10:30 to 11:00 AM: Virtual Coffee Gathering (optional)
@@ -146,17 +148,25 @@ ________________________________________________________
 
 ### 11:00 to 11:45 AM: LiDAR (Parallel Session 1A)
 
+#### [Link to video](https://youtu.be/MKWg5yDN0YY)
+
 *Lead Instructors: Clare Webster and Ben Smith*
 
 ### 11:00 to 11:45 AM: Thermal IR (Parallel Session 1B)
 
-*Lead Instructors: Jessica, Steven*
+#### [Link to video](https://youtu.be/dkI0pVYclt0)
+
+*Lead Instructors: Jessica Lundquist and Steven Pestana*
 
 ### 12:45 - 1:30 PM: Snow Microstructure (Parallel Session 2A)
 
-*Lead Instructors: Mike Durrand*
+#### [Link to video](https://youtu.be/ovSST10BJWo)
+
+*Lead Instructors: Mike Durand*
 
 ### 12:45 - 1:30 PM: GPR (Parallel Session 2B)
+
+#### [Link to video](https://youtu.be/gp8kPT26ljA)
 
 *Lead Instructors: Dan McGrath, Tate Meehan, and Ryan Webb*
 
@@ -175,7 +185,7 @@ ________________________________________________________
 
 ### 11:00 to 12:30 AM: Microwave Radar (Parallel Session 1A)
 
-*Lead Instructors: Dylan Boyd, Batu Osmanoglu, HP Marshall, Jack Terricone and Scott Henderson*
+*Lead Instructors: Dylan Boyd, Batu Osmanoglu, HP Marshall, Jack Terricone, Scott Henderson*
 
 ### 11:00 to 11:45 AM: Modeling (Parallel Session 1B)
 
