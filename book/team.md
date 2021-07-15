@@ -239,3 +239,13 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Ask me about:* Lidar, forest structure, radiative transfer modelling, Julia
 ---
 
+**Brendan McAndrew**
+^^^
+<img src="https://github.com/bmcandr/bmcandr.github.io/raw/master/images/brendan_mcandrew_alt.jpg" alt="picture of Brendan McAndrew" height="200">
++++
+*Affiliations:* Science Systems and Applications Inc. at NASA's Goddard Space Flight Center
+
+*Ask me about:* NASA's Land Information System, Python, Git
+---
+
+````
