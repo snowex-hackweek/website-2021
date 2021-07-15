@@ -1,17 +1,5 @@
 # Thermal Infrared Remote Sensing of Snow
 
-<<<<<<< HEAD
-**At the conclusion of this tutorial, you will be able to:**
-- Understand the differences between sources of thermal IR observations, the advantages and disadvantages of each, and types of research questions we can address with those observations
-- Access and visualize airborne and satellite thermal infrared imagery, then scale imagery of different spatial resolutions for comparison
-- Visualize point and raster thermal infrared datasets together, then compute error statistics between point and raster datasets
-
-## Why do we want thermal images of snow?
-
-## How does thermal infrared remote sensing work?
-
-## What kinds of data will we be using?
-=======
 :::{admonition} Learning Objectives
 
 **At the conclusion of this tutorial, you will be able to:**
@@ -85,7 +73,7 @@ During the field campaign at Grand Mesa, we wanted to capture the spatial variab
 
 In the figure below, the field campaign map (left) showing snow pit locations and flight-line paths is annotated with two snow surface temperature timeseries measurements sites, the *Mesa West* meteorlogical station, and *Snow Pit 2S10*. We will use data from snow pit 2S10 for this tutorial.
 
-The UW-APL thermal IR imager (center) was flown over Grand Mesa several times over the course of the field campaign. We will use a single flight-line mosaic image in this tutorial.
+The UW-APL thermal IR imager (center) was flown over Grand Mesa several times over the course of the field campaign. We will use a single flight-line mosaic image in this tutorial. (Thank you to Chris Chickadel at the UW APL for this data collection!)
 
 The aircraft flight times were planned to be coincident with remote sensing satellites passing overhead. We will use a single ASTER thermal infrared image (right) in this tutorial that was taken at the same time as our example airborne IR mosaic.
 
@@ -127,4 +115,3 @@ For more details, see this presentation: [Snow Surface Temperature & Thermal Inf
 * [ASTER L1T Scripts and Tutorials](https://git.earthdata.nasa.gov/projects/LPDUR/repos/aster-l1t/browse)
 * [Validating ASTER Thermal Infrared Imaging for use in Snow Models](https://github.com/UW-GDA/aster-thermal/)
 :::
->>>>>>> 967594c7097c4ac3b2a6967295a55ca4fcafa1f5
