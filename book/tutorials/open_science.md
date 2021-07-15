@@ -18,7 +18,7 @@ These organizations and communities are dedicated to creating, teaching, and sha
   - Keywords: GitHub; tutorials; guides; reproducible; collaborative; data science; contribute; development; open-source; git
   - “The Turing Way is an open source community-driven guide to reproducible, ethical, inclusive and collaborative data science.”
   - “Our goal is to provide all the information that data scientists in academia, industry, government and the third sector need at the start of their projects to ensure that they are easy to reproduce and reuse at the end.”
-- The Center for Scientific Collaboration and Community Engagement (CSCCE)
+- [The Center for Scientific Collaboration and Community Engagement (CSCCE)](https://www.cscce.org/)
   - Keywords: community; sharing; recognition; fellowships; workshops; resources
   - “The Center for Scientific Collaboration and Community Engagement (CSCCE) is a research and training center to support and study the merging field of scientific community engagement.”
   - Lots of great \[open\] resources for exploring and cultivating community, including evaluation materials and onboarding resources (e.g. a number of beginner user guides for platforms like Slack)
