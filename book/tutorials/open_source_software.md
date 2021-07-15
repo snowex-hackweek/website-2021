@@ -13,9 +13,20 @@ itself:
 1. Start on issues marked as 'good first issue'
 1. Attend a meeting for the project (virtual or in-person)
 
-## Elements of an open source project
+## Open source How-To guides
 
-A comprehensive guide [can be found here](https://opensource.guide/starting-a-project/) 
+Here are some community/open-source resources for learning more about
+open-source software, tools and tricks for \[collaborative\] development,
+and open science in general.
+
+- [The Turing Way](https://the-turing-way.netlify.app/welcome.html)
+   - Keywords: GitHub; tutorials; guides; reproducible; collaborative; data science; contribute; development; open-source; git
+   - “The Turing Way is an open source community-driven guide to reproducible, ethical, inclusive and collaborative data science.”
+   - “Our goal is to provide all the information that data scientists in academia, industry, government and the third sector need at the start of their projects to ensure that they are easy to reproduce and reuse at the end.”
+- [GitHub Open Source Guides](https://opensource.guide/)
+   - Keywords: guides; tutorials; development
+    
+## Elements of an open source project
 
 Below, a few elements to get started. This sample is not even scratching the
 surface for the breadth and depth of options and are meant to kick things off: 
@@ -78,3 +89,9 @@ surface for the breadth and depth of options and are meant to kick things off:
    Platforms:
    * [Slack](https://slack.com/)
    * [Discourse](https://www.discourse.org/)
+    
+## Git Learning Resources
+- [Learn git interactively!](https://learngitbranching.js.org/)
+   - Keywords: git; interactive
+   - A great hands on tutorial for playing with git on a “virtual” repository. 
+     Practice here before applying to your actual software!
