@@ -268,7 +268,7 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 
 **Mike Durand**
 ^^^
-<img src="https://opic.osu.edu/durand.8?aspect=p&width=300" alt="picture of Mike Durand" width="200" height="200">
+<img src="https://opic.osu.edu/durand.8?aspect=p&width=150" alt="picture of Mike Durand" height="200">
 +++
 *Affiliations:* Ohio State University
 
