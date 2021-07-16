@@ -181,17 +181,25 @@ ________________________________________________________
 
 ### 9:00 to 10:30 AM: Machine Learning
 
+#### [Link to video](https://youtu.be/IWm9SO0m7Eg)
+
 *Lead Instructors: Ibrahim Olalekan Alabi and Evi Ofekeze*
 
 ### 11:00 AM to 12:30 PM: Microwave Radar (Parallel Session 1A)
+
+#### [Link to video](https://youtu.be/6L-hnf9ZvJA)
 
 *Lead Instructors: Dylan Boyd, Batu Osmanoglu, HP Marshall, Jack Terricone, Scott Henderson*
 
 ### 11:00 to 11:45 AM: Modeling (Parallel Session 1B)
 
+#### [Link to video](https://youtu.be/9pxp2e2YjN4)
+
 *Lead Instructors: Melissa Wrzesien and Brendan McAndrew*
 
 ### 12:00 to 12:30 PM: Camera Data (Parallel Session 1B)
+
+#### [Link to video](https://youtu.be/fcY4Yk6o5oM)
 
 *Lead Instructors: Cassie Lumbrazo and Katie Breen*
 
