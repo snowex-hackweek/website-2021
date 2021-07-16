@@ -89,6 +89,22 @@ surface for the breadth and depth of options and are meant to kick things off:
    Platforms:
    * [Slack](https://slack.com/)
    * [Discourse](https://www.discourse.org/)
+
+## Software development environments
+   
+   Outside a Jupyter environment, you can also manage your package or code using
+   these development environments or sometimes also referred to as IDE's
+   ([Integrated Development Environments](https://en.wikipedia.org/wiki/Integrated_development_environment))
+
+   Some choices:
+   * [Visual Studio](https://visualstudio.microsoft.com/)
+     * [Has integration options with Jupyter Notebooks](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
+   * [IntelliJ - PyCharm](https://www.jetbrains.com/pycharm/)
+      * [Jupyter Notebook support](https://www.jetbrains.com/help/pycharm/jupyter-notebook-support.html)
+      * They have free [academic](https://www.jetbrains.com/community/education/#students) and 
+        [open source project](https://www.jetbrains.com/community/opensource/#support) product licenses
+   * [Git's Atom editor](https://atom.io/)
+      * [Jupyter Notebook plugin](https://atom.io/packages/jupyter-notebook)
     
 ## Git Learning Resources
 - [Learn git interactively!](https://learngitbranching.js.org/)
