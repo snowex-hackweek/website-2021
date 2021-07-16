@@ -1,27 +1,14 @@
-# Open-source and Open Science Resources
+# Open Science
 
 ## What is Open Science?
 
-![open-science-defn](./img/open-science-defn.png)
+![open-science-defn](../img/open-science-defn.png)
 
 Open science is the process of making science open and accessible to all through reproducibility and availability of research data and analysis steps.
 Practicing open science allows you to get critical feedback throughout the process, rather than just towards the end of a project.
 Plus, by sharing our work, we can ask increasingly complex questions.
 
 Please note, this list is definitely not exhaustive, but is meant as a starting place and guide for good sources of additional information.
-
-## How-to guides
-Here are some great community/open-source resources for learning more about open-source software, tools and tricks for \[collaborative\] development, and open science in general.
-
-- [The Turing Way](https://the-turing-way.netlify.app/welcome.html)
-  - Keywords: GitHub; tutorials; guides; reproducible; collaborative; data science; contribute; development; open-source; git
-  - “The Turing Way is an open source community-driven guide to reproducible, ethical, inclusive and collaborative data science.”
-  - “Our goal is to provide all the information that data scientists in academia, industry, government and the third sector need at the start of their projects to ensure that they are easy to reproduce and reuse at the end.”
-- [GitHub Open Source Guides](https://opensource.guide/)
-  - Keywords: guides; tutorials; development
-- [Learn git interactively!](https://learngitbranching.js.org/)
-  - Keywords: git; interactive
-  - A great hands on tutorial for playing with git on a “virtual” repository. Practice here before applying to your actual software!
 
 ## Open Science Communities and Organizations
 These organizations and communities are dedicated to creating, teaching, and sharing the tools, skills, and resources necessary for making all science open science.
@@ -31,7 +18,7 @@ These organizations and communities are dedicated to creating, teaching, and sha
   - Keywords: GitHub; tutorials; guides; reproducible; collaborative; data science; contribute; development; open-source; git
   - “The Turing Way is an open source community-driven guide to reproducible, ethical, inclusive and collaborative data science.”
   - “Our goal is to provide all the information that data scientists in academia, industry, government and the third sector need at the start of their projects to ensure that they are easy to reproduce and reuse at the end.”
-- The Center for Scientific Collaboration and Community Engagement (CSCCE)
+- [The Center for Scientific Collaboration and Community Engagement (CSCCE)](https://www.cscce.org/)
   - Keywords: community; sharing; recognition; fellowships; workshops; resources
   - “The Center for Scientific Collaboration and Community Engagement (CSCCE) is a research and training center to support and study the merging field of scientific community engagement.”
   - Lots of great \[open\] resources for exploring and cultivating community, including evaluation materials and onboarding resources (e.g. a number of beginner user guides for platforms like Slack)
@@ -52,3 +39,4 @@ These organizations and communities are dedicated to creating, teaching, and sha
 - [Earth Science Information Partnership (ESIP)](https://www.esipfed.org/)
   - Keywords: community; fellowships; resources; conferences
   - US-based partnership for sharing and promoting open science, including standards development and advocacy, for earth science data. One of the most interactive conferences I’ve ever attended!
+    
