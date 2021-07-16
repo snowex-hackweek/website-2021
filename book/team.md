@@ -266,4 +266,13 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Ask me about:* open science, Python, git, GitHub, glaciers, ICESat-2/icepyx
 ---
 
+**Mike Durand**
+^^^
+<img src="https://opic.osu.edu/durand.8?aspect=p&width=300" alt="picture of Mike Durand" width="200" height="200">
++++
+*Affiliations:* Ohio State University
+
+*Ask me about:* SnowEx, SWOT
+---
+
 ````
