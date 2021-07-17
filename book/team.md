@@ -275,4 +275,12 @@ The people on this page have helped organize the hackweek. You'll find a few spe
 *Ask me about:* SnowEx, SWOT
 ---
 
+**Amy Steiker**
+^^^
+<img src="https://avatars.githubusercontent.com/u/47193922?v=4" alt="picture of Amy Steiker" height="200">
++++
+*Affiliations:* NSIDC DAAC, CIRES, University of Colorado
+
+*Ask me about:* NSIDC DAAC data access and services
+
 ````
