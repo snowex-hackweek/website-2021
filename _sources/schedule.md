@@ -2,9 +2,6 @@
 
 Schedule for {{ hackweek }} during {{ dates }}:
 
-```{note}
-Although the schedule is fairly set, we will still be making occasional updates to it, so please check back regularly!
-```
 ## Time Zones
 
 All times listed below are UTC -7 (Pacific Daylight Time). You might want to consult this [Time Zone Map](https://www.timeanddate.com/time/map/) to figure out times in your location.
@@ -217,6 +214,8 @@ ________________________________________________________
 Join us in the main zoom room if you have any questions!
 
 ### 10:30 to 11:15 AM: Open Source Software
+
+#### [Link to video](https://youtu.be/CRkP70ouDsA)
 
 *Lead Instructors: Jessica Scheick, Joachim Meyer and Micah Johnson*
 
