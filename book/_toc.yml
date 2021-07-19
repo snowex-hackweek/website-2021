@@ -86,7 +86,7 @@
       sections:
         - file: projects/project_initialization
         - file: projects/project_roles
-        - file: projects/hackweek_2021
+        - file: projects/list_of_projects
 - part: Reference
   chapters:
     - file: glossary
