@@ -1,7 +1,7 @@
 # Welcome to SnowEx Hackweek!
 
 ```{note}
-**We will be hosting {{ hackweek }} as a virtual event during {{ dates }}.**
+**{{ hackweek }} was offered as a virtual event during {{ dates }}.**
 ```
 ![snow from iss](img/snow_from_iss.jpg)
 
