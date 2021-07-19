@@ -1,20 +1,17 @@
 # Welcome to SnowEx Hackweek!
 
-```{note}
-**We will be hosting {{ hackweek }} as a virtual event during {{ dates }}.**
-```
+```{admonition} **AGU Session announcement:**
+We invite you to consider submitting an abstract, due 4 August 2021!
+ 
+Session title: Using NASA SnowEx Data for Algorithm Development and
+Modeling to Estimate Seasonal Snow and Snow Water Equivalent.  
+AGU will be a hybrid event this year (in-person and virtual). 
+
+Visit the [AGU submission page](https://www.agu.org/fall-meeting) for more information on submitting an abstract.   
+```  
+
 ![snow from iss](img/snow_from_iss.jpg)
 
-The purpose of {{ hackweek }} is to foster an environment of collaboration and sharing of [NASA SnowEx](https://snow.nasa.gov/campaigns/snowex) datasets across teams. We will teach each other about open source software during tutorials, and build new tools together during project work. Our vision is to create a space for networking, innovation and the sharing of ideas.
-
-In this website you will:
-
-{fa}`check,text-success mr-1`: learn about our hackweek [Code of Conduct](norms/CoC) and our commitment to creating positive [learning communities](norms/community)
-
-{fa}`check,text-success mr-1`: access [preliminary lessons](preliminary/index) you will need to complete in advance of the hackweek
-
-{fa}`check,text-success mr-1`: learn more about the amazing [organizing team](team) who have designed this event
-
-{fa}`check,text-success mr-1`: review the hackweek [schedule](schedule)
+SnowEx hackweek was offered virtually July 12 - 16, 2021. The purpose of the event was to foster an environment of collaboration and sharing of [NASA SnowEx](https://snow.nasa.gov/campaigns/snowex) datasets across teams. We offered [tutorials](tutorials/index) on open source software and we participated in a variety of different [projects](projects/list_of_projects) work. 
 
 Learn more about hackweeks hosted by the [University of Washington eScience Institute](https://uwhackweek.github.io/hackweeks-as-a-service/intro.html), or check out our publication describing the hackweek educational model {cite:p}`Huppenkothen2018`.
