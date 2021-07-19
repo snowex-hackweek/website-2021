@@ -218,6 +218,8 @@ Join us in the main zoom room if you have any questions!
 
 ### 10:30 to 11:15 AM: Open Source Software
 
+#### [Link to video](https://youtu.be/CRkP70ouDsA)
+
 *Lead Instructors: Jessica Scheick, Joachim Meyer and Micah Johnson*
 
 ### 11:30 AM to 12:00 PM: Evaluation Form
