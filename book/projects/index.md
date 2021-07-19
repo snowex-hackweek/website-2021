@@ -31,3 +31,7 @@ Hacking is a session of focused, highly collaborative computer programming, in w
 * if you have a project idea already brewing, we encourage you to share that with participants on our #project_ideas channel.
 * feel free to explore various projects and initiate conversations. The goal is to gather as much information as you can to inform your decision about which team to join when we meet in person.
 * contact a hackweek organizer if you would like assistance in assessing whether a project is well-scoped, or if you need help with a particular dataset.
+
+# Past Hackweeks
+
+* [2021 SnowEx Hackweek](hackweek_2021)
