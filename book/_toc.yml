@@ -79,7 +79,6 @@
           sections:
           - file: tutorials/open_science
           - file: tutorials/open_source_software
-
 - part: Projects
   chapters:
     - file: projects/index
