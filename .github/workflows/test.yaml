@@ -32,6 +32,11 @@ jobs:
         path: ./book/_build
         key: jupyterbook-3
 
+    - name: List Jupyter-Cache contents
+      run: |
+        jcache cache list -p book/_build/.jupyter_cache
+        #jcache cache remove -p book/_build/.jupyter_cache 14
+
     - name: Pull Docker Image
       run: |
         docker pull $DOCKER_IMAGE
