@@ -29,7 +29,8 @@ jobs:
       continue-on-error: true
       uses: codespell-project/actions-codespell@master
       with:
-        # ignore_words_list: abandonned,ackward
+        skip: .github/workflows/qaqc.yaml,./book/tutorials/geospatial/geospatial_cookbook_rendered.ipynb
+        ignore_words_list: hist,MAPE,te
         check_filenames: true
         check_hidden: true
         only_warn: false

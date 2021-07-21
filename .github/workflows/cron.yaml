@@ -1,14 +1,10 @@
-name: Test
+name: Cron
 
 on:
-  pull_request_target:
-    types: [labeled, synchronize]
-    paths:
-      - 'book/**'
-      - '.github/workflows/test.yaml'
-      - '.binder/**'
-    branches:
-      - main
+  schedule:
+    # run this once a week (sunday midnight) to preserve cache
+    # https://docs.github.com/en/actions/guides/caching-dependencies-to-speed-up-workflows#usage-limits-and-eviction-policy
+    - cron:  '0 0 * * 0'
 
 env:
   DOCKER_IMAGE: uwhackweek/snowex:latest
@@ -16,14 +12,9 @@ env:
 jobs:
   build-and-test:
     runs-on: ubuntu-20.04
-    # This workflow accesses secrets and checks out a PR, so only run if labelled
-    # https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
-    if: contains(github.event.pull_request.labels.*.name, 'preview')
-
     steps:
-    - uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.pull_request.head.sha }}
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
     - name: Setup Cache
       uses: actions/cache@v2
@@ -32,15 +23,11 @@ jobs:
         path: ./book/_build
         key: jupyterbook-4
 
-    - name: List Jupyter-Cache contents
-      run: |
-        jcache cache list -p book/_build/.jupyter_cache
-
     - name: Pull Docker Image
       run: |
         docker pull $DOCKER_IMAGE
         docker images
-
+    
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -52,7 +39,6 @@ jobs:
 
     - name: Build JupyterBook
       env:
-        # Warning: careful exposing secrets in scripts
         EARTHDATA_LOGIN: ${{ secrets.EARTHDATA_LOGIN }}
         EARTHDATA_PASSWORD: ${{ secrets.EARTHDATA_PASSWORD }}
       run: |
@@ -61,7 +47,7 @@ jobs:
         -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN \
         -v ${{ github.workspace }}:/home/jovyan:rw \
         $DOCKER_IMAGE .github/workflows/build.sh
-
+    
     - name: Save Build
       if: ${{ always() }}
       uses: actions/upload-artifact@v2
