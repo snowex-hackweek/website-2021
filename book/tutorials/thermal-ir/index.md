@@ -98,7 +98,7 @@ For more details, see this presentation: [Snow Surface Temperature & Thermal Inf
 ## Additional learning resources:
 :::{seealso}
 
-**[NumPy]() learning resources:**
+**[NumPy](https://numpy.org) learning resources:**
 * [NumPy and the ndarray](https://github.com/waterhackweek/waterdata/blob/master/gridded_data_tutorial_0.ipynb)
 * [NumPy: the absolute basics for beginners](https://numpy.org/devdocs/user/absolute_beginners.html)
 * [NumPy: creating and manipulating numerical data](https://scipy-lectures.org/intro/numpy/index.html)
