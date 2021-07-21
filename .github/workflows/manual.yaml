@@ -1,0 +1,47 @@
+name: Build Without Cache
+
+on: workflow_dispatch
+    # can maybe specify PR branch ref here?
+    # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#example-workflow-configuration
+
+env:
+  DOCKER_IMAGE: uwhackweek/snowex:latest
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    
+    - name: Pull Docker Image
+      run: |
+        docker pull $DOCKER_IMAGE
+        docker images
+    
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-west-2
+        role-to-assume: github-actions-role
+        role-duration-seconds: 1800
+
+    - name: Build JupyterBook
+      env:
+        EARTHDATA_LOGIN: ${{ secrets.EARTHDATA_LOGIN }}
+        EARTHDATA_PASSWORD: ${{ secrets.EARTHDATA_PASSWORD }}
+      run: |
+        docker run -u root \
+        -e EARTHDATA_LOGIN -e EARTHDATA_PASSWORD \
+        -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN \
+        -v ${{ github.workspace }}:/home/jovyan:rw \
+        $DOCKER_IMAGE .github/workflows/build.sh
+    
+    - name: Save Build
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: book/_build/

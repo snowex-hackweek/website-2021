@@ -16,8 +16,8 @@
 * [Downloading datasets through the NASA EarthData API](./thermal-ir-data-download.ipynb)
   * [earthdata_api.py](./earthdata_api.py)
 * [ASTER L1T utilities from LP DAAC Data User Resources](https://git.earthdata.nasa.gov/projects/LPDUR/repos/aster-l1t/browse)
-  * [README.md](./ast-l1t/README.md)
-  * [ASTERL1T_hdf2tif.py](./ast-l1t/ASTERL1T_hdf2tif.py)
+  * {download}`README.md <./ast-l1t/README.md>`
+  * {download}`ASTERL1T_hdf2tif.py <./ast-l1t/ASTERL1T_hdf2tif.py>`
 
 
 ## Why do we want thermal images of snow?
@@ -98,7 +98,7 @@ For more details, see this presentation: [Snow Surface Temperature & Thermal Inf
 ## Additional learning resources:
 :::{seealso}
 
-**[NumPy]() learning resources:**
+**[NumPy](https://numpy.org) learning resources:**
 * [NumPy and the ndarray](https://github.com/waterhackweek/waterdata/blob/master/gridded_data_tutorial_0.ipynb)
 * [NumPy: the absolute basics for beginners](https://numpy.org/devdocs/user/absolute_beginners.html)
 * [NumPy: creating and manipulating numerical data](https://scipy-lectures.org/intro/numpy/index.html)

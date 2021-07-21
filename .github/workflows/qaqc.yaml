@@ -19,17 +19,21 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Ensure Clean Notebooks
+      continue-on-error: true
       run: |
         pip install nb-clean==2.0.2
         find book -name "*ipynb" | xargs nb-clean check --preserve-cell-metadata
 
     # NOTE: this isn't a comprehensive spellcheck, just common typos
     - name: Spellcheck
+      continue-on-error: true
       uses: codespell-project/actions-codespell@master
       with:
+        skip: .github/workflows/qaqc.yaml,./book/tutorials/geospatial/geospatial_cookbook_rendered.ipynb
+        ignore_words_list: hist,MAPE,te
         check_filenames: true
         check_hidden: true
-        only_warn: true
+        only_warn: false
 
     - name: Pull Docker Image
       run: |
