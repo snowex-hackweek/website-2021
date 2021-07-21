@@ -25,7 +25,7 @@ jobs:
       # NOTE: change key to "jupyterbook-N+1" to force rebuilding cache
       with:
         path: ./book/_build
-        key: jupyterbook-3
+        key: jupyterbook-4
 
     - name: Pull SnowEX Docker Image
       run: |

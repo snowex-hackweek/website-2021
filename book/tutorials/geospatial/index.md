@@ -15,4 +15,4 @@ In addition to the notebooks we've put together, check out these great resources
 * https://carpentries-incubator.github.io/geospatial-python
 
 
-
+We also have included a geospatial 'cookbook' with a few code examples for common operations that combine raster and vector data such as sampling rasters at points, clipping by polygons, etc. It is not rendered on the website as a tutorial, but you can view a rendered version in our website repository, by following this link https://github.com/snowex-hackweek/website/blob/main/book/tutorials/geospatial/geospatial_cookbook_rendered.ipynb

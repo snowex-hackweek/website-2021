@@ -69,19 +69,24 @@
                 - file: tutorials/sar/sentinel1
                 - file: tutorials/sar/swesarr
                 - file: tutorials/sar/uavsar
+                - file: tutorials/sar/uavsar-download
             - file: tutorials/lis/index
               sections:
                 - file: tutorials/lis/1_exploring_lis_output
                 - file: tutorials/lis/2_interactive_data_exploration
             - file: tutorials/camera-traps-tutorial/timelapse-camera-tutorial
             - file: tutorials/machine-learning/Machine_Learning_Tutorial
-
+        - file: tutorials/day_5
+          sections:
+          - file: tutorials/open_science
+          - file: tutorials/open_source_software
 - part: Projects
   chapters:
     - file: projects/index
       sections:
         - file: projects/project_initialization
         - file: projects/project_roles
+        - file: projects/list_of_projects
 - part: Reference
   chapters:
     - file: glossary

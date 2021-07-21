@@ -2,9 +2,6 @@
 
 Schedule for {{ hackweek }} during {{ dates }}:
 
-```{note}
-Although the schedule is fairly set, we will still be making occasional updates to it, so please check back regularly!
-```
 ## Time Zones
 
 All times listed below are UTC -7 (Pacific Daylight Time). You might want to consult this [Time Zone Map](https://www.timeanddate.com/time/map/) to figure out times in your location.
@@ -181,17 +178,25 @@ ________________________________________________________
 
 ### 9:00 to 10:30 AM: Machine Learning
 
+#### [Link to video](https://youtu.be/IWm9SO0m7Eg)
+
 *Lead Instructors: Ibrahim Olalekan Alabi and Evi Ofekeze*
 
-### 11:00 to 12:30 AM: Microwave Radar (Parallel Session 1A)
+### 11:00 AM to 12:30 PM: Microwave Radar (Parallel Session 1A)
+
+#### [Link to video](https://youtu.be/6L-hnf9ZvJA)
 
 *Lead Instructors: Dylan Boyd, Batu Osmanoglu, HP Marshall, Jack Terricone, Scott Henderson*
 
 ### 11:00 to 11:45 AM: Modeling (Parallel Session 1B)
 
+#### [Link to video](https://youtu.be/9pxp2e2YjN4)
+
 *Lead Instructors: Melissa Wrzesien and Brendan McAndrew*
 
 ### 12:00 to 12:30 PM: Camera Data (Parallel Session 1B)
+
+#### [Link to video](https://youtu.be/fcY4Yk6o5oM)
 
 *Lead Instructors: Cassie Lumbrazo and Katie Breen*
 
@@ -204,9 +209,15 @@ ________________________________________________________
 
 ## Friday July 16
 
-### 9:00 to 10:00 AM: Data Integration
+### 9:00 to 10:00 AM: Project work / open office hours
+
+Join us in the main zoom room if you have any questions!
 
 ### 10:30 to 11:15 AM: Open Source Software
+
+#### [Link to video](https://youtu.be/CRkP70ouDsA)
+
+*Lead Instructors: Jessica Scheick, Joachim Meyer and Micah Johnson*
 
 ### 11:30 AM to 12:00 PM: Evaluation Form
 

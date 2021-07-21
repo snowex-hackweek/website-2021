@@ -141,3 +141,4 @@ dmypy.json
 
 #Tutorials
 ./book/tutorials/core-datasets/data/
+book/tutorials/geospatial/snotel_conus_sites.json
