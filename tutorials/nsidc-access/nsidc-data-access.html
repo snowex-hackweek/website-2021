@@ -441,6 +441,11 @@
          UAVSAR
         </a>
        </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../sar/uavsar-download.html">
+         UAVSAR Data Access and Conversion
+        </a>
+       </li>
       </ul>
      </li>
      <li class="toctree-l3 has-children">
@@ -671,13 +676,11 @@
        Snow Today
       </a>
      </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nsidc-s-snowex-pages">
-     NSIDC’s SnowEx pages
-    </a>
-    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#nsidc-s-snowex-pages">
+       NSIDC’s SnowEx pages
+      </a>
+     </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#other-relevant-snow-products">
        Other relevant snow products:
@@ -685,12 +688,12 @@
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#import-packages">
-     Import Packages
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-packages">
+   Import Packages
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-discovery">
@@ -701,23 +704,21 @@
     <a class="reference internal nav-link" href="#identify-area-and-time-of-interest">
      Identify area and time of interest
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-polygon-coordinate-string">
-       Create polygon coordinate string
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#alternatively-specify-bounding-box-region-of-interest">
-       Alternatively: Specify bounding box region of interest
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#set-time-range">
-       Set time range
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-polygon-coordinate-string">
+     Create polygon coordinate string
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alternatively-specify-bounding-box-region-of-interest">
+     Alternatively: Specify bounding box region of interest
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-time-range">
+     Set time range
+    </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-data-parameter-dictionary">
@@ -818,7 +819,7 @@
 <h1>Accessing SnowEx Data at the NSIDC DAAC<a class="headerlink" href="#accessing-snowex-data-at-the-nsidc-daac" title="Permalink to this headline">¶</a></h1>
 <p>2021 SnowEx Hackweek</p>
 <p>Author: Amy Steiker, NSIDC DAAC, CIRES, University of Colorado</p>
-<p>This tutorial provides a brief overview of the resources provided by the NASA National Snow and Ice Data Center Distributed Active Archive Center, or NSIDC DAAC, and demonstrates how to disscovery and access SnowEx data programmatically.</p>
+<p>This tutorial provides a brief overview of the resources provided by the NASA National Snow and Ice Data Center Distributed Active Archive Center, or NSIDC DAAC, and demonstrates how to discovery and access SnowEx data programmatically.</p>
 <div class="section" id="learning-objectives">
 <h2>Learning Objectives:<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
@@ -870,9 +871,8 @@
 <h4>Snow Today<a class="headerlink" href="#snow-today" title="Permalink to this headline">¶</a></h4>
 <p><a class="reference external" href="https://nsidc.org/snow-today">Snow Today</a>, a collaboration with the University of Colorado’s Institute of Alpine and Arctic Research (INSTAAR), provides near-real-time snow analysis for the western United States and regular reports on conditions during the winter season. Snow Today is funded by NASA Hydrological Sciences Program and utilizes data from the Moderate Resolution Imaging Spectroradiometer (MODIS) instrument and snow station data from the Snow Telemetry (SNOTEL) network by the Natural Resources Conservation Service (NRCS), United States Department of Agriculture (USDA) and the California Department of Water Resources: <a class="reference external" href="http://www.wcc.nrcs.usda.gov/snow">www.wcc.nrcs.usda.gov/snow</a>.</p>
 </div>
-</div>
 <div class="section" id="nsidc-s-snowex-pages">
-<h3>NSIDC’s SnowEx pages<a class="headerlink" href="#nsidc-s-snowex-pages" title="Permalink to this headline">¶</a></h3>
+<h4>NSIDC’s SnowEx pages<a class="headerlink" href="#nsidc-s-snowex-pages" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p><a class="reference external" href="https://nsidc.org/data/snowex">SnowEx</a></p>
 <ul>
@@ -880,6 +880,7 @@
 </ul>
 </li>
 </ul>
+</div>
 <div class="section" id="other-relevant-snow-products">
 <h4>Other relevant snow products:<a class="headerlink" href="#other-relevant-snow-products" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
@@ -892,9 +893,10 @@
 </ul>
 </div>
 </div>
+</div>
 <hr class="docutils" />
 <div class="section" id="import-packages">
-<h3>Import Packages<a class="headerlink" href="#import-packages" title="Permalink to this headline">¶</a></h3>
+<h2>Import Packages<a class="headerlink" href="#import-packages" title="Permalink to this headline">¶</a></h2>
 <p>Get started by importing packages needed to run the following code blocks, including the <code class="docutils literal notranslate"><span class="pre">tutorial_helper_functions</span></code> module provided within this repository.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -907,7 +909,7 @@
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">pprint</span>
 <span class="kn">import</span> <span class="nn">getpass</span>
-<span class="kn">from</span> <span class="nn">netrc</span> <span class="kn">import</span> <span class="n">netrc</span>
+<span class="kn">import</span> <span class="nn">netrc</span>
 <span class="kn">from</span> <span class="nn">platform</span> <span class="kn">import</span> <span class="n">system</span>
 <span class="kn">from</span> <span class="nn">getpass</span> <span class="kn">import</span> <span class="n">getpass</span>
 <span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">request</span>
@@ -924,7 +926,6 @@
 </div>
 </div>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="data-discovery">
 <h2>Data Discovery<a class="headerlink" href="#data-discovery" title="Permalink to this headline">¶</a></h2>
@@ -933,8 +934,9 @@
 <h3>Identify area and time of interest<a class="headerlink" href="#identify-area-and-time-of-interest" title="Permalink to this headline">¶</a></h3>
 <p>Since our focus is on the Grand Mesa study site of the NASA SnowEx campaign, we’ll use that area to search for coincident data across other data products. From the <a class="reference external" href="https://doi.org/10.5067/G21LGCNLFSC5">SnowEx17 Ground Penetrating Radar Version 2</a> landing page, you can find the rectangular spatial coverage under the Overview tab, or you can draw a polygon over your area of interest in the map under the Download Data tab and export the shape as a geojson file using the Export Polygon icon shown below. An example polygon geojson file is provided in the /Data folder of this repository.</p>
 <img alt="../../_images/Data-download-polygon-export.png" class="align-left" src="../../_images/Data-download-polygon-export.png" />
+</div>
 <div class="section" id="create-polygon-coordinate-string">
-<h4>Create polygon coordinate string<a class="headerlink" href="#create-polygon-coordinate-string" title="Permalink to this headline">¶</a></h4>
+<h3>Create polygon coordinate string<a class="headerlink" href="#create-polygon-coordinate-string" title="Permalink to this headline">¶</a></h3>
 <p>Read in the geojson file as a GeoDataFrame object and simplify and reorder using the shapely package. This will be converted back to a dictionary to be applied as our polygon search parameter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -953,10 +955,15 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Polygon coordinates to be used in search: -108.2352445938561,38.98556907427165,-107.85284607930835,38.978765032966244,-107.85494925720668,39.10596902171742,-108.22772795408136,39.11294532581687,-108.2352445938561,38.98556907427165
+</pre></div>
+</div>
+<img alt="../../_images/nsidc-data-access_7_1.svg" src="../../_images/nsidc-data-access_7_1.svg" /></div>
 </div>
 </div>
 <div class="section" id="alternatively-specify-bounding-box-region-of-interest">
-<h4>Alternatively: Specify bounding box region of interest<a class="headerlink" href="#alternatively-specify-bounding-box-region-of-interest" title="Permalink to this headline">¶</a></h4>
+<h3>Alternatively: Specify bounding box region of interest<a class="headerlink" href="#alternatively-specify-bounding-box-region-of-interest" title="Permalink to this headline">¶</a></h3>
 <p>Instead of using a vector shape file to specify a region of interest, you can simply use a bounding box. The following cell is commented out below, which can be used instead of the <code class="docutils literal notranslate"><span class="pre">polygon</span></code> search parameter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -969,13 +976,12 @@
 </div>
 </div>
 <div class="section" id="set-time-range">
-<h4>Set time range<a class="headerlink" href="#set-time-range" title="Permalink to this headline">¶</a></h4>
+<h3>Set time range<a class="headerlink" href="#set-time-range" title="Permalink to this headline">¶</a></h3>
 <p>This is an optional parameter; set this to specify a time range of interest. In this case we’ll just select all of 2017 to ensure that we receive all files within this data set campaign.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temporal</span> <span class="o">=</span> <span class="s1">&#39;2017-01-01T00:00:00Z,2017-12-31T23:59:59Z&#39;</span> <span class="c1"># Set temporal range</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -1052,6 +1058,146 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 3 files
+The total size of all files is 209.20 MB
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;feed&#39;: {&#39;updated&#39;: &#39;2021-07-21T16:27:37.071Z&#39;,
+  &#39;id&#39;: &#39;https://cmr.earthdata.nasa.gov:443/search/granules.json?short_name=SNEX17_GPR&amp;version=2&amp;polygon=-108.2352445938561%2C38.98556907427165%2C-107.85284607930835%2C38.978765032966244%2C-107.85494925720668%2C39.10596902171742%2C-108.22772795408136%2C39.11294532581687%2C-108.2352445938561%2C38.98556907427165&amp;temporal=2017-01-01T00%3A00%3A00Z%2C2017-12-31T23%3A59%3A59Z&#39;,
+  &#39;title&#39;: &#39;ECHO granule metadata&#39;,
+  &#39;entry&#39;: [{&#39;producer_granule_id&#39;: &#39;SnowEx17_GPR_Version2_Week1.csv&#39;,
+    &#39;time_start&#39;: &#39;2017-02-08T00:00:00.000Z&#39;,
+    &#39;updated&#39;: &#39;2019-11-20T14:19:39.156Z&#39;,
+    &#39;dataset_id&#39;: &#39;SnowEx17 Ground Penetrating Radar V002&#39;,
+    &#39;data_center&#39;: &#39;NSIDC_ECS&#39;,
+    &#39;title&#39;: &#39;SC:SNEX17_GPR.002:167128516&#39;,
+    &#39;coordinate_system&#39;: &#39;GEODETIC&#39;,
+    &#39;day_night_flag&#39;: &#39;UNSPECIFIED&#39;,
+    &#39;time_end&#39;: &#39;2017-02-10T23:59:59.000Z&#39;,
+    &#39;id&#39;: &#39;G1657541380-NSIDC_ECS&#39;,
+    &#39;original_format&#39;: &#39;ECHO10&#39;,
+    &#39;granule_size&#39;: &#39;57.3195&#39;,
+    &#39;browse_flag&#39;: False,
+    &#39;polygons&#39;: [[&#39;39.05189 -108.06789 39.04958 -108.07092 39.02644 -108.13422 39.04032 -108.18504 39.0357 -108.2211 39.01719 -108.21534 38.99637 -108.18261 39.00562 -108.11049 39.02413 -108.06225 39.03338 -108.06213 39.02876 -108.08619 39.04264 -108.05301 39.05189 -108.05289 39.0542 -108.06786 39.05189 -108.06789&#39;]],
+    &#39;collection_concept_id&#39;: &#39;C1655875737-NSIDC_ECS&#39;,
+    &#39;online_access_flag&#39;: True,
+    &#39;links&#39;: [{&#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;type&#39;: &#39;text/plain&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/DP1/SNOWEX/SNEX17_GPR.002/2017.02.08/SnowEx17_GPR_Version2_Week1.csv&#39;},
+     {&#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/metadata#&#39;,
+      &#39;type&#39;: &#39;text/xml&#39;,
+      &#39;title&#39;: &#39;(METADATA)&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/DP1/SNOWEX/SNEX17_GPR.002/2017.02.08/SnowEx17_GPR_Version2_Week1.csv.xml&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;length&#39;: &#39;0.0KB&#39;,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/SNOWEX/SNEX17_GPR.002/&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;length&#39;: &#39;0.0KB&#39;,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://search.earthdata.nasa.gov/search/granules?p=C1655875737-NSIDC_ECS&amp;q=SNEX17_GPR&amp;m=29.76382409255042!-108.823974609375!4!1!0!0%2C2&amp;tl=1558474061!4!!&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/metadata#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://doi.org/10.5067/G21LGCNLFSC5&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/documentation#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://doi.org/10.5067/G21LGCNLFSC5&#39;}]},
+   {&#39;producer_granule_id&#39;: &#39;SnowEx17_GPR_Version2_Week2.csv&#39;,
+    &#39;time_start&#39;: &#39;2017-02-14T00:00:00.000Z&#39;,
+    &#39;updated&#39;: &#39;2019-11-20T14:19:39.156Z&#39;,
+    &#39;dataset_id&#39;: &#39;SnowEx17 Ground Penetrating Radar V002&#39;,
+    &#39;data_center&#39;: &#39;NSIDC_ECS&#39;,
+    &#39;title&#39;: &#39;SC:SNEX17_GPR.002:167128520&#39;,
+    &#39;coordinate_system&#39;: &#39;GEODETIC&#39;,
+    &#39;day_night_flag&#39;: &#39;UNSPECIFIED&#39;,
+    &#39;time_end&#39;: &#39;2017-02-17T23:59:59.000Z&#39;,
+    &#39;id&#39;: &#39;G1657541238-NSIDC_ECS&#39;,
+    &#39;original_format&#39;: &#39;ECHO10&#39;,
+    &#39;granule_size&#39;: &#39;85.516&#39;,
+    &#39;browse_flag&#39;: False,
+    &#39;polygons&#39;: [[&#39;39.10738 -107.88943 39.10738 -107.89539 39.0912 -107.95508 39.07271 -108.02372 39.0542 -108.09234 39.04264 -108.16078 39.0357 -108.2113 39.03338 -108.2113 39.0195 -108.20533 39.00099 -108.18454 39.00099 -108.12811 39.00099 -108.08653 39.02644 -108.02094 39.0357 -107.94938 39.02413 -107.93155 39.04726 -107.89867 39.08195 -107.85677 39.10507 -107.86257 39.10969 -107.88644 39.10738 -107.88943&#39;]],
+    &#39;collection_concept_id&#39;: &#39;C1655875737-NSIDC_ECS&#39;,
+    &#39;online_access_flag&#39;: True,
+    &#39;links&#39;: [{&#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;type&#39;: &#39;text/plain&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/DP1/SNOWEX/SNEX17_GPR.002/2017.02.14/SnowEx17_GPR_Version2_Week2.csv&#39;},
+     {&#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/metadata#&#39;,
+      &#39;type&#39;: &#39;text/xml&#39;,
+      &#39;title&#39;: &#39;(METADATA)&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/DP1/SNOWEX/SNEX17_GPR.002/2017.02.14/SnowEx17_GPR_Version2_Week2.csv.xml&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;length&#39;: &#39;0.0KB&#39;,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/SNOWEX/SNEX17_GPR.002/&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;length&#39;: &#39;0.0KB&#39;,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://search.earthdata.nasa.gov/search/granules?p=C1655875737-NSIDC_ECS&amp;q=SNEX17_GPR&amp;m=29.76382409255042!-108.823974609375!4!1!0!0%2C2&amp;tl=1558474061!4!!&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/metadata#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://doi.org/10.5067/G21LGCNLFSC5&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/documentation#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://doi.org/10.5067/G21LGCNLFSC5&#39;}]},
+   {&#39;producer_granule_id&#39;: &#39;SnowEx17_GPR_Version2_Week3.csv&#39;,
+    &#39;time_start&#39;: &#39;2017-02-21T00:00:00.000Z&#39;,
+    &#39;updated&#39;: &#39;2020-02-18T12:25:16.785Z&#39;,
+    &#39;dataset_id&#39;: &#39;SnowEx17 Ground Penetrating Radar V002&#39;,
+    &#39;data_center&#39;: &#39;NSIDC_ECS&#39;,
+    &#39;title&#39;: &#39;SC:SNEX17_GPR.002:173252482&#39;,
+    &#39;coordinate_system&#39;: &#39;GEODETIC&#39;,
+    &#39;day_night_flag&#39;: &#39;UNSPECIFIED&#39;,
+    &#39;time_end&#39;: &#39;2017-02-25T23:59:59.000Z&#39;,
+    &#39;id&#39;: &#39;G1694922459-NSIDC_ECS&#39;,
+    &#39;original_format&#39;: &#39;ECHO10&#39;,
+    &#39;granule_size&#39;: &#39;66.3598&#39;,
+    &#39;browse_flag&#39;: False,
+    &#39;polygons&#39;: [[&#39;39.05189 -108.06789 39.04958 -108.06792 39.03107 -108.08616 39.0195 -108.15531 39.00331 -108.14352 39.00562 -108.11049 39.00562 -108.05349 39.01719 -108.05334 39.02876 -108.02919 39.0542 -108.05586 39.0542 -108.06786 39.05189 -108.06789&#39;]],
+    &#39;collection_concept_id&#39;: &#39;C1655875737-NSIDC_ECS&#39;,
+    &#39;online_access_flag&#39;: True,
+    &#39;links&#39;: [{&#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;type&#39;: &#39;text/plain&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/DP1/SNOWEX/SNEX17_GPR.002/2017.02.21/SnowEx17_GPR_Version2_Week3.csv&#39;},
+     {&#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/metadata#&#39;,
+      &#39;type&#39;: &#39;text/xml&#39;,
+      &#39;title&#39;: &#39;(METADATA)&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/DP1/SNOWEX/SNEX17_GPR.002/2017.02.21/SnowEx17_GPR_Version2_Week3.csv.xml&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;length&#39;: &#39;0.0KB&#39;,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://n5eil01u.ecs.nsidc.org/SNOWEX/SNEX17_GPR.002/&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;length&#39;: &#39;0.0KB&#39;,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://search.earthdata.nasa.gov/search/granules?p=C1655875737-NSIDC_ECS&amp;q=SNEX17_GPR&amp;m=29.76382409255042!-108.823974609375!4!1!0!0%2C2&amp;tl=1558474061!4!!&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/metadata#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://doi.org/10.5067/G21LGCNLFSC5&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/documentation#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://doi.org/10.5067/G21LGCNLFSC5&#39;}]}]}}
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1075,8 +1221,51 @@
 <p>Note that the script below should prompt you with your Earthdata Login username and password if a <code class="docutils literal notranslate"><span class="pre">.netrc</span></code> file does not exist.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="s1">&#39;/home/jovyan/.netrc&#39;</span><span class="p">,</span> <span class="mo">0o600</span><span class="p">)</span> <span class="c1">#only necessary on snowex hackweek jupyterhub</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> &#39;./scripts/nsidc-download_SNEX20_SD.001.py&#39; 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grand Mesa 2020 Snow Depth data download complete&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Querying for data:
+	https://cmr.earthdata.nasa.gov/search/granules.json?provider=NSIDC_ECS&amp;sort_key[]=start_date&amp;sort_key[]=producer_granule_id&amp;scroll=true&amp;page_size=2000&amp;short_name=SNEX20_SD&amp;version=001&amp;version=01&amp;version=1&amp;temporal[]=2020-01-28T00:00:00Z,2020-02-12T23:59:59Z
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 1 matches.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading 2 files...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/2: SnowEx2020_SnowDepths_COGM_alldepths_v01.csv
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [===============                                             ]  25%  5.3MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  6.2MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [=============================================               ]  75%  7.1MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  8.6MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2/2: SnowEx2020_SnowDepths_COGM_alldepths_v01.csv.xml
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  2.0MB/s   
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grand Mesa 2020 Snow Depth data download complete
 </pre></div>
 </div>
 </div>
@@ -1112,6 +1301,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>https://n5eil02u.ecs.nsidc.org/egi/request?short_name=SNEX17_GPR&amp;version=2&amp;polygon=-108.2352445938561,38.98556907427165,-107.85284607930835,38.978765032966244,-107.85494925720668,39.10596902171742,-108.22772795408136,39.11294532581687,-108.2352445938561,38.98556907427165&amp;temporal=2017-01-01T00:00:00Z,2017-12-31T23:59:59Z&amp;request_mode=async&amp;agent=NO&amp;INCLUDE_META=N
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="input-earthdata-login-credentials">
@@ -1120,11 +1314,10 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start authenticated session with Earthdata Login to allow for data downloads:</span>
-
 <span class="k">def</span> <span class="nf">setup_earthdata_login_auth</span><span class="p">(</span><span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">&#39;urs.earthdata.nasa.gov&#39;</span><span class="p">):</span>
     <span class="n">netrc_name</span> <span class="o">=</span> <span class="s2">&quot;_netrc&quot;</span> <span class="k">if</span> <span class="n">system</span><span class="p">()</span><span class="o">==</span><span class="s2">&quot;Windows&quot;</span> <span class="k">else</span> <span class="s2">&quot;.netrc&quot;</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">username</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">password</span> <span class="o">=</span> <span class="n">netrc</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">join</span><span class="p">(</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~&#39;</span><span class="p">),</span> <span class="n">netrc_name</span><span class="p">))</span><span class="o">.</span><span class="n">authenticators</span><span class="p">(</span><span class="n">endpoint</span><span class="p">)</span>
+        <span class="n">username</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">password</span> <span class="o">=</span> <span class="n">netrc</span><span class="o">.</span><span class="n">netrc</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">join</span><span class="p">(</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~&#39;</span><span class="p">),</span> <span class="n">netrc_name</span><span class="p">))</span><span class="o">.</span><span class="n">authenticators</span><span class="p">(</span><span class="n">endpoint</span><span class="p">)</span>
     <span class="k">except</span> <span class="p">(</span><span class="ne">FileNotFoundError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please provide your Earthdata Login credentials for access.&#39;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your info will only be passed to </span><span class="si">%s</span><span class="s1"> and will not be exposed in Jupyter.&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">endpoint</span><span class="p">))</span>
@@ -1220,7 +1413,25 @@
             <span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
     <span class="k">return</span>  
 
+
+<span class="c1"># NOTE: downloads ~ 200MB of CSV files</span>
 <span class="n">request_nsidc_data</span><span class="p">(</span><span class="n">api_request</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Order status URL:  https://n5eil02u.ecs.nsidc.org/egi/request/5000001162862
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Job status is  processing . Trying again.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Job status is  complete
+Zip download URL:  https://n5eil02u.ecs.nsidc.org/esir/5000001162862.zip
+Beginning download of zipped output...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Download is complete.
 </pre></div>
 </div>
 </div>
@@ -1240,6 +1451,112 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>collection</th>
+      <th>trace</th>
+      <th>long</th>
+      <th>lat</th>
+      <th>elev</th>
+      <th>twtt</th>
+      <th>Thickness</th>
+      <th>SWE</th>
+      <th>x</th>
+      <th>y</th>
+      <th>UTM_Zone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>GPR_0042_020817</td>
+      <td>2581</td>
+      <td>-108.066856</td>
+      <td>39.043146</td>
+      <td>3240.2</td>
+      <td>5.89</td>
+      <td>0.692</td>
+      <td>225</td>
+      <td>753854.880092</td>
+      <td>4.325659e+06</td>
+      <td>12 S</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>GPR_0042_020817</td>
+      <td>2582</td>
+      <td>-108.066856</td>
+      <td>39.043146</td>
+      <td>3240.2</td>
+      <td>5.89</td>
+      <td>0.692</td>
+      <td>225</td>
+      <td>753854.899385</td>
+      <td>4.325660e+06</td>
+      <td>12 S</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>GPR_0042_020817</td>
+      <td>2583</td>
+      <td>-108.066856</td>
+      <td>39.043146</td>
+      <td>3240.2</td>
+      <td>5.87</td>
+      <td>0.690</td>
+      <td>224</td>
+      <td>753854.918686</td>
+      <td>4.325660e+06</td>
+      <td>12 S</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>GPR_0042_020817</td>
+      <td>2584</td>
+      <td>-108.066855</td>
+      <td>39.043146</td>
+      <td>3240.2</td>
+      <td>5.86</td>
+      <td>0.689</td>
+      <td>224</td>
+      <td>753854.937987</td>
+      <td>4.325660e+06</td>
+      <td>12 S</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>GPR_0042_020817</td>
+      <td>2585</td>
+      <td>-108.066855</td>
+      <td>39.043147</td>
+      <td>3240.2</td>
+      <td>5.84</td>
+      <td>0.686</td>
+      <td>223</td>
+      <td>753854.957280</td>
+      <td>4.325660e+06</td>
+      <td>12 S</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="section" id="extract-date-values">
 <h3>Extract date values<a class="headerlink" href="#extract-date-values" title="Permalink to this headline">¶</a></h3>
@@ -1253,6 +1570,118 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>collection</th>
+      <th>trace</th>
+      <th>long</th>
+      <th>lat</th>
+      <th>elev</th>
+      <th>twtt</th>
+      <th>Thickness</th>
+      <th>SWE</th>
+      <th>x</th>
+      <th>y</th>
+      <th>UTM_Zone</th>
+      <th>date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>GPR_0042_020817</td>
+      <td>2581</td>
+      <td>-108.066856</td>
+      <td>39.043146</td>
+      <td>3240.20</td>
+      <td>5.89</td>
+      <td>0.692</td>
+      <td>225</td>
+      <td>753854.880092</td>
+      <td>4.325659e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+    </tr>
+    <tr>
+      <th>109172</th>
+      <td>GPR_0043_020817</td>
+      <td>6360</td>
+      <td>-108.063209</td>
+      <td>39.049202</td>
+      <td>3248.49</td>
+      <td>11.49</td>
+      <td>1.350</td>
+      <td>439</td>
+      <td>754148.853700</td>
+      <td>4.326342e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+    </tr>
+    <tr>
+      <th>109173</th>
+      <td>GPR_0043_020817</td>
+      <td>6361</td>
+      <td>-108.063209</td>
+      <td>39.049202</td>
+      <td>3248.50</td>
+      <td>11.56</td>
+      <td>1.358</td>
+      <td>441</td>
+      <td>754148.882549</td>
+      <td>4.326342e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+    </tr>
+    <tr>
+      <th>109174</th>
+      <td>GPR_0043_020817</td>
+      <td>6362</td>
+      <td>-108.063208</td>
+      <td>39.049202</td>
+      <td>3248.50</td>
+      <td>11.62</td>
+      <td>1.365</td>
+      <td>444</td>
+      <td>754148.911407</td>
+      <td>4.326342e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+    </tr>
+    <tr>
+      <th>109175</th>
+      <td>GPR_0043_020817</td>
+      <td>6363</td>
+      <td>-108.063208</td>
+      <td>39.049202</td>
+      <td>3248.50</td>
+      <td>11.64</td>
+      <td>1.368</td>
+      <td>445</td>
+      <td>754148.947466</td>
+      <td>4.326342e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="section" id="convert-to-geopandas-dataframe-to-provide-point-geometry">
 <h4>Convert to Geopandas dataframe to provide point geometry<a class="headerlink" href="#convert-to-geopandas-dataframe-to-provide-point-geometry" title="Permalink to this headline">¶</a></h4>
@@ -1264,6 +1693,124 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>collection</th>
+      <th>trace</th>
+      <th>long</th>
+      <th>lat</th>
+      <th>elev</th>
+      <th>twtt</th>
+      <th>Thickness</th>
+      <th>SWE</th>
+      <th>x</th>
+      <th>y</th>
+      <th>UTM_Zone</th>
+      <th>date</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>GPR_0042_020817</td>
+      <td>2581</td>
+      <td>-108.066856</td>
+      <td>39.043146</td>
+      <td>3240.20</td>
+      <td>5.89</td>
+      <td>0.692</td>
+      <td>225</td>
+      <td>753854.880092</td>
+      <td>4.325659e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+      <td>POINT (753854.880 4325659.484)</td>
+    </tr>
+    <tr>
+      <th>109172</th>
+      <td>GPR_0043_020817</td>
+      <td>6360</td>
+      <td>-108.063209</td>
+      <td>39.049202</td>
+      <td>3248.49</td>
+      <td>11.49</td>
+      <td>1.350</td>
+      <td>439</td>
+      <td>754148.853700</td>
+      <td>4.326342e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+      <td>POINT (754148.854 4326341.915)</td>
+    </tr>
+    <tr>
+      <th>109173</th>
+      <td>GPR_0043_020817</td>
+      <td>6361</td>
+      <td>-108.063209</td>
+      <td>39.049202</td>
+      <td>3248.50</td>
+      <td>11.56</td>
+      <td>1.358</td>
+      <td>441</td>
+      <td>754148.882549</td>
+      <td>4.326342e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+      <td>POINT (754148.883 4326341.916)</td>
+    </tr>
+    <tr>
+      <th>109174</th>
+      <td>GPR_0043_020817</td>
+      <td>6362</td>
+      <td>-108.063208</td>
+      <td>39.049202</td>
+      <td>3248.50</td>
+      <td>11.62</td>
+      <td>1.365</td>
+      <td>444</td>
+      <td>754148.911407</td>
+      <td>4.326342e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+      <td>POINT (754148.911 4326341.917)</td>
+    </tr>
+    <tr>
+      <th>109175</th>
+      <td>GPR_0043_020817</td>
+      <td>6363</td>
+      <td>-108.063208</td>
+      <td>39.049202</td>
+      <td>3248.50</td>
+      <td>11.64</td>
+      <td>1.368</td>
+      <td>445</td>
+      <td>754148.947466</td>
+      <td>4.326342e+06</td>
+      <td>12 S</td>
+      <td>2017-02-08</td>
+      <td>POINT (754148.947 4326341.918)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 </div>

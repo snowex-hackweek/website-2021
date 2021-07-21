@@ -1,0 +1,1202 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UAVSAR Data Access and Conversion &#8212; SnowEx Hackweek</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="NASA Land Information System (LIS)" href="../lis/index.html" />
+    <link rel="prev" title="UAVSAR" href="uavsar.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">SnowEx Hackweek</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to SnowEx Hackweek!
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Details
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../application.html">
+   Application
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../schedule.html">
+   Hackweek Schedule
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../team.html">
+   Our Team
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../norms/index.html">
+   Hackweek Norms
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/CoC.html">
+     Code of Conduct
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../norms/community.html">
+     Learning Community
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Preparation
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../preliminary/index.html">
+   Preliminary Work
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/swc.html">
+     Software Carpentry Training
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/github.html">
+     GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/jupyterhub.html">
+     JupyterHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/git.html">
+     Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/earthdata.html">
+     Earthdata Login
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/pangeo.html">
+     Pangeo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../preliminary/python.html">
+     Python Installation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   Tutorials
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_1.html">
+     Day 1
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../jupyter.html">
+       GitHub, Git, JupyterHub
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../core-datasets/index.html">
+       SnowEx Mission and Core Data Sets
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+      <label for="toctree-checkbox-5">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/01_introduction.html">
+         SnowEx Mission and Core Data Sets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/02_data-package.html">
+         Depths and Snow Pit Data Package Contents
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../core-datasets/03_practice-querying.html">
+         Practice Querying the Snowexsql Database
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_2.html">
+     Day 2
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../geospatial/index.html">
+       Geospatial fundamentals
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+      <label for="toctree-checkbox-7">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geospatial/raster.html">
+         Raster data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geospatial/vector.html">
+         Vector data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../geospatial/SNOTEL_query.html">
+         Dynamic Query of SNOTEL data
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../nsidc-access/nsidc-data-access.html">
+       Accessing SnowEx Data at the NSIDC DAAC
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../database/index.html">
+       SnowEx Database
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+      <label for="toctree-checkbox-8">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/1_getting_started_example.html">
+         Introduction to the SnowEx Database
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/2_database_structure.html">
+         How is the Database Structured?
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/3_forming_queries.html">
+         Forming Queries
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/4_get_spiral_example.html">
+         Forming Queries: Example Visualizng Depths
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/5_plot_raster_example.html">
+         Forming Queries: PostGIS Functions
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/6_exporting_data.html">
+         Exporting Data
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../database/7_wrap_up.html">
+         Wrap up
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_3.html">
+     Day 3
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../lidar/index.html">
+       LIDAR
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+      <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lidar/ICESat2_tutorial.html">
+         Introduction
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lidar/ASO_data_tutorial.html">
+         Lidar remote sensing of snow
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../thermal-ir/index.html">
+       Thermal Infrared Remote Sensing of Snow
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../thermal-ir/thermal-ir-tutorial.html">
+         Thermal Infrared Remote Sensing of Snow
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../thermal-ir/thermal-ir-data-download.html">
+         Downloading datasets for the thermal IR tutorial
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
+       Microstructure Tutorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../gpr/gpr.html">
+       GPR
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../day_4.html">
+     Day 4
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active has-children">
+      <a class="reference internal" href="index.html">
+       Synthetic Aperture Radar
+      </a>
+      <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul class="current">
+       <li class="toctree-l4">
+        <a class="reference internal" href="sentinel1.html">
+         Sentinel-1
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="swesarr.html">
+         SWESARR Tutorial
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="uavsar.html">
+         UAVSAR
+        </a>
+       </li>
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
+         UAVSAR Data Access and Conversion
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="../lis/index.html">
+       NASA Land Information System (LIS)
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lis/1_exploring_lis_output.html">
+         Visualizing and Comparing LIS Output
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../lis/2_interactive_data_exploration.html">
+         Interactive Data Exploration
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../camera-traps-tutorial/timelapse-camera-tutorial.html">
+       Time-lapse Cameras and Snow Applications
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../machine-learning/Machine_Learning_Tutorial.html">
+       Introduction to Machine Learning
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day_5.html">
+     Day 5
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../open_science.html">
+       Open Science
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../open_source_software.html">
+       Open source software
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Projects
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../projects/index.html">
+   Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_initialization.html">
+     Project Initialization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/project_roles.html">
+     Project Roles and Responsibilities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../projects/list_of_projects.html">
+     List of Projects
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../glossary.html">
+   Glossary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../bibliography.html">
+   Bibliography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../SnowEx_News_and_MonthlyMeetings.html">
+   SnowEx News and MonthlyMeetings
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/tutorials/sar/uavsar-download.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/snowex-hackweek/website"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/snowex-hackweek/website/issues/new?title=Issue%20on%20page%20%2Ftutorials/sar/uavsar-download.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/snowex-hackweek/website/edit/main/book/tutorials/sar/uavsar-download.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-download">
+   Data Download
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unzipping-the-files-we-just-downloaded">
+     Unzipping the files we just downloaded
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#removing-unwanted-data">
+     Removing unwanted data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#converting-data-to-geotiffs">
+   Converting Data to GeoTiffs
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="uavsar-data-access-and-conversion">
+<h1>UAVSAR Data Access and Conversion<a class="headerlink" href="#uavsar-data-access-and-conversion" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-learning-objectives admonition">
+<p class="admonition-title">Learning Objectives</p>
+<ul class="simple">
+<li><p>overview of UAVSAR data (both InSAR and PolSAR products)</p></li>
+<li><p>demonstrate how to access and transform data to Geotiffs</p></li>
+</ul>
+</div>
+<p>There are multiple ways to access UAVSAR data. Also the SQL database.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://search.asf.alaska.edu/#/?dataset=UAVSAR">Alaska Satellite Facility Vertex Portal</a></p></li>
+<li><p><a class="reference external" href="https://search.earthdata.nasa.gov/portal/suborbital/search?fi=UAVSAR&amp;as%5Binstrument%5D%5B0%5D=UAVSAR">NASA Earthdata Suborbital Search</a></p></li>
+<li><p><a class="reference external" href="https://uavsar.jpl.nasa.gov/cgi-bin/data.pl">JPL UAVSAR Data Search</a></p></li>
+</ul>
+<div class="insar data types admonition">
+<p class="admonition-title">InSAR Data Types</p>
+<ul class="simple">
+<li><p>ANN file (.ann): a text annotation file with metadata</p></li>
+<li><p>AMP files (.amp1 and .amp2): calibrated multi-looked amplitude products</p></li>
+<li><p>INT files (.int): interferogram product, complex number format (we won’t be using these here)</p></li>
+<li><p>COR files (.cor): interferometric correlation product, a measure of the noise level of the phase</p></li>
+<li><p>GRD files (.grd): interferometric products projected to the ground in simple geographic coordinates (latitude, longitude)</p></li>
+<li><p>HGT file  (.hgt): the DEM that was used in the InSAR processing</p></li>
+<li><p>KML and KMZ files (.kml or .kmz): format for viewing files in Google Earth (can’t be used for analysis)</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import libraries</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">getpass</span>
+<span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span> 
+<span class="kn">import</span> <span class="nn">os</span>  <span class="c1"># for chdir, getcwd, path.basename, path.exists</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># for DatetimeIndex</span>
+<span class="kn">import</span> <span class="nn">codecs</span> <span class="c1"># for text parsing code</span>
+<span class="kn">import</span> <span class="nn">netrc</span>
+<span class="kn">import</span> <span class="nn">rasterio</span> <span class="k">as</span> <span class="nn">rio</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="data-download">
+<h2>Data Download<a class="headerlink" href="#data-download" title="Permalink to this headline">¶</a></h2>
+<p>We will use our NASA EarthData credentials and ASF Vertex to download an InSAR pair data into our notebook directly. For this tutorial, we will be working with UAVSAR data from February of 2020. If you want to use different data in the future, change the links in the files variable. The screengrab below shows how I generated these download links from the ASF site.</p>
+<a class="reference internal image-reference" href="../../_images/asf_vertex.png"><img alt="asf vertex" src="../../_images/asf_vertex.png" style="width: 800px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get NASA EARTHDATA Credentials from ~/.netrc or manual input</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chmod</span><span class="p">(</span><span class="s1">&#39;/home/jovyan/.netrc&#39;</span><span class="p">,</span> <span class="mo">0o600</span><span class="p">)</span> <span class="c1">#only necessary on jupyterhub</span>
+    <span class="p">(</span><span class="n">ASF_USER</span><span class="p">,</span> <span class="n">account</span><span class="p">,</span> <span class="n">ASF_PASS</span><span class="p">)</span> <span class="o">=</span> <span class="n">netrc</span><span class="o">.</span><span class="n">netrc</span><span class="p">()</span><span class="o">.</span><span class="n">authenticators</span><span class="p">(</span><span class="s2">&quot;urs.earthdata.nasa.gov&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="n">ASF_USER</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Username: &quot;</span><span class="p">)</span>
+    <span class="n">ASF_PASS</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="s2">&quot;Enter Password: &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># directory in which the notebook resides</span>
+<span class="k">if</span> <span class="s1">&#39;tutorial_home_dir&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">():</span>
+     <span class="n">tutorial_home_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Notebook directory: &quot;</span><span class="p">,</span> <span class="n">tutorial_home_dir</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;/tmp/&#39;</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;/tmp&#39;</span><span class="p">)</span>
+   
+<span class="c1"># directory for data downloads</span>
+
+<span class="n">data_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;/tmp&#39;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span> 
+
+<span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://datapool.asf.alaska.edu/INTERFEROMETRY_GRD/UA/grmesa_27416_20003-028_20005-007_0011d_s01_L090_01_int_grd.zip&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;https://datapool.asf.alaska.edu/AMPLITUDE_GRD/UA/grmesa_27416_20003-028_20005-007_0011d_s01_L090_01_amp_grd.zip&#39;</span><span class="p">]</span>
+    
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;downloading </span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s1">...&#39;</span><span class="p">)</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span><span class="n">filename</span><span class="p">)):</span>
+        <span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;wget -q </span><span class="si">{0}</span><span class="s2"> --user=</span><span class="si">{1}</span><span class="s2"> --password=</span><span class="si">{2}</span><span class="s2"> -P </span><span class="si">{3}</span><span class="s2"> -nc&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">ASF_USER</span><span class="p">,</span> <span class="n">ASF_PASS</span><span class="p">,</span> <span class="n">data_dir</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">filename</span> <span class="o">+</span> <span class="s2">&quot; already exists. Skipping download ..&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check to see if downloaded</span>
+<span class="c1"># the *.* syntax means print all files in the directory</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;/tmp/*.*&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#use for deleting contents of temp directory if needed. DO NOT uncomment, this will cause the notebook to fail.</span>
+
+<span class="c1">#files = glob.glob(&quot;/tmp/*.*&quot;)</span>
+<span class="c1">#for f in files:</span>
+<span class="c1">#    os.remove(f)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="unzipping-the-files-we-just-downloaded">
+<h3>Unzipping the files we just downloaded<a class="headerlink" href="#unzipping-the-files-we-just-downloaded" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## unzip files just downloaded</span>
+
+<span class="c1"># define file path for both files</span>
+<span class="n">int_zip</span> <span class="o">=</span> <span class="s1">&#39;/tmp/grmesa_27416_20003-028_20005-007_0011d_s01_L090_01_int_grd.zip&#39;</span>
+<span class="n">amp_zip</span> <span class="o">=</span> <span class="s1">&#39;/tmp/grmesa_27416_20003-028_20005-007_0011d_s01_L090_01_amp_grd.zip&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># unzip</span>
+
+<span class="c1"># int</span>
+<span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">int_zip</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_ref</span><span class="p">:</span>
+    <span class="n">zip_ref</span><span class="o">.</span><span class="n">printdir</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Extracting all the files now...&#39;</span><span class="p">)</span>
+    <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s1">&#39;/tmp&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done&quot;</span><span class="p">)</span>
+    
+<span class="c1"># amp</span>
+<span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">amp_zip</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_ref</span><span class="p">:</span>
+    <span class="n">zip_ref</span><span class="o">.</span><span class="n">printdir</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Extracting all the files now...&#39;</span><span class="p">)</span>
+    <span class="n">zip_ref</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s1">&#39;/tmp&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="removing-unwanted-data">
+<h3>Removing unwanted data<a class="headerlink" href="#removing-unwanted-data" title="Permalink to this headline">¶</a></h3>
+<p>For simplicity, we’ll only work with HH polarization. The three other polarizations (VV, VH, HV) provide additional information about the surface properties and can be utilized in further analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># clean up unwanted data from what we just downloaded</span>
+
+<span class="n">directory</span> <span class="o">=</span> <span class="s1">&#39;/tmp&#39;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
+<span class="n">HV_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*HV_01*&#39;</span><span class="p">)</span> <span class="c1">#define all HV</span>
+<span class="n">VV_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*VV_01*&#39;</span><span class="p">)</span> <span class="c1">#define all VV</span>
+<span class="n">VH_files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*VH_01*&#39;</span><span class="p">)</span> <span class="c1">#define all VH</span>
+<span class="n">zips</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.zip&#39;</span><span class="p">)</span> <span class="c1"># define the zip files</span>
+
+<span class="c1"># loops to remove them</span>
+
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">HV_files</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">VV_files</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">VH_files</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">zips</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check to see what files are left in the directory</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;/tmp/*.*&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we only have the HH polarization, the annotation file, and the 6 .grd files!</p>
+</div>
+</div>
+<div class="section" id="converting-data-to-geotiffs">
+<h2>Converting Data to GeoTiffs<a class="headerlink" href="#converting-data-to-geotiffs" title="Permalink to this headline">¶</a></h2>
+<p>The downloadable UAVSAR data comes in a flat binary format (.grd), which is not readable by GDAL (Geospatial Data Abstraction Library). Therefore it needs to be transformed for use in standard spatial analysis software (ArcGIS, QGIS, Python, R, MATLAB, etc.). To do this, we will use the uavsar_tiff_convert function, which takes information (latitude, longitude, number of lines and samples, data type, pixel size) from the annotation file to create an ENVI header (.hdr). Once the ENVI header is created, the files can be read into Python and converted to GeoTiffs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, let&#39;s print the annotation file to get a look at it&#39;s content</span>
+<span class="c1"># these file contain a lot of information and can be very intimidating and hard to understand, but being able to read them is vital to working this UAVSAR data</span>
+
+<span class="c1">#f = open(&#39;/tmp/grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.ann&#39;, &#39;r&#39;)</span>
+<span class="c1">#file_contents = f.read()</span>
+<span class="c1">#print (file_contents)</span>
+<span class="o">!</span>head -n <span class="m">15</span> /tmp/grmesa_27416_20003-028_20005-007_0011d_s01_L090HH_01.ann
+</pre></div>
+</div>
+</div>
+</div>
+<p>This function pulls out information from the annotation file, builds and ENVI header, and then converts the data to GeoTIFFS.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># folder is path to a folder with an .ann (or .txt) and .grd files (.amp1, .amp2, .cor, .unw, .int)</span>
+
+<span class="k">def</span> <span class="nf">uavsar_tiff_convert</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Builds a header file for the input UAVSAR .grd file,</span>
+<span class="sd">    allowing the data to be read as a raster dataset.</span>
+<span class="sd">    :param folder:   the folder containing the UAVSAR .grd and .ann files</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
+    <span class="n">int_file</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s1">&#39;int.grd&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Empty lists to put information that will be recalled later.</span>
+    <span class="n">Lines_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">Samples_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">Latitude_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">Longitude_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">Files_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Step 1: Look through folder and determine how many different flights there are</span>
+    <span class="c1"># by looking at the HDR files.</span>
+    <span class="k">for</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">files</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span> <span class="o">==</span> <span class="s2">&quot;.grd&quot;</span><span class="p">:</span>
+            <span class="n">newfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;.hdr&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+            <span class="n">newfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;ENVI</span>
+<span class="s2">description = </span><span class="si">{DESCFIELD}</span><span class="s2"></span>
+<span class="s2">samples = NSAMP</span>
+<span class="s2">lines = NLINE</span>
+<span class="s2">bands = 1</span>
+<span class="s2">header offset = 0</span>
+<span class="s2">data type = DATTYPE</span>
+<span class="s2">interleave = bsq</span>
+<span class="s2">sensor type = UAVSAR L-Band</span>
+<span class="s2">byte order = 0</span>
+<span class="s2">map info = {Geographic Lat/Lon, </span>
+<span class="s2">            1.000, </span>
+<span class="s2">            1.000, </span>
+<span class="s2">            LON, </span>
+<span class="s2">            LAT,  </span>
+<span class="s2">            0.0000555600000000, </span>
+<span class="s2">            0.0000555600000000, </span>
+<span class="s2">            WGS-84, units=Degrees}</span>
+<span class="s2">wavelength units = Unknown</span>
+<span class="s2">                &quot;&quot;&quot;</span>
+                          <span class="p">)</span>
+            <span class="n">newfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">18</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Files_list</span><span class="p">:</span>
+                <span class="n">Files_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">files</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">18</span><span class="p">])</span>
+
+    <span class="c1">#Variables used to recall indexed values.</span>
+    <span class="n">var1</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1">#Step 2: Look through the folder and locate the annotation file(s).</span>
+    <span class="c1"># These can be in either .txt or .ann file types.</span>
+    <span class="k">for</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">Files_list</span><span class="p">[</span><span class="n">var1</span><span class="p">]</span> <span class="ow">and</span> <span class="n">files</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span> <span class="o">==</span> <span class="s2">&quot;.txt&quot;</span> <span class="ow">or</span> <span class="n">files</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span> <span class="o">==</span> <span class="s2">&quot;.ann&quot;</span><span class="p">:</span>
+            <span class="c1">#Step 3: Once located, find the info we are interested in and append it to</span>
+            <span class="c1"># the appropriate list. We limit the variables to &lt;=1 so that they only</span>
+            <span class="c1"># return two values (one for each polarization of</span>
+            <span class="n">searchfile</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;windows-1252&#39;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">searchfile</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s2">&quot;Ground Range Data Latitude Lines&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                    <span class="n">Lines</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">65</span><span class="p">:</span><span class="mi">70</span><span class="p">]</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of Lines: </span><span class="si">{</span><span class="n">Lines</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">Lines</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Lines_list</span><span class="p">:</span>
+                        <span class="n">Lines_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Lines</span><span class="p">)</span>
+
+                <span class="k">elif</span> <span class="s2">&quot;Ground Range Data Longitude Samples&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                    <span class="n">Samples</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">65</span><span class="p">:</span><span class="mi">70</span><span class="p">]</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of Samples: </span><span class="si">{</span><span class="n">Samples</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">Samples</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Samples_list</span><span class="p">:</span>
+                        <span class="n">Samples_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Samples</span><span class="p">)</span>
+
+                <span class="k">elif</span> <span class="s2">&quot;Ground Range Data Starting Latitude&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                    <span class="n">Latitude</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">65</span><span class="p">:</span><span class="mi">85</span><span class="p">]</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Top left lat: </span><span class="si">{</span><span class="n">Latitude</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">Latitude</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Latitude_list</span><span class="p">:</span>
+                        <span class="n">Latitude_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Latitude</span><span class="p">)</span>
+
+                <span class="k">elif</span> <span class="s2">&quot;Ground Range Data Starting Longitude&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                    <span class="n">Longitude</span> <span class="o">=</span> <span class="n">line</span><span class="p">[</span><span class="mi">65</span><span class="p">:</span><span class="mi">85</span><span class="p">]</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Top left Lon: </span><span class="si">{</span><span class="n">Longitude</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">Longitude</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Longitude_list</span><span class="p">:</span>
+                        <span class="n">Longitude_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Longitude</span><span class="p">)</span>
+    
+                        
+                 
+            <span class="c1">#Reset the variables to zero for each different flight date.</span>
+            <span class="n">var1</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">searchfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+
+    <span class="c1"># Step 3: Open .hdr file and replace data for all type 4 (real numbers) data</span>
+    <span class="c1"># this all the .grd files expect for .int</span>
+    <span class="k">for</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">files</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:]</span> <span class="o">==</span> <span class="s2">&quot;.hdr&quot;</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sources</span><span class="p">:</span>
+                <span class="n">lines</span> <span class="o">=</span> <span class="n">sources</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sources</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="s2">&quot;data type = DATTYPE&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">19</span><span class="p">],</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+                    <span class="k">elif</span> <span class="s2">&quot;DESCFIELD&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">15</span><span class="p">:</span><span class="mi">24</span><span class="p">],</span> <span class="n">folder</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+                    <span class="k">elif</span> <span class="s2">&quot;lines&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">13</span><span class="p">],</span> <span class="n">Lines</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+                    <span class="k">elif</span> <span class="s2">&quot;samples&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">15</span><span class="p">],</span> <span class="n">Samples</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+                    <span class="k">elif</span> <span class="s2">&quot;LAT&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">15</span><span class="p">],</span> <span class="n">Latitude</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+                    <span class="k">elif</span> <span class="s2">&quot;LON&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">15</span><span class="p">],</span> <span class="n">Longitude</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+    
+    <span class="c1"># Step 3: Open .hdr file and replace data for .int file date type 6 (complex)                 </span>
+    <span class="k">for</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">files</span><span class="p">[</span><span class="o">-</span><span class="mi">8</span><span class="p">:]</span> <span class="o">==</span> <span class="s2">&quot;.int.hdr&quot;</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sources</span><span class="p">:</span>
+                <span class="n">lines</span> <span class="o">=</span> <span class="n">sources</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sources</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="s2">&quot;data type = 4&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">13</span><span class="p">],</span> <span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+                    <span class="k">elif</span> <span class="s2">&quot;DESCFIELD&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">15</span><span class="p">:</span><span class="mi">24</span><span class="p">],</span> <span class="n">folder</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+                    <span class="k">elif</span> <span class="s2">&quot;lines&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">13</span><span class="p">],</span> <span class="n">Lines</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+                    <span class="k">elif</span> <span class="s2">&quot;samples&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">15</span><span class="p">],</span> <span class="n">Samples</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+                    <span class="k">elif</span> <span class="s2">&quot;LAT&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">15</span><span class="p">],</span> <span class="n">Latitude</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+                    <span class="k">elif</span> <span class="s2">&quot;LON&quot;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">15</span><span class="p">],</span> <span class="n">Longitude</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">sources</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+                        
+    
+    <span class="c1"># Step 4: Now we have an .hdr file, the data is geocoded and can be loaded into python with rasterio</span>
+    <span class="c1"># once loaded in we use gdal.Translate to convert and save as a .tiff</span>
+    
+    <span class="n">data_to_process</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s1">&#39;*.grd&#39;</span><span class="p">))</span> <span class="c1"># list all .grd files</span>
+    <span class="k">for</span> <span class="n">data_path</span> <span class="ow">in</span> <span class="n">data_to_process</span><span class="p">:</span> <span class="c1"># loop to open and translate .grd to .tiff, and save .tiffs using gdal</span>
+        <span class="n">raster_dataset</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GA_ReadOnly</span><span class="p">)</span>
+        <span class="n">raster</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Translate</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.tiff&#39;</span><span class="p">),</span> <span class="n">raster_dataset</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;Gtiff&#39;</span><span class="p">,</span> <span class="n">outputType</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_Float32</span><span class="p">)</span>
+    
+    <span class="c1"># Step 5: Save the .int raster, needs separate save because of the complex format</span>
+    <span class="n">data_to_process</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="s1">&#39;*.int.grd&#39;</span><span class="p">))</span> <span class="c1"># list all .int.grd files (only 1)</span>
+    <span class="k">for</span> <span class="n">data_path</span> <span class="ow">in</span> <span class="n">data_to_process</span><span class="p">:</span>
+        <span class="n">raster_dataset</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="n">data_path</span><span class="p">,</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GA_ReadOnly</span><span class="p">)</span>
+        <span class="n">raster</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">Translate</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">data_path</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.tiff&#39;</span><span class="p">),</span> <span class="n">raster_dataset</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;Gtiff&#39;</span><span class="p">,</span> <span class="n">outputType</span> <span class="o">=</span> <span class="n">gdal</span><span class="o">.</span><span class="n">GDT_CFloat32</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;.tiffs have been created&quot;</span><span class="p">)</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_folder</span> <span class="o">=</span> <span class="s1">&#39;/tmp&#39;</span> <span class="c1"># define folder where the .grd and .ann files are</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uavsar_tiff_convert</span><span class="p">(</span><span class="n">data_folder</span><span class="p">)</span> <span class="c1"># call the tiff convert function, and it will print the information it extracted from the .ann file</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we’ll delete the unneeded .grd and .hdr files that our tiffs have been created. If you’re using this code on your local machine, this probably isn’t absolutely necessary. The JupyterHub cloud we’re working in has limited space, so deletion is needed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">data_folder</span><span class="p">)</span>
+<span class="n">grd</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.grd&#39;</span><span class="p">)</span> <span class="c1">#define .grd</span>
+<span class="n">hdr</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.hdr*&#39;</span><span class="p">)</span> <span class="c1">#define .hdr</span>
+
+<span class="c1"># remove both</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">grd</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">hdr</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check what&#39;s in the directory, only .tiffs and our annotation file!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.*&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### inspect our newly created .tiffs, and create named objects for each data type. We&#39;ll use these new obects in the next step</span>
+
+<span class="c1"># amplitude from the first acquisition</span>
+<span class="k">for</span> <span class="n">amp1</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*amp1.grd.tiff&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">amp1</span><span class="p">)</span>
+    
+<span class="c1"># amplitude from the second acquisition</span>
+<span class="k">for</span> <span class="n">amp2</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*amp2.grd.tiff&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">amp2</span><span class="p">)</span>
+
+<span class="c1"># coherence</span>
+<span class="k">for</span> <span class="n">cor</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*cor.grd.tiff&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">cor</span><span class="p">)</span>
+
+<span class="c1"># unwrapped phase</span>
+<span class="k">for</span> <span class="n">unw</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*unw.grd.tiff&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">unw</span><span class="p">)</span>
+
+<span class="c1"># dem used in processing</span>
+<span class="k">for</span> <span class="n">dem</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*hgt.grd.tiff&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dem</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Inspect the meta data the rasters using the rio (shorthand for rasterio) <code class="docutils literal notranslate"><span class="pre">profile</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">unw_rast</span> <span class="o">=</span> <span class="n">rio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">unw</span><span class="p">)</span>
+<span class="n">meta_data</span> <span class="o">=</span> <span class="n">unw_rast</span><span class="o">.</span><span class="n">profile</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">meta_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tutorials/sar"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="uavsar.html" title="previous page">UAVSAR</a>
+    <a class='right-next' id="next-link" href="../lis/index.html" title="next page">NASA Land Information System (LIS)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By eScience Institute, University of Washington<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QM84T4SB76"></script>
+<script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){ dataLayer.push(arguments); }
+                    gtag('config', 'G-QM84T4SB76');
+                </script>
+
+  </body>
+</html>
