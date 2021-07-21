@@ -14,10 +14,10 @@
   * Part 1: Comparing airborne IR imagery with ground-truth observations
   * Part 2: Satellite IR remote sensing obsevations
 * [Downloading datasets through the NASA EarthData API](./thermal-ir-data-download.ipynb)
-  * [earthdata_api.py](./earthdata_api.py)
+  * earthdata_api.py
 * [ASTER L1T utilities from LP DAAC Data User Resources](https://git.earthdata.nasa.gov/projects/LPDUR/repos/aster-l1t/browse)
-  * {download}`README.md <./ast-l1t/README.md>`
-  * {download}`ASTERL1T_hdf2tif.py <./ast-l1t/ASTERL1T_hdf2tif.py>`
+  * ast-l1t/README.md
+  * ast-l1t/ASTERL1T_hdf2tif.py
 
 
 ## Why do we want thermal images of snow?
@@ -73,7 +73,7 @@ During the field campaign at Grand Mesa, we wanted to capture the spatial variab
 
 In the figure below, the field campaign map (left) showing snow pit locations and flight-line paths is annotated with two snow surface temperature timeseries measurements sites, the *Mesa West* meteorlogical station, and *Snow Pit 2S10*. We will use data from snow pit 2S10 for this tutorial.
 
-The UW-APL thermal IR imager (center) was flown over Grand Mesa several times over the course of the field campaign. We will use a single flight-line mosaic image in this tutorial.
+The UW-APL thermal IR imager (center) was flown over Grand Mesa several times over the course of the field campaign. We will use a single flight-line mosaic image in this tutorial. (Thank you to Chris Chickadel at the UW APL for this data collection!)
 
 The aircraft flight times were planned to be coincident with remote sensing satellites passing overhead. We will use a single ASTER thermal infrared image (right) in this tutorial that was taken at the same time as our example airborne IR mosaic.
 
