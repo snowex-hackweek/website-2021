@@ -25,10 +25,11 @@ jobs:
         path: ./book/_build
         key: jupyterbook-4
 
-    - name: List Jupyter-Cache contents
-      run: |
-        pip install tabulate --no-deps
-        jcache cache list -p book/_build/.jupyter_cache
+    # NOTE: download build-artifact (_build) folder to inspect cache locally 
+    # - name: List Jupyter-Cache contents
+    #  run: |
+    #    pip install tabulate --no-deps
+    #    jcache cache list -p book/_build/.jupyter_cache
 
     - name: Pull Docker Image
       run: |
@@ -62,3 +63,10 @@ jobs:
         personal_token: ${{ secrets.GH_PAT }}
         publish_dir: book/_build/html
         publish_branch: gh-pages
+
+    - name: Save Build
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: book/_build/
