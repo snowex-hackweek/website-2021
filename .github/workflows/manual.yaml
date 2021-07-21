@@ -1,14 +1,8 @@
-name: Test
+name: Build Without Cache
 
-on:
-  pull_request_target:
-    types: [labeled, synchronize]
-    paths:
-      - 'book/**'
-      - '.github/workflows/test.yaml'
-      - '.binder/**'
-    branches:
-      - main
+on: workflow_dispatch
+    # can maybe specify PR branch ref here?
+    # https://docs.github.com/en/actions/reference/events-that-trigger-workflows#example-workflow-configuration
 
 env:
   DOCKER_IMAGE: uwhackweek/snowex:latest
@@ -16,32 +10,15 @@ env:
 jobs:
   build-and-test:
     runs-on: ubuntu-20.04
-    # This workflow accesses secrets and checks out a PR, so only run if labelled
-    # https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
-    if: contains(github.event.pull_request.labels.*.name, 'preview')
-
     steps:
-    - uses: actions/checkout@v2
-      with:
-        ref: ${{ github.event.pull_request.head.sha }}
-
-    - name: Setup Cache
-      uses: actions/cache@v2
-      # NOTE: change key to "jupyterbook-N+1" to force rebuilding cache
-      with:
-        path: ./book/_build
-        key: jupyterbook-4
-
-    - name: List Jupyter-Cache contents
-      run: |
-        pip install tabulate --no-deps
-        jcache cache list -p book/_build/.jupyter_cache
-
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    
     - name: Pull Docker Image
       run: |
         docker pull $DOCKER_IMAGE
         docker images
-
+    
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -53,7 +30,6 @@ jobs:
 
     - name: Build JupyterBook
       env:
-        # Warning: careful exposing secrets in scripts
         EARTHDATA_LOGIN: ${{ secrets.EARTHDATA_LOGIN }}
         EARTHDATA_PASSWORD: ${{ secrets.EARTHDATA_PASSWORD }}
       run: |
@@ -62,7 +38,7 @@ jobs:
         -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN \
         -v ${{ github.workspace }}:/home/jovyan:rw \
         $DOCKER_IMAGE .github/workflows/build.sh
-
+    
     - name: Save Build
       if: ${{ always() }}
       uses: actions/upload-artifact@v2

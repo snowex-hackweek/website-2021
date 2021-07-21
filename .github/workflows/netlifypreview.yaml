@@ -25,7 +25,12 @@ jobs:
       # NOTE: change key to "jupyterbook-N+1" to force rebuilding cache
       with:
         path: ./book/_build
-        key: jupyterbook-3
+        key: jupyterbook-4
+
+    - name: List Jupyter-Cache contents
+      run: |
+        pip install tabulate --no-deps
+        jcache cache list -p book/_build/.jupyter_cache
 
     - name: Pull SnowEX Docker Image
       run: |
