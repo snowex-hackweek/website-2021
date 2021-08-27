@@ -1,17 +1,11 @@
 # Welcome to SnowEx Hackweek!
 
-```{admonition} **AGU Session announcement:**
-We invite you to consider submitting an abstract, due 4 August 2021!
- 
-Session title: Using NASA SnowEx Data for Algorithm Development and
-Modeling to Estimate Seasonal Snow and Snow Water Equivalent.  
-AGU will be a hybrid event this year (in-person and virtual). 
-
-Visit the [AGU submission page](https://www.agu.org/fall-meeting) for more information on submitting an abstract.   
-```  
-
 ![snow from iss](img/snow_from_iss.jpg)
 
-SnowEx hackweek was offered virtually July 12 - 16, 2021. The purpose of the event was to foster an environment of collaboration and sharing of [NASA SnowEx](https://snow.nasa.gov/campaigns/snowex) datasets across teams. We offered [tutorials](tutorials/index) on open source software and we participated in a variety of different [projects](projects/list_of_projects) work. 
+SnowEx hackweek was offered virtually July 12 - 16, 2021 with over 100 participants. The purpose of the event was to foster an environment of collaboration and sharing of [NASA SnowEx](https://snow.nasa.gov/campaigns/snowex) datasets across teams. 
+
+On this website you'll find 14 [tutorials](tutorials/index) covering topics from microstructure to satellite radar. All tutorials are Jupyter Notebooks, with rendered versions that anyone can read through, or they can be run interactively in computing environments. Tutorial recordings are available on this UW eScience [YouTube Playlist](https://www.youtube.com/playlist?list=PLA6PlfxWZPLSTUaS0uR8FMcNC2wqztwjJ)
+
+Teams worked collaboratively on 7 different projects focused on data cross-validation and software development. Read more about the projects and there results on our [projects page](projects/list_of_projects)
 
 Learn more about hackweeks hosted by the [University of Washington eScience Institute](https://uwhackweek.github.io/hackweeks-as-a-service/intro.html), or check out our publication describing the hackweek educational model {cite:p}`Huppenkothen2018`.
