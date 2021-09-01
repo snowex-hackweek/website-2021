@@ -55,7 +55,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Day 4" href="../day_4.html" />
+    <link rel="next" title="Synthetic Aperture Radar" href="../sar/index.html" />
     <link rel="prev" title="Microstructure Tutorial" href="../microstructure/microstructure-tutorial.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -207,9 +207,14 @@
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter.html">
+     GitHub, Git, JupyterHub
+    </a>
+   </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../day_1.html">
-     Day 1
+    <a class="reference internal" href="../core-datasets/index.html">
+     SnowEx Mission and Core Data Sets
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
     <label for="toctree-checkbox-4">
@@ -218,42 +223,57 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../jupyter.html">
-       GitHub, Git, JupyterHub
-      </a>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="../core-datasets/index.html">
+      <a class="reference internal" href="../core-datasets/01_introduction.html">
        SnowEx Mission and Core Data Sets
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../core-datasets/01_introduction.html">
-         SnowEx Mission and Core Data Sets
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../core-datasets/02_data-package.html">
-         Depths and Snow Pit Data Package Contents
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../core-datasets/03_practice-querying.html">
-         Practice Querying the Snowexsql Database
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../core-datasets/02_data-package.html">
+       Depths and Snow Pit Data Package Contents
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../core-datasets/03_practice-querying.html">
+       Practice Querying the Snowexsql Database
+      </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../day_2.html">
-     Day 2
+    <a class="reference internal" href="../geospatial/index.html">
+     Geospatial fundamentals
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geospatial/raster.html">
+       Raster data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geospatial/vector.html">
+       Vector data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geospatial/SNOTEL_query.html">
+       Dynamic Query of SNOTEL data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nsidc-access/nsidc-data-access.html">
+     Accessing SnowEx Data at the NSIDC DAAC
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../database/index.html">
+     SnowEx Database
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
     <label for="toctree-checkbox-6">
@@ -261,250 +281,170 @@
      </i>
     </label>
     <ul>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="../geospatial/index.html">
-       Geospatial fundamentals
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/1_getting_started_example.html">
+       Introduction to the SnowEx Database
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-      <label for="toctree-checkbox-7">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../geospatial/raster.html">
-         Raster data
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../geospatial/vector.html">
-         Vector data
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../geospatial/SNOTEL_query.html">
-         Dynamic Query of SNOTEL data
-        </a>
-       </li>
-      </ul>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../nsidc-access/nsidc-data-access.html">
-       Accessing SnowEx Data at the NSIDC DAAC
+      <a class="reference internal" href="../database/2_database_structure.html">
+       How is the Database Structured?
       </a>
      </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="../database/index.html">
-       SnowEx Database
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/3_forming_queries.html">
+       Forming Queries
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-      <label for="toctree-checkbox-8">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../database/1_getting_started_example.html">
-         Introduction to the SnowEx Database
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../database/2_database_structure.html">
-         How is the Database Structured?
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../database/3_forming_queries.html">
-         Forming Queries
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../database/4_get_spiral_example.html">
-         Forming Queries: Example Visualizng Depths
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../database/5_plot_raster_example.html">
-         Forming Queries: PostGIS Functions
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../database/6_exporting_data.html">
-         Exporting Data
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../database/7_wrap_up.html">
-         Wrap up
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/4_get_spiral_example.html">
+       Forming Queries: Example Visualizng Depths
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/5_plot_raster_example.html">
+       Forming Queries: PostGIS Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/6_exporting_data.html">
+       Exporting Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/7_wrap_up.html">
+       Wrap up
+      </a>
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="../day_3.html">
-     Day 3
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../lidar/index.html">
+     LIDAR
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lidar/ICESat2_tutorial.html">
+       Introduction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lidar/ASO_data_tutorial.html">
+       Lidar remote sensing of snow
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../thermal-ir/index.html">
+     Thermal Infrared Remote Sensing of Snow
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../thermal-ir/thermal-ir-tutorial.html">
+       Thermal Infrared Remote Sensing of Snow
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../thermal-ir/thermal-ir-data-download.html">
+       Downloading datasets for the thermal IR tutorial
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
+     Microstructure Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     GPR
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../sar/index.html">
+     Synthetic Aperture Radar
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
     <label for="toctree-checkbox-9">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="../lidar/index.html">
-       LIDAR
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/sentinel1.html">
+       Sentinel-1
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-      <label for="toctree-checkbox-10">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../lidar/ICESat2_tutorial.html">
-         Introduction
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../lidar/ASO_data_tutorial.html">
-         Lidar remote sensing of snow
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="../thermal-ir/index.html">
-       Thermal Infrared Remote Sensing of Snow
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-      <label for="toctree-checkbox-11">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../thermal-ir/thermal-ir-tutorial.html">
-         Thermal Infrared Remote Sensing of Snow
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../thermal-ir/thermal-ir-data-download.html">
-         Downloading datasets for the thermal IR tutorial
-        </a>
-       </li>
-      </ul>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
-       Microstructure Tutorial
+      <a class="reference internal" href="../sar/swesarr.html">
+       SWESARR Tutorial
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       GPR
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/uavsar.html">
+       UAVSAR
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/uavsar-download.html">
+       UAVSAR Data Access and Conversion
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../day_4.html">
-     Day 4
+    <a class="reference internal" href="../lis/index.html">
+     NASA Land Information System (LIS)
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-    <label for="toctree-checkbox-12">
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
      <i class="fas fa-chevron-down">
      </i>
     </label>
     <ul>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="../sar/index.html">
-       Synthetic Aperture Radar
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-      <label for="toctree-checkbox-13">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../sar/sentinel1.html">
-         Sentinel-1
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../sar/swesarr.html">
-         SWESARR Tutorial
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../sar/uavsar.html">
-         UAVSAR
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../sar/uavsar-download.html">
-         UAVSAR Data Access and Conversion
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="../lis/index.html">
-       NASA Land Information System (LIS)
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-      <label for="toctree-checkbox-14">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../lis/1_exploring_lis_output.html">
-         Visualizing and Comparing LIS Output
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../lis/2_interactive_data_exploration.html">
-         Interactive Data Exploration
-        </a>
-       </li>
-      </ul>
-     </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../camera-traps-tutorial/timelapse-camera-tutorial.html">
-       Time-lapse Cameras and Snow Applications
+      <a class="reference internal" href="../lis/1_exploring_lis_output.html">
+       Visualizing and Comparing LIS Output
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../machine-learning/Machine_Learning_Tutorial.html">
-       Introduction to Machine Learning
+      <a class="reference internal" href="../lis/2_interactive_data_exploration.html">
+       Interactive Data Exploration
       </a>
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../day_5.html">
-     Day 5
+   <li class="toctree-l2">
+    <a class="reference internal" href="../camera-traps-tutorial/timelapse-camera-tutorial.html">
+     Time-lapse Cameras and Snow Applications
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-    <label for="toctree-checkbox-15">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../open_science.html">
-       Open Science
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../open_source_software.html">
-       Open source software
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../machine-learning/Machine_Learning_Tutorial.html">
+     Introduction to Machine Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../open_science.html">
+     Open Science
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../open_source_software.html">
+     Open source software
+    </a>
    </li>
   </ul>
  </li>
@@ -519,8 +459,8 @@
   <a class="reference internal" href="../../projects/index.html">
    Projects
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -1008,49 +948,49 @@ z = \frac{vt}{2} \quad ,
       <th>0</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
-      <td>2021-06-10 14:54:37.077837+00:00</td>
+      <td>2021-06-10 14:54:37.017366+00:00</td>
       <td>None</td>
-      <td>882788</td>
+      <td>882759</td>
       <td>None</td>
       <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
       <td>2021-05-30</td>
       <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
       <td>two_way_travel</td>
       <td>...</td>
-      <td>4322837.051</td>
-      <td>741940.717</td>
+      <td>4322837.268</td>
+      <td>741941.510</td>
       <td>None</td>
       <td>12</td>
-      <td>POINT (741940.717 4322837.051)</td>
-      <td>16:53:13.197000-06:00</td>
+      <td>POINT (741941.510 4322837.268)</td>
+      <td>16:53:12.233000-06:00</td>
       <td>None</td>
       <td>None</td>
-      <td>6.3</td>
-      <td>78.288242</td>
+      <td>6.0</td>
+      <td>74.560231</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
-      <td>2021-06-10 14:54:37.080197+00:00</td>
+      <td>2021-06-10 14:54:37.019422+00:00</td>
       <td>None</td>
-      <td>882789</td>
+      <td>882760</td>
       <td>None</td>
       <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
       <td>2021-05-30</td>
       <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
       <td>two_way_travel</td>
       <td>...</td>
-      <td>4322837.043</td>
-      <td>741940.673</td>
+      <td>4322837.258</td>
+      <td>741941.495</td>
       <td>None</td>
       <td>12</td>
-      <td>POINT (741940.673 4322837.043)</td>
-      <td>16:53:13.230000-06:00</td>
+      <td>POINT (741941.495 4322837.258)</td>
+      <td>16:53:12.267000-06:00</td>
       <td>None</td>
       <td>None</td>
-      <td>6.3</td>
-      <td>78.288242</td>
+      <td>6.0</td>
+      <td>74.560231</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1080,45 +1020,45 @@ z = \frac{vt}{2} \quad ,
       <th>3</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
-      <td>2021-06-10 14:54:37.017366+00:00</td>
+      <td>2021-06-10 14:54:37.077837+00:00</td>
       <td>None</td>
-      <td>882759</td>
+      <td>882788</td>
       <td>None</td>
       <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
       <td>2021-05-30</td>
       <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
       <td>two_way_travel</td>
       <td>...</td>
-      <td>4322837.268</td>
-      <td>741941.510</td>
+      <td>4322837.051</td>
+      <td>741940.717</td>
       <td>None</td>
       <td>12</td>
-      <td>POINT (741941.510 4322837.268)</td>
-      <td>16:53:12.233000-06:00</td>
+      <td>POINT (741940.717 4322837.051)</td>
+      <td>16:53:13.197000-06:00</td>
       <td>None</td>
       <td>None</td>
-      <td>6.0</td>
-      <td>74.560231</td>
+      <td>6.3</td>
+      <td>78.288242</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
-      <td>2021-06-10 14:54:37.082147+00:00</td>
+      <td>2021-06-10 14:54:37.080197+00:00</td>
       <td>None</td>
-      <td>882790</td>
+      <td>882789</td>
       <td>None</td>
       <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
       <td>2021-05-30</td>
       <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
       <td>two_way_travel</td>
       <td>...</td>
-      <td>4322837.036</td>
-      <td>741940.628</td>
+      <td>4322837.043</td>
+      <td>741940.673</td>
       <td>None</td>
       <td>12</td>
-      <td>POINT (741940.628 4322837.036)</td>
-      <td>16:53:13.262000-06:00</td>
+      <td>POINT (741940.673 4322837.043)</td>
+      <td>16:53:13.230000-06:00</td>
       <td>None</td>
       <td>None</td>
       <td>6.3</td>
@@ -1300,25 +1240,25 @@ z = \frac{vt}{2} \quad ,
       <th>4</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
-      <td>2021-06-10 13:06:49.656834+00:00</td>
+      <td>2021-06-10 13:06:49.710224+00:00</td>
       <td>None</td>
-      <td>80265</td>
+      <td>80289</td>
       <td>None</td>
       <td>https://doi.org/10.5067/9IA978JIACAR</td>
       <td>2021-05-30</td>
       <td>magnaprobe</td>
       <td>depth</td>
       <td>...</td>
-      <td>-108.20561</td>
-      <td>4322848.42</td>
-      <td>741918.73</td>
-      <td>3032.3</td>
+      <td>-108.20554</td>
+      <td>4322854.54</td>
+      <td>741925.05</td>
+      <td>3036.1</td>
       <td>None</td>
-      <td>POINT (741918.730 4322848.420)</td>
-      <td>07:08:00-06:00</td>
+      <td>POINT (741925.050 4322854.540)</td>
+      <td>07:11:00-06:00</td>
       <td>1</td>
       <td>CRREL_C</td>
-      <td>65.0</td>
+      <td>80.0</td>
     </tr>
   </tbody>
 </table>
@@ -1533,25 +1473,25 @@ z_i = w_i*z \quad ,
       <th>4</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
-      <td>2021-06-10 13:06:49.656834+00:00</td>
+      <td>2021-06-10 13:06:49.710224+00:00</td>
       <td>None</td>
-      <td>80265</td>
+      <td>80289</td>
       <td>None</td>
       <td>https://doi.org/10.5067/9IA978JIACAR</td>
       <td>2021-05-30</td>
       <td>magnaprobe</td>
       <td>depth</td>
       <td>...</td>
-      <td>741918.73</td>
-      <td>3032.3</td>
+      <td>741925.05</td>
+      <td>3036.1</td>
       <td>None</td>
-      <td>POINT (741918.730 4322848.420)</td>
-      <td>07:08:00-06:00</td>
+      <td>POINT (741925.050 4322854.540)</td>
+      <td>07:11:00-06:00</td>
       <td>1</td>
       <td>CRREL_C</td>
-      <td>65.0</td>
-      <td>87.661562</td>
-      <td>-22.661562</td>
+      <td>80.0</td>
+      <td>87.454136</td>
+      <td>-7.454136</td>
     </tr>
   </tbody>
 </table>
@@ -1683,7 +1623,7 @@ The rmse is 10.62 cm
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../microstructure/microstructure-tutorial.html" title="previous page">Microstructure Tutorial</a>
-    <a class='right-next' id="next-link" href="../day_4.html" title="next page">Day 4</a>
+    <a class='right-next' id="next-link" href="../sar/index.html" title="next page">Synthetic Aperture Radar</a>
 
         </div>
         

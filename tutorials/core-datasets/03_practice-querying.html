@@ -53,7 +53,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Day 2" href="../day_2.html" />
+    <link rel="next" title="Geospatial fundamentals" href="../geospatial/index.html" />
     <link rel="prev" title="Depths and Snow Pit Data Package Contents" href="02_data-package.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -205,9 +205,14 @@
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jupyter.html">
+     GitHub, Git, JupyterHub
+    </a>
+   </li>
    <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="../day_1.html">
-     Day 1
+    <a class="reference internal" href="index.html">
+     SnowEx Mission and Core Data Sets
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
     <label for="toctree-checkbox-4">
@@ -216,42 +221,57 @@
     </label>
     <ul class="current">
      <li class="toctree-l3">
-      <a class="reference internal" href="../jupyter.html">
-       GitHub, Git, JupyterHub
-      </a>
-     </li>
-     <li class="toctree-l3 current active has-children">
-      <a class="reference internal" href="index.html">
+      <a class="reference internal" href="01_introduction.html">
        SnowEx Mission and Core Data Sets
       </a>
-      <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-      <label for="toctree-checkbox-5">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul class="current">
-       <li class="toctree-l4">
-        <a class="reference internal" href="01_introduction.html">
-         SnowEx Mission and Core Data Sets
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="02_data-package.html">
-         Depths and Snow Pit Data Package Contents
-        </a>
-       </li>
-       <li class="toctree-l4 current active">
-        <a class="current reference internal" href="#">
-         Practice Querying the Snowexsql Database
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02_data-package.html">
+       Depths and Snow Pit Data Package Contents
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Practice Querying the Snowexsql Database
+      </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../day_2.html">
-     Day 2
+    <a class="reference internal" href="../geospatial/index.html">
+     Geospatial fundamentals
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geospatial/raster.html">
+       Raster data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geospatial/vector.html">
+       Vector data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../geospatial/SNOTEL_query.html">
+       Dynamic Query of SNOTEL data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nsidc-access/nsidc-data-access.html">
+     Accessing SnowEx Data at the NSIDC DAAC
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../database/index.html">
+     SnowEx Database
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
     <label for="toctree-checkbox-6">
@@ -259,90 +279,100 @@
      </i>
     </label>
     <ul>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="../geospatial/index.html">
-       Geospatial fundamentals
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/1_getting_started_example.html">
+       Introduction to the SnowEx Database
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-      <label for="toctree-checkbox-7">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../geospatial/raster.html">
-         Raster data
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../geospatial/vector.html">
-         Vector data
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../geospatial/SNOTEL_query.html">
-         Dynamic Query of SNOTEL data
-        </a>
-       </li>
-      </ul>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../nsidc-access/nsidc-data-access.html">
-       Accessing SnowEx Data at the NSIDC DAAC
+      <a class="reference internal" href="../database/2_database_structure.html">
+       How is the Database Structured?
       </a>
      </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="../database/index.html">
-       SnowEx Database
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/3_forming_queries.html">
+       Forming Queries
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-      <label for="toctree-checkbox-8">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../database/1_getting_started_example.html">
-         Introduction to the SnowEx Database
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../database/2_database_structure.html">
-         How is the Database Structured?
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../database/3_forming_queries.html">
-         Forming Queries
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../database/4_get_spiral_example.html">
-         Forming Queries: Example Visualizng Depths
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../database/5_plot_raster_example.html">
-         Forming Queries: PostGIS Functions
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../database/6_exporting_data.html">
-         Exporting Data
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../database/7_wrap_up.html">
-         Wrap up
-        </a>
-       </li>
-      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/4_get_spiral_example.html">
+       Forming Queries: Example Visualizng Depths
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/5_plot_raster_example.html">
+       Forming Queries: PostGIS Functions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/6_exporting_data.html">
+       Exporting Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../database/7_wrap_up.html">
+       Wrap up
+      </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../day_3.html">
-     Day 3
+    <a class="reference internal" href="../lidar/index.html">
+     LIDAR
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lidar/ICESat2_tutorial.html">
+       Introduction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../lidar/ASO_data_tutorial.html">
+       Lidar remote sensing of snow
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../thermal-ir/index.html">
+     Thermal Infrared Remote Sensing of Snow
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../thermal-ir/thermal-ir-tutorial.html">
+       Thermal Infrared Remote Sensing of Snow
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../thermal-ir/thermal-ir-data-download.html">
+       Downloading datasets for the thermal IR tutorial
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
+     Microstructure Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../gpr/gpr.html">
+     GPR
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../sar/index.html">
+     Synthetic Aperture Radar
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
     <label for="toctree-checkbox-9">
@@ -350,159 +380,69 @@
      </i>
     </label>
     <ul>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="../lidar/index.html">
-       LIDAR
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-      <label for="toctree-checkbox-10">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../lidar/ICESat2_tutorial.html">
-         Introduction
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../lidar/ASO_data_tutorial.html">
-         Lidar remote sensing of snow
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="../thermal-ir/index.html">
-       Thermal Infrared Remote Sensing of Snow
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-      <label for="toctree-checkbox-11">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../thermal-ir/thermal-ir-tutorial.html">
-         Thermal Infrared Remote Sensing of Snow
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../thermal-ir/thermal-ir-data-download.html">
-         Downloading datasets for the thermal IR tutorial
-        </a>
-       </li>
-      </ul>
-     </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../microstructure/microstructure-tutorial.html">
-       Microstructure Tutorial
+      <a class="reference internal" href="../sar/sentinel1.html">
+       Sentinel-1
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../gpr/gpr.html">
-       GPR
+      <a class="reference internal" href="../sar/swesarr.html">
+       SWESARR Tutorial
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/uavsar.html">
+       UAVSAR
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../sar/uavsar-download.html">
+       UAVSAR Data Access and Conversion
       </a>
      </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../day_4.html">
-     Day 4
+    <a class="reference internal" href="../lis/index.html">
+     NASA Land Information System (LIS)
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-    <label for="toctree-checkbox-12">
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
      <i class="fas fa-chevron-down">
      </i>
     </label>
     <ul>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="../sar/index.html">
-       Synthetic Aperture Radar
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-      <label for="toctree-checkbox-13">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../sar/sentinel1.html">
-         Sentinel-1
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../sar/swesarr.html">
-         SWESARR Tutorial
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../sar/uavsar.html">
-         UAVSAR
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../sar/uavsar-download.html">
-         UAVSAR Data Access and Conversion
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toctree-l3 has-children">
-      <a class="reference internal" href="../lis/index.html">
-       NASA Land Information System (LIS)
-      </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-      <label for="toctree-checkbox-14">
-       <i class="fas fa-chevron-down">
-       </i>
-      </label>
-      <ul>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../lis/1_exploring_lis_output.html">
-         Visualizing and Comparing LIS Output
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="../lis/2_interactive_data_exploration.html">
-         Interactive Data Exploration
-        </a>
-       </li>
-      </ul>
-     </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../camera-traps-tutorial/timelapse-camera-tutorial.html">
-       Time-lapse Cameras and Snow Applications
+      <a class="reference internal" href="../lis/1_exploring_lis_output.html">
+       Visualizing and Comparing LIS Output
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../machine-learning/Machine_Learning_Tutorial.html">
-       Introduction to Machine Learning
+      <a class="reference internal" href="../lis/2_interactive_data_exploration.html">
+       Interactive Data Exploration
       </a>
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../day_5.html">
-     Day 5
+   <li class="toctree-l2">
+    <a class="reference internal" href="../camera-traps-tutorial/timelapse-camera-tutorial.html">
+     Time-lapse Cameras and Snow Applications
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-    <label for="toctree-checkbox-15">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../open_science.html">
-       Open Science
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../open_source_software.html">
-       Open source software
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../machine-learning/Machine_Learning_Tutorial.html">
+     Introduction to Machine Learning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../open_science.html">
+     Open Science
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../open_source_software.html">
+     Open source software
+    </a>
    </li>
   </ul>
  </li>
@@ -517,8 +457,8 @@
   <a class="reference internal" href="../../projects/index.html">
    Projects
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -990,52 +930,16 @@
   </thead>
   <tbody>
     <tr>
-      <th>16</th>
-      <td>POINT (741960.000 4326644.000)</td>
-      <td>6C10</td>
+      <th>27</th>
+      <td>POINT (742453.000 4325752.000)</td>
+      <td>1C14</td>
       <td>2020-01-31</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>POINT (746546.000 4324066.000)</td>
-      <td>8N45</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>POINT (741493.000 4326833.000)</td>
-      <td>1C8</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>34</th>
-      <td>POINT (745598.000 4323988.000)</td>
-      <td>5N41</td>
+      <th>43</th>
+      <td>POINT (745678.000 4322446.000)</td>
+      <td>2S35</td>
       <td>2020-01-30</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>POINT (743109.000 4322924.000)</td>
-      <td>2S11</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>POINT (746303.000 4322571.000)</td>
-      <td>9S40</td>
-      <td>2020-02-01</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>POINT (742466.000 4324372.000)</td>
-      <td>2N12</td>
-      <td>2020-01-31</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>POINT (745842.000 4323805.000)</td>
-      <td>9N44</td>
-      <td>2020-02-01</td>
     </tr>
     <tr>
       <th>13</th>
@@ -1044,10 +948,46 @@
       <td>2020-02-01</td>
     </tr>
     <tr>
-      <th>24</th>
-      <td>POINT (740508.000 4327577.000)</td>
-      <td>1C1</td>
+      <th>15</th>
+      <td>POINT (744396.000 4323540.000)</td>
+      <td>8C26</td>
       <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>POINT (744281.000 4324245.000)</td>
+      <td>9N29</td>
+      <td>2020-01-30</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>POINT (746303.000 4322571.000)</td>
+      <td>9S40</td>
+      <td>2020-02-01</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>POINT (744862.000 4323250.000)</td>
+      <td>4C30</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>POINT (741378.000 4326992.000)</td>
+      <td>1C7</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>POINT (744757.000 4323667.000)</td>
+      <td>6C24</td>
+      <td>2020-01-31</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>POINT (746228.000 4322671.000)</td>
+      <td>9S39</td>
+      <td>2020-02-01</td>
     </tr>
   </tbody>
 </table>
@@ -1269,64 +1209,64 @@ Image Data on 2020-02-12 are: UAVSAR, L-band InSAR, with the following list of p
   </thead>
   <tbody>
     <tr>
-      <th>121</th>
-      <td>1S13</td>
-      <td>2020-02-05</td>
-      <td>density</td>
-      <td>39.017789</td>
-      <td>-108.190059</td>
-      <td>73.0</td>
-      <td>278.5</td>
-      <td>treeless</td>
-      <td>shallow</td>
-    </tr>
-    <tr>
-      <th>211</th>
-      <td>2C3</td>
+      <th>2755</th>
+      <td>9C28</td>
       <td>2020-01-31</td>
       <td>density</td>
-      <td>39.062326</td>
-      <td>-108.217321</td>
-      <td>40.0</td>
-      <td>265.5</td>
-      <td>treeless</td>
-      <td>medium</td>
-    </tr>
-    <tr>
-      <th>2679</th>
-      <td>3S47</td>
-      <td>2020-01-29</td>
-      <td>density</td>
-      <td>39.014367</td>
-      <td>-108.141578</td>
-      <td>102.0</td>
-      <td>172.0</td>
-      <td>treeless</td>
+      <td>39.025082</td>
+      <td>-108.169755</td>
+      <td>43.0</td>
+      <td>292.000000</td>
+      <td>dense</td>
       <td>deep</td>
     </tr>
     <tr>
-      <th>587</th>
-      <td>1C8</td>
-      <td>2020-01-31</td>
+      <th>1153</th>
+      <td>5N32</td>
+      <td>2020-02-12</td>
       <td>density</td>
-      <td>39.057211</td>
-      <td>-108.209110</td>
-      <td>86.0</td>
-      <td>216.5</td>
-      <td>treeless</td>
-      <td>shallow</td>
+      <td>39.030444</td>
+      <td>-108.171689</td>
+      <td>82.0</td>
+      <td>325.500000</td>
+      <td>sparse</td>
+      <td>medium</td>
     </tr>
     <tr>
-      <th>2026</th>
-      <td>1C7</td>
-      <td>2020-01-31</td>
+      <th>2343</th>
+      <td>9S51</td>
+      <td>2020-01-29</td>
       <td>density</td>
-      <td>39.058674</td>
-      <td>-108.210381</td>
-      <td>66.0</td>
-      <td>255.5</td>
-      <td>treeless</td>
-      <td>shallow</td>
+      <td>39.017479</td>
+      <td>-108.131822</td>
+      <td>32.0</td>
+      <td>246.500000</td>
+      <td>dense</td>
+      <td>deep</td>
+    </tr>
+    <tr>
+      <th>1319</th>
+      <td>5S21</td>
+      <td>2020-02-01</td>
+      <td>density</td>
+      <td>39.019348</td>
+      <td>-108.175169</td>
+      <td>20.0</td>
+      <td>300.500000</td>
+      <td>sparse</td>
+      <td>medium</td>
+    </tr>
+    <tr>
+      <th>2000</th>
+      <td>6N36</td>
+      <td>2020-01-30</td>
+      <td>density</td>
+      <td>39.032278</td>
+      <td>-108.168186</td>
+      <td>14.0</td>
+      <td>295.333333</td>
+      <td>sparse</td>
+      <td>deep</td>
     </tr>
   </tbody>
 </table>
@@ -1436,7 +1376,7 @@ Name: site_id, dtype: int64
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="02_data-package.html" title="previous page">Depths and Snow Pit Data Package Contents</a>
-    <a class='right-next' id="next-link" href="../day_2.html" title="next page">Day 2</a>
+    <a class='right-next' id="next-link" href="../geospatial/index.html" title="next page">Geospatial fundamentals</a>
 
         </div>
         
