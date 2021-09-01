@@ -25,61 +25,51 @@
   chapters:
     - file: tutorials/index
       sections:
-        - file: tutorials/day_1
+        - file: tutorials/jupyter
+        - file: tutorials/core-datasets/index
           sections:
-            - file: tutorials/jupyter
-            - file: tutorials/core-datasets/index
-              sections:
-                - file: tutorials/core-datasets/01_introduction
-                - file: tutorials/core-datasets/02_data-package
-                - file: tutorials/core-datasets/03_practice-querying
-        - file: tutorials/day_2
+            - file: tutorials/core-datasets/01_introduction
+            - file: tutorials/core-datasets/02_data-package
+            - file: tutorials/core-datasets/03_practice-querying
+        - file: tutorials/geospatial/index
           sections:
-            - file: tutorials/geospatial/index
-              sections:
-                - file: tutorials/geospatial/raster
-                - file: tutorials/geospatial/vector
-                - file: tutorials/geospatial/SNOTEL_query
-            - file: tutorials/nsidc-access/nsidc-data-access
-            - file: tutorials/database/index
-              sections:
-                - file: tutorials/database/1_getting_started_example
-                - file: tutorials/database/2_database_structure
-                - file: tutorials/database/3_forming_queries
-                - file: tutorials/database/4_get_spiral_example
-                - file: tutorials/database/5_plot_raster_example
-                - file: tutorials/database/6_exporting_data
-                - file: tutorials/database/7_wrap_up
-        - file: tutorials/day_3
+            - file: tutorials/geospatial/raster
+            - file: tutorials/geospatial/vector
+            - file: tutorials/geospatial/SNOTEL_query
+        - file: tutorials/nsidc-access/nsidc-data-access
+        - file: tutorials/database/index
           sections:
-            - file: tutorials/lidar/index
-              sections:
-                - file: tutorials/lidar/ICESat2_tutorial
-                - file: tutorials/lidar/ASO_data_tutorial
-            - file: tutorials/thermal-ir/index
-              sections:
-                - file: tutorials/thermal-ir/thermal-ir-tutorial
-                - file: tutorials/thermal-ir/thermal-ir-data-download
-            - file: tutorials/microstructure/microstructure-tutorial
-            - file: tutorials/gpr/gpr
-        - file: tutorials/day_4
+            - file: tutorials/database/1_getting_started_example
+            - file: tutorials/database/2_database_structure
+            - file: tutorials/database/3_forming_queries
+            - file: tutorials/database/4_get_spiral_example
+            - file: tutorials/database/5_plot_raster_example
+            - file: tutorials/database/6_exporting_data
+            - file: tutorials/database/7_wrap_up
+        - file: tutorials/lidar/index
           sections:
-            - file: tutorials/sar/index
-              sections:
-                - file: tutorials/sar/sentinel1
-                - file: tutorials/sar/swesarr
-                - file: tutorials/sar/uavsar
-                - file: tutorials/sar/uavsar-download
-            - file: tutorials/lis/index
-              sections:
-                - file: tutorials/lis/1_exploring_lis_output
-                - file: tutorials/lis/2_interactive_data_exploration
-            - file: tutorials/camera-traps-tutorial/timelapse-camera-tutorial
-            - file: tutorials/machine-learning/Machine_Learning_Tutorial
-        - file: tutorials/day_5
+            - file: tutorials/lidar/ICESat2_tutorial
+            - file: tutorials/lidar/ASO_data_tutorial
+        - file: tutorials/thermal-ir/index
           sections:
-          - file: tutorials/open_science
-          - file: tutorials/open_source_software
+            - file: tutorials/thermal-ir/thermal-ir-tutorial
+            - file: tutorials/thermal-ir/thermal-ir-data-download
+        - file: tutorials/microstructure/microstructure-tutorial
+        - file: tutorials/gpr/gpr
+        - file: tutorials/sar/index
+          sections:
+            - file: tutorials/sar/sentinel1
+            - file: tutorials/sar/swesarr
+            - file: tutorials/sar/uavsar
+            - file: tutorials/sar/uavsar-download
+        - file: tutorials/lis/index
+          sections:
+            - file: tutorials/lis/1_exploring_lis_output
+            - file: tutorials/lis/2_interactive_data_exploration
+        - file: tutorials/camera-traps-tutorial/timelapse-camera-tutorial
+        - file: tutorials/machine-learning/Machine_Learning_Tutorial
+        - file: tutorials/open_science
+        - file: tutorials/open_source_software
 - part: Projects
   chapters:
     - file: projects/index
