@@ -18,8 +18,8 @@ authors:
   given-names: Anthony
   orcid: "https://orcid.org/0000-0003-0429-6905"
   affiliation: University of Washington
-- family-names: Joachim
-  given-names: Meyer
+- family-names: Meyer
+  given-names: Joachim
   orcid: "https://orcid.org/0000-0002-1358-2244"
   affiliation: University of Utah
 - family-names: Setiawan
@@ -74,6 +74,7 @@ authors:
   affiliation: Boise State University
 - family-names: Webb
   given-names: Ryan
+  orcid: "https://orcid.org/0000-0002-1565-909X"
   affiliation: University of New Mexico
 - family-names: McGrath
   given-names: Dan
@@ -98,6 +99,7 @@ authors:
   affiliation: University of Washington
 - family-names: Webster
   given-names: Clare
+  orcid: "https://orcid.org/0000-0002-6386-6392"
   affiliation: SLF Switzerland
 - family-names: Smith
   given-names: Ben
