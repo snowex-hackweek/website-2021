@@ -110,6 +110,14 @@ authors:
 - family-names: Vuyovich
   given-names: Carrie
   affiliation: NASA Goddard Space Flight Center
+- family-names: Cristea
+  given-names: Nicoleta
+  orcid: "https://orcid.org/0000-0002-9091-0280"
+  affiliation: University of Washington
+- family-names: Alterman
+  given-names: Naomi
+  orcid: "https://orcid.org/0000-0003-0392-3890"
+  affiliation: University of Washington
 - family-names: Steiker
   given-names: Amy
   orcid: "https://orcid.org/0000-0002-3039-0260"
