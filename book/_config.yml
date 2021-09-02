@@ -53,6 +53,7 @@ bibtex_bibfiles:
 sphinx:
   config:
     bibtex_reference_style: author_year  # or label, super, \supercite
+    templates_path: _templates
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
@@ -60,4 +61,6 @@ html:
   use_edit_page_button: true
   use_issues_button: true
   use_repository_button: true
-  google_analytics_id: G-QM84T4SB76
+  # Using custom fix to enable google analytics temporarily
+  # https://github.com/ProjectPythia/pythia-foundations/issues/128
+  # google_analytics_id: G-QM84T4SB76
