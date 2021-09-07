@@ -1,0 +1,136 @@
+cff-version: 1.2.0
+message: "If you use this book, please cite it as below."
+title: "SnowEx Hackweek JupyterBook Tutorials"
+version: 2021.07.23
+date-released: "2021-07-23"
+identifiers:
+- description: "collection of archived snapshots of all versions"
+  type: doi
+  value: TODO
+  license: MIT
+  repository-code: https://github.com/snowex-hackweek/website
+authors:
+- family-names: Henderson
+  given-names: Scott
+  orcid: "https://orcid.org/0000-0003-0624-4965"
+  affiliation: University of Washington
+- family-names: Arendt
+  given-names: Anthony
+  orcid: "https://orcid.org/0000-0003-0429-6905"
+  affiliation: University of Washington
+- family-names: Meyer
+  given-names: Joachim
+  orcid: "https://orcid.org/0000-0002-1358-2244"
+  affiliation: University of Utah
+- family-names: Setiawan
+  given-names: Landung
+  orcid: "https://orcid.org/0000-0002-1624-2667"
+  affiliation: University of Washington
+- family-names: Marshall
+  given-names: "Hans-Peter"
+  orcid: "https://orcid.org/0000-0002-4852-5637"
+  affiliation: Boise State University
+- family-names: Johnson
+  given-names: Micah
+  orcid: "https://orcid.org/0000-0003-4029-8545"
+  affiliation: Boise State University
+- family-names: Mason
+  given-names: Megan
+  affiliation: Boise State University
+- family-names: Lundquist
+  given-names: Jessica
+  orcid: "https://orcid.org/0000-0003-2193-5633"
+  affiliation: University of Washington
+- family-names: Pestana
+  given-names: Steven
+  orcid: "https://orcid.org/0000-0003-3360-0996"
+  affiliation: University of Washington
+- family-names: Shean
+  given-names: David
+  orcid: "https://orcid.org/0000-0003-3840-3860"
+  affiliation: University of Washington
+- family-names: Durand
+  given-names: Michael
+  affiliation: Ohio State University
+  orcid: "https://orcid.org/0000-0003-2682-6196"
+- family-names: Wrzesien
+  given-names: Melissa
+  orcid: "https://orcid.org/0000-0003-4958-9234"
+  affiliation: NASA Goddard Space Flight Center
+- family-names: McAndrew
+  given-names: Brendan
+  affiliation: NASA Goddard Space Flight Center
+- family-names: Ofekeze
+  given-names: Evi
+  affiliation: Boise State University
+- family-names: Alabi
+  given-names: Ibrahim
+  affiliation: Boise State University
+- family-names: Tarricone
+  given-names: Jack
+  affiliation: University of Nevada, Reno
+- family-names: Meehan
+  given-names: Tate
+  orcid: "https://orcid.org/0000-0002-3176-9248"
+  affiliation: Boise State University
+- family-names: Webb
+  given-names: Ryan
+  orcid: "https://orcid.org/0000-0002-1565-909X"
+  affiliation: University of New Mexico
+- family-names: McGrath
+  given-names: Dan
+  orcid: "https://orcid.org/0000-0002-9462-6842"
+  affiliation: Colorado State University
+- family-names: Boyd
+  given-names: Dylan
+  orcid: "https://orcid.org/0000-0002-1110-2454"
+  affiliation: Mississippi State University
+- family-names: Osmanoglu
+  given-names: Batuhan
+  affiliation: NASA Goddard Space Flight Center
+- family-names: Hudson
+  given-names: Dere
+  affiliation: NASA Goddard Space Flight Center
+- family-names: Breen
+  given-names: Katie
+  affiliation: University of Washington
+- family-names: Lumbrazo
+  given-names: Cassie
+  orcid: "https://orcid.org/0000-0003-1656-9771"
+  affiliation: University of Washington
+- family-names: Webster
+  given-names: Clare
+  orcid: "https://orcid.org/0000-0002-6386-6392"
+  affiliation: SLF Switzerland
+- family-names: Smith
+  given-names: Ben
+  affiliation: University of Washington
+- family-names: Scheick
+  given-names: Jessica
+  affiliation: University of New Hampshire
+  orcid: "https://orcid.org/0000-0002-3421-4459"
+- family-names: Vuyovich
+  given-names: Carrie
+  affiliation: NASA Goddard Space Flight Center
+- family-names: Cristea
+  given-names: Nicoleta
+  orcid: "https://orcid.org/0000-0002-9091-0280"
+  affiliation: University of Washington
+- family-names: Alterman
+  given-names: Naomi
+  orcid: "https://orcid.org/0000-0003-0392-3890"
+  affiliation: University of Washington
+- family-names: Steiker
+  given-names: Amy
+  orcid: "https://orcid.org/0000-0002-3039-0260"
+  affiliation: NASA NSIDC
+- family-names: Haley
+  given-names: Charley
+  affiliation: University of Washington
+- family-names: Koh
+  given-names: Jane
+  affiliation: University of Washington
+keywords:
+- NASA
+- SnowEx
+- Python
