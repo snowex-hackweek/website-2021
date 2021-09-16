@@ -34,6 +34,6 @@ jobs:
       uses: peter-evans/create-pull-request@v3
       with:
         path: ${{env.PACKAGE_NAME}}
-        token: ${{ secrets.TOKEN }}
+        base: uwhackweek/jupyterbook-template
         title: Sync with uwhackweek/jupyterbook-template
         body: push downstream changes from ${{env.PACKAGE_NAME}} to jupyterbook template
