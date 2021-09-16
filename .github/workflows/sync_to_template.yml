@@ -12,12 +12,23 @@ jobs:
     steps:
     - name: Get Repository Name
       run: echo "PACKAGE_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+      
+#     - name: Get base branch
+#       run: |
+#         base_ref=${{ github.head_ref || github.ref }}
+#         echo ::set-output name=base_branch::${base_ref#refs/*/}
+#          base: ${{ steps.vars.outputs.base_branch }}
 
     - name: Checkout Template Repository
       uses: actions/checkout@v2
       with:
         repository: uwhackweek/jupyterbook-template
 #         path: book
+    - name: Get base branch
+      run: |
+        id: vars
+        base_ref=${{ github.head_ref || github.ref }}
+        echo ::set-output name=base_branch::${base_ref#refs/*/}
 
     - name: Checkout Package Repository
       uses: actions/checkout@v2
@@ -34,6 +45,6 @@ jobs:
       uses: peter-evans/create-pull-request@v3
       with:
         path: ${{env.PACKAGE_NAME}}
-        base: uwhackweek/jupyterbook-template
+        base: ${{ steps.vars.outputs.base_branch }}
         title: Sync with uwhackweek/jupyterbook-template
         body: push downstream changes from ${{env.PACKAGE_NAME}} to jupyterbook template
