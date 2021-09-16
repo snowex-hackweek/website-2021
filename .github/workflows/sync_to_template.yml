@@ -1,0 +1,39 @@
+name: Sync Template
+
+# NOTE: requires a secrets.GITHUB_TOKEN with permissions to update .github/workflows/
+#https://github.com/peter-evans/create-pull-request/blob/main/docs/examples.md#keep-a-fork-up-to-date-with-its-upstream
+# modified from: https://github.com/stactools-packages/sentinel1/blob/main/.github/workflows/sync-template.yml
+
+on: workflow_dispatch
+
+jobs:
+  sync-template:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Get Repository Name
+      run: echo "PACKAGE_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+
+    - name: Checkout Template Repository
+      uses: actions/checkout@v2
+      with:
+        repository: uwhackweek/jupyterbook-template
+#         path: book
+
+    - name: Checkout Package Repository
+      uses: actions/checkout@v2
+      with:
+        path: ${{env.PACKAGE_NAME}}
+
+    # NOTE: this is not very sophisticated, just removes event-specific tutorial and project files we don't want put back into the template
+    # will not reconcile deleted, moved, or renamed files
+    - name: Remove Event Tutorials from PR
+      run: |
+        rm -r ./${{env.PACKAGE_NAME}}/book/tutorials/*/
+        
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        path: ${{env.PACKAGE_NAME}}
+        token: ${{ secrets.TOKEN }}
+        title: Sync with uwhackweek/jupyterbook-template
+        body: push downstream changes from ${{env.PACKAGE_NAME}} to jupyterbook template
