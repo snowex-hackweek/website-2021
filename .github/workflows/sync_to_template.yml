@@ -46,6 +46,7 @@ jobs:
       with:
         path: ${{env.PACKAGE_NAME}}
         token: ${{ secrets.GH_PAT }}
+        push_to_fork: ${{GITHUB_REPOSITORY}}
         base: ${{ steps.vars.outputs.base_branch }}
         title: Sync with uwhackweek/jupyterbook-template
         body: push downstream changes from ${{env.PACKAGE_NAME}} to jupyterbook template
