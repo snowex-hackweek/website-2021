@@ -1,4 +1,0 @@
-# Synthetic Aperture Radar
-
-```{tableofcontents}
-```

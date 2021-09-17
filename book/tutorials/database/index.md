@@ -1,4 +1,0 @@
-# SnowEx Database 
-
-```{tableofcontents}
-```
