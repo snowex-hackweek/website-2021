@@ -13,17 +13,12 @@ jobs:
     - name: Get Repository Name
       run: echo "PACKAGE_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
       
-#     - name: Get base branch
-#       run: |
-#         base_ref=${{ github.head_ref || github.ref }}
-#         echo ::set-output name=base_branch::${base_ref#refs/*/}
-#          base: ${{ steps.vars.outputs.base_branch }}
-
-    - name: Checkout Template Repository
+    - name: Checkout Template (base) Repository
       uses: actions/checkout@v2
       with:
         repository: uwhackweek/jupyterbook-template
-#         path: book
+        path: jupyterbook-template
+    
     - name: Get base branch
       run: |
         id: vars
