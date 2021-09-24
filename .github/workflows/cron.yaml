@@ -21,7 +21,7 @@ jobs:
       # NOTE: change key to "jupyterbook-N+1" to force rebuilding cache
       with:
         path: ./book/_build
-        key: jupyterbook-4
+        key: jupyterbook-5
 
     - name: Pull Docker Image
       run: |
