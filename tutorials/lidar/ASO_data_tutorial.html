@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -44,7 +44,7 @@
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Thermal Infrared Remote Sensing of Snow" href="../thermal-ir/index.html" />
-    <link rel="prev" title="Introduction" href="ICESat2_tutorial.html" />
+    <link rel="prev" title="ICESat-2" href="ICESat2_tutorial.html" />
     <!-- Google Analytics - Global site tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM84T4SB76"></script>
     <script>
@@ -334,7 +334,7 @@
     <ul class="current">
      <li class="toctree-l3">
       <a class="reference internal" href="ICESat2_tutorial.html">
-       Introduction
+       ICESat-2
       </a>
      </li>
      <li class="toctree-l3 current active">
@@ -594,7 +594,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
@@ -697,13 +697,6 @@
 <h3>Import the packages needed for this tutorial<a class="headerlink" href="#import-the-packages-needed-for-this-tutorial" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install pycrs&gt;<span class="o">=</span><span class="m">1</span> --no-deps
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general purpose data manipulation and analysis</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
@@ -723,15 +716,6 @@
 
 <span class="c1"># import packages for viewing the data</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">pyplot</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#define paths</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="n">CURDIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">realpath</span><span class="p">(</span><span class="s2">&quot;__file__&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -826,7 +810,7 @@ For now, we’ll stay in 32612.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
 </pre></div>
 </div>
-<img alt="../../_images/ASO_data_tutorial_24_1.png" src="../../_images/ASO_data_tutorial_24_1.png" />
+<img alt="../../_images/ASO_data_tutorial_22_1.png" src="../../_images/ASO_data_tutorial_22_1.png" />
 </div>
 </div>
 <p>While this can allow us to very quickly visualise the data, it doesn’t show us a lot about the data itself.</p>
@@ -854,10 +838,10 @@ For now, we’ll stay in 32612.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fe4e01ea730&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f56c4a7f580&gt;
 </pre></div>
 </div>
-<img alt="../../_images/ASO_data_tutorial_28_1.png" src="../../_images/ASO_data_tutorial_28_1.png" />
+<img alt="../../_images/ASO_data_tutorial_26_1.png" src="../../_images/ASO_data_tutorial_26_1.png" />
 </div>
 </div>
 <p>We set the figure to display the colorbar with a maximum of 1.5m. But you can see in the north of the area there are some very deep snow depths.</p>
@@ -1277,9 +1261,9 @@ Attributes:
     scales:         (1.0,)
     offsets:        (0.0,)
     AREA_OR_POINT:  Area
-    DataType:       Generic</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>band</span>: 1</li><li><span class='xr-has-index'>y</span>: 1490</li><li><span class='xr-has-index'>x</span>: 1490</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-838cc195-85f0-47ff-bd96-f9f13ca57d30' class='xr-array-in' type='checkbox' checked><label for='section-838cc195-85f0-47ff-bd96-f9f13ca57d30' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>...</span></div><div class='xr-array-data'><pre>[2220100 values with dtype=float32]</pre></div></div></li><li class='xr-section-item'><input id='section-027cab5a-8ac4-48e3-8757-ae955a2e2174' class='xr-section-summary-in' type='checkbox'  checked><label for='section-027cab5a-8ac4-48e3-8757-ae955a2e2174' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>band</span></div><div class='xr-var-dims'>(band)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1</div><input id='attrs-31de0b26-adcb-4545-bdd6-918a44718017' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-31de0b26-adcb-4545-bdd6-918a44718017' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2ca0829b-a86c-4a06-9f55-72429ffbcb51' class='xr-var-data-in' type='checkbox'><label for='data-2ca0829b-a86c-4a06-9f55-72429ffbcb51' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.322e+06 4.322e+06 ... 4.322e+06</div><input id='attrs-0178e269-e71c-4092-86dd-419b71a7f4a4' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-0178e269-e71c-4092-86dd-419b71a7f4a4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8fe2a541-0358-4ff8-86c4-dcb479686519' class='xr-var-data-in' type='checkbox'><label for='data-8fe2a541-0358-4ff8-86c4-dcb479686519' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([4322328.699675, 4322328.199675, 4322327.699675, ..., 4321585.199675,
-       4321584.699675, 4321584.199675])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>7.53e+05 7.53e+05 ... 7.537e+05</div><input id='attrs-ecb8b0fe-c4e6-4d8f-bd41-183dde2181cf' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ecb8b0fe-c4e6-4d8f-bd41-183dde2181cf' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-094ff042-e85f-4980-98b6-42c5828dbf88' class='xr-var-data-in' type='checkbox'><label for='data-094ff042-e85f-4980-98b6-42c5828dbf88' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([752975.447198, 752975.947198, 752976.447198, ..., 753718.947198,
-       753719.447198, 753719.947198])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-783fc7c2-6d67-4bc3-939c-c55639abf681' class='xr-section-summary-in' type='checkbox'  checked><label for='section-783fc7c2-6d67-4bc3-939c-c55639abf681' class='xr-section-summary' >Attributes: <span>(9)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>transform :</span></dt><dd>(0.5, 0.0, 752975.1971975124, 0.0, -0.5, 4322328.949675269)</dd><dt><span>crs :</span></dt><dd>+init=epsg:32612</dd><dt><span>res :</span></dt><dd>(0.5, 0.5)</dd><dt><span>is_tiled :</span></dt><dd>1</dd><dt><span>nodatavals :</span></dt><dd>(-3.3999999521443642e+38,)</dd><dt><span>scales :</span></dt><dd>(1.0,)</dd><dt><span>offsets :</span></dt><dd>(0.0,)</dd><dt><span>AREA_OR_POINT :</span></dt><dd>Area</dd><dt><span>DataType :</span></dt><dd>Generic</dd></dl></div></li></ul></div></div></div></div>
+    DataType:       Generic</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'></div><ul class='xr-dim-list'><li><span class='xr-has-index'>band</span>: 1</li><li><span class='xr-has-index'>y</span>: 1490</li><li><span class='xr-has-index'>x</span>: 1490</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-26f25318-95d9-46d6-83d3-c3ee77c5b435' class='xr-array-in' type='checkbox' checked><label for='section-26f25318-95d9-46d6-83d3-c3ee77c5b435' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>...</span></div><div class='xr-array-data'><pre>[2220100 values with dtype=float32]</pre></div></div></li><li class='xr-section-item'><input id='section-3c4d6b06-2865-45fa-bafc-e3f0f9e6b9be' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3c4d6b06-2865-45fa-bafc-e3f0f9e6b9be' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>band</span></div><div class='xr-var-dims'>(band)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>1</div><input id='attrs-c789434c-c9c8-437c-a6bc-3703871beae8' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-c789434c-c9c8-437c-a6bc-3703871beae8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3da3ba42-70b9-4278-91e7-fa7d93657bd6' class='xr-var-data-in' type='checkbox'><label for='data-3da3ba42-70b9-4278-91e7-fa7d93657bd6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>y</span></div><div class='xr-var-dims'>(y)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>4.322e+06 4.322e+06 ... 4.322e+06</div><input id='attrs-21159f2e-c2b4-4c9a-ad49-4374d844223b' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-21159f2e-c2b4-4c9a-ad49-4374d844223b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-24cc0065-b127-40c3-b3d1-b1a378377813' class='xr-var-data-in' type='checkbox'><label for='data-24cc0065-b127-40c3-b3d1-b1a378377813' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([4322328.699675, 4322328.199675, 4322327.699675, ..., 4321585.199675,
+       4321584.699675, 4321584.199675])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>7.53e+05 7.53e+05 ... 7.537e+05</div><input id='attrs-034b8633-eb0a-4169-bd3b-d1b6cce29fb7' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-034b8633-eb0a-4169-bd3b-d1b6cce29fb7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-43640f5f-7fbf-413f-a136-12f9dee60cbb' class='xr-var-data-in' type='checkbox'><label for='data-43640f5f-7fbf-413f-a136-12f9dee60cbb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([752975.447198, 752975.947198, 752976.447198, ..., 753718.947198,
+       753719.447198, 753719.947198])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e943d1ad-7365-451a-a06e-dab621da5c9d' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e943d1ad-7365-451a-a06e-dab621da5c9d' class='xr-section-summary' >Attributes: <span>(9)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>transform :</span></dt><dd>(0.5, 0.0, 752975.1971975124, 0.0, -0.5, 4322328.949675269)</dd><dt><span>crs :</span></dt><dd>+init=epsg:32612</dd><dt><span>res :</span></dt><dd>(0.5, 0.5)</dd><dt><span>is_tiled :</span></dt><dd>1</dd><dt><span>nodatavals :</span></dt><dd>(-3.3999999521443642e+38,)</dd><dt><span>scales :</span></dt><dd>(1.0,)</dd><dt><span>offsets :</span></dt><dd>(0.0,)</dd><dt><span>AREA_OR_POINT :</span></dt><dd>Area</dd><dt><span>DataType :</span></dt><dd>Generic</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>You can see the resolution of the CHM is 0.5m, which is much higher than the snow depth dataset.</p>
 <p>Can you think why we would want to have CHM at such a high resolution?</p>
@@ -1312,10 +1296,10 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fe4e00d75b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f56c496d490&gt;
 </pre></div>
 </div>
-<img alt="../../_images/ASO_data_tutorial_43_1.png" src="../../_images/ASO_data_tutorial_43_1.png" />
+<img alt="../../_images/ASO_data_tutorial_41_1.png" src="../../_images/ASO_data_tutorial_41_1.png" />
 </div>
 </div>
 <p>If you play around and zoom in, you can see individual trees. If you were wanting to investigate the role of canopy structure at the individual tree level on snow depth distribution, this is the level of detail you would want to work with.</p>
@@ -1472,10 +1456,10 @@ We need to put the bounding box into a geodataframe</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fe4dadaddc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f56c468ba90&gt;
 </pre></div>
 </div>
-<img alt="../../_images/ASO_data_tutorial_70_1.png" src="../../_images/ASO_data_tutorial_70_1.png" />
+<img alt="../../_images/ASO_data_tutorial_68_1.png" src="../../_images/ASO_data_tutorial_68_1.png" />
 </div>
 </div>
 <p>Here’s an aerial image of the same area. What patterns do you see in the snow depth map when compared to the aerial image?</p>
@@ -1556,11 +1540,11 @@ We need to put the bounding box into a geodataframe</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fe4dac07820&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f56c454d820&gt;
 </pre></div>
 </div>
-<img alt="../../_images/ASO_data_tutorial_81_1.png" src="../../_images/ASO_data_tutorial_81_1.png" />
-<img alt="../../_images/ASO_data_tutorial_81_2.png" src="../../_images/ASO_data_tutorial_81_2.png" />
+<img alt="../../_images/ASO_data_tutorial_79_1.png" src="../../_images/ASO_data_tutorial_79_1.png" />
+<img alt="../../_images/ASO_data_tutorial_79_2.png" src="../../_images/ASO_data_tutorial_79_2.png" />
 </div>
 </div>
 <p>Let’s have a look at the two resolutions next to each other. What do you notice?</p>
@@ -1584,8 +1568,8 @@ We need to put the bounding box into a geodataframe</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1.5)
 </pre></div>
 </div>
-<img alt="../../_images/ASO_data_tutorial_84_1.png" src="../../_images/ASO_data_tutorial_84_1.png" />
-<img alt="../../_images/ASO_data_tutorial_84_2.png" src="../../_images/ASO_data_tutorial_84_2.png" />
+<img alt="../../_images/ASO_data_tutorial_82_1.png" src="../../_images/ASO_data_tutorial_82_1.png" />
+<img alt="../../_images/ASO_data_tutorial_82_2.png" src="../../_images/ASO_data_tutorial_82_2.png" />
 </div>
 </div>
 <p>Things to think about:</p>
@@ -1645,10 +1629,10 @@ We need to put the bounding box into a geodataframe</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fe4da9508e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f56c4295a00&gt;
 </pre></div>
 </div>
-<img alt="../../_images/ASO_data_tutorial_90_1.png" src="../../_images/ASO_data_tutorial_90_1.png" />
+<img alt="../../_images/ASO_data_tutorial_88_1.png" src="../../_images/ASO_data_tutorial_88_1.png" />
 </div>
 </div>
 <p>Play around with different upscaling factors and see what sort of results you get. How do the maximum and minimum values across the area change?</p>
@@ -1709,12 +1693,32 @@ In these folders are snow depth and SWE data products. These links are to direct
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="ICESat2_tutorial.html" title="previous page">Introduction</a>
-    <a class='right-next' id="next-link" href="../thermal-ir/index.html" title="next page">Thermal Infrared Remote Sensing of Snow</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="ICESat2_tutorial.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">ICESat-2</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../thermal-ir/index.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Thermal Infrared Remote Sensing of Snow</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

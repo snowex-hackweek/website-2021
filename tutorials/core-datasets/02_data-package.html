@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -44,7 +44,7 @@
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -334,7 +334,7 @@
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../lidar/ICESat2_tutorial.html">
-       Introduction
+       ICESat-2
       </a>
      </li>
      <li class="toctree-l3">
@@ -594,21 +594,21 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#access-tutorial-data-from-zenodo">
+   Access tutorial data from Zenodo
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#download-snow-depth-data-from-nsidc">
    Download snow depth data from NSIDC
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#method-1-programmatically-download-snow-depth-data-from-nsidc">
-   Method 1: Programmatically download snow depth data from NSIDC
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#method-2-access-data-from-our-shared-resources-server">
-   Method 2: Access data from our shared resources server
+  <a class="reference internal nav-link" href="#programmatically-download-snow-depth-data-from-nsidc">
+   Programmatically download snow depth data from NSIDC
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -664,13 +664,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#method-1-programmatically-download-snow-pit-data-from-nsidc">
-   Method 1: Programmatically download snow pit data from NSIDC
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   Method 2: Access data from our shared resources server
+  <a class="reference internal nav-link" href="#programmatically-download-snow-pit-data-from-nsidc">
+   Programmatically download snow pit data from NSIDC
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -684,7 +679,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
+    <a class="reference internal nav-link" href="#id2">
      Plotting
     </a>
    </li>
@@ -722,10 +717,34 @@
 <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">([</span><span class="s1">&#39;seaborn-notebook&#39;</span><span class="p">])</span>
-
-<span class="c1"># unique imports</span>
-<span class="kn">import</span> <span class="nn">s3fs</span> <span class="c1">#access data from the AWS s3 bucket</span>
 </pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="access-tutorial-data-from-zenodo">
+<h2>Access tutorial data from Zenodo<a class="headerlink" href="#access-tutorial-data-from-zenodo" title="Permalink to this headline">¶</a></h2>
+<p>We’ve archived datasets used for 2021 Hackweek tutorials on <a class="reference external" href="https://zenodo.org">Zenodo</a>, to ensure that these tutorials can be run in the future. The following code pulls data from the Zenodo ‘record’ and unzips it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span> 
+
+# Retrieve a copy of data files used in this tutorial from Zenodo.org:
+# Re-running this cell will not re-download things if they already exist
+
+mkdir -p /tmp/tutorial-data
+cd /tmp/tutorial-data
+wget -q -nc -O data.zip https://zenodo.org/record/5504396/files/core-datasets.zip
+unzip -q -n data.zip
+rm data.zip
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">TUTORIAL_DATA</span> <span class="o">=</span> <span class="s1">&#39;/tmp/tutorial-data/core-datasets&#39;</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -735,88 +754,29 @@
 <img alt="../../_images/SD-landingPage.png" src="../../_images/SD-landingPage.png" /></p>
 <p>The Community Snow Depth Probe data package is a single CSV with over 36,000 geolocated snow depths! Three different instrument types were used to measure depths and are recorded in the Measurement Tool column.</p>
 </div>
-<div class="section" id="method-1-programmatically-download-snow-depth-data-from-nsidc">
-<h2>Method 1: Programmatically download snow depth data from NSIDC<a class="headerlink" href="#method-1-programmatically-download-snow-depth-data-from-nsidc" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="programmatically-download-snow-depth-data-from-nsidc">
+<h2>Programmatically download snow depth data from NSIDC<a class="headerlink" href="#programmatically-download-snow-depth-data-from-nsidc" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> &#39;./scripts/nsidc-download_SNEX20_SD.001.py&#39; 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grand Mesa 2020 Snow Depth data download complete&#39;</span><span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Querying for data:
-	https://cmr.earthdata.nasa.gov/search/granules.json?provider=NSIDC_ECS&amp;sort_key[]=start_date&amp;sort_key[]=producer_granule_id&amp;scroll=true&amp;page_size=2000&amp;short_name=SNEX20_SD&amp;version=001&amp;version=01&amp;version=1&amp;temporal[]=2020-01-28T00:00:00Z,2020-02-12T23:59:59Z
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 1 matches.
-Downloading 2 files...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/2: ./data/depths/SnowEx2020_SnowDepths_COGM_alldepths_v01.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [===============                                             ]  25%  5.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  6.1MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [=============================================               ]  75%  7.1MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  8.6MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2/2: ./data/depths/SnowEx2020_SnowDepths_COGM_alldepths_v01.csv.xml
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  2.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grand Mesa 2020 Snow Depth data download complete
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#os.chmod(&#39;/home/jovyan/.netrc&#39;, 0o600) #only necessary on snowex hackweek jupyterhub</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># show filename:</span>
-<span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;./data/depths/&#39;</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.csv&#39;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">filename</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SnowEx2020_SnowDepths_COGM_alldepths_v01.csv
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%run &#39;./scripts/nsidc-download_SNEX20_SD.001.py&#39; </span>
+<span class="c1">#print(&#39;Grand Mesa 2020 Snow Depth data download complete&#39;) </span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="method-2-access-data-from-our-shared-resources-server">
-<h2>Method 2: Access data from our shared resources server<a class="headerlink" href="#method-2-access-data-from-our-shared-resources-server" title="Permalink to this headline">¶</a></h2>
-<p>Quick and easy access for hackweek or if you haven’t gone through the steps to <a class="reference external" href="https://snowex-hackweek.github.io/website/preliminary/earthdata.html#configure-programmatic-access-to-nasa-servers">configure programmatic access</a> to NASA servers yet. This pulls data from our AWS, S3 bucket</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uses AWS credentials on machine</span>
-<span class="n">fs</span> <span class="o">=</span> <span class="n">s3fs</span><span class="o">.</span><span class="n">S3FileSystem</span><span class="p">()</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#path = Path(&#39;./data/depths/&#39;)</span>
 
-<span class="c1"># which data bucket?</span>
-<span class="n">bucket</span> <span class="o">=</span> <span class="s1">&#39;snowex-data&#39;</span>  
-      
-<span class="c1"># contents inside /depths     </span>
-<span class="n">flist</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">bucket</span><span class="si">}</span><span class="s1">/tutorial-data/core-datasets/depths&#39;</span><span class="p">)</span> 
-
-<span class="c1"># show list of files</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;File list is: &#39;</span><span class="p">,</span> <span class="n">flist</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File list is:  [&#39;snowex-data/tutorial-data/core-datasets/depths/SnowEx2020_SnowDepths_COGM_alldepths_v01.csv&#39;]
+<span class="c1">#for filename in path.glob(&#39;*.csv&#39;):</span>
+<span class="c1">#    print(filename.name)</span>
 </pre></div>
 </div>
 </div>
@@ -825,10 +785,7 @@ Downloading 2 files...
 <h3>Read the Depth File<a class="headerlink" href="#read-the-depth-file" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># open depth data file, and create pandas dataframe</span>
-<span class="k">with</span> <span class="n">fs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">flist</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> 
-    
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span> <span class="c1">#parse the date[2] and time[3] columns such that they are read in as datetime dtypes</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">TUTORIAL_DATA</span><span class="si">}</span><span class="s1">/depths/SnowEx2020_SnowDepths_COGM_alldepths_v01.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span> <span class="c1">#parse the date[2] and time[3] columns such that they are read in as datetime dtypes</span>
     
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;file has been read, and is ready to use.&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1260,7 +1217,7 @@ dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/02_data-package_25_0.png" src="../../_images/02_data-package_25_0.png" />
+<img alt="../../_images/02_data-package_27_0.png" src="../../_images/02_data-package_27_0.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Notice the point on the far right - that is the &quot;GML&quot; or Grand Mesa Lodge pit where all instruments were deployed for a comparison study. pitID=GML
 </pre></div>
 </div>
@@ -1281,7 +1238,7 @@ dtype: object
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Frequency&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/02_data-package_26_1.png" src="../../_images/02_data-package_26_1.png" />
+<img alt="../../_images/02_data-package_28_1.png" src="../../_images/02_data-package_28_1.png" />
 </div>
 </div>
 </div>
@@ -1291,382 +1248,13 @@ dtype: object
 <p>From the SnowEx20 <a class="reference external" href="https://nsidc.org/data/SNEX20_GM_SP/versions/1">Snow Pit Landing Page</a>, you can download data and access the <a class="reference external" href="https://nsidc.org/data/SNEX20_GM_SP/versions/1">User’s Guide</a>.</p>
 <img alt="../../_images/SP-landingPage.png" src="../../_images/SP-landingPage.png" />
 </div>
-<div class="section" id="method-1-programmatically-download-snow-pit-data-from-nsidc">
-<h2>Method 1: Programmatically download snow pit data from NSIDC<a class="headerlink" href="#method-1-programmatically-download-snow-pit-data-from-nsidc" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="programmatically-download-snow-pit-data-from-nsidc">
+<h2>Programmatically download snow pit data from NSIDC<a class="headerlink" href="#programmatically-download-snow-pit-data-from-nsidc" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load snow pit data</span>
-<span class="o">%</span><span class="k">run</span> &#39;scripts/nsidc-download_SNEX20_GM_SP.001.py&#39;
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grand Mesa 2020 Snow Pit data download complete&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Querying for data:
-	https://cmr.earthdata.nasa.gov/search/granules.json?provider=NSIDC_ECS&amp;sort_key[]=start_date&amp;sort_key[]=producer_granule_id&amp;scroll=true&amp;page_size=2000&amp;short_name=SNEX20_GM_SP&amp;version=001&amp;version=01&amp;version=1&amp;temporal[]=2020-01-27T00:00:00Z,2020-02-12T23:59:59Z&amp;options[producer_granule_id][pattern]=true&amp;producer_granule_id[]=*5N19*
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 1 matches.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading 20 files...
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>01/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_book1_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [===============                                             ]  25%  5.3MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  6.1MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [=============================================               ]  75%  7.1MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  8.5MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>02/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_book2_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [===============                                             ]  25%  5.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  6.6MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [=============================================               ]  75%  7.6MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.0MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>03/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_book_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============                                                ]  20%  5.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================                                    ]  40%  7.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================================                        ]  60%  7.6MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [================================================            ]  80%  8.3MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  10.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>04/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_density_v01.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  302.3kB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>05/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_east_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.0MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.0MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.1MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  8.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  8.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>06/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_LWC_v01.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  384.6kB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>07/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_north_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  5.3MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  6.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  7.1MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  7.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  8.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.1MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>08/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_pit1_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  5.6MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  6.6MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  7.6MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  8.3MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  8.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.1MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>09/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_pit2_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  5.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  6.1MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  7.0MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  7.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  8.1MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  8.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_pit_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  5.3MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  6.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  7.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  7.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  8.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  8.5MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_siteDetails_v01.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  407.7kB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_south_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.0MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  8.1MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  8.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  9.3MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_SSA_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  6.0MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  7.9MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  8.1MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  8.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  9.3MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_stratigraphy_v01.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  506.0kB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_temperature_v01.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  211.4kB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_up_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  4.6MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  6.5MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  7.6MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  8.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  8.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_v01.pdf
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  1.4MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_v01.xlsx
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  2.5MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19_west_v01.jpg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==========                                                  ]  17%  5.3MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [====================                                        ]  33%  6.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  7.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [========================================                    ]  67%  7.8MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==================================================          ]  83%  8.2MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  8.5MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20/20: ./data/pits/SnowEx20_SnowPits_GMIOP_20200128_5N19.xml
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  7.7MB/s   
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grand Mesa 2020 Snow Pit data download complete
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># show filenames</span>
-<span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;./data/pits/&#39;</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filename</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*5N19*&#39;</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">filename</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 SnowEx20_SnowPits_GMIOP_20200128_5N19_west_v01.jpg
-1 SnowEx20_SnowPits_GMIOP_20200128_5N19_east_v01.jpg
-2 SnowEx20_SnowPits_GMIOP_20200128_5N19_LWC_v01.csv
-3 SnowEx20_SnowPits_GMIOP_20200128_5N19_SSA_v01.jpg
-4 SnowEx20_SnowPits_GMIOP_20200128_5N19_book_v01.jpg
-5 SnowEx20_SnowPits_GMIOP_20200128_5N19_temperature_v01.csv
-6 SnowEx20_SnowPits_GMIOP_20200128_5N19_density_v01.csv
-7 SnowEx20_SnowPits_GMIOP_20200128_5N19_v01.xlsx
-8 SnowEx20_SnowPits_GMIOP_20200128_5N19.xml
-9 SnowEx20_SnowPits_GMIOP_20200128_5N19_up_v01.jpg
-10 SnowEx20_SnowPits_GMIOP_20200128_5N19_pit2_v01.jpg
-11 SnowEx20_SnowPits_GMIOP_20200128_5N19_north_v01.jpg
-12 SnowEx20_SnowPits_GMIOP_20200128_5N19_v01.pdf
-13 SnowEx20_SnowPits_GMIOP_20200128_5N19_pit_v01.jpg
-14 SnowEx20_SnowPits_GMIOP_20200128_5N19_book1_v01.jpg
-15 SnowEx20_SnowPits_GMIOP_20200128_5N19_stratigraphy_v01.csv
-16 SnowEx20_SnowPits_GMIOP_20200128_5N19_book2_v01.jpg
-17 SnowEx20_SnowPits_GMIOP_20200128_5N19_south_v01.jpg
-18 SnowEx20_SnowPits_GMIOP_20200128_5N19_siteDetails_v01.csv
-19 SnowEx20_SnowPits_GMIOP_20200128_5N19_pit1_v01.jpg
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="id2">
-<h2>Method 2: Access data from our shared resources server<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>Again, quick access for hackweek or if you haven’t gone through the steps to <a class="reference external" href="https://snowex-hackweek.github.io/website/preliminary/earthdata.html#configure-programmatic-access-to-nasa-servers">configure programmatic access</a> to NASA servers yet. This pulls data from our AWS, S3 bucket</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uses AWS credentials on machine</span>
-<span class="n">fs</span> <span class="o">=</span> <span class="n">s3fs</span><span class="o">.</span><span class="n">S3FileSystem</span><span class="p">()</span> 
-
-<span class="c1"># which data bucket?</span>
-<span class="n">bucket</span> <span class="o">=</span> <span class="s1">&#39;snowex-data&#39;</span>  
-      
-<span class="c1"># contents inside /pits     </span>
-<span class="n">flist</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">bucket</span><span class="si">}</span><span class="s1">/tutorial-data/core-datasets/pits/&#39;</span><span class="p">)</span>
-
-<span class="c1"># which files do we want?</span>
-<span class="n">suffix</span><span class="o">=</span><span class="s1">&#39;.csv&#39;</span>
-
-<span class="c1"># list comprehension to get .csv files (not .xlsx or .jpgs)</span>
-<span class="n">csv_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">filename</span> <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">flist</span> <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">suffix</span><span class="p">)]</span>
-<span class="n">csv_files</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_20200128_1N6_LWC_v01.csv&#39;,
- &#39;snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_20200128_1N6_density_v01.csv&#39;,
- &#39;snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_20200128_1N6_siteDetails_v01.csv&#39;,
- &#39;snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_20200128_1N6_stratigraphy_v01.csv&#39;,
- &#39;snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_20200128_1N6_temperature_v01.csv&#39;]
+<span class="c1">#%run &#39;scripts/nsidc-download_SNEX20_GM_SP.001.py&#39;</span>
+<span class="c1">#print(&#39;Grand Mesa 2020 Snow Pit data download complete&#39;)</span>
 </pre></div>
 </div>
 </div>
@@ -1679,6 +1267,8 @@ dtype: object
 <span class="n">parameter</span> <span class="o">=</span> <span class="s1">&#39;temperature&#39;</span>
 <span class="n">pitID</span> <span class="o">=</span> <span class="s1">&#39;5N19&#39;</span>
 <span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;20200128&#39;</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">/pits/SnowEx20_SnowPits_GMIOP_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_v01.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">TUTORIAL_DATA</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="n">pitID</span><span class="p">,</span> <span class="n">parameter</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1688,9 +1278,7 @@ dtype: object
 <h3>Read the Pit Parameter File<a class="headerlink" href="#read-the-pit-parameter-file" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">fs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;/snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_v01.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">pitID</span><span class="p">,</span> <span class="n">parameter</span><span class="p">),</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    
-    <span class="n">t</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
 <span class="n">t</span>
 </pre></div>
 </div>
@@ -1784,8 +1372,8 @@ dtype: object
 </div></div></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h3>Plotting<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Plotting<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot temperature</span>
@@ -1802,16 +1390,15 @@ dtype: object
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Snow Depth (cm)&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/02_data-package_38_1.png" src="../../_images/02_data-package_38_1.png" />
+<img alt="../../_images/02_data-package_37_1.png" src="../../_images/02_data-package_37_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># grab a different pit parameter file</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="s1">&#39;density&#39;</span>
-<span class="k">with</span> <span class="n">fs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;/snowex-data/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_v01.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">pitID</span><span class="p">,</span> <span class="n">parameter</span><span class="p">),</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-
-    <span class="n">d</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/tmp/tutorial-data/core-datasets/pits/SnowEx20_SnowPits_GMIOP_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_v01.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">pitID</span><span class="p">,</span> <span class="n">parameter</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
 <span class="n">d</span>
 </pre></div>
 </div>
@@ -2098,7 +1685,7 @@ dtype: object
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Snow Depth (cm)&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/02_data-package_41_1.png" src="../../_images/02_data-package_41_1.png" />
+<img alt="../../_images/02_data-package_40_1.png" src="../../_images/02_data-package_40_1.png" />
 </div>
 </div>
 </div>
@@ -2128,12 +1715,32 @@ dtype: object
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="01_introduction.html" title="previous page">SnowEx Mission and Core Data Sets</a>
-    <a class='right-next' id="next-link" href="03_practice-querying.html" title="next page">Practice Querying the Snowexsql Database</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="01_introduction.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">SnowEx Mission and Core Data Sets</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="03_practice-querying.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Practice Querying the Snowexsql Database</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -44,15 +44,15 @@
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Synthetic Aperture Radar" href="../sar/index.html" />
@@ -336,7 +336,7 @@
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../lidar/ICESat2_tutorial.html">
-       Introduction
+       ICESat-2
       </a>
      </li>
      <li class="toctree-l3">
@@ -596,7 +596,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#retrieve-density-gpr-and-magnaprobe-data-from-pit-1s1">
@@ -833,7 +833,7 @@ We then import the Point Data (e.g. GPR) and Layer Data (e.g. snow pit) and GeoP
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;mesa&#39;,), (&#39;magnaprobe&#39;,), (&#39;camera&#39;,), (&#39;pulse EKKO Pro multi-polarization 1 GHz GPR&#39;,), (&#39;pit ruler&#39;,)]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;swe&#39;,), (&#39;depth&#39;,), (&#39;two_way_travel&#39;,)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;depth&#39;,), (&#39;swe&#39;,), (&#39;two_way_travel&#39;,)]
 </pre></div>
 </div>
 </div>
@@ -1001,30 +1001,6 @@ z = \frac{vt}{2} \quad ,
       <th>2</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
-      <td>2021-06-10 14:54:36.998583+00:00</td>
-      <td>None</td>
-      <td>882750</td>
-      <td>None</td>
-      <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
-      <td>2021-05-30</td>
-      <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
-      <td>two_way_travel</td>
-      <td>...</td>
-      <td>4322837.344</td>
-      <td>741941.641</td>
-      <td>None</td>
-      <td>12</td>
-      <td>POINT (741941.641 4322837.344)</td>
-      <td>16:53:11.933000-06:00</td>
-      <td>None</td>
-      <td>None</td>
-      <td>6.0</td>
-      <td>74.560231</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Grand Mesa</td>
-      <td>2020-01-29</td>
       <td>2021-06-10 14:54:37.017366+00:00</td>
       <td>None</td>
       <td>882759</td>
@@ -1046,24 +1022,48 @@ z = \frac{vt}{2} \quad ,
       <td>74.560231</td>
     </tr>
     <tr>
-      <th>4</th>
+      <th>3</th>
       <td>Grand Mesa</td>
       <td>2020-01-29</td>
-      <td>2021-06-10 14:54:37.019422+00:00</td>
+      <td>2021-06-10 14:54:36.998583+00:00</td>
       <td>None</td>
-      <td>882760</td>
+      <td>882750</td>
       <td>None</td>
       <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
       <td>2021-05-30</td>
       <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
       <td>two_way_travel</td>
       <td>...</td>
-      <td>4322837.258</td>
-      <td>741941.495</td>
+      <td>4322837.344</td>
+      <td>741941.641</td>
       <td>None</td>
       <td>12</td>
-      <td>POINT (741941.495 4322837.258)</td>
-      <td>16:53:12.267000-06:00</td>
+      <td>POINT (741941.641 4322837.344)</td>
+      <td>16:53:11.933000-06:00</td>
+      <td>None</td>
+      <td>None</td>
+      <td>6.0</td>
+      <td>74.560231</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Grand Mesa</td>
+      <td>2020-01-29</td>
+      <td>2021-06-10 14:54:37.000674+00:00</td>
+      <td>None</td>
+      <td>882751</td>
+      <td>None</td>
+      <td>https://doi.org/10.5067/Q2LFK0QSVGS2</td>
+      <td>2021-05-30</td>
+      <td>pulse EKKO Pro multi-polarization 1 GHz GPR</td>
+      <td>two_way_travel</td>
+      <td>...</td>
+      <td>4322837.338</td>
+      <td>741941.627</td>
+      <td>None</td>
+      <td>12</td>
+      <td>POINT (741941.627 4322837.338)</td>
+      <td>16:53:11.967000-06:00</td>
       <td>None</td>
       <td>None</td>
       <td>6.0</td>
@@ -1625,12 +1625,32 @@ The rmse is 10.62 cm
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../microstructure/microstructure-tutorial.html" title="previous page">Microstructure Tutorial</a>
-    <a class='right-next' id="next-link" href="../sar/index.html" title="next page">Synthetic Aperture Radar</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../microstructure/microstructure-tutorial.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Microstructure Tutorial</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../sar/index.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Synthetic Aperture Radar</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

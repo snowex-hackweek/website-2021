@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -44,15 +44,15 @@
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="GPR" href="../gpr/gpr.html" />
@@ -336,7 +336,7 @@
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../lidar/ICESat2_tutorial.html">
-       Introduction
+       ICESat-2
       </a>
      </li>
      <li class="toctree-l3">
@@ -596,7 +596,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#learning-objectives">
@@ -1162,27 +1162,27 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
   </thead>
   <tbody>
     <tr>
-      <th>7874</th>
+      <th>7873</th>
       <td>fname = SNEX20_SMP_S19M1174_2N13_20200206.CSV,...</td>
       <td>1.551466</td>
     </tr>
     <tr>
-      <th>22517</th>
+      <th>22516</th>
       <td>fname = SNEX20_SMP_S19M1175_2N13_20200206.CSV,...</td>
       <td>2.900187</td>
     </tr>
     <tr>
-      <th>16588</th>
+      <th>16587</th>
       <td>fname = SNEX20_SMP_S19M1173_2N13_20200206.CSV,...</td>
       <td>5.031469</td>
     </tr>
     <tr>
-      <th>26026</th>
+      <th>26025</th>
       <td>fname = SNEX20_SMP_S19M1172_2N13_20200206.CSV,...</td>
       <td>5.031469</td>
     </tr>
     <tr>
-      <th>4850</th>
+      <th>4849</th>
       <td>fname = SNEX20_SMP_S19M1176_2N13_20200206.CSV,...</td>
       <td>14.095757</td>
     </tr>
@@ -1203,15 +1203,23 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pull in some tutorial datasets </span>
-<span class="o">!</span>aws s3 sync --quiet s3://snowex-data/tutorial-data/microstructure/ /tmp/microstructure
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span> 
+
+# Retrieve a copy of data files used in this tutorial from Zenodo.org:
+# Re-running this cell will not re-download things if they already exist
+
+mkdir -p /tmp/tutorial-data
+cd /tmp/tutorial-data
+wget -q -nc -O data.zip https://zenodo.org/record/5504396/files/microstructure.zip
+unzip -q -n data.zip
+rm data.zip
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Profile</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/tmp/microstructure/SMP/SNEX20_SMP_S19M1174_2N13_20200206.PNT&#39;</span><span class="p">,)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Profile</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/tmp/tutorial-data/microstructure/SMP/SNEX20_SMP_S19M1174_2N13_20200206.PNT&#39;</span><span class="p">,)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">samples</span><span class="o">.</span><span class="n">distance</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">samples</span><span class="o">.</span><span class="n">force</span><span class="p">)</span>
 <span class="c1"># Prettify our plot a bit</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
@@ -1330,7 +1338,7 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read micro CT for 2N13</span>
-<span class="n">data_dir</span><span class="o">=</span><span class="s1">&#39;/tmp/microstructure/microCT/txt/&#39;</span>
+<span class="n">data_dir</span><span class="o">=</span><span class="s1">&#39;/tmp/tutorial-data/microstructure/microCT/txt/&#39;</span>
 <span class="p">[</span><span class="n">SSA_CT</span><span class="p">,</span><span class="n">height_min</span><span class="p">,</span><span class="n">height_max</span><span class="p">]</span><span class="o">=</span><span class="n">read_CT_txt_files</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
 
 <span class="n">SSA_CT</span> <span class="c1">#check out the SSA values read in from MicroCT</span>
@@ -1343,9 +1351,9 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
        11.68001091, 11.10273719, 11.7619084 , 11.87629226, 11.68687023,
        11.42565976, 11.30210469, 11.54909487, 11.32300981, 11.32594329,
        10.93379498, 10.92513631, 11.01997819, 10.67981461, 11.10715376,
-       10.99905125, 10.75124318, 11.50651036, 12.57513631, 12.81523446,
-       12.7846783 , 12.8248964 , 12.87141767, 13.00685932, 13.01716467,
-       12.73911668, 13.56685932, 12.88      , 13.35838604, 13.97314068,
+       10.75124318, 10.99905125, 11.50651036, 12.57513631, 12.81523446,
+       12.7846783 , 12.8248964 , 12.87141767, 13.00685932, 12.73911668,
+       13.01716467, 12.88      , 13.56685932, 13.35838604, 13.97314068,
        14.23908397, 16.31159215, 17.56122137, 18.06660851, 17.45089422,
        18.15394766, 17.93645583, 17.8674482 , 17.99497274, 17.89236641,
        18.25597601, 18.17002181, 19.18184297, 19.1782988 , 18.36195202,
@@ -1439,12 +1447,32 @@ D_{eq} = \frac{6}{SSA \rho_i} \quad
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../thermal-ir/thermal-ir-data-download.html" title="previous page">Downloading datasets for the thermal IR tutorial</a>
-    <a class='right-next' id="next-link" href="../gpr/gpr.html" title="next page">GPR</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../thermal-ir/thermal-ir-data-download.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Downloading datasets for the thermal IR tutorial</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../gpr/gpr.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">GPR</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

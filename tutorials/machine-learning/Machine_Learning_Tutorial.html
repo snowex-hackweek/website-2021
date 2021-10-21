@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -44,15 +44,15 @@
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Open Science" href="../open_science.html" />
@@ -336,7 +336,7 @@
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../lidar/ICESat2_tutorial.html">
-       Introduction
+       ICESat-2
       </a>
      </li>
      <li class="toctree-l3">
@@ -596,7 +596,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#learning-outcomes">
@@ -1025,7 +1025,7 @@ memory usage: 117.3 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fd93179d610&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7f4fa94e2370&gt;
 </pre></div>
 </div>
 <img alt="../../_images/Machine_Learning_Tutorial_10_1.png" src="../../_images/Machine_Learning_Tutorial_10_1.png" />
@@ -1254,89 +1254,6 @@ memory usage: 117.3 KB
 <p>Load libraries:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NOTE: this part of the tutorial uses additional libraries not in the default snowex jupyterhub</span>
-<span class="c1"># mamba is a python package management alternative to conda and pip https://github.com/mamba-org/mamba</span>
-<span class="o">!</span>mamba install -y -q tensorflow
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Package                     Version  Build               Channel                    Size
-────────────────────────────────────────────────────────────────────────────────────────────
-  Install:
-────────────────────────────────────────────────────────────────────────────────────────────
-
-<span class=" -Color -Color-Green">  _tflow_select          </span>       2.3.0  mkl                 pkgs/main/linux-64         2 KB
-<span class=" -Color -Color-Green">  abseil-cpp             </span>  20200923.3  h9c3ff4c_0          conda-forge/linux-64     955 KB
-<span class=" -Color -Color-Green">  absl-py                </span>      0.13.0  pyhd8ed1ab_0        conda-forge/noarch        97 KB
-<span class=" -Color -Color-Green">  astor                  </span>       0.8.1  pyh9f0ad1d_0        conda-forge/noarch        25 KB
-<span class=" -Color -Color-Green">  astunparse             </span>       1.6.3  pyhd8ed1ab_0        conda-forge/noarch        15 KB
-<span class=" -Color -Color-Green">  dataclasses            </span>         0.8  pyhc8e2a94_1        conda-forge/noarch         7 KB
-<span class=" -Color -Color-Green">  flatbuffers            </span>       2.0.0  h9c3ff4c_0          conda-forge/linux-64       1 MB
-<span class=" -Color -Color-Green">  gast                   </span>       0.4.0  pyh9f0ad1d_0        conda-forge/noarch        12 KB
-<span class=" -Color -Color-Green">  google-pasta           </span>       0.2.0  pyh8c360ce_0        conda-forge/noarch        42 KB
-<span class=" -Color -Color-Green">  grpcio                 </span>      1.38.1  py38hdd6454d_0      conda-forge/linux-64       2 MB
-<span class=" -Color -Color-Green">  keras-preprocessing    </span>       1.1.2  pyhd8ed1ab_0        conda-forge/noarch        34 KB
-<span class=" -Color -Color-Green">  libprotobuf            </span>      3.14.0  h780b84a_0          conda-forge/linux-64       2 MB
-<span class=" -Color -Color-Green">  opt_einsum             </span>       3.3.0  pyhd8ed1ab_1        conda-forge/noarch        53 KB
-<span class=" -Color -Color-Green">  protobuf               </span>      3.14.0  py38h709712a_1      conda-forge/linux-64     348 KB
-<span class=" -Color -Color-Green">  python-flatbuffers     </span>        1.12  pyhd8ed1ab_1        conda-forge/noarch        19 KB
-<span class=" -Color -Color-Green">  tensorboard            </span>       2.5.0  pyhd8ed1ab_0        conda-forge/noarch         5 MB
-<span class=" -Color -Color-Green">  tensorboard-data-server</span>       0.6.0  py38h2b97feb_0      conda-forge/linux-64       3 MB
-<span class=" -Color -Color-Green">  tensorboard-plugin-wit </span>       1.8.0  pyh44b312d_0        conda-forge/noarch       670 KB
-<span class=" -Color -Color-Green">  tensorflow             </span>       2.5.0  mkl_py38hce4fbe1_0  pkgs/main/linux-64         4 KB
-<span class=" -Color -Color-Green">  tensorflow-base        </span>       2.5.0  mkl_py38h35b2a3d_0  pkgs/main/linux-64        76 MB
-<span class=" -Color -Color-Green">  tensorflow-estimator   </span>       2.5.0  pyh81a9013_1        conda-forge/noarch       289 KB
-<span class=" -Color -Color-Green">  termcolor              </span>       1.1.0  py_2                conda-forge/noarch         6 KB
-<span class=" -Color -Color-Green">  werkzeug               </span>       2.0.1  pyhd8ed1ab_0        conda-forge/noarch       219 KB
-
-  Upgrade:
-────────────────────────────────────────────────────────────────────────────────────────────
-
-<span class=" -Color -Color-Red">  ca-certificates        </span>   2020.12.5  ha878542_0          installed                      
-<span class=" -Color -Color-Green">  ca-certificates        </span>    2021.7.5  h06a4308_1          pkgs/main/linux-64       113 KB
-<span class=" -Color -Color-Red">  certifi                </span>   2020.12.5  py38h578d9bd_1      installed                      
-<span class=" -Color -Color-Green">  certifi                </span>   2021.5.30  py38h578d9bd_0      conda-forge/linux-64     141 KB
-<span class=" -Color -Color-Red">  sqlite                 </span>      3.34.0  h74cdb3f_0          installed                      
-<span class=" -Color -Color-Green">  sqlite                 </span>      3.36.0  h9cd32fc_0          conda-forge/linux-64       1 MB
-
-  Downgrade:
-────────────────────────────────────────────────────────────────────────────────────────────
-
-<span class=" -Color -Color-Red">  google-auth-oauthlib   </span>       0.4.4  pyhd8ed1ab_0        installed                      
-<span class=" -Color -Color-Green">  google-auth-oauthlib   </span>       0.4.1  py_2                conda-forge/noarch        18 KB
-<span class=" -Color -Color-Red">  wheel                  </span>      0.36.2  pyhd3deb0d_0        installed                      
-<span class=" -Color -Color-Green">  wheel                  </span>      0.35.1  pyh9f0ad1d_0        conda-forge/noarch        29 KB
-
-  Summary:
-
-  Install: 23 packages
-  Upgrade: 3 packages
-  Downgrade: 2 packages
-
-  Total download: 95 MB
-
-────────────────────────────────────────────────────────────────────────────────────────────
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Preparing transaction: ...working... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
-Verifying transaction: ...working... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
-Executing transaction: ...working... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span> <span class="c1"># Keras is part of standard tensorflow library</span>
 </pre></div>
 </div>
@@ -1421,8 +1338,8 @@ None
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 7.05 s, sys: 692 ms, total: 7.74 s
-Wall time: 10.5 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 15.6 s, sys: 7.47 s, total: 23 s
+Wall time: 11.8 s
 </pre></div>
 </div>
 </div>
@@ -1438,7 +1355,7 @@ Wall time: 10.5 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Machine_Learning_Tutorial_33_0.png" src="../../_images/Machine_Learning_Tutorial_33_0.png" />
+<img alt="../../_images/Machine_Learning_Tutorial_32_0.png" src="../../_images/Machine_Learning_Tutorial_32_0.png" />
 </div>
 </div>
 <div class="section" id="linear-regression-coefficient">
@@ -1580,10 +1497,10 @@ Wall time: 10.5 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd908bafc10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f4f78f420d0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Machine_Learning_Tutorial_39_1.png" src="../../_images/Machine_Learning_Tutorial_39_1.png" />
+<img alt="../../_images/Machine_Learning_Tutorial_38_1.png" src="../../_images/Machine_Learning_Tutorial_38_1.png" />
 </div>
 </div>
 </div>
@@ -1698,8 +1615,8 @@ _________________________________________________________________
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 9.12 s, sys: 3.32 s, total: 12.4 s
-Wall time: 6.56 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 13.6 s, sys: 3.47 s, total: 17.1 s
+Wall time: 8.85 s
 </pre></div>
 </div>
 </div>
@@ -1716,7 +1633,7 @@ Wall time: 6.56 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Machine_Learning_Tutorial_50_0.png" src="../../_images/Machine_Learning_Tutorial_50_0.png" />
+<img alt="../../_images/Machine_Learning_Tutorial_49_0.png" src="../../_images/Machine_Learning_Tutorial_49_0.png" />
 </div>
 </div>
 </div>
@@ -1785,8 +1702,8 @@ Test MAPE:  41.44 %
  
 ##************** Deep Learning Results **************##
 Test RMSE:  0.31
-Test R^2 :  76.23 %
-Test MAPE:  27.66 %
+Test R^2 :  76.24 %
+Test MAPE:  27.64 %
  
  
 </pre></div>
@@ -1818,7 +1735,7 @@ Test MAPE:  27.66 %
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Deep Neural Network&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/Machine_Learning_Tutorial_57_1.png" src="../../_images/Machine_Learning_Tutorial_57_1.png" />
+<img alt="../../_images/Machine_Learning_Tutorial_56_1.png" src="../../_images/Machine_Learning_Tutorial_56_1.png" />
 </div>
 </div>
 </div>
@@ -1849,7 +1766,7 @@ Test MAPE:  27.66 %
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Deep Neural Network&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/Machine_Learning_Tutorial_59_1.png" src="../../_images/Machine_Learning_Tutorial_59_1.png" />
+<img alt="../../_images/Machine_Learning_Tutorial_58_1.png" src="../../_images/Machine_Learning_Tutorial_58_1.png" />
 </div>
 </div>
 </div>
@@ -2004,12 +1921,32 @@ increases the value of our prediction and vice versa.</p>
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../camera-traps-tutorial/timelapse-camera-tutorial.html" title="previous page">Time-lapse Cameras and Snow Applications</a>
-    <a class='right-next' id="next-link" href="../open_science.html" title="next page">Open Science</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../camera-traps-tutorial/timelapse-camera-tutorial.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Time-lapse Cameras and Snow Applications</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../open_science.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Open Science</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

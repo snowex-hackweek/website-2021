@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -44,7 +44,7 @@
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -334,7 +334,7 @@
     <ul>
      <li class="toctree-l3">
       <a class="reference internal" href="../lidar/ICESat2_tutorial.html">
-       Introduction
+       ICESat-2
       </a>
      </li>
      <li class="toctree-l3">
@@ -594,7 +594,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#learning-objectives">
@@ -1008,7 +1008,7 @@
 The total size of all files is 209.20 MB
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;feed&#39;: {&#39;updated&#39;: &#39;2021-07-21T16:27:37.071Z&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;feed&#39;: {&#39;updated&#39;: &#39;2021-10-21T00:29:03.263Z&#39;,
   &#39;id&#39;: &#39;https://cmr.earthdata.nasa.gov:443/search/granules.json?short_name=SNEX17_GPR&amp;version=2&amp;polygon=-108.2352445938561%2C38.98556907427165%2C-107.85284607930835%2C38.978765032966244%2C-107.85494925720668%2C39.10596902171742%2C-108.22772795408136%2C39.11294532581687%2C-108.2352445938561%2C38.98556907427165&amp;temporal=2017-01-01T00%3A00%3A00Z%2C2017-12-31T23%3A59%3A59Z&#39;,
   &#39;title&#39;: &#39;ECHO granule metadata&#39;,
   &#39;entry&#39;: [{&#39;producer_granule_id&#39;: &#39;SnowEx17_GPR_Version2_Week1.csv&#39;,
@@ -1046,6 +1046,11 @@ The total size of all files is 209.20 MB
       &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
       &#39;hreflang&#39;: &#39;en-US&#39;,
       &#39;href&#39;: &#39;https://search.earthdata.nasa.gov/search/granules?p=C1655875737-NSIDC_ECS&amp;q=SNEX17_GPR&amp;m=29.76382409255042!-108.823974609375!4!1!0!0%2C2&amp;tl=1558474061!4!!&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;length&#39;: &#39;0.0KB&#39;,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://nsidc.org/data/data-access-tool/SNEX17_GPR/versions/2/&#39;},
      {&#39;inherited&#39;: True,
       &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/metadata#&#39;,
       &#39;hreflang&#39;: &#39;en-US&#39;,
@@ -1090,6 +1095,11 @@ The total size of all files is 209.20 MB
       &#39;hreflang&#39;: &#39;en-US&#39;,
       &#39;href&#39;: &#39;https://search.earthdata.nasa.gov/search/granules?p=C1655875737-NSIDC_ECS&amp;q=SNEX17_GPR&amp;m=29.76382409255042!-108.823974609375!4!1!0!0%2C2&amp;tl=1558474061!4!!&#39;},
      {&#39;inherited&#39;: True,
+      &#39;length&#39;: &#39;0.0KB&#39;,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://nsidc.org/data/data-access-tool/SNEX17_GPR/versions/2/&#39;},
+     {&#39;inherited&#39;: True,
       &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/metadata#&#39;,
       &#39;hreflang&#39;: &#39;en-US&#39;,
       &#39;href&#39;: &#39;https://doi.org/10.5067/G21LGCNLFSC5&#39;},
@@ -1132,6 +1142,11 @@ The total size of all files is 209.20 MB
       &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
       &#39;hreflang&#39;: &#39;en-US&#39;,
       &#39;href&#39;: &#39;https://search.earthdata.nasa.gov/search/granules?p=C1655875737-NSIDC_ECS&amp;q=SNEX17_GPR&amp;m=29.76382409255042!-108.823974609375!4!1!0!0%2C2&amp;tl=1558474061!4!!&#39;},
+     {&#39;inherited&#39;: True,
+      &#39;length&#39;: &#39;0.0KB&#39;,
+      &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/data#&#39;,
+      &#39;hreflang&#39;: &#39;en-US&#39;,
+      &#39;href&#39;: &#39;https://nsidc.org/data/data-access-tool/SNEX17_GPR/versions/2/&#39;},
      {&#39;inherited&#39;: True,
       &#39;rel&#39;: &#39;http://esipfed.org/ns/fedsearch/1.1/metadata#&#39;,
       &#39;hreflang&#39;: &#39;en-US&#39;,
@@ -1192,22 +1207,22 @@ The total size of all files is 209.20 MB
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1/2: SnowEx2020_SnowDepths_COGM_alldepths_v01.csv
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [===============                                             ]  25%  5.3MB/s   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [===============                                             ]  25%  5.4MB/s   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  6.2MB/s   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [==============================                              ]  50%  6.4MB/s   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [=============================================               ]  75%  7.1MB/s   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [=============================================               ]  75%  7.4MB/s   
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  8.6MB/s   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  9.7MB/s   
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2/2: SnowEx2020_SnowDepths_COGM_alldepths_v01.csv.xml
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  2.0MB/s   
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  [============================================================] 100%  2.6MB/s   
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Grand Mesa 2020 Snow Depth data download complete
@@ -1365,14 +1380,14 @@ The total size of all files is 209.20 MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Order status URL:  https://n5eil02u.ecs.nsidc.org/egi/request/5000001162862
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Order status URL:  https://n5eil02u.ecs.nsidc.org/egi/request/5000001617631
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Job status is  processing . Trying again.
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Job status is  complete
-Zip download URL:  https://n5eil02u.ecs.nsidc.org/esir/5000001162862.zip
+Zip download URL:  https://n5eil02u.ecs.nsidc.org/esir/5000001617631.zip
 Beginning download of zipped output...
 </pre></div>
 </div>
@@ -1795,12 +1810,32 @@ Beginning download of zipped output...
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../geospatial/SNOTEL_query.html" title="previous page">Dynamic Query of SNOTEL data</a>
-    <a class='right-next' id="next-link" href="../database/index.html" title="next page">SnowEx Database</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../geospatial/SNOTEL_query.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Dynamic Query of SNOTEL data</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../database/index.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">SnowEx Database</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
