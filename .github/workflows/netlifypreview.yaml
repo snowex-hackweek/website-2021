@@ -5,7 +5,7 @@ on:
     types: [labeled, synchronize]
 
 env:
-  DOCKER_IMAGE: uwhackweek/snowex:latest
+  DOCKER_IMAGE: uwhackweek/snowex:2021.09.07
 
 jobs:
   add-preview:

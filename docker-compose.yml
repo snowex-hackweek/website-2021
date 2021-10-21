@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   jupyterlab:
-    image: "uwhackweek/snowex:latest"
+    image: "uwhackweek/snowex:2021.09.07"
     ports:
       - "8888:8888"
     command: "jupyter lab --ip 0.0.0.0 --no-browser"

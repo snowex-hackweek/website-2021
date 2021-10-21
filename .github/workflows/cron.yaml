@@ -7,7 +7,7 @@ on:
     - cron:  '0 0 * * 0'
 
 env:
-  DOCKER_IMAGE: uwhackweek/snowex:latest
+  DOCKER_IMAGE: uwhackweek/snowex:2021.09.07
 
 jobs:
   build-and-test:
@@ -27,7 +27,7 @@ jobs:
       run: |
         docker pull $DOCKER_IMAGE
         docker images
-    
+
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -47,7 +47,7 @@ jobs:
         -e AWS_REGION -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_SESSION_TOKEN \
         -v ${{ github.workspace }}:/home/jovyan:rw \
         $DOCKER_IMAGE .github/workflows/build.sh
-    
+
     - name: Save Build
       if: ${{ always() }}
       uses: actions/upload-artifact@v2
