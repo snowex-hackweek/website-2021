@@ -25,7 +25,7 @@ To add a tutorial as a jupyter notebook under [./book/tutorials](./book/tutorial
 ```
 git clone https://github.com/snowex-hackweek/website
 cd website
-docker run uwhackweek/snowex:latest -v $PWD:/home/jovyan jb build book
+docker run uwhackweek/snowex:2021.09.07 -v $PWD:/home/jovyan jb build book
 ```
 
 ## About JupyterBook
