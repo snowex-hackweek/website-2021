@@ -9,6 +9,7 @@ env:
 
 jobs:
   add-preview:
+    if: github.repository == 'snowex-hackweek/website'
     runs-on: ubuntu-20.04
     # This workflow accesses secrets and checks out a PR, so only run if labelled
     # https://securitylab.github.com/research/github-actions-preventing-pwn-requests/

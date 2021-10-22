@@ -9,10 +9,11 @@ on:
       - main
 
 env:
-  DOCKER_IMAGE: uwhackweek/snowex:latest
+  DOCKER_IMAGE: uwhackweek/snowex:2021.09.07
 
 jobs:
   build-and-deploy:
+    if: github.repository == 'snowex-hackweek/website'
     runs-on: ubuntu-20.04
 
     steps:
@@ -25,7 +26,7 @@ jobs:
         path: ./book/_build
         key: jupyterbook-5
 
-    # NOTE: download build-artifact (_build) folder to inspect cache locally 
+    # NOTE: download build-artifact (_build) folder to inspect cache locally
     # - name: List Jupyter-Cache contents
     #  run: |
     #    pip install tabulate --no-deps

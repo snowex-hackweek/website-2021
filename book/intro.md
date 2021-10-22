@@ -11,3 +11,5 @@ SnowEx Hackweek 2021 was offered virtually July 12 - 16 with over 100 participan
 👩‍💻 Teams worked collaboratively on 7 different projects focused on data cross-validation and software development. Read more about the projects and there results on our [projects page](projects/list_of_projects)
 
 💡 Learn more about hackweeks hosted by the [University of Washington eScience Institute](https://uwhackweek.github.io/hackweeks-as-a-service/intro.html), or check out our publication describing the hackweek educational model {cite:p}`Huppenkothen2018`.
+
+If you'd like to cite this material, please see our Zenodo DOI for the recommended citation [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5590433.svg)](https://doi.org/10.5281/zenodo.5590433)
