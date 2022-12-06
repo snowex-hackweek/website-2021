@@ -2,7 +2,7 @@
 [![Deploy](https://github.com/snowex-hackweek/website/actions/workflows/deploy.yaml/badge.svg)](https://github.com/snowex-hackweek/website/actions/workflows/deploy.yaml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5590433.svg)](https://doi.org/10.5281/zenodo.5590433)
 
-https://snowex-hackweek.github.io/website
+https://snowex-2021.hackweek.io/intro.html
 
 ## Run tutorials on BinderHub
 [![badge](https://img.shields.io/static/v1.svg?logo=Jupyter&label=PangeoBinderAWS&message=us-west-2&color=orange)](https://aws-uswest2-binder.pangeo.io/v2/gh/snowex-hackweek/website/main?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252Fsnowex-hackweek%252Fwebsite%26urlpath%3Dlab%252Ftree%252Fwebsite/book/tutorials%252F%26branch%3Dmain)
